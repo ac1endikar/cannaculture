@@ -3821,6 +3821,9 @@ dialog.compare-dialog::backdrop {
   position: relative;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(15px);
+  flex: 1 1 0 !important;
+  min-width: 280px !important;
+  box-sizing: border-box;
 }
 
 .compare-col-remove-btn {
@@ -3852,6 +3855,7 @@ dialog.compare-dialog::backdrop {
   display: flex;
   gap: 12px;
   align-items: center;
+  min-height: 68px;
 }
 
 .compare-col-thumb-wrap {
@@ -3923,9 +3927,20 @@ dialog.compare-dialog::backdrop {
   letter-spacing: 0.6px;
   color: #A7F3D0;
   margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  min-height: 38px !important;
+  box-sizing: border-box;
+}
+
+.compare-metric-title > span:first-child {
+  font-size: 0.78rem;
+  white-space: nowrap;
+  flex-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Barras Cannabinoides */
@@ -3991,30 +4006,72 @@ dialog.compare-dialog::backdrop {
   background: rgba(16, 185, 129, 0.16);
   border: 1px solid rgba(16, 185, 129, 0.4);
   color: #6EE7B7;
-  padding: 3px 8px;
+  padding: 3px 8px !important;
   border-radius: 50px !important;
-  font-size: 0.74rem;
+  font-size: 0.70rem !important;
   font-weight: 700;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 .badge-diff-med {
   background: rgba(245, 158, 11, 0.16);
   border: 1px solid rgba(245, 158, 11, 0.4);
   color: #FCD34D;
-  padding: 3px 8px;
+  padding: 3px 8px !important;
   border-radius: 50px !important;
-  font-size: 0.74rem;
+  font-size: 0.70rem !important;
   font-weight: 700;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 .badge-diff-hard {
   background: rgba(239, 68, 68, 0.16);
   border: 1px solid rgba(239, 68, 68, 0.4);
   color: #FCA5A5;
-  padding: 3px 8px;
+  padding: 3px 8px !important;
   border-radius: 50px !important;
-  font-size: 0.74rem;
+  font-size: 0.70rem !important;
   font-weight: 700;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+/* Alturas Homogéneas por Fila */
+.compare-grow-metrics {
+  min-height: 80px !important;
+  box-sizing: border-box;
+}
+
+.compare-aroma-block {
+  min-height: 42px !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  margin-bottom: 6px;
+  line-height: 1.35;
+  box-sizing: border-box;
+}
+
+.compare-terpenes-list {
+  min-height: 24px !important;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.compare-pills-container,
+.compare-flavors-wrap,
+.compare-effects-wrap {
+  min-height: 68px !important;
+  align-content: flex-start !important;
+  box-sizing: border-box;
 }
 
 /* Columna Vacía (Placeholder) */
@@ -4030,6 +4087,9 @@ dialog.compare-dialog::backdrop {
   background: rgba(6, 11, 9, 0.4);
   min-height: 380px;
   gap: 12px;
+  flex: 1 1 0 !important;
+  min-width: 280px !important;
+  box-sizing: border-box;
 }
 
 .compare-empty-icon {

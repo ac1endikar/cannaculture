@@ -13793,13 +13793,13 @@ class CannaAppMAX {
               <span>⏱️ Cultivo & Floración</span>
               <span class="${diff.badgeClass}">${diff.level} (${diff.label})</span>
             </div>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px;">
-              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center;">
+            <div class="compare-grow-metrics" style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px;">
+              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center; display:flex; flex-direction:column; justify-content:center;">
                 <div style="font-size:0.7rem; color:var(--text-muted);">Floración</div>
                 <strong style="color:#fff; font-size:0.86rem;">${floweringWeeks} sem</strong>
                 <div style="font-size:0.68rem; color:#A7F3D0;">(${strain.floweringDays} días)</div>
               </div>
-              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center;">
+              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center; display:flex; flex-direction:column; justify-content:center;">
                 <div style="font-size:0.7rem; color:var(--text-muted);">Rendimiento</div>
                 <strong style="color:#fff; font-size:0.86rem;">${strain.yieldIndoor} g/m²</strong>
                 <div style="font-size:0.68rem; color:#C4B5FD;">${strain.yieldOutdoor} g/pl</div>
@@ -13811,14 +13811,14 @@ class CannaAppMAX {
           <div class="compare-metric-box">
             <div class="compare-metric-title">
               <span>🌿 Terpenos & Aromas</span>
-              <span style="color:${terpeneData?.color || '#10B981'}; font-weight:800;">${terpeneData?.name || strain.dominantTerpene}</span>
+              <span style="color:${terpeneData?.color || '#10B981'}; font-weight:800; font-size:0.72rem; white-space:nowrap; flex-shrink:0;">${terpeneData?.name || strain.dominantTerpene}</span>
             </div>
-            <div style="margin-bottom:6px;">
+            <div class="compare-aroma-block">
               <span style="font-size:0.75rem; color:#fff; font-weight:600;">Aroma:</span>
               <span style="font-size:0.75rem; color:var(--text-muted); font-style:italic;">${terpeneData?.aroma || 'Perfil botánico complejo'}</span>
             </div>
-            ${subTerpenes ? `<div style="margin-bottom:6px;">${subTerpenes}</div>` : ''}
-            <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:6px;">
+            <div class="compare-terpenes-list">${subTerpenes || '<span style="font-size:0.72rem; color:var(--text-muted); opacity:0.4;">Micro-terpenos complejos</span>'}</div>
+            <div class="compare-pills-container compare-flavors-wrap" style="display:flex; flex-wrap:wrap; gap:4px; margin-top:6px;">
               ${(strain.flavors || []).map(f => `<span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:50px !important; padding:2px 8px; font-size:0.72rem; color:#fff;">👅 ${f}</span>`).join('')}
             </div>
           </div>
@@ -13828,7 +13828,7 @@ class CannaAppMAX {
             <div class="compare-metric-title">
               <span>⚡ Efectos Destacados</span>
             </div>
-            <div style="display:flex; flex-wrap:wrap; gap:5px;">
+            <div class="compare-pills-container compare-effects-wrap" style="display:flex; flex-wrap:wrap; gap:5px;">
               ${(strain.effects || []).map(e => `<span style="background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.3); border-radius:50px !important; padding:3px 9px; font-size:0.74rem; font-weight:700; color:#6EE7B7;">⚡ ${e}</span>`).join('')}
             </div>
           </div>

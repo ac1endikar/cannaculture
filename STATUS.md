@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-05 17:35  
+> **Última actualización:** 2026-09-05 17:45  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1`)
 
 ---
@@ -8,7 +8,7 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 402 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js`.
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_compare_center_v130`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_compare_grid_v131`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
@@ -20,12 +20,22 @@
   - 402/402 referencias en `js/data.js` migradas a `.webp` (0 imágenes faltantes).
   - Lazy Loading (`loading="lazy"` + `decoding="async"`) activo en tarjetas del catálogo.
 - **Mobile Responsive Engine (Ficha Técnica):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
-- **Módulo Comparador Emergente Dark Glass (v130):** **100% COMPLETADO Y OPERATIVO** (Centrado perfecto en viewport, diseño responsive y scroll-snap en móvil).
+- **Módulo Comparador Emergente Dark Glass (v131):** **100% COMPLETADO Y OPERATIVO** (Alineación perfecta de alturas y textos en columnas, min-heights homogéneos, distribución equitativa `flex: 1 1 0`).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-05)
-1. ✅ **Centrado Perfecto y Ajuste Responsive del Modal Comparador (#compare-modal) (v130) (17:35):**
+1. ✅ **Alineación de Alturas y Textos en Columnas del Comparador (#compare-modal) (v131) (17:45):**
+   - **Cabecera de Sección (Cultivo & Floración):** `.compare-metric-title` estandarizado a `display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 38px;`. Título protegido con `font-size: 0.78rem; white-space: nowrap; flex-shrink: 1; overflow: hidden; text-overflow: ellipsis;` y pastillas de dificultad calibradas con `white-space: nowrap; flex-shrink: 0; font-size: 0.70rem; padding: 3px 8px;`, impidiendo saltos de línea desalineados.
+   - **Alturas Homogéneas por Fila:**
+     * Contenedor de métricas de cultivo (`.compare-grow-metrics`): `min-height: 80px;`.
+     * Bloque de texto "Aroma" (`.compare-aroma-block`): `min-height: 42px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;` para reservar exactamente 2 líneas y evitar descalces.
+     * Bloque de lista de terpenos (`.compare-terpenes-list`): `min-height: 24px;` con preservación de espacio.
+     * Contenedor de píldoras (`.compare-pills-container`, `.compare-flavors-wrap`, `.compare-effects-wrap`): `min-height: 68px; align-content: flex-start;`.
+   - **Distribución Equitativa de Columnas:** `.compare-column` y `.compare-empty-col` con `flex: 1 1 0; min-width: 280px;` para asegurar un ancho idéntico en todas las columnas sin compresiones asimétricas.
+   - **Build y Versión:** Bundle recompilado con `python scripts/build_bundle.py` (607,685 bytes) y versión sincronizada en `index.html` a `?v=2026_compare_grid_v131` en CSS y JS.
+
+2. ✅ **Centrado Perfecto y Ajuste Responsive del Modal Comparador (#compare-modal) (v130) (17:35):**
    - **Centrado Absoluto en Viewport:** Configurado `#compare-modal[open]` y `dialog.compare-dialog[open]` con `position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0 auto; width: min(94vw, 1200px); max-height: 90vh; display: flex; flex-direction: column; border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.4); box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(16, 185, 129, 0.2);`.
    - **Backdrop Cinematic:** `background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(8px);`.
    - **Contenedor Interno de Columnas (`.compare-grid / .compare-columns-container`):** En escritorio aplica centrado perfecto simétrico: `display: flex; justify-content: center; align-items: stretch; gap: 16px; overflow-x: auto; padding: 12px 6px; width: 100%;`.
