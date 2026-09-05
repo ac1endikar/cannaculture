@@ -4162,17 +4162,44 @@ dialog.compare-dialog::backdrop {
 }
 
 /* --- FIX ALINEACIÓN EXACTA COMPARADOR V131 --- */
+/* Asegurar que las columnas midan exactamente lo mismo */
+#compare-modal .compare-grid > *,
+#compare-modal [class*="compare-col"],
+#compare-modal .compare-column,
+#compare-modal .compare-empty-col,
 .compare-col {
     flex: 1 1 0% !important;
     min-width: 290px !important;
+    box-sizing: border-box !important;
 }
 
+/* Cabecera de Cultivo & Floración: impedir salto de línea del título */
+#compare-modal [class*="cultivo"], 
+#compare-modal [class*="floracion"],
+#compare-modal .compare-cultivo-header,
+#compare-modal .compare-metric-title {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    min-height: 38px !important;
+}
+
+#compare-modal .compare-card-section-title,
+#compare-modal .compare-metric-title > span:first-child,
 .compare-card-section-title {
     white-space: nowrap !important;
     font-size: 0.75rem !important;
     letter-spacing: 0.3px !important;
+    flex-shrink: 1 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 }
 
+#compare-modal [class*="badge"],
+#compare-modal [class*="difficulty"],
+#compare-modal .compare-badge-difficulty,
+#compare-modal [class*="diff"],
 .compare-badge-difficulty {
     white-space: nowrap !important;
     flex-shrink: 0 !important;
@@ -4180,11 +4207,25 @@ dialog.compare-dialog::backdrop {
     padding: 2px 7px !important;
 }
 
+/* Forzar altura fija idéntica en las cajas numéricas */
+#compare-modal [class*="grow-grid"],
+#compare-modal [class*="metrics"],
+#compare-modal .compare-grow-grid,
+#compare-modal .compare-grow-metrics,
 .compare-grow-grid {
-    min-height: 82px !important;
+    min-height: 85px !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
     align-items: center !important;
+    box-sizing: border-box !important;
 }
 
+/* Texto de aromas: reservar siempre 2 líneas exactas para evitar desniveles */
+#compare-modal p:has(> em),
+#compare-modal [class*="aroma"],
+#compare-modal .compare-aroma-text,
+#compare-modal .compare-aroma-block,
 .compare-aroma-text {
     min-height: 44px !important;
     line-height: 1.35 !important;
@@ -4192,13 +4233,42 @@ dialog.compare-dialog::backdrop {
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
+    box-sizing: border-box !important;
 }
 
+#compare-modal .compare-terpenes-list,
+#compare-modal [class*="terpenes-list"],
 .compare-terpenes-list {
     min-height: 26px !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
 }
 
+#compare-modal .compare-tags-container,
+#compare-modal .compare-pills-container,
+#compare-modal [class*="tags-container"],
+#compare-modal [class*="pills-container"],
 .compare-tags-container {
     min-height: 72px !important;
     align-content: flex-start !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+    #compare-modal .compare-grid > *,
+    #compare-modal [class*="compare-col"],
+    #compare-modal .compare-column,
+    #compare-modal .compare-empty-col,
+    .compare-col {
+        min-width: 280px !important;
+        max-width: 320px !important;
+        flex: 0 0 85% !important;
+        scroll-snap-align: center !important;
+    }
 }

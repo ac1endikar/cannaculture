@@ -13788,18 +13788,18 @@ class CannaAppMAX {
           </div>
 
           <!-- 3. Semanas de Floración & Dificultad -->
-          <div class="compare-metric-box">
-            <div class="compare-metric-title">
+          <div class="compare-metric-box compare-cultivo-box">
+            <div class="compare-metric-title compare-cultivo-header compare-floracion-header">
               <span class="compare-card-section-title">⏱️ Cultivo & Floración</span>
               <span class="${diff.badgeClass} compare-badge-difficulty">${diff.level} (${diff.label})</span>
             </div>
-            <div class="compare-grow-metrics compare-grow-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px;">
-              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center; display:flex; flex-direction:column; justify-content:center;">
+            <div class="compare-grow-metrics compare-grow-grid" style="gap: 8px; margin-top: 6px;">
+              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center; display:flex; flex-direction:column; justify-content:center; height:100%; box-sizing:border-box;">
                 <div style="font-size:0.7rem; color:var(--text-muted);">Floración</div>
                 <strong style="color:#fff; font-size:0.86rem;">${floweringWeeks} sem</strong>
                 <div style="font-size:0.68rem; color:#A7F3D0;">(${strain.floweringDays} días)</div>
               </div>
-              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center; display:flex; flex-direction:column; justify-content:center;">
+              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center; display:flex; flex-direction:column; justify-content:center; height:100%; box-sizing:border-box;">
                 <div style="font-size:0.7rem; color:var(--text-muted);">Rendimiento</div>
                 <strong style="color:#fff; font-size:0.86rem;">${strain.yieldIndoor} g/m²</strong>
                 <div style="font-size:0.68rem; color:#C4B5FD;">${strain.yieldOutdoor} g/pl</div>
