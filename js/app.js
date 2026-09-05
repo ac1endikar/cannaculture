@@ -1591,7 +1591,7 @@ class CannaAppMAX {
         .join(' · ');
 
       return `
-        <div class="compare-column compare-col">
+        <div class="compare-column compare-col" style="flex: 1 1 0%; min-width: 290px; box-sizing: border-box;">
           <!-- Botón quitar de la comparativa -->
           <button class="compare-col-remove-btn" onclick="window.app && window.app.toggleCompareStrain('${strain.id}')" title="Quitar de la comparativa">✕</button>
 
@@ -1613,9 +1613,9 @@ class CannaAppMAX {
 
           <!-- 1. Cannabinoides (THC & CBD) -->
           <div class="compare-metric-box">
-            <div class="compare-metric-title">
-              <span class="compare-card-section-title">🧪 Cannabinoides</span>
-              <span style="color:#FCD34D;">${thcVal}% THC · ${cbdVal}% CBD</span>
+            <div class="compare-metric-title" style="display:flex; align-items:center; justify-content:space-between; gap:6px; min-height:38px; width:100%; box-sizing:border-box;">
+              <span class="compare-card-section-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex-shrink:1; font-size:0.75rem; font-weight:700; letter-spacing:0.3px;">🧪 Cannabinoides</span>
+              <span style="color:#FCD34D; font-size:0.72rem; white-space:nowrap; flex-shrink:0;">${thcVal}% THC · ${cbdVal}% CBD</span>
             </div>
             
             <div class="compare-cannabinoid-row">
@@ -1641,9 +1641,9 @@ class CannaAppMAX {
 
           <!-- 2. Proporción Índica / Sativa -->
           <div class="compare-metric-box">
-            <div class="compare-metric-title">
-              <span class="compare-card-section-title">🧬 Proporción Genética</span>
-              <span style="font-size:0.74rem; color:#E2E8F0;">${ratio.label}</span>
+            <div class="compare-metric-title" style="display:flex; align-items:center; justify-content:space-between; gap:6px; min-height:38px; width:100%; box-sizing:border-box;">
+              <span class="compare-card-section-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex-shrink:1; font-size:0.75rem; font-weight:700; letter-spacing:0.3px;">🧬 Proporción Genética</span>
+              <span style="font-size:0.74rem; color:#E2E8F0; white-space:nowrap; flex-shrink:0;">${ratio.label}</span>
             </div>
             <div class="compare-species-track">
               <div class="compare-species-indica" style="width: ${ratio.indica}%;" title="${ratio.indica}% Índica"></div>
@@ -1657,19 +1657,19 @@ class CannaAppMAX {
 
           <!-- 3. Semanas de Floración & Dificultad -->
           <div class="compare-metric-box compare-cultivo-box">
-            <div class="compare-metric-title compare-cultivo-header compare-floracion-header">
-              <span class="compare-card-section-title">⏱️ Cultivo & Floración</span>
-              <span class="${diff.badgeClass} compare-badge-difficulty">${diff.level} (${diff.label})</span>
+            <div class="compare-metric-title compare-cultivo-header compare-floracion-header" style="display:flex; align-items:center; justify-content:space-between; gap:6px; min-height:38px; width:100%; box-sizing:border-box;">
+              <span class="compare-card-section-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex-shrink:1; font-size:0.75rem; font-weight:700; letter-spacing:0.3px;">⏱️ Cultivo & Floración</span>
+              <span class="${diff.badgeClass} compare-badge-difficulty" style="white-space:nowrap; flex-shrink:0; font-size:0.68rem; padding:2px 7px; border-radius:50px !important;">${diff.level} (${diff.label})</span>
             </div>
-            <div class="compare-grow-metrics compare-grow-grid" style="gap: 8px; margin-top: 6px;">
-              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center; display:flex; flex-direction:column; justify-content:center; height:100%; box-sizing:border-box;">
+            <div class="compare-grow-metrics compare-grow-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; min-height: 85px; align-items: stretch; box-sizing: border-box;">
+              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; height:100%; min-height:85px; box-sizing:border-box;">
                 <div style="font-size:0.7rem; color:var(--text-muted);">Floración</div>
-                <strong style="color:#fff; font-size:0.86rem;">${floweringWeeks} sem</strong>
+                <strong style="color:#fff; font-size:0.86rem; margin:2px 0;">${floweringWeeks} sem</strong>
                 <div style="font-size:0.68rem; color:#A7F3D0;">(${strain.floweringDays} días)</div>
               </div>
-              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center; display:flex; flex-direction:column; justify-content:center; height:100%; box-sizing:border-box;">
+              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; height:100%; min-height:85px; box-sizing:border-box;">
                 <div style="font-size:0.7rem; color:var(--text-muted);">Rendimiento</div>
-                <strong style="color:#fff; font-size:0.86rem;">${strain.yieldIndoor} g/m²</strong>
+                <strong style="color:#fff; font-size:0.86rem; margin:2px 0;">${strain.yieldIndoor} g/m²</strong>
                 <div style="font-size:0.68rem; color:#C4B5FD;">${strain.yieldOutdoor} g/pl</div>
               </div>
             </div>
@@ -1677,35 +1677,35 @@ class CannaAppMAX {
 
           <!-- 4. Perfil de Terpenos & Aromas -->
           <div class="compare-metric-box">
-            <div class="compare-metric-title">
-              <span class="compare-card-section-title">🌿 Terpenos & Aromas</span>
+            <div class="compare-metric-title" style="display:flex; align-items:center; justify-content:space-between; gap:6px; min-height:38px; width:100%; box-sizing:border-box;">
+              <span class="compare-card-section-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex-shrink:1; font-size:0.75rem; font-weight:700; letter-spacing:0.3px;">🌿 Terpenos & Aromas</span>
               <span style="color:${terpeneData?.color || '#10B981'}; font-weight:800; font-size:0.72rem; white-space:nowrap; flex-shrink:0;">${terpeneData?.name || strain.dominantTerpene}</span>
             </div>
-            <div class="compare-aroma-block compare-aroma-text">
+            <div class="compare-aroma-block compare-aroma-text" style="min-height:44px; line-height:1.35; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; box-sizing:border-box; font-size:0.75rem;">
               <span style="font-size:0.75rem; color:#fff; font-weight:600;">Aroma:</span>
               <span style="font-size:0.75rem; color:var(--text-muted); font-style:italic;">${terpeneData?.aroma || 'Perfil botánico complejo'}</span>
             </div>
-            <div class="compare-terpenes-list">${subTerpenes || '<span style="font-size:0.72rem; color:var(--text-muted); opacity:0.4;">Micro-terpenos complejos</span>'}</div>
-            <div class="compare-pills-container compare-tags-container compare-flavors-wrap" style="display:flex; flex-wrap:wrap; gap:4px; margin-top:6px;">
-              ${(strain.flavors || []).map(f => `<span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:50px !important; padding:2px 8px; font-size:0.72rem; color:#fff;">👅 ${f}</span>`).join('')}
+            <div class="compare-terpenes-list" style="min-height:26px; display:flex; align-items:center; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; box-sizing:border-box;">${subTerpenes || '<span style="font-size:0.72rem; color:var(--text-muted); opacity:0.4;">Micro-terpenos complejos</span>'}</div>
+            <div class="compare-pills-container compare-tags-container compare-flavors-wrap" style="display:flex; flex-wrap:wrap; align-content:flex-start; gap:4px; margin-top:6px; min-height:72px; box-sizing:border-box;">
+              ${(strain.flavors || []).map(f => `<span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:50px !important; padding:2px 8px; font-size:0.72rem; color:#fff; white-space:nowrap;">👅 ${f}</span>`).join('')}
             </div>
           </div>
 
           <!-- 5. Efectos Destacados -->
           <div class="compare-metric-box">
-            <div class="compare-metric-title">
-              <span class="compare-card-section-title">⚡ Efectos Destacados</span>
+            <div class="compare-metric-title" style="display:flex; align-items:center; justify-content:space-between; gap:6px; min-height:38px; width:100%; box-sizing:border-box;">
+              <span class="compare-card-section-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex-shrink:1; font-size:0.75rem; font-weight:700; letter-spacing:0.3px;">⚡ Efectos Destacados</span>
             </div>
-            <div class="compare-pills-container compare-tags-container compare-effects-wrap" style="display:flex; flex-wrap:wrap; gap:5px;">
-              ${(strain.effects || []).map(e => `<span style="background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.3); border-radius:50px !important; padding:3px 9px; font-size:0.74rem; font-weight:700; color:#6EE7B7;">⚡ ${e}</span>`).join('')}
+            <div class="compare-pills-container compare-tags-container compare-effects-wrap" style="display:flex; flex-wrap:wrap; align-content:flex-start; gap:5px; min-height:50px; box-sizing:border-box;">
+              ${(strain.effects || []).map(e => `<span style="background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.3); border-radius:50px !important; padding:3px 9px; font-size:0.74rem; font-weight:700; color:#6EE7B7; white-space:nowrap;">⚡ ${e}</span>`).join('')}
             </div>
           </div>
 
           <!-- 6. Linaje Genético -->
           <div class="compare-metric-box" style="margin-top:auto;">
-            <div class="compare-metric-title">
-              <span>📜 Linaje Genético</span>
-              <span style="font-size:0.72rem; color:var(--text-muted);">${strain.origin || 'Origen verificado'}</span>
+            <div class="compare-metric-title" style="display:flex; align-items:center; justify-content:space-between; gap:6px; min-height:38px; width:100%; box-sizing:border-box;">
+              <span class="compare-card-section-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex-shrink:1; font-size:0.75rem; font-weight:700; letter-spacing:0.3px;">📜 Linaje Genético</span>
+              <span style="font-size:0.72rem; color:var(--text-muted); white-space:nowrap; flex-shrink:0;">${strain.origin || 'Origen verificado'}</span>
             </div>
             <p style="font-size:0.78rem; color:#E2E8F0; margin:0 0 6px 0; font-weight:600; line-height:1.4;">
               🧬 ${strain.genetics || strain.aka || 'Selección de élite'}
@@ -1720,7 +1720,7 @@ class CannaAppMAX {
 
     for (let i = 0; i < emptySlotsNeeded; i++) {
       columnsHTML += `
-        <div class="compare-empty-col">
+        <div class="compare-empty-col" style="flex: 1 1 0%; min-width: 290px; box-sizing: border-box;">
           <div class="compare-empty-icon">⚖️</div>
           <h4 style="font-size:1.05rem; font-weight:800; color:#fff; margin:0;">Ranura Disponible</h4>
           <p class="compare-empty-text">Añade otra variedad desde el catálogo para contrastar sus terpenos, cannabinoides y genética frente a frente.</p>
