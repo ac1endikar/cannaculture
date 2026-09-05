@@ -1,0 +1,246 @@
+{
+  "success": [
+    {
+      "id": "ripper-sideral",
+      "name": "Sideral",
+      "reason": "already_ok",
+      "size_kb": 614
+    }
+  ],
+  "failed": [
+    {
+      "id": "ripper-jungle-punch",
+      "name": "Jungle Punch",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-jungle-punch.jpg"
+    },
+    {
+      "id": "ripper-pink-rozay",
+      "name": "Pink Rozay",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-pink-rozay.jpg"
+    },
+    {
+      "id": "ripper-zombie-wash",
+      "name": "Zombiewash",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-zombie-wash.jpg"
+    },
+    {
+      "id": "ripper-candy-crack",
+      "name": "Candy Crack",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-candy-crack.jpg"
+    },
+    {
+      "id": "ripper-fuel-og",
+      "name": "Ripper Fuel",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-fuel-og.jpg"
+    },
+    {
+      "id": "ripper-juicy-zkittlez",
+      "name": "Juicy Zkittlez",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-juicy-zkittlez.jpg"
+    },
+    {
+      "id": "bf-wedding-cake",
+      "name": "Wedding Cake",
+      "bank": "Barney's Farm",
+      "fname": "bf-wedding-cake.jpg"
+    },
+    {
+      "id": "bf-acapulco-gold",
+      "name": "Acapulco Gold",
+      "bank": "Barney's Farm",
+      "fname": "bf-acapulco-gold.jpg"
+    },
+    {
+      "id": "bf-lsd",
+      "name": "LSD",
+      "bank": "Barney's Farm",
+      "fname": "bf-lsd.jpg"
+    },
+    {
+      "id": "bf-pineapple-chunk",
+      "name": "Pineapple Chunk",
+      "bank": "Barney's Farm",
+      "fname": "bf-pineapple-chunk.jpg"
+    },
+    {
+      "id": "bf-zkittlez-og",
+      "name": "Zkittlez OG",
+      "bank": "Barney's Farm",
+      "fname": "bf-zkittlez-og.jpg"
+    },
+    {
+      "id": "ss-bigdevil-xl",
+      "name": "Big Devil XL Auto",
+      "bank": "Sweet Seeds",
+      "fname": "sweet-big-devil-xl.jpg"
+    },
+    {
+      "id": "ss-crystal-candy",
+      "name": "Crystal Candy",
+      "bank": "Sweet Seeds",
+      "fname": "sweet-crystal-candy.jpg"
+    },
+    {
+      "id": "ss-red-hot-cookies",
+      "name": "Red Hot Cookies",
+      "bank": "Sweet Seeds",
+      "fname": "sweet-red-hot-cookies.jpg"
+    },
+    {
+      "id": "ss-black-cream-auto",
+      "name": "Black Cream Auto",
+      "bank": "Sweet Seeds",
+      "fname": "sweet-black-cream-auto.jpg"
+    },
+    {
+      "id": "ss-sweet-amnesia-haze",
+      "name": "Sweet Amnesia Haze",
+      "bank": "Sweet Seeds",
+      "fname": "sweet-amnesia-haze.jpg"
+    },
+    {
+      "id": "rqs-purple-queen",
+      "name": "Purple Queen",
+      "bank": "Royal Queen Seeds",
+      "fname": "rqs-purple-queen.jpg"
+    },
+    {
+      "id": "rqs-og-kush-auto",
+      "name": "OG Kush Auto",
+      "bank": "Royal Queen Seeds",
+      "fname": "rqs-og-kush-auto.jpg"
+    },
+    {
+      "id": "rqs-blue-mystic",
+      "name": "Blue Mystic",
+      "bank": "Royal Queen Seeds",
+      "fname": "rqs-blue-mystic.jpg"
+    },
+    {
+      "id": "rqs-watermelon",
+      "name": "Watermelon Zkittlez",
+      "bank": "Royal Queen Seeds",
+      "fname": "rqs-watermelon.jpg"
+    },
+    {
+      "id": "rqs-honey-cream",
+      "name": "Honey Cream",
+      "bank": "Royal Queen Seeds",
+      "fname": "rqs-honey-cream.jpg"
+    },
+    {
+      "id": "rqs-amnesia-haze",
+      "name": "Amnesia Haze",
+      "bank": "Royal Queen Seeds",
+      "fname": "rqs-amnesia-haze.jpg"
+    },
+    {
+      "id": "dp-auto-mazar",
+      "name": "Auto Mazar",
+      "bank": "Dutch Passion",
+      "fname": "dp-auto-mazar.jpg"
+    },
+    {
+      "id": "dp-mazar",
+      "name": "Mazar",
+      "bank": "Dutch Passion",
+      "fname": "dp-mazar.jpg"
+    },
+    {
+      "id": "dp-frisian-dew",
+      "name": "Frisian Dew",
+      "bank": "Dutch Passion",
+      "fname": "dp-frisian-dew.jpg"
+    },
+    {
+      "id": "dp-passion-fruit",
+      "name": "Passion Fruit",
+      "bank": "Dutch Passion",
+      "fname": "dp-passion-fruit.jpg"
+    },
+    {
+      "id": "dp-skywalker-og",
+      "name": "Skywalker OG",
+      "bank": "Dutch Passion",
+      "fname": "dp-skywalker-og.jpg"
+    },
+    {
+      "id": "phil-lemon-og-candy",
+      "name": "Lemon OG Candy",
+      "bank": "Philosopher Seeds",
+      "fname": "philo-lemon-og-candy.jpg"
+    },
+    {
+      "id": "phil-snow-storm",
+      "name": "Snow Storm",
+      "bank": "Philosopher Seeds",
+      "fname": "philo-snow-storm.jpg"
+    },
+    {
+      "id": "phil-critical-sensi-star",
+      "name": "Critical Sensi Star",
+      "bank": "Philosopher Seeds",
+      "fname": "philo-critical-sensi-star.jpg"
+    },
+    {
+      "id": "phil-bubbas-gift",
+      "name": "Bubba's Gift",
+      "bank": "Philosopher Seeds",
+      "fname": "philo-bubbas-gift.jpg"
+    },
+    {
+      "id": "00s-white-smurf",
+      "name": "White Smurf Auto",
+      "bank": "00 Seeds Bank",
+      "fname": "00s-white-smurf.jpg"
+    },
+    {
+      "id": "00s-critical-mass",
+      "name": "Critical Mass CBD",
+      "bank": "00 Seeds Bank",
+      "fname": "00s-critical-mass.jpg"
+    },
+    {
+      "id": "00s-cheese-xl",
+      "name": "Cheese XL Auto",
+      "bank": "00 Seeds Bank",
+      "fname": "00s-cheese-xl.jpg"
+    },
+    {
+      "id": "dna-the-og-18",
+      "name": "The OG #18",
+      "bank": "DNA Genetics",
+      "fname": "dna-the-og-18.jpg"
+    },
+    {
+      "id": "dna-24k-gold",
+      "name": "24K Gold",
+      "bank": "DNA Genetics",
+      "fname": "dna-24k-gold.jpg"
+    },
+    {
+      "id": "dna-tangie",
+      "name": "Tangie",
+      "bank": "DNA Genetics",
+      "fname": "dna-tangie.jpg"
+    },
+    {
+      "id": "dna-lemon-skunk",
+      "name": "Lemon Skunk",
+      "bank": "DNA Genetics",
+      "fname": "dna-lemon-skunk.jpg"
+    },
+    {
+      "id": "dinafem-sweet-grapefruit",
+      "name": "Sweet Deep Grapefruit",
+      "bank": "Dinafem Seeds",
+      "fname": "dinafem-sweet-grapefruit.jpg"
+    }
+  ]
+}

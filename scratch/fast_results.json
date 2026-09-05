@@ -1,0 +1,620 @@
+{
+  "success": [
+    {
+      "id": "bf-wedding-cake",
+      "name": "Wedding_Cake",
+      "bank": "Barney's_Farm",
+      "fname": "bf-wedding-cake.jpg",
+      "size_kb": 462,
+      "src": "already_ok"
+    },
+    {
+      "id": "bf-acapulco-gold",
+      "name": "Acapulco_Gold",
+      "bank": "Barney's_Farm",
+      "fname": "bf-acapulco-gold.jpg",
+      "size_kb": 223,
+      "src": "already_ok"
+    },
+    {
+      "id": "bf-pineapple-chunk",
+      "name": "Pineapple_Chunk",
+      "bank": "Barney's_Farm",
+      "fname": "bf-pineapple-chunk.jpg",
+      "size_kb": 303,
+      "src": "already_ok"
+    },
+    {
+      "id": "ss-bigdevil-xl",
+      "name": "Big_Devil_XL",
+      "bank": "Sweet_Seeds",
+      "fname": "sweet-big-devil-xl.jpg",
+      "size_kb": 96,
+      "src": "already_ok"
+    },
+    {
+      "id": "ss-crystal-candy",
+      "name": "Crystal_Candy",
+      "bank": "Sweet_Seeds",
+      "fname": "sweet-crystal-candy.jpg",
+      "size_kb": 113,
+      "src": "already_ok"
+    },
+    {
+      "id": "ss-black-cream-auto",
+      "name": "Black_Cream_Auto",
+      "bank": "Sweet_Seeds",
+      "fname": "sweet-black-cream-auto.jpg",
+      "size_kb": 178,
+      "src": "already_ok"
+    },
+    {
+      "id": "ss-sweet-amnesia-haze",
+      "name": "Sweet_Amnesia_Haze",
+      "bank": "Sweet_Seeds",
+      "fname": "sweet-amnesia-haze.jpg",
+      "size_kb": 196,
+      "src": "already_ok"
+    },
+    {
+      "id": "rqs-purple-queen",
+      "name": "Purple_Queen",
+      "bank": "Royal_Queen_Seeds",
+      "fname": "rqs-purple-queen.jpg",
+      "size_kb": 257,
+      "src": "already_ok"
+    },
+    {
+      "id": "positronics-black-widow",
+      "name": "Black_Widow",
+      "bank": "Positronics_Seeds",
+      "fname": "positronics-black-widow-bud.jpg",
+      "size_kb": 80,
+      "src": "already_ok"
+    },
+    {
+      "id": "positronics-critical-47",
+      "name": "Critical_47",
+      "bank": "Positronics_Seeds",
+      "fname": "positronics-critical-47-bud.jpg",
+      "size_kb": 75,
+      "src": "already_ok"
+    },
+    {
+      "id": "positronics-somango-47",
+      "name": "Somango_47",
+      "bank": "Positronics_Seeds",
+      "fname": "positronics-somango-47-bud.jpg",
+      "size_kb": 71,
+      "src": "already_ok"
+    },
+    {
+      "id": "genehtik-amnesia-bilbo",
+      "name": "Amnesia_Bilbo",
+      "bank": "Genehtik_Seeds",
+      "fname": "genehtik-amnesia-bilbo-bud.jpg",
+      "size_kb": 155,
+      "src": "already_ok"
+    },
+    {
+      "id": "genehtik-northern-lights-x",
+      "name": "Northern_Lights_X",
+      "bank": "Genehtik_Seeds",
+      "fname": "genehtik-northern-lights-x-bud.jpg",
+      "size_kb": 96,
+      "src": "already_ok"
+    },
+    {
+      "id": "ghs-white-widow",
+      "name": "White_Widow",
+      "bank": "Green_House_Seed",
+      "fname": "ghs-white-widow-bud.jpg",
+      "size_kb": 77,
+      "src": "already_ok"
+    },
+    {
+      "id": "ghs-great-white-shark",
+      "name": "Great_White_Shark",
+      "bank": "Green_House_Seed",
+      "fname": "ghs-great-white-shark-bud.jpg",
+      "size_kb": 71,
+      "src": "already_ok"
+    },
+    {
+      "id": "ghs-kalashnikova",
+      "name": "Kalashnikova",
+      "bank": "Green_House_Seed",
+      "fname": "ghs-kalashnikova-bud.jpg",
+      "size_kb": 76,
+      "src": "already_ok"
+    },
+    {
+      "id": "aceseeds-zamaldelica",
+      "name": "Zamaldelica",
+      "bank": "ACE_Seeds",
+      "fname": "aceseeds-zamaldelica-bud.jpg",
+      "size_kb": 70,
+      "src": "already_ok"
+    },
+    {
+      "id": "dna-la-confidential",
+      "name": "LA_Confidential",
+      "bank": "DNA_Genetics",
+      "fname": "dna-la-confidential.jpg",
+      "size_kb": 95,
+      "src": "already_ok"
+    },
+    {
+      "id": "dinafem-gorilla-auto",
+      "name": "Gorilla_Auto",
+      "bank": "Dinafem_Seeds",
+      "fname": "dinafem-gorilla-auto.jpg",
+      "size_kb": 125,
+      "src": "already_ok"
+    }
+  ],
+  "failed": [
+    {
+      "id": "ripper-fuel-og",
+      "name": "Ripper_Fuel",
+      "bank": "Ripper_Seeds",
+      "fname": "ripper-fuel-og.jpg"
+    },
+    {
+      "id": "ripper-candy-crack",
+      "name": "Candy_Crack",
+      "bank": "Ripper_Seeds",
+      "fname": "ripper-candy-crack.jpg"
+    },
+    {
+      "id": "ripper-juicy-zkittlez",
+      "name": "Juicy_Zkittlez",
+      "bank": "Ripper_Seeds",
+      "fname": "ripper-juicy-zkittlez.jpg"
+    },
+    {
+      "id": "ripper-zombie-wash",
+      "name": "Zombiewash",
+      "bank": "Ripper_Seeds",
+      "fname": "ripper-zombie-wash.jpg"
+    },
+    {
+      "id": "ripper-pink-rozay",
+      "name": "Pink_Rozay",
+      "bank": "Ripper_Seeds",
+      "fname": "ripper-pink-rozay.jpg"
+    },
+    {
+      "id": "ripper-jungle-punch",
+      "name": "Jungle Punch",
+      "bank": "Ripper_Seeds",
+      "fname": "ripper-jungle-punch.jpg"
+    },
+    {
+      "id": "ss-red-hot-cookies",
+      "name": "Red_Hot_Cookies",
+      "bank": "Sweet_Seeds",
+      "fname": "sweet-red-hot-cookies.jpg"
+    },
+    {
+      "id": "bf-lsd",
+      "name": "LSD",
+      "bank": "Barney's_Farm",
+      "fname": "bf-lsd.jpg"
+    },
+    {
+      "id": "bf-zkittlez-og",
+      "name": "Zkittlez_OG",
+      "bank": "Barney's_Farm",
+      "fname": "bf-zkittlez-og.jpg"
+    },
+    {
+      "id": "rqs-watermelon",
+      "name": "Watermelon_Zkittlez",
+      "bank": "Royal_Queen_Seeds",
+      "fname": "rqs-watermelon.jpg"
+    },
+    {
+      "id": "rqs-og-kush-auto",
+      "name": "OG_Kush_Auto",
+      "bank": "Royal_Queen_Seeds",
+      "fname": "rqs-og-kush-auto.jpg"
+    },
+    {
+      "id": "rqs-blue-mystic",
+      "name": "Blue_Mystic",
+      "bank": "Royal_Queen_Seeds",
+      "fname": "rqs-blue-mystic.jpg"
+    },
+    {
+      "id": "dp-auto-mazar",
+      "name": "Auto_Mazar",
+      "bank": "Dutch_Passion",
+      "fname": "dp-auto-mazar.jpg"
+    },
+    {
+      "id": "rqs-honey-cream",
+      "name": "Honey_Cream",
+      "bank": "Royal_Queen_Seeds",
+      "fname": "rqs-honey-cream.jpg"
+    },
+    {
+      "id": "rqs-amnesia-haze",
+      "name": "Amnesia_Haze",
+      "bank": "Royal_Queen_Seeds",
+      "fname": "rqs-amnesia-haze.jpg"
+    },
+    {
+      "id": "dp-frisian-dew",
+      "name": "Frisian_Dew",
+      "bank": "Dutch_Passion",
+      "fname": "dp-frisian-dew.jpg"
+    },
+    {
+      "id": "dp-passion-fruit",
+      "name": "Passion_Fruit",
+      "bank": "Dutch_Passion",
+      "fname": "dp-passion-fruit.jpg"
+    },
+    {
+      "id": "dp-mazar",
+      "name": "Mazar",
+      "bank": "Dutch_Passion",
+      "fname": "dp-mazar.jpg"
+    },
+    {
+      "id": "phil-lemon-og-candy",
+      "name": "Lemon_OG_Candy",
+      "bank": "Philosopher_Seeds",
+      "fname": "philo-lemon-og-candy.jpg"
+    },
+    {
+      "id": "dp-skywalker-og",
+      "name": "Skywalker_OG",
+      "bank": "Dutch_Passion",
+      "fname": "dp-skywalker-og.jpg"
+    },
+    {
+      "id": "phil-snow-storm",
+      "name": "Snow_Storm",
+      "bank": "Philosopher_Seeds",
+      "fname": "philo-snow-storm.jpg"
+    },
+    {
+      "id": "phil-bubbas-gift",
+      "name": "Bubba's_Gift",
+      "bank": "Philosopher_Seeds",
+      "fname": "philo-bubbas-gift.jpg"
+    },
+    {
+      "id": "phil-critical-sensi-star",
+      "name": "Critical_Sensi_Star",
+      "bank": "Philosopher_Seeds",
+      "fname": "philo-critical-sensi-star.jpg"
+    },
+    {
+      "id": "00s-white-smurf",
+      "name": "White_Smurf_Auto",
+      "bank": "00_Seeds_Bank",
+      "fname": "00s-white-smurf.jpg"
+    },
+    {
+      "id": "dna-the-og-18",
+      "name": "The_OG_18",
+      "bank": "DNA_Genetics",
+      "fname": "dna-the-og-18.jpg"
+    },
+    {
+      "id": "00s-critical-mass",
+      "name": "Critical_Mass_CBD",
+      "bank": "00_Seeds_Bank",
+      "fname": "00s-critical-mass.jpg"
+    },
+    {
+      "id": "00s-cheese-xl",
+      "name": "Cheese_XL_Auto",
+      "bank": "00_Seeds_Bank",
+      "fname": "00s-cheese-xl.jpg"
+    },
+    {
+      "id": "dna-24k-gold",
+      "name": "24K_Gold",
+      "bank": "DNA_Genetics",
+      "fname": "dna-24k-gold.jpg"
+    },
+    {
+      "id": "dna-lemon-skunk",
+      "name": "Lemon_Skunk",
+      "bank": "DNA_Genetics",
+      "fname": "dna-lemon-skunk.jpg"
+    },
+    {
+      "id": "dna-tangie",
+      "name": "Tangie",
+      "bank": "DNA_Genetics",
+      "fname": "dna-tangie.jpg"
+    },
+    {
+      "id": "dinafem-sweet-grapefruit",
+      "name": "Sweet_Deep_Grapefruit",
+      "bank": "Dinafem_Seeds",
+      "fname": "dinafem-sweet-grapefruit.jpg"
+    },
+    {
+      "id": "cannabiogen-hash-fruit",
+      "name": "Hash_Fruit",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-hash-fruit-bud.jpg"
+    },
+    {
+      "id": "cannabiogen-leshaze",
+      "name": "Leshaze",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-leshaze-bud.jpg"
+    },
+    {
+      "id": "cannabiogen-nepal-jam",
+      "name": "Nepal_Jam",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-nepal-jam-bud.jpg"
+    },
+    {
+      "id": "cannabiogen-caribe",
+      "name": "Caribe",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-caribe-bud.jpg"
+    },
+    {
+      "id": "cannabiogen-sandstorm",
+      "name": "Sandstorm",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-sandstorm-bud.jpg"
+    },
+    {
+      "id": "cannabiogen-taskenti",
+      "name": "Taskenti",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-taskenti-bud.jpg"
+    },
+    {
+      "id": "positronics-purple-haze",
+      "name": "Purple_Haze",
+      "bank": "Positronics_Seeds",
+      "fname": "positronics-purple-haze-bud.jpg"
+    },
+    {
+      "id": "pyramid-tutankhamon",
+      "name": "Tutankhamon",
+      "bank": "Pyramid_Seeds",
+      "fname": "pyramid-tutankhamon-bud.jpg"
+    },
+    {
+      "id": "pyramid-anesthesia",
+      "name": "Anesthesia",
+      "bank": "Pyramid_Seeds",
+      "fname": "pyramid-anesthesia-bud.jpg"
+    },
+    {
+      "id": "pyramid-shark",
+      "name": "Shark",
+      "bank": "Pyramid_Seeds",
+      "fname": "pyramid-shark-bud.jpg"
+    },
+    {
+      "id": "serious-ak-47",
+      "name": "AK-47",
+      "bank": "Serious_Seeds",
+      "fname": "serious-ak-47-bud.jpg"
+    },
+    {
+      "id": "serious-kali-mist",
+      "name": "Kali_Mist",
+      "bank": "Serious_Seeds",
+      "fname": "serious-kali-mist-bud.jpg"
+    },
+    {
+      "id": "serious-chronic",
+      "name": "Chronic",
+      "bank": "Serious_Seeds",
+      "fname": "serious-chronic-bud.jpg"
+    },
+    {
+      "id": "serious-bubble-gum",
+      "name": "Bubble_Gum",
+      "bank": "Serious_Seeds",
+      "fname": "serious-bubble-gum-bud.jpg"
+    },
+    {
+      "id": "serious-white-russian",
+      "name": "White_Russian",
+      "bank": "Serious_Seeds",
+      "fname": "serious-white-russian-bud.jpg"
+    },
+    {
+      "id": "genehtik-super-silver-bilbo",
+      "name": "Super_Silver_Bilbo",
+      "bank": "Genehtik_Seeds",
+      "fname": "genehtik-super-silver-bilbo-bud.jpg"
+    },
+    {
+      "id": "genehtik-txees-bilbo",
+      "name": "Txees_Bilbo",
+      "bank": "Genehtik_Seeds",
+      "fname": "genehtik-txees-bilbo-bud.jpg"
+    },
+    {
+      "id": "blimburn-gorilla-glue-4",
+      "name": "Gorilla_Glue_4",
+      "bank": "Blimburn_Seeds",
+      "fname": "blimburn-gorilla-glue-4-bud.jpg"
+    },
+    {
+      "id": "blimburn-green-crack",
+      "name": "Green_Crack",
+      "bank": "Blimburn_Seeds",
+      "fname": "blimburn-green-crack-bud.jpg"
+    },
+    {
+      "id": "blimburn-bruce-banner-3",
+      "name": "Bruce_Banner_3",
+      "bank": "Blimburn_Seeds",
+      "fname": "blimburn-bruce-banner-3-bud.jpg"
+    },
+    {
+      "id": "heavyweight-fruit-punch",
+      "name": "Fruit_Punch",
+      "bank": "Heavyweight_Seeds",
+      "fname": "heavyweight-fruit-punch-bud.jpg"
+    },
+    {
+      "id": "heavyweight-money-bush",
+      "name": "Money_Bush",
+      "bank": "Heavyweight_Seeds",
+      "fname": "heavyweight-money-bush-bud.jpg"
+    },
+    {
+      "id": "heavyweight-lemon-cake",
+      "name": "Lemon_Cake",
+      "bank": "Heavyweight_Seeds",
+      "fname": "heavyweight-lemon-cake-bud.jpg"
+    },
+    {
+      "id": "ghs-super-silver-haze",
+      "name": "Super_Silver_Haze",
+      "bank": "Green_House_Seed",
+      "fname": "ghs-super-silver-haze-bud.jpg"
+    },
+    {
+      "id": "ghs-exodus-cheese",
+      "name": "Exodus_Cheese",
+      "bank": "Green_House_Seed",
+      "fname": "ghs-exodus-cheese-bud.jpg"
+    },
+    {
+      "id": "aceseeds-golden-tiger",
+      "name": "Golden_Tiger",
+      "bank": "ACE_Seeds",
+      "fname": "aceseeds-golden-tiger-bud.jpg"
+    },
+    {
+      "id": "aceseeds-pakistan-chitral-kush",
+      "name": "Pakistan_Chitral_Kush",
+      "bank": "ACE_Seeds",
+      "fname": "aceseeds-pakistan-chitral-kush-bud.jpg"
+    },
+    {
+      "id": "aceseeds-malawi",
+      "name": "Malawi",
+      "bank": "ACE_Seeds",
+      "fname": "aceseeds-malawi-bud.jpg"
+    },
+    {
+      "id": "aceseeds-congo",
+      "name": "Congo",
+      "bank": "ACE_Seeds",
+      "fname": "aceseeds-congo-bud.jpg"
+    },
+    {
+      "id": "sensi-black-domina",
+      "name": "Black_Domina",
+      "bank": "Sensi_Seeds",
+      "fname": "sensi-black-domina-bud.jpg"
+    },
+    {
+      "id": "sensi-northern-lights",
+      "name": "Northern_Lights",
+      "bank": "Sensi_Seeds",
+      "fname": "sensi-northern-lights-bud.jpg"
+    },
+    {
+      "id": "sensi-jack-herer",
+      "name": "Jack_Herer",
+      "bank": "Sensi_Seeds",
+      "fname": "sensi-jack-herer-bud.jpg"
+    },
+    {
+      "id": "sensi-hindu-kush",
+      "name": "Hindu_Kush",
+      "bank": "Sensi_Seeds",
+      "fname": "sensi-hindu-kush-bud.jpg"
+    },
+    {
+      "id": "sensi-skunk-1",
+      "name": "Skunk_1",
+      "bank": "Sensi_Seeds",
+      "fname": "sensi-skunk-1-bud.jpg"
+    },
+    {
+      "id": "sensi-hash-plant",
+      "name": "Hash_Plant",
+      "bank": "Sensi_Seeds",
+      "fname": "sensi-hash-plant-bud.jpg"
+    },
+    {
+      "id": "sensi-super-skunk",
+      "name": "Super_Skunk",
+      "bank": "Sensi_Seeds",
+      "fname": "sensi-super-skunk-bud.jpg"
+    },
+    {
+      "id": "rkiem-icer",
+      "name": "Icer",
+      "bank": "R-Kiem_Seeds",
+      "fname": "rkiem-icer-bud.jpg"
+    },
+    {
+      "id": "rkiem-negra-44",
+      "name": "Negra_44",
+      "bank": "R-Kiem_Seeds",
+      "fname": "rkiem-negra-44-bud.jpg"
+    },
+    {
+      "id": "dna-kandy-kush",
+      "name": "Kandy_Kush",
+      "bank": "DNA_Genetics",
+      "fname": "dna-kandy-kush.jpg"
+    },
+    {
+      "id": "dna-kosher-kush",
+      "name": "Kosher_Kush",
+      "bank": "DNA_Genetics",
+      "fname": "dna-kosher-kush.jpg"
+    },
+    {
+      "id": "dinafem-blue-widow",
+      "name": "Blue_Widow",
+      "bank": "Dinafem_Seeds",
+      "fname": "dinafem-blue-widow.jpg"
+    },
+    {
+      "id": "bf-laughing-buddha",
+      "name": "Laughing_Buddha",
+      "bank": "Barney's_Farm",
+      "fname": "bf-laughing-buddha.jpg"
+    },
+    {
+      "id": "bf-sherbet-queen",
+      "name": "Sherbet_Queen",
+      "bank": "Barney's_Farm",
+      "fname": "bf-sherbet-queen.jpg"
+    },
+    {
+      "id": "oo-super-skunk",
+      "name": "Super_Skunk",
+      "bank": "00_Seeds_Bank",
+      "fname": "oo-super-skunk.jpg"
+    },
+    {
+      "id": "oo-chemdawg",
+      "name": "Chemdawg",
+      "bank": "00_Seeds_Bank",
+      "fname": "oo-chemdawg.jpg"
+    },
+    {
+      "id": "rqs-northern-light",
+      "name": "Northern_Light",
+      "bank": "Royal_Queen_Seeds",
+      "fname": "rqs-northern-light.jpg"
+    }
+  ]
+}

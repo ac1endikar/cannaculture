@@ -1,0 +1,897 @@
+{
+  "success": [
+    {
+      "id": "ripper-zombie-kush",
+      "name": "Zombie Kush",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-zombie-kush.jpg",
+      "status": "OK_01SEEDS",
+      "size_kb": 59,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Ripper_Seeds/Ripper_Seeds_-_Zombie_Kush.jpg"
+    },
+    {
+      "id": "dinafem-dinamex",
+      "name": "Dinamex",
+      "bank": "Dinafem Seeds",
+      "fname": "dinafem-dinamex.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 76,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Dinafem/Dinafem_-_Dinamex.jpg"
+    },
+    {
+      "id": "aceseeds-violeta",
+      "name": "Violeta",
+      "bank": "ACE Seeds",
+      "fname": "aceseeds-violeta-bud.jpg",
+      "status": "OK_01SEEDS",
+      "size_kb": 84,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/ACE_Seeds/ACE_Seeds_-_Violeta.jpg"
+    },
+    {
+      "id": "aceseeds-pakistan-chitral-kush",
+      "name": "Pakistan Chitral Kush",
+      "bank": "ACE Seeds",
+      "fname": "aceseeds-pakistan-chitral-kush-bud.jpg",
+      "status": "OK_01SEEDS",
+      "size_kb": 75,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/ACE_Seeds/ACE_Seeds_-_Pakistan_Chitral_Kush.jpg"
+    },
+    {
+      "id": "rkiem-2y2",
+      "name": "2y2",
+      "bank": "R-Kiem Seeds",
+      "fname": "rkiem-2y2-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 331,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/R-KIEM_Seeds/R-KIEM_Seeds_-_2y2.jpg"
+    },
+    {
+      "id": "aceseeds-purple-haze-x-malawi",
+      "name": "Purple Haze x Malawi",
+      "bank": "ACE Seeds",
+      "fname": "aceseeds-purple-haze-x-malawi-bud.jpg",
+      "status": "OK_01SEEDS",
+      "size_kb": 73,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/ACE_Seeds/ACE_Seeds_-_Purple_Haze_x_Malawi.jpg"
+    },
+    {
+      "id": "aceseeds-super-malawi-haze",
+      "name": "Super Malawi Haze",
+      "bank": "ACE Seeds",
+      "fname": "aceseeds-super-malawi-haze-bud.jpg",
+      "status": "OK_01SEEDS",
+      "size_kb": 107,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/ACE_Seeds/ACE_Seeds_-_Super_Malawi_Haze.jpg"
+    },
+    {
+      "id": "pyramid-blue-pyramid",
+      "name": "Blue Pyramid",
+      "bank": "Pyramid Seeds",
+      "fname": "pyramid-blue-pyramid-bud.jpg",
+      "status": "OK_01SEEDS",
+      "size_kb": 25,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Pyramid_Seeds/Pyramid_Seeds_-_Blue_Pyramid.jpg"
+    },
+    {
+      "id": "aceseeds-golden-tiger",
+      "name": "Golden Tiger",
+      "bank": "ACE Seeds",
+      "fname": "aceseeds-golden-tiger-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 32,
+      "url": "https://seedfinder.eu/storage/pics/galerie/ACE_Seeds/Golden_Tiger/28112554461851238.jpg"
+    },
+    {
+      "id": "pyramid-anubis",
+      "name": "Anubis",
+      "bank": "Pyramid Seeds",
+      "fname": "pyramid-anubis-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 22,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Pyramid_Seeds/Pyramid_Seeds_-_Anubis.jpg"
+    },
+    {
+      "id": "rkiem-el-xupet-negre",
+      "name": "El Xupet Negre",
+      "bank": "R-Kiem Seeds",
+      "fname": "rkiem-el-xupet-negre-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 102,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/R-KIEM_Seeds/01K9PNE5AC3HHZ1NNSSS4296HD.jpg"
+    },
+    {
+      "id": "aceseeds-guawi",
+      "name": "Guawi",
+      "bank": "ACE Seeds",
+      "fname": "aceseeds-guawi-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 69,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/ACE_Seeds/ACE_Seeds_-_Guawi.jpg"
+    },
+    {
+      "id": "heavyweight-monster-profit",
+      "name": "Monster Profit",
+      "bank": "Heavyweight Seeds",
+      "fname": "heavyweight-monster-profit-bud.jpg",
+      "status": "OK_01SEEDS",
+      "size_kb": 78,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Heavyweight_Seeds/Heavyweight_Seeds_-_Monster_Profit.jpg"
+    },
+    {
+      "id": "cannabiogen-jamaica-blue-mountain",
+      "name": "Jamaica Blue Mountain",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-jamaica-blue-mountain-bud.jpg",
+      "status": "OK_01SEEDS",
+      "size_kb": 129,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Cannabiogen/Cannabiogen_-_Jamaica_Blue_Mountain.jpg"
+    },
+    {
+      "id": "heavyweight-budzilla",
+      "name": "Budzilla",
+      "bank": "Heavyweight Seeds",
+      "fname": "heavyweight-budzilla-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 176,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Heavyweight_Seeds/Heavyweight_Seeds_-_Budzilla.jpg"
+    },
+    {
+      "id": "cannabiogen-hash-fruit",
+      "name": "Hash Fruit",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-hash-fruit-bud.jpg",
+      "status": "OK_01SEEDS",
+      "size_kb": 541,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Cannabiogen/Cannabiogen_-_Hash_Fruit.jpg"
+    },
+    {
+      "id": "heavyweight-superb-og",
+      "name": "Superb OG",
+      "bank": "Heavyweight Seeds",
+      "fname": "heavyweight-superb-og-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 674,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Heavyweight_Seeds/Heavyweight_Seeds_-_Superb_OG.jpg"
+    },
+    {
+      "id": "cannabiogen-panama-dc",
+      "name": "Panama DC",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-panama-dc-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 65,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Cannabiogen/Cannabiogen_-_Panama_DC.jpg"
+    },
+    {
+      "id": "heavyweight-goldmine",
+      "name": "Goldmine",
+      "bank": "Heavyweight Seeds",
+      "fname": "heavyweight-goldmine-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 838,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Heavyweight_Seeds/Heavyweight_Seeds_-_Goldmine.jpg"
+    },
+    {
+      "id": "heavyweight-dream-machine",
+      "name": "Dream Machine",
+      "bank": "Heavyweight Seeds",
+      "fname": "heavyweight-dream-machine-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 109,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Heavyweight_Seeds/Heavyweight_Seeds_-_Dream_Machine.jpg"
+    },
+    {
+      "id": "serious-serious-happiness",
+      "name": "Serious Happiness",
+      "bank": "Serious Seeds",
+      "fname": "serious-serious-happiness-bud.jpg",
+      "status": "OK_01SEEDS",
+      "size_kb": 1140,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Serious_Seeds/Serious_Seeds_-_Serious_Happiness.jpg"
+    },
+    {
+      "id": "ghs-super-silver-haze",
+      "name": "Super Silver Haze",
+      "bank": "Green House Seed Co.",
+      "fname": "ghs-super-silver-haze-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 22,
+      "url": "https://seedfinder.eu/storage/pics/galerie/Green_House_Seeds/Super_Silver_Haze/21122551403784749.jpg"
+    },
+    {
+      "id": "serious-kali-bubba",
+      "name": "Kali Bubba",
+      "bank": "Serious Seeds",
+      "fname": "serious-kali-bubba-bud.jpg",
+      "status": "OK_01SEEDS",
+      "size_kb": 275,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Serious_Seeds/Serious_Seeds_-_Kali_Bubba.jpg"
+    },
+    {
+      "id": "ghs-exodus-cheese",
+      "name": "Exodus Cheese",
+      "bank": "Green House Seed Co.",
+      "fname": "ghs-exodus-cheese-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 85,
+      "url": "https://seedfinder.eu/storage/pics/01seeds/Green_House_Seeds/Green_House_Seeds_-_Exodus_Cheese.jpg"
+    },
+    {
+      "id": "ghs-super-lemon-haze",
+      "name": "Super Lemon Haze",
+      "bank": "Green House Seed Co.",
+      "fname": "ghs-super-lemon-haze-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 30,
+      "url": "https://seedfinder.eu/storage/pics/galerie/Green_House_Seeds/Super_Lemon_Haze/04032604022425671.jpg"
+    },
+    {
+      "id": "serious-serious-6",
+      "name": "Serious 6",
+      "bank": "Serious Seeds",
+      "fname": "serious-serious-6-bud.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 57,
+      "url": "https://seedfinder.eu/storage/pics/galerie/Serious_Seeds/Serious_6/15052693792561870.jpg"
+    },
+    {
+      "id": "dna-cannalope-haze",
+      "name": "Cannalope Haze",
+      "bank": "DNA Genetics",
+      "fname": "dna-cannalope-haze.jpg",
+      "status": "OK_PAGE",
+      "size_kb": 30,
+      "url": "https://seedfinder.eu/storage/pics/galerie/DNA_Genetics_Seeds/Cannalope_Haze/21122562023963406.jpg"
+    }
+  ],
+  "failed": [
+    {
+      "id": "rqs-northern-light",
+      "name": "Northern Light",
+      "bank": "Royal Queen Seeds",
+      "fname": "rqs-northern-light.jpg",
+      "status": "PENDING",
+      "size_kb": 32
+    },
+    {
+      "id": "ripper-toxic",
+      "name": "Toxic",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-toxic.jpg",
+      "status": "PENDING",
+      "size_kb": 58
+    },
+    {
+      "id": "sweet-green-poison",
+      "name": "Green Poison",
+      "bank": "Sweet Seeds",
+      "fname": "sweet-green-poison.jpg",
+      "status": "PENDING",
+      "size_kb": 43
+    },
+    {
+      "id": "dp-auto-blueberry",
+      "name": "Auto Blueberry",
+      "bank": "Dutch Passion",
+      "fname": "dp-auto-blueberry.jpg",
+      "status": "PENDING",
+      "size_kb": 42
+    },
+    {
+      "id": "ripper-jungle-punch",
+      "name": "Jungle Punch",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-jungle-punch.jpg",
+      "status": "PENDING",
+      "size_kb": 51
+    },
+    {
+      "id": "rqs-lemon-shining-silver",
+      "name": "Lemon Shining Silver Haze",
+      "bank": "Royal Queen Seeds",
+      "fname": "rqs-lemon-shining-silver.jpg",
+      "status": "PENDING",
+      "size_kb": 33
+    },
+    {
+      "id": "bf-sherbet-queen",
+      "name": "Sherbet Queen",
+      "bank": "Barney's Farm",
+      "fname": "bf-sherbet-queen.jpg",
+      "status": "PENDING",
+      "size_kb": 58
+    },
+    {
+      "id": "ripper-haze",
+      "name": "Ripper Haze",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-haze.jpg",
+      "status": "PENDING",
+      "size_kb": 40
+    },
+    {
+      "id": "ripper-kroma",
+      "name": "Kroma",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-kroma.jpg",
+      "status": "PENDING",
+      "size_kb": 56
+    },
+    {
+      "id": "sweet-tropicanna-poison",
+      "name": "Tropicanna Poison",
+      "bank": "Sweet Seeds",
+      "fname": "sweet-tropicanna-poison.jpg",
+      "status": "PENDING",
+      "size_kb": 43
+    },
+    {
+      "id": "hso-og-eddy-lepp",
+      "name": "OG Eddy Lepp",
+      "bank": "Humboldt Seed",
+      "fname": "hso-og-eddy-lepp.jpg",
+      "status": "PENDING",
+      "size_kb": 54
+    },
+    {
+      "id": "bsf-red-critical-auto",
+      "name": "Red Critical XXL Auto",
+      "bank": "BSF Seeds",
+      "fname": "bsf-red-critical-auto.jpg",
+      "status": "PENDING",
+      "size_kb": 43
+    },
+    {
+      "id": "bsf-el-gaucho-fast",
+      "name": "El Gaucho (Faster)",
+      "bank": "BSF Seeds",
+      "fname": "bsf-el-gaucho-fast.jpg",
+      "status": "PENDING",
+      "size_kb": 41
+    },
+    {
+      "id": "oo-chemdawg",
+      "name": "Chemdawg",
+      "bank": "00 Seeds Bank",
+      "fname": "oo-chemdawg.jpg",
+      "status": "PENDING",
+      "size_kb": 44
+    },
+    {
+      "id": "philo-cali-orange-bud",
+      "name": "Cali Orange Bud",
+      "bank": "Philosopher Seeds",
+      "fname": "philo-cali-orange-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 53
+    },
+    {
+      "id": "bf-dos-si-dos-33",
+      "name": "Dos Si Dos 33",
+      "bank": "Barney's Farm",
+      "fname": "bf-dos-si-dos-33.jpg",
+      "status": "PENDING",
+      "size_kb": 54
+    },
+    {
+      "id": "bsf-green-tiger-fast",
+      "name": "Green Tiger (Faster)",
+      "bank": "BSF Seeds",
+      "fname": "bsf-green-tiger-fast.jpg",
+      "status": "PENDING",
+      "size_kb": 43
+    },
+    {
+      "id": "dinafem-critical-auto-2",
+      "name": "Critical + 2.0 Auto",
+      "bank": "Dinafem Seeds",
+      "fname": "dinafem-critical-auto-2.jpg",
+      "status": "PENDING",
+      "size_kb": 43
+    },
+    {
+      "id": "philo-sugar-black-rose",
+      "name": "Sugar Black Rose",
+      "bank": "Philosopher Seeds",
+      "fname": "philo-sugar-black-rose.jpg",
+      "status": "PENDING",
+      "size_kb": 37
+    },
+    {
+      "id": "bsf-obg-kush-fast",
+      "name": "OBG Kush (Faster)",
+      "bank": "BSF Seeds",
+      "fname": "bsf-obg-kush-fast.jpg",
+      "status": "PENDING",
+      "size_kb": 44
+    },
+    {
+      "id": "dinafem-blue-widow",
+      "name": "Blue Widow",
+      "bank": "Dinafem Seeds",
+      "fname": "dinafem-blue-widow.jpg",
+      "status": "PENDING",
+      "size_kb": 42
+    },
+    {
+      "id": "rkiem-sublimator",
+      "name": "Sublimator",
+      "bank": "R-Kiem Seeds",
+      "fname": "rkiem-sublimator-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 30
+    },
+    {
+      "id": "bsf-lebron-haze-auto",
+      "name": "Lebron Haze XXL Auto",
+      "bank": "BSF Seeds",
+      "fname": "bsf-lebron-haze-auto.jpg",
+      "status": "PENDING",
+      "size_kb": 33
+    },
+    {
+      "id": "sweet-black-jack",
+      "name": "Black Jack",
+      "bank": "Sweet Seeds",
+      "fname": "sweet-black-jack.jpg",
+      "status": "PENDING",
+      "size_kb": 43
+    },
+    {
+      "id": "rkiem-zkiem",
+      "name": "ZKiem",
+      "bank": "R-Kiem Seeds",
+      "fname": "rkiem-zkiem-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 37
+    },
+    {
+      "id": "rkiem-eli",
+      "name": "Eli",
+      "bank": "R-Kiem Seeds",
+      "fname": "rkiem-eli-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 37
+    },
+    {
+      "id": "positronics-purple-haze",
+      "name": "Purple Haze #1",
+      "bank": "Positronics Seeds",
+      "fname": "positronics-purple-haze-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 39
+    },
+    {
+      "id": "pyramid-ramses",
+      "name": "Ramses",
+      "bank": "Pyramid Seeds",
+      "fname": "pyramid-ramses-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 50
+    },
+    {
+      "id": "blimburn-mamba-negra",
+      "name": "Mamba Negra",
+      "bank": "Blimburn Seeds",
+      "fname": "blimburn-mamba-negra-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 46
+    },
+    {
+      "id": "pyramid-wembley",
+      "name": "Wembley",
+      "bank": "Pyramid Seeds",
+      "fname": "pyramid-wembley-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 36
+    },
+    {
+      "id": "blimburn-bruce-banner-3",
+      "name": "Bruce Banner #3",
+      "bank": "Blimburn Seeds",
+      "fname": "blimburn-bruce-banner-3-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 41
+    },
+    {
+      "id": "rkiem-muse",
+      "name": "Muse",
+      "bank": "R-Kiem Seeds",
+      "fname": "rkiem-muse-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 59
+    },
+    {
+      "id": "aceseeds-malawi",
+      "name": "Malawi",
+      "bank": "ACE Seeds",
+      "fname": "aceseeds-malawi-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 50
+    },
+    {
+      "id": "pyramid-nefertiti",
+      "name": "Nefertiti",
+      "bank": "Pyramid Seeds",
+      "fname": "pyramid-nefertiti-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 41
+    },
+    {
+      "id": "rkiem-icer",
+      "name": "Icer",
+      "bank": "R-Kiem Seeds",
+      "fname": "rkiem-icer-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 22
+    },
+    {
+      "id": "rkiem-klementine",
+      "name": "Klementine",
+      "bank": "R-Kiem Seeds",
+      "fname": "rkiem-klementine-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 44
+    },
+    {
+      "id": "rkiem-portela",
+      "name": "Portela",
+      "bank": "R-Kiem Seeds",
+      "fname": "rkiem-portela-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 46
+    },
+    {
+      "id": "pyramid-kryptonite",
+      "name": "Kryptonite",
+      "bank": "Pyramid Seeds",
+      "fname": "pyramid-kryptonite-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 39
+    },
+    {
+      "id": "blimburn-girl-scout-cookies",
+      "name": "Girl Scout Cookies",
+      "bank": "Blimburn Seeds",
+      "fname": "blimburn-girl-scout-cookies-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 45
+    },
+    {
+      "id": "blimburn-gorilla-glue-4",
+      "name": "Gorilla Glue #4",
+      "bank": "Blimburn Seeds",
+      "fname": "blimburn-gorilla-glue-4-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 49
+    },
+    {
+      "id": "blimburn-granddaddy-purple",
+      "name": "Granddaddy Purple",
+      "bank": "Blimburn Seeds",
+      "fname": "blimburn-granddaddy-purple-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 38
+    },
+    {
+      "id": "pyramid-galaxy",
+      "name": "Galaxy",
+      "bank": "Pyramid Seeds",
+      "fname": "pyramid-galaxy-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 38
+    },
+    {
+      "id": "blimburn-santa-muerte",
+      "name": "Santa Muerte",
+      "bank": "Blimburn Seeds",
+      "fname": "blimburn-santa-muerte-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 44
+    },
+    {
+      "id": "blimburn-green-crack",
+      "name": "Green Crack",
+      "bank": "Blimburn Seeds",
+      "fname": "blimburn-green-crack-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 43
+    },
+    {
+      "id": "cannabiogen-sandstorm",
+      "name": "Sandstorm",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-sandstorm-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 64
+    },
+    {
+      "id": "blimburn-chocolopez",
+      "name": "Chocolopez",
+      "bank": "Blimburn Seeds",
+      "fname": "blimburn-chocolopez-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 59
+    },
+    {
+      "id": "blimburn-guanabana",
+      "name": "Guanabana",
+      "bank": "Blimburn Seeds",
+      "fname": "blimburn-guanabana-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 41
+    },
+    {
+      "id": "heavyweight-strawberry-cake",
+      "name": "Strawberry Cake",
+      "bank": "Heavyweight Seeds",
+      "fname": "heavyweight-strawberry-cake-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 52
+    },
+    {
+      "id": "cannabiogen-leshaze",
+      "name": "Leshaze",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-leshaze-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 51
+    },
+    {
+      "id": "cannabiogen-nepal-jam",
+      "name": "Nepal Jam",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-nepal-jam-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 53
+    },
+    {
+      "id": "serious-ak-47",
+      "name": "AK-47",
+      "bank": "Serious Seeds",
+      "fname": "serious-ak-47-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 37
+    },
+    {
+      "id": "blimburn-bcn-diesel",
+      "name": "Bcn Diesel",
+      "bank": "Blimburn Seeds",
+      "fname": "blimburn-bcn-diesel-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 60
+    },
+    {
+      "id": "sensi-sensi-amnesia",
+      "name": "Sensi Amnesia",
+      "bank": "Sensi Seeds",
+      "fname": "sensi-sensi-amnesia-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 60
+    },
+    {
+      "id": "cannabiogen-caribe",
+      "name": "Caribe",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-caribe-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 36
+    },
+    {
+      "id": "serious-white-russian",
+      "name": "White Russian",
+      "bank": "Serious Seeds",
+      "fname": "serious-white-russian-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 30
+    },
+    {
+      "id": "ripper-pink-rozay",
+      "name": "Pink Rozay",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-pink-rozay.jpg",
+      "status": "PENDING",
+      "size_kb": 0
+    },
+    {
+      "id": "ghs-kings-juice",
+      "name": "King's Juice",
+      "bank": "Green House Seed Co.",
+      "fname": "ghs-kings-juice-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 52
+    },
+    {
+      "id": "cannabiogen-peyote-purple",
+      "name": "Peyote Purple",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-peyote-purple-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 54
+    },
+    {
+      "id": "ghs-hawaiian-snow",
+      "name": "Hawaiian Snow",
+      "bank": "Green House Seed Co.",
+      "fname": "ghs-hawaiian-snow-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 51
+    },
+    {
+      "id": "cannabiogen-mangobiche-kush",
+      "name": "Mangobiche Kush",
+      "bank": "Cannabiogen",
+      "fname": "cannabiogen-mangobiche-kush-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 35
+    },
+    {
+      "id": "serious-biddy-early",
+      "name": "Biddy Early",
+      "bank": "Serious Seeds",
+      "fname": "serious-biddy-early-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 50
+    },
+    {
+      "id": "ripper-candy-crack",
+      "name": "Candy Crack",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-candy-crack.jpg",
+      "status": "PENDING",
+      "size_kb": 0
+    },
+    {
+      "id": "ripper-zombie-wash",
+      "name": "Zombiewash",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-zombie-wash.jpg",
+      "status": "PENDING",
+      "size_kb": 0
+    },
+    {
+      "id": "dna-kosher-kush",
+      "name": "Kosher Kush",
+      "bank": "DNA Genetics",
+      "fname": "dna-kosher-kush.jpg",
+      "status": "PENDING",
+      "size_kb": 43
+    },
+    {
+      "id": "ripper-juicy-zkittlez",
+      "name": "Juicy Zkittlez",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-juicy-zkittlez.jpg",
+      "status": "PENDING",
+      "size_kb": 0
+    },
+    {
+      "id": "dp-skywalker-og",
+      "name": "Skywalker OG",
+      "bank": "Dutch Passion",
+      "fname": "dp-skywalker-og.jpg",
+      "status": "PENDING",
+      "size_kb": 0
+    },
+    {
+      "id": "bf-zkittlez-og",
+      "name": "Zkittlez OG",
+      "bank": "Barney's Farm",
+      "fname": "bf-zkittlez-og.jpg",
+      "status": "PENDING",
+      "size_kb": 0
+    },
+    {
+      "id": "rqs-honey-cream",
+      "name": "Honey Cream",
+      "bank": "Royal Queen Seeds",
+      "fname": "rqs-honey-cream.jpg",
+      "status": "PENDING",
+      "size_kb": 0
+    },
+    {
+      "id": "dna-lemon-skunk",
+      "name": "Lemon Skunk",
+      "bank": "DNA Genetics",
+      "fname": "dna-lemon-skunk.jpg",
+      "status": "PENDING",
+      "size_kb": 29
+    },
+    {
+      "id": "ripper-fuel-og",
+      "name": "Ripper Fuel",
+      "bank": "Ripper Seeds",
+      "fname": "ripper-fuel-og.jpg",
+      "status": "PENDING",
+      "size_kb": 0
+    },
+    {
+      "id": "phil-snow-storm",
+      "name": "Snow Storm",
+      "bank": "Philosopher Seeds",
+      "fname": "philo-snow-storm.jpg",
+      "status": "PENDING",
+      "size_kb": 0
+    },
+    {
+      "id": "raw-peeled-banana",
+      "name": "Peeled Banana",
+      "bank": "Raw Genetics",
+      "fname": "raw-peeled-banana.jpg",
+      "status": "PENDING",
+      "size_kb": 56
+    },
+    {
+      "id": "serious-warlock",
+      "name": "Warlock",
+      "bank": "Serious Seeds",
+      "fname": "serious-warlock-bud.jpg",
+      "status": "PENDING",
+      "size_kb": 57
+    },
+    {
+      "id": "dna-cataract-kush",
+      "name": "Cataract Kush",
+      "bank": "DNA Genetics",
+      "fname": "dna-cataract-kush.jpg",
+      "status": "PENDING",
+      "size_kb": 53
+    },
+    {
+      "id": "00s-white-smurf",
+      "name": "White Smurf Auto",
+      "bank": "00 Seeds Bank",
+      "fname": "00s-white-smurf.jpg",
+      "status": "PENDING",
+      "size_kb": 0
+    },
+    {
+      "id": "00s-cheese-xl",
+      "name": "Cheese XL Auto",
+      "bank": "00 Seeds Bank",
+      "fname": "00s-cheese-xl.jpg",
+      "status": "PENDING",
+      "size_kb": 0
+    },
+    {
+      "id": "00s-afghan-mass",
+      "name": "Afghan Mass",
+      "bank": "00 Seeds Bank",
+      "fname": "oo-super-skunk.jpg",
+      "status": "PENDING",
+      "size_kb": 23
+    },
+    {
+      "id": "dna-sleestack",
+      "name": "Sleestack",
+      "bank": "DNA Genetics",
+      "fname": "dna-sleestack.jpg",
+      "status": "PENDING",
+      "size_kb": 45
+    },
+    {
+      "id": "dna-sour-tangie",
+      "name": "Sour Tangie",
+      "bank": "DNA Genetics",
+      "fname": "dna-sour-tangie.jpg",
+      "status": "PENDING",
+      "size_kb": 34
+    },
+    {
+      "id": "dna-gmo-kosher",
+      "name": "GMO Kosher",
+      "bank": "DNA Genetics",
+      "fname": "dna-gmo-kosher.jpg",
+      "status": "PENDING",
+      "size_kb": 50
+    },
+    {
+      "id": "tfd-the-real-mccoy",
+      "name": "The Real McCoy",
+      "bank": "The Flying Dutchmen",
+      "fname": "tfd-the-real-mccoy.jpg",
+      "status": "PENDING",
+      "size_kb": 60
+    }
+  ]
+}

@@ -1,0 +1,5430 @@
+{
+  "total_strains": 403,
+  "conformant_count": 93,
+  "non_conformant_count": 310,
+  "non_conformant_items": [
+    {
+      "strain": {
+        "id": "ripper-kmintz",
+        "name": "Kmintz",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-kmintz-plant.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 187.5,
+      "pct_light": 6.0,
+      "corner_lum": 65.7
+    },
+    {
+      "strain": {
+        "id": "ripper-radical-juice",
+        "name": "Radical Juice",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-radical-juice-plant.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.562 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (38.9% bordes claros > 30.0%)"
+      ],
+      "w": 1125,
+      "h": 2000,
+      "ratio": 0.562,
+      "size_kb": 463.7,
+      "pct_light": 38.9,
+      "corner_lum": 156.2
+    },
+    {
+      "strain": {
+        "id": "ripper-washing-machine",
+        "name": "Washing Machine",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-washing-machine.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.697 fuera de [0.9, 1.1])"
+      ],
+      "w": 1045,
+      "h": 1500,
+      "ratio": 0.697,
+      "size_kb": 237.7,
+      "pct_light": 8.5,
+      "corner_lum": 157.5
+    },
+    {
+      "strain": {
+        "id": "ripper-sour-ripper",
+        "name": "Sour Ripper",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-sour-ripper-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.773 fuera de [0.9, 1.1])",
+        "Baja resolución (541x700 px < 800x800)"
+      ],
+      "w": 541,
+      "h": 700,
+      "ratio": 0.773,
+      "size_kb": 368.5,
+      "pct_light": 3.6,
+      "corner_lum": 100.4
+    },
+    {
+      "strain": {
+        "id": "ripper-ripper-haze",
+        "name": "Ripper Haze",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-haze-flowering.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (59.4% bordes claros > 30.0%)"
+      ],
+      "w": 1200,
+      "h": 1200,
+      "ratio": 1.0,
+      "size_kb": 276.4,
+      "pct_light": 59.4,
+      "corner_lum": 187.6
+    },
+    {
+      "strain": {
+        "id": "ripper-hawaiian-wave",
+        "name": "Hawaiian Wave",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-hawaiian-wave-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.5 fuera de [0.9, 1.1])",
+        "Baja resolución (960x640 px < 800x800)"
+      ],
+      "w": 960,
+      "h": 640,
+      "ratio": 1.5,
+      "size_kb": 97.5,
+      "pct_light": 0.0,
+      "corner_lum": 67.3
+    },
+    {
+      "strain": {
+        "id": "ripper-double-glock",
+        "name": "Double Glock",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-double-glock-plant.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)",
+        "Fondo blanco/claro residual (39.6% bordes claros > 30.0%)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 27.9,
+      "pct_light": 39.6,
+      "corner_lum": 133.8
+    },
+    {
+      "strain": {
+        "id": "ripper-criminal-plus",
+        "name": "Criminal +",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-criminal-plus-plant.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 65.3,
+      "pct_light": 0.0,
+      "corner_lum": 17.7
+    },
+    {
+      "strain": {
+        "id": "ripper-toxic",
+        "name": "Toxic",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-toxic-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.528 fuera de [0.9, 1.1])"
+      ],
+      "w": 2141,
+      "h": 1401,
+      "ratio": 1.528,
+      "size_kb": 290.2,
+      "pct_light": 17.1,
+      "corner_lum": 110.9
+    },
+    {
+      "strain": {
+        "id": "ripper-kroma",
+        "name": "Kroma",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-kroma-plant.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (100.0% bordes claros > 30.0%)"
+      ],
+      "w": 800,
+      "h": 800,
+      "ratio": 1.0,
+      "size_kb": 166.2,
+      "pct_light": 100.0,
+      "corner_lum": 255.0
+    },
+    {
+      "strain": {
+        "id": "ripper-haze",
+        "name": "Ripper Haze",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-haze-flowering.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (59.4% bordes claros > 30.0%)"
+      ],
+      "w": 1200,
+      "h": 1200,
+      "ratio": 1.0,
+      "size_kb": 276.4,
+      "pct_light": 59.4,
+      "corner_lum": 187.6
+    },
+    {
+      "strain": {
+        "id": "ripper-candygaz",
+        "name": "CandyGaz",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-candygaz.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.5 fuera de [0.9, 1.1])"
+      ],
+      "w": 1200,
+      "h": 800,
+      "ratio": 1.5,
+      "size_kb": 387.9,
+      "pct_light": 0.6,
+      "corner_lum": 21.9
+    },
+    {
+      "strain": {
+        "id": "ripper-jungle-punch",
+        "name": "Jungle Punch",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-jungle-punch-flowering.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])",
+        "Baja resolución (667x1000 px < 800x800)"
+      ],
+      "w": 667,
+      "h": 1000,
+      "ratio": 0.667,
+      "size_kb": 385.4,
+      "pct_light": 1.9,
+      "corner_lum": 92.3
+    },
+    {
+      "strain": {
+        "id": "bf-runtz-muffin",
+        "name": "Runtz Muffin",
+        "bank": "Barney",
+        "image": "img/bf-runtz-muffin.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.486 fuera de [0.9, 1.1])"
+      ],
+      "w": 1080,
+      "h": 2220,
+      "ratio": 0.486,
+      "size_kb": 431.8,
+      "pct_light": 0.0,
+      "corner_lum": 76.0
+    },
+    {
+      "strain": {
+        "id": "bf-pineapple-express",
+        "name": "Pineapple Express",
+        "bank": "Barney",
+        "image": "img/bf-pineapple-express-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 652.0,
+      "pct_light": 4.6,
+      "corner_lum": 59.6
+    },
+    {
+      "strain": {
+        "id": "bf-laughing-buddha",
+        "name": "Laughing Buddha",
+        "bank": "Barney",
+        "image": "img/bf-laughing-buddha-plant.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 624.4,
+      "pct_light": 27.8,
+      "corner_lum": 118.1
+    },
+    {
+      "strain": {
+        "id": "bf-critical-kush",
+        "name": "Critical Kush",
+        "bank": "Barney",
+        "image": "img/bf-critical-kush-plant.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 344.2,
+      "pct_light": 21.2,
+      "corner_lum": 123.9
+    },
+    {
+      "strain": {
+        "id": "bf-sherbet-queen",
+        "name": "Sherbet Queen",
+        "bank": "Barney",
+        "image": "img/bf-sherbet-queen-plant.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])",
+        "Baja resolución (600x800 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 800,
+      "ratio": 0.75,
+      "size_kb": 366.6,
+      "pct_light": 0.0,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "sweet-green-poison",
+        "name": "Green Poison",
+        "bank": "Sweet Seeds",
+        "image": "img/sweet-green-poison-plant.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.727 fuera de [0.9, 1.1])",
+        "Baja resolución (482x663 px < 800x800)"
+      ],
+      "w": 482,
+      "h": 663,
+      "ratio": 0.727,
+      "size_kb": 675.9,
+      "pct_light": 23.0,
+      "corner_lum": 143.9
+    },
+    {
+      "strain": {
+        "id": "sweet-gorilla-girl",
+        "name": "Gorilla Girl",
+        "bank": "Sweet Seeds",
+        "image": "img/sweet-gorilla-girl.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.5 fuera de [0.9, 1.1])"
+      ],
+      "w": 2304,
+      "h": 4608,
+      "ratio": 0.5,
+      "size_kb": 991.1,
+      "pct_light": 26.9,
+      "corner_lum": 89.4
+    },
+    {
+      "strain": {
+        "id": "sweet-black-jack",
+        "name": "Black Jack",
+        "bank": "Sweet Seeds",
+        "image": "img/sweet-black-jack-plant.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (62.9% bordes claros > 30.0%)"
+      ],
+      "w": 1000,
+      "h": 1023,
+      "ratio": 0.978,
+      "size_kb": 158.9,
+      "pct_light": 62.9,
+      "corner_lum": 2.7
+    },
+    {
+      "strain": {
+        "id": "sweet-tropicanna-poison",
+        "name": "Tropicanna Poison",
+        "bank": "Sweet Seeds",
+        "image": "img/sweet-tropicanna-poison-plant.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.875 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (35.5% bordes claros > 30.0%)"
+      ],
+      "w": 800,
+      "h": 914,
+      "ratio": 0.875,
+      "size_kb": 343.6,
+      "pct_light": 35.5,
+      "corner_lum": 162.9
+    },
+    {
+      "strain": {
+        "id": "sweet-s5-haze",
+        "name": "S5 Haze",
+        "bank": "Sweet Seeds",
+        "image": "img/sweet-s5-haze.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 271.9,
+      "pct_light": 24.1,
+      "corner_lum": 150.8
+    },
+    {
+      "strain": {
+        "id": "rqs-northern-light",
+        "name": "Northern Light",
+        "bank": "Royal Queen Seeds",
+        "image": "img/nirvana-northern-light-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.506 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (37.8% bordes claros > 30.0%)"
+      ],
+      "w": 4800,
+      "h": 3188,
+      "ratio": 1.506,
+      "size_kb": 2618.6,
+      "pct_light": 37.8,
+      "corner_lum": 157.6
+    },
+    {
+      "strain": {
+        "id": "rqs-amnesia-haze",
+        "name": "Amnesia Haze",
+        "bank": "Royal Queen Seeds",
+        "image": "img/rqs-amnesia-haze-plant.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.758 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (41.1% bordes claros > 30.0%)"
+      ],
+      "w": 1281,
+      "h": 1690,
+      "ratio": 0.758,
+      "size_kb": 184.8,
+      "pct_light": 41.1,
+      "corner_lum": 139.6
+    },
+    {
+      "strain": {
+        "id": "rqs-wedding-glue",
+        "name": "Wedding Glue",
+        "bank": "Royal Queen Seeds",
+        "image": "img/rqs-wedding-glue-plant.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 3096,
+      "h": 4128,
+      "ratio": 0.75,
+      "size_kb": 935.0,
+      "pct_light": 6.0,
+      "corner_lum": 92.0
+    },
+    {
+      "strain": {
+        "id": "rqs-fat-banana",
+        "name": "Fat Banana",
+        "bank": "Royal Queen Seeds",
+        "image": "img/rqs-fat-banana-plant.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)",
+        "Fondo blanco/claro residual (76.9% bordes claros > 30.0%)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 81.7,
+      "pct_light": 76.9,
+      "corner_lum": 220.7
+    },
+    {
+      "strain": {
+        "id": "rqs-lemon-shining-silver",
+        "name": "Lemon Shining Silver Haze",
+        "bank": "Royal Queen Seeds",
+        "image": "img/rqs-lemon-shining-silver.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 1673,
+      "h": 2232,
+      "ratio": 0.75,
+      "size_kb": 3006.5,
+      "pct_light": 8.4,
+      "corner_lum": 127.9
+    },
+    {
+      "strain": {
+        "id": "dp-auto-blueberry",
+        "name": "Auto Blueberry",
+        "bank": "Dutch Passion",
+        "image": "img/dp-auto-blueberry-flowering.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.8 fuera de [0.9, 1.1])"
+      ],
+      "w": 1080,
+      "h": 1350,
+      "ratio": 0.8,
+      "size_kb": 392.0,
+      "pct_light": 0.0,
+      "corner_lum": 27.5
+    },
+    {
+      "strain": {
+        "id": "dp-zkittlez",
+        "name": "Zkittlez",
+        "bank": "Dutch Passion",
+        "image": "img/dp-zkittlez-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 446.7,
+      "pct_light": 4.2,
+      "corner_lum": 51.0
+    },
+    {
+      "strain": {
+        "id": "philo-cali-orange-bud",
+        "name": "Cali Orange Bud",
+        "bank": "Philosopher Seeds",
+        "image": "img/philo-cali-orange-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 53.3,
+      "pct_light": 1.3,
+      "corner_lum": 114.5
+    },
+    {
+      "strain": {
+        "id": "philo-singha-valley",
+        "name": "Singha Valley",
+        "bank": "Philosopher Seeds",
+        "image": "img/philo-singha-valley.jpg"
+      },
+      "issues": [
+        "Baja resolución (750x750 px < 800x800)",
+        "Fondo blanco/claro residual (37.5% bordes claros > 30.0%)"
+      ],
+      "w": 750,
+      "h": 750,
+      "ratio": 1.0,
+      "size_kb": 381.2,
+      "pct_light": 37.5,
+      "corner_lum": 117.2
+    },
+    {
+      "strain": {
+        "id": "philo-sugar-black-rose",
+        "name": "Sugar Black Rose",
+        "bank": "Philosopher Seeds",
+        "image": "img/philo-sugar-black-rose-flowering.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 155.5,
+      "pct_light": 17.6,
+      "corner_lum": 118.4
+    },
+    {
+      "strain": {
+        "id": "philo-blues",
+        "name": "The Blues",
+        "bank": "Philosopher Seeds",
+        "image": "img/philo-blues.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 412.5,
+      "pct_light": 13.1,
+      "corner_lum": 160.7
+    },
+    {
+      "strain": {
+        "id": "hso-trainwreck",
+        "name": "Trainwreck",
+        "bank": "Humboldt Seed",
+        "image": "img/hso-trainwreck.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.636 fuera de [0.9, 1.1])"
+      ],
+      "w": 1050,
+      "h": 1650,
+      "ratio": 0.636,
+      "size_kb": 259.6,
+      "pct_light": 4.2,
+      "corner_lum": 59.9
+    },
+    {
+      "strain": {
+        "id": "hso-og-eddy-lepp",
+        "name": "OG Eddy Lepp",
+        "bank": "Humboldt Seed",
+        "image": "img/hso-og-eddy-lepp-plant.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 221.9,
+      "pct_light": 26.2,
+      "corner_lum": 112.7
+    },
+    {
+      "strain": {
+        "id": "hso-blue-dream",
+        "name": "Blue Dream",
+        "bank": "Humboldt Seed",
+        "image": "img/hso-blue-dream-official.jpg"
+      },
+      "issues": [
+        "Baja resolución (720x720 px < 800x800)"
+      ],
+      "w": 720,
+      "h": 720,
+      "ratio": 1.0,
+      "size_kb": 191.6,
+      "pct_light": 0.4,
+      "corner_lum": 130.5
+    },
+    {
+      "strain": {
+        "id": "hso-girl-scout-cookies",
+        "name": "Girl Scout Cookies",
+        "bank": "Humboldt Seed",
+        "image": "img/hso-girl-scout-cookies.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 275.3,
+      "pct_light": 1.4,
+      "corner_lum": 90.4
+    },
+    {
+      "strain": {
+        "id": "oo-chemdawg",
+        "name": "Chemdawg",
+        "bank": "00 Seeds Bank",
+        "image": "img/oo-chemdawg.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 44.2,
+      "pct_light": 0.1,
+      "corner_lum": 44.9
+    },
+    {
+      "strain": {
+        "id": "oo-caramel-cream",
+        "name": "Caramel Cream",
+        "bank": "00 Seeds Bank",
+        "image": "img/oo-caramel-cream.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 85.7,
+      "pct_light": 9.4,
+      "corner_lum": 101.8
+    },
+    {
+      "strain": {
+        "id": "oo-white-widow",
+        "name": "White Widow",
+        "bank": "00 Seeds Bank",
+        "image": "img/oo-white-widow.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 321.9,
+      "pct_light": 0.1,
+      "corner_lum": 33.4
+    },
+    {
+      "strain": {
+        "id": "oo-super-skunk",
+        "name": "Super Skunk",
+        "bank": "00 Seeds Bank",
+        "image": "img/oo-super-skunk-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)",
+        "Fondo blanco/claro residual (56.9% bordes claros > 30.0%)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 76.5,
+      "pct_light": 56.9,
+      "corner_lum": 188.8
+    },
+    {
+      "strain": {
+        "id": "bsf-moby-d",
+        "name": "Moby-D",
+        "bank": "BSF Seeds",
+        "image": "img/official/bsf-seeds-moby-d-feminizada.webp"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)",
+        "Fondo blanco/claro residual (57.7% bordes claros > 30.0%)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 71.0,
+      "pct_light": 57.7,
+      "corner_lum": 174.0
+    },
+    {
+      "strain": {
+        "id": "bsf-double-cookies",
+        "name": "Double Cookies",
+        "bank": "BSF Seeds",
+        "image": "img/bsf-double-cookies.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 275.3,
+      "pct_light": 1.4,
+      "corner_lum": 90.4
+    },
+    {
+      "strain": {
+        "id": "bsf-green-tiger-fast",
+        "name": "Green Tiger (Faster)",
+        "bank": "BSF Seeds",
+        "image": "img/bsf-green-tiger-fast.jpg"
+      },
+      "issues": [
+        "Baja resolución (450x450 px < 800x800)",
+        "Fondo blanco/claro residual (36.9% bordes claros > 30.0%)"
+      ],
+      "w": 450,
+      "h": 450,
+      "ratio": 1.0,
+      "size_kb": 43.9,
+      "pct_light": 36.9,
+      "corner_lum": 147.6
+    },
+    {
+      "strain": {
+        "id": "bsf-obg-kush-fast",
+        "name": "OBG Kush (Faster)",
+        "bank": "BSF Seeds",
+        "image": "img/bsf-obg-kush-fast.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 44.2,
+      "pct_light": 0.1,
+      "corner_lum": 44.9
+    },
+    {
+      "strain": {
+        "id": "bsf-el-gaucho-fast",
+        "name": "El Gaucho (Faster)",
+        "bank": "BSF Seeds",
+        "image": "img/bsf-el-gaucho-fast.jpg"
+      },
+      "issues": [
+        "Baja resolución (450x449 px < 800x800)"
+      ],
+      "w": 450,
+      "h": 449,
+      "ratio": 1.002,
+      "size_kb": 41.4,
+      "pct_light": 17.8,
+      "corner_lum": 96.5
+    },
+    {
+      "strain": {
+        "id": "bsf-rainbows",
+        "name": "Rainbows",
+        "bank": "BSF Seeds",
+        "image": "img/bsf-rainbows.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)",
+        "Fondo blanco/claro residual (64.7% bordes claros > 30.0%)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 53.5,
+      "pct_light": 64.7,
+      "corner_lum": 197.4
+    },
+    {
+      "strain": {
+        "id": "bsf-gorilla-rainbows",
+        "name": "Gorilla Rainbows",
+        "bank": "BSF Seeds",
+        "image": "img/bsf-gorilla-rainbows.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 151.3,
+      "pct_light": 1.1,
+      "corner_lum": 1.7
+    },
+    {
+      "strain": {
+        "id": "bsf-red-critical-auto",
+        "name": "Red Critical XXL Auto",
+        "bank": "BSF Seeds",
+        "image": "img/bsf-red-critical-auto.jpg"
+      },
+      "issues": [
+        "Baja resolución (450x450 px < 800x800)"
+      ],
+      "w": 450,
+      "h": 450,
+      "ratio": 1.0,
+      "size_kb": 43.8,
+      "pct_light": 12.6,
+      "corner_lum": 96.8
+    },
+    {
+      "strain": {
+        "id": "bsf-ice-cream-cake-fast",
+        "name": "Ice Cream Cake (Faster)",
+        "bank": "BSF Seeds",
+        "image": "img/bsf-ice-cream-cake-fast.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 85.7,
+      "pct_light": 9.4,
+      "corner_lum": 101.8
+    },
+    {
+      "strain": {
+        "id": "dinafem-moby-dick",
+        "name": "Moby Dick",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-moby-dick.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 199.1,
+      "pct_light": 5.8,
+      "corner_lum": 13.9
+    },
+    {
+      "strain": {
+        "id": "dinafem-critical-plus",
+        "name": "Critical +",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-critical-plus.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 170.3,
+      "pct_light": 4.9,
+      "corner_lum": 5.8
+    },
+    {
+      "strain": {
+        "id": "dinafem-og-kush",
+        "name": "OG Kush",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-og-kush.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 185.7,
+      "pct_light": 21.4,
+      "corner_lum": 67.9
+    },
+    {
+      "strain": {
+        "id": "dinafem-cheese",
+        "name": "Cheese",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-cheese.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.697 fuera de [0.9, 1.1])"
+      ],
+      "w": 1045,
+      "h": 1500,
+      "ratio": 0.697,
+      "size_kb": 237.7,
+      "pct_light": 8.5,
+      "corner_lum": 157.5
+    },
+    {
+      "strain": {
+        "id": "dinafem-industrial-plant",
+        "name": "Industrial Plant",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-industrial-plant.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 151.9,
+      "pct_light": 5.6,
+      "corner_lum": 7.4
+    },
+    {
+      "strain": {
+        "id": "dinafem-amnesia-kush",
+        "name": "Amnesia Kush",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-amnesia-kush.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 184.2,
+      "pct_light": 10.5,
+      "corner_lum": 57.1
+    },
+    {
+      "strain": {
+        "id": "dinafem-blue-widow",
+        "name": "Blue Widow",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-blue-widow.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 184.2,
+      "pct_light": 10.5,
+      "corner_lum": 57.1
+    },
+    {
+      "strain": {
+        "id": "dinafem-dinamex",
+        "name": "Dinamex",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-dinamex.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])",
+        "Baja resolución (400x600 px < 800x800)"
+      ],
+      "w": 400,
+      "h": 600,
+      "ratio": 0.667,
+      "size_kb": 76.6,
+      "pct_light": 0.2,
+      "corner_lum": 25.8
+    },
+    {
+      "strain": {
+        "id": "dinafem-critical-jack",
+        "name": "Critical Jack",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-critical-jack.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 128.0,
+      "pct_light": 3.1,
+      "corner_lum": 9.5
+    },
+    {
+      "strain": {
+        "id": "dinafem-critical-auto-2",
+        "name": "Critical + 2.0 Auto",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-critical-auto-2.jpg"
+      },
+      "issues": [
+        "Baja resolución (450x450 px < 800x800)",
+        "Fondo blanco/claro residual (36.9% bordes claros > 30.0%)"
+      ],
+      "w": 450,
+      "h": 450,
+      "ratio": 1.0,
+      "size_kb": 43.9,
+      "pct_light": 36.9,
+      "corner_lum": 147.6
+    },
+    {
+      "strain": {
+        "id": "dinafem-gorilla-auto",
+        "name": "Gorilla Auto",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-gorilla-auto.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 125.4,
+      "pct_light": 3.6,
+      "corner_lum": 11.3
+    },
+    {
+      "strain": {
+        "id": "dinafem-remedy-cbd",
+        "name": "Dinamed CBD",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-remedy-cbd.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 125.5,
+      "pct_light": 5.2,
+      "corner_lum": 8.7
+    },
+    {
+      "strain": {
+        "id": "dinafem-diesel",
+        "name": "Diesel",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-diesel.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 170.2,
+      "pct_light": 6.8,
+      "corner_lum": 17.5
+    },
+    {
+      "strain": {
+        "id": "dinafem-sweet-grapefruit",
+        "name": "Sweet Deep Grapefruit",
+        "bank": "Dinafem Seeds",
+        "image": "img/dinafem-sweet-grapefruit.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 47.2,
+      "pct_light": 0.8,
+      "corner_lum": 52.2
+    },
+    {
+      "strain": {
+        "id": "buddha-magnum",
+        "name": "Magnum",
+        "bank": "Buddha Seeds",
+        "image": "img/buddha-magnum-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 1440,
+      "h": 1920,
+      "ratio": 0.75,
+      "size_kb": 603.8,
+      "pct_light": 8.8,
+      "corner_lum": 131.1
+    },
+    {
+      "strain": {
+        "id": "buddha-deimos",
+        "name": "Deimos",
+        "bank": "Buddha Seeds",
+        "image": "img/buddha-deimos-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.333 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (72.0% bordes claros > 30.0%)"
+      ],
+      "w": 1920,
+      "h": 1440,
+      "ratio": 1.333,
+      "size_kb": 734.2,
+      "pct_light": 72.0,
+      "corner_lum": 192.3
+    },
+    {
+      "strain": {
+        "id": "buddha-dosi2",
+        "name": "Buddha DoSi2",
+        "bank": "Buddha Seeds",
+        "image": "img/buddha-dosi2-bud.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (68.1% bordes claros > 30.0%)"
+      ],
+      "w": 900,
+      "h": 900,
+      "ratio": 1.0,
+      "size_kb": 266.8,
+      "pct_light": 68.1,
+      "corner_lum": 147.8
+    },
+    {
+      "strain": {
+        "id": "buddha-wedding-cheesecake",
+        "name": "Wedding Cheesecake",
+        "bank": "Buddha Seeds",
+        "image": "img/buddha-wedding-cheesecake-bud.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (55.7% bordes claros > 30.0%)"
+      ],
+      "w": 900,
+      "h": 900,
+      "ratio": 1.0,
+      "size_kb": 311.0,
+      "pct_light": 55.7,
+      "corner_lum": 162.7
+    },
+    {
+      "strain": {
+        "id": "rkiem-negra-44",
+        "name": "Negra 44",
+        "bank": "R-Kiem Seeds",
+        "image": "img/rkiem-negra-44-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (643x643 px < 800x800)"
+      ],
+      "w": 643,
+      "h": 643,
+      "ratio": 1.0,
+      "size_kb": 210.4,
+      "pct_light": 0.0,
+      "corner_lum": 25.3
+    },
+    {
+      "strain": {
+        "id": "rkiem-sublimator",
+        "name": "Sublimator",
+        "bank": "R-Kiem Seeds",
+        "image": "img/rkiem-sublimator-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 172.9,
+      "pct_light": 15.9,
+      "corner_lum": 154.3
+    },
+    {
+      "strain": {
+        "id": "rkiem-portela",
+        "name": "Portela",
+        "bank": "R-Kiem Seeds",
+        "image": "img/rkiem-portela-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.562 fuera de [0.9, 1.1])"
+      ],
+      "w": 1125,
+      "h": 2000,
+      "ratio": 0.562,
+      "size_kb": 351.2,
+      "pct_light": 11.5,
+      "corner_lum": 101.5
+    },
+    {
+      "strain": {
+        "id": "rkiem-zkiem",
+        "name": "ZKiem",
+        "bank": "R-Kiem Seeds",
+        "image": "img/rkiem-zkiem-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (624x626 px < 800x800)"
+      ],
+      "w": 624,
+      "h": 626,
+      "ratio": 0.997,
+      "size_kb": 86.7,
+      "pct_light": 3.2,
+      "corner_lum": 54.2
+    },
+    {
+      "strain": {
+        "id": "rkiem-el-xupet-negre",
+        "name": "El Xupet Negre",
+        "bank": "R-Kiem Seeds",
+        "image": "img/rkiem-el-xupet-negre-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 102.2,
+      "pct_light": 0.9,
+      "corner_lum": 75.3
+    },
+    {
+      "strain": {
+        "id": "positronics-somango-47",
+        "name": "Somango 47",
+        "bank": "Positronics Seeds",
+        "image": "img/positronics-somango-47-bud.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (66.9% bordes claros > 30.0%)"
+      ],
+      "w": 1024,
+      "h": 1024,
+      "ratio": 1.0,
+      "size_kb": 746.4,
+      "pct_light": 66.9,
+      "corner_lum": 179.4
+    },
+    {
+      "strain": {
+        "id": "positronics-claustrum",
+        "name": "Claustrum",
+        "bank": "Positronics Seeds",
+        "image": "img/positronics-claustrum-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.435 fuera de [0.9, 1.1])",
+        "Baja resolución (686x478 px < 800x800)",
+        "Fondo blanco/claro residual (93.5% bordes claros > 30.0%)"
+      ],
+      "w": 686,
+      "h": 478,
+      "ratio": 1.435,
+      "size_kb": 201.5,
+      "pct_light": 93.5,
+      "corner_lum": 255.0
+    },
+    {
+      "strain": {
+        "id": "positronics-cum-laude",
+        "name": "Cum Laude",
+        "bank": "Positronics Seeds",
+        "image": "img/positronics-cum-laude-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.748 fuera de [0.9, 1.1])",
+        "Baja resolución (755x1009 px < 800x800)",
+        "Fondo blanco/claro residual (49.6% bordes claros > 30.0%)"
+      ],
+      "w": 755,
+      "h": 1009,
+      "ratio": 0.748,
+      "size_kb": 139.9,
+      "pct_light": 49.6,
+      "corner_lum": 171.5
+    },
+    {
+      "strain": {
+        "id": "positronics-caramelice",
+        "name": "Caramelice",
+        "bank": "Positronics Seeds",
+        "image": "img/positronics-caramelice-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)",
+        "Fondo blanco/claro residual (55.8% bordes claros > 30.0%)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 55.2,
+      "pct_light": 55.8,
+      "corner_lum": 166.9
+    },
+    {
+      "strain": {
+        "id": "positronics-blue-rhino",
+        "name": "Blue Rhino",
+        "bank": "Positronics Seeds",
+        "image": "img/positronics-blue-rhino-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])",
+        "Baja resolución (600x800 px < 800x800)",
+        "Fondo blanco/claro residual (58.3% bordes claros > 30.0%)"
+      ],
+      "w": 600,
+      "h": 800,
+      "ratio": 0.75,
+      "size_kb": 87.5,
+      "pct_light": 58.3,
+      "corner_lum": 122.4
+    },
+    {
+      "strain": {
+        "id": "positronics-amnesia-mystery",
+        "name": "Amnesia Mystery",
+        "bank": "Positronics Seeds",
+        "image": "img/positronics-amnesia-mystery-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])",
+        "Baja resolución (600x800 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 800,
+      "ratio": 0.75,
+      "size_kb": 159.8,
+      "pct_light": 0.0,
+      "corner_lum": 34.7
+    },
+    {
+      "strain": {
+        "id": "positronics-black-widow",
+        "name": "Black Widow",
+        "bank": "Positronics Seeds",
+        "image": "img/positronics-black-widow-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 158.9,
+      "pct_light": 0.8,
+      "corner_lum": 31.7
+    },
+    {
+      "strain": {
+        "id": "positronics-supercheese",
+        "name": "Supercheese",
+        "bank": "Positronics Seeds",
+        "image": "img/positronics-supercheese-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 159.5,
+      "pct_light": 8.4,
+      "corner_lum": 66.8
+    },
+    {
+      "strain": {
+        "id": "aceseeds-panama",
+        "name": "Panama",
+        "bank": "ACE Seeds",
+        "image": "img/aceseeds-panama-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 1152,
+      "h": 1536,
+      "ratio": 0.75,
+      "size_kb": 661.2,
+      "pct_light": 2.0,
+      "corner_lum": 64.5
+    },
+    {
+      "strain": {
+        "id": "aceseeds-malawi",
+        "name": "Malawi",
+        "bank": "ACE Seeds",
+        "image": "img/aceseeds-malawi-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.722 fuera de [0.9, 1.1])",
+        "Baja resolución (650x900 px < 800x800)"
+      ],
+      "w": 650,
+      "h": 900,
+      "ratio": 0.722,
+      "size_kb": 154.1,
+      "pct_light": 6.3,
+      "corner_lum": 112.6
+    },
+    {
+      "strain": {
+        "id": "aceseeds-golden-tiger",
+        "name": "Golden Tiger",
+        "bank": "ACE Seeds",
+        "image": "img/aceseeds-golden-tiger-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (643x643 px < 800x800)"
+      ],
+      "w": 643,
+      "h": 643,
+      "ratio": 1.0,
+      "size_kb": 408.1,
+      "pct_light": 26.2,
+      "corner_lum": 161.5
+    },
+    {
+      "strain": {
+        "id": "aceseeds-zamaldelica",
+        "name": "Zamaldelica",
+        "bank": "ACE Seeds",
+        "image": "img/aceseeds-zamaldelica-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 162.1,
+      "pct_light": 0.0,
+      "corner_lum": 130.8
+    },
+    {
+      "strain": {
+        "id": "aceseeds-pakistan-chitral-kush",
+        "name": "Pakistan Chitral Kush",
+        "bank": "ACE Seeds",
+        "image": "img/aceseeds-pakistan-chitral-kush-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 75.1,
+      "pct_light": 0.0,
+      "corner_lum": 9.5
+    },
+    {
+      "strain": {
+        "id": "aceseeds-violeta",
+        "name": "Violeta",
+        "bank": "ACE Seeds",
+        "image": "img/aceseeds-violeta-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (400x400 px < 800x800)"
+      ],
+      "w": 400,
+      "h": 400,
+      "ratio": 1.0,
+      "size_kb": 84.1,
+      "pct_light": 6.6,
+      "corner_lum": 52.8
+    },
+    {
+      "strain": {
+        "id": "aceseeds-purple-haze-x-malawi",
+        "name": "Purple Haze x Malawi",
+        "bank": "ACE Seeds",
+        "image": "img/aceseeds-purple-haze-x-malawi-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (400x400 px < 800x800)",
+        "Fondo blanco/claro residual (36.9% bordes claros > 30.0%)"
+      ],
+      "w": 400,
+      "h": 400,
+      "ratio": 1.0,
+      "size_kb": 73.7,
+      "pct_light": 36.9,
+      "corner_lum": 181.7
+    },
+    {
+      "strain": {
+        "id": "aceseeds-guawi",
+        "name": "Guawi",
+        "bank": "ACE Seeds",
+        "image": "img/aceseeds-guawi-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)",
+        "Fondo blanco/claro residual (44.7% bordes claros > 30.0%)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 74.9,
+      "pct_light": 44.7,
+      "corner_lum": 122.8
+    },
+    {
+      "strain": {
+        "id": "pyramid-tutankhamon",
+        "name": "Tutankhamon",
+        "bank": "Pyramid Seeds",
+        "image": "img/pyramid-tutankhamon-bud.jpg?v=2026_custom_hd"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 245.7,
+      "pct_light": 25.1,
+      "corner_lum": 3.2
+    },
+    {
+      "strain": {
+        "id": "pyramid-anesthesia",
+        "name": "Anesthesia",
+        "bank": "Pyramid Seeds",
+        "image": "img/pyramid-anesthesia-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 64.4,
+      "pct_light": 29.9,
+      "corner_lum": 96.6
+    },
+    {
+      "strain": {
+        "id": "pyramid-nefertiti",
+        "name": "Nefertiti",
+        "bank": "Pyramid Seeds",
+        "image": "img/pyramid-nefertiti-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (700x700 px < 800x800)"
+      ],
+      "w": 700,
+      "h": 700,
+      "ratio": 1.0,
+      "size_kb": 72.9,
+      "pct_light": 0.9,
+      "corner_lum": 8.9
+    },
+    {
+      "strain": {
+        "id": "pyramid-anubis",
+        "name": "Anubis",
+        "bank": "Pyramid Seeds",
+        "image": "img/pyramid-anubis-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.668 fuera de [0.9, 1.1])",
+        "Baja resolución (601x900 px < 800x800)"
+      ],
+      "w": 601,
+      "h": 900,
+      "ratio": 0.668,
+      "size_kb": 42.0,
+      "pct_light": 0.0,
+      "corner_lum": 35.7
+    },
+    {
+      "strain": {
+        "id": "pyramid-blue-pyramid",
+        "name": "Blue Pyramid",
+        "bank": "Pyramid Seeds",
+        "image": "img/pyramid-blue-pyramid-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.365 fuera de [0.9, 1.1])"
+      ],
+      "w": 1500,
+      "h": 1099,
+      "ratio": 1.365,
+      "size_kb": 415.8,
+      "pct_light": 3.9,
+      "corner_lum": 70.9
+    },
+    {
+      "strain": {
+        "id": "pyramid-ramses",
+        "name": "Ramses",
+        "bank": "Pyramid Seeds",
+        "image": "img/pyramid-ramses-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.631 fuera de [0.9, 1.1])"
+      ],
+      "w": 1067,
+      "h": 1690,
+      "ratio": 0.631,
+      "size_kb": 114.1,
+      "pct_light": 16.4,
+      "corner_lum": 153.8
+    },
+    {
+      "strain": {
+        "id": "pyramid-galaxy",
+        "name": "Galaxy",
+        "bank": "Pyramid Seeds",
+        "image": "img/pyramid-galaxy-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.778 fuera de [0.9, 1.1])",
+        "Baja resolución (1280x720 px < 800x800)"
+      ],
+      "w": 1280,
+      "h": 720,
+      "ratio": 1.778,
+      "size_kb": 83.2,
+      "pct_light": 26.9,
+      "corner_lum": 128.0
+    },
+    {
+      "strain": {
+        "id": "pyramid-wembley",
+        "name": "Wembley",
+        "bank": "Pyramid Seeds",
+        "image": "img/pyramid-wembley-bud.jpg?v=2026_custom_hd"
+      },
+      "issues": [
+        "Baja resolución (720x720 px < 800x800)"
+      ],
+      "w": 720,
+      "h": 720,
+      "ratio": 1.0,
+      "size_kb": 131.6,
+      "pct_light": 3.5,
+      "corner_lum": 7.7
+    },
+    {
+      "strain": {
+        "id": "pyramid-shark",
+        "name": "Shark",
+        "bank": "Pyramid Seeds",
+        "image": "img/pyramid-shark-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.365 fuera de [0.9, 1.1])"
+      ],
+      "w": 1500,
+      "h": 1099,
+      "ratio": 1.365,
+      "size_kb": 415.8,
+      "pct_light": 3.9,
+      "corner_lum": 70.9
+    },
+    {
+      "strain": {
+        "id": "blimburn-mamba-negra",
+        "name": "Mamba Negra",
+        "bank": "Blimburn Seeds",
+        "image": "img/blimburn-mamba-negra-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 1125,
+      "h": 1500,
+      "ratio": 0.75,
+      "size_kb": 346.7,
+      "pct_light": 5.5,
+      "corner_lum": 70.2
+    },
+    {
+      "strain": {
+        "id": "blimburn-granddaddy-purple",
+        "name": "Granddaddy Purple",
+        "bank": "Blimburn Seeds",
+        "image": "img/blimburn-granddaddy-purple-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.875 fuera de [0.9, 1.1])"
+      ],
+      "w": 800,
+      "h": 914,
+      "ratio": 0.875,
+      "size_kb": 238.7,
+      "pct_light": 0.7,
+      "corner_lum": 25.1
+    },
+    {
+      "strain": {
+        "id": "blimburn-gorilla-glue-4",
+        "name": "Gorilla Glue #4",
+        "bank": "Blimburn Seeds",
+        "image": "img/blimburn-gorilla-glue-4-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (512x512 px < 800x800)"
+      ],
+      "w": 512,
+      "h": 512,
+      "ratio": 1.0,
+      "size_kb": 134.3,
+      "pct_light": 7.9,
+      "corner_lum": 92.2
+    },
+    {
+      "strain": {
+        "id": "blimburn-santa-muerte",
+        "name": "Santa Muerte",
+        "bank": "Blimburn Seeds",
+        "image": "img/blimburn-santa-muerte-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])",
+        "Baja resolución (525x700 px < 800x800)"
+      ],
+      "w": 525,
+      "h": 700,
+      "ratio": 0.75,
+      "size_kb": 56.2,
+      "pct_light": 11.3,
+      "corner_lum": 98.6
+    },
+    {
+      "strain": {
+        "id": "blimburn-guanabana",
+        "name": "Guanabana",
+        "bank": "Blimburn Seeds",
+        "image": "img/blimburn-guanabana-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.509 fuera de [0.9, 1.1])",
+        "Baja resolución (800x530 px < 800x800)",
+        "Fondo blanco/claro residual (60.6% bordes claros > 30.0%)"
+      ],
+      "w": 800,
+      "h": 530,
+      "ratio": 1.509,
+      "size_kb": 40.1,
+      "pct_light": 60.6,
+      "corner_lum": 184.6
+    },
+    {
+      "strain": {
+        "id": "genehtik-kritikal-bilbo",
+        "name": "Kritikal Bilbo",
+        "bank": "Genehtik Seeds",
+        "image": "img/genehtik-kritikal-bilbo-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.663 fuera de [0.9, 1.1])",
+        "Baja resolución (679x1024 px < 800x800)"
+      ],
+      "w": 679,
+      "h": 1024,
+      "ratio": 0.663,
+      "size_kb": 227.0,
+      "pct_light": 12.1,
+      "corner_lum": 129.4
+    },
+    {
+      "strain": {
+        "id": "genehtik-txomango",
+        "name": "Txomango",
+        "bank": "Genehtik Seeds",
+        "image": "img/genehtik-txomango-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.842 fuera de [0.9, 1.1])",
+        "Baja resolución (549x652 px < 800x800)"
+      ],
+      "w": 549,
+      "h": 652,
+      "ratio": 0.842,
+      "size_kb": 104.7,
+      "pct_light": 1.9,
+      "corner_lum": 44.1
+    },
+    {
+      "strain": {
+        "id": "genehtik-super-silver-bilbo",
+        "name": "Super Silver Bilbo",
+        "bank": "Genehtik Seeds",
+        "image": "img/genehtik-super-silver-bilbo-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (709x779 px < 800x800)"
+      ],
+      "w": 709,
+      "h": 779,
+      "ratio": 0.91,
+      "size_kb": 124.6,
+      "pct_light": 2.2,
+      "corner_lum": 8.8
+    },
+    {
+      "strain": {
+        "id": "genehtik-zuri-widow",
+        "name": "Zuri Widow",
+        "bank": "Genehtik Seeds",
+        "image": "img/genehtik-zuri-widow-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (673x670 px < 800x800)"
+      ],
+      "w": 673,
+      "h": 670,
+      "ratio": 1.004,
+      "size_kb": 122.1,
+      "pct_light": 1.5,
+      "corner_lum": 21.5
+    },
+    {
+      "strain": {
+        "id": "genehtik-txees-bilbo",
+        "name": "Txees Bilbo",
+        "bank": "Genehtik Seeds",
+        "image": "img/genehtik-txees-bilbo-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (642x672 px < 800x800)"
+      ],
+      "w": 642,
+      "h": 672,
+      "ratio": 0.955,
+      "size_kb": 111.2,
+      "pct_light": 0.6,
+      "corner_lum": 5.6
+    },
+    {
+      "strain": {
+        "id": "genehtik-amnesia-bilbo",
+        "name": "Amnesia Bilbo",
+        "bank": "Genehtik Seeds",
+        "image": "img/genehtik-amnesia-bilbo-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.842 fuera de [0.9, 1.1])",
+        "Baja resolución (624x741 px < 800x800)"
+      ],
+      "w": 624,
+      "h": 741,
+      "ratio": 0.842,
+      "size_kb": 155.5,
+      "pct_light": 3.7,
+      "corner_lum": 41.0
+    },
+    {
+      "strain": {
+        "id": "genehtik-northern-lights-x",
+        "name": "Northern Lights X",
+        "bank": "Genehtik Seeds",
+        "image": "img/genehtik-northern-lights-x-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (646x652 px < 800x800)"
+      ],
+      "w": 646,
+      "h": 652,
+      "ratio": 0.991,
+      "size_kb": 97.0,
+      "pct_light": 2.3,
+      "corner_lum": 1.2
+    },
+    {
+      "strain": {
+        "id": "genehtik-blubonik",
+        "name": "Blubonik",
+        "bank": "Genehtik Seeds",
+        "image": "img/genehtik-blubonik-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (709x758 px < 800x800)"
+      ],
+      "w": 709,
+      "h": 758,
+      "ratio": 0.935,
+      "size_kb": 198.3,
+      "pct_light": 1.8,
+      "corner_lum": 58.0
+    },
+    {
+      "strain": {
+        "id": "genehtik-og-lemon-bilbo",
+        "name": "OG Lemon Bilbo",
+        "bank": "Genehtik Seeds",
+        "image": "img/genehtik-og-lemon-bilbo-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (567x572 px < 800x800)"
+      ],
+      "w": 567,
+      "h": 572,
+      "ratio": 0.991,
+      "size_kb": 83.2,
+      "pct_light": 4.9,
+      "corner_lum": 2.6
+    },
+    {
+      "strain": {
+        "id": "genehtik-santa-bilbo",
+        "name": "Santa Bilbo",
+        "bank": "Genehtik Seeds",
+        "image": "img/genehtik-santa-bilbo-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (645x673 px < 800x800)"
+      ],
+      "w": 645,
+      "h": 673,
+      "ratio": 0.958,
+      "size_kb": 131.1,
+      "pct_light": 3.5,
+      "corner_lum": 1.0
+    },
+    {
+      "strain": {
+        "id": "heavyweight-fruit-punch",
+        "name": "Fruit Punch",
+        "bank": "Heavyweight Seeds",
+        "image": "img/heavyweight-fruit-punch-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.741 fuera de [0.9, 1.1])"
+      ],
+      "w": 1111,
+      "h": 1500,
+      "ratio": 0.741,
+      "size_kb": 1082.8,
+      "pct_light": 3.5,
+      "corner_lum": 89.7
+    },
+    {
+      "strain": {
+        "id": "heavyweight-green-ninja",
+        "name": "Green Ninja",
+        "bank": "Heavyweight Seeds",
+        "image": "img/heavyweight-green-ninja-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.25 fuera de [0.9, 1.1])",
+        "Baja resolución (750x600 px < 800x800)",
+        "Fondo blanco/claro residual (45.1% bordes claros > 30.0%)"
+      ],
+      "w": 750,
+      "h": 600,
+      "ratio": 1.25,
+      "size_kb": 286.1,
+      "pct_light": 45.1,
+      "corner_lum": 151.1
+    },
+    {
+      "strain": {
+        "id": "heavyweight-budzilla",
+        "name": "Budzilla",
+        "bank": "Heavyweight Seeds",
+        "image": "img/heavyweight-budzilla-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.25 fuera de [0.9, 1.1])",
+        "Baja resolución (750x600 px < 800x800)"
+      ],
+      "w": 750,
+      "h": 600,
+      "ratio": 1.25,
+      "size_kb": 453.0,
+      "pct_light": 10.5,
+      "corner_lum": 97.3
+    },
+    {
+      "strain": {
+        "id": "heavyweight-money-bush",
+        "name": "Money Bush",
+        "bank": "Heavyweight Seeds",
+        "image": "img/heavyweight-money-bush-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.36 fuera de [0.9, 1.1])"
+      ],
+      "w": 1300,
+      "h": 956,
+      "ratio": 1.36,
+      "size_kb": 117.0,
+      "pct_light": 0.1,
+      "corner_lum": 34.9
+    },
+    {
+      "strain": {
+        "id": "heavyweight-superb-og",
+        "name": "Superb OG",
+        "bank": "Heavyweight Seeds",
+        "image": "img/heavyweight-superb-og-bud.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (75.2% bordes claros > 30.0%)"
+      ],
+      "w": 1800,
+      "h": 1800,
+      "ratio": 1.0,
+      "size_kb": 674.4,
+      "pct_light": 75.2,
+      "corner_lum": 218.1
+    },
+    {
+      "strain": {
+        "id": "heavyweight-lemon-cake",
+        "name": "Lemon Cake",
+        "bank": "Heavyweight Seeds",
+        "image": "img/heavyweight-lemon-cake-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.773 fuera de [0.9, 1.1])",
+        "Baja resolución (768x994 px < 800x800)",
+        "Fondo blanco/claro residual (58.5% bordes claros > 30.0%)"
+      ],
+      "w": 768,
+      "h": 994,
+      "ratio": 0.773,
+      "size_kb": 199.6,
+      "pct_light": 58.5,
+      "corner_lum": 160.8
+    },
+    {
+      "strain": {
+        "id": "heavyweight-dream-machine",
+        "name": "Dream Machine",
+        "bank": "Heavyweight Seeds",
+        "image": "img/heavyweight-dream-machine-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.25 fuera de [0.9, 1.1])",
+        "Baja resolución (750x600 px < 800x800)",
+        "Fondo blanco/claro residual (34.6% bordes claros > 30.0%)"
+      ],
+      "w": 750,
+      "h": 600,
+      "ratio": 1.25,
+      "size_kb": 661.5,
+      "pct_light": 34.6,
+      "corner_lum": 157.5
+    },
+    {
+      "strain": {
+        "id": "heavyweight-strawberry-cake",
+        "name": "Strawberry Cake",
+        "bank": "Heavyweight Seeds",
+        "image": "img/heavyweight-strawberry-cake-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.25 fuera de [0.9, 1.1])",
+        "Baja resolución (750x600 px < 800x800)"
+      ],
+      "w": 750,
+      "h": 600,
+      "ratio": 1.25,
+      "size_kb": 375.0,
+      "pct_light": 9.6,
+      "corner_lum": 118.3
+    },
+    {
+      "strain": {
+        "id": "cannabiogen-taskenti",
+        "name": "Taskenti",
+        "bank": "Cannabiogen",
+        "image": "img/cannabiogen-taskenti-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.333 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 1800,
+      "ratio": 1.333,
+      "size_kb": 1824.3,
+      "pct_light": 12.9,
+      "corner_lum": 97.7
+    },
+    {
+      "strain": {
+        "id": "cannabiogen-peyote-purple",
+        "name": "Peyote Purple",
+        "bank": "Cannabiogen",
+        "image": "img/cannabiogen-peyote-purple-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.833 fuera de [0.9, 1.1])"
+      ],
+      "w": 1000,
+      "h": 1200,
+      "ratio": 0.833,
+      "size_kb": 876.1,
+      "pct_light": 1.4,
+      "corner_lum": 57.0
+    },
+    {
+      "strain": {
+        "id": "cannabiogen-sandstorm",
+        "name": "Sandstorm",
+        "bank": "Cannabiogen",
+        "image": "img/cannabiogen-sandstorm-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.662 fuera de [0.9, 1.1])",
+        "Baja resolución (662x1000 px < 800x800)"
+      ],
+      "w": 662,
+      "h": 1000,
+      "ratio": 0.662,
+      "size_kb": 150.4,
+      "pct_light": 0.1,
+      "corner_lum": 76.6
+    },
+    {
+      "strain": {
+        "id": "cannabiogen-nepal-jam",
+        "name": "Nepal Jam",
+        "bank": "Cannabiogen",
+        "image": "img/cannabiogen-nepal-jam-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 229.7,
+      "pct_light": 8.6,
+      "corner_lum": 35.3
+    },
+    {
+      "strain": {
+        "id": "cannabiogen-caribe",
+        "name": "Caribe",
+        "bank": "Cannabiogen",
+        "image": "img/cannabiogen-caribe-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.778 fuera de [0.9, 1.1])",
+        "Baja resolución (976x549 px < 800x800)"
+      ],
+      "w": 976,
+      "h": 549,
+      "ratio": 1.778,
+      "size_kb": 85.3,
+      "pct_light": 6.0,
+      "corner_lum": 119.1
+    },
+    {
+      "strain": {
+        "id": "cannabiogen-jamaica-blue-mountain",
+        "name": "Jamaica Blue Mountain",
+        "bank": "Cannabiogen",
+        "image": "img/cannabiogen-jamaica-blue-mountain-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])",
+        "Baja resolución (600x800 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 800,
+      "ratio": 0.75,
+      "size_kb": 134.5,
+      "pct_light": 9.1,
+      "corner_lum": 101.5
+    },
+    {
+      "strain": {
+        "id": "cannabiogen-leshaze",
+        "name": "Leshaze",
+        "bank": "Cannabiogen",
+        "image": "img/cannabiogen-leshaze-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.5 fuera de [0.9, 1.1])"
+      ],
+      "w": 6000,
+      "h": 4000,
+      "ratio": 1.5,
+      "size_kb": 14197.8,
+      "pct_light": 1.1,
+      "corner_lum": 49.8
+    },
+    {
+      "strain": {
+        "id": "cannabiogen-panama-dc",
+        "name": "Panama DC",
+        "bank": "Cannabiogen",
+        "image": "img/cannabiogen-panama-dc-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.563 fuera de [0.9, 1.1])"
+      ],
+      "w": 1441,
+      "h": 2560,
+      "ratio": 0.563,
+      "size_kb": 459.4,
+      "pct_light": 1.0,
+      "corner_lum": 95.5
+    },
+    {
+      "strain": {
+        "id": "cannabiogen-mangobiche-kush",
+        "name": "Mangobiche Kush",
+        "bank": "Cannabiogen",
+        "image": "img/cannabiogen-mangobiche-kush-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])",
+        "Baja resolución (582x776 px < 800x800)"
+      ],
+      "w": 582,
+      "h": 776,
+      "ratio": 0.75,
+      "size_kb": 421.0,
+      "pct_light": 0.5,
+      "corner_lum": 21.1
+    },
+    {
+      "strain": {
+        "id": "sensi-jack-herer",
+        "name": "Jack Herer",
+        "bank": "Sensi Seeds",
+        "image": "img/sensi-jack-herer-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.812 fuera de [0.9, 1.1])",
+        "Baja resolución (650x800 px < 800x800)"
+      ],
+      "w": 650,
+      "h": 800,
+      "ratio": 0.812,
+      "size_kb": 940.8,
+      "pct_light": 0.7,
+      "corner_lum": 33.3
+    },
+    {
+      "strain": {
+        "id": "sensi-super-skunk",
+        "name": "Super Skunk",
+        "bank": "Sensi Seeds",
+        "image": "img/sensi-super-skunk-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.812 fuera de [0.9, 1.1])",
+        "Baja resolución (650x800 px < 800x800)"
+      ],
+      "w": 650,
+      "h": 800,
+      "ratio": 0.812,
+      "size_kb": 644.5,
+      "pct_light": 0.7,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "sensi-northern-lights",
+        "name": "Northern Lights",
+        "bank": "Sensi Seeds",
+        "image": "img/sensi-northern-lights-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.812 fuera de [0.9, 1.1])",
+        "Baja resolución (650x800 px < 800x800)"
+      ],
+      "w": 650,
+      "h": 800,
+      "ratio": 0.812,
+      "size_kb": 660.3,
+      "pct_light": 1.0,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "sensi-hindu-kush",
+        "name": "Hindu Kush",
+        "bank": "Sensi Seeds",
+        "image": "img/sensi-hindu-kush-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.812 fuera de [0.9, 1.1])",
+        "Baja resolución (650x800 px < 800x800)"
+      ],
+      "w": 650,
+      "h": 800,
+      "ratio": 0.812,
+      "size_kb": 670.4,
+      "pct_light": 0.2,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "sensi-skunk-1",
+        "name": "Skunk #1",
+        "bank": "Sensi Seeds",
+        "image": "img/sensi-skunk-1-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.812 fuera de [0.9, 1.1])",
+        "Baja resolución (650x800 px < 800x800)"
+      ],
+      "w": 650,
+      "h": 800,
+      "ratio": 0.812,
+      "size_kb": 804.6,
+      "pct_light": 1.1,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "sensi-hash-plant",
+        "name": "Hash Plant",
+        "bank": "Sensi Seeds",
+        "image": "img/sensi-hash-plant-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.812 fuera de [0.9, 1.1])",
+        "Baja resolución (650x800 px < 800x800)"
+      ],
+      "w": 650,
+      "h": 800,
+      "ratio": 0.812,
+      "size_kb": 887.2,
+      "pct_light": 6.3,
+      "corner_lum": 59.4
+    },
+    {
+      "strain": {
+        "id": "sensi-early-skunk",
+        "name": "Early Skunk",
+        "bank": "Sensi Seeds",
+        "image": "img/sensi-early-skunk-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.812 fuera de [0.9, 1.1])",
+        "Baja resolución (650x800 px < 800x800)"
+      ],
+      "w": 650,
+      "h": 800,
+      "ratio": 0.812,
+      "size_kb": 795.2,
+      "pct_light": 1.4,
+      "corner_lum": 48.4
+    },
+    {
+      "strain": {
+        "id": "sensi-sensi-skunk",
+        "name": "Sensi Skunk",
+        "bank": "Sensi Seeds",
+        "image": "img/sensi-sensi-skunk-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.812 fuera de [0.9, 1.1])",
+        "Baja resolución (650x800 px < 800x800)"
+      ],
+      "w": 650,
+      "h": 800,
+      "ratio": 0.812,
+      "size_kb": 1018.3,
+      "pct_light": 0.0,
+      "corner_lum": 28.9
+    },
+    {
+      "strain": {
+        "id": "ghs-super-silver-haze",
+        "name": "Super Silver Haze",
+        "bank": "Green House Seed Co.",
+        "image": "img/ghs-super-silver-haze-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.835 fuera de [0.9, 1.1])",
+        "Baja resolución (502x601 px < 800x800)"
+      ],
+      "w": 502,
+      "h": 601,
+      "ratio": 0.835,
+      "size_kb": 87.7,
+      "pct_light": 1.2,
+      "corner_lum": 3.5
+    },
+    {
+      "strain": {
+        "id": "ghs-hawaiian-snow",
+        "name": "Hawaiian Snow",
+        "bank": "Green House Seed Co.",
+        "image": "img/ghs-hawaiian-snow-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.763 fuera de [0.9, 1.1])"
+      ],
+      "w": 800,
+      "h": 1048,
+      "ratio": 0.763,
+      "size_kb": 102.7,
+      "pct_light": 0.0,
+      "corner_lum": 1.0
+    },
+    {
+      "strain": {
+        "id": "ghs-francos-lemon-cheese",
+        "name": "Franco",
+        "bank": "Green House Seed Co.",
+        "image": "img/ghs-francos-lemon-cheese-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.763 fuera de [0.9, 1.1])"
+      ],
+      "w": 800,
+      "h": 1048,
+      "ratio": 0.763,
+      "size_kb": 910.8,
+      "pct_light": 2.3,
+      "corner_lum": 38.5
+    },
+    {
+      "strain": {
+        "id": "ghs-exodus-cheese",
+        "name": "Exodus Cheese",
+        "bank": "Green House Seed Co.",
+        "image": "img/ghs-exodus-cheese-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.835 fuera de [0.9, 1.1])",
+        "Baja resolución (502x601 px < 800x800)"
+      ],
+      "w": 502,
+      "h": 601,
+      "ratio": 0.835,
+      "size_kb": 85.2,
+      "pct_light": 0.0,
+      "corner_lum": 11.7
+    },
+    {
+      "strain": {
+        "id": "ghs-bubba-kush",
+        "name": "Bubba Kush",
+        "bank": "Green House Seed Co.",
+        "image": "img/ghs-bubba-kush-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.875 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (42.3% bordes claros > 30.0%)"
+      ],
+      "w": 800,
+      "h": 914,
+      "ratio": 0.875,
+      "size_kb": 255.1,
+      "pct_light": 42.3,
+      "corner_lum": 167.4
+    },
+    {
+      "strain": {
+        "id": "ghs-kalashnikova",
+        "name": "Kalashnikova",
+        "bank": "Green House Seed Co.",
+        "image": "img/ghs-kalashnikova-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 104.2,
+      "pct_light": 2.3,
+      "corner_lum": 41.7
+    },
+    {
+      "strain": {
+        "id": "ghs-kings-juice",
+        "name": "King",
+        "bank": "Green House Seed Co.",
+        "image": "img/ghs-kings-juice-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.763 fuera de [0.9, 1.1])"
+      ],
+      "w": 800,
+      "h": 1048,
+      "ratio": 0.763,
+      "size_kb": 210.9,
+      "pct_light": 0.3,
+      "corner_lum": 16.6
+    },
+    {
+      "strain": {
+        "id": "serious-ak-47",
+        "name": "AK-47",
+        "bank": "Serious Seeds",
+        "image": "img/serious-ak-47-bud.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (68.6% bordes claros > 30.0%)"
+      ],
+      "w": 4351,
+      "h": 4755,
+      "ratio": 0.915,
+      "size_kb": 1970.3,
+      "pct_light": 68.6,
+      "corner_lum": 192.6
+    },
+    {
+      "strain": {
+        "id": "serious-white-russian",
+        "name": "White Russian",
+        "bank": "Serious Seeds",
+        "image": "img/serious-white-russian-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2048,
+      "h": 3072,
+      "ratio": 0.667,
+      "size_kb": 3122.4,
+      "pct_light": 0.0,
+      "corner_lum": 6.8
+    },
+    {
+      "strain": {
+        "id": "serious-chronic",
+        "name": "Chronic",
+        "bank": "Serious Seeds",
+        "image": "img/serious-chronic-bud.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 62.0,
+      "pct_light": 1.2,
+      "corner_lum": 40.2
+    },
+    {
+      "strain": {
+        "id": "serious-bubble-gum",
+        "name": "Bubble Gum",
+        "bank": "Serious Seeds",
+        "image": "img/serious-bubble-gum-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.618 fuera de [0.9, 1.1])"
+      ],
+      "w": 1127,
+      "h": 1823,
+      "ratio": 0.618,
+      "size_kb": 1704.5,
+      "pct_light": 1.1,
+      "corner_lum": 62.8
+    },
+    {
+      "strain": {
+        "id": "serious-kali-mist",
+        "name": "Kali Mist",
+        "bank": "Serious Seeds",
+        "image": "img/serious-kali-mist-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 760.8,
+      "pct_light": 0.6,
+      "corner_lum": 63.4
+    },
+    {
+      "strain": {
+        "id": "serious-serious-6",
+        "name": "Serious 6",
+        "bank": "Serious Seeds",
+        "image": "img/serious-serious-6-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 2304,
+      "h": 3072,
+      "ratio": 0.75,
+      "size_kb": 3259.0,
+      "pct_light": 0.7,
+      "corner_lum": 56.8
+    },
+    {
+      "strain": {
+        "id": "serious-warlock",
+        "name": "Warlock",
+        "bank": "Serious Seeds",
+        "image": "img/serious-warlock-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.757 fuera de [0.9, 1.1])"
+      ],
+      "w": 1007,
+      "h": 1331,
+      "ratio": 0.757,
+      "size_kb": 490.8,
+      "pct_light": 3.7,
+      "corner_lum": 127.2
+    },
+    {
+      "strain": {
+        "id": "serious-biddy-early",
+        "name": "Biddy Early",
+        "bank": "Serious Seeds",
+        "image": "img/serious-biddy-early-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.757 fuera de [0.9, 1.1])"
+      ],
+      "w": 1007,
+      "h": 1331,
+      "ratio": 0.757,
+      "size_kb": 240.4,
+      "pct_light": 6.2,
+      "corner_lum": 64.1
+    },
+    {
+      "strain": {
+        "id": "serious-serious-happiness",
+        "name": "Serious Happiness",
+        "bank": "Serious Seeds",
+        "image": "img/serious-serious-happiness-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.754 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (63.3% bordes claros > 30.0%)"
+      ],
+      "w": 1890,
+      "h": 2508,
+      "ratio": 0.754,
+      "size_kb": 1140.9,
+      "pct_light": 63.3,
+      "corner_lum": 211.1
+    },
+    {
+      "strain": {
+        "id": "serious-kali-bubba",
+        "name": "Kali Bubba",
+        "bank": "Serious Seeds",
+        "image": "img/serious-kali-bubba-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.882 fuera de [0.9, 1.1])"
+      ],
+      "w": 1920,
+      "h": 1020,
+      "ratio": 1.882,
+      "size_kb": 275.9,
+      "pct_light": 0.0,
+      "corner_lum": 149.7
+    },
+    {
+      "strain": {
+        "id": "ripper-fuel-og",
+        "name": "Ripper Fuel",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-fuel-og.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)",
+        "Fondo blanco/claro residual (60.1% bordes claros > 30.0%)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 35.3,
+      "pct_light": 60.1,
+      "corner_lum": 181.1
+    },
+    {
+      "strain": {
+        "id": "ripper-zombie-wash",
+        "name": "Zombiewash",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-zombie-wash.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 39.9,
+      "pct_light": 28.2,
+      "corner_lum": 131.2
+    },
+    {
+      "strain": {
+        "id": "ripper-candy-crack",
+        "name": "Candy Crack",
+        "bank": "Ripper Seeds",
+        "image": "img/ripper-candy-crack.jpg"
+      },
+      "issues": [
+        "Baja resolución (700x700 px < 800x800)"
+      ],
+      "w": 700,
+      "h": 700,
+      "ratio": 1.0,
+      "size_kb": 142.9,
+      "pct_light": 4.1,
+      "corner_lum": 9.3
+    },
+    {
+      "strain": {
+        "id": "bf-zkittlez-og",
+        "name": "Zkittlez OG",
+        "bank": "Barney",
+        "image": "img/bf-zkittlez-og.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.833 fuera de [0.9, 1.1])"
+      ],
+      "w": 1000,
+      "h": 1200,
+      "ratio": 0.833,
+      "size_kb": 208.0,
+      "pct_light": 4.4,
+      "corner_lum": 48.4
+    },
+    {
+      "strain": {
+        "id": "bf-pineapple-chunk",
+        "name": "Pineapple Chunk",
+        "bank": "Barney",
+        "image": "img/bf-pineapple-chunk.jpg"
+      },
+      "issues": [
+        "Baja resolución (750x750 px < 800x800)"
+      ],
+      "w": 750,
+      "h": 750,
+      "ratio": 1.0,
+      "size_kb": 162.5,
+      "pct_light": 8.3,
+      "corner_lum": 79.6
+    },
+    {
+      "strain": {
+        "id": "bf-wedding-cake",
+        "name": "Wedding Cake",
+        "bank": "Barney",
+        "image": "img/bf-wedding-cake.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 58.1,
+      "pct_light": 2.8,
+      "corner_lum": 8.5
+    },
+    {
+      "strain": {
+        "id": "rqs-honey-cream",
+        "name": "Honey Cream",
+        "bank": "Royal Queen Seeds",
+        "image": "img/rqs-honey-cream.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)",
+        "Fondo blanco/claro residual (73.0% bordes claros > 30.0%)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 68.8,
+      "pct_light": 73.0,
+      "corner_lum": 147.3
+    },
+    {
+      "strain": {
+        "id": "rqs-og-kush-auto",
+        "name": "OG Kush Auto",
+        "bank": "Royal Queen Seeds",
+        "image": "img/rqs-og-kush-auto.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 169.8,
+      "pct_light": 0.2,
+      "corner_lum": 18.5
+    },
+    {
+      "strain": {
+        "id": "rqs-purple-queen",
+        "name": "Purple Queen",
+        "bank": "Royal Queen Seeds",
+        "image": "img/rqs-purple-queen.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.25 fuera de [0.9, 1.1])"
+      ],
+      "w": 1024,
+      "h": 819,
+      "ratio": 1.25,
+      "size_kb": 104.6,
+      "pct_light": 20.0,
+      "corner_lum": 135.8
+    },
+    {
+      "strain": {
+        "id": "rqs-watermelon",
+        "name": "Watermelon",
+        "bank": "Royal Queen Seeds",
+        "image": "img/rqs-watermelon.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.235 fuera de [0.9, 1.1])",
+        "Baja resolución (704x570 px < 800x800)"
+      ],
+      "w": 704,
+      "h": 570,
+      "ratio": 1.235,
+      "size_kb": 94.9,
+      "pct_light": 2.3,
+      "corner_lum": 85.1
+    },
+    {
+      "strain": {
+        "id": "ss-sweet-amnesia-haze",
+        "name": "Sweet Amnesia Haze",
+        "bank": "Sweet Seeds",
+        "image": "img/sweet-amnesia-haze.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 129.7,
+      "pct_light": 3.4,
+      "corner_lum": 120.1
+    },
+    {
+      "strain": {
+        "id": "ss-crystal-candy",
+        "name": "Crystal Candy",
+        "bank": "Sweet Seeds",
+        "image": "img/sweet-crystal-candy.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 325.5,
+      "pct_light": 0.0,
+      "corner_lum": 78.8
+    },
+    {
+      "strain": {
+        "id": "ss-red-hot-cookies",
+        "name": "Red Hot Cookies",
+        "bank": "Sweet Seeds",
+        "image": "img/sweet-red-hot-cookies.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.463 fuera de [0.9, 1.1])",
+        "Baja resolución (500x1081 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 1081,
+      "ratio": 0.463,
+      "size_kb": 136.8,
+      "pct_light": 8.5,
+      "corner_lum": 114.3
+    },
+    {
+      "strain": {
+        "id": "ss-black-cream-auto",
+        "name": "Black Cream Auto",
+        "bank": "Sweet Seeds",
+        "image": "img/sweet-black-cream-auto.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.666 fuera de [0.9, 1.1])"
+      ],
+      "w": 3632,
+      "h": 5456,
+      "ratio": 0.666,
+      "size_kb": 1228.5,
+      "pct_light": 0.0,
+      "corner_lum": 133.3
+    },
+    {
+      "strain": {
+        "id": "ss-bigdevil-xl",
+        "name": "Big Devil XL Auto",
+        "bank": "Sweet Seeds",
+        "image": "img/sweet-big-devil-xl.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.875 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (31.4% bordes claros > 30.0%)"
+      ],
+      "w": 800,
+      "h": 914,
+      "ratio": 0.875,
+      "size_kb": 226.6,
+      "pct_light": 31.4,
+      "corner_lum": 92.3
+    },
+    {
+      "strain": {
+        "id": "dp-frisian-dew",
+        "name": "Frisian Dew",
+        "bank": "Dutch Passion",
+        "image": "img/dp-frisian-dew.jpg"
+      },
+      "issues": [
+        "Baja resolución (643x643 px < 800x800)"
+      ],
+      "w": 643,
+      "h": 643,
+      "ratio": 1.0,
+      "size_kb": 488.9,
+      "pct_light": 23.0,
+      "corner_lum": 116.0
+    },
+    {
+      "strain": {
+        "id": "dp-auto-mazar",
+        "name": "Auto Mazar",
+        "bank": "Dutch Passion",
+        "image": "img/dp-auto-mazar.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.663 fuera de [0.9, 1.1])"
+      ],
+      "w": 1200,
+      "h": 1811,
+      "ratio": 0.663,
+      "size_kb": 403.9,
+      "pct_light": 3.2,
+      "corner_lum": 96.8
+    },
+    {
+      "strain": {
+        "id": "dp-skywalker-og",
+        "name": "Skywalker OG",
+        "bank": "Dutch Passion",
+        "image": "img/dp-skywalker-og.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])",
+        "Baja resolución (600x800 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 800,
+      "ratio": 0.75,
+      "size_kb": 285.2,
+      "pct_light": 0.0,
+      "corner_lum": 16.9
+    },
+    {
+      "strain": {
+        "id": "phil-lemon-og-candy",
+        "name": "Lemon OG Candy",
+        "bank": "Philosopher Seeds",
+        "image": "img/philo-lemon-og-candy.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.499 fuera de [0.9, 1.1])",
+        "Baja resolución (1024x683 px < 800x800)"
+      ],
+      "w": 1024,
+      "h": 683,
+      "ratio": 1.499,
+      "size_kb": 129.3,
+      "pct_light": 3.5,
+      "corner_lum": 33.5
+    },
+    {
+      "strain": {
+        "id": "phil-critical-sensi-star",
+        "name": "Critical Sensi Star",
+        "bank": "Philosopher Seeds",
+        "image": "img/philo-critical-sensi-star.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.862 fuera de [0.9, 1.1])"
+      ],
+      "w": 2206,
+      "h": 2560,
+      "ratio": 0.862,
+      "size_kb": 605.7,
+      "pct_light": 13.5,
+      "corner_lum": 126.2
+    },
+    {
+      "strain": {
+        "id": "phil-bubbas-gift",
+        "name": "Bubba",
+        "bank": "Philosopher Seeds",
+        "image": "img/philo-bubbas-gift.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)",
+        "Fondo blanco/claro residual (55.5% bordes claros > 30.0%)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 128.0,
+      "pct_light": 55.5,
+      "corner_lum": 180.1
+    },
+    {
+      "strain": {
+        "id": "phil-snow-storm",
+        "name": "Snow Storm",
+        "bank": "Philosopher Seeds",
+        "image": "img/philo-snow-storm.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 1200,
+      "h": 1600,
+      "ratio": 0.75,
+      "size_kb": 315.0,
+      "pct_light": 0.6,
+      "corner_lum": 2.4
+    },
+    {
+      "strain": {
+        "id": "hso-707-headband",
+        "name": "707 Headband",
+        "bank": "Humboldt Seed",
+        "image": "img/hso-707-headband-4k.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.333 fuera de [0.9, 1.1])"
+      ],
+      "w": 3000,
+      "h": 2250,
+      "ratio": 1.333,
+      "size_kb": 1393.6,
+      "pct_light": 29.5,
+      "corner_lum": 157.3
+    },
+    {
+      "strain": {
+        "id": "hso-blue-fire",
+        "name": "Blue Fire",
+        "bank": "Humboldt Seed",
+        "image": "img/hso-blue-fire-4k.jpg"
+      },
+      "issues": [
+        "Baja resolución (455x455 px < 800x800)"
+      ],
+      "w": 455,
+      "h": 455,
+      "ratio": 1.0,
+      "size_kb": 49.1,
+      "pct_light": 0.4,
+      "corner_lum": 24.8
+    },
+    {
+      "strain": {
+        "id": "00s-cheese-xl",
+        "name": "Cheese XL Auto",
+        "bank": "00 Seeds Bank",
+        "image": "img/00s-cheese-xl.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.711 fuera de [0.9, 1.1])"
+      ],
+      "w": 1024,
+      "h": 1441,
+      "ratio": 0.711,
+      "size_kb": 1516.7,
+      "pct_light": 0.6,
+      "corner_lum": 89.6
+    },
+    {
+      "strain": {
+        "id": "00s-critical-mass",
+        "name": "Critical Mass CBD",
+        "bank": "00 Seeds Bank",
+        "image": "img/00s-critical-mass.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 350.2,
+      "pct_light": 9.5,
+      "corner_lum": 105.9
+    },
+    {
+      "strain": {
+        "id": "00s-white-smurf",
+        "name": "White Smurf Auto",
+        "bank": "00 Seeds Bank",
+        "image": "img/00s-white-smurf.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.754 fuera de [0.9, 1.1])"
+      ],
+      "w": 1929,
+      "h": 2560,
+      "ratio": 0.754,
+      "size_kb": 980.3,
+      "pct_light": 3.7,
+      "corner_lum": 12.5
+    },
+    {
+      "strain": {
+        "id": "00s-afghan-mass",
+        "name": "Afghan Mass",
+        "bank": "00 Seeds Bank",
+        "image": "img/oo-super-skunk.jpg"
+      },
+      "issues": [
+        "Baja resolución (450x450 px < 800x800)"
+      ],
+      "w": 450,
+      "h": 450,
+      "ratio": 1.0,
+      "size_kb": 23.5,
+      "pct_light": 12.8,
+      "corner_lum": 125.1
+    },
+    {
+      "strain": {
+        "id": "ths-mk-ultra",
+        "name": "MK Ultra",
+        "bank": "TH Seeds",
+        "image": "img/ths-mk-ultra.jpg"
+      },
+      "issues": [
+        "Baja resolución (778x772 px < 800x800)"
+      ],
+      "w": 778,
+      "h": 772,
+      "ratio": 1.008,
+      "size_kb": 279.6,
+      "pct_light": 0.0,
+      "corner_lum": 0.5
+    },
+    {
+      "strain": {
+        "id": "ths-heavy-d",
+        "name": "Heavy D Indica",
+        "bank": "TH Seeds",
+        "image": "img/ths-heavy-d.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 122.4,
+      "pct_light": 0.6,
+      "corner_lum": 4.2
+    },
+    {
+      "strain": {
+        "id": "ths-kushage",
+        "name": "Kushage",
+        "bank": "TH Seeds",
+        "image": "img/ths-kushage.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 120.6,
+      "pct_light": 2.4,
+      "corner_lum": 79.1
+    },
+    {
+      "strain": {
+        "id": "ths-mendocino-madness",
+        "name": "Mendocino Madness",
+        "bank": "TH Seeds",
+        "image": "img/ths-mendocino-madness.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 137.6,
+      "pct_light": 0.8,
+      "corner_lum": 86.5
+    },
+    {
+      "strain": {
+        "id": "ths-burmese-kush",
+        "name": "Burmese Kush",
+        "bank": "TH Seeds",
+        "image": "img/ths-burmese-kush.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.194 fuera de [0.9, 1.1])"
+      ],
+      "w": 2048,
+      "h": 1715,
+      "ratio": 1.194,
+      "size_kb": 411.0,
+      "pct_light": 4.6,
+      "corner_lum": 87.6
+    },
+    {
+      "strain": {
+        "id": "paradise-wappa",
+        "name": "Wappa",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-wappa-flower-v2-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3600,
+      "ratio": 0.667,
+      "size_kb": 2152.7,
+      "pct_light": 1.3,
+      "corner_lum": 19.4
+    },
+    {
+      "strain": {
+        "id": "paradise-sensi-star",
+        "name": "Sensi Star",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-sensi-star-flower-v2-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3600,
+      "ratio": 0.667,
+      "size_kb": 2169.9,
+      "pct_light": 1.8,
+      "corner_lum": 21.1
+    },
+    {
+      "strain": {
+        "id": "paradise-atomical-haze",
+        "name": "Atomical Haze",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-atomical-haze-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3600,
+      "ratio": 0.667,
+      "size_kb": 1463.3,
+      "pct_light": 0.0,
+      "corner_lum": 10.7
+    },
+    {
+      "strain": {
+        "id": "paradise-durga-mata",
+        "name": "Durga Mata",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-durga-mata-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3600,
+      "ratio": 0.667,
+      "size_kb": 1575.5,
+      "pct_light": 0.0,
+      "corner_lum": 11.0
+    },
+    {
+      "strain": {
+        "id": "paradise-space-cookies",
+        "name": "Space Cookies",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-space-cookies-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3600,
+      "ratio": 0.667,
+      "size_kb": 1660.7,
+      "pct_light": 0.5,
+      "corner_lum": 11.5
+    },
+    {
+      "strain": {
+        "id": "paradise-slipstream",
+        "name": "Slipstream",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-slipstream-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3600,
+      "ratio": 0.667,
+      "size_kb": 982.3,
+      "pct_light": 0.8,
+      "corner_lum": 3.2
+    },
+    {
+      "strain": {
+        "id": "paradise-sunset-paradise",
+        "name": "Sunset Paradise",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-sunset-paradise-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3600,
+      "ratio": 0.667,
+      "size_kb": 1982.8,
+      "pct_light": 0.0,
+      "corner_lum": 10.0
+    },
+    {
+      "strain": {
+        "id": "paradise-rainbow-road",
+        "name": "Rainbow Road",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-rainbow-road-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.676 fuera de [0.9, 1.1])",
+        "Baja resolución (473x700 px < 800x800)"
+      ],
+      "w": 473,
+      "h": 700,
+      "ratio": 0.676,
+      "size_kb": 65.7,
+      "pct_light": 0.0,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "paradise-mendocino-skunk",
+        "name": "Mendocino Skunk",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-mendocino-skunk-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3600,
+      "ratio": 0.667,
+      "size_kb": 1832.2,
+      "pct_light": 0.0,
+      "corner_lum": 10.9
+    },
+    {
+      "strain": {
+        "id": "paradise-stromboli-auto",
+        "name": "Stromboli Auto",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-stromboli-auto-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3600,
+      "ratio": 0.667,
+      "size_kb": 1795.0,
+      "pct_light": 4.8,
+      "corner_lum": 45.0
+    },
+    {
+      "strain": {
+        "id": "paradise-red-velvet-auto",
+        "name": "Red Velvet Auto",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-red-velvet-auto-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3597,
+      "ratio": 0.667,
+      "size_kb": 1681.7,
+      "pct_light": 1.9,
+      "corner_lum": 5.5
+    },
+    {
+      "strain": {
+        "id": "paradise-dutch-dragon",
+        "name": "Dutch Dragon",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-dutch-dragon-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3600,
+      "ratio": 0.667,
+      "size_kb": 1453.6,
+      "pct_light": 0.0,
+      "corner_lum": 11.2
+    },
+    {
+      "strain": {
+        "id": "paradise-californian-gold",
+        "name": "Californian Gold",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-californian-gold-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.656 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3660,
+      "ratio": 0.656,
+      "size_kb": 1535.6,
+      "pct_light": 0.0,
+      "corner_lum": 63.8
+    },
+    {
+      "strain": {
+        "id": "paradise-opium",
+        "name": "Opium",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-opium-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3600,
+      "ratio": 0.667,
+      "size_kb": 1371.6,
+      "pct_light": 0.0,
+      "corner_lum": 11.2
+    },
+    {
+      "strain": {
+        "id": "paradise-glowstarz",
+        "name": "Glowstarz",
+        "bank": "Paradise Seeds",
+        "image": "img/paradise-glowstarz-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])"
+      ],
+      "w": 2400,
+      "h": 3597,
+      "ratio": 0.667,
+      "size_kb": 1505.1,
+      "pct_light": 4.3,
+      "corner_lum": 28.5
+    },
+    {
+      "strain": {
+        "id": "nirvana-northern-light",
+        "name": "Northern Light",
+        "bank": "Nirvana Seeds",
+        "image": "img/nirvana-northern-light-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.506 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (37.8% bordes claros > 30.0%)"
+      ],
+      "w": 4800,
+      "h": 3188,
+      "ratio": 1.506,
+      "size_kb": 2618.6,
+      "pct_light": 37.8,
+      "corner_lum": 157.6
+    },
+    {
+      "strain": {
+        "id": "nirvana-gsc",
+        "name": "Girl Scout Cookies",
+        "bank": "Nirvana Seeds",
+        "image": "img/nirvana-gsc-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.503 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (39.5% bordes claros > 30.0%)"
+      ],
+      "w": 4800,
+      "h": 3194,
+      "ratio": 1.503,
+      "size_kb": 2770.4,
+      "pct_light": 39.5,
+      "corner_lum": 123.7
+    },
+    {
+      "strain": {
+        "id": "nirvana-og-kush",
+        "name": "OG Kush",
+        "bank": "Nirvana Seeds",
+        "image": "img/nirvana-og-kush-flower-hd.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 431.3,
+      "pct_light": 0.6,
+      "corner_lum": 11.9
+    },
+    {
+      "strain": {
+        "id": "nirvana-gelato",
+        "name": "Gelato",
+        "bank": "Nirvana Seeds",
+        "image": "img/nirvana-gelato-flower-hd.jpg"
+      },
+      "issues": [
+        "Baja resolución (640x640 px < 800x800)"
+      ],
+      "w": 640,
+      "h": 640,
+      "ratio": 1.0,
+      "size_kb": 70.9,
+      "pct_light": 16.2,
+      "corner_lum": 56.4
+    },
+    {
+      "strain": {
+        "id": "nirvana-white-widow",
+        "name": "White Widow",
+        "bank": "Nirvana Seeds",
+        "image": "img/nirvana-white-widow-flower-hd.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 76.8,
+      "pct_light": 6.8,
+      "corner_lum": 109.0
+    },
+    {
+      "strain": {
+        "id": "dna-kosher-kush",
+        "name": "Kosher Kush",
+        "bank": "DNA Genetics",
+        "image": "img/dna-kosher-kush.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 43.6,
+      "pct_light": 1.2,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "dna-chocolope",
+        "name": "Chocolope",
+        "bank": "DNA Genetics",
+        "image": "img/dna-chocolope.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.5 fuera de [0.9, 1.1])"
+      ],
+      "w": 1536,
+      "h": 1024,
+      "ratio": 1.5,
+      "size_kb": 198.1,
+      "pct_light": 0.0,
+      "corner_lum": 3.7
+    },
+    {
+      "strain": {
+        "id": "dna-la-confidential",
+        "name": "LA Confidential",
+        "bank": "DNA Genetics",
+        "image": "img/dna-la-confidential.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)",
+        "Fondo blanco/claro residual (32.9% bordes claros > 30.0%)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 203.4,
+      "pct_light": 32.9,
+      "corner_lum": 172.2
+    },
+    {
+      "strain": {
+        "id": "dna-strawberry-banana",
+        "name": "Strawberry Banana",
+        "bank": "DNA Genetics",
+        "image": "img/dna-strawberry-banana.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.5 fuera de [0.9, 1.1])"
+      ],
+      "w": 1536,
+      "h": 1024,
+      "ratio": 1.5,
+      "size_kb": 327.8,
+      "pct_light": 5.5,
+      "corner_lum": 58.7
+    },
+    {
+      "strain": {
+        "id": "dna-lemon-skunk",
+        "name": "Lemon Skunk",
+        "bank": "DNA Genetics",
+        "image": "img/dna-lemon-skunk.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)",
+        "Fondo blanco/claro residual (100.0% bordes claros > 30.0%)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 29.7,
+      "pct_light": 100.0,
+      "corner_lum": 254.0
+    },
+    {
+      "strain": {
+        "id": "dna-the-og-18",
+        "name": "The OG #18",
+        "bank": "DNA Genetics",
+        "image": "img/dna-the-og-18.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 326.3,
+      "pct_light": 4.8,
+      "corner_lum": 69.6
+    },
+    {
+      "strain": {
+        "id": "dna-cataract-kush",
+        "name": "Cataract Kush",
+        "bank": "DNA Genetics",
+        "image": "img/dna-cataract-kush.jpg"
+      },
+      "issues": [
+        "Baja resolución (400x419 px < 800x800)"
+      ],
+      "w": 400,
+      "h": 419,
+      "ratio": 0.955,
+      "size_kb": 53.3,
+      "pct_light": 8.8,
+      "corner_lum": 45.7
+    },
+    {
+      "strain": {
+        "id": "dna-purple-wreck",
+        "name": "Purple Wreck",
+        "bank": "DNA Genetics",
+        "image": "img/dna-purple-wreck.jpg"
+      },
+      "issues": [
+        "Baja resolución (570x570 px < 800x800)"
+      ],
+      "w": 570,
+      "h": 570,
+      "ratio": 1.0,
+      "size_kb": 90.1,
+      "pct_light": 0.0,
+      "corner_lum": 30.2
+    },
+    {
+      "strain": {
+        "id": "dna-sour-tangie",
+        "name": "Sour Tangie",
+        "bank": "DNA Genetics",
+        "image": "img/dna-sour-tangie.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 34.6,
+      "pct_light": 0.0,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "dna-sorbet",
+        "name": "Sorbet",
+        "bank": "DNA Genetics",
+        "image": "img/dna-sorbet.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.5 fuera de [0.9, 1.1])"
+      ],
+      "w": 1536,
+      "h": 1024,
+      "ratio": 1.5,
+      "size_kb": 270.2,
+      "pct_light": 0.0,
+      "corner_lum": 23.5
+    },
+    {
+      "strain": {
+        "id": "dna-sleestack",
+        "name": "Sleestack",
+        "bank": "DNA Genetics",
+        "image": "img/dna-sleestack.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.501 fuera de [0.9, 1.1])",
+        "Baja resolución (800x533 px < 800x800)"
+      ],
+      "w": 800,
+      "h": 533,
+      "ratio": 1.501,
+      "size_kb": 45.3,
+      "pct_light": 0.0,
+      "corner_lum": 27.3
+    },
+    {
+      "strain": {
+        "id": "dna-3peat",
+        "name": "3peat",
+        "bank": "DNA Genetics",
+        "image": "img/dna-3peat.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x628 px < 800x800)"
+      ],
+      "w": 600,
+      "h": 628,
+      "ratio": 0.955,
+      "size_kb": 81.5,
+      "pct_light": 7.6,
+      "corner_lum": 29.9
+    },
+    {
+      "strain": {
+        "id": "ths-bubblegum",
+        "name": "Bubblegum",
+        "bank": "TH Seeds",
+        "image": "img/ths-bubblegum.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.618 fuera de [0.9, 1.1])"
+      ],
+      "w": 1127,
+      "h": 1823,
+      "ratio": 0.618,
+      "size_kb": 795.7,
+      "pct_light": 1.1,
+      "corner_lum": 62.8
+    },
+    {
+      "strain": {
+        "id": "ths-chocolate-chunk",
+        "name": "Chocolate Chunk",
+        "bank": "TH Seeds",
+        "image": "img/ths-chocolate-chunk.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 152.9,
+      "pct_light": 3.8,
+      "corner_lum": 41.9
+    },
+    {
+      "strain": {
+        "id": "wls-white-widow",
+        "name": "White Widow",
+        "bank": "White Label Seed Co.",
+        "image": "img/wls-white-widow.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 178.4,
+      "pct_light": 20.3,
+      "corner_lum": 78.3
+    },
+    {
+      "strain": {
+        "id": "wls-snow-white",
+        "name": "Snow White",
+        "bank": "White Label Seed Co.",
+        "image": "img/wls-snow-white.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 1125,
+      "h": 1500,
+      "ratio": 0.75,
+      "size_kb": 698.8,
+      "pct_light": 11.3,
+      "corner_lum": 74.5
+    },
+    {
+      "strain": {
+        "id": "wls-white-skunk",
+        "name": "White Skunk",
+        "bank": "White Label Seed Co.",
+        "image": "img/wls-white-skunk.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 197.4,
+      "pct_light": 3.3,
+      "corner_lum": 7.0
+    },
+    {
+      "strain": {
+        "id": "wls-double-gum",
+        "name": "Double Gum",
+        "bank": "White Label Seed Co.",
+        "image": "img/wls-double-gum.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)",
+        "Fondo blanco/claro residual (60.6% bordes claros > 30.0%)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 171.1,
+      "pct_light": 60.6,
+      "corner_lum": 198.7
+    },
+    {
+      "strain": {
+        "id": "wls-orange-bud",
+        "name": "Orange Bud",
+        "bank": "White Label Seed Co.",
+        "image": "img/wls-orange-bud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)",
+        "Fondo blanco/claro residual (78.6% bordes claros > 30.0%)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 146.6,
+      "pct_light": 78.6,
+      "corner_lum": 254.7
+    },
+    {
+      "strain": {
+        "id": "wls-afghani-1",
+        "name": "Afghani #1",
+        "bank": "White Label Seed Co.",
+        "image": "img/wls-afghani-1-official.jpg"
+      },
+      "issues": [
+        "Baja resolución (768x768 px < 800x800)"
+      ],
+      "w": 768,
+      "h": 768,
+      "ratio": 1.0,
+      "size_kb": 220.0,
+      "pct_light": 4.3,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "ths-french-macaron",
+        "name": "French Macaron",
+        "bank": "TH Seeds",
+        "image": "img/ths-french-macaron.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 85.1,
+      "pct_light": 29.4,
+      "corner_lum": 150.0
+    },
+    {
+      "strain": {
+        "id": "ths-banana-candy-krush",
+        "name": "Banana Candy Krush",
+        "bank": "TH Seeds",
+        "image": "img/ths-banana-candy-krush.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 158.9,
+      "pct_light": 14.1,
+      "corner_lum": 45.3
+    },
+    {
+      "strain": {
+        "id": "ths-mont-blanc",
+        "name": "Mont Blanc",
+        "bank": "TH Seeds",
+        "image": "img/ths-mont-blanc.jpg"
+      },
+      "issues": [
+        "Baja resolución (550x547 px < 800x800)"
+      ],
+      "w": 550,
+      "h": 547,
+      "ratio": 1.005,
+      "size_kb": 217.7,
+      "pct_light": 15.3,
+      "corner_lum": 111.7
+    },
+    {
+      "strain": {
+        "id": "ths-melonsicle",
+        "name": "Melonsicle",
+        "bank": "TH Seeds",
+        "image": "img/ths-melonsicle.jpg"
+      },
+      "issues": [
+        "Baja resolución (450x450 px < 800x800)"
+      ],
+      "w": 450,
+      "h": 450,
+      "ratio": 1.0,
+      "size_kb": 95.0,
+      "pct_light": 12.6,
+      "corner_lum": 109.1
+    },
+    {
+      "strain": {
+        "id": "ths-blumosa",
+        "name": "Blumosa",
+        "bank": "TH Seeds",
+        "image": "img/ths-blumosa.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (40.0% bordes claros > 30.0%)"
+      ],
+      "w": 2000,
+      "h": 2000,
+      "ratio": 1.0,
+      "size_kb": 1123.2,
+      "pct_light": 40.0,
+      "corner_lum": 151.1
+    },
+    {
+      "strain": {
+        "id": "wls-super-skunk",
+        "name": "Super Skunk",
+        "bank": "White Label Seed Co.",
+        "image": "img/wls-super-skunk.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.812 fuera de [0.9, 1.1])",
+        "Baja resolución (650x800 px < 800x800)"
+      ],
+      "w": 650,
+      "h": 800,
+      "ratio": 0.812,
+      "size_kb": 808.4,
+      "pct_light": 2.2,
+      "corner_lum": 55.3
+    },
+    {
+      "strain": {
+        "id": "wls-northern-lights",
+        "name": "Northern Lights",
+        "bank": "White Label Seed Co.",
+        "image": "img/wls-northern-lights.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 1125,
+      "h": 1500,
+      "ratio": 0.75,
+      "size_kb": 258.2,
+      "pct_light": 2.8,
+      "corner_lum": 131.7
+    },
+    {
+      "strain": {
+        "id": "wls-shiva-skunk",
+        "name": "Shiva Skunk",
+        "bank": "White Label Seed Co.",
+        "image": "img/wls-shiva-skunk.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.333 fuera de [0.9, 1.1])"
+      ],
+      "w": 1500,
+      "h": 1125,
+      "ratio": 1.333,
+      "size_kb": 686.4,
+      "pct_light": 5.5,
+      "corner_lum": 99.4
+    },
+    {
+      "strain": {
+        "id": "wls-purple-haze",
+        "name": "Purple Haze",
+        "bank": "White Label Seed Co.",
+        "image": "img/wls-purple-haze.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 130.4,
+      "pct_light": 0.1,
+      "corner_lum": 1.1
+    },
+    {
+      "strain": {
+        "id": "wls-durban",
+        "name": "Durban",
+        "bank": "White Label Seed Co.",
+        "image": "img/wls-durban.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])",
+        "Baja resolución (500x667 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 667,
+      "ratio": 0.75,
+      "size_kb": 152.5,
+      "pct_light": 19.4,
+      "corner_lum": 139.1
+    },
+    {
+      "strain": {
+        "id": "soma-nyc-diesel",
+        "name": "NYC Diesel",
+        "bank": "Soma Seeds",
+        "image": "img/soma-nyc-diesel.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 158.7,
+      "pct_light": 0.0,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "soma-amnesia-haze",
+        "name": "Amnesia Haze",
+        "bank": "Soma Seeds",
+        "image": "img/soma-amnesia-haze.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)",
+        "Fondo blanco/claro residual (67.1% bordes claros > 30.0%)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 166.7,
+      "pct_light": 67.1,
+      "corner_lum": 223.0
+    },
+    {
+      "strain": {
+        "id": "soma-somango",
+        "name": "Somango",
+        "bank": "Soma Seeds",
+        "image": "img/soma-somango.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.8 fuera de [0.9, 1.1])"
+      ],
+      "w": 1080,
+      "h": 1350,
+      "ratio": 0.8,
+      "size_kb": 747.5,
+      "pct_light": 22.2,
+      "corner_lum": 98.9
+    },
+    {
+      "strain": {
+        "id": "soma-lavender",
+        "name": "Lavender",
+        "bank": "Soma Seeds",
+        "image": "img/soma-lavender.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.563 fuera de [0.9, 1.1])",
+        "Baja resolución (400x711 px < 800x800)"
+      ],
+      "w": 400,
+      "h": 711,
+      "ratio": 0.563,
+      "size_kb": 95.4,
+      "pct_light": 0.2,
+      "corner_lum": 38.5
+    },
+    {
+      "strain": {
+        "id": "soma-buddhas-sister",
+        "name": "Buddha",
+        "bank": "Soma Seeds",
+        "image": "img/soma-buddhas-sister.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.8 fuera de [0.9, 1.1])"
+      ],
+      "w": 1080,
+      "h": 1350,
+      "ratio": 0.8,
+      "size_kb": 461.2,
+      "pct_light": 0.3,
+      "corner_lum": 39.6
+    },
+    {
+      "strain": {
+        "id": "soma-soma-rockbud",
+        "name": "Soma Rockbud",
+        "bank": "Soma Seeds",
+        "image": "img/soma-soma-rockbud.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.8 fuera de [0.9, 1.1])"
+      ],
+      "w": 915,
+      "h": 1144,
+      "ratio": 0.8,
+      "size_kb": 460.8,
+      "pct_light": 0.3,
+      "corner_lum": 68.4
+    },
+    {
+      "strain": {
+        "id": "soma-so-g-kush",
+        "name": "So G Kush",
+        "bank": "Soma Seeds",
+        "image": "img/soma-so-g-kush.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 203.2,
+      "pct_light": 5.1,
+      "corner_lum": 24.2
+    },
+    {
+      "strain": {
+        "id": "soma-free-white",
+        "name": "Free White",
+        "bank": "Soma Seeds",
+        "image": "img/soma-free-white.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 960,
+      "h": 1280,
+      "ratio": 0.75,
+      "size_kb": 231.0,
+      "pct_light": 2.9,
+      "corner_lum": 60.1
+    },
+    {
+      "strain": {
+        "id": "soma-somaui",
+        "name": "Somaui",
+        "bank": "Soma Seeds",
+        "image": "img/soma-somaui.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (37.0% bordes claros > 30.0%)"
+      ],
+      "w": 1000,
+      "h": 1000,
+      "ratio": 1.0,
+      "size_kb": 338.7,
+      "pct_light": 37.0,
+      "corner_lum": 165.5
+    },
+    {
+      "strain": {
+        "id": "tfd-pot-of-gold",
+        "name": "Pot of Gold",
+        "bank": "The Flying Dutchmen",
+        "image": "img/tfd-pot-of-gold.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 192.2,
+      "pct_light": 5.9,
+      "corner_lum": 69.0
+    },
+    {
+      "strain": {
+        "id": "tfd-g-force",
+        "name": "G-Force",
+        "bank": "The Flying Dutchmen",
+        "image": "img/tfd-g-force.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 150.2,
+      "pct_light": 0.2,
+      "corner_lum": 29.5
+    },
+    {
+      "strain": {
+        "id": "tfd-pineapple-punch",
+        "name": "Pineapple Punch",
+        "bank": "The Flying Dutchmen",
+        "image": "img/tfd-pineapple-punch.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.875 fuera de [0.9, 1.1])"
+      ],
+      "w": 800,
+      "h": 914,
+      "ratio": 0.875,
+      "size_kb": 374.1,
+      "pct_light": 20.4,
+      "corner_lum": 107.3
+    },
+    {
+      "strain": {
+        "id": "tfd-the-real-mccoy",
+        "name": "The Real McCoy",
+        "bank": "The Flying Dutchmen",
+        "image": "img/tfd-the-real-mccoy.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.5 fuera de [0.9, 1.1])"
+      ],
+      "w": 2413,
+      "h": 1609,
+      "ratio": 1.5,
+      "size_kb": 283.0,
+      "pct_light": 0.5,
+      "corner_lum": 107.2
+    },
+    {
+      "strain": {
+        "id": "tfd-titan",
+        "name": "Titan",
+        "bank": "The Flying Dutchmen",
+        "image": "img/tfd-titan.jpg"
+      },
+      "issues": [
+        "Baja resolución (450x450 px < 800x800)",
+        "Fondo blanco/claro residual (32.5% bordes claros > 30.0%)"
+      ],
+      "w": 450,
+      "h": 450,
+      "ratio": 1.0,
+      "size_kb": 94.4,
+      "pct_light": 32.5,
+      "corner_lum": 152.5
+    },
+    {
+      "strain": {
+        "id": "tfd-nepal-baba",
+        "name": "Nepal Baba",
+        "bank": "The Flying Dutchmen",
+        "image": "img/tfd-nepal-baba.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 168.6,
+      "pct_light": 19.6,
+      "corner_lum": 87.7
+    },
+    {
+      "strain": {
+        "id": "tfd-swazi-safari",
+        "name": "Swazi Safari",
+        "bank": "The Flying Dutchmen",
+        "image": "img/tfd-swazi-safari.jpg"
+      },
+      "issues": [
+        "Baja resolución (744x744 px < 800x800)"
+      ],
+      "w": 744,
+      "h": 744,
+      "ratio": 1.0,
+      "size_kb": 133.0,
+      "pct_light": 0.0,
+      "corner_lum": 20.4
+    },
+    {
+      "strain": {
+        "id": "tfd-dutchmens-royal-orange",
+        "name": "Dutchmen",
+        "bank": "The Flying Dutchmen",
+        "image": "img/tfd-dutchmens-royal-orange.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 99.4,
+      "pct_light": 8.1,
+      "corner_lum": 102.2
+    },
+    {
+      "strain": {
+        "id": "sdm-peyote-zkittlez",
+        "name": "Peyote Zkittlez",
+        "bank": "Seedsman",
+        "image": "img/sdm-peyote-zkittlez.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 81.7,
+      "pct_light": 0.0,
+      "corner_lum": 7.5
+    },
+    {
+      "strain": {
+        "id": "sdm-gelato-og",
+        "name": "Gelato OG",
+        "bank": "Seedsman",
+        "image": "img/sdm-gelato-og.jpg"
+      },
+      "issues": [
+        "Baja resolución (450x450 px < 800x800)"
+      ],
+      "w": 450,
+      "h": 450,
+      "ratio": 1.0,
+      "size_kb": 87.9,
+      "pct_light": 12.2,
+      "corner_lum": 118.6
+    },
+    {
+      "strain": {
+        "id": "sdm-mama-thai",
+        "name": "Mama Thai",
+        "bank": "Seedsman",
+        "image": "img/sdm-mama-thai.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.354 fuera de [0.9, 1.1])"
+      ],
+      "w": 1300,
+      "h": 960,
+      "ratio": 1.354,
+      "size_kb": 130.4,
+      "pct_light": 0.0,
+      "corner_lum": 5.5
+    },
+    {
+      "strain": {
+        "id": "sdm-alaskan-purple",
+        "name": "Alaskan Purple",
+        "bank": "Seedsman",
+        "image": "img/sdm-alaskan-purple.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 156.3,
+      "pct_light": 1.7,
+      "corner_lum": 36.4
+    },
+    {
+      "strain": {
+        "id": "sdm-bad-azz-cheese",
+        "name": "Bad Azz Cheese",
+        "bank": "Seedsman",
+        "image": "img/sdm-bad-azz-cheese.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.866 fuera de [0.9, 1.1])",
+        "Baja resolución (778x898 px < 800x800)"
+      ],
+      "w": 778,
+      "h": 898,
+      "ratio": 0.866,
+      "size_kb": 390.9,
+      "pct_light": 4.2,
+      "corner_lum": 69.0
+    },
+    {
+      "strain": {
+        "id": "sdm-white-widow",
+        "name": "White Widow",
+        "bank": "Seedsman",
+        "image": "img/sdm-white-widow.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.667 fuera de [0.9, 1.1])",
+        "Baja resolución (600x900 px < 800x800)",
+        "Fondo blanco/claro residual (50.7% bordes claros > 30.0%)"
+      ],
+      "w": 600,
+      "h": 900,
+      "ratio": 0.667,
+      "size_kb": 65.3,
+      "pct_light": 50.7,
+      "corner_lum": 153.0
+    },
+    {
+      "strain": {
+        "id": "sdm-jack-herer",
+        "name": "Jack Herer",
+        "bank": "Seedsman",
+        "image": "img/sdm-jack-herer.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 130.9,
+      "pct_light": 0.8,
+      "corner_lum": 14.0
+    },
+    {
+      "strain": {
+        "id": "sdm-amnesia-fast",
+        "name": "Amnesia Fast",
+        "bank": "Seedsman",
+        "image": "img/sdm-amnesia-fast.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 156.1,
+      "pct_light": 1.0,
+      "corner_lum": 23.0
+    },
+    {
+      "strain": {
+        "id": "sdm-blue-blueberry",
+        "name": "Blue Blueberry",
+        "bank": "Seedsman",
+        "image": "img/sdm-blue-blueberry.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 143.2,
+      "pct_light": 1.8,
+      "corner_lum": 17.2
+    },
+    {
+      "strain": {
+        "id": "exg-grease-monkey",
+        "name": "Grease Monkey",
+        "bank": "Exotic Genetix",
+        "image": "img/exg-grease-monkey.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 171.8,
+      "pct_light": 20.1,
+      "corner_lum": 108.6
+    },
+    {
+      "strain": {
+        "id": "exg-cookies-and-cream",
+        "name": "Cookies and Cream",
+        "bank": "Exotic Genetix",
+        "image": "img/exg-cookies-and-cream.jpg"
+      },
+      "issues": [
+        "Baja resolución (750x750 px < 800x800)"
+      ],
+      "w": 750,
+      "h": 750,
+      "ratio": 1.0,
+      "size_kb": 337.2,
+      "pct_light": 1.1,
+      "corner_lum": 31.1
+    },
+    {
+      "strain": {
+        "id": "exg-strawberries-and-cream",
+        "name": "Strawberries & Cream",
+        "bank": "Exotic Genetix",
+        "image": "img/exg-strawberries-and-cream.jpg"
+      },
+      "issues": [
+        "Baja resolución (600x600 px < 800x800)",
+        "Fondo blanco/claro residual (40.8% bordes claros > 30.0%)"
+      ],
+      "w": 600,
+      "h": 600,
+      "ratio": 1.0,
+      "size_kb": 219.8,
+      "pct_light": 40.8,
+      "corner_lum": 162.9
+    },
+    {
+      "strain": {
+        "id": "exg-mint-chocolate-chip",
+        "name": "Mint Chocolate Chip",
+        "bank": "Exotic Genetix",
+        "image": "img/exg-mint-chocolate-chip.jpg"
+      },
+      "issues": [
+        "Baja resolución (700x700 px < 800x800)"
+      ],
+      "w": 700,
+      "h": 700,
+      "ratio": 1.0,
+      "size_kb": 216.8,
+      "pct_light": 20.4,
+      "corner_lum": 112.9
+    },
+    {
+      "strain": {
+        "id": "exg-red-runtz",
+        "name": "Red Runtz",
+        "bank": "Exotic Genetix",
+        "image": "img/exg-red-runtz.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 190.9,
+      "pct_light": 15.8,
+      "corner_lum": 95.0
+    },
+    {
+      "strain": {
+        "id": "exg-scotty-2-hotty",
+        "name": "Scotty 2 Hotty",
+        "bank": "Exotic Genetix",
+        "image": "img/exg-scotty-2-hotty.jpg"
+      },
+      "issues": [
+        "Baja resolución (700x700 px < 800x800)"
+      ],
+      "w": 700,
+      "h": 700,
+      "ratio": 1.0,
+      "size_kb": 375.6,
+      "pct_light": 12.4,
+      "corner_lum": 56.7
+    },
+    {
+      "strain": {
+        "id": "exg-runtz-buttonz",
+        "name": "Runtz Buttonz",
+        "bank": "Exotic Genetix",
+        "image": "img/exg-runtz-buttonz.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 134.7,
+      "pct_light": 15.5,
+      "corner_lum": 90.6
+    },
+    {
+      "strain": {
+        "id": "exg-power-sherb",
+        "name": "Power Sherb",
+        "bank": "Exotic Genetix",
+        "image": "img/exg-power-sherb.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 223.8,
+      "pct_light": 27.3,
+      "corner_lum": 61.4
+    },
+    {
+      "strain": {
+        "id": "exg-gary-poppins",
+        "name": "Gary Poppins",
+        "bank": "Exotic Genetix",
+        "image": "img/exg-gary-poppins.jpg"
+      },
+      "issues": [
+        "Baja resolución (700x700 px < 800x800)"
+      ],
+      "w": 700,
+      "h": 700,
+      "ratio": 1.0,
+      "size_kb": 229.5,
+      "pct_light": 18.3,
+      "corner_lum": 166.5
+    },
+    {
+      "strain": {
+        "id": "exg-tina",
+        "name": "Tina",
+        "bank": "Exotic Genetix",
+        "image": "img/exg-tina.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 130.5,
+      "pct_light": 0.1,
+      "corner_lum": 63.1
+    },
+    {
+      "strain": {
+        "id": "cpg-apples-and-bananas",
+        "name": "Apples and Bananas",
+        "bank": "Compound Genetics",
+        "image": "img/cpg-apples-and-bananas.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.343 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (84.3% bordes claros > 30.0%)"
+      ],
+      "w": 1080,
+      "h": 804,
+      "ratio": 1.343,
+      "size_kb": 112.4,
+      "pct_light": 84.3,
+      "corner_lum": 141.9
+    },
+    {
+      "strain": {
+        "id": "cpg-la-bomba",
+        "name": "La Bomba",
+        "bank": "Compound Genetics",
+        "image": "img/cpg-la-bomba.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.45 fuera de [0.9, 1.1])"
+      ],
+      "w": 1349,
+      "h": 3000,
+      "ratio": 0.45,
+      "size_kb": 607.1,
+      "pct_light": 6.1,
+      "corner_lum": 140.8
+    },
+    {
+      "strain": {
+        "id": "cpg-jokerz",
+        "name": "Jokerz",
+        "bank": "Compound Genetics",
+        "image": "img/cpg-jokerz.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x478 px < 800x800)",
+        "Fondo blanco/claro residual (69.9% bordes claros > 30.0%)"
+      ],
+      "w": 500,
+      "h": 478,
+      "ratio": 1.046,
+      "size_kb": 132.1,
+      "pct_light": 69.9,
+      "corner_lum": 152.2
+    },
+    {
+      "strain": {
+        "id": "cpg-red-bullz",
+        "name": "Red Bullz",
+        "bank": "Compound Genetics",
+        "image": "img/cpg-red-bullz.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.784 fuera de [0.9, 1.1])",
+        "Baja resolución (1024x574 px < 800x800)"
+      ],
+      "w": 1024,
+      "h": 574,
+      "ratio": 1.784,
+      "size_kb": 90.8,
+      "pct_light": 1.1,
+      "corner_lum": 26.4
+    },
+    {
+      "strain": {
+        "id": "ihg-slurricane",
+        "name": "Slurricane",
+        "bank": "In-House Genetics",
+        "image": "img/ihg-slurricane.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 226.0,
+      "pct_light": 12.8,
+      "corner_lum": 115.0
+    },
+    {
+      "strain": {
+        "id": "ihg-jelly-breath",
+        "name": "Jelly Breath",
+        "bank": "In-House Genetics",
+        "image": "img/ihg-jelly-breath.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])",
+        "Baja resolución (768x1024 px < 800x800)"
+      ],
+      "w": 768,
+      "h": 1024,
+      "ratio": 0.75,
+      "size_kb": 204.9,
+      "pct_light": 0.0,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "ihg-platinum-kush-breath",
+        "name": "Platinum Kush Breath",
+        "bank": "In-House Genetics",
+        "image": "img/ihg-platinum-kush-breath.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 118.9,
+      "pct_light": 2.6,
+      "corner_lum": 33.9
+    },
+    {
+      "strain": {
+        "id": "ihg-sugar-cane",
+        "name": "Sugar Cane",
+        "bank": "In-House Genetics",
+        "image": "img/ihg-sugar-cane.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.502 fuera de [0.9, 1.1])"
+      ],
+      "w": 964,
+      "h": 1920,
+      "ratio": 0.502,
+      "size_kb": 759.5,
+      "pct_light": 11.6,
+      "corner_lum": 87.2
+    },
+    {
+      "strain": {
+        "id": "ihg-tart-pops",
+        "name": "Tart Pops",
+        "bank": "In-House Genetics",
+        "image": "img/ihg-tart-pops.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.608 fuera de [0.9, 1.1])"
+      ],
+      "w": 1125,
+      "h": 1851,
+      "ratio": 0.608,
+      "size_kb": 523.1,
+      "pct_light": 5.3,
+      "corner_lum": 66.6
+    },
+    {
+      "strain": {
+        "id": "ihg-terple",
+        "name": "Terple",
+        "bank": "In-House Genetics",
+        "image": "img/ihg-terple.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.807 fuera de [0.9, 1.1])"
+      ],
+      "w": 4055,
+      "h": 5027,
+      "ratio": 0.807,
+      "size_kb": 3298.6,
+      "pct_light": 0.0,
+      "corner_lum": 2.0
+    },
+    {
+      "strain": {
+        "id": "ihg-black-cherry-pie",
+        "name": "Black Cherry Pie",
+        "bank": "In-House Genetics",
+        "image": "img/ihg-black-cherry-pie.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 2250,
+      "h": 3000,
+      "ratio": 0.75,
+      "size_kb": 1796.1,
+      "pct_light": 6.6,
+      "corner_lum": 143.7
+    },
+    {
+      "strain": {
+        "id": "ihg-dolato",
+        "name": "Dolato",
+        "bank": "In-House Genetics",
+        "image": "img/ihg-dolato.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 158.4,
+      "pct_light": 0.0,
+      "corner_lum": 3.8
+    },
+    {
+      "strain": {
+        "id": "ihg-trichome-storm",
+        "name": "Trichome Storm",
+        "bank": "In-House Genetics",
+        "image": "img/ihg-trichome-storm.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.53 fuera de [0.9, 1.1])",
+        "Baja resolución (768x502 px < 800x800)"
+      ],
+      "w": 768,
+      "h": 502,
+      "ratio": 1.53,
+      "size_kb": 159.6,
+      "pct_light": 7.0,
+      "corner_lum": 84.7
+    },
+    {
+      "strain": {
+        "id": "ihg-smackz",
+        "name": "Smackz",
+        "bank": "In-House Genetics",
+        "image": "img/ihg-smackz.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.45 fuera de [0.9, 1.1])"
+      ],
+      "w": 1350,
+      "h": 3000,
+      "ratio": 0.45,
+      "size_kb": 1216.2,
+      "pct_light": 8.1,
+      "corner_lum": 91.4
+    },
+    {
+      "strain": {
+        "id": "eth-mandarin-cookies",
+        "name": "Mandarin Cookies",
+        "bank": "Ethos Genetics",
+        "image": "img/eth-mandarin-cookies.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (64.3% bordes claros > 30.0%)"
+      ],
+      "w": 3024,
+      "h": 4032,
+      "ratio": 0.75,
+      "size_kb": 2847.6,
+      "pct_light": 64.3,
+      "corner_lum": 173.2
+    },
+    {
+      "strain": {
+        "id": "eth-grandpas-cookies",
+        "name": "Grandpa",
+        "bank": "Ethos Genetics",
+        "image": "img/eth-grandpas-cookies.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.811 fuera de [0.9, 1.1])"
+      ],
+      "w": 1460,
+      "h": 1800,
+      "ratio": 0.811,
+      "size_kb": 412.2,
+      "pct_light": 3.2,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "eth-lilac-diesel",
+        "name": "Lilac Diesel",
+        "bank": "Ethos Genetics",
+        "image": "img/eth-lilac-diesel.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 2142,
+      "h": 2856,
+      "ratio": 0.75,
+      "size_kb": 1721.8,
+      "pct_light": 26.8,
+      "corner_lum": 137.2
+    },
+    {
+      "strain": {
+        "id": "eth-cherry-gar-see-ya",
+        "name": "Cherry Gar-See-Ya",
+        "bank": "Ethos Genetics",
+        "image": "img/eth-cherry-gar-see-ya.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.8 fuera de [0.9, 1.1])"
+      ],
+      "w": 3024,
+      "h": 3780,
+      "ratio": 0.8,
+      "size_kb": 4429.4,
+      "pct_light": 3.1,
+      "corner_lum": 72.5
+    },
+    {
+      "strain": {
+        "id": "eth-candy-store",
+        "name": "Candy Store",
+        "bank": "Ethos Genetics",
+        "image": "img/eth-candy-store.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.8 fuera de [0.9, 1.1])",
+        "Baja resolución (740x925 px < 800x800)"
+      ],
+      "w": 740,
+      "h": 925,
+      "ratio": 0.8,
+      "size_kb": 398.6,
+      "pct_light": 0.7,
+      "corner_lum": 68.2
+    },
+    {
+      "strain": {
+        "id": "eth-member-berry",
+        "name": "Member Berry",
+        "bank": "Ethos Genetics",
+        "image": "img/eth-member-berry.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.752 fuera de [0.9, 1.1])"
+      ],
+      "w": 1440,
+      "h": 1914,
+      "ratio": 0.752,
+      "size_kb": 705.1,
+      "pct_light": 8.1,
+      "corner_lum": 105.9
+    },
+    {
+      "strain": {
+        "id": "eth-ethos-cookies",
+        "name": "Ethos Cookies",
+        "bank": "Ethos Genetics",
+        "image": "img/eth-ethos-cookies.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 250.4,
+      "pct_light": 7.4,
+      "corner_lum": 68.2
+    },
+    {
+      "strain": {
+        "id": "arc-rainbow-belts",
+        "name": "Rainbow Belts",
+        "bank": "Archive Seed Bank",
+        "image": "img/arc-rainbow-belts.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 1920,
+      "h": 2560,
+      "ratio": 0.75,
+      "size_kb": 700.9,
+      "pct_light": 20.1,
+      "corner_lum": 161.6
+    },
+    {
+      "strain": {
+        "id": "arc-moonbow",
+        "name": "Moonbow",
+        "bank": "Archive Seed Bank",
+        "image": "img/arc-moonbow.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.75 fuera de [0.9, 1.1])"
+      ],
+      "w": 1920,
+      "h": 2560,
+      "ratio": 0.75,
+      "size_kb": 1389.8,
+      "pct_light": 10.0,
+      "corner_lum": 106.4
+    },
+    {
+      "strain": {
+        "id": "arc-rudeboi-og",
+        "name": "RudeBoi OG",
+        "bank": "Archive Seed Bank",
+        "image": "img/arc-rudeboi-og.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.875 fuera de [0.9, 1.1])",
+        "Fondo blanco/claro residual (37.1% bordes claros > 30.0%)"
+      ],
+      "w": 800,
+      "h": 914,
+      "ratio": 0.875,
+      "size_kb": 229.3,
+      "pct_light": 37.1,
+      "corner_lum": 137.7
+    },
+    {
+      "strain": {
+        "id": "arc-valley-girl",
+        "name": "Valley Girl",
+        "bank": "Archive Seed Bank",
+        "image": "img/arc-valley-girl.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.333 fuera de [0.9, 1.1])"
+      ],
+      "w": 3000,
+      "h": 2250,
+      "ratio": 1.333,
+      "size_kb": 1880.2,
+      "pct_light": 17.5,
+      "corner_lum": 163.0
+    },
+    {
+      "strain": {
+        "id": "arc-dank-dough",
+        "name": "Dank Dough",
+        "bank": "Archive Seed Bank",
+        "image": "img/arc-dank-dough-curedbud.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (48.5% bordes claros > 30.0%)"
+      ],
+      "w": 2000,
+      "h": 2000,
+      "ratio": 1.0,
+      "size_kb": 2693.6,
+      "pct_light": 48.5,
+      "corner_lum": 178.3
+    },
+    {
+      "strain": {
+        "id": "arc-memory-loss",
+        "name": "Memory Loss",
+        "bank": "Archive Seed Bank",
+        "image": "img/arc-memory-loss.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.621 fuera de [0.9, 1.1])"
+      ],
+      "w": 1600,
+      "h": 987,
+      "ratio": 1.621,
+      "size_kb": 119.2,
+      "pct_light": 17.5,
+      "corner_lum": 128.3
+    },
+    {
+      "strain": {
+        "id": "arc-z-mints",
+        "name": "Z-Mints",
+        "bank": "Archive Seed Bank",
+        "image": "img/arc-z-mints.jpg"
+      },
+      "issues": [
+        "Baja resolución (500x500 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 500,
+      "ratio": 1.0,
+      "size_kb": 82.9,
+      "pct_light": 13.0,
+      "corner_lum": 134.6
+    },
+    {
+      "strain": {
+        "id": "raw-georgia-pie",
+        "name": "Georgia Pie",
+        "bank": "Raw Genetics",
+        "image": "img/raw-georgia-pie.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.811 fuera de [0.9, 1.1])"
+      ],
+      "w": 1460,
+      "h": 1800,
+      "ratio": 0.811,
+      "size_kb": 515.3,
+      "pct_light": 0.8,
+      "corner_lum": 0.0
+    },
+    {
+      "strain": {
+        "id": "raw-cherry-paloma",
+        "name": "Cherry Paloma",
+        "bank": "Raw Genetics",
+        "image": "img/raw-cherry-paloma.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 117.5,
+      "pct_light": 13.1,
+      "corner_lum": 103.1
+    },
+    {
+      "strain": {
+        "id": "raw-apples-and-french-toast",
+        "name": "Apples & French Toast",
+        "bank": "Raw Genetics",
+        "image": "img/raw-apples-and-french-toast.jpg"
+      },
+      "issues": [
+        "Fondo blanco/claro residual (34.7% bordes claros > 30.0%)"
+      ],
+      "w": 980,
+      "h": 979,
+      "ratio": 1.001,
+      "size_kb": 201.9,
+      "pct_light": 34.7,
+      "corner_lum": 48.9
+    },
+    {
+      "strain": {
+        "id": "raw-rainbow-studz",
+        "name": "Rainbow Studz",
+        "bank": "Raw Genetics",
+        "image": "img/raw-rainbow-studz.jpg"
+      },
+      "issues": [
+        "Ratio deformado (1.25 fuera de [0.9, 1.1])"
+      ],
+      "w": 1715,
+      "h": 1372,
+      "ratio": 1.25,
+      "size_kb": 1156.2,
+      "pct_light": 20.2,
+      "corner_lum": 69.7
+    },
+    {
+      "strain": {
+        "id": "raw-peeled-banana",
+        "name": "Peeled Banana",
+        "bank": "Raw Genetics",
+        "image": "img/raw-peeled-banana.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.8 fuera de [0.9, 1.1])",
+        "Baja resolución (400x500 px < 800x800)",
+        "Fondo blanco/claro residual (66.1% bordes claros > 30.0%)"
+      ],
+      "w": 400,
+      "h": 500,
+      "ratio": 0.8,
+      "size_kb": 57.0,
+      "pct_light": 66.1,
+      "corner_lum": 165.5
+    },
+    {
+      "strain": {
+        "id": "raw-runtz-pop",
+        "name": "Runtz Pop",
+        "bank": "Raw Genetics",
+        "image": "img/raw-runtz-pop.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.833 fuera de [0.9, 1.1])"
+      ],
+      "w": 1000,
+      "h": 1200,
+      "ratio": 0.833,
+      "size_kb": 599.9,
+      "pct_light": 0.4,
+      "corner_lum": 46.1
+    },
+    {
+      "strain": {
+        "id": "raw-bacio-zkittlez",
+        "name": "Bacio Zkittlez",
+        "bank": "Raw Genetics",
+        "image": "img/raw-bacio-zkittlez.jpg"
+      },
+      "issues": [
+        "Ratio deformado (0.714 fuera de [0.9, 1.1])",
+        "Baja resolución (500x700 px < 800x800)"
+      ],
+      "w": 500,
+      "h": 700,
+      "ratio": 0.714,
+      "size_kb": 249.6,
+      "pct_light": 4.2,
+      "corner_lum": 51.0
+    }
+  ]
+}
