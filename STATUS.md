@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-05 17:22  
+> **Última actualización:** 2026-09-05 17:30  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1`)
 
 ---
@@ -8,7 +8,7 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 402 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js`.
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_dock_fix_v128`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_modal_compare_v129`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
@@ -20,12 +20,18 @@
   - 402/402 referencias en `js/data.js` migradas a `.webp` (0 imágenes faltantes).
   - Lazy Loading (`loading="lazy"` + `decoding="async"`) activo en tarjetas del catálogo.
 - **Mobile Responsive Engine (Ficha Técnica):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
-- **Módulo Comparador Cara a Cara & HUD Táctil (v128):** **100% COMPLETADO Y OPERATIVO** (Cero colisiones con el Sommelier IA).
+- **Módulo Comparador Emergente Dark Glass (v129):** **100% COMPLETADO Y OPERATIVO** (Dock fijo eliminado, Sommelier IA 100% despejado).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-05)
-1. ✅ **Corrección de Superposición UI — Dock Comparador vs Botón Flotante Sommelier IA (17:22):**
+1. ✅ **Rediseño del Módulo Comparador — Eliminación de Dock Fijo y Modal Emergente Dark Glass (17:30):**
+   - **Eliminación Total del Dock Inferior Fijo:** Removido `#compare-floating-dock` para desahogar por completo la vista inferior. El botón del Sommelier IA (`#ai-chat-trigger`) permanece inalterable en su posición natural (`bottom: 20px` en móviles, `bottom: 24px` en escritorio) sin empujes ni saltos de interfaz.
+   - **Botón Disparador Discreto en Cabecera del Catálogo (`#btn-header-compare`):** Ubicado junto al contador de resultados en la cabecera del catálogo. Estilizado como una píldora Dark Glass con badge esmeralda dinámico (`N/3`). Al seleccionar o deseleccionar una cepa, el badge se actualiza y detona una suave animación de resplandor verde (`glow-pulse` vía `@keyframes compareGlow`).
+   - **Modal Emergente Centrado (#compare-modal):** Ventana flotante limpia centrada en pantalla con fondo `rgba(8, 12, 11, 0.95)`, `backdrop-filter: blur(25px)`, borde fino verde esmeralda con resplandor difuminado y botón de cierre visible (✕). En móviles, las columnas de comparación se ordenan en un scroll horizontal táctil (`scroll-snap-type: x mandatory`).
+   - **Build y Versión:** Bundle recompilado con `python scripts/build_bundle.py` (607,260 bytes) y versión sincronizada en `index.html` a `?v=2026_modal_compare_v129` tanto en `<link rel="stylesheet">` como en `<script src="js/bundle.js">`.
+
+2. ✅ **Corrección de Superposición UI — Dock Comparador vs Botón Flotante Sommelier IA (17:22):**
    - **Comportamiento Dinámico del Sommelier IA (`#ai-chat-trigger` / `.sommelier-fab-btn`):** Transición CSS suave `bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease`. Al activarse el comparador (clase reactiva `.compare-dock-visible` en `document.body`), el botón del Sommelier se desplaza automáticamente hacia arriba a `bottom: 110px !important;` en móviles anclado a la derecha (margen de 16px), con `z-index: 100` y sombra con blur esmeralda preservada, evitando cualquier solapamiento con los controles de comparación.
    - **Refinamiento del Dock Comparador como HUD Táctil (`#compare-floating-dock`):**
      * Fondo *Dark Glassmorphism* `rgba(6, 11, 9, 0.92)` con `backdrop-filter: blur(20px)`, borde superior `1px solid rgba(16, 185, 129, 0.35)` y sombra envolvente `0 -8px 30px rgba(0, 0, 0, 0.8)`.

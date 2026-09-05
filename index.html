@@ -48,7 +48,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css?v=2026_dock_fix_v128">
+  <link rel="stylesheet" href="css/styles.css?v=2026_modal_compare_v129">
 </head>
 
 <body>
@@ -309,7 +309,14 @@
           <p class="section-desc">Perfiles genéticos completos, porcentajes de THC/CBD, terpenos y actividades idóneas.
           </p>
         </div>
-        <span class="results-count" id="catalog-count">Mostrando cepas...</span>
+        <div class="catalog-header-actions">
+          <button id="btn-header-compare" class="btn-header-compare" title="Abrir Comparador Cara a Cara">
+            <span class="compare-icon">⚖️</span>
+            <span class="compare-label">Comparador</span>
+            <span class="compare-badge" id="header-compare-badge">0/3</span>
+          </button>
+          <span class="results-count" id="catalog-count">Mostrando cepas...</span>
+        </div>
       </div>
 
       <!-- STATS BAR -->
@@ -1091,30 +1098,8 @@
     </div>
   </dialog>
 
-  <!-- DOCK FLOTANTE: COMPARADOR CARA A CARA -->
-  <div id="compare-floating-dock" class="compare-dock" style="display: none;">
-    <div class="compare-dock-inner">
-      <div class="compare-dock-info">
-        <span class="compare-dock-icon">⚖️</span>
-        <div class="compare-dock-text">
-          <div class="compare-dock-title">Comparador Cara a Cara</div>
-          <div class="compare-dock-count" id="compare-dock-counter">0/3 cepas</div>
-        </div>
-      </div>
-      <div class="compare-dock-slots" id="compare-dock-slots"></div>
-      <div class="compare-dock-actions">
-        <button id="btn-open-compare-modal" class="btn btn-emerald-md btn-compare-launch">
-          ⚖️ <span class="compare-btn-text-full">Comparar Cara a Cara</span><span class="compare-btn-text-short">Comparar</span> (0/3)
-        </button>
-        <button id="btn-clear-compare" class="btn btn-compare-clear" title="Limpiar todas las cepas seleccionadas">
-          🗑️ Limpiar
-        </button>
-      </div>
-    </div>
-  </div>
-
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=2026_dock_fix_v128"></script>
+  <script src="js/bundle.js?v=2026_modal_compare_v129"></script>
 </body>
 
 </html>

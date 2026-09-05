@@ -73,13 +73,10 @@ class CannaAppMAX {
     this.lightboxImg = document.getElementById('lightbox-img');
     this.lightboxTitle = document.getElementById('lightbox-title');
     this.lightboxSubtitle = document.getElementById('lightbox-subtitle');
-    this.compareDock = document.getElementById('compare-floating-dock');
-    this.compareDockSlots = document.getElementById('compare-dock-slots');
-    this.compareDockCounter = document.getElementById('compare-dock-counter');
+    this.btnHeaderCompare = document.getElementById('btn-header-compare');
+    this.headerCompareBadge = document.getElementById('header-compare-badge');
     this.compareModal = document.getElementById('compare-modal');
     this.compareModalContent = document.getElementById('compare-modal-content');
-    this.btnOpenCompareModal = document.getElementById('btn-open-compare-modal');
-    this.btnClearCompare = document.getElementById('btn-clear-compare');
   }
 
   /* 1. VERIFICACIÓN DE EDAD DEFENSIVA (+18) */
@@ -1398,12 +1395,8 @@ class CannaAppMAX {
      MÓDULO INTERACTIVO: COMPARADOR CARA A CARA (DARK GLASS)
      ======================================================== */
   initCaraACaraComparator() {
-    this.btnOpenCompareModal?.addEventListener('click', () => {
+    this.btnHeaderCompare?.addEventListener('click', () => {
       this.openCompareModal();
-    });
-
-    this.btnClearCompare?.addEventListener('click', () => {
-      this.clearComparedStrains();
     });
 
     if (this.compareModal) {
@@ -1419,7 +1412,7 @@ class CannaAppMAX {
       });
     }
 
-    this.updateCompareUI();
+    this.updateCompareUI(false);
   }
 
   toggleCompareStrain(strainId) {
@@ -1444,7 +1437,7 @@ class CannaAppMAX {
       localStorage.setItem('cannacatalog_compared', JSON.stringify(this.comparedStrains));
     } catch (e) {}
 
-    this.updateCompareUI();
+    this.updateCompareUI(true);
     if (this.compareModal && this.compareModal.open) {
       this.renderCompareModal();
     }
@@ -1455,21 +1448,34 @@ class CannaAppMAX {
     try {
       localStorage.setItem('cannacatalog_compared', JSON.stringify([]));
     } catch (e) {}
-    this.updateCompareUI();
+    this.updateCompareUI(false);
     if (this.compareModal && this.compareModal.open) {
       this.renderCompareModal();
     }
     this.showToast('🗑️ Comparador vaciado.');
   }
 
-  updateCompareUI() {
+  updateCompareUI(triggerGlow = false) {
     const count = (this.comparedStrains || []).length;
 
-    // Sincronizar estado visual global (HUD & Fab Sommelier)
-    if (count > 0) {
-      document.body.classList.add('compare-dock-visible');
-    } else {
-      document.body.classList.remove('compare-dock-visible');
+    // Actualizar botón discreto en cabecera del catálogo
+    if (this.headerCompareBadge) {
+      this.headerCompareBadge.textContent = `${count}/3`;
+    }
+
+    if (this.btnHeaderCompare) {
+      if (count > 0) {
+        this.btnHeaderCompare.classList.add('has-strains');
+      } else {
+        this.btnHeaderCompare.classList.remove('has-strains');
+      }
+
+      if (triggerGlow) {
+        this.btnHeaderCompare.classList.remove('glow-pulse');
+        // Forzar reflow para reiniciar animación
+        void this.btnHeaderCompare.offsetWidth;
+        this.btnHeaderCompare.classList.add('glow-pulse');
+      }
     }
 
     // Actualizar botones de catálogo
@@ -1486,42 +1492,6 @@ class CannaAppMAX {
         btn.title = 'Comparar (hasta 3 cepas)';
       }
     });
-
-    // Actualizar dock flotante
-    if (this.compareDock) {
-      if (count > 0) {
-        this.compareDock.classList.add('compare-dock-visible');
-        this.compareDock.style.display = 'block';
-        if (this.compareDockCounter) {
-          this.compareDockCounter.textContent = `${count}/3 cepas`;
-        }
-
-        if (this.btnOpenCompareModal) {
-          this.btnOpenCompareModal.innerHTML = `⚖️ <span class="compare-btn-text-full">Comparar Cara a Cara</span><span class="compare-btn-text-short">Comparar</span> (${count}/3)`;
-        }
-
-        if (this.compareDockSlots) {
-          this.compareDockSlots.innerHTML = this.comparedStrains.map(id => {
-            const strain = STRAINS_DATABASE.find(s => s.id === id);
-            if (!strain) return '';
-            const thumb = strain.image || '';
-            return `
-              <div class="compare-dock-slot" title="${strain.name} (${strain.bank})">
-                ${thumb ? `<img src="${thumb}" alt="${strain.name}" class="compare-dock-thumb" />` : `<span style="font-size:1.1rem;">🌿</span>`}
-                <span class="compare-dock-name">${strain.name}</span>
-                <button class="compare-dock-remove" onclick="event.stopPropagation(); window.app && window.app.toggleCompareStrain('${strain.id}')" title="Quitar">✕</button>
-              </div>
-            `;
-          }).join('');
-        }
-      } else {
-        this.compareDock.classList.remove('compare-dock-visible');
-        this.compareDock.style.display = 'none';
-        if (this.btnOpenCompareModal) {
-          this.btnOpenCompareModal.innerHTML = `⚖️ <span class="compare-btn-text-full">Comparar Cara a Cara</span><span class="compare-btn-text-short">Comparar</span> (0/3)`;
-        }
-      }
-    }
   }
 
   calculateIndicaSativa(strain) {
@@ -1576,7 +1546,7 @@ class CannaAppMAX {
 
   openCompareModal() {
     if (!this.comparedStrains || this.comparedStrains.length === 0) {
-      this.showToast('Selecciona al menos 1 variedad con el botón ⚖️ Comparar.');
+      this.showToast('⚖️ Selecciona hasta 3 variedades con el botón "⚖️ Comparar" en las tarjetas.');
       return;
     }
     this.renderCompareModal();
@@ -1766,14 +1736,14 @@ class CannaAppMAX {
         <div class="compare-modal-header">
           <div>
             <h2 class="compare-modal-title">
-              <span>⚖️</span> Comparador Botánico Cara a Cara
+              <span>⚖️</span> Comparador Cara a Cara
               <span style="font-size:0.8rem; background:rgba(16,185,129,0.2); color:#10B981; border:1px solid rgba(16,185,129,0.4); padding:3px 10px; border-radius:50px !important; font-weight:800;">${strains.length}/3 cepas</span>
             </h2>
             <div class="compare-modal-subtitle">Análisis analítico y organoléptico en columnas paralelas con Dark Glassmorphism</div>
           </div>
-          <div style="display:flex; gap:8px; align-items:center;">
-            ${strains.length > 0 ? `<button class="btn btn-outline-stash" style="padding:6px 12px; font-size:0.76rem; border-radius:8px !important;" onclick="window.app && window.app.clearComparedStrains()">🗑️ Limpiar Todo</button>` : ''}
-            <button class="close-modal-btn" onclick="document.getElementById('compare-modal').close()" title="Cerrar (ESC)" style="width:34px; height:34px; border-radius:50% !important; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.2); color:#fff; cursor:pointer;">✕</button>
+          <div style="display:flex; gap:10px; align-items:center;">
+            ${strains.length > 0 ? `<button class="btn btn-outline-stash" style="padding:6px 14px; font-size:0.78rem; font-weight:700; border-radius:8px !important;" onclick="window.app && window.app.clearComparedStrains()">🗑️ Limpiar todo</button>` : ''}
+            <button class="close-modal-btn compare-close-btn" onclick="document.getElementById('compare-modal').close()" title="Cerrar (ESC)" style="width:36px; height:36px; border-radius:50% !important; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); color:#fff; font-size:1.1rem; cursor:pointer;">✕</button>
           </div>
         </div>
 
