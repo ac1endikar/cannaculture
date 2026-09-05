@@ -13723,7 +13723,7 @@ class CannaAppMAX {
         .join(' · ');
 
       return `
-        <div class="compare-column">
+        <div class="compare-column compare-col">
           <!-- Botón quitar de la comparativa -->
           <button class="compare-col-remove-btn" onclick="window.app && window.app.toggleCompareStrain('${strain.id}')" title="Quitar de la comparativa">✕</button>
 
@@ -13746,7 +13746,7 @@ class CannaAppMAX {
           <!-- 1. Cannabinoides (THC & CBD) -->
           <div class="compare-metric-box">
             <div class="compare-metric-title">
-              <span>🧪 Cannabinoides</span>
+              <span class="compare-card-section-title">🧪 Cannabinoides</span>
               <span style="color:#FCD34D;">${thcVal}% THC · ${cbdVal}% CBD</span>
             </div>
             
@@ -13774,7 +13774,7 @@ class CannaAppMAX {
           <!-- 2. Proporción Índica / Sativa -->
           <div class="compare-metric-box">
             <div class="compare-metric-title">
-              <span>🧬 Proporción Genética</span>
+              <span class="compare-card-section-title">🧬 Proporción Genética</span>
               <span style="font-size:0.74rem; color:#E2E8F0;">${ratio.label}</span>
             </div>
             <div class="compare-species-track">
@@ -13790,10 +13790,10 @@ class CannaAppMAX {
           <!-- 3. Semanas de Floración & Dificultad -->
           <div class="compare-metric-box">
             <div class="compare-metric-title">
-              <span>⏱️ Cultivo & Floración</span>
-              <span class="${diff.badgeClass}">${diff.level} (${diff.label})</span>
+              <span class="compare-card-section-title">⏱️ Cultivo & Floración</span>
+              <span class="${diff.badgeClass} compare-badge-difficulty">${diff.level} (${diff.label})</span>
             </div>
-            <div class="compare-grow-metrics" style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px;">
+            <div class="compare-grow-metrics compare-grow-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px;">
               <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center; display:flex; flex-direction:column; justify-content:center;">
                 <div style="font-size:0.7rem; color:var(--text-muted);">Floración</div>
                 <strong style="color:#fff; font-size:0.86rem;">${floweringWeeks} sem</strong>
@@ -13810,15 +13810,15 @@ class CannaAppMAX {
           <!-- 4. Perfil de Terpenos & Aromas -->
           <div class="compare-metric-box">
             <div class="compare-metric-title">
-              <span>🌿 Terpenos & Aromas</span>
+              <span class="compare-card-section-title">🌿 Terpenos & Aromas</span>
               <span style="color:${terpeneData?.color || '#10B981'}; font-weight:800; font-size:0.72rem; white-space:nowrap; flex-shrink:0;">${terpeneData?.name || strain.dominantTerpene}</span>
             </div>
-            <div class="compare-aroma-block">
+            <div class="compare-aroma-block compare-aroma-text">
               <span style="font-size:0.75rem; color:#fff; font-weight:600;">Aroma:</span>
               <span style="font-size:0.75rem; color:var(--text-muted); font-style:italic;">${terpeneData?.aroma || 'Perfil botánico complejo'}</span>
             </div>
             <div class="compare-terpenes-list">${subTerpenes || '<span style="font-size:0.72rem; color:var(--text-muted); opacity:0.4;">Micro-terpenos complejos</span>'}</div>
-            <div class="compare-pills-container compare-flavors-wrap" style="display:flex; flex-wrap:wrap; gap:4px; margin-top:6px;">
+            <div class="compare-pills-container compare-tags-container compare-flavors-wrap" style="display:flex; flex-wrap:wrap; gap:4px; margin-top:6px;">
               ${(strain.flavors || []).map(f => `<span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:50px !important; padding:2px 8px; font-size:0.72rem; color:#fff;">👅 ${f}</span>`).join('')}
             </div>
           </div>
@@ -13826,9 +13826,9 @@ class CannaAppMAX {
           <!-- 5. Efectos Destacados -->
           <div class="compare-metric-box">
             <div class="compare-metric-title">
-              <span>⚡ Efectos Destacados</span>
+              <span class="compare-card-section-title">⚡ Efectos Destacados</span>
             </div>
-            <div class="compare-pills-container compare-effects-wrap" style="display:flex; flex-wrap:wrap; gap:5px;">
+            <div class="compare-pills-container compare-tags-container compare-effects-wrap" style="display:flex; flex-wrap:wrap; gap:5px;">
               ${(strain.effects || []).map(e => `<span style="background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.3); border-radius:50px !important; padding:3px 9px; font-size:0.74rem; font-weight:700; color:#6EE7B7;">⚡ ${e}</span>`).join('')}
             </div>
           </div>

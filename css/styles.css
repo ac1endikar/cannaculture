@@ -4160,3 +4160,45 @@ dialog.compare-dialog::backdrop {
   body { background: #fff; color: #000; }
   .strain-card { break-inside: avoid; border: 1px solid #ccc; box-shadow: none; }
 }
+
+/* --- FIX ALINEACIÓN EXACTA COMPARADOR V131 --- */
+.compare-col {
+    flex: 1 1 0% !important;
+    min-width: 290px !important;
+}
+
+.compare-card-section-title {
+    white-space: nowrap !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.3px !important;
+}
+
+.compare-badge-difficulty {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    font-size: 0.68rem !important;
+    padding: 2px 7px !important;
+}
+
+.compare-grow-grid {
+    min-height: 82px !important;
+    align-items: center !important;
+}
+
+.compare-aroma-text {
+    min-height: 44px !important;
+    line-height: 1.35 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+.compare-terpenes-list {
+    min-height: 26px !important;
+}
+
+.compare-tags-container {
+    min-height: 72px !important;
+    align-content: flex-start !important;
+}
