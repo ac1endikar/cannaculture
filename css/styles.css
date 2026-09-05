@@ -1833,8 +1833,10 @@ dialog.large-modal[open],
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-bottom: 5rem !important;
+  padding-bottom: 90px !important;
   scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .pro-body-scrollable::-webkit-scrollbar {
@@ -2049,21 +2051,310 @@ dialog.large-modal[open],
   bottom: 0;
   background: rgba(8, 12, 11, 0.96);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 0 !important;
-  padding: 1.2rem 2rem;
+  border-radius: 0 0 16px 16px !important;
+  padding: 1.1rem 1.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  z-index: 10;
+  z-index: 20;
 }
 
+/* Clases complementarias para Ficha Técnica */
+.pro-hero-zoom-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  border-radius: 50px !important;
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  color: #6EE7B7;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  max-width: calc(100% - 70px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pro-hero-badges-row {
+  margin-bottom: 6px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pro-hero-bank-pill {
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--primary-emerald);
+  font-weight: 800;
+  font-size: 0.76rem;
+  padding: 3px 10px;
+  border-radius: 50px !important;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.pro-hero-rating-pill {
+  background: rgba(0, 0, 0, 0.75);
+  color: #FFD700;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 50px !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pro-hero-reviews-text {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 4px;
+}
+
+.pro-metric-unit {
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.pro-details-container {
+  padding: 0 2rem 1.4rem 2rem;
+}
+
+.pro-terp-vape-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.pro-tri-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* ======================================================
+   RESPONSIVE MÓVIL: FICHA TÉCNICA (<= 768px, <= 480px, <= 400px)
+   ====================================================== */
 @media (max-width: 768px) {
-  .pro-metrics-grid { grid-template-columns: repeat(2, 1fr); }
-  .pro-hero-photo-wrapper { height: 240px; }
-  .pro-strain-name-lg { font-size: 1.5rem; }
-  .pro-floating-footer { flex-direction: column; }
+  /* Viewport general del modal: ajuste perfecto de bordes y altura */
+  dialog.large-modal[open],
+  #strain-detail-modal[open] {
+    width: 95vw !important;
+    max-width: 95vw !important;
+    height: 90vh !important;
+    max-height: 90vh !important;
+    padding: 0 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    overscroll-behavior: contain !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .pro-spec-sheet {
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: none !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Scroll y padding inferior ampliado para no tapar contenido */
+  .pro-body-scrollable {
+    padding-bottom: 110px !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Botón de cierre en dark glass sin colisión */
+  .close-pro-btn {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 1.05rem !important;
+    background: rgba(6, 11, 9, 0.92) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.85) !important;
+    z-index: 60 !important;
+  }
+
+  /* Cabecera de foto proporcional */
+  .pro-hero-banner {
+    margin: 0.6rem !important;
+    border-radius: 14px !important;
+  }
+
+  .pro-hero-photo-wrapper {
+    height: 220px !important;
+    max-height: 220px !important;
+    border-radius: 14px !important;
+  }
+
+  .pro-hero-img {
+    max-height: 220px !important;
+    object-fit: cover !important;
+    width: 100% !important;
+  }
+
+  .pro-hero-zoom-badge {
+    top: 10px !important;
+    left: 10px !important;
+    font-size: 0.68rem !important;
+    padding: 3px 9px !important;
+    max-width: calc(100% - 65px) !important;
+  }
+
+  .pro-hero-info-overlay {
+    bottom: 10px !important;
+    left: 12px !important;
+    right: 12px !important;
+    gap: 0.5rem !important;
+  }
+
+  .pro-strain-name-lg {
+    font-size: 1.45rem !important;
+    margin-bottom: 2px !important;
+  }
+
+  .pro-strain-aka {
+    font-size: 0.78rem !important;
+  }
+
+  .pro-hero-rating-pill {
+    padding: 4px 10px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .pro-hero-reviews-text {
+    display: none !important;
+  }
+
+  /* Grid métricas en 2 columnas */
+  .pro-metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin: 0 0.6rem 1rem 0.6rem !important;
+  }
+
+  /* Secciones técnicas internas */
+  .pro-details-container {
+    padding: 0 0.6rem 1rem 0.6rem !important;
+  }
+
+  .pro-terp-vape-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .pro-tri-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Footer flotante fijo en móvil */
+  .pro-floating-footer {
+    flex-direction: column !important;
+    padding: 0.75rem 1rem !important;
+    gap: 0.5rem !important;
+    border-radius: 0 0 16px 16px !important;
+  }
+
+  .pro-floating-footer .btn-emerald-lg {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.65rem 1.2rem !important;
+    font-size: 0.88rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajuste de tipografía y padding para evitar truncamientos */
+  .pro-metrics-grid {
+    gap: 6px !important;
+    margin: 0 8px 12px 8px !important;
+  }
+
+  .pro-metric-card {
+    padding: 8px 10px !important;
+    border-radius: 12px !important;
+  }
+
+  .pro-metric-label {
+    font-size: 0.70rem !important;
+    letter-spacing: 0.4px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    margin-bottom: 3px !important;
+  }
+
+  .pro-metric-value {
+    font-size: 1.15rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .pro-metric-unit {
+    font-size: 0.72rem !important;
+  }
+
+  .pro-metric-sub {
+    font-size: 0.68rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+}
+
+@media (max-width: 400px) {
+  dialog.large-modal[open],
+  #strain-detail-modal[open] {
+    width: 96vw !important;
+    max-width: 96vw !important;
+    height: 90vh !important;
+    max-height: 90vh !important;
+    border-radius: 14px !important;
+  }
+
+  .pro-spec-sheet {
+    border-radius: 14px !important;
+  }
+
+  .pro-metric-card {
+    padding: 6px 8px !important;
+  }
+
+  .pro-metric-label {
+    font-size: 0.66rem !important;
+  }
+
+  .pro-metric-value {
+    font-size: 1.05rem !important;
+  }
 }
 
 
@@ -3249,6 +3540,500 @@ dialog.lightbox-dialog[open] {
   .nav-btn { min-height: 38px; }
   .close-modal-btn { width: 40px; height: 40px; }
   .btn-auth-pill { padding: 6px 14px; }
+}
+
+/* ────────────────────────────────────────────────────────────
+   MÓDULO COMPARADOR CARA A CARA & DOCK FLOTANTE (DARK GLASS)
+   ──────────────────────────────────────────────────────────── */
+
+/* Botón Toggle en Tarjeta de Catálogo */
+.btn-compare-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #E2E8F0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 8px !important;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.btn-compare-toggle:hover {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #6EE7B7;
+  transform: translateY(-1px);
+}
+
+.btn-compare-toggle.active {
+  background: rgba(16, 185, 129, 0.22) !important;
+  border-color: #10B981 !important;
+  color: #6EE7B7 !important;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.35) !important;
+}
+
+/* Dock Flotante Inferior */
+.compare-dock {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: min(940px, 94vw);
+  background: rgba(6, 11, 9, 0.94);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1.5px solid rgba(16, 185, 129, 0.5);
+  border-radius: 20px !important;
+  box-shadow: 
+    0 24px 70px rgba(0, 0, 0, 0.92),
+    0 0 35px rgba(16, 185, 129, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  padding: 10px 18px;
+  animation: dockSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dockSlideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 25px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.compare-dock-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.compare-dock-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.compare-dock-icon {
+  font-size: 1.5rem;
+}
+
+.compare-dock-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.compare-dock-count {
+  font-size: 0.76rem;
+  color: var(--primary-emerald);
+  font-weight: 700;
+}
+
+.compare-dock-slots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.compare-dock-slot {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 50px !important;
+  padding: 4px 10px 4px 6px;
+  max-width: 190px;
+  animation: fadeInSlot 0.25s ease forwards;
+}
+
+@keyframes fadeInSlot {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.compare-dock-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50% !important;
+  object-fit: cover;
+  border: 1.5px solid #10B981;
+}
+
+.compare-dock-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
+}
+
+.compare-dock-remove {
+  background: transparent;
+  border: none;
+  color: #EF4444;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.compare-dock-remove:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.compare-dock-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-compare-launch {
+  padding: 8px 18px !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35) !important;
+}
+
+.btn-compare-clear {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #FCA5A5;
+  border-radius: 12px !important;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-compare-clear:hover {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: #EF4444;
+}
+
+/* Modal Comparador Cara a Cara */
+#compare-modal[open] {
+  padding: 1.2rem !important;
+}
+
+.compare-modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.compare-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 14px;
+}
+
+.compare-modal-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.compare-modal-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.compare-grid::-webkit-scrollbar {
+  width: 6px;
+}
+.compare-grid::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.35);
+  border-radius: 10px;
+}
+
+.compare-column {
+  background: rgba(8, 14, 12, 0.85);
+  border: 1.5px solid rgba(16, 185, 129, 0.25);
+  border-radius: 18px !important;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px);
+}
+
+.compare-col-remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #EF4444;
+  width: 28px;
+  height: 28px;
+  border-radius: 50% !important;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.compare-col-remove-btn:hover {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: #EF4444;
+  transform: scale(1.1);
+}
+
+.compare-col-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.compare-col-thumb-wrap {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  border-radius: 14px !important;
+  overflow: hidden;
+  border: 1.5px solid rgba(16, 185, 129, 0.4);
+  cursor: zoom-in;
+}
+
+.compare-col-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.compare-col-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.compare-col-thumb-wrap:hover .compare-col-thumb-overlay {
+  opacity: 1;
+}
+
+.compare-col-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.compare-col-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.compare-col-bank {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--primary-emerald);
+  margin-bottom: 4px;
+}
+
+.compare-metric-box {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px !important;
+  padding: 10px 12px;
+}
+
+.compare-metric-title {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #A7F3D0;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Barras Cannabinoides */
+.compare-cannabinoid-row {
+  margin-bottom: 8px;
+}
+
+.compare-cannabinoid-row:last-child {
+  margin-bottom: 0;
+}
+
+.compare-cannabinoid-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.compare-bar-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 50px !important;
+  overflow: hidden;
+}
+
+.compare-bar-fill-thc {
+  height: 100%;
+  border-radius: 50px !important;
+  background: linear-gradient(90deg, #10B981 0%, #F59E0B 100%);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.compare-bar-fill-cbd {
+  height: 100%;
+  border-radius: 50px !important;
+  background: linear-gradient(90deg, #06B6D4 0%, #8B5CF6 100%);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Ratio Índica / Sativa */
+.compare-species-track {
+  height: 10px;
+  border-radius: 50px !important;
+  overflow: hidden;
+  display: flex;
+  margin-top: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.compare-species-indica {
+  background: linear-gradient(90deg, #8B5CF6, #7C3AED);
+  transition: width 0.8s ease;
+}
+
+.compare-species-sativa {
+  background: linear-gradient(90deg, #F59E0B, #D97706);
+  transition: width 0.8s ease;
+}
+
+/* Badges de Dificultad */
+.badge-diff-easy {
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #6EE7B7;
+  padding: 3px 8px;
+  border-radius: 50px !important;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.badge-diff-med {
+  background: rgba(245, 158, 11, 0.16);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #FCD34D;
+  padding: 3px 8px;
+  border-radius: 50px !important;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.badge-diff-hard {
+  background: rgba(239, 68, 68, 0.16);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #FCA5A5;
+  padding: 3px 8px;
+  border-radius: 50px !important;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+/* Columna Vacía (Placeholder) */
+.compare-empty-col {
+  border: 2px dashed rgba(16, 185, 129, 0.3);
+  border-radius: 18px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: rgba(6, 11, 9, 0.4);
+  min-height: 380px;
+  gap: 12px;
+}
+
+.compare-empty-icon {
+  font-size: 2.2rem;
+  opacity: 0.75;
+}
+
+.compare-empty-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  max-width: 220px;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .compare-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .compare-dock {
+    padding: 8px 12px;
+    bottom: 16px;
+  }
+  .compare-dock-name {
+    max-width: 80px;
+  }
 }
 
 /* ──────────────────────────────────────

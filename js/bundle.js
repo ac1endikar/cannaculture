@@ -126,7 +126,7 @@ const ACTIVITIES_DATA = [
 const STRAINS_DATABASE = [
   {
 id: "ripper-kmintz",
-    image: "img/ripper-kmintz-plant.jpg",
+    image: "img/ripper-kmintz-plant.webp",
     name: "Kmintz",
     aka: "Zkittlez x Kush Mints",
     bank: "Ripper Seeds",
@@ -147,7 +147,7 @@ id: "ripper-kmintz",
   },
   {
 id: "ripper-zombie-kush",
-    image: "img/ripper-zombie-kush-flowering.jpg",
+    image: "img/ripper-zombie-kush-flowering.webp",
     name: "Zombie Kush",
     aka: "Sideral x Bubba Kush",
     bank: "Ripper Seeds",
@@ -168,7 +168,7 @@ id: "ripper-zombie-kush",
   },
   {
 id: "ripper-radical-juice",
-    image: "img/ripper-radical-juice-plant.jpg",
+    image: "img/ripper-radical-juice-plant.webp",
     name: "Radical Juice",
     aka: "Tropicana Cookies x Runtz",
     bank: "Ripper Seeds",
@@ -189,7 +189,7 @@ id: "ripper-radical-juice",
   },
   {
 id: "ripper-washing-machine",
-    image: "img/ripper-washing-machine.jpg",
+    image: "img/ripper-washing-machine.webp",
     name: "Washing Machine",
     aka: "UK Cheese x Bubba Kush",
     bank: "Ripper Seeds",
@@ -210,7 +210,7 @@ id: "ripper-washing-machine",
   },
   {
 id: "ripper-sour-ripper",
-    image: "img/ripper-sour-ripper-bud.jpg",
+    image: "img/ripper-sour-ripper-bud.webp",
     name: "Sour Ripper",
     aka: "Sour Diesel Selection",
     bank: "Ripper Seeds",
@@ -231,7 +231,7 @@ id: "ripper-sour-ripper",
   },
   {
 id: "ripper-ripper-haze",
-    image: "img/ripper-haze-flowering.jpg",
+    image: "img/ripper-haze-flowering.webp",
     name: "Ripper Haze",
     aka: "Amnesia Haze Selection (Amnesia Ripping)",
     bank: "Ripper Seeds",
@@ -252,7 +252,7 @@ id: "ripper-ripper-haze",
   },
   {
 id: "ripper-hawaiian-wave",
-    image: "img/ripper-hawaiian-wave-bud.jpg",
+    image: "img/ripper-hawaiian-wave-bud.webp",
     name: "Hawaiian Wave",
     aka: "Hawaiian Haze x Double Glock",
     bank: "Ripper Seeds",
@@ -273,7 +273,7 @@ id: "ripper-hawaiian-wave",
   },
   {
 id: "ripper-double-glock",
-    image: "img/ripper-double-glock-plant.jpg",
+    image: "img/ripper-double-glock-plant.webp",
     name: "Double Glock",
     aka: "Índica Afgana 100%",
     bank: "Ripper Seeds",
@@ -294,7 +294,7 @@ id: "ripper-double-glock",
   },
   {
 id: "ripper-criminal-plus",
-    image: "img/ripper-criminal-plus-plant.jpg",
+    image: "img/ripper-criminal-plus-plant.webp",
     name: "Criminal +",
     aka: "Critical Mass x Double Glock",
     bank: "Ripper Seeds",
@@ -315,7 +315,7 @@ id: "ripper-criminal-plus",
   },
   {
 id: "ripper-toxic",
-    image: "img/ripper-toxic-bud.jpg",
+    image: "img/ripper-toxic-bud.webp",
     name: "Toxic",
     aka: "Ripper Haze x Criminal +",
     bank: "Ripper Seeds",
@@ -336,7 +336,7 @@ id: "ripper-toxic",
   },
   {
 id: "ripper-brain-cake",
-    image: "img/ripper-brain-cake-plant.jpg",
+    image: "img/ripper-brain-cake-plant.webp",
     name: "Brain Cake",
     aka: "Do-Si-Dos S1",
     bank: "Ripper Seeds",
@@ -357,7 +357,7 @@ id: "ripper-brain-cake",
   },
   {
 id: "ripper-kroma",
-    image: "img/ripper-kroma-plant.jpg",
+    image: "img/ripper-kroma-plant.webp",
     name: "Kroma",
     aka: "Kmintz x Zkittlez",
     bank: "Ripper Seeds",
@@ -378,8 +378,8 @@ id: "ripper-kroma",
   },
   {
 id: "ripper-sideral",
-    image: "img/ripper-sideral.jpg",
-    gallery: ["img/ripper-sideral.jpg"],
+    image: "img/ripper-sideral.webp",
+    gallery: ["img/ripper-sideral.webp"],
     name: "Sideral",
     aka: "Mazar x Critical Mass Selection",
     bank: "Ripper Seeds",
@@ -400,7 +400,7 @@ id: "ripper-sideral",
   },
   {
 id: "ripper-candygaz",
-    image: "img/ripper-candygaz.jpg",
+    image: "img/ripper-candygaz.webp",
     name: "CandyGaz",
     aka: "Gelato x Gas OG",
     bank: "Ripper Seeds",
@@ -421,7 +421,7 @@ id: "ripper-candygaz",
   },
   {
 id: "ripper-omg",
-    image: "img/ripper-omg.jpg",
+    image: "img/ripper-omg.webp",
     name: "OMG",
     aka: "Orange Mints Gelato",
     bank: "Ripper Seeds",
@@ -442,8 +442,8 @@ id: "ripper-omg",
   },
   {
 id: "ripper-jungle-punch",
-    image: "img/ripper-jungle-punch-flowering.jpg",
-    gallery: ["img/ripper-jungle-punch.jpg"],
+    image: "img/ripper-jungle-punch-flowering.webp",
+    gallery: ["img/ripper-jungle-punch.webp"],
     name: "Jungle Punch",
     aka: "Tropicana Cookies x Banana Punch",
     bank: "Ripper Seeds",
@@ -464,7 +464,7 @@ id: "ripper-jungle-punch",
   },
   {
 id: "bf-mimosa-orange-punch",
-    image: "img/bf-mimosa-orange-punch.jpg",
+    image: "img/bf-mimosa-orange-punch.webp",
     name: "Mimosa x Orange Punch",
     aka: "Mimosa EVO x Orange Punch",
     bank: "Barney's Farm",
@@ -485,7 +485,7 @@ id: "bf-mimosa-orange-punch",
   },
   {
 id: "bf-runtz-muffin",
-    image: "img/bf-runtz-muffin.jpg",
+    image: "img/bf-runtz-muffin.webp",
     name: "Runtz Muffin",
     aka: "Zkittlez x Gelato x Orange Punch",
     bank: "Barney's Farm",
@@ -506,7 +506,7 @@ id: "bf-runtz-muffin",
   },
   {
 id: "bf-dos-si-dos-33",
-    image: "img/bf-dos-si-dos-33-bud.jpg",
+    image: "img/bf-dos-si-dos-33-bud.webp",
     name: "Dos Si Dos 33",
     aka: "Do-Si-Dos x Gelato #33",
     bank: "Barney's Farm",
@@ -527,7 +527,7 @@ id: "bf-dos-si-dos-33",
   },
   {
 id: "bf-pineapple-express",
-    image: "img/bf-pineapple-express-bud.jpg",
+    image: "img/bf-pineapple-express-bud.webp",
     name: "Pineapple Express",
     aka: "Hawaiian x Trainwreck",
     bank: "Barney's Farm",
@@ -548,7 +548,7 @@ id: "bf-pineapple-express",
   },
   {
 id: "bf-laughing-buddha",
-    image: "img/bf-laughing-buddha-plant.jpg",
+    image: "img/bf-laughing-buddha-plant.webp",
     name: "Laughing Buddha",
     aka: "Thai x Jamaican Sativa",
     bank: "Barney's Farm",
@@ -569,7 +569,7 @@ id: "bf-laughing-buddha",
   },
   {
 id: "bf-critical-kush",
-    image: "img/bf-critical-kush-plant.jpg",
+    image: "img/bf-critical-kush-plant.webp",
     name: "Critical Kush",
     aka: "Critical Mass x OG Kush",
     bank: "Barney's Farm",
@@ -590,7 +590,7 @@ id: "bf-critical-kush",
   },
   {
 id: "bf-sherbet-queen",
-    image: "img/bf-sherbet-queen-plant.jpg",
+    image: "img/bf-sherbet-queen-plant.webp",
     name: "Sherbet Queen",
     aka: "GSC x Pink Panties",
     bank: "Barney's Farm",
@@ -611,7 +611,7 @@ id: "bf-sherbet-queen",
   },
   {
 id: "sweet-green-poison",
-    image: "img/sweet-green-poison-plant.jpg",
+    image: "img/sweet-green-poison-plant.webp",
     name: "Green Poison",
     aka: "Selección Índica Rápida",
     bank: "Sweet Seeds",
@@ -632,7 +632,7 @@ id: "sweet-green-poison",
   },
   {
 id: "sweet-cream-caramel",
-    image: "img/sweet-cream-caramel.jpg",
+    image: "img/sweet-cream-caramel.webp",
     name: "Cream Caramel",
     aka: "BlueBlack x Maple Leaf x White Rhino",
     bank: "Sweet Seeds",
@@ -653,7 +653,7 @@ id: "sweet-cream-caramel",
   },
   {
 id: "sweet-gorilla-girl",
-    image: "img/sweet-gorilla-girl.jpg",
+    image: "img/sweet-gorilla-girl.webp",
     name: "Gorilla Girl",
     aka: "Gorilla Glue x GSC",
     bank: "Sweet Seeds",
@@ -674,7 +674,7 @@ id: "sweet-gorilla-girl",
   },
   {
 id: "sweet-black-jack",
-    image: "img/sweet-black-jack-plant.jpg",
+    image: "img/sweet-black-jack-plant.webp",
     name: "Black Jack",
     aka: "Black Domina x Jack Herer",
     bank: "Sweet Seeds",
@@ -695,7 +695,7 @@ id: "sweet-black-jack",
   },
   {
 id: "sweet-tropicanna-poison",
-    image: "img/sweet-tropicanna-poison-plant.jpg",
+    image: "img/sweet-tropicanna-poison-plant.webp",
     name: "Tropicanna Poison",
     aka: "Tropicanna Cookies x Poison",
     bank: "Sweet Seeds",
@@ -716,7 +716,7 @@ id: "sweet-tropicanna-poison",
   },
   {
 id: "sweet-s5-haze",
-    image: "img/sweet-s5-haze.jpg",
+    image: "img/sweet-s5-haze.webp",
     name: "S5 Haze",
     aka: "Neville's Haze x Shiva",
     bank: "Sweet Seeds",
@@ -737,7 +737,7 @@ id: "sweet-s5-haze",
   },
   {
 id: "rqs-royal-gorilla",
-    image: "img/rqs-royal-gorilla-bud.jpg",
+    image: "img/rqs-royal-gorilla-bud.webp",
     name: "Royal Gorilla",
     aka: "GG#4 Selection RQS",
     bank: "Royal Queen Seeds",
@@ -758,7 +758,7 @@ id: "rqs-royal-gorilla",
   },
   {
 id: "rqs-northern-light",
-    image: "img/nirvana-northern-light-flower-hd.jpg",
+    image: "img/nirvana-northern-light-flower-hd.webp",
     name: "Northern Light",
     aka: "NL #5 Legend",
     bank: "Royal Queen Seeds",
@@ -779,7 +779,7 @@ id: "rqs-northern-light",
   },
   {
 id: "rqs-amnesia-haze",
-    image: "img/rqs-amnesia-haze-plant.jpg",
+    image: "img/rqs-amnesia-haze-plant.webp",
     name: "Amnesia Haze",
     aka: "Original Haze Hybrids",
     bank: "Royal Queen Seeds",
@@ -800,7 +800,7 @@ id: "rqs-amnesia-haze",
   },
   {
 id: "rqs-wedding-glue",
-    image: "img/rqs-wedding-glue-plant.jpg",
+    image: "img/rqs-wedding-glue-plant.webp",
     name: "Wedding Glue",
     aka: "Wedding Cake x GG#4",
     bank: "Royal Queen Seeds",
@@ -821,7 +821,7 @@ id: "rqs-wedding-glue",
   },
   {
 id: "rqs-fat-banana",
-    image: "img/rqs-fat-banana-plant.jpg",
+    image: "img/rqs-fat-banana-plant.webp",
     name: "Fat Banana",
     aka: "OG Kush x Banana",
     bank: "Royal Queen Seeds",
@@ -842,7 +842,7 @@ id: "rqs-fat-banana",
   },
   {
 id: "rqs-lemon-shining-silver",
-    image: "img/rqs-lemon-shining-silver.jpg",
+    image: "img/rqs-lemon-shining-silver.webp",
     name: "Lemon Shining Silver Haze",
     aka: "LSSH",
     bank: "Royal Queen Seeds",
@@ -863,7 +863,7 @@ id: "rqs-lemon-shining-silver",
   },
   {
 id: "dp-auto-blueberry",
-    image: "img/dp-auto-blueberry-flowering.jpg",
+    image: "img/dp-auto-blueberry-flowering.webp",
     name: "Auto Blueberry",
     aka: "Blueberry Auto Classic",
     bank: "Dutch Passion",
@@ -884,7 +884,7 @@ id: "dp-auto-blueberry",
   },
   {
 id: "dp-think-different",
-    image: "img/dp-think-different.jpg",
+    image: "img/dp-think-different.webp",
     name: "Think Different",
     aka: "AK-47 Auto Sativa Elite",
     bank: "Dutch Passion",
@@ -905,7 +905,7 @@ id: "dp-think-different",
   },
   {
 id: "dp-zkittlez",
-    image: "img/dp-zkittlez-bud.jpg",
+    image: "img/dp-zkittlez-bud.webp",
     name: "Zkittlez",
     aka: "Zkittlez Original Elite",
     bank: "Dutch Passion",
@@ -926,7 +926,7 @@ id: "dp-zkittlez",
   },
   {
 id: "dp-passion-fruit",
-    image: "img/dp-passion-fruit-flowering.jpg",
+    image: "img/dp-passion-fruit-flowering.webp",
     name: "Passion Fruit",
     aka: "Exótica Tropical Premium",
     bank: "Dutch Passion",
@@ -947,7 +947,7 @@ id: "dp-passion-fruit",
   },
   {
 id: "philo-cali-orange-bud",
-    image: "img/philo-cali-orange-bud.jpg",
+    image: "img/philo-cali-orange-bud.webp",
     name: "Cali Orange Bud",
     aka: "Naranja Californiana Clásica",
     bank: "Philosopher Seeds",
@@ -968,7 +968,7 @@ id: "philo-cali-orange-bud",
   },
   {
 id: "philo-singha-valley",
-    image: "img/philo-singha-valley.jpg",
+    image: "img/philo-singha-valley.webp",
     name: "Singha Valley",
     aka: "Thai x High CBD",
     bank: "Philosopher Seeds",
@@ -989,7 +989,7 @@ id: "philo-singha-valley",
   },
   {
 id: "philo-sugar-black-rose",
-    image: "img/philo-sugar-black-rose-flowering.jpg",
+    image: "img/philo-sugar-black-rose-flowering.webp",
     name: "Sugar Black Rose",
     aka: "Black Domina x Critical +",
     bank: "Philosopher Seeds",
@@ -1010,7 +1010,7 @@ id: "philo-sugar-black-rose",
   },
   {
 id: "philo-blues",
-    image: "img/philo-blues.jpg",
+    image: "img/philo-blues.webp",
     name: "The Blues",
     aka: "Blueberry x White Widow",
     bank: "Philosopher Seeds",
@@ -1031,7 +1031,7 @@ id: "philo-blues",
   },
   {
 id: "hso-trainwreck",
-    image: "img/hso-trainwreck.jpg",
+    image: "img/hso-trainwreck.webp",
     name: "Trainwreck",
     aka: "Mexican x Thai x Afghani",
     bank: "Humboldt Seed",
@@ -1052,7 +1052,7 @@ id: "hso-trainwreck",
   },
   {
 id: "hso-og-eddy-lepp",
-    image: "img/hso-og-eddy-lepp-plant.jpg",
+    image: "img/hso-og-eddy-lepp-plant.webp",
     name: "OG Eddy Lepp",
     aka: "SFV OG x OG Kush Elite",
     bank: "Humboldt Seed",
@@ -1073,7 +1073,7 @@ id: "hso-og-eddy-lepp",
   },
   {
 id: "hso-blue-dream",
-    image: "img/hso-blue-dream-official.jpg",
+    image: "img/hso-blue-dream-official.webp",
     name: "Blue Dream",
     aka: "Blueberry x Haze Californiana",
     bank: "Humboldt Seed",
@@ -1094,7 +1094,7 @@ id: "hso-blue-dream",
   },
   {
 id: "hso-girl-scout-cookies",
-    image: "img/hso-girl-scout-cookies.jpg",
+    image: "img/hso-girl-scout-cookies.webp",
     name: "Girl Scout Cookies",
     aka: "GSC California Original",
     bank: "Humboldt Seed",
@@ -1115,7 +1115,7 @@ id: "hso-girl-scout-cookies",
   },
   {
 id: "oo-chemdawg",
-    image: "img/oo-chemdawg.jpg",
+    image: "img/oo-chemdawg.webp",
     name: "Chemdawg",
     aka: "ChemDog Original",
     bank: "00 Seeds Bank",
@@ -1136,7 +1136,7 @@ id: "oo-chemdawg",
   },
   {
 id: "oo-caramel-cream",
-    image: "img/oo-caramel-cream.jpg",
+    image: "img/oo-caramel-cream.webp",
     name: "Caramel Cream",
     aka: "Caramelo Índica Dulce",
     bank: "00 Seeds Bank",
@@ -1157,7 +1157,7 @@ id: "oo-caramel-cream",
   },
   {
 id: "oo-white-widow",
-    image: "img/oo-white-widow.jpg",
+    image: "img/oo-white-widow.webp",
     name: "White Widow",
     aka: "La Viuda Blanca Clásica",
     bank: "00 Seeds Bank",
@@ -1178,8 +1178,8 @@ id: "oo-white-widow",
   },
   {
 id: "oo-super-skunk",
-    image: "img/oo-super-skunk-bud.jpg",
-    gallery: ["img/oo-super-skunk-bud.jpg", "img/oo-super-skunk-plant.jpg", "img/oo-super-skunk-flowering.jpg"],
+    image: "img/oo-super-skunk-bud.webp",
+    gallery: ["img/oo-super-skunk-bud.webp", "img/oo-super-skunk-plant.webp", "img/oo-super-skunk-flowering.webp"],
     name: "Super Skunk",
     aka: "Skunk #1 x Afghani",
     bank: "00 Seeds Bank",
@@ -1200,7 +1200,7 @@ id: "oo-super-skunk",
   },
   {
 id: "bsf-gorilla-glue-4",
-    image: "img/bsf-gorilla-glue-4.jpg",
+    image: "img/bsf-gorilla-glue-4.webp",
     name: "Gorilla Glue #4",
     aka: "Chem Sister x Sour Dubb x Chocolate Diesel",
     bank: "BSF Seeds",
@@ -1221,7 +1221,7 @@ id: "bsf-gorilla-glue-4",
   },
   {
 id: "bsf-lebron-haze",
-    image: "img/bsf-lebron-haze.jpg",
+    image: "img/bsf-lebron-haze.webp",
     name: "Lebron Haze",
     aka: "Elite Haze x Lemon Thai",
     bank: "BSF Seeds",
@@ -1264,7 +1264,7 @@ id: "bsf-moby-d",
   },
   {
 id: "bsf-gorilla-ghost",
-    image: "img/bsf-gorilla-ghost.jpg",
+    image: "img/bsf-gorilla-ghost.webp",
     name: "Gorilla Ghost",
     aka: "Gorilla Glue #4 x Ghost Auto",
     bank: "BSF Seeds",
@@ -1285,7 +1285,7 @@ id: "bsf-gorilla-ghost",
   },
   {
 id: "bsf-double-cookies",
-    image: "img/bsf-double-cookies.jpg",
+    image: "img/bsf-double-cookies.webp",
     name: "Double Cookies",
     aka: "Do-Si-Dos x Forum Cookies",
     bank: "BSF Seeds",
@@ -1306,7 +1306,7 @@ id: "bsf-double-cookies",
   },
   {
 id: "bsf-green-tiger-fast",
-    image: "img/bsf-green-tiger-fast.jpg",
+    image: "img/bsf-green-tiger-fast.webp",
     name: "Green Tiger (Faster)",
     aka: "Early Skunk x Skunk P91",
     bank: "BSF Seeds",
@@ -1327,7 +1327,7 @@ id: "bsf-green-tiger-fast",
   },
   {
 id: "bsf-obg-kush-fast",
-    image: "img/bsf-obg-kush-fast.jpg",
+    image: "img/bsf-obg-kush-fast.webp",
     name: "OBG Kush (Faster)",
     aka: "Reserva Secreta KUSH",
     bank: "BSF Seeds",
@@ -1348,7 +1348,7 @@ id: "bsf-obg-kush-fast",
   },
   {
 id: "bsf-el-gaucho-fast",
-    image: "img/bsf-el-gaucho-fast.jpg",
+    image: "img/bsf-el-gaucho-fast.webp",
     name: "El Gaucho (Faster)",
     aka: "Sierra Cut x Abusive OG",
     bank: "BSF Seeds",
@@ -1369,7 +1369,7 @@ id: "bsf-el-gaucho-fast",
   },
   {
 id: "bsf-rainbows",
-    image: "img/bsf-rainbows.jpg",
+    image: "img/bsf-rainbows.webp",
     name: "Rainbows",
     aka: "Zkittlez x Zkittlez",
     bank: "BSF Seeds",
@@ -1390,7 +1390,7 @@ id: "bsf-rainbows",
   },
   {
 id: "bsf-gorilla-rainbows",
-    image: "img/bsf-gorilla-rainbows.jpg",
+    image: "img/bsf-gorilla-rainbows.webp",
     name: "Gorilla Rainbows",
     aka: "Gorilla Glue #4 x Rainbows",
     bank: "BSF Seeds",
@@ -1411,7 +1411,7 @@ id: "bsf-gorilla-rainbows",
   },
   {
 id: "bsf-orange-blossom",
-    image: "img/bsf-orange-blossom.jpg",
+    image: "img/bsf-orange-blossom.webp",
     name: "Orange Blossom",
     aka: "Clementine x Purple Punch",
     bank: "BSF Seeds",
@@ -1432,7 +1432,7 @@ id: "bsf-orange-blossom",
   },
   {
 id: "bsf-red-critical-auto",
-    image: "img/bsf-red-critical-auto.jpg",
+    image: "img/bsf-red-critical-auto.webp",
     name: "Red Critical XXL Auto",
     aka: "Critical Auto x Red Selective Cut",
     bank: "BSF Seeds",
@@ -1453,7 +1453,7 @@ id: "bsf-red-critical-auto",
   },
   {
 id: "bsf-lebron-haze-auto",
-    image: "img/bsf-lebron-haze-auto.jpg",
+    image: "img/bsf-lebron-haze-auto.webp",
     name: "Lebron Haze XXL Auto",
     aka: "Lebron Haze x Jack Herer Auto",
     bank: "BSF Seeds",
@@ -1474,7 +1474,7 @@ id: "bsf-lebron-haze-auto",
   },
   {
 id: "bsf-gorilla-glue-auto",
-    image: "img/bsf-gorilla-glue-auto.jpg",
+    image: "img/bsf-gorilla-glue-auto.webp",
     name: "Gorilla Glue XXL Auto",
     aka: "Gorilla Glue #4 x Auto Cut",
     bank: "BSF Seeds",
@@ -1495,7 +1495,7 @@ id: "bsf-gorilla-glue-auto",
   },
   {
 id: "bsf-ice-cream-cake-fast",
-    image: "img/bsf-ice-cream-cake-fast.jpg",
+    image: "img/bsf-ice-cream-cake-fast.webp",
     name: "Ice Cream Cake (Faster)",
     aka: "Gelato 33 x Wedding Cake",
     bank: "BSF Seeds",
@@ -1516,7 +1516,7 @@ id: "bsf-ice-cream-cake-fast",
   },
   {
 id: "dinafem-moby-dick",
-    image: "img/dinafem-moby-dick.jpg",
+    image: "img/dinafem-moby-dick.webp",
     name: "Moby Dick",
     aka: "Haze x White Widow",
     bank: "Dinafem Seeds",
@@ -1537,7 +1537,7 @@ id: "dinafem-moby-dick",
   },
   {
 id: "dinafem-critical-plus",
-    image: "img/dinafem-critical-plus.jpg",
+    image: "img/dinafem-critical-plus.webp",
     name: "Critical +",
     aka: "Big Bud x Skunk #1",
     bank: "Dinafem Seeds",
@@ -1558,7 +1558,7 @@ id: "dinafem-critical-plus",
   },
   {
 id: "dinafem-og-kush",
-    image: "img/dinafem-og-kush.jpg",
+    image: "img/dinafem-og-kush.webp",
     name: "OG Kush",
     aka: "Lemon Thai x Chemdawg",
     bank: "Dinafem Seeds",
@@ -1579,7 +1579,7 @@ id: "dinafem-og-kush",
   },
   {
 id: "dinafem-cheese",
-    image: "img/dinafem-cheese.jpg",
+    image: "img/dinafem-cheese.webp",
     name: "Cheese",
     aka: "Old School UK Cheese",
     bank: "Dinafem Seeds",
@@ -1600,7 +1600,7 @@ id: "dinafem-cheese",
   },
   {
 id: "dinafem-industrial-plant",
-    image: "img/dinafem-industrial-plant.jpg",
+    image: "img/dinafem-industrial-plant.webp",
     name: "Industrial Plant",
     aka: "Northern Lights x Skunk",
     bank: "Dinafem Seeds",
@@ -1621,7 +1621,7 @@ id: "dinafem-industrial-plant",
   },
   {
 id: "dinafem-amnesia-kush",
-    image: "img/dinafem-amnesia-kush.jpg",
+    image: "img/dinafem-amnesia-kush.webp",
     name: "Amnesia Kush",
     aka: "Amnesia Haze x OG Kush",
     bank: "Dinafem Seeds",
@@ -1642,7 +1642,7 @@ id: "dinafem-amnesia-kush",
   },
   {
 id: "dinafem-blue-widow",
-    image: "img/dinafem-blue-widow.jpg",
+    image: "img/dinafem-blue-widow.webp",
     name: "Blue Widow",
     aka: "Blueberry x White Widow",
     bank: "Dinafem Seeds",
@@ -1663,7 +1663,7 @@ id: "dinafem-blue-widow",
   },
   {
 id: "dinafem-dinamex",
-    image: "img/dinafem-dinamex.jpg",
+    image: "img/dinafem-dinamex.webp",
     name: "Dinamex",
     aka: "Cali Sour x Emerald OG Kush",
     bank: "Dinafem Seeds",
@@ -1684,7 +1684,7 @@ id: "dinafem-dinamex",
   },
   {
 id: "dinafem-critical-jack",
-    image: "img/dinafem-critical-jack.jpg",
+    image: "img/dinafem-critical-jack.webp",
     name: "Critical Jack",
     aka: "Critical + x Jack Herer",
     bank: "Dinafem Seeds",
@@ -1705,7 +1705,7 @@ id: "dinafem-critical-jack",
   },
   {
 id: "dinafem-critical-auto-2",
-    image: "img/dinafem-critical-auto-2.jpg",
+    image: "img/dinafem-critical-auto-2.webp",
     name: "Critical + 2.0 Auto",
     aka: "Critical + Auto x Critical +",
     bank: "Dinafem Seeds",
@@ -1726,7 +1726,7 @@ id: "dinafem-critical-auto-2",
   },
   {
 id: "dinafem-moby-dick-auto",
-    image: "img/dinafem-moby-dick-auto.jpg",
+    image: "img/dinafem-moby-dick-auto.webp",
     name: "Moby Dick XXL Auto",
     aka: "Moby Dick Auto x White Widow Auto",
     bank: "Dinafem Seeds",
@@ -1747,7 +1747,7 @@ id: "dinafem-moby-dick-auto",
   },
   {
 id: "dinafem-gorilla-auto",
-    image: "img/dinafem-gorilla-auto.jpg",
+    image: "img/dinafem-gorilla-auto.webp",
     name: "Gorilla Auto",
     aka: "Gorilla Glue #4 Auto",
     bank: "Dinafem Seeds",
@@ -1768,7 +1768,7 @@ id: "dinafem-gorilla-auto",
   },
   {
 id: "dinafem-remedy-cbd",
-    image: "img/dinafem-remedy-cbd.jpg",
+    image: "img/dinafem-remedy-cbd.webp",
     name: "Dinamed CBD",
     aka: "Pure CBD Medicinal",
     bank: "Dinafem Seeds",
@@ -1789,7 +1789,7 @@ id: "dinafem-remedy-cbd",
   },
   {
 id: "dinafem-diesel",
-    image: "img/dinafem-diesel.jpg",
+    image: "img/dinafem-diesel.webp",
     name: "Diesel",
     aka: "Mexican Sativa x Afghani",
     bank: "Dinafem Seeds",
@@ -1810,7 +1810,7 @@ id: "dinafem-diesel",
   },
   {
 id: "dinafem-sweet-grapefruit",
-    image: "img/dinafem-sweet-grapefruit.jpg",
+    image: "img/dinafem-sweet-grapefruit.webp",
     name: "Sweet Deep Grapefruit",
     aka: "Grapefruit x Blueberry",
     bank: "Dinafem Seeds",
@@ -1831,7 +1831,7 @@ id: "dinafem-sweet-grapefruit",
   },
   {
 id: "buddha-magnum",
-    image: "img/buddha-magnum-bud.jpg",
+    image: "img/buddha-magnum-bud.webp",
     name: "Magnum",
     aka: "XXL Autoflowering Sativa",
     bank: "Buddha Seeds",
@@ -1852,7 +1852,7 @@ id: "buddha-magnum",
   },
   {
 id: "buddha-deimos",
-    image: "img/buddha-deimos-bud.jpg",
+    image: "img/buddha-deimos-bud.webp",
     name: "Deimos",
     aka: "Northern Lights Auto Selection",
     bank: "Buddha Seeds",
@@ -1873,7 +1873,7 @@ id: "buddha-deimos",
   },
   {
 id: "buddha-white-dwarf",
-    image: "img/buddha-white-dwarf-bud.jpg",
+    image: "img/buddha-white-dwarf-bud.webp",
     name: "White Dwarf",
     aka: "Low Rider II Selection Auto",
     bank: "Buddha Seeds",
@@ -1894,7 +1894,7 @@ id: "buddha-white-dwarf",
   },
   {
 id: "buddha-purple-kush",
-    image: "img/buddha-purple-kush-bud.jpg",
+    image: "img/buddha-purple-kush-bud.webp",
     name: "Buddha Purple Kush",
     aka: "Purple Kush Feminizada",
     bank: "Buddha Seeds",
@@ -1915,7 +1915,7 @@ id: "buddha-purple-kush",
   },
   {
 id: "buddha-gorila",
-    image: "img/buddha-gorila-bud.jpg",
+    image: "img/buddha-gorila-bud.webp",
     name: "Gorila",
     aka: "Gorilla Glue #4 Selection",
     bank: "Buddha Seeds",
@@ -1936,7 +1936,7 @@ id: "buddha-gorila",
   },
   {
 id: "buddha-gelato",
-    image: "img/buddha-gelato-bud.jpg",
+    image: "img/buddha-gelato-bud.webp",
     name: "Buddha Gelato",
     aka: "Gelato USA Collection",
     bank: "Buddha Seeds",
@@ -1957,7 +1957,7 @@ id: "buddha-gelato",
   },
   {
 id: "buddha-cookie",
-    image: "img/buddha-cookie-bud.jpg",
+    image: "img/buddha-cookie-bud.webp",
     name: "Buddha Cookie",
     aka: "Girl Scout Cookies Selection",
     bank: "Buddha Seeds",
@@ -1978,7 +1978,7 @@ id: "buddha-cookie",
   },
   {
 id: "buddha-dosi2",
-    image: "img/buddha-dosi2-bud.jpg",
+    image: "img/buddha-dosi2-bud.webp",
     name: "Buddha DoSi2",
     aka: "Do-Si-Dos USA Collection",
     bank: "Buddha Seeds",
@@ -1999,7 +1999,7 @@ id: "buddha-dosi2",
   },
   {
 id: "buddha-wedding-cheesecake",
-    image: "img/buddha-wedding-cheesecake-bud.jpg",
+    image: "img/buddha-wedding-cheesecake-bud.webp",
     name: "Wedding Cheesecake",
     aka: "Buddha Wedding Cheesecake USA Collection",
     bank: "Buddha Seeds",
@@ -2020,7 +2020,7 @@ id: "buddha-wedding-cheesecake",
   },
   {
 id: "rkiem-negra-44",
-    image: "img/rkiem-negra-44-bud.jpg",
+    image: "img/rkiem-negra-44-bud.webp",
     name: "Negra 44",
     aka: "Sawla Ghana Landrace x Top 44",
     bank: "R-Kiem Seeds",
@@ -2041,7 +2041,7 @@ id: "rkiem-negra-44",
   },
   {
 id: "rkiem-sublimator",
-    image: "img/rkiem-sublimator-bud.jpg",
+    image: "img/rkiem-sublimator-bud.webp",
     name: "Sublimator",
     aka: "Sour Banana x Gorilla Glue #4",
     bank: "R-Kiem Seeds",
@@ -2062,7 +2062,7 @@ id: "rkiem-sublimator",
   },
   {
 id: "rkiem-icer",
-    image: "img/rkiem-icer-bud.jpg",
+    image: "img/rkiem-icer-bud.webp",
     name: "Icer",
     aka: "San Fernando Valley OG x Ice Cream",
     bank: "R-Kiem Seeds",
@@ -2083,7 +2083,7 @@ id: "rkiem-icer",
   },
   {
 id: "rkiem-muse",
-    image: "img/rkiem-muse-bud.jpg",
+    image: "img/rkiem-muse-bud.webp",
     name: "Muse",
     aka: "OG Kush Canadiense x Oregon Diesel",
     bank: "R-Kiem Seeds",
@@ -2104,7 +2104,7 @@ id: "rkiem-muse",
   },
   {
 id: "rkiem-portela",
-    image: "img/rkiem-portela-bud.jpg",
+    image: "img/rkiem-portela-bud.webp",
     name: "Portela",
     aka: "Icer x Jamaicana Lambsbread",
     bank: "R-Kiem Seeds",
@@ -2125,7 +2125,7 @@ id: "rkiem-portela",
   },
   {
 id: "rkiem-eli",
-    image: "img/rkiem-eli-bud.jpg",
+    image: "img/rkiem-eli-bud.webp",
     name: "Eli",
     aka: "Sawla Ghana x Rosetta Stone",
     bank: "R-Kiem Seeds",
@@ -2146,7 +2146,7 @@ id: "rkiem-eli",
   },
   {
 id: "rkiem-zkiem",
-    image: "img/rkiem-zkiem-bud.jpg",
+    image: "img/rkiem-zkiem-bud.webp",
     name: "ZKiem",
     aka: "Zkittlez x Selección Afgana (Harybo)",
     bank: "R-Kiem Seeds",
@@ -2167,7 +2167,7 @@ id: "rkiem-zkiem",
   },
   {
 id: "rkiem-2y2",
-    image: "img/rkiem-2y2-bud.jpg",
+    image: "img/rkiem-2y2-bud.webp",
     name: "2y2",
     aka: "Alpha Cut Purple Punch x Norcal Do-Si-Dos",
     bank: "R-Kiem Seeds",
@@ -2188,7 +2188,7 @@ id: "rkiem-2y2",
   },
   {
 id: "rkiem-el-xupet-negre",
-    image: "img/rkiem-el-xupet-negre-bud.jpg",
+    image: "img/rkiem-el-xupet-negre-bud.webp",
     name: "El Xupet Negre",
     aka: "Krabby Patty x GMO Kush",
     bank: "R-Kiem Seeds",
@@ -2209,7 +2209,7 @@ id: "rkiem-el-xupet-negre",
   },
   {
 id: "rkiem-klementine",
-    image: "img/rkiem-klementine-bud.jpg",
+    image: "img/rkiem-klementine-bud.webp",
     name: "Klementine",
     aka: "Clementine x Purple Punch",
     bank: "R-Kiem Seeds",
@@ -2230,7 +2230,7 @@ id: "rkiem-klementine",
   },
   {
 id: "positronics-critical-47",
-    image: "img/positronics-critical-47-bud.jpg",
+    image: "img/positronics-critical-47-bud.webp",
     name: "Critical 47",
     aka: "Critical Mass x AK-47",
     bank: "Positronics Seeds",
@@ -2251,7 +2251,7 @@ id: "positronics-critical-47",
   },
   {
 id: "positronics-somango-47",
-    image: "img/positronics-somango-47-bud.jpg",
+    image: "img/positronics-somango-47-bud.webp",
     name: "Somango 47",
     aka: "Somango x Critical 47",
     bank: "Positronics Seeds",
@@ -2272,7 +2272,7 @@ id: "positronics-somango-47",
   },
   {
 id: "positronics-purple-haze",
-    image: "img/positronics-purple-haze-bud.jpg",
+    image: "img/positronics-purple-haze-bud.webp",
     name: "Purple Haze #1",
     aka: "Purple Thai x Haze #1",
     bank: "Positronics Seeds",
@@ -2293,7 +2293,7 @@ id: "positronics-purple-haze",
   },
   {
 id: "positronics-claustrum",
-    image: "img/positronics-claustrum-bud.jpg",
+    image: "img/positronics-claustrum-bud.webp",
     name: "Claustrum",
     aka: "(SSH x Jack Herer) x Kali Mist",
     bank: "Positronics Seeds",
@@ -2314,7 +2314,7 @@ id: "positronics-claustrum",
   },
   {
 id: "positronics-cum-laude",
-    image: "img/positronics-cum-laude-bud.jpg",
+    image: "img/positronics-cum-laude-bud.webp",
     name: "Cum Laude",
     aka: "(Reina Madre x Tijuana) x Original Haze",
     bank: "Positronics Seeds",
@@ -2335,7 +2335,7 @@ id: "positronics-cum-laude",
   },
   {
 id: "positronics-caramelice",
-    image: "img/positronics-caramelice-bud.jpg",
+    image: "img/positronics-caramelice-bud.webp",
     name: "Caramelice",
     aka: "Caramela x Super Skunk",
     bank: "Positronics Seeds",
@@ -2356,7 +2356,7 @@ id: "positronics-caramelice",
   },
   {
 id: "positronics-blue-rhino",
-    image: "img/positronics-blue-rhino-bud.jpg",
+    image: "img/positronics-blue-rhino-bud.webp",
     name: "Blue Rhino",
     aka: "Blueberry x White Rhino",
     bank: "Positronics Seeds",
@@ -2377,7 +2377,7 @@ id: "positronics-blue-rhino",
   },
   {
 id: "positronics-amnesia-mystery",
-    image: "img/positronics-amnesia-mystery-bud.jpg",
+    image: "img/positronics-amnesia-mystery-bud.webp",
     name: "Amnesia Mystery",
     aka: "Amnesia Haze x California Sativa",
     bank: "Positronics Seeds",
@@ -2398,7 +2398,7 @@ id: "positronics-amnesia-mystery",
   },
   {
 id: "positronics-black-widow",
-    image: "img/positronics-black-widow-bud.jpg",
+    image: "img/positronics-black-widow-bud.webp",
     name: "Black Widow",
     aka: "White Widow x Afgana Oscura",
     bank: "Positronics Seeds",
@@ -2419,7 +2419,7 @@ id: "positronics-black-widow",
   },
   {
 id: "positronics-supercheese",
-    image: "img/positronics-supercheese-bud.jpg",
+    image: "img/positronics-supercheese-bud.webp",
     name: "Supercheese",
     aka: "Old School UK Cheese x Caramela",
     bank: "Positronics Seeds",
@@ -2440,7 +2440,7 @@ id: "positronics-supercheese",
   },
   {
 id: "aceseeds-panama",
-    image: "img/aceseeds-panama-bud.jpg",
+    image: "img/aceseeds-panama-bud.webp",
     name: "Panama",
     aka: "Panama Diosa x Panama Verde/Roja",
     bank: "ACE Seeds",
@@ -2461,7 +2461,7 @@ id: "aceseeds-panama",
   },
   {
 id: "aceseeds-malawi",
-    image: "img/aceseeds-malawi-bud.jpg",
+    image: "img/aceseeds-malawi-bud.webp",
     name: "Malawi",
     aka: "Killer Malawi Landrace P3",
     bank: "ACE Seeds",
@@ -2482,7 +2482,7 @@ id: "aceseeds-malawi",
   },
   {
 id: "aceseeds-golden-tiger",
-    image: "img/aceseeds-golden-tiger-bud.jpg",
+    image: "img/aceseeds-golden-tiger-bud.webp",
     name: "Golden Tiger",
     aka: "Killer Malawi x Meao Thai Landrace",
     bank: "ACE Seeds",
@@ -2503,7 +2503,7 @@ id: "aceseeds-golden-tiger",
   },
   {
 id: "aceseeds-zamaldelica",
-    image: "img/aceseeds-zamaldelica-bud.jpg",
+    image: "img/aceseeds-zamaldelica-bud.webp",
     name: "Zamaldelica",
     aka: "Zamal Landrace x Golden Tiger",
     bank: "ACE Seeds",
@@ -2524,7 +2524,7 @@ id: "aceseeds-zamaldelica",
   },
   {
 id: "aceseeds-pakistan-chitral-kush",
-    image: "img/aceseeds-pakistan-chitral-kush-bud.jpg",
+    image: "img/aceseeds-pakistan-chitral-kush-bud.webp",
     name: "Pakistan Chitral Kush",
     aka: "PCK Landrace P2",
     bank: "ACE Seeds",
@@ -2545,7 +2545,7 @@ id: "aceseeds-pakistan-chitral-kush",
   },
   {
 id: "aceseeds-violeta",
-    image: "img/aceseeds-violeta-bud.jpg",
+    image: "img/aceseeds-violeta-bud.webp",
     name: "Violeta",
     aka: "PCK x Killer Malawi",
     bank: "ACE Seeds",
@@ -2566,7 +2566,7 @@ id: "aceseeds-violeta",
   },
   {
 id: "aceseeds-purple-haze-x-malawi",
-    image: "img/aceseeds-purple-haze-x-malawi-bud.jpg",
+    image: "img/aceseeds-purple-haze-x-malawi-bud.webp",
     name: "Purple Haze x Malawi",
     aka: "Purple Haze #1 x Killer Malawi",
     bank: "ACE Seeds",
@@ -2587,7 +2587,7 @@ id: "aceseeds-purple-haze-x-malawi",
   },
   {
 id: "aceseeds-super-malawi-haze",
-    image: "img/aceseeds-super-malawi-haze-bud.jpg",
+    image: "img/aceseeds-super-malawi-haze-bud.webp",
     name: "Super Malawi Haze",
     aka: "Nevil's Haze x Killer Malawi",
     bank: "ACE Seeds",
@@ -2608,7 +2608,7 @@ id: "aceseeds-super-malawi-haze",
   },
   {
 id: "aceseeds-congo",
-    image: "img/aceseeds-congo-bud.jpg",
+    image: "img/aceseeds-congo-bud.webp",
     name: "Congo",
     aka: "Congo #3 x (Bangi Haze x Chitral)",
     bank: "ACE Seeds",
@@ -2629,7 +2629,7 @@ id: "aceseeds-congo",
   },
   {
 id: "aceseeds-guawi",
-    image: "img/aceseeds-guawi-bud.jpg",
+    image: "img/aceseeds-guawi-bud.webp",
     name: "Guawi",
     aka: "Old Malawi Killer x Guatemala Landrace",
     bank: "ACE Seeds",
@@ -2650,7 +2650,7 @@ id: "aceseeds-guawi",
   },
   {
 id: "pyramid-tutankhamon",
-    image: "img/pyramid-tutankhamon-bud.jpg?v=2026_custom_hd",
+    image: "img/pyramid-tutankhamon-bud.webp?v=2026_custom_hd",
     name: "Tutankhamon",
     aka: "Selección Élite AK-47",
     bank: "Pyramid Seeds",
@@ -2671,7 +2671,7 @@ id: "pyramid-tutankhamon",
   },
   {
 id: "pyramid-anesthesia",
-    image: "img/pyramid-anesthesia-bud.jpg",
+    image: "img/pyramid-anesthesia-bud.webp",
     name: "Anesthesia",
     aka: "Northern Lights x Black Domina",
     bank: "Pyramid Seeds",
@@ -2692,7 +2692,7 @@ id: "pyramid-anesthesia",
   },
   {
 id: "pyramid-nefertiti",
-    image: "img/pyramid-nefertiti-bud.jpg",
+    image: "img/pyramid-nefertiti-bud.webp",
     name: "Nefertiti",
     aka: "Black Widow x White Widow",
     bank: "Pyramid Seeds",
@@ -2713,7 +2713,7 @@ id: "pyramid-nefertiti",
   },
   {
 id: "pyramid-kryptonite",
-    image: "img/pyramid-kryptonite-bud.jpg",
+    image: "img/pyramid-kryptonite-bud.webp",
     name: "Kryptonite",
     aka: "Yumboldt x Sativa Granada",
     bank: "Pyramid Seeds",
@@ -2734,7 +2734,7 @@ id: "pyramid-kryptonite",
   },
   {
 id: "pyramid-anubis",
-    image: "img/pyramid-anubis-bud.jpg",
+    image: "img/pyramid-anubis-bud.webp",
     name: "Anubis",
     aka: "Somango x Wembley",
     bank: "Pyramid Seeds",
@@ -2755,7 +2755,7 @@ id: "pyramid-anubis",
   },
   {
 id: "pyramid-blue-pyramid",
-    image: "img/pyramid-blue-pyramid-bud.jpg",
+    image: "img/pyramid-blue-pyramid-bud.webp",
     name: "Blue Pyramid",
     aka: "Selección Élite Blueberry",
     bank: "Pyramid Seeds",
@@ -2776,7 +2776,7 @@ id: "pyramid-blue-pyramid",
   },
   {
 id: "pyramid-ramses",
-    image: "img/pyramid-ramses-bud.jpg",
+    image: "img/pyramid-ramses-bud.webp",
     name: "Ramses",
     aka: "Amnesia Haze x Selección Pyramid",
     bank: "Pyramid Seeds",
@@ -2797,7 +2797,7 @@ id: "pyramid-ramses",
   },
   {
 id: "pyramid-galaxy",
-    image: "img/pyramid-galaxy-bud.jpg",
+    image: "img/pyramid-galaxy-bud.webp",
     name: "Galaxy",
     aka: "Afghani x Northern Lights",
     bank: "Pyramid Seeds",
@@ -2818,7 +2818,7 @@ id: "pyramid-galaxy",
   },
   {
 id: "pyramid-wembley",
-    image: "img/pyramid-wembley-bud.jpg?v=2026_custom_hd",
+    image: "img/pyramid-wembley-bud.webp?v=2026_custom_hd",
     name: "Wembley",
     aka: "AK-47 x Bubble Gum",
     bank: "Pyramid Seeds",
@@ -2839,7 +2839,7 @@ id: "pyramid-wembley",
   },
   {
 id: "pyramid-shark",
-    image: "img/pyramid-shark-bud.jpg",
+    image: "img/pyramid-shark-bud.webp",
     name: "Shark",
     aka: "Super Skunk x Northern Lights",
     bank: "Pyramid Seeds",
@@ -2860,7 +2860,7 @@ id: "pyramid-shark",
   },
   {
 id: "blimburn-mamba-negra",
-    image: "img/blimburn-mamba-negra-bud.jpg",
+    image: "img/blimburn-mamba-negra-bud.webp",
     name: "Mamba Negra",
     aka: "Critical Mass x Skunk #1",
     bank: "Blimburn Seeds",
@@ -2881,7 +2881,7 @@ id: "blimburn-mamba-negra",
   },
   {
 id: "blimburn-granddaddy-purple",
-    image: "img/blimburn-granddaddy-purple-bud.jpg",
+    image: "img/blimburn-granddaddy-purple-bud.webp",
     name: "Granddaddy Purple",
     aka: "Purple Urkle x Big Bud",
     bank: "Blimburn Seeds",
@@ -2902,7 +2902,7 @@ id: "blimburn-granddaddy-purple",
   },
   {
 id: "blimburn-bruce-banner-3",
-    image: "img/blimburn-bruce-banner-3-bud.jpg",
+    image: "img/blimburn-bruce-banner-3-bud.webp",
     name: "Bruce Banner #3",
     aka: "OG Kush x Strawberry Diesel",
     bank: "Blimburn Seeds",
@@ -2923,7 +2923,7 @@ id: "blimburn-bruce-banner-3",
   },
   {
 id: "blimburn-gorilla-glue-4",
-    image: "img/blimburn-gorilla-glue-4-bud.jpg",
+    image: "img/blimburn-gorilla-glue-4-bud.webp",
     name: "Gorilla Glue #4",
     aka: "Chem's Sister x Sour Dubb x Chocolate Diesel",
     bank: "Blimburn Seeds",
@@ -2944,7 +2944,7 @@ id: "blimburn-gorilla-glue-4",
   },
   {
 id: "blimburn-girl-scout-cookies",
-    image: "img/blimburn-girl-scout-cookies-bud.jpg",
+    image: "img/blimburn-girl-scout-cookies-bud.webp",
     name: "Girl Scout Cookies",
     aka: "OG Kush x Durban Poison",
     bank: "Blimburn Seeds",
@@ -2965,7 +2965,7 @@ id: "blimburn-girl-scout-cookies",
   },
   {
 id: "blimburn-green-crack",
-    image: "img/blimburn-green-crack-bud.jpg",
+    image: "img/blimburn-green-crack-bud.webp",
     name: "Green Crack",
     aka: "Skunk #1 x Afghani Landrace",
     bank: "Blimburn Seeds",
@@ -2986,7 +2986,7 @@ id: "blimburn-green-crack",
   },
   {
 id: "blimburn-santa-muerte",
-    image: "img/blimburn-santa-muerte-bud.jpg",
+    image: "img/blimburn-santa-muerte-bud.webp",
     name: "Santa Muerte",
     aka: "Mexican Sativa Selection",
     bank: "Blimburn Seeds",
@@ -3007,7 +3007,7 @@ id: "blimburn-santa-muerte",
   },
   {
 id: "blimburn-guanabana",
-    image: "img/blimburn-guanabana-bud-real.jpg",
+    image: "img/blimburn-guanabana-bud-real.webp",
     name: "Guanabana",
     aka: "Amnesia Haze x White Widow",
     bank: "Blimburn Seeds",
@@ -3028,7 +3028,7 @@ id: "blimburn-guanabana",
   },
   {
 id: "blimburn-chocolopez",
-    image: "img/blimburn-chocolopez-bud.jpg",
+    image: "img/blimburn-chocolopez-bud.webp",
     name: "Chocolopez",
     aka: "Chocolate Thai x Cannalope Haze",
     bank: "Blimburn Seeds",
@@ -3049,7 +3049,7 @@ id: "blimburn-chocolopez",
   },
   {
 id: "blimburn-bcn-diesel",
-    image: "img/blimburn-bcn-diesel-bud.jpg",
+    image: "img/blimburn-bcn-diesel-bud.webp",
     name: "Bcn Diesel",
     aka: "Diesel x Selección Barcelona",
     bank: "Blimburn Seeds",
@@ -3070,7 +3070,7 @@ id: "blimburn-bcn-diesel",
   },
   {
 id: "genehtik-kritikal-bilbo",
-    image: "img/genehtik-kritikal-bilbo-bud.jpg",
+    image: "img/genehtik-kritikal-bilbo-bud.webp",
     name: "Kritikal Bilbo",
     aka: "Clon Élite Bilbo (Critical Mass)",
     bank: "Genehtik Seeds",
@@ -3091,7 +3091,7 @@ id: "genehtik-kritikal-bilbo",
   },
   {
 id: "genehtik-txomango",
-    image: "img/genehtik-txomango-bud.jpg",
+    image: "img/genehtik-txomango-bud.webp",
     name: "Txomango",
     aka: "Selección Somango Bilbo",
     bank: "Genehtik Seeds",
@@ -3112,7 +3112,7 @@ id: "genehtik-txomango",
   },
   {
 id: "genehtik-super-silver-bilbo",
-    image: "img/genehtik-super-silver-bilbo-bud.jpg",
+    image: "img/genehtik-super-silver-bilbo-bud.webp",
     name: "Super Silver Bilbo",
     aka: "Selección Super Silver Haze",
     bank: "Genehtik Seeds",
@@ -3133,7 +3133,7 @@ id: "genehtik-super-silver-bilbo",
   },
   {
 id: "genehtik-zuri-widow",
-    image: "img/genehtik-zuri-widow-bud.jpg",
+    image: "img/genehtik-zuri-widow-bud.webp",
     name: "Zuri Widow",
     aka: "Selección White Widow Élite",
     bank: "Genehtik Seeds",
@@ -3154,7 +3154,7 @@ id: "genehtik-zuri-widow",
   },
   {
 id: "genehtik-txees-bilbo",
-    image: "img/genehtik-txees-bilbo-bud.jpg",
+    image: "img/genehtik-txees-bilbo-bud.webp",
     name: "Txees Bilbo",
     aka: "Selección UK Cheese",
     bank: "Genehtik Seeds",
@@ -3175,7 +3175,7 @@ id: "genehtik-txees-bilbo",
   },
   {
 id: "genehtik-amnesia-bilbo",
-    image: "img/genehtik-amnesia-bilbo-bud.jpg",
+    image: "img/genehtik-amnesia-bilbo-bud.webp",
     name: "Amnesia Bilbo",
     aka: "Selección Amnesia Haze",
     bank: "Genehtik Seeds",
@@ -3196,7 +3196,7 @@ id: "genehtik-amnesia-bilbo",
   },
   {
 id: "genehtik-northern-lights-x",
-    image: "img/genehtik-northern-lights-x-bud.jpg",
+    image: "img/genehtik-northern-lights-x-bud.webp",
     name: "Northern Lights X",
     aka: "Northern Lights Selección Élite",
     bank: "Genehtik Seeds",
@@ -3217,7 +3217,7 @@ id: "genehtik-northern-lights-x",
   },
   {
 id: "genehtik-blubonik",
-    image: "img/genehtik-blubonik-bud.jpg",
+    image: "img/genehtik-blubonik-bud.webp",
     name: "Blubonik",
     aka: "Kootenay Blueberry x Blueberry",
     bank: "Genehtik Seeds",
@@ -3238,7 +3238,7 @@ id: "genehtik-blubonik",
   },
   {
 id: "genehtik-og-lemon-bilbo",
-    image: "img/genehtik-og-lemon-bilbo-bud.jpg",
+    image: "img/genehtik-og-lemon-bilbo-bud.webp",
     name: "OG Lemon Bilbo",
     aka: "OG Kush Lemon Cut x Selección Bilbo",
     bank: "Genehtik Seeds",
@@ -3259,7 +3259,7 @@ id: "genehtik-og-lemon-bilbo",
   },
   {
 id: "genehtik-santa-bilbo",
-    image: "img/genehtik-santa-bilbo-bud.jpg",
+    image: "img/genehtik-santa-bilbo-bud.webp",
     name: "Santa Bilbo",
     aka: "Brasil Amazonia x Selección Bilbo",
     bank: "Genehtik Seeds",
@@ -3280,7 +3280,7 @@ id: "genehtik-santa-bilbo",
   },
   {
 id: "heavyweight-fruit-punch",
-    image: "img/heavyweight-fruit-punch-bud.jpg",
+    image: "img/heavyweight-fruit-punch-bud.webp",
     name: "Fruit Punch",
     aka: "Skunk #1 x Haze x Northern Lights",
     bank: "Heavyweight Seeds",
@@ -3301,7 +3301,7 @@ id: "heavyweight-fruit-punch",
   },
   {
 id: "heavyweight-green-ninja",
-    image: "img/heavyweight-green-ninja-bud.jpg",
+    image: "img/heavyweight-green-ninja-bud.webp",
     name: "Green Ninja",
     aka: "Northern Lights x Afgana Pura",
     bank: "Heavyweight Seeds",
@@ -3322,7 +3322,7 @@ id: "heavyweight-green-ninja",
   },
   {
 id: "heavyweight-budzilla",
-    image: "img/heavyweight-budzilla-bud.jpg",
+    image: "img/heavyweight-budzilla-bud.webp",
     name: "Budzilla",
     aka: "G13 x Skunk #1",
     bank: "Heavyweight Seeds",
@@ -3343,7 +3343,7 @@ id: "heavyweight-budzilla",
   },
   {
 id: "heavyweight-money-bush",
-    image: "img/heavyweight-money-bush-bud.jpg",
+    image: "img/heavyweight-money-bush-bud.webp",
     name: "Money Bush",
     aka: "Afghani x Critical Mass",
     bank: "Heavyweight Seeds",
@@ -3364,7 +3364,7 @@ id: "heavyweight-money-bush",
   },
   {
 id: "heavyweight-goldmine",
-    image: "img/heavyweight-goldmine-bud.jpg?v=2026_custom_hd",
+    image: "img/heavyweight-goldmine-bud.webp?v=2026_custom_hd",
     name: "Goldmine",
     aka: "Mazar x AK-47",
     bank: "Heavyweight Seeds",
@@ -3385,7 +3385,7 @@ id: "heavyweight-goldmine",
   },
   {
 id: "heavyweight-monster-profit",
-    image: "img/heavyweight-monster-profit-bud.jpg",
+    image: "img/heavyweight-monster-profit-bud.webp",
     name: "Monster Profit",
     aka: "Amnesia Haze x Dream Machine",
     bank: "Heavyweight Seeds",
@@ -3406,7 +3406,7 @@ id: "heavyweight-monster-profit",
   },
   {
 id: "heavyweight-superb-og",
-    image: "img/heavyweight-superb-og-bud.jpg",
+    image: "img/heavyweight-superb-og-bud.webp",
     name: "Superb OG",
     aka: "Hindu Kush x OG Kush",
     bank: "Heavyweight Seeds",
@@ -3427,7 +3427,7 @@ id: "heavyweight-superb-og",
   },
   {
 id: "heavyweight-lemon-cake",
-    image: "img/heavyweight-lemon-cake-bud.jpg",
+    image: "img/heavyweight-lemon-cake-bud.webp",
     name: "Lemon Cake",
     aka: "Lemon Skunk x Cheese",
     bank: "Heavyweight Seeds",
@@ -3448,7 +3448,7 @@ id: "heavyweight-lemon-cake",
   },
   {
 id: "heavyweight-dream-machine",
-    image: "img/heavyweight-dream-machine-bud.jpg",
+    image: "img/heavyweight-dream-machine-bud.webp",
     name: "Dream Machine",
     aka: "Afghan x Indian x Brazilian Landrace",
     bank: "Heavyweight Seeds",
@@ -3469,7 +3469,7 @@ id: "heavyweight-dream-machine",
   },
   {
 id: "heavyweight-strawberry-cake",
-    image: "img/heavyweight-strawberry-cake-bud.jpg",
+    image: "img/heavyweight-strawberry-cake-bud.webp",
     name: "Strawberry Cake",
     aka: "Chronic x White Widow x Cheese",
     bank: "Heavyweight Seeds",
@@ -3490,7 +3490,7 @@ id: "heavyweight-strawberry-cake",
   },
   {
 id: "cannabiogen-taskenti",
-    image: "img/cannabiogen-taskenti-bud.jpg",
+    image: "img/cannabiogen-taskenti-bud.webp",
     name: "Taskenti",
     aka: "Uzbekistán Landrace x NL#1",
     bank: "Cannabiogen",
@@ -3511,7 +3511,7 @@ id: "cannabiogen-taskenti",
   },
   {
 id: "cannabiogen-peyote-purple",
-    image: "img/cannabiogen-peyote-purple-bud.jpg",
+    image: "img/cannabiogen-peyote-purple-bud.webp",
     name: "Peyote Purple",
     aka: "Selección Bubba Kush (Corte Morado)",
     bank: "Cannabiogen",
@@ -3532,7 +3532,7 @@ id: "cannabiogen-peyote-purple",
   },
   {
 id: "cannabiogen-sandstorm",
-    image: "img/cannabiogen-sandstorm-bud.jpg",
+    image: "img/cannabiogen-sandstorm-bud.webp",
     name: "Sandstorm",
     aka: "Chitral Kush x Morocco Landrace",
     bank: "Cannabiogen",
@@ -3553,7 +3553,7 @@ id: "cannabiogen-sandstorm",
   },
   {
 id: "cannabiogen-nepal-jam",
-    image: "img/cannabiogen-nepal-jam-bud.jpg",
+    image: "img/cannabiogen-nepal-jam-bud.webp",
     name: "Nepal Jam",
     aka: "Nepal Sativa x Jamaica Blue Mountain",
     bank: "Cannabiogen",
@@ -3574,7 +3574,7 @@ id: "cannabiogen-nepal-jam",
   },
   {
 id: "cannabiogen-caribe",
-    image: "img/cannabiogen-caribe-bud.jpg",
+    image: "img/cannabiogen-caribe-bud.webp",
     name: "Caribe",
     aka: "Jamaica Blue Mountain x NL5 Haze",
     bank: "Cannabiogen",
@@ -3595,7 +3595,7 @@ id: "cannabiogen-caribe",
   },
   {
 id: "cannabiogen-jamaica-blue-mountain",
-    image: "img/cannabiogen-jamaica-blue-mountain-bud.jpg",
+    image: "img/cannabiogen-jamaica-blue-mountain-bud.webp",
     name: "Jamaica Blue Mountain",
     aka: "Jamaica Blue Mountain Landrace",
     bank: "Cannabiogen",
@@ -3616,7 +3616,7 @@ id: "cannabiogen-jamaica-blue-mountain",
   },
   {
 id: "cannabiogen-leshaze",
-    image: "img/cannabiogen-leshaze-bud.jpg",
+    image: "img/cannabiogen-leshaze-bud.webp",
     name: "Leshaze",
     aka: "Lesotho Landrace x Skunk Haze",
     bank: "Cannabiogen",
@@ -3637,7 +3637,7 @@ id: "cannabiogen-leshaze",
   },
   {
 id: "cannabiogen-panama-dc",
-    image: "img/cannabiogen-panama-dc-bud.jpg",
+    image: "img/cannabiogen-panama-dc-bud.webp",
     name: "Panama DC",
     aka: "Panama Goddess x Deep Chunk",
     bank: "Cannabiogen",
@@ -3658,7 +3658,7 @@ id: "cannabiogen-panama-dc",
   },
   {
 id: "cannabiogen-mangobiche-kush",
-    image: "img/cannabiogen-mangobiche-kush-bud.jpg",
+    image: "img/cannabiogen-mangobiche-kush-bud.webp",
     name: "Mangobiche Kush",
     aka: "Colombia Mangobiche x Peyote Purple",
     bank: "Cannabiogen",
@@ -3679,7 +3679,7 @@ id: "cannabiogen-mangobiche-kush",
   },
   {
 id: "cannabiogen-hash-fruit",
-    image: "img/cannabiogen-hash-fruit-bud.jpg",
+    image: "img/cannabiogen-hash-fruit-bud.webp",
     name: "Hash Fruit",
     aka: "Sandstorm x Peyote Purple",
     bank: "Cannabiogen",
@@ -3700,7 +3700,7 @@ id: "cannabiogen-hash-fruit",
   },
   {
 id: "sensi-jack-herer",
-    image: "img/sensi-jack-herer-bud.jpg",
+    image: "img/sensi-jack-herer-bud.webp",
     name: "Jack Herer",
     aka: "Haze x NL#5 x Shiva Skunk",
     bank: "Sensi Seeds",
@@ -3721,7 +3721,7 @@ id: "sensi-jack-herer",
   },
   {
 id: "sensi-super-skunk",
-    image: "img/sensi-super-skunk-bud.jpg",
+    image: "img/sensi-super-skunk-bud.webp",
     name: "Super Skunk",
     aka: "Skunk #1 x Afgana Pura",
     bank: "Sensi Seeds",
@@ -3742,7 +3742,7 @@ id: "sensi-super-skunk",
   },
   {
 id: "sensi-black-domina",
-    image: "img/sensi-black-domina-bud.jpg",
+    image: "img/sensi-black-domina-bud.webp",
     name: "Black Domina",
     aka: "NL x Ortega x Hash Plant x Afghani SA",
     bank: "Sensi Seeds",
@@ -3763,7 +3763,7 @@ id: "sensi-black-domina",
   },
   {
 id: "sensi-northern-lights",
-    image: "img/sensi-northern-lights-bud.jpg",
+    image: "img/sensi-northern-lights-bud.webp",
     name: "Northern Lights",
     aka: "NL #2 x NL #5 Landrace Afgana",
     bank: "Sensi Seeds",
@@ -3784,7 +3784,7 @@ id: "sensi-northern-lights",
   },
   {
 id: "sensi-hindu-kush",
-    image: "img/sensi-hindu-kush-bud.jpg",
+    image: "img/sensi-hindu-kush-bud.webp",
     name: "Hindu Kush",
     aka: "Hindu Kush Mountain Landrace",
     bank: "Sensi Seeds",
@@ -3805,7 +3805,7 @@ id: "sensi-hindu-kush",
   },
   {
 id: "sensi-skunk-1",
-    image: "img/sensi-skunk-1-bud.jpg",
+    image: "img/sensi-skunk-1-bud.webp",
     name: "Skunk #1",
     aka: "Sativa Landrace x Afghani",
     bank: "Sensi Seeds",
@@ -3826,7 +3826,7 @@ id: "sensi-skunk-1",
   },
   {
 id: "sensi-sensi-amnesia",
-    image: "img/sensi-sensi-amnesia-bud.jpg",
+    image: "img/sensi-sensi-amnesia-bud.webp",
     name: "Sensi Amnesia",
     aka: "Hawaiian x Jamaica x Jamaican Pearl",
     bank: "Sensi Seeds",
@@ -3847,7 +3847,7 @@ id: "sensi-sensi-amnesia",
   },
   {
 id: "sensi-hash-plant",
-    image: "img/sensi-hash-plant-bud.jpg",
+    image: "img/sensi-hash-plant-bud.webp",
     name: "Hash Plant",
     aka: "Original Hash Plant x Northern Lights #1",
     bank: "Sensi Seeds",
@@ -3868,7 +3868,7 @@ id: "sensi-hash-plant",
   },
   {
 id: "sensi-early-skunk",
-    image: "img/sensi-early-skunk-bud.jpg",
+    image: "img/sensi-early-skunk-bud.webp",
     name: "Early Skunk",
     aka: "Skunk #1 x Early Pearl",
     bank: "Sensi Seeds",
@@ -3889,7 +3889,7 @@ id: "sensi-early-skunk",
   },
   {
 id: "sensi-sensi-skunk",
-    image: "img/sensi-sensi-skunk-bud.jpg",
+    image: "img/sensi-sensi-skunk-bud.webp",
     name: "Sensi Skunk",
     aka: "Skunk #1 x Selección Cítrica",
     bank: "Sensi Seeds",
@@ -3910,7 +3910,7 @@ id: "sensi-sensi-skunk",
   },
   {
 id: "ghs-super-lemon-haze",
-    image: "img/ghs-super-lemon-haze-bud.jpg",
+    image: "img/ghs-super-lemon-haze-bud.webp",
     name: "Super Lemon Haze",
     aka: "Lemon Skunk x Super Silver Haze",
     bank: "Green House Seed Co.",
@@ -3931,7 +3931,7 @@ id: "ghs-super-lemon-haze",
   },
   {
 id: "ghs-super-silver-haze",
-    image: "img/ghs-super-silver-haze-bud.jpg",
+    image: "img/ghs-super-silver-haze-bud.webp",
     name: "Super Silver Haze",
     aka: "Skunk #1 x NL #5 x Haze",
     bank: "Green House Seed Co.",
@@ -3952,7 +3952,7 @@ id: "ghs-super-silver-haze",
   },
   {
 id: "ghs-white-widow",
-    image: "img/ghs-white-widow-bud.jpg",
+    image: "img/ghs-white-widow-bud.webp",
     name: "White Widow",
     aka: "South Indian Sativa x Brazil Landrace",
     bank: "Green House Seed Co.",
@@ -3973,7 +3973,7 @@ id: "ghs-white-widow",
   },
   {
 id: "ghs-great-white-shark",
-    image: "img/ghs-great-white-shark-bud.jpg",
+    image: "img/ghs-great-white-shark-bud.webp",
     name: "Great White Shark",
     aka: "Super Skunk x Brazilian x South Indian",
     bank: "Green House Seed Co.",
@@ -3994,7 +3994,7 @@ id: "ghs-great-white-shark",
   },
   {
 id: "ghs-hawaiian-snow",
-    image: "img/ghs-hawaiian-snow-bud.jpg",
+    image: "img/ghs-hawaiian-snow-bud.webp",
     name: "Hawaiian Snow",
     aka: "Hawaiian Sativa x Neville's Haze",
     bank: "Green House Seed Co.",
@@ -4015,7 +4015,7 @@ id: "ghs-hawaiian-snow",
   },
   {
 id: "ghs-francos-lemon-cheese",
-    image: "img/ghs-francos-lemon-cheese-bud.jpg",
+    image: "img/ghs-francos-lemon-cheese-bud.webp",
     name: "Franco's Lemon Cheese",
     aka: "Super Lemon Haze x Exodus Cheese",
     bank: "Green House Seed Co.",
@@ -4036,7 +4036,7 @@ id: "ghs-francos-lemon-cheese",
   },
   {
 id: "ghs-exodus-cheese",
-    image: "img/ghs-exodus-cheese-bud.jpg",
+    image: "img/ghs-exodus-cheese-bud.webp",
     name: "Exodus Cheese",
     aka: "Selección Clón Original UK Cheese",
     bank: "Green House Seed Co.",
@@ -4057,7 +4057,7 @@ id: "ghs-exodus-cheese",
   },
   {
 id: "ghs-bubba-kush",
-    image: "img/ghs-bubba-kush-bud.jpg",
+    image: "img/ghs-bubba-kush-bud.webp",
     name: "Bubba Kush",
     aka: "Bubble Gum x OG Kush",
     bank: "Green House Seed Co.",
@@ -4078,7 +4078,7 @@ id: "ghs-bubba-kush",
   },
   {
 id: "ghs-kalashnikova",
-    image: "img/ghs-kalashnikova-bud.jpg",
+    image: "img/ghs-kalashnikova-bud.webp",
     name: "Kalashnikova",
     aka: "AK-47 x White Widow",
     bank: "Green House Seed Co.",
@@ -4099,7 +4099,7 @@ id: "ghs-kalashnikova",
   },
   {
 id: "ghs-kings-juice",
-    image: "img/ghs-kings-juice-bud.jpg",
+    image: "img/ghs-kings-juice-bud.webp",
     name: "King's Juice",
     aka: "Mimosa x King's Kush",
     bank: "Green House Seed Co.",
@@ -4120,7 +4120,7 @@ id: "ghs-kings-juice",
   },
   {
 id: "serious-ak-47",
-    image: "img/serious-ak-47-bud.jpg",
+    image: "img/serious-ak-47-bud.webp",
     name: "AK-47",
     aka: "Colombia x México x Tailandia x Afganistán",
     bank: "Serious Seeds",
@@ -4141,7 +4141,7 @@ id: "serious-ak-47",
   },
   {
 id: "serious-white-russian",
-    image: "img/serious-white-russian-bud.jpg",
+    image: "img/serious-white-russian-bud.webp",
     name: "White Russian",
     aka: "AK-47 x White Widow",
     bank: "Serious Seeds",
@@ -4162,7 +4162,7 @@ id: "serious-white-russian",
   },
   {
 id: "serious-chronic",
-    image: "img/serious-chronic-bud.jpg",
+    image: "img/serious-chronic-bud.webp",
     name: "Chronic",
     aka: "Northern Lights x Skunk x AK-47",
     bank: "Serious Seeds",
@@ -4183,7 +4183,7 @@ id: "serious-chronic",
   },
   {
 id: "serious-bubble-gum",
-    image: "img/serious-bubble-gum-bud.jpg",
+    image: "img/serious-bubble-gum-bud.webp",
     name: "Bubble Gum",
     aka: "Selección Indiana Bubblegum",
     bank: "Serious Seeds",
@@ -4204,7 +4204,7 @@ id: "serious-bubble-gum",
   },
   {
 id: "serious-kali-mist",
-    image: "img/serious-kali-mist-bud.jpg",
+    image: "img/serious-kali-mist-bud.webp",
     name: "Kali Mist",
     aka: "Cruce Sativo Secreto 2ª Gen",
     bank: "Serious Seeds",
@@ -4225,7 +4225,7 @@ id: "serious-kali-mist",
   },
   {
 id: "serious-serious-6",
-    image: "img/serious-serious-6-bud.jpg",
+    image: "img/serious-serious-6-bud.webp",
     name: "Serious 6",
     aka: "Canadian Landrace x Sativa Africana",
     bank: "Serious Seeds",
@@ -4246,7 +4246,7 @@ id: "serious-serious-6",
   },
   {
 id: "serious-warlock",
-    image: "img/serious-warlock-bud.jpg",
+    image: "img/serious-warlock-bud.webp",
     name: "Warlock",
     aka: "Skunk #1 x Afghani",
     bank: "Serious Seeds",
@@ -4267,7 +4267,7 @@ id: "serious-warlock",
   },
   {
 id: "serious-biddy-early",
-    image: "img/serious-biddy-early-bud.jpg",
+    image: "img/serious-biddy-early-bud.webp",
     name: "Biddy Early",
     aka: "Early Skunk x Warlock",
     bank: "Serious Seeds",
@@ -4288,7 +4288,7 @@ id: "serious-biddy-early",
   },
   {
 id: "serious-serious-happiness",
-    image: "img/serious-serious-happiness-bud.jpg",
+    image: "img/serious-serious-happiness-bud.webp",
     name: "Serious Happiness",
     aka: "AK-47 x Warlock",
     bank: "Serious Seeds",
@@ -4309,7 +4309,7 @@ id: "serious-serious-happiness",
   },
   {
 id: "serious-kali-bubba",
-    image: "img/serious-kali-bubba-bud.jpg",
+    image: "img/serious-kali-bubba-bud.webp",
     name: "Kali Bubba",
     aka: "Kali Mist x Bubble Gum",
     bank: "Serious Seeds",
@@ -4330,7 +4330,7 @@ id: "serious-kali-bubba",
   },
   {
 id: "ripper-pink-rozay",
-    image: "img/ripper-pink-rozay.jpg",
+    image: "img/ripper-pink-rozay.webp",
     name: "Pink Rozay",
     aka: "Lemonade x Runtz",
     bank: "Ripper Seeds",
@@ -4351,7 +4351,7 @@ id: "ripper-pink-rozay",
   },
   {
 id: "ripper-fuel-og",
-    image: "img/ripper-fuel-og.jpg",
+    image: "img/ripper-fuel-og.webp",
     name: "Ripper Fuel",
     aka: "Gorilla Glue #4 x Sour Diesel",
     bank: "Ripper Seeds",
@@ -4372,7 +4372,7 @@ id: "ripper-fuel-og",
   },
   {
 id: "ripper-zombie-wash",
-    image: "img/ripper-zombie-wash.jpg",
+    image: "img/ripper-zombie-wash.webp",
     name: "Zombiewash",
     aka: "Zombie Kush x Washing Machine",
     bank: "Ripper Seeds",
@@ -4393,7 +4393,7 @@ id: "ripper-zombie-wash",
   },
   {
 id: "ripper-candy-crack",
-    image: "img/ripper-candy-crack.jpg",
+    image: "img/ripper-candy-crack.webp",
     name: "Candy Crack",
     aka: "Candy Kush x Green Crack",
     bank: "Ripper Seeds",
@@ -4414,7 +4414,7 @@ id: "ripper-candy-crack",
   },
   {
 id: "ripper-juicy-zkittlez",
-    image: "img/ripper-juicy-zkittlez.jpg",
+    image: "img/ripper-juicy-zkittlez.webp",
     name: "Juicy Zkittlez",
     aka: "Zkittlez x Tropicana Cookies",
     bank: "Ripper Seeds",
@@ -4435,7 +4435,7 @@ id: "ripper-juicy-zkittlez",
   },
   {
 id: "bf-zkittlez-og",
-    image: "img/bf-zkittlez-og.jpg",
+    image: "img/bf-zkittlez-og.webp",
     name: "Zkittlez OG",
     aka: "Zkittlez x OG Kush",
     bank: "Barney's Farm",
@@ -4456,7 +4456,7 @@ id: "bf-zkittlez-og",
   },
   {
 id: "bf-lsd",
-    image: "img/bf-lsd.jpg",
+    image: "img/bf-lsd.webp",
     name: "LSD",
     aka: "Mazar x Skunk #1",
     bank: "Barney's Farm",
@@ -4477,7 +4477,7 @@ id: "bf-lsd",
   },
   {
 id: "bf-pineapple-chunk",
-    image: "img/bf-pineapple-chunk.jpg",
+    image: "img/bf-pineapple-chunk.webp",
     name: "Pineapple Chunk",
     aka: "Pineapple x Cheese x Skunk #1",
     bank: "Barney's Farm",
@@ -4498,7 +4498,7 @@ id: "bf-pineapple-chunk",
   },
   {
 id: "bf-acapulco-gold",
-    image: "img/bf-acapulco-gold.jpg",
+    image: "img/bf-acapulco-gold.webp",
     name: "Acapulco Gold",
     aka: "Landrace Sativa Mexicana",
     bank: "Barney's Farm",
@@ -4519,7 +4519,7 @@ id: "bf-acapulco-gold",
   },
   {
 id: "bf-wedding-cake",
-    image: "img/bf-wedding-cake.jpg",
+    image: "img/bf-wedding-cake.webp",
     name: "Wedding Cake",
     aka: "Triangle Kush x Animal Mints",
     bank: "Barney's Farm",
@@ -4540,7 +4540,7 @@ id: "bf-wedding-cake",
   },
   {
 id: "rqs-honey-cream",
-    image: "img/rqs-honey-cream.jpg",
+    image: "img/rqs-honey-cream.webp",
     name: "Honey Cream",
     aka: "Critical Mass x BlueBlack",
     bank: "Royal Queen Seeds",
@@ -4561,7 +4561,7 @@ id: "rqs-honey-cream",
   },
   {
 id: "rqs-og-kush-auto",
-    image: "img/rqs-og-kush-auto.jpg",
+    image: "img/rqs-og-kush-auto.webp",
     name: "OG Kush Auto",
     aka: "OG Kush x Ruderalis",
     bank: "Royal Queen Seeds",
@@ -4582,7 +4582,7 @@ id: "rqs-og-kush-auto",
   },
   {
 id: "rqs-purple-queen",
-    image: "img/rqs-purple-queen.jpg",
+    image: "img/rqs-purple-queen.webp",
     name: "Purple Queen",
     aka: "Hindu Kush x Purple Afghani",
     bank: "Royal Queen Seeds",
@@ -4603,7 +4603,7 @@ id: "rqs-purple-queen",
   },
   {
 id: "rqs-blue-mystic",
-    image: "img/rqs-blue-mystic.jpg",
+    image: "img/rqs-blue-mystic.webp",
     name: "Blue Mystic",
     aka: "Blueberry x Skunk #1",
     bank: "Royal Queen Seeds",
@@ -4624,7 +4624,7 @@ id: "rqs-blue-mystic",
   },
   {
 id: "rqs-watermelon",
-    image: "img/rqs-watermelon.jpg",
+    image: "img/rqs-watermelon.webp",
     name: "Watermelon",
     aka: "Watermelon Zkittlez x Ghost OG",
     bank: "Royal Queen Seeds",
@@ -4645,7 +4645,7 @@ id: "rqs-watermelon",
   },
   {
 id: "ss-sweet-amnesia-haze",
-    image: "img/sweet-amnesia-haze.jpg",
+    image: "img/sweet-amnesia-haze.webp",
     name: "Sweet Amnesia Haze",
     aka: "Amnesia Haze x Jack Herer Selection",
     bank: "Sweet Seeds",
@@ -4666,7 +4666,7 @@ id: "ss-sweet-amnesia-haze",
   },
   {
 id: "ss-crystal-candy",
-    image: "img/sweet-crystal-candy.jpg",
+    image: "img/sweet-crystal-candy.webp",
     name: "Crystal Candy",
     aka: "Blue Black x Maple Leaf Indica x White Widow",
     bank: "Sweet Seeds",
@@ -4687,7 +4687,7 @@ id: "ss-crystal-candy",
   },
   {
 id: "ss-red-hot-cookies",
-    image: "img/sweet-red-hot-cookies.jpg",
+    image: "img/sweet-red-hot-cookies.webp",
     name: "Red Hot Cookies",
     aka: "Ghost OG x Thin Mint Cookies",
     bank: "Sweet Seeds",
@@ -4708,7 +4708,7 @@ id: "ss-red-hot-cookies",
   },
   {
 id: "ss-black-cream-auto",
-    image: "img/sweet-black-cream-auto.jpg",
+    image: "img/sweet-black-cream-auto.webp",
     name: "Black Cream Auto",
     aka: "Black Domina x Cream Caramel x Ruderalis",
     bank: "Sweet Seeds",
@@ -4729,7 +4729,7 @@ id: "ss-black-cream-auto",
   },
   {
 id: "ss-bigdevil-xl",
-    image: "img/sweet-big-devil-xl.jpg",
+    image: "img/sweet-big-devil-xl.webp",
     name: "Big Devil XL Auto",
     aka: "Jack Herer x Big Devil",
     bank: "Sweet Seeds",
@@ -4750,7 +4750,7 @@ id: "ss-bigdevil-xl",
   },
   {
 id: "dp-frisian-dew",
-    image: "img/dp-frisian-dew.jpg",
+    image: "img/dp-frisian-dew.webp",
     name: "Frisian Dew",
     aka: "Super Skunk x Purple Star",
     bank: "Dutch Passion",
@@ -4771,7 +4771,7 @@ id: "dp-frisian-dew",
   },
   {
 id: "dp-mazar",
-    image: "img/dp-mazar.jpg",
+    image: "img/dp-mazar.webp",
     name: "Mazar",
     aka: "Afghan x Skunk",
     bank: "Dutch Passion",
@@ -4792,7 +4792,7 @@ id: "dp-mazar",
   },
   {
 id: "dp-auto-mazar",
-    image: "img/dp-auto-mazar.jpg",
+    image: "img/dp-auto-mazar.webp",
     name: "Auto Mazar",
     aka: "Mazar x Ruderalis (Dutch Passion)",
     bank: "Dutch Passion",
@@ -4813,7 +4813,7 @@ id: "dp-auto-mazar",
   },
   {
 id: "dp-skywalker-og",
-    image: "img/dp-skywalker-og.jpg",
+    image: "img/dp-skywalker-og.webp",
     name: "Skywalker OG",
     aka: "Skywalker x OG Kush",
     bank: "Dutch Passion",
@@ -4834,7 +4834,7 @@ id: "dp-skywalker-og",
   },
   {
 id: "phil-lemon-og-candy",
-    image: "img/philo-lemon-og-candy.jpg",
+    image: "img/philo-lemon-og-candy.webp",
     name: "Lemon OG Candy",
     aka: "Lemon Skunk x OG Kush",
     bank: "Philosopher Seeds",
@@ -4855,7 +4855,7 @@ id: "phil-lemon-og-candy",
   },
   {
 id: "phil-critical-sensi-star",
-    image: "img/philo-critical-sensi-star.jpg",
+    image: "img/philo-critical-sensi-star.webp",
     name: "Critical Sensi Star",
     aka: "Critical Mass x Sensi Star",
     bank: "Philosopher Seeds",
@@ -4876,7 +4876,7 @@ id: "phil-critical-sensi-star",
   },
   {
 id: "phil-bubbas-gift",
-    image: "img/philo-bubbas-gift.jpg",
+    image: "img/philo-bubbas-gift.webp",
     name: "Bubba's Gift",
     aka: "Bubba Kush x God's Gift",
     bank: "Philosopher Seeds",
@@ -4897,7 +4897,7 @@ id: "phil-bubbas-gift",
   },
   {
 id: "phil-snow-storm",
-    image: "img/philo-snow-storm.jpg",
+    image: "img/philo-snow-storm.webp",
     name: "Snow Storm",
     aka: "White Widow x Power Plant",
     bank: "Philosopher Seeds",
@@ -4918,7 +4918,7 @@ id: "phil-snow-storm",
   },
   {
 id: "hso-liberty-haze",
-    image: "img/hso-liberty-haze-official.jpg",
+    image: "img/hso-liberty-haze-official.webp",
     name: "Liberty Haze",
     aka: "G13 x ChemDawg 91",
     bank: "Humboldt Seed",
@@ -4939,7 +4939,7 @@ id: "hso-liberty-haze",
   },
   {
 id: "hso-sapphire-og",
-    image: "img/hso-sapphire-og-official.jpg",
+    image: "img/hso-sapphire-og-official.webp",
     name: "Sapphire OG",
     aka: "Blueberry x OG Kush",
     bank: "Humboldt Seed",
@@ -4960,7 +4960,7 @@ id: "hso-sapphire-og",
   },
   {
 id: "hso-707-headband",
-    image: "img/hso-707-headband-4k.jpg",
+    image: "img/hso-707-headband-4k.webp",
     name: "707 Headband",
     aka: "OG Kush x Sour Diesel",
     bank: "Humboldt Seed",
@@ -4981,7 +4981,7 @@ id: "hso-707-headband",
   },
   {
 id: "hso-blue-fire",
-    image: "img/hso-blue-fire-4k.jpg",
+    image: "img/hso-blue-fire-4k.webp",
     name: "Blue Fire",
     aka: "Blueberry x Fire OG",
     bank: "Humboldt Seed",
@@ -5002,7 +5002,7 @@ id: "hso-blue-fire",
   },
   {
 id: "00s-cheese-xl",
-    image: "img/00s-cheese-xl.jpg",
+    image: "img/00s-cheese-xl.webp",
     name: "Cheese XL Auto",
     aka: "Original UK Cheese x Ruderalis",
     bank: "00 Seeds Bank",
@@ -5023,7 +5023,7 @@ id: "00s-cheese-xl",
   },
   {
 id: "00s-critical-mass",
-    image: "img/00s-critical-mass.jpg",
+    image: "img/00s-critical-mass.webp",
     name: "Critical Mass CBD",
     aka: "Critical Mass x High CBD Selection",
     bank: "00 Seeds Bank",
@@ -5044,7 +5044,7 @@ id: "00s-critical-mass",
   },
   {
 id: "00s-white-smurf",
-    image: "img/00s-white-smurf.jpg",
+    image: "img/00s-white-smurf.webp",
     name: "White Smurf Auto",
     aka: "White Widow x Ruderalis",
     bank: "00 Seeds Bank",
@@ -5065,7 +5065,7 @@ id: "00s-white-smurf",
   },
   {
 id: "00s-afghan-mass",
-    image: "img/oo-super-skunk.jpg",
+    image: "img/oo-super-skunk.webp",
     name: "Afghan Mass",
     aka: "Afghan x Critical Mass",
     bank: "00 Seeds Bank",
@@ -5086,7 +5086,7 @@ id: "00s-afghan-mass",
   },
   {
 id: "ths-sage-n-sour",
-    image: "img/ths-sage-n-sour.jpg",
+    image: "img/ths-sage-n-sour.webp",
     name: "S.A.G.E.",
     aka: "Sativa Afghani Genetic Equilibrium",
     bank: "TH Seeds",
@@ -5107,7 +5107,7 @@ id: "ths-sage-n-sour",
   },
   {
 id: "ths-mk-ultra",
-    image: "img/ths-mk-ultra.jpg",
+    image: "img/ths-mk-ultra.webp",
     name: "MK Ultra",
     aka: "G13 x OG Kush",
     bank: "TH Seeds",
@@ -5128,7 +5128,7 @@ id: "ths-mk-ultra",
   },
   {
 id: "ths-darkstar",
-    image: "img/ths-darkstar.jpg",
+    image: "img/ths-darkstar.webp",
     name: "Darkstar",
     aka: "Mazar I Sharif x Purple Kush",
     bank: "TH Seeds",
@@ -5149,7 +5149,7 @@ id: "ths-darkstar",
   },
   {
 id: "ths-heavy-d",
-    image: "img/ths-heavy-d.jpg",
+    image: "img/ths-heavy-d.webp",
     name: "Heavy D Indica",
     aka: "Hindu Kush x Super Skunk",
     bank: "TH Seeds",
@@ -5170,7 +5170,7 @@ id: "ths-heavy-d",
   },
   {
 id: "ths-kushage",
-    image: "img/ths-kushage.jpg",
+    image: "img/ths-kushage.webp",
     name: "Kushage",
     aka: "OG Kush x S.A.G.E.",
     bank: "TH Seeds",
@@ -5191,7 +5191,7 @@ id: "ths-kushage",
   },
   {
 id: "ths-mendocino-madness",
-    image: "img/ths-mendocino-madness.jpg",
+    image: "img/ths-mendocino-madness.webp",
     name: "Mendocino Madness",
     aka: "Mendocino Purps x S.A.G.E.",
     bank: "TH Seeds",
@@ -5212,7 +5212,7 @@ id: "ths-mendocino-madness",
   },
   {
 id: "ths-burmese-kush",
-    image: "img/ths-burmese-kush.jpg",
+    image: "img/ths-burmese-kush.webp",
     name: "Burmese Kush",
     aka: "Burma x OG Kush",
     bank: "TH Seeds",
@@ -5233,7 +5233,7 @@ id: "ths-burmese-kush",
   },
   {
 id: "ths-sage-n-sour-hybrid",
-    image: "img/ths-sage-n-sour-hybrid.jpg",
+    image: "img/ths-sage-n-sour-hybrid.webp",
     name: "Sage N Sour",
     aka: "S.A.G.E. x Sour Diesel",
     bank: "TH Seeds",
@@ -5254,7 +5254,7 @@ id: "ths-sage-n-sour-hybrid",
   },
   {
 id: "paradise-wappa",
-    image: "img/paradise-wappa-flower-v2-hd.jpg",
+    image: "img/paradise-wappa-flower-v2-hd.webp",
     name: "Wappa",
     aka: "Big Bud Secret",
     bank: "Paradise Seeds",
@@ -5279,7 +5279,7 @@ id: "paradise-wappa",
   },
   {
 id: "paradise-sensi-star",
-    image: "img/paradise-sensi-star-flower-v2-hd.jpg",
+    image: "img/paradise-sensi-star-flower-v2-hd.webp",
     name: "Sensi Star",
     aka: "Star of Sensi",
     bank: "Paradise Seeds",
@@ -5304,7 +5304,7 @@ id: "paradise-sensi-star",
   },
   {
 id: "paradise-atomical-haze",
-    image: "img/paradise-atomical-haze-flower-hd.jpg",
+    image: "img/paradise-atomical-haze-flower-hd.webp",
     name: "Atomical Haze",
     aka: "White Widow x Amnesia",
     bank: "Paradise Seeds",
@@ -5329,7 +5329,7 @@ id: "paradise-atomical-haze",
   },
   {
 id: "paradise-durga-mata",
-    image: "img/paradise-durga-mata-flower-hd.jpg",
+    image: "img/paradise-durga-mata-flower-hd.webp",
     name: "Durga Mata",
     aka: "Landrace Indica Original",
     bank: "Paradise Seeds",
@@ -5354,7 +5354,7 @@ id: "paradise-durga-mata",
   },
   {
 id: "paradise-space-cookies",
-    image: "img/paradise-space-cookies-flower-hd.jpg",
+    image: "img/paradise-space-cookies-flower-hd.webp",
     name: "Space Cookies",
     aka: "Girl Scout Cookies x OG Kush Selection",
     bank: "Paradise Seeds",
@@ -5379,7 +5379,7 @@ id: "paradise-space-cookies",
   },
   {
 id: "paradise-slipstream",
-    image: "img/paradise-slipstream-flower-hd.jpg",
+    image: "img/paradise-slipstream-flower-hd.webp",
     name: "Slipstream",
     aka: "OG Kush x Zkittlez",
     bank: "Paradise Seeds",
@@ -5404,7 +5404,7 @@ id: "paradise-slipstream",
   },
   {
 id: "paradise-sunset-paradise",
-    image: "img/paradise-sunset-paradise-flower-hd.jpg",
+    image: "img/paradise-sunset-paradise-flower-hd.webp",
     name: "Sunset Paradise",
     aka: "Zkittlez x Gelato Selection",
     bank: "Paradise Seeds",
@@ -5429,7 +5429,7 @@ id: "paradise-sunset-paradise",
   },
   {
 id: "paradise-rainbow-road",
-    image: "img/paradise-rainbow-road-flower-hd.jpg",
+    image: "img/paradise-rainbow-road-flower-hd.webp",
     name: "Rainbow Road",
     aka: "Tropical Fruits x Paradise Selection",
     bank: "Paradise Seeds",
@@ -5454,7 +5454,7 @@ id: "paradise-rainbow-road",
   },
   {
 id: "paradise-mendocino-skunk",
-    image: "img/paradise-mendocino-skunk-flower-hd.jpg",
+    image: "img/paradise-mendocino-skunk-flower-hd.webp",
     name: "Mendocino Skunk",
     aka: "Skunk Californiana Mendocino County",
     bank: "Paradise Seeds",
@@ -5479,7 +5479,7 @@ id: "paradise-mendocino-skunk",
   },
   {
 id: "paradise-stromboli-auto",
-    image: "img/paradise-stromboli-auto-flower-hd.jpg",
+    image: "img/paradise-stromboli-auto-flower-hd.webp",
     name: "Stromboli Auto",
     aka: "Autoflowering Italian Selection",
     bank: "Paradise Seeds",
@@ -5504,7 +5504,7 @@ id: "paradise-stromboli-auto",
   },
   {
 id: "paradise-red-velvet-auto",
-    image: "img/paradise-red-velvet-auto-flower-hd.jpg",
+    image: "img/paradise-red-velvet-auto-flower-hd.webp",
     name: "Red Velvet Auto",
     aka: "Purple x Indica Auto Paradise",
     bank: "Paradise Seeds",
@@ -5529,7 +5529,7 @@ id: "paradise-red-velvet-auto",
   },
   {
 id: "paradise-dutch-dragon",
-    image: "img/paradise-dutch-dragon-flower-hd.jpg",
+    image: "img/paradise-dutch-dragon-flower-hd.webp",
     name: "Dutch Dragon",
     aka: "Sativa Holandesa Clásica",
     bank: "Paradise Seeds",
@@ -5554,7 +5554,7 @@ id: "paradise-dutch-dragon",
   },
   {
 id: "paradise-californian-gold",
-    image: "img/paradise-californian-gold-flower-hd.jpg",
+    image: "img/paradise-californian-gold-flower-hd.webp",
     name: "Californian Gold",
     aka: "Cali Gold Haze",
     bank: "Paradise Seeds",
@@ -5579,7 +5579,7 @@ id: "paradise-californian-gold",
   },
   {
 id: "paradise-opium",
-    image: "img/paradise-opium-flower-hd.jpg",
+    image: "img/paradise-opium-flower-hd.webp",
     name: "Opium",
     aka: "Indica Power Strain",
     bank: "Paradise Seeds",
@@ -5604,7 +5604,7 @@ id: "paradise-opium",
   },
   {
 id: "paradise-glowstarz",
-    image: "img/paradise-glowstarz-flower-hd.jpg",
+    image: "img/paradise-glowstarz-flower-hd.webp",
     name: "Glowstarz",
     aka: "Tropicana Cookies x Runtz Paradise",
     bank: "Paradise Seeds",
@@ -5629,7 +5629,7 @@ id: "paradise-glowstarz",
   },
   {
 id: "nirvana-northern-light",
-    image: "img/nirvana-northern-light-flower-hd.jpg",
+    image: "img/nirvana-northern-light-flower-hd.webp",
     name: "Northern Light",
     aka: "Original Afghan Selection",
     bank: "Nirvana Seeds",
@@ -5654,7 +5654,7 @@ id: "nirvana-northern-light",
   },
   {
 id: "nirvana-gsc",
-    image: "img/nirvana-gsc-flower-hd.jpg",
+    image: "img/nirvana-gsc-flower-hd.webp",
     name: "Girl Scout Cookies",
     aka: "OG Kush x Durban Poison",
     bank: "Nirvana Seeds",
@@ -5679,7 +5679,7 @@ id: "nirvana-gsc",
   },
   {
 id: "nirvana-og-kush",
-    image: "img/nirvana-og-kush-flower-hd.jpg",
+    image: "img/nirvana-og-kush-flower-hd.webp",
     name: "OG Kush",
     aka: "Chemdawg x Lemon Thai x Hindu Kush",
     bank: "Nirvana Seeds",
@@ -5704,7 +5704,7 @@ id: "nirvana-og-kush",
   },
   {
 id: "nirvana-gelato",
-    image: "img/nirvana-gelato-flower-hd.jpg",
+    image: "img/nirvana-gelato-flower-hd.webp",
     name: "Gelato",
     aka: "Sunset Sherbet x Thin Mint GSC",
     bank: "Nirvana Seeds",
@@ -5729,7 +5729,7 @@ id: "nirvana-gelato",
   },
   {
 id: "nirvana-white-widow",
-    image: "img/nirvana-white-widow-flower-hd.jpg",
+    image: "img/nirvana-white-widow-flower-hd.webp",
     name: "White Widow",
     aka: "Brazilian Sativa x South Indian Indica",
     bank: "Nirvana Seeds",
@@ -5754,7 +5754,7 @@ id: "nirvana-white-widow",
   },
   {
 id: "dna-kosher-kush",
-    image: "img/dna-kosher-kush.jpg",
+    image: "img/dna-kosher-kush.webp",
     name: "Kosher Kush",
     aka: "Reserva Privada OG Cut",
     bank: "DNA Genetics",
@@ -5775,7 +5775,7 @@ id: "dna-kosher-kush",
   },
   {
 id: "dna-tangie",
-    image: "img/dna-tangie.jpg",
+    image: "img/dna-tangie.webp",
     name: "Tangie",
     aka: "California Orange x Skunk",
     bank: "DNA Genetics",
@@ -5796,7 +5796,7 @@ id: "dna-tangie",
   },
   {
 id: "dna-chocolope",
-    image: "img/dna-chocolope.jpg",
+    image: "img/dna-chocolope.webp",
     name: "Chocolope",
     aka: "OG Chocolate Thai x Cannalope Haze",
     bank: "DNA Genetics",
@@ -5817,7 +5817,7 @@ id: "dna-chocolope",
   },
   {
 id: "dna-la-confidential",
-    image: "img/dna-la-confidential.jpg",
+    image: "img/dna-la-confidential.webp",
     name: "LA Confidential",
     aka: "OG LA Affie x Afghani",
     bank: "DNA Genetics",
@@ -5838,7 +5838,7 @@ id: "dna-la-confidential",
   },
   {
 id: "dna-holy-grail-kush",
-    image: "img/dna-holy-grail-kush.jpg",
+    image: "img/dna-holy-grail-kush.webp",
     name: "Holy Grail Kush",
     aka: "Kosher Kush x The OG #18",
     bank: "DNA Genetics",
@@ -5859,7 +5859,7 @@ id: "dna-holy-grail-kush",
   },
   {
 id: "dna-strawberry-banana",
-    image: "img/dna-strawberry-banana.jpg",
+    image: "img/dna-strawberry-banana.webp",
     name: "Strawberry Banana",
     aka: "Crockett's Banana Kush x Strawberry Bubble Gum",
     bank: "DNA Genetics",
@@ -5880,7 +5880,7 @@ id: "dna-strawberry-banana",
   },
   {
 id: "dna-24k-gold",
-    image: "img/dna-24k-gold.jpg",
+    image: "img/dna-24k-gold.webp",
     name: "24K Gold",
     aka: "Kosher Kush x Tangie",
     bank: "DNA Genetics",
@@ -5901,7 +5901,7 @@ id: "dna-24k-gold",
   },
   {
 id: "dna-lemon-skunk",
-    image: "img/dna-lemon-skunk.jpg",
+    image: "img/dna-lemon-skunk.webp",
     name: "Lemon Skunk",
     aka: "Citrus Skunk Selection",
     bank: "DNA Genetics",
@@ -5922,7 +5922,7 @@ id: "dna-lemon-skunk",
   },
   {
 id: "dna-the-og-18",
-    image: "img/dna-the-og-18.jpg",
+    image: "img/dna-the-og-18.webp",
     name: "The OG #18",
     aka: "OG Kush Phenotype #18",
     bank: "DNA Genetics",
@@ -5943,7 +5943,7 @@ id: "dna-the-og-18",
   },
   {
 id: "dna-cataract-kush",
-    image: "img/dna-cataract-kush.jpg",
+    image: "img/dna-cataract-kush.webp",
     name: "Cataract Kush",
     aka: "OG #18 x LA Confidential",
     bank: "DNA Genetics",
@@ -5964,7 +5964,7 @@ id: "dna-cataract-kush",
   },
   {
 id: "dna-purple-wreck",
-    image: "img/dna-purple-wreck.jpg",
+    image: "img/dna-purple-wreck.webp",
     name: "Purple Wreck",
     aka: "Purple Urkle x Trainwreck",
     bank: "DNA Genetics",
@@ -5985,7 +5985,7 @@ id: "dna-purple-wreck",
   },
   {
 id: "dna-sour-tangie",
-    image: "img/dna-sour-tangie.jpg",
+    image: "img/dna-sour-tangie.webp",
     name: "Sour Tangie",
     aka: "Sour Diesel x Tangie",
     bank: "DNA Genetics",
@@ -6006,7 +6006,7 @@ id: "dna-sour-tangie",
   },
   {
 id: "dna-sorbet",
-    image: "img/dna-sorbet.jpg",
+    image: "img/dna-sorbet.webp",
     name: "Sorbet",
     aka: "Sunset Sherbet Selection",
     bank: "DNA Genetics",
@@ -6027,7 +6027,7 @@ id: "dna-sorbet",
   },
   {
 id: "dna-sleestack",
-    image: "img/dna-sleestack.jpg",
+    image: "img/dna-sleestack.webp",
     name: "Sleestack",
     aka: "SSH x Martian Mean Green",
     bank: "DNA Genetics",
@@ -6048,7 +6048,7 @@ id: "dna-sleestack",
   },
   {
 id: "dna-cannalope-haze",
-    image: "img/dna-cannalope-haze.jpg",
+    image: "img/dna-cannalope-haze.webp",
     name: "Cannalope Haze",
     aka: "Haze Brothers x Mexican Sativa",
     bank: "DNA Genetics",
@@ -6069,7 +6069,7 @@ id: "dna-cannalope-haze",
   },
   {
 id: "dna-rp43",
-    image: "img/dna-rp43.jpg",
+    image: "img/dna-rp43.webp",
     name: "RP43 (Richard Petty)",
     aka: "Exclusive Hybrid",
     bank: "DNA Genetics",
@@ -6090,7 +6090,7 @@ id: "dna-rp43",
   },
   {
 id: "dna-gmo-kosher",
-    image: "img/dna-gmo-kosher.jpg",
+    image: "img/dna-gmo-kosher.webp",
     name: "GMO Kosher",
     aka: "GMO x Kosher Kush",
     bank: "DNA Genetics",
@@ -6111,7 +6111,7 @@ id: "dna-gmo-kosher",
   },
   {
 id: "dna-3peat",
-    image: "img/dna-3peat.jpg",
+    image: "img/dna-3peat.webp",
     name: "3peat",
     aka: "Holy Grail Kush x Kosher Kush x RP43",
     bank: "DNA Genetics",
@@ -6132,7 +6132,7 @@ id: "dna-3peat",
   },
   {
 id: "dna-purple-kosher",
-    image: "img/dna-purple-kosher.jpg",
+    image: "img/dna-purple-kosher.webp",
     name: "Purple Kosher",
     aka: "Purple Genetics x Kosher Kush",
     bank: "DNA Genetics",
@@ -6153,7 +6153,7 @@ id: "dna-purple-kosher",
   },
   {
 id: "dna-honey-beez",
-    image: "img/dna-honey-beez.jpg",
+    image: "img/dna-honey-beez.webp",
     name: "Honey Beez",
     aka: "Exclusive Honey Hybrid",
     bank: "DNA Genetics",
@@ -6174,7 +6174,7 @@ id: "dna-honey-beez",
   },
   {
 id: "dna-guavanade",
-    image: "img/dna-guavanade.jpg",
+    image: "img/dna-guavanade.webp",
     name: "Guavanade",
     aka: "Guava x Lemonade",
     bank: "DNA Genetics",
@@ -6195,7 +6195,7 @@ id: "dna-guavanade",
   },
   {
 id: "dna-gaz-money",
-    image: "img/dna-gaz-money.jpg",
+    image: "img/dna-gaz-money.webp",
     name: "Gaz Money",
     aka: "Gas Phenotype Selection",
     bank: "DNA Genetics",
@@ -6216,7 +6216,7 @@ id: "dna-gaz-money",
   },
   {
 id: "dna-choco-mintz",
-    image: "img/dna-choco-mintz.jpg",
+    image: "img/dna-choco-mintz.webp",
     name: "Choco Mintz",
     aka: "Chocolope x Kush Mints",
     bank: "DNA Genetics",
@@ -6237,7 +6237,7 @@ id: "dna-choco-mintz",
   },
   {
 id: "dna-blue-dream",
-    image: "img/dna-blue-dream-official.jpg",
+    image: "img/dna-blue-dream-official.webp",
     name: "Blue Dream",
     aka: "Blueberry x Super Silver Haze",
     bank: "DNA Genetics",
@@ -6258,7 +6258,7 @@ id: "dna-blue-dream",
   },
   {
 id: "ths-bubblegum",
-    image: "img/ths-bubblegum.jpg",
+    image: "img/ths-bubblegum.webp",
     name: "Bubblegum",
     aka: "Indiana Bubblegum",
     bank: "TH Seeds",
@@ -6279,7 +6279,7 @@ id: "ths-bubblegum",
   },
   {
 id: "ths-french-cookies",
-    image: "img/ths-french-cookies.jpg",
+    image: "img/ths-french-cookies.webp",
     name: "French Cookies",
     aka: "Platinum Cookies Selection",
     bank: "TH Seeds",
@@ -6300,7 +6300,7 @@ id: "ths-french-cookies",
   },
   {
 id: "ths-chocolate-chunk",
-    image: "img/ths-chocolate-chunk.jpg",
+    image: "img/ths-chocolate-chunk.webp",
     name: "Chocolate Chunk",
     aka: "100% Afghan Indica",
     bank: "TH Seeds",
@@ -6321,7 +6321,7 @@ id: "ths-chocolate-chunk",
   },
   {
 id: "wls-white-widow",
-      image: "img/wls-white-widow.jpg",
+      image: "img/wls-white-widow.webp",
       name: "White Widow",
       aka: "Original White Widow",
       bank: "White Label Seed Co.",
@@ -6362,7 +6362,7 @@ id: "wls-white-widow",
   },
   {
 id: "wls-snow-white",
-      image: "img/wls-snow-white.jpg",
+      image: "img/wls-snow-white.webp",
       name: "Snow White",
       aka: "Pure Power Plant x White Widow",
       bank: "White Label Seed Co.",
@@ -6402,7 +6402,7 @@ id: "wls-snow-white",
   },
   {
 id: "wls-white-skunk",
-      image: "img/wls-white-skunk.jpg",
+      image: "img/wls-white-skunk.webp",
       name: "White Skunk",
       aka: "White Widow x Skunk #1",
       bank: "White Label Seed Co.",
@@ -6443,7 +6443,7 @@ id: "wls-white-skunk",
   },
   {
 id: "wls-white-ice",
-      image: "img/wls-white-ice.jpg",
+      image: "img/wls-white-ice.webp",
       name: "White Ice",
       aka: "Indica Crystal Extreme (ICE)",
       bank: "White Label Seed Co.",
@@ -6482,7 +6482,7 @@ id: "wls-white-ice",
   },
   {
 id: "wls-white-diesel",
-      image: "img/wls-white-diesel.jpg",
+      image: "img/wls-white-diesel.webp",
       name: "White Diesel",
       aka: "NYC Diesel x White Widow",
       bank: "White Label Seed Co.",
@@ -6523,7 +6523,7 @@ id: "wls-white-diesel",
   },
   {
 id: "wls-double-gum",
-      image: "img/wls-double-gum.jpg",
+      image: "img/wls-double-gum.webp",
       name: "Double Gum",
       aka: "Double Bubblegum Selection",
       bank: "White Label Seed Co.",
@@ -6564,7 +6564,7 @@ id: "wls-double-gum",
   },
   {
 id: "wls-pure-power-plant",
-      image: "img/wls-pure-power-plant.jpg",
+      image: "img/wls-pure-power-plant.webp",
       name: "Pure Power Plant (PPP)",
       aka: "PPP White Label",
       bank: "White Label Seed Co.",
@@ -6605,7 +6605,7 @@ id: "wls-pure-power-plant",
   },
   {
 id: "wls-master-kush",
-      image: "img/wls-master-kush-official.jpg",
+      image: "img/wls-master-kush-official.webp",
       name: "Master Kush",
       aka: "High Hindu Kush Selection",
       bank: "White Label Seed Co.",
@@ -6645,7 +6645,7 @@ id: "wls-master-kush",
   },
   {
 id: "wls-orange-bud",
-      image: "img/wls-orange-bud.jpg",
+      image: "img/wls-orange-bud.webp",
       name: "Orange Bud",
       aka: "100% Skunk Selection",
       bank: "White Label Seed Co.",
@@ -6686,7 +6686,7 @@ id: "wls-orange-bud",
   },
   {
 id: "wls-afghani-1",
-      image: "img/wls-afghani-1-official.jpg",
+      image: "img/wls-afghani-1-official.webp",
       name: "Afghani #1",
       aka: "Pure Afghan Hash Plant",
       bank: "White Label Seed Co.",
@@ -6725,7 +6725,7 @@ id: "wls-afghani-1",
   },
   {
 id: "ths-french-macaron",
-      image: "img/ths-french-macaron.jpg",
+      image: "img/ths-french-macaron.webp",
       name: "French Macaron",
       aka: "Gelato 33 x French Cookies",
       bank: "TH Seeds",
@@ -6766,7 +6766,7 @@ id: "ths-french-macaron",
   },
   {
 id: "ths-banana-candy-krush",
-      image: "img/ths-banana-candy-krush.jpg",
+      image: "img/ths-banana-candy-krush.webp",
       name: "Banana Candy Krush",
       aka: "Banana Cake x Kush Mints",
       bank: "TH Seeds",
@@ -6807,7 +6807,7 @@ id: "ths-banana-candy-krush",
   },
   {
 id: "ths-mont-blanc",
-      image: "img/ths-mont-blanc.jpg",
+      image: "img/ths-mont-blanc.webp",
       name: "Mont Blanc",
       aka: "French Cookies x Birthday Cake x Strawbanana Cream",
       bank: "TH Seeds",
@@ -6847,7 +6847,7 @@ id: "ths-mont-blanc",
   },
   {
 id: "ths-pisthash",
-      image: "img/ths-pisthash.jpg",
+      image: "img/ths-pisthash.webp",
       name: "Pisthash",
       aka: "Biscotti x French Cookies",
       bank: "TH Seeds",
@@ -6887,7 +6887,7 @@ id: "ths-pisthash",
   },
   {
 id: "ths-melonsicle",
-      image: "img/ths-melonsicle.jpg",
+      image: "img/ths-melonsicle.webp",
       name: "Melonsicle",
       aka: "Watermelon x Strawberry Banana x GSC",
       bank: "TH Seeds",
@@ -6928,7 +6928,7 @@ id: "ths-melonsicle",
   },
   {
 id: "ths-blumosa",
-      image: "img/ths-blumosa.jpg",
+      image: "img/ths-blumosa.webp",
       name: "Blumosa",
       aka: "Blue Sherbet x Mimosa",
       bank: "TH Seeds",
@@ -6968,7 +6968,7 @@ id: "ths-blumosa",
   },
   {
 id: "wls-super-skunk",
-      image: "img/wls-super-skunk.jpg",
+      image: "img/wls-super-skunk.webp",
       name: "Super Skunk",
       aka: "Skunk #1 x Afghani #1",
       bank: "White Label Seed Co.",
@@ -7008,7 +7008,7 @@ id: "wls-super-skunk",
   },
   {
 id: "wls-northern-lights",
-      image: "img/wls-northern-lights.jpg",
+      image: "img/wls-northern-lights.webp",
       name: "Northern Lights",
       aka: "NL #5 Selection",
       bank: "White Label Seed Co.",
@@ -7048,7 +7048,7 @@ id: "wls-northern-lights",
   },
   {
 id: "wls-shiva-skunk",
-      image: "img/wls-shiva-skunk.jpg",
+      image: "img/wls-shiva-skunk.webp",
       name: "Shiva Skunk",
       aka: "Northern Lights #5 x Skunk #1",
       bank: "White Label Seed Co.",
@@ -7088,7 +7088,7 @@ id: "wls-shiva-skunk",
   },
   {
 id: "wls-purple-haze",
-      image: "img/wls-purple-haze.jpg",
+      image: "img/wls-purple-haze.webp",
       name: "Purple Haze",
       aka: "Original Purple Haze Selection",
       bank: "White Label Seed Co.",
@@ -7129,7 +7129,7 @@ id: "wls-purple-haze",
   },
   {
 id: "wls-durban",
-      image: "img/wls-durban.jpg",
+      image: "img/wls-durban.webp",
       name: "Durban",
       aka: "Durban Poison Selection",
       bank: "White Label Seed Co.",
@@ -7170,7 +7170,7 @@ id: "wls-durban",
   },
   {
 id: "soma-nyc-diesel",
-      image: "img/soma-nyc-diesel.jpg",
+      image: "img/soma-nyc-diesel.webp",
       name: "NYC Diesel",
       aka: "Soma Original NYC Diesel",
       bank: "Soma Seeds",
@@ -7211,7 +7211,7 @@ id: "soma-nyc-diesel",
   },
   {
 id: "soma-amnesia-haze",
-      image: "img/soma-amnesia-haze.jpg",
+      image: "img/soma-amnesia-haze.webp",
       name: "Amnesia Haze",
       aka: "Soma Original Amnesia Haze",
       bank: "Soma Seeds",
@@ -7252,7 +7252,7 @@ id: "soma-amnesia-haze",
   },
   {
 id: "soma-somango",
-      image: "img/soma-somango.jpg",
+      image: "img/soma-somango.webp",
       name: "Somango",
       aka: "Soma #5",
       bank: "Soma Seeds",
@@ -7293,7 +7293,7 @@ id: "soma-somango",
   },
   {
 id: "soma-lavender",
-      image: "img/soma-lavender.jpg",
+      image: "img/soma-lavender.webp",
       name: "Lavender",
       aka: "Soma Lavender Strain",
       bank: "Soma Seeds",
@@ -7333,7 +7333,7 @@ id: "soma-lavender",
   },
   {
 id: "soma-buddhas-sister",
-      image: "img/soma-buddhas-sister.jpg",
+      image: "img/soma-buddhas-sister.webp",
       name: "Buddha's Sister",
       aka: "Soma Recline",
       bank: "Soma Seeds",
@@ -7373,7 +7373,7 @@ id: "soma-buddhas-sister",
   },
   {
 id: "soma-soma-rockbud",
-      image: "img/soma-soma-rockbud.jpg",
+      image: "img/soma-soma-rockbud.webp",
       name: "Soma Rockbud",
       aka: "Rockbud / A+ Indica",
       bank: "Soma Seeds",
@@ -7412,7 +7412,7 @@ id: "soma-soma-rockbud",
   },
   {
 id: "soma-g13-haze",
-      image: "img/soma-g13-haze.jpg",
+      image: "img/soma-g13-haze.webp",
       name: "G13 Haze",
       aka: "G13 x Hawaiian Haze",
       bank: "Soma Seeds",
@@ -7453,7 +7453,7 @@ id: "soma-g13-haze",
   },
   {
 id: "soma-so-g-kush",
-      image: "img/soma-so-g-kush.jpg",
+      image: "img/soma-so-g-kush.webp",
       name: "So G Kush",
       aka: "OG Kush x LA Confidential x Trainwreck",
       bank: "Soma Seeds",
@@ -7492,7 +7492,7 @@ id: "soma-so-g-kush",
   },
   {
 id: "soma-free-white",
-      image: "img/free-white-bud-real.jpg",
+      image: "img/free-white-bud-real.webp",
       name: "Free White",
       aka: "Soma White Selection",
       bank: "Soma Seeds",
@@ -7533,7 +7533,7 @@ id: "soma-free-white",
   },
   {
 id: "soma-somaui",
-      image: "img/soma-somaui.jpg",
+      image: "img/soma-somaui.webp",
       name: "Somaui",
       aka: "Hawaiian Sativa x G13 Haze",
       bank: "Soma Seeds",
@@ -7574,7 +7574,7 @@ id: "soma-somaui",
   },
   {
 id: "tfd-pot-of-gold",
-      image: "img/tfd-pot-of-gold.jpg",
+      image: "img/tfd-pot-of-gold.webp",
       name: "Pot of Gold",
       aka: "POG / High Times Winner",
       bank: "The Flying Dutchmen",
@@ -7614,7 +7614,7 @@ id: "tfd-pot-of-gold",
   },
   {
 id: "tfd-g-force",
-      image: "img/tfd-g-force.jpg",
+      image: "img/tfd-g-force.webp",
       name: "G-Force",
       aka: "G13 x Skunk #1",
       bank: "The Flying Dutchmen",
@@ -7653,7 +7653,7 @@ id: "tfd-g-force",
   },
   {
 id: "tfd-pineapple-punch",
-      image: "img/tfd-pineapple-punch.jpg",
+      image: "img/tfd-pineapple-punch.webp",
       name: "Pineapple Punch",
       aka: "Real McCoy x Skunk #1",
       bank: "The Flying Dutchmen",
@@ -7694,7 +7694,7 @@ id: "tfd-pineapple-punch",
   },
   {
 id: "tfd-the-real-mccoy",
-      image: "img/tfd-the-real-mccoy.jpg",
+      image: "img/tfd-the-real-mccoy.webp",
       name: "The Real McCoy",
       aka: "Hawaiian Sativa x Skunk #1",
       bank: "The Flying Dutchmen",
@@ -7735,7 +7735,7 @@ id: "tfd-the-real-mccoy",
   },
   {
 id: "tfd-voyager",
-      image: "img/tfd-voyager.jpg",
+      image: "img/tfd-voyager.webp",
       name: "Voyager",
       aka: "Malawi x Hindu Kush x Thai",
       bank: "The Flying Dutchmen",
@@ -7776,7 +7776,7 @@ id: "tfd-voyager",
   },
   {
 id: "tfd-dame-blanche",
-    image: "img/tfd-dame-blanche-hd.jpg",
+    image: "img/tfd-dame-blanche-hd.webp",
       name: "Dame Blanche",
       aka: "White Widow x Skunk #1",
       bank: "The Flying Dutchmen",
@@ -7816,7 +7816,7 @@ id: "tfd-dame-blanche",
   },
   {
 id: "tfd-titan",
-      image: "img/tfd-titan.jpg",
+      image: "img/tfd-titan.webp",
       name: "Titan",
       aka: "Skunk #1 x Northern Lights #5",
       bank: "The Flying Dutchmen",
@@ -7855,7 +7855,7 @@ id: "tfd-titan",
   },
   {
 id: "tfd-nepal-baba",
-      image: "img/tfd-nepal-baba.jpg",
+      image: "img/tfd-nepal-baba.webp",
       name: "Nepal Baba",
       aka: "Nepalese Charas x Skunk #1",
       bank: "The Flying Dutchmen",
@@ -7895,7 +7895,7 @@ id: "tfd-nepal-baba",
   },
   {
 id: "tfd-swazi-safari",
-      image: "img/tfd-swazi-safari.jpg",
+      image: "img/tfd-swazi-safari.webp",
       name: "Swazi Safari",
       aka: "Swazi Landrace x Skunk #1",
       bank: "The Flying Dutchmen",
@@ -7936,7 +7936,7 @@ id: "tfd-swazi-safari",
   },
   {
 id: "tfd-dutchmens-royal-orange",
-      image: "img/tfd-dutchmens-royal-orange.jpg",
+      image: "img/tfd-dutchmens-royal-orange.webp",
       name: "Dutchmen's Royal Orange",
       aka: "Cali Orange x Skunk #1",
       bank: "The Flying Dutchmen",
@@ -7977,7 +7977,7 @@ id: "tfd-dutchmens-royal-orange",
   },
   {
 id: "sdm-peyote-zkittlez",
-      image: "img/sdm-peyote-zkittlez.jpg",
+      image: "img/sdm-peyote-zkittlez.webp",
       name: "Peyote Zkittlez",
       aka: "Peyote WiFi x Zkittlez",
       bank: "Seedsman",
@@ -8018,7 +8018,7 @@ id: "sdm-peyote-zkittlez",
   },
   {
 id: "sdm-gelato-og",
-      image: "img/sdm-gelato-og.jpg",
+      image: "img/sdm-gelato-og.webp",
       name: "Gelato OG",
       aka: "Gelato #33 x OG Kush",
       bank: "Seedsman",
@@ -8059,7 +8059,7 @@ id: "sdm-gelato-og",
   },
   {
 id: "sdm-peyote-cookies",
-      image: "img/sdm-peyote-cookies.jpg",
+      image: "img/sdm-peyote-cookies.webp",
       name: "Peyote Cookies",
       aka: "Peyote Purple x Cookies Kush",
       bank: "Seedsman",
@@ -8099,7 +8099,7 @@ id: "sdm-peyote-cookies",
   },
   {
 id: "sdm-mama-thai",
-      image: "img/sdm-mama-thai.jpg",
+      image: "img/sdm-mama-thai.webp",
       name: "Mama Thai",
       aka: "Pure Thai Landrace Selection",
       bank: "Seedsman",
@@ -8140,7 +8140,7 @@ id: "sdm-mama-thai",
   },
   {
 id: "sdm-alaskan-purple",
-      image: "img/sdm-alaskan-purple.jpg",
+      image: "img/sdm-alaskan-purple.webp",
       name: "Alaskan Purple",
       aka: "Alaskan Purple x Kush x Brazilian",
       bank: "Seedsman",
@@ -8180,7 +8180,7 @@ id: "sdm-alaskan-purple",
   },
   {
 id: "sdm-bad-azz-cheese",
-      image: "img/sdm-bad-azz-cheese.jpg",
+      image: "img/sdm-bad-azz-cheese.webp",
       name: "Bad Azz Cheese",
       aka: "Bad Azz Kush x UK Cheese",
       bank: "Seedsman",
@@ -8221,7 +8221,7 @@ id: "sdm-bad-azz-cheese",
   },
   {
 id: "sdm-white-widow",
-      image: "img/sdm-white-widow.jpg",
+      image: "img/sdm-white-widow.webp",
       name: "White Widow",
       aka: "Seedsman White Widow Selection",
       bank: "Seedsman",
@@ -8261,7 +8261,7 @@ id: "sdm-white-widow",
   },
   {
 id: "sdm-jack-herer",
-      image: "img/sdm-jack-herer.jpg",
+      image: "img/sdm-jack-herer.webp",
       name: "Jack Herer",
       aka: "Seedsman Jack Herer Selection",
       bank: "Seedsman",
@@ -8302,7 +8302,7 @@ id: "sdm-jack-herer",
   },
   {
 id: "sdm-amnesia-fast",
-      image: "img/sdm-amnesia-fast.jpg",
+      image: "img/sdm-amnesia-fast.webp",
       name: "Amnesia Fast",
       aka: "Amnesia Haze x Secret Hybrid",
       bank: "Seedsman",
@@ -8343,7 +8343,7 @@ id: "sdm-amnesia-fast",
   },
   {
 id: "sdm-blue-blueberry",
-      image: "img/sdm-blue-blueberry.jpg",
+      image: "img/sdm-blue-blueberry.webp",
       name: "Blue Blueberry",
       aka: "Seedsman Blueberry Selection",
       bank: "Seedsman",
@@ -8383,7 +8383,7 @@ id: "sdm-blue-blueberry",
   },
   {
 id: "exg-grease-monkey",
-      image: "img/exg-grease-monkey.jpg",
+      image: "img/exg-grease-monkey.webp",
       name: "Grease Monkey",
       aka: "Gorilla Glue #4 x Cookies and Cream",
       bank: "Exotic Genetix",
@@ -8424,7 +8424,7 @@ id: "exg-grease-monkey",
   },
   {
 id: "exg-cookies-and-cream",
-      image: "img/exg-cookies-and-cream.jpg",
+      image: "img/exg-cookies-and-cream.webp",
       name: "Cookies and Cream",
       aka: "Starfighter x Mystery Cookie",
       bank: "Exotic Genetix",
@@ -8465,7 +8465,7 @@ id: "exg-cookies-and-cream",
   },
   {
 id: "exg-strawberries-and-cream",
-      image: "img/exg-strawberries-and-cream.jpg",
+      image: "img/exg-strawberries-and-cream.webp",
       name: "Strawberries & Cream",
       aka: "Strawberry Cough x Cookies and Cream",
       bank: "Exotic Genetix",
@@ -8506,7 +8506,7 @@ id: "exg-strawberries-and-cream",
   },
   {
 id: "exg-mint-chocolate-chip",
-      image: "img/exg-mint-chocolate-chip.jpg",
+      image: "img/exg-mint-chocolate-chip.webp",
       name: "Mint Chocolate Chip",
       aka: "Thin Mint GSC x Green Ribbon BX",
       bank: "Exotic Genetix",
@@ -8547,7 +8547,7 @@ id: "exg-mint-chocolate-chip",
   },
   {
 id: "exg-red-runtz",
-      image: "img/exg-red-runtz.jpg",
+      image: "img/exg-red-runtz.webp",
       name: "Red Runtz",
       aka: "Red Pop x Runtz",
       bank: "Exotic Genetix",
@@ -8588,7 +8588,7 @@ id: "exg-red-runtz",
   },
   {
 id: "exg-scotty-2-hotty",
-      image: "img/exg-scotty-2-hotty.jpg",
+      image: "img/exg-scotty-2-hotty.webp",
       name: "Scotty 2 Hotty",
       aka: "Biscotti x Rainbow Chip",
       bank: "Exotic Genetix",
@@ -8628,7 +8628,7 @@ id: "exg-scotty-2-hotty",
   },
   {
 id: "exg-runtz-buttonz",
-      image: "img/exg-runtz-buttonz.jpg",
+      image: "img/exg-runtz-buttonz.webp",
       name: "Runtz Buttonz",
       aka: "Runtz x Rainbow Chip",
       bank: "Exotic Genetix",
@@ -8668,7 +8668,7 @@ id: "exg-runtz-buttonz",
   },
   {
 id: "exg-power-sherb",
-      image: "img/exg-power-sherb.jpg",
+      image: "img/exg-power-sherb.webp",
       name: "Power Sherb",
       aka: "SherbBX x Cookies and Cream",
       bank: "Exotic Genetix",
@@ -8708,7 +8708,7 @@ id: "exg-power-sherb",
   },
   {
 id: "exg-gary-poppins",
-      image: "img/exg-gary-poppins.jpg",
+      image: "img/exg-gary-poppins.webp",
       name: "Gary Poppins",
       aka: "Gary Payton x Red Pop",
       bank: "Exotic Genetix",
@@ -8749,7 +8749,7 @@ id: "exg-gary-poppins",
   },
   {
 id: "exg-tina",
-      image: "img/exg-tina.jpg",
+      image: "img/exg-tina.webp",
       name: "Tina",
       aka: "Constantine x Cheetah Piss",
       bank: "Exotic Genetix",
@@ -8789,7 +8789,7 @@ id: "exg-tina",
   },
   {
 id: "cpg-apples-and-bananas",
-      image: "img/cpg-apples-and-bananas.jpg",
+      image: "img/cpg-apples-and-bananas.webp",
       name: "Apples and Bananas",
       aka: "(Blue Power x Gelatti) x GDP x Platinum Cookies",
       bank: "Compound Genetics",
@@ -8830,7 +8830,7 @@ id: "cpg-apples-and-bananas",
   },
   {
 id: "cpg-pave",
-      image: "img/cpg-pave.jpg",
+      image: "img/cpg-pave.webp",
       name: "Pavé",
       aka: "Paris OG x Menthol",
       bank: "Compound Genetics",
@@ -8871,7 +8871,7 @@ id: "cpg-pave",
   },
   {
 id: "cpg-la-bomba",
-      image: "img/cpg-la-bomba.jpg",
+      image: "img/cpg-la-bomba.webp",
       name: "La Bomba",
       aka: "Wedding Cake x Jet Fuel Gelato",
       bank: "Compound Genetics",
@@ -8912,7 +8912,7 @@ id: "cpg-la-bomba",
   },
   {
 id: "cpg-jokerz",
-      image: "img/cpg-jokerz.jpg",
+      image: "img/cpg-jokerz.webp",
       name: "Jokerz",
       aka: "White Runtz x Jet Fuel Gelato",
       bank: "Compound Genetics",
@@ -8953,7 +8953,7 @@ id: "cpg-jokerz",
   },
   {
 id: "cpg-gastro-pop",
-      image: "img/cpg-gastro-pop.jpg",
+      image: "img/cpg-gastro-pop.webp",
       name: "Gastro Pop",
       aka: "Apples and Bananas x Grape Gas",
       bank: "Compound Genetics",
@@ -8994,7 +8994,7 @@ id: "cpg-gastro-pop",
   },
   {
 id: "cpg-grape-gas",
-      image: "img/cpg-grape-gas.jpg",
+      image: "img/cpg-grape-gas.webp",
       name: "Grape Gas",
       aka: "OG Chem x GDP x Truth OG",
       bank: "Compound Genetics",
@@ -9034,7 +9034,7 @@ id: "cpg-grape-gas",
   },
   {
 id: "cpg-marshmallow-og",
-      image: "img/cpg-marshmallow-og.jpg",
+      image: "img/cpg-marshmallow-og.webp",
       name: "Marshmallow OG",
       aka: "Chemdawg D x Triangle Kush x Jet Fuel Gelato",
       bank: "Compound Genetics",
@@ -9074,7 +9074,7 @@ id: "cpg-marshmallow-og",
   },
   {
 id: "cpg-red-bullz",
-      image: "img/cpg-red-bullz.jpg",
+      image: "img/cpg-red-bullz.webp",
       name: "Red Bullz",
       aka: "Grape Gas x White Runtz",
       bank: "Compound Genetics",
@@ -9115,7 +9115,7 @@ id: "cpg-red-bullz",
   },
   {
 id: "cpg-high-society",
-      image: "img/cpg-high-society.jpg",
+      image: "img/cpg-high-society.webp",
       name: "High Society",
       aka: "Biscotti x Jet Fuel Gelato",
       bank: "Compound Genetics",
@@ -9156,7 +9156,7 @@ id: "cpg-high-society",
   },
   {
 id: "cpg-grandmaster-sexy",
-      image: "img/cpg-grandmaster-sexy.jpg",
+      image: "img/cpg-grandmaster-sexy.webp",
       name: "Grandmaster Sexy",
       aka: "Scotty 2 Hotty x Oreoz",
       bank: "Compound Genetics",
@@ -9196,7 +9196,7 @@ id: "cpg-grandmaster-sexy",
   },
   {
 id: "ihg-slurricane",
-      image: "img/ihg-slurricane.jpg",
+      image: "img/ihg-slurricane.webp",
       name: "Slurricane",
       aka: "Do-Si-Dos x Purple Punch",
       bank: "In-House Genetics",
@@ -9237,7 +9237,7 @@ id: "ihg-slurricane",
   },
   {
 id: "ihg-jelly-breath",
-      image: "img/ihg-jelly-breath.jpg",
+      image: "img/ihg-jelly-breath.webp",
       name: "Jelly Breath",
       aka: "Mendo Breath x Dosidos",
       bank: "In-House Genetics",
@@ -9277,7 +9277,7 @@ id: "ihg-jelly-breath",
   },
   {
 id: "ihg-platinum-kush-breath",
-      image: "img/ihg-platinum-kush-breath.jpg",
+      image: "img/ihg-platinum-kush-breath.webp",
       name: "Platinum Kush Breath",
       aka: "OG Kush Breath x Platinum",
       bank: "In-House Genetics",
@@ -9317,7 +9317,7 @@ id: "ihg-platinum-kush-breath",
   },
   {
 id: "ihg-sugar-cane",
-      image: "img/ihg-sugar-cane.jpg",
+      image: "img/ihg-sugar-cane.webp",
       name: "Sugar Cane",
       aka: "Platinum x Slurricane",
       bank: "In-House Genetics",
@@ -9358,7 +9358,7 @@ id: "ihg-sugar-cane",
   },
   {
 id: "ihg-tart-pops",
-      image: "img/ihg-tart-pops.jpg",
+      image: "img/ihg-tart-pops.webp",
       name: "Tart Pops",
       aka: "Sour Apple x Purple Punch",
       bank: "In-House Genetics",
@@ -9399,7 +9399,7 @@ id: "ihg-tart-pops",
   },
   {
 id: "ihg-terple",
-      image: "img/ihg-terple.jpg",
+      image: "img/ihg-terple.webp",
       name: "Terple",
       aka: "Tropicana Cookies x Slurricane",
       bank: "In-House Genetics",
@@ -9440,7 +9440,7 @@ id: "ihg-terple",
   },
   {
 id: "ihg-black-cherry-pie",
-      image: "img/ihg-black-cherry-pie.jpg",
+      image: "img/ihg-black-cherry-pie.webp",
       name: "Black Cherry Pie",
       aka: "Blackberry x Cherry Pie",
       bank: "In-House Genetics",
@@ -9480,7 +9480,7 @@ id: "ihg-black-cherry-pie",
   },
   {
 id: "ihg-dolato",
-      image: "img/ihg-dolato.jpg",
+      image: "img/ihg-dolato.webp",
       name: "Dolato",
       aka: "Do-Si-Dos x Gelato #33",
       bank: "In-House Genetics",
@@ -9520,7 +9520,7 @@ id: "ihg-dolato",
   },
   {
 id: "ihg-trichome-storm",
-      image: "img/ihg-trichome-storm.jpg",
+      image: "img/ihg-trichome-storm.webp",
       name: "Trichome Storm",
       aka: "Slurricane #7 x Platinum",
       bank: "In-House Genetics",
@@ -9560,7 +9560,7 @@ id: "ihg-trichome-storm",
   },
   {
 id: "ihg-smackz",
-      image: "img/ihg-smackz.jpg",
+      image: "img/ihg-smackz.webp",
       name: "Smackz",
       aka: "Runtz x Sol Sonic",
       bank: "In-House Genetics",
@@ -9601,7 +9601,7 @@ id: "ihg-smackz",
   },
   {
 id: "eth-mandarin-cookies",
-      image: "img/eth-mandarin-cookies.jpg",
+      image: "img/eth-mandarin-cookies.webp",
       name: "Mandarin Cookies",
       aka: "Forum Cut GSC x Mandarin Sunset",
       bank: "Ethos Genetics",
@@ -9642,7 +9642,7 @@ id: "eth-mandarin-cookies",
   },
   {
 id: "eth-grandpas-cookies",
-      image: "img/eth-grandpas-cookies.jpg",
+      image: "img/eth-grandpas-cookies.webp",
       name: "Grandpa's Cookies",
       aka: "Grandpa's Stash x Cookies & Cream",
       bank: "Ethos Genetics",
@@ -9683,7 +9683,7 @@ id: "eth-grandpas-cookies",
   },
   {
 id: "eth-lilac-diesel",
-      image: "img/eth-lilac-diesel.jpg",
+      image: "img/eth-lilac-diesel.webp",
       name: "Lilac Diesel",
       aka: "SLH x Forbidden Fruit x NYC Diesel x Cherry Pie",
       bank: "Ethos Genetics",
@@ -9724,7 +9724,7 @@ id: "eth-lilac-diesel",
   },
   {
 id: "eth-cherry-gar-see-ya",
-      image: "img/eth-cherry-gar-see-ya.jpg",
+      image: "img/eth-cherry-gar-see-ya.webp",
       name: "Cherry Gar-See-Ya",
       aka: "Black Cherry Soda x Cherry Maduro x Mandarin Sunset",
       bank: "Ethos Genetics",
@@ -9764,7 +9764,7 @@ id: "eth-cherry-gar-see-ya",
   },
   {
 id: "eth-planet-of-the-grapes",
-      image: "img/eth-planet-of-the-grapes.jpg",
+      image: "img/eth-planet-of-the-grapes.webp",
       name: "Planet of the Grapes",
       aka: "Grape Diamonds x Chem D Cookies",
       bank: "Ethos Genetics",
@@ -9804,7 +9804,7 @@ id: "eth-planet-of-the-grapes",
   },
   {
 id: "eth-apex",
-      image: "img/eth-apex.jpg",
+      image: "img/eth-apex.webp",
       name: "Apex",
       aka: "Mandarin Cookies x Lilac Diesel",
       bank: "Ethos Genetics",
@@ -9845,7 +9845,7 @@ id: "eth-apex",
   },
   {
 id: "eth-candy-store",
-      image: "img/eth-candy-store.jpg",
+      image: "img/eth-candy-store.webp",
       name: "Candy Store",
       aka: "Lemon Berry Candy OG x Ethos Cookies",
       bank: "Ethos Genetics",
@@ -9886,7 +9886,7 @@ id: "eth-candy-store",
   },
   {
 id: "eth-member-berry",
-      image: "img/eth-member-berry.jpg",
+      image: "img/eth-member-berry.webp",
       name: "Member Berry",
       aka: "Skunkberry x Mandarin Sunset",
       bank: "Ethos Genetics",
@@ -9926,7 +9926,7 @@ id: "eth-member-berry",
   },
   {
 id: "eth-ethos-cookies",
-      image: "img/eth-ethos-cookies.jpg",
+      image: "img/eth-ethos-cookies.webp",
       name: "Ethos Cookies",
       aka: "Mandarin Cookies x Colin OG",
       bank: "Ethos Genetics",
@@ -9967,7 +9967,7 @@ id: "eth-ethos-cookies",
   },
   {
 id: "eth-colin-og",
-      image: "img/eth-colin-og.jpg",
+      image: "img/eth-colin-og.webp",
       name: "Colin OG",
       aka: "Grateful Dawg x Alpha Dawg",
       bank: "Ethos Genetics",
@@ -10007,7 +10007,7 @@ id: "eth-colin-og",
   },
   {
 id: "arc-dosidos",
-      image: "img/arc-dosidos.jpg",
+      image: "img/arc-dosidos.webp",
       name: "Dosidos",
       aka: "OGKB x Face Off OG BX1",
       bank: "Archive Seed Bank",
@@ -10048,7 +10048,7 @@ id: "arc-dosidos",
   },
   {
 id: "arc-rainbow-belts",
-      image: "img/arc-rainbow-belts.jpg",
+      image: "img/arc-rainbow-belts.webp",
       name: "Rainbow Belts",
       aka: "Zkittlez x Moonbow #75",
       bank: "Archive Seed Bank",
@@ -10089,7 +10089,7 @@ id: "arc-rainbow-belts",
   },
   {
 id: "arc-moonbow",
-      image: "img/arc-moonbow.jpg",
+      image: "img/arc-moonbow.webp",
       name: "Moonbow",
       aka: "Zkittlez x Face Off OG",
       bank: "Archive Seed Bank",
@@ -10130,7 +10130,7 @@ id: "arc-moonbow",
   },
   {
 id: "arc-face-off-og",
-      image: "img/arc-face-off-og.jpg",
+      image: "img/arc-face-off-og.webp",
       name: "Face Off OG",
       aka: "Face Off OG IBL",
       bank: "Archive Seed Bank",
@@ -10170,7 +10170,7 @@ id: "arc-face-off-og",
   },
   {
 id: "arc-rudeboi-og",
-      image: "img/arc-rudeboi-og.jpg",
+      image: "img/arc-rudeboi-og.webp",
       name: "RudeBoi OG",
       aka: "Irene OG x Face Off OG BX1",
       bank: "Archive Seed Bank",
@@ -10210,7 +10210,7 @@ id: "arc-rudeboi-og",
   },
   {
 id: "arc-valley-girl",
-      image: "img/arc-valley-girl.jpg",
+      image: "img/arc-valley-girl.webp",
       name: "Valley Girl",
       aka: "SFV OG x Face Off OG BX1",
       bank: "Archive Seed Bank",
@@ -10250,7 +10250,7 @@ id: "arc-valley-girl",
   },
   {
 id: "arc-dank-dough",
-      image: "img/arc-dank-dough-curedbud.jpg",
+      image: "img/arc-dank-dough-curedbud.webp",
       name: "Dank Dough",
       aka: "Gelato #41 x Moonbow #75",
       bank: "Archive Seed Bank",
@@ -10291,7 +10291,7 @@ id: "arc-dank-dough",
   },
   {
 id: "arc-double-cross",
-      image: "img/arc-double-cross-official.jpg",
+      image: "img/arc-double-cross-official.webp",
       name: "Double Cross",
       aka: "Moonbow #73 x Face Off OG",
       bank: "Archive Seed Bank",
@@ -10331,7 +10331,7 @@ id: "arc-double-cross",
   },
   {
 id: "arc-memory-loss",
-      image: "img/arc-memory-loss.jpg",
+      image: "img/arc-memory-loss.webp",
       name: "Memory Loss",
       aka: "Amnesia Haze x Face Off OG",
       bank: "Archive Seed Bank",
@@ -10372,7 +10372,7 @@ id: "arc-memory-loss",
   },
   {
 id: "arc-z-mints",
-      image: "img/arc-z-mints.jpg",
+      image: "img/arc-z-mints.webp",
       name: "Z-Mints",
       aka: "Zkittlez x SinMint Cookies",
       bank: "Archive Seed Bank",
@@ -10413,7 +10413,7 @@ id: "arc-z-mints",
   },
   {
       id: "raw-stuffed-french-toast",
-      image: "img/raw-stuffed-french-toast.jpg",
+      image: "img/raw-stuffed-french-toast.webp",
       name: "Stuffed French Toast",
       aka: "Paris OG x French Toast",
       bank: "Raw Genetics",
@@ -10454,7 +10454,7 @@ id: "arc-z-mints",
   },
   {
       id: "raw-georgia-pie",
-      image: "img/raw-georgia-pie.jpg",
+      image: "img/raw-georgia-pie.webp",
       name: "Georgia Pie",
       aka: "Gellati x Kush Mints",
       bank: "Raw Genetics",
@@ -10495,7 +10495,7 @@ id: "arc-z-mints",
   },
   {
       id: "raw-cherry-paloma",
-      image: "img/raw-cherry-paloma.jpg",
+      image: "img/raw-cherry-paloma.webp",
       name: "Cherry Paloma",
       aka: "Tropicana Cookies x Georgia Pie",
       bank: "Raw Genetics",
@@ -10536,7 +10536,7 @@ id: "arc-z-mints",
   },
   {
       id: "raw-apples-and-french-toast",
-      image: "img/raw-apples-and-french-toast.jpg",
+      image: "img/raw-apples-and-french-toast.webp",
       name: "Apples & French Toast",
       aka: "Apples & Bananas x Stuffed French Toast",
       bank: "Raw Genetics",
@@ -10577,7 +10577,7 @@ id: "arc-z-mints",
   },
   {
       id: "raw-marshmallow",
-      image: "img/raw-marshmallow.jpg",
+      image: "img/raw-marshmallow.webp",
       name: "Raw Marshmallow",
       aka: "Marshmallow OG x Stuffed French Toast",
       bank: "Raw Genetics",
@@ -10617,7 +10617,7 @@ id: "arc-z-mints",
   },
   {
       id: "raw-rainbow-studz",
-      image: "img/raw-rainbow-studz.jpg",
+      image: "img/raw-rainbow-studz.webp",
       name: "Rainbow Studz",
       aka: "Zkittlez x Rainbow Chip",
       bank: "Raw Genetics",
@@ -10658,7 +10658,7 @@ id: "arc-z-mints",
   },
   {
       id: "raw-peeled-banana",
-      image: "img/raw-peeled-banana.jpg",
+      image: "img/raw-peeled-banana.webp",
       name: "Peeled Banana",
       aka: "Banana OG x Stuffed French Toast",
       bank: "Raw Genetics",
@@ -10698,7 +10698,7 @@ id: "arc-z-mints",
   },
   {
       id: "raw-runtz-pop",
-      image: "img/raw-runtz-pop.jpg",
+      image: "img/raw-runtz-pop.webp",
       name: "Runtz Pop",
       aka: "Runtz x Red Pop",
       bank: "Raw Genetics",
@@ -10739,7 +10739,7 @@ id: "arc-z-mints",
   },
   {
       id: "raw-bacio-zkittlez",
-      image: "img/raw-bacio-zkittlez.jpg",
+      image: "img/raw-bacio-zkittlez.webp",
       name: "Bacio Zkittlez",
       aka: "Bacio Gelato x Zkittlez",
       bank: "Raw Genetics",
@@ -10780,7 +10780,7 @@ id: "arc-z-mints",
   },
   {
       id: "raw-zweet-inzanity",
-      image: "img/raw-zweet-inzanity.jpg",
+      image: "img/raw-zweet-inzanity.webp",
       name: "Zweet Inzanity",
       aka: "Zkittlez x Gorilla Glue #4",
       bank: "Raw Genetics",
@@ -12145,6 +12145,13 @@ class CannaAppMAX {
     this.selectedActivity = 'nature_walk';
     this.currentStrains = Array.isArray(STRAINS_DATABASE) ? [...STRAINS_DATABASE] : [];
 
+    try {
+      const savedCompared = JSON.parse(localStorage.getItem('cannacatalog_compared') || '[]');
+      this.comparedStrains = Array.isArray(savedCompared) ? savedCompared.slice(0, 3) : [];
+    } catch (e) {
+      this.comparedStrains = [];
+    }
+
     const safeRun = (fn, name) => {
       try {
         if (typeof fn === 'function') fn.call(this);
@@ -12174,6 +12181,7 @@ class CannaAppMAX {
     safeRun(this.initCustomEventListeners, 'initCustomEventListeners');
     safeRun(this.initImageLightboxEngine, 'initImageLightboxEngine');
     safeRun(this.updateStashCounter, 'updateStashCounter');
+    safeRun(this.initCaraACaraComparator, 'initCaraACaraComparator');
   }
 
   initDOM() {
@@ -12197,6 +12205,13 @@ class CannaAppMAX {
     this.lightboxImg = document.getElementById('lightbox-img');
     this.lightboxTitle = document.getElementById('lightbox-title');
     this.lightboxSubtitle = document.getElementById('lightbox-subtitle');
+    this.compareDock = document.getElementById('compare-floating-dock');
+    this.compareDockSlots = document.getElementById('compare-dock-slots');
+    this.compareDockCounter = document.getElementById('compare-dock-counter');
+    this.compareModal = document.getElementById('compare-modal');
+    this.compareModalContent = document.getElementById('compare-modal-content');
+    this.btnOpenCompareModal = document.getElementById('btn-open-compare-modal');
+    this.btnClearCompare = document.getElementById('btn-clear-compare');
   }
 
   /* 1. VERIFICACIÓN DE EDAD DEFENSIVA (+18) */
@@ -12716,7 +12731,8 @@ class CannaAppMAX {
       const icon = bankIcons[strain.bank] || '🌿';
       const stars = '★'.repeat(Math.round(strain.rating)) + '☆'.repeat(5 - Math.round(strain.rating));
       const strainImg = strain.image;
-      const imgTag = strainImg ? `<img src="${strainImg}" alt="${strain.name}" class="card-visual-img" loading="eager" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.opacity='1';" />` : '';
+      const imgTag = strainImg ? `<img src="${strainImg}" alt="${strain.name}" class="card-visual-img" loading="lazy" decoding="async" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.opacity='1';" />` : '';
+      const isCompared = (this.comparedStrains || []).includes(strain.id);
 
       return `
         <div class="strain-card" style="--card-accent: ${strain.visualColor}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
@@ -12762,15 +12778,20 @@ class CannaAppMAX {
               ${strain.flavors.map(f => `<span class="tag-item">👅 ${f}</span>`).join('')}
             </div>
 
-            <div class="card-actions" onclick="event.stopPropagation()">
-              <button class="btn btn-primary" style="width: 100%; border-radius: 0 !important;" onclick="event.stopPropagation(); document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
-                📋 Ver Ficha Técnica
+            <div class="card-actions" onclick="event.stopPropagation()" style="display: flex; gap: 8px;">
+              <button class="btn btn-primary" style="flex: 1; border-radius: 8px !important;" onclick="event.stopPropagation(); document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
+                📋 Ficha
+              </button>
+              <button class="btn-compare-toggle ${isCompared ? 'active' : ''}" data-strain-id="${strain.id}" onclick="event.stopPropagation(); window.app && window.app.toggleCompareStrain('${strain.id}')" title="${isCompared ? 'Quitar del comparador' : 'Comparar (hasta 3 cepas)'}">
+                ⚖️ ${isCompared ? 'Comparando' : 'Comparar'}
               </button>
             </div>
           </div>
         </div>
       `;
     }).join('');
+
+    this.updateCompareUI();
   }
 
   filterByStash() {
@@ -13125,64 +13146,64 @@ class CannaAppMAX {
     const mainImg = strain.image;
 
     this.strainDetailContent.innerHTML = `
-      <div class="pro-spec-sheet" style="position: relative; border-radius: 20px !important;">
+      <div class="pro-spec-sheet">
         
         <!-- BOTÓN CIERRE FLOTANTE EN ESQUINA SUPERIOR DERECHA -->
-        <button class="close-pro-btn" onclick="document.getElementById('strain-detail-modal').close()" title="Cerrar (ESC)" style="position: absolute; top: 12px; right: 12px; z-index: 50; background: rgba(0,0,0,0.85); border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); border-radius: 50% !important;">✕</button>
+        <button class="close-pro-btn" onclick="document.getElementById('strain-detail-modal').close()" title="Cerrar (ESC)">✕</button>
 
         <!-- CONTENIDO SCROLLABLE EN POPUP CENTRADO -->
         <div class="pro-body-scrollable">
           
           <!-- HERO BANNER -->
-          <div class="pro-hero-banner" style="background: ${strain.visualColor}; margin-top: 0; border-radius: 16px !important;">
+          <div class="pro-hero-banner" style="background: ${strain.visualColor};">
             <div style="position:absolute; inset:0; ${strain.bgPattern}; opacity:0.35; pointer-events:none;"></div>
             
             ${mainImg ? `
-            <div class="pro-hero-photo-wrapper" style="border-radius: 16px !important; cursor: zoom-in;" onclick="window.app && window.app.openImageLightbox('${mainImg}', '${strain.name.replace(/'/g, "\\'")}', '${strain.bank.replace(/'/g, "\\'")}')" title="Haz clic para ver la foto en alta resolución 🔍">
-              <img src="${mainImg}" alt="${strain.name}" class="pro-hero-img" style="border-radius: 16px !important;" onerror="this.style.display='none';" />
+            <div class="pro-hero-photo-wrapper" onclick="window.app && window.app.openImageLightbox('${mainImg}', '${strain.name.replace(/'/g, "\\'")}', '${strain.bank.replace(/'/g, "\\'")}')" title="Haz clic para ver la foto en alta resolución 🔍">
+              <img src="${mainImg}" alt="${strain.name}" class="pro-hero-img" loading="lazy" decoding="async" onerror="this.style.display='none';" />
               <div class="pro-hero-vignette"></div>
               
-              <div class="pro-hero-zoom-badge" style="position: absolute; top: 12px; left: 12px; z-index: 10; background: rgba(0,0,0,0.75); backdrop-filter: blur(10px); border: 1px solid rgba(16,185,129,0.5); border-radius: 50px !important; padding: 5px 12px; font-size: 0.75rem; color: #6EE7B7; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); pointer-events: none;">
+              <div class="pro-hero-zoom-badge">
                 🔍 Toca para ver foto HD
               </div>
               
               <div class="pro-hero-info-overlay">
-                <div>
-                  <div style="margin-bottom: 6px; display: flex; gap: 8px; align-items: center;">
-                    <span class="badge-species ${strain.species.toLowerCase()}" style="border-radius: 50px !important;">${strain.species}</span>
-                    <span style="background: rgba(0,0,0,0.6); color: var(--primary-emerald); font-weight: 800; font-size: 0.76rem; padding: 3px 10px; border-radius: 50px !important; border: 1px solid rgba(16,185,129,0.3); backdrop-filter: blur(4px);">
+                <div class="pro-hero-info-left">
+                  <div class="pro-hero-badges-row">
+                    <span class="badge-species ${strain.species.toLowerCase()}">${strain.species}</span>
+                    <span class="pro-hero-bank-pill">
                       🏛️ ${strain.bank}
                     </span>
                   </div>
                   <h1 class="pro-strain-name-lg">${strain.name}</h1>
                   <div class="pro-strain-aka">🧬 Linaje: ${strain.genetics}</div>
                 </div>
-                <div style="text-align: right;">
-                  <div style="background: rgba(0,0,0,0.75); color: #FFD700; font-weight: 800; font-size: 0.9rem; padding: 6px 14px; border-radius: 50px !important; backdrop-filter: blur(8px); border: 1px solid rgba(255,215,0,0.3); display: inline-flex; align-items: center; gap: 6px;">
+                <div class="pro-hero-info-right">
+                  <div class="pro-hero-rating-pill">
                     <span>${stars}</span>
                     <span>${strain.rating}/5</span>
                   </div>
-                  <div style="font-size: 0.76rem; color: rgba(255,255,255,0.75); margin-top: 4px;">(${strain.reviewsCount} reseñas verificadas)</div>
+                  <div class="pro-hero-reviews-text">(${strain.reviewsCount} reseñas verificadas)</div>
                 </div>
               </div>
             </div>` : `
-            <div style="padding: 2.4rem 2rem 2rem 2rem; position: relative; z-index: 2;">
-              <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; padding-right: 40px;">
-                <div>
-                  <div style="margin-bottom: 8px; display: flex; gap: 8px; align-items: center;">
-                    <span class="badge-species ${strain.species.toLowerCase()}" style="border-radius: 50px !important;">${strain.species}</span>
-                    <span style="background: rgba(0,0,0,0.6); color: var(--primary-emerald); font-weight: 800; font-size: 0.78rem; padding: 4px 12px; border-radius: 50px !important; border: 1px solid rgba(16,185,129,0.3);">
+            <div class="pro-hero-photo-wrapper" style="height: auto; min-height: 180px;">
+              <div class="pro-hero-info-overlay" style="position: relative; inset: auto; padding: 1.8rem 1.4rem;">
+                <div class="pro-hero-info-left">
+                  <div class="pro-hero-badges-row">
+                    <span class="badge-species ${strain.species.toLowerCase()}">${strain.species}</span>
+                    <span class="pro-hero-bank-pill">
                       🏛️ ${strain.bank}
                     </span>
                   </div>
-                  <h1 class="pro-strain-name-lg" style="font-size: 2.4rem;">${strain.name}</h1>
-                  <div class="pro-strain-aka" style="font-size: 1rem;">🧬 Linaje: ${strain.genetics}</div>
+                  <h1 class="pro-strain-name-lg">${strain.name}</h1>
+                  <div class="pro-strain-aka">🧬 Linaje: ${strain.genetics}</div>
                 </div>
-                <div style="text-align: right;">
-                  <div style="background: rgba(0,0,0,0.6); color: #FFD700; font-weight: 800; font-size: 1rem; padding: 6px 16px; border-radius: 50px !important; backdrop-filter: blur(6px); border: 1px solid rgba(255,215,0,0.3);">
+                <div class="pro-hero-info-right">
+                  <div class="pro-hero-rating-pill">
                     ${stars} ${strain.rating}/5
                   </div>
-                  <div style="font-size: 0.78rem; color: rgba(255,255,255,0.8); margin-top: 4px;">(${strain.reviewsCount} reseñas)</div>
+                  <div class="pro-hero-reviews-text">(${strain.reviewsCount} reseñas)</div>
                 </div>
               </div>
             </div>`}
@@ -13190,44 +13211,44 @@ class CannaAppMAX {
 
           <!-- CUADRO DE MÉTRICAS CLAVE (4 CARDS EJECUTIVAS REDONDEADAS) -->
           <div class="pro-metrics-grid">
-            <div class="pro-metric-card" style="border-radius: 14px !important;">
+            <div class="pro-metric-card">
               <span class="pro-metric-label">🔥 Concentración THC</span>
               <div class="pro-metric-value">${strain.thc}%</div>
               <div class="pro-metric-sub">${strain.thc > 20 ? 'Alta Potencia' : 'Potencia Moderada'}</div>
             </div>
-            <div class="pro-metric-card" style="border-radius: 14px !important;">
+            <div class="pro-metric-card">
               <span class="pro-metric-label">💚 Concentración CBD</span>
               <div class="pro-metric-value" style="color: #6EE7B7;">${strain.cbd}%</div>
               <div class="pro-metric-sub">Ratio Equilibrado</div>
             </div>
-            <div class="pro-metric-card" style="border-radius: 14px !important;">
+            <div class="pro-metric-card">
               <span class="pro-metric-label">🏠 Cultivo Indoor</span>
-              <div class="pro-metric-value" style="color: #60A5FA;">${strain.yieldIndoor} <small style="font-size:0.8rem;">g/m²</small></div>
+              <div class="pro-metric-value" style="color: #60A5FA;">${strain.yieldIndoor} <small class="pro-metric-unit">g/m²</small></div>
               <div class="pro-metric-sub">🗓️ ${strain.floweringDays} Días Floración</div>
             </div>
-            <div class="pro-metric-card" style="border-radius: 14px !important;">
+            <div class="pro-metric-card">
               <span class="pro-metric-label">🌳 Cultivo Outdoor</span>
-              <div class="pro-metric-value" style="color: #F59E0B;">${strain.yieldOutdoor} <small style="font-size:0.8rem;">g/planta</small></div>
+              <div class="pro-metric-value" style="color: #F59E0B;">${strain.yieldOutdoor} <small class="pro-metric-unit">g/planta</small></div>
               <div class="pro-metric-sub">🌍 ${strain.origin}</div>
             </div>
           </div>
 
           <!-- CUERPO PRINCIPAL CON DETALLES TÉCNICOS -->
-          <div style="padding: 0 2rem 1.4rem 2rem;">
+          <div class="pro-details-container">
             
             <!-- DESCRIPCIÓN BOTÁNICA -->
-            <div class="pro-section-card" style="border-radius: 16px !important;">
+            <div class="pro-section-card">
               <h3 class="pro-section-title">📝 Perfil Botánico y Resumen del Criador</h3>
               <p class="pro-desc-quote">${strain.description}</p>
             </div>
 
             <!-- ANÁLISIS TERPÉNICO & VAPORIZACIÓN -->
-            <div class="pro-section-card" style="background: rgba(16, 185, 129, 0.06); border: 1.5px solid rgba(16, 185, 129, 0.35); border-radius: 16px !important; padding: 1.6rem; margin-bottom: 1.5rem;">
+            <div class="pro-section-card" style="background: rgba(16, 185, 129, 0.06); border: 1.5px solid rgba(16, 185, 129, 0.35);">
               <h3 class="pro-section-title" style="color: ${terpeneData?.color || '#10B981'}; font-size: 1.15rem;">
                 <span>🔬 Perfil Cromatográfico — Terpeno Dominante: <strong>${terpeneData?.name || strain.dominantTerpene}</strong></span>
               </h3>
               
-              <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.8rem; margin-top: 1.2rem;">
+              <div class="pro-terp-vape-grid">
                 <div>
                   <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 600;">Espectro relativo de terpenos en floración seca:</p>
                   ${terpeneBars}
@@ -13248,9 +13269,9 @@ class CannaAppMAX {
             </div>
 
             <!-- SABORES, EFECTOS Y ACTIVIDADES -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-bottom: 2rem;">
+            <div class="pro-tri-cards-grid">
               
-              <div class="pro-section-card" style="margin-bottom: 0; border-radius: 16px !important;">
+              <div class="pro-section-card" style="margin-bottom: 0;">
                 <h4 style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
                   👅 Sabores & Aromas
                 </h4>
@@ -13262,7 +13283,7 @@ class CannaAppMAX {
                 </div>
               </div>
 
-              <div class="pro-section-card" style="margin-bottom: 0; border-radius: 16px !important;">
+              <div class="pro-section-card" style="margin-bottom: 0;">
                 <h4 style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
                   ✨ Efectos Sensoriales
                 </h4>
@@ -13274,7 +13295,7 @@ class CannaAppMAX {
                 </div>
               </div>
 
-              <div class="pro-section-card" style="margin-bottom: 0; border-radius: 16px !important;">
+              <div class="pro-section-card" style="margin-bottom: 0;">
                 <h4 style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
                   🎯 Actividades Ideales
                 </h4>
@@ -13293,13 +13314,13 @@ class CannaAppMAX {
         </div>
 
         <!-- FOOTER ACCIONES FLOTANTE FIJO -->
-        <div class="pro-floating-footer" style="border-radius: 0 0 18px 18px !important;">
+        <div class="pro-floating-footer">
           <div style="font-size: 0.85rem; color: var(--text-muted);">
             <span>🏛️ Banco Criador: <strong style="color: #fff;">${strain.bank}</strong></span>
           </div>
 
           <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-            <button class="btn btn-emerald-lg" style="border-radius: 12px !important;"
+            <button class="btn btn-emerald-lg"
               onclick="document.dispatchEvent(new CustomEvent('generateMission', { detail: { strainId: '${strain.id}', activityId: '${strain.activities?.[0] || 'nature_walk'}' } })); document.getElementById('strain-detail-modal').close();">
               🚀 Generar Misión IA
             </button>
@@ -13503,6 +13524,367 @@ class CannaAppMAX {
     setTimeout(() => {
       toast.remove();
     }, 3500);
+  }
+
+  /* ========================================================
+     MÓDULO INTERACTIVO: COMPARADOR CARA A CARA (DARK GLASS)
+     ======================================================== */
+  initCaraACaraComparator() {
+    this.btnOpenCompareModal?.addEventListener('click', () => {
+      this.openCompareModal();
+    });
+
+    this.btnClearCompare?.addEventListener('click', () => {
+      this.clearComparedStrains();
+    });
+
+    this.updateCompareUI();
+  }
+
+  toggleCompareStrain(strainId) {
+    if (!strainId) return;
+    const index = this.comparedStrains.indexOf(strainId);
+
+    if (index > -1) {
+      this.comparedStrains.splice(index, 1);
+      this.showToast('⚖️ Cepa removida del comparador.');
+    } else {
+      if (this.comparedStrains.length >= 3) {
+        this.showToast('⚠️ Máximo 3 cepas simultáneas. Deselecciona una para añadir otra.');
+        return;
+      }
+      this.comparedStrains.push(strainId);
+      const strain = STRAINS_DATABASE.find(s => s.id === strainId);
+      const name = strain ? strain.name : 'Cepa';
+      this.showToast(`⚖️ ${name} añadida al comparador (${this.comparedStrains.length}/3)`);
+    }
+
+    try {
+      localStorage.setItem('cannacatalog_compared', JSON.stringify(this.comparedStrains));
+    } catch (e) {}
+
+    this.updateCompareUI();
+    if (this.compareModal && this.compareModal.open) {
+      this.renderCompareModal();
+    }
+  }
+
+  clearComparedStrains() {
+    this.comparedStrains = [];
+    try {
+      localStorage.setItem('cannacatalog_compared', JSON.stringify([]));
+    } catch (e) {}
+    this.updateCompareUI();
+    if (this.compareModal && this.compareModal.open) {
+      this.renderCompareModal();
+    }
+    this.showToast('🗑️ Comparador vaciado.');
+  }
+
+  updateCompareUI() {
+    const count = (this.comparedStrains || []).length;
+
+    // Actualizar botones de catálogo
+    document.querySelectorAll('.btn-compare-toggle').forEach(btn => {
+      const id = btn.getAttribute('data-strain-id');
+      const active = this.comparedStrains.includes(id);
+      if (active) {
+        btn.classList.add('active');
+        btn.innerHTML = '⚖️ Comparando';
+        btn.title = 'Quitar del comparador';
+      } else {
+        btn.classList.remove('active');
+        btn.innerHTML = '⚖️ Comparar';
+        btn.title = 'Comparar (hasta 3 cepas)';
+      }
+    });
+
+    // Actualizar dock flotante
+    if (this.compareDock) {
+      if (count > 0) {
+        this.compareDock.style.display = 'block';
+        if (this.compareDockCounter) {
+          this.compareDockCounter.textContent = `${count}/3 cepas`;
+        }
+
+        if (this.compareDockSlots) {
+          this.compareDockSlots.innerHTML = this.comparedStrains.map(id => {
+            const strain = STRAINS_DATABASE.find(s => s.id === id);
+            if (!strain) return '';
+            const thumb = strain.image || '';
+            return `
+              <div class="compare-dock-slot" title="${strain.name} (${strain.bank})">
+                ${thumb ? `<img src="${thumb}" alt="${strain.name}" class="compare-dock-thumb" />` : `<span style="font-size:1.1rem;">🌿</span>`}
+                <span class="compare-dock-name">${strain.name}</span>
+                <button class="compare-dock-remove" onclick="event.stopPropagation(); window.app && window.app.toggleCompareStrain('${strain.id}')" title="Quitar">✕</button>
+              </div>
+            `;
+          }).join('');
+        }
+      } else {
+        this.compareDock.style.display = 'none';
+      }
+    }
+  }
+
+  calculateIndicaSativa(strain) {
+    if (!strain) return { indica: 50, sativa: 50, label: '50% Índica / 50% Sativa' };
+    const text = `${strain.name} ${strain.genetics || ''} ${strain.aka || ''} ${strain.description || ''}`.toLowerCase();
+    
+    const mIndica = text.match(/(\d{1,3})\s*%\s*(?:índica|indica)/);
+    const mSativa = text.match(/(\d{1,3})\s*%\s*sativa/);
+
+    let indica = 50;
+    let sativa = 50;
+
+    if (mIndica) {
+      indica = Math.min(100, Math.max(0, parseInt(mIndica[1])));
+      sativa = 100 - indica;
+    } else if (mSativa) {
+      sativa = Math.min(100, Math.max(0, parseInt(mSativa[1])));
+      indica = 100 - sativa;
+    } else {
+      const sp = (strain.species || '').toLowerCase();
+      if (sp === 'indica') {
+        indica = 80;
+        sativa = 20;
+      } else if (sp === 'sativa') {
+        indica = 20;
+        sativa = 80;
+      } else {
+        indica = 50;
+        sativa = 50;
+      }
+    }
+
+    return {
+      indica,
+      sativa,
+      label: `${indica}% Índica / ${sativa}% Sativa`
+    };
+  }
+
+  calculateDifficulty(strain) {
+    const days = parseInt(strain.floweringDays) || 60;
+    const sp = (strain.species || '').toLowerCase();
+
+    if (days <= 56 || sp === 'indica') {
+      return { level: 'Baja', label: 'Principiante', badgeClass: 'badge-diff-easy' };
+    } else if (days <= 70 || sp.includes('híb') || sp.includes('hib')) {
+      return { level: 'Media', label: 'Intermedia', badgeClass: 'badge-diff-med' };
+    } else {
+      return { level: 'Alta', label: 'Experto', badgeClass: 'badge-diff-hard' };
+    }
+  }
+
+  openCompareModal() {
+    if (!this.comparedStrains || this.comparedStrains.length === 0) {
+      this.showToast('Selecciona al menos 1 variedad con el botón ⚖️ Comparar.');
+      return;
+    }
+    this.renderCompareModal();
+    if (this.compareModal && typeof this.compareModal.showModal === 'function') {
+      if (!this.compareModal.open) this.compareModal.showModal();
+    }
+  }
+
+  closeCompareModal() {
+    if (this.compareModal && this.compareModal.open) {
+      this.compareModal.close();
+    }
+  }
+
+  renderCompareModal() {
+    if (!this.compareModalContent) return;
+
+    const strains = (this.comparedStrains || [])
+      .map(id => STRAINS_DATABASE.find(s => s.id === id))
+      .filter(Boolean);
+
+    const slotsCount = 3;
+    const emptySlotsNeeded = slotsCount - strains.length;
+
+    let columnsHTML = strains.map(strain => {
+      const ratio = this.calculateIndicaSativa(strain);
+      const diff = this.calculateDifficulty(strain);
+      const terpeneData = TERPENES_INFO[strain.dominantTerpene];
+      const stars = '★'.repeat(Math.round(strain.rating)) + '☆'.repeat(5 - Math.round(strain.rating));
+      const floweringWeeks = Math.round((parseInt(strain.floweringDays) || 60) / 7);
+      
+      const thcVal = parseFloat(strain.thc) || 0;
+      const thcPct = Math.min(100, Math.round((thcVal / 35) * 100));
+
+      const cbdVal = parseFloat(strain.cbd) || 0;
+      const cbdPct = Math.min(100, Math.max(8, Math.round((cbdVal / 15) * 100)));
+
+      const subTerpenes = Object.entries(strain.terpenes || {})
+        .filter(([k]) => k !== strain.dominantTerpene)
+        .slice(0, 2)
+        .map(([k, pct]) => `<span style="font-size:0.72rem; color:var(--text-muted);">${TERPENES_INFO[k]?.name || k}: ${pct}%</span>`)
+        .join(' · ');
+
+      return `
+        <div class="compare-column">
+          <!-- Botón quitar de la comparativa -->
+          <button class="compare-col-remove-btn" onclick="window.app && window.app.toggleCompareStrain('${strain.id}')" title="Quitar de la comparativa">✕</button>
+
+          <!-- Cabecera de la Cepa -->
+          <div class="compare-col-head">
+            <div class="compare-col-thumb-wrap" onclick="window.app && window.app.openImageLightbox('${strain.image || ''}', '${strain.name.replace(/'/g, "\\'")}', '${strain.bank.replace(/'/g, "\\'")}')" title="🔍 Ampliar fotografía botánica HD">
+              ${strain.image ? `<img src="${strain.image}" alt="${strain.name}" class="compare-col-thumb" onerror="this.style.display='none';" />` : ''}
+              <div class="compare-col-thumb-overlay">🔍</div>
+            </div>
+            <div class="compare-col-info">
+              <div class="compare-col-bank">🏛️ ${strain.bank}</div>
+              <h3 class="compare-col-name">${strain.name}</h3>
+              <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
+                <span class="badge-species ${strain.species.toLowerCase()}" style="font-size:0.7rem; padding: 2px 8px; border-radius:50px !important;">${strain.species}</span>
+                <span style="font-size: 0.74rem; color: #F59E0B; font-weight: 700;">${stars}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1. Cannabinoides (THC & CBD) -->
+          <div class="compare-metric-box">
+            <div class="compare-metric-title">
+              <span>🧪 Cannabinoides</span>
+              <span style="color:#FCD34D;">${thcVal}% THC</span>
+            </div>
+            
+            <div class="compare-cannabinoid-row">
+              <div class="compare-cannabinoid-label">
+                <span style="color:#A7F3D0;">🔥 THC (Psicoactividad)</span>
+                <span style="color:#fff;">${thcVal}%</span>
+              </div>
+              <div class="compare-bar-track">
+                <div class="compare-bar-fill-thc" style="width: ${thcPct}%;"></div>
+              </div>
+            </div>
+
+            <div class="compare-cannabinoid-row" style="margin-top:8px;">
+              <div class="compare-cannabinoid-label">
+                <span style="color:#93C5FD;">💧 CBD (Bienestar Físico)</span>
+                <span style="color:#fff;">${cbdVal}%</span>
+              </div>
+              <div class="compare-bar-track">
+                <div class="compare-bar-fill-cbd" style="width: ${cbdPct}%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Proporción Índica / Sativa -->
+          <div class="compare-metric-box">
+            <div class="compare-metric-title">
+              <span>🧬 Proporción Genética</span>
+              <span style="font-size:0.74rem; color:#E2E8F0;">${ratio.label}</span>
+            </div>
+            <div class="compare-species-track">
+              <div class="compare-species-indica" style="width: ${ratio.indica}%;" title="${ratio.indica}% Índica"></div>
+              <div class="compare-species-sativa" style="width: ${ratio.sativa}%;" title="${ratio.sativa}% Sativa"></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:0.7rem; margin-top:5px; color:var(--text-muted); font-weight:600;">
+              <span style="color:#C4B5FD;">🟣 Índica (${ratio.indica}%)</span>
+              <span style="color:#FCD34D;">🟠 Sativa (${ratio.sativa}%)</span>
+            </div>
+          </div>
+
+          <!-- 3. Semanas de Floración & Dificultad -->
+          <div class="compare-metric-box">
+            <div class="compare-metric-title">
+              <span>⏱️ Cultivo & Floración</span>
+              <span class="${diff.badgeClass}">${diff.level} (${diff.label})</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px;">
+              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center;">
+                <div style="font-size:0.7rem; color:var(--text-muted);">Floración</div>
+                <strong style="color:#fff; font-size:0.86rem;">${floweringWeeks} sem</strong>
+                <div style="font-size:0.68rem; color:#A7F3D0;">(${strain.floweringDays} días)</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center;">
+                <div style="font-size:0.7rem; color:var(--text-muted);">Rendimiento</div>
+                <strong style="color:#fff; font-size:0.86rem;">${strain.yieldIndoor} g/m²</strong>
+                <div style="font-size:0.68rem; color:#C4B5FD;">${strain.yieldOutdoor} g/pl</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Perfil de Terpenos & Aromas -->
+          <div class="compare-metric-box">
+            <div class="compare-metric-title">
+              <span>🌿 Terpenos & Aromas</span>
+              <span style="color:${terpeneData?.color || '#10B981'}; font-weight:800;">${terpeneData?.name || strain.dominantTerpene}</span>
+            </div>
+            <div style="margin-bottom:6px;">
+              <span style="font-size:0.75rem; color:#fff; font-weight:600;">Aroma:</span>
+              <span style="font-size:0.75rem; color:var(--text-muted); font-style:italic;">${terpeneData?.aroma || 'Perfil botánico complejo'}</span>
+            </div>
+            ${subTerpenes ? `<div style="margin-bottom:6px;">${subTerpenes}</div>` : ''}
+            <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:6px;">
+              ${(strain.flavors || []).map(f => `<span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:50px !important; padding:2px 8px; font-size:0.72rem; color:#fff;">👅 ${f}</span>`).join('')}
+            </div>
+          </div>
+
+          <!-- 5. Efectos Destacados -->
+          <div class="compare-metric-box">
+            <div class="compare-metric-title">
+              <span>⚡ Efectos Destacados</span>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:5px;">
+              ${(strain.effects || []).map(e => `<span style="background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.3); border-radius:50px !important; padding:3px 9px; font-size:0.74rem; font-weight:700; color:#6EE7B7;">⚡ ${e}</span>`).join('')}
+            </div>
+          </div>
+
+          <!-- 6. Linaje Genético -->
+          <div class="compare-metric-box" style="margin-top:auto;">
+            <div class="compare-metric-title">
+              <span>📜 Linaje Genético</span>
+              <span style="font-size:0.72rem; color:var(--text-muted);">${strain.origin || 'Origen verificado'}</span>
+            </div>
+            <p style="font-size:0.78rem; color:#E2E8F0; margin:0 0 6px 0; font-weight:600; line-height:1.4;">
+              🧬 ${strain.genetics || strain.aka || 'Selección de élite'}
+            </p>
+            <button class="btn btn-primary" style="width:100%; padding:6px 12px; font-size:0.78rem; border-radius:8px !important; margin-top:6px;" onclick="document.getElementById('compare-modal').close(); document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
+              📋 Ver Ficha Completa
+            </button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    for (let i = 0; i < emptySlotsNeeded; i++) {
+      columnsHTML += `
+        <div class="compare-empty-col">
+          <div class="compare-empty-icon">⚖️</div>
+          <h4 style="font-size:1.05rem; font-weight:800; color:#fff; margin:0;">Ranura Disponible</h4>
+          <p class="compare-empty-text">Añade otra variedad desde el catálogo para contrastar sus terpenos, cannabinoides y genética frente a frente.</p>
+          <button class="btn btn-outline" style="border-radius:10px !important; font-size:0.8rem; padding:8px 16px;" onclick="document.getElementById('compare-modal').close();">
+            🔍 Explorar Catálogo
+          </button>
+        </div>
+      `;
+    }
+
+    this.compareModalContent.innerHTML = `
+      <div class="compare-modal-wrapper">
+        <div class="compare-modal-header">
+          <div>
+            <h2 class="compare-modal-title">
+              <span>⚖️</span> Comparador Botánico Cara a Cara
+              <span style="font-size:0.8rem; background:rgba(16,185,129,0.2); color:#10B981; border:1px solid rgba(16,185,129,0.4); padding:3px 10px; border-radius:50px !important; font-weight:800;">${strains.length}/3 cepas</span>
+            </h2>
+            <div class="compare-modal-subtitle">Análisis analítico y organoléptico en columnas paralelas con Dark Glassmorphism</div>
+          </div>
+          <div style="display:flex; gap:8px; align-items:center;">
+            ${strains.length > 0 ? `<button class="btn btn-outline-stash" style="padding:6px 12px; font-size:0.76rem; border-radius:8px !important;" onclick="window.app && window.app.clearComparedStrains()">🗑️ Limpiar Todo</button>` : ''}
+            <button class="close-modal-btn" onclick="document.getElementById('compare-modal').close()" title="Cerrar (ESC)" style="width:34px; height:34px; border-radius:50% !important; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.2); color:#fff; cursor:pointer;">✕</button>
+          </div>
+        </div>
+
+        <div class="compare-grid">
+          ${columnsHTML}
+        </div>
+      </div>
+    `;
   }
 }
 

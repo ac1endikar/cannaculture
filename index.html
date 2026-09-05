@@ -655,6 +655,11 @@
     <div class="dialog-content" id="strain-detail-content"></div>
   </dialog>
 
+  <!-- MODAL: COMPARADOR BOTÁNICO CARA A CARA -->
+  <dialog id="compare-modal" class="glass-dialog large-modal">
+    <div class="dialog-content" id="compare-modal-content"></div>
+  </dialog>
+
   <!-- MODAL: AGREGAR VIVENCIA -->
   <dialog id="add-log-modal" class="glass-dialog">
     <div class="dialog-content">
@@ -1105,8 +1110,30 @@
     </div>
   </dialog>
 
+  <!-- DOCK FLOTANTE: COMPARADOR CARA A CARA -->
+  <div id="compare-floating-dock" class="compare-dock" style="display: none;">
+    <div class="compare-dock-inner">
+      <div class="compare-dock-info">
+        <span class="compare-dock-icon">⚖️</span>
+        <div class="compare-dock-text">
+          <div class="compare-dock-title">Comparador Cara a Cara</div>
+          <div class="compare-dock-count" id="compare-dock-counter">0/3 cepas</div>
+        </div>
+      </div>
+      <div class="compare-dock-slots" id="compare-dock-slots"></div>
+      <div class="compare-dock-actions">
+        <button id="btn-open-compare-modal" class="btn btn-emerald-md btn-compare-launch">
+          ⚖️ Comparar Ahora
+        </button>
+        <button id="btn-clear-compare" class="btn btn-compare-clear" title="Limpiar comparativa">
+          🗑️
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=2026_phase2_custom3_v124"></script>
+  <script src="js/bundle.js?v=2026_mobile_fix_v126"></script>
 </body>
 
 </html>

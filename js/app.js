@@ -13,6 +13,13 @@ class CannaAppMAX {
     this.selectedActivity = 'nature_walk';
     this.currentStrains = Array.isArray(STRAINS_DATABASE) ? [...STRAINS_DATABASE] : [];
 
+    try {
+      const savedCompared = JSON.parse(localStorage.getItem('cannacatalog_compared') || '[]');
+      this.comparedStrains = Array.isArray(savedCompared) ? savedCompared.slice(0, 3) : [];
+    } catch (e) {
+      this.comparedStrains = [];
+    }
+
     const safeRun = (fn, name) => {
       try {
         if (typeof fn === 'function') fn.call(this);
@@ -42,6 +49,7 @@ class CannaAppMAX {
     safeRun(this.initCustomEventListeners, 'initCustomEventListeners');
     safeRun(this.initImageLightboxEngine, 'initImageLightboxEngine');
     safeRun(this.updateStashCounter, 'updateStashCounter');
+    safeRun(this.initCaraACaraComparator, 'initCaraACaraComparator');
   }
 
   initDOM() {
@@ -65,6 +73,13 @@ class CannaAppMAX {
     this.lightboxImg = document.getElementById('lightbox-img');
     this.lightboxTitle = document.getElementById('lightbox-title');
     this.lightboxSubtitle = document.getElementById('lightbox-subtitle');
+    this.compareDock = document.getElementById('compare-floating-dock');
+    this.compareDockSlots = document.getElementById('compare-dock-slots');
+    this.compareDockCounter = document.getElementById('compare-dock-counter');
+    this.compareModal = document.getElementById('compare-modal');
+    this.compareModalContent = document.getElementById('compare-modal-content');
+    this.btnOpenCompareModal = document.getElementById('btn-open-compare-modal');
+    this.btnClearCompare = document.getElementById('btn-clear-compare');
   }
 
   /* 1. VERIFICACIÓN DE EDAD DEFENSIVA (+18) */
@@ -584,7 +599,8 @@ class CannaAppMAX {
       const icon = bankIcons[strain.bank] || '🌿';
       const stars = '★'.repeat(Math.round(strain.rating)) + '☆'.repeat(5 - Math.round(strain.rating));
       const strainImg = strain.image;
-      const imgTag = strainImg ? `<img src="${strainImg}" alt="${strain.name}" class="card-visual-img" loading="eager" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.opacity='1';" />` : '';
+      const imgTag = strainImg ? `<img src="${strainImg}" alt="${strain.name}" class="card-visual-img" loading="lazy" decoding="async" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.opacity='1';" />` : '';
+      const isCompared = (this.comparedStrains || []).includes(strain.id);
 
       return `
         <div class="strain-card" style="--card-accent: ${strain.visualColor}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
@@ -630,15 +646,20 @@ class CannaAppMAX {
               ${strain.flavors.map(f => `<span class="tag-item">👅 ${f}</span>`).join('')}
             </div>
 
-            <div class="card-actions" onclick="event.stopPropagation()">
-              <button class="btn btn-primary" style="width: 100%; border-radius: 0 !important;" onclick="event.stopPropagation(); document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
-                📋 Ver Ficha Técnica
+            <div class="card-actions" onclick="event.stopPropagation()" style="display: flex; gap: 8px;">
+              <button class="btn btn-primary" style="flex: 1; border-radius: 8px !important;" onclick="event.stopPropagation(); document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
+                📋 Ficha
+              </button>
+              <button class="btn-compare-toggle ${isCompared ? 'active' : ''}" data-strain-id="${strain.id}" onclick="event.stopPropagation(); window.app && window.app.toggleCompareStrain('${strain.id}')" title="${isCompared ? 'Quitar del comparador' : 'Comparar (hasta 3 cepas)'}">
+                ⚖️ ${isCompared ? 'Comparando' : 'Comparar'}
               </button>
             </div>
           </div>
         </div>
       `;
     }).join('');
+
+    this.updateCompareUI();
   }
 
   filterByStash() {
@@ -993,64 +1014,64 @@ class CannaAppMAX {
     const mainImg = strain.image;
 
     this.strainDetailContent.innerHTML = `
-      <div class="pro-spec-sheet" style="position: relative; border-radius: 20px !important;">
+      <div class="pro-spec-sheet">
         
         <!-- BOTÓN CIERRE FLOTANTE EN ESQUINA SUPERIOR DERECHA -->
-        <button class="close-pro-btn" onclick="document.getElementById('strain-detail-modal').close()" title="Cerrar (ESC)" style="position: absolute; top: 12px; right: 12px; z-index: 50; background: rgba(0,0,0,0.85); border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); border-radius: 50% !important;">✕</button>
+        <button class="close-pro-btn" onclick="document.getElementById('strain-detail-modal').close()" title="Cerrar (ESC)">✕</button>
 
         <!-- CONTENIDO SCROLLABLE EN POPUP CENTRADO -->
         <div class="pro-body-scrollable">
           
           <!-- HERO BANNER -->
-          <div class="pro-hero-banner" style="background: ${strain.visualColor}; margin-top: 0; border-radius: 16px !important;">
+          <div class="pro-hero-banner" style="background: ${strain.visualColor};">
             <div style="position:absolute; inset:0; ${strain.bgPattern}; opacity:0.35; pointer-events:none;"></div>
             
             ${mainImg ? `
-            <div class="pro-hero-photo-wrapper" style="border-radius: 16px !important; cursor: zoom-in;" onclick="window.app && window.app.openImageLightbox('${mainImg}', '${strain.name.replace(/'/g, "\\'")}', '${strain.bank.replace(/'/g, "\\'")}')" title="Haz clic para ver la foto en alta resolución 🔍">
-              <img src="${mainImg}" alt="${strain.name}" class="pro-hero-img" style="border-radius: 16px !important;" onerror="this.style.display='none';" />
+            <div class="pro-hero-photo-wrapper" onclick="window.app && window.app.openImageLightbox('${mainImg}', '${strain.name.replace(/'/g, "\\'")}', '${strain.bank.replace(/'/g, "\\'")}')" title="Haz clic para ver la foto en alta resolución 🔍">
+              <img src="${mainImg}" alt="${strain.name}" class="pro-hero-img" loading="lazy" decoding="async" onerror="this.style.display='none';" />
               <div class="pro-hero-vignette"></div>
               
-              <div class="pro-hero-zoom-badge" style="position: absolute; top: 12px; left: 12px; z-index: 10; background: rgba(0,0,0,0.75); backdrop-filter: blur(10px); border: 1px solid rgba(16,185,129,0.5); border-radius: 50px !important; padding: 5px 12px; font-size: 0.75rem; color: #6EE7B7; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); pointer-events: none;">
+              <div class="pro-hero-zoom-badge">
                 🔍 Toca para ver foto HD
               </div>
               
               <div class="pro-hero-info-overlay">
-                <div>
-                  <div style="margin-bottom: 6px; display: flex; gap: 8px; align-items: center;">
-                    <span class="badge-species ${strain.species.toLowerCase()}" style="border-radius: 50px !important;">${strain.species}</span>
-                    <span style="background: rgba(0,0,0,0.6); color: var(--primary-emerald); font-weight: 800; font-size: 0.76rem; padding: 3px 10px; border-radius: 50px !important; border: 1px solid rgba(16,185,129,0.3); backdrop-filter: blur(4px);">
+                <div class="pro-hero-info-left">
+                  <div class="pro-hero-badges-row">
+                    <span class="badge-species ${strain.species.toLowerCase()}">${strain.species}</span>
+                    <span class="pro-hero-bank-pill">
                       🏛️ ${strain.bank}
                     </span>
                   </div>
                   <h1 class="pro-strain-name-lg">${strain.name}</h1>
                   <div class="pro-strain-aka">🧬 Linaje: ${strain.genetics}</div>
                 </div>
-                <div style="text-align: right;">
-                  <div style="background: rgba(0,0,0,0.75); color: #FFD700; font-weight: 800; font-size: 0.9rem; padding: 6px 14px; border-radius: 50px !important; backdrop-filter: blur(8px); border: 1px solid rgba(255,215,0,0.3); display: inline-flex; align-items: center; gap: 6px;">
+                <div class="pro-hero-info-right">
+                  <div class="pro-hero-rating-pill">
                     <span>${stars}</span>
                     <span>${strain.rating}/5</span>
                   </div>
-                  <div style="font-size: 0.76rem; color: rgba(255,255,255,0.75); margin-top: 4px;">(${strain.reviewsCount} reseñas verificadas)</div>
+                  <div class="pro-hero-reviews-text">(${strain.reviewsCount} reseñas verificadas)</div>
                 </div>
               </div>
             </div>` : `
-            <div style="padding: 2.4rem 2rem 2rem 2rem; position: relative; z-index: 2;">
-              <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; padding-right: 40px;">
-                <div>
-                  <div style="margin-bottom: 8px; display: flex; gap: 8px; align-items: center;">
-                    <span class="badge-species ${strain.species.toLowerCase()}" style="border-radius: 50px !important;">${strain.species}</span>
-                    <span style="background: rgba(0,0,0,0.6); color: var(--primary-emerald); font-weight: 800; font-size: 0.78rem; padding: 4px 12px; border-radius: 50px !important; border: 1px solid rgba(16,185,129,0.3);">
+            <div class="pro-hero-photo-wrapper" style="height: auto; min-height: 180px;">
+              <div class="pro-hero-info-overlay" style="position: relative; inset: auto; padding: 1.8rem 1.4rem;">
+                <div class="pro-hero-info-left">
+                  <div class="pro-hero-badges-row">
+                    <span class="badge-species ${strain.species.toLowerCase()}">${strain.species}</span>
+                    <span class="pro-hero-bank-pill">
                       🏛️ ${strain.bank}
                     </span>
                   </div>
-                  <h1 class="pro-strain-name-lg" style="font-size: 2.4rem;">${strain.name}</h1>
-                  <div class="pro-strain-aka" style="font-size: 1rem;">🧬 Linaje: ${strain.genetics}</div>
+                  <h1 class="pro-strain-name-lg">${strain.name}</h1>
+                  <div class="pro-strain-aka">🧬 Linaje: ${strain.genetics}</div>
                 </div>
-                <div style="text-align: right;">
-                  <div style="background: rgba(0,0,0,0.6); color: #FFD700; font-weight: 800; font-size: 1rem; padding: 6px 16px; border-radius: 50px !important; backdrop-filter: blur(6px); border: 1px solid rgba(255,215,0,0.3);">
+                <div class="pro-hero-info-right">
+                  <div class="pro-hero-rating-pill">
                     ${stars} ${strain.rating}/5
                   </div>
-                  <div style="font-size: 0.78rem; color: rgba(255,255,255,0.8); margin-top: 4px;">(${strain.reviewsCount} reseñas)</div>
+                  <div class="pro-hero-reviews-text">(${strain.reviewsCount} reseñas)</div>
                 </div>
               </div>
             </div>`}
@@ -1058,44 +1079,44 @@ class CannaAppMAX {
 
           <!-- CUADRO DE MÉTRICAS CLAVE (4 CARDS EJECUTIVAS REDONDEADAS) -->
           <div class="pro-metrics-grid">
-            <div class="pro-metric-card" style="border-radius: 14px !important;">
+            <div class="pro-metric-card">
               <span class="pro-metric-label">🔥 Concentración THC</span>
               <div class="pro-metric-value">${strain.thc}%</div>
               <div class="pro-metric-sub">${strain.thc > 20 ? 'Alta Potencia' : 'Potencia Moderada'}</div>
             </div>
-            <div class="pro-metric-card" style="border-radius: 14px !important;">
+            <div class="pro-metric-card">
               <span class="pro-metric-label">💚 Concentración CBD</span>
               <div class="pro-metric-value" style="color: #6EE7B7;">${strain.cbd}%</div>
               <div class="pro-metric-sub">Ratio Equilibrado</div>
             </div>
-            <div class="pro-metric-card" style="border-radius: 14px !important;">
+            <div class="pro-metric-card">
               <span class="pro-metric-label">🏠 Cultivo Indoor</span>
-              <div class="pro-metric-value" style="color: #60A5FA;">${strain.yieldIndoor} <small style="font-size:0.8rem;">g/m²</small></div>
+              <div class="pro-metric-value" style="color: #60A5FA;">${strain.yieldIndoor} <small class="pro-metric-unit">g/m²</small></div>
               <div class="pro-metric-sub">🗓️ ${strain.floweringDays} Días Floración</div>
             </div>
-            <div class="pro-metric-card" style="border-radius: 14px !important;">
+            <div class="pro-metric-card">
               <span class="pro-metric-label">🌳 Cultivo Outdoor</span>
-              <div class="pro-metric-value" style="color: #F59E0B;">${strain.yieldOutdoor} <small style="font-size:0.8rem;">g/planta</small></div>
+              <div class="pro-metric-value" style="color: #F59E0B;">${strain.yieldOutdoor} <small class="pro-metric-unit">g/planta</small></div>
               <div class="pro-metric-sub">🌍 ${strain.origin}</div>
             </div>
           </div>
 
           <!-- CUERPO PRINCIPAL CON DETALLES TÉCNICOS -->
-          <div style="padding: 0 2rem 1.4rem 2rem;">
+          <div class="pro-details-container">
             
             <!-- DESCRIPCIÓN BOTÁNICA -->
-            <div class="pro-section-card" style="border-radius: 16px !important;">
+            <div class="pro-section-card">
               <h3 class="pro-section-title">📝 Perfil Botánico y Resumen del Criador</h3>
               <p class="pro-desc-quote">${strain.description}</p>
             </div>
 
             <!-- ANÁLISIS TERPÉNICO & VAPORIZACIÓN -->
-            <div class="pro-section-card" style="background: rgba(16, 185, 129, 0.06); border: 1.5px solid rgba(16, 185, 129, 0.35); border-radius: 16px !important; padding: 1.6rem; margin-bottom: 1.5rem;">
+            <div class="pro-section-card" style="background: rgba(16, 185, 129, 0.06); border: 1.5px solid rgba(16, 185, 129, 0.35);">
               <h3 class="pro-section-title" style="color: ${terpeneData?.color || '#10B981'}; font-size: 1.15rem;">
                 <span>🔬 Perfil Cromatográfico — Terpeno Dominante: <strong>${terpeneData?.name || strain.dominantTerpene}</strong></span>
               </h3>
               
-              <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.8rem; margin-top: 1.2rem;">
+              <div class="pro-terp-vape-grid">
                 <div>
                   <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 600;">Espectro relativo de terpenos en floración seca:</p>
                   ${terpeneBars}
@@ -1116,9 +1137,9 @@ class CannaAppMAX {
             </div>
 
             <!-- SABORES, EFECTOS Y ACTIVIDADES -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-bottom: 2rem;">
+            <div class="pro-tri-cards-grid">
               
-              <div class="pro-section-card" style="margin-bottom: 0; border-radius: 16px !important;">
+              <div class="pro-section-card" style="margin-bottom: 0;">
                 <h4 style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
                   👅 Sabores & Aromas
                 </h4>
@@ -1130,7 +1151,7 @@ class CannaAppMAX {
                 </div>
               </div>
 
-              <div class="pro-section-card" style="margin-bottom: 0; border-radius: 16px !important;">
+              <div class="pro-section-card" style="margin-bottom: 0;">
                 <h4 style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
                   ✨ Efectos Sensoriales
                 </h4>
@@ -1142,7 +1163,7 @@ class CannaAppMAX {
                 </div>
               </div>
 
-              <div class="pro-section-card" style="margin-bottom: 0; border-radius: 16px !important;">
+              <div class="pro-section-card" style="margin-bottom: 0;">
                 <h4 style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
                   🎯 Actividades Ideales
                 </h4>
@@ -1161,13 +1182,13 @@ class CannaAppMAX {
         </div>
 
         <!-- FOOTER ACCIONES FLOTANTE FIJO -->
-        <div class="pro-floating-footer" style="border-radius: 0 0 18px 18px !important;">
+        <div class="pro-floating-footer">
           <div style="font-size: 0.85rem; color: var(--text-muted);">
             <span>🏛️ Banco Criador: <strong style="color: #fff;">${strain.bank}</strong></span>
           </div>
 
           <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-            <button class="btn btn-emerald-lg" style="border-radius: 12px !important;"
+            <button class="btn btn-emerald-lg"
               onclick="document.dispatchEvent(new CustomEvent('generateMission', { detail: { strainId: '${strain.id}', activityId: '${strain.activities?.[0] || 'nature_walk'}' } })); document.getElementById('strain-detail-modal').close();">
               🚀 Generar Misión IA
             </button>
@@ -1371,6 +1392,367 @@ class CannaAppMAX {
     setTimeout(() => {
       toast.remove();
     }, 3500);
+  }
+
+  /* ========================================================
+     MÓDULO INTERACTIVO: COMPARADOR CARA A CARA (DARK GLASS)
+     ======================================================== */
+  initCaraACaraComparator() {
+    this.btnOpenCompareModal?.addEventListener('click', () => {
+      this.openCompareModal();
+    });
+
+    this.btnClearCompare?.addEventListener('click', () => {
+      this.clearComparedStrains();
+    });
+
+    this.updateCompareUI();
+  }
+
+  toggleCompareStrain(strainId) {
+    if (!strainId) return;
+    const index = this.comparedStrains.indexOf(strainId);
+
+    if (index > -1) {
+      this.comparedStrains.splice(index, 1);
+      this.showToast('⚖️ Cepa removida del comparador.');
+    } else {
+      if (this.comparedStrains.length >= 3) {
+        this.showToast('⚠️ Máximo 3 cepas simultáneas. Deselecciona una para añadir otra.');
+        return;
+      }
+      this.comparedStrains.push(strainId);
+      const strain = STRAINS_DATABASE.find(s => s.id === strainId);
+      const name = strain ? strain.name : 'Cepa';
+      this.showToast(`⚖️ ${name} añadida al comparador (${this.comparedStrains.length}/3)`);
+    }
+
+    try {
+      localStorage.setItem('cannacatalog_compared', JSON.stringify(this.comparedStrains));
+    } catch (e) {}
+
+    this.updateCompareUI();
+    if (this.compareModal && this.compareModal.open) {
+      this.renderCompareModal();
+    }
+  }
+
+  clearComparedStrains() {
+    this.comparedStrains = [];
+    try {
+      localStorage.setItem('cannacatalog_compared', JSON.stringify([]));
+    } catch (e) {}
+    this.updateCompareUI();
+    if (this.compareModal && this.compareModal.open) {
+      this.renderCompareModal();
+    }
+    this.showToast('🗑️ Comparador vaciado.');
+  }
+
+  updateCompareUI() {
+    const count = (this.comparedStrains || []).length;
+
+    // Actualizar botones de catálogo
+    document.querySelectorAll('.btn-compare-toggle').forEach(btn => {
+      const id = btn.getAttribute('data-strain-id');
+      const active = this.comparedStrains.includes(id);
+      if (active) {
+        btn.classList.add('active');
+        btn.innerHTML = '⚖️ Comparando';
+        btn.title = 'Quitar del comparador';
+      } else {
+        btn.classList.remove('active');
+        btn.innerHTML = '⚖️ Comparar';
+        btn.title = 'Comparar (hasta 3 cepas)';
+      }
+    });
+
+    // Actualizar dock flotante
+    if (this.compareDock) {
+      if (count > 0) {
+        this.compareDock.style.display = 'block';
+        if (this.compareDockCounter) {
+          this.compareDockCounter.textContent = `${count}/3 cepas`;
+        }
+
+        if (this.compareDockSlots) {
+          this.compareDockSlots.innerHTML = this.comparedStrains.map(id => {
+            const strain = STRAINS_DATABASE.find(s => s.id === id);
+            if (!strain) return '';
+            const thumb = strain.image || '';
+            return `
+              <div class="compare-dock-slot" title="${strain.name} (${strain.bank})">
+                ${thumb ? `<img src="${thumb}" alt="${strain.name}" class="compare-dock-thumb" />` : `<span style="font-size:1.1rem;">🌿</span>`}
+                <span class="compare-dock-name">${strain.name}</span>
+                <button class="compare-dock-remove" onclick="event.stopPropagation(); window.app && window.app.toggleCompareStrain('${strain.id}')" title="Quitar">✕</button>
+              </div>
+            `;
+          }).join('');
+        }
+      } else {
+        this.compareDock.style.display = 'none';
+      }
+    }
+  }
+
+  calculateIndicaSativa(strain) {
+    if (!strain) return { indica: 50, sativa: 50, label: '50% Índica / 50% Sativa' };
+    const text = `${strain.name} ${strain.genetics || ''} ${strain.aka || ''} ${strain.description || ''}`.toLowerCase();
+    
+    const mIndica = text.match(/(\d{1,3})\s*%\s*(?:índica|indica)/);
+    const mSativa = text.match(/(\d{1,3})\s*%\s*sativa/);
+
+    let indica = 50;
+    let sativa = 50;
+
+    if (mIndica) {
+      indica = Math.min(100, Math.max(0, parseInt(mIndica[1])));
+      sativa = 100 - indica;
+    } else if (mSativa) {
+      sativa = Math.min(100, Math.max(0, parseInt(mSativa[1])));
+      indica = 100 - sativa;
+    } else {
+      const sp = (strain.species || '').toLowerCase();
+      if (sp === 'indica') {
+        indica = 80;
+        sativa = 20;
+      } else if (sp === 'sativa') {
+        indica = 20;
+        sativa = 80;
+      } else {
+        indica = 50;
+        sativa = 50;
+      }
+    }
+
+    return {
+      indica,
+      sativa,
+      label: `${indica}% Índica / ${sativa}% Sativa`
+    };
+  }
+
+  calculateDifficulty(strain) {
+    const days = parseInt(strain.floweringDays) || 60;
+    const sp = (strain.species || '').toLowerCase();
+
+    if (days <= 56 || sp === 'indica') {
+      return { level: 'Baja', label: 'Principiante', badgeClass: 'badge-diff-easy' };
+    } else if (days <= 70 || sp.includes('híb') || sp.includes('hib')) {
+      return { level: 'Media', label: 'Intermedia', badgeClass: 'badge-diff-med' };
+    } else {
+      return { level: 'Alta', label: 'Experto', badgeClass: 'badge-diff-hard' };
+    }
+  }
+
+  openCompareModal() {
+    if (!this.comparedStrains || this.comparedStrains.length === 0) {
+      this.showToast('Selecciona al menos 1 variedad con el botón ⚖️ Comparar.');
+      return;
+    }
+    this.renderCompareModal();
+    if (this.compareModal && typeof this.compareModal.showModal === 'function') {
+      if (!this.compareModal.open) this.compareModal.showModal();
+    }
+  }
+
+  closeCompareModal() {
+    if (this.compareModal && this.compareModal.open) {
+      this.compareModal.close();
+    }
+  }
+
+  renderCompareModal() {
+    if (!this.compareModalContent) return;
+
+    const strains = (this.comparedStrains || [])
+      .map(id => STRAINS_DATABASE.find(s => s.id === id))
+      .filter(Boolean);
+
+    const slotsCount = 3;
+    const emptySlotsNeeded = slotsCount - strains.length;
+
+    let columnsHTML = strains.map(strain => {
+      const ratio = this.calculateIndicaSativa(strain);
+      const diff = this.calculateDifficulty(strain);
+      const terpeneData = TERPENES_INFO[strain.dominantTerpene];
+      const stars = '★'.repeat(Math.round(strain.rating)) + '☆'.repeat(5 - Math.round(strain.rating));
+      const floweringWeeks = Math.round((parseInt(strain.floweringDays) || 60) / 7);
+      
+      const thcVal = parseFloat(strain.thc) || 0;
+      const thcPct = Math.min(100, Math.round((thcVal / 35) * 100));
+
+      const cbdVal = parseFloat(strain.cbd) || 0;
+      const cbdPct = Math.min(100, Math.max(8, Math.round((cbdVal / 15) * 100)));
+
+      const subTerpenes = Object.entries(strain.terpenes || {})
+        .filter(([k]) => k !== strain.dominantTerpene)
+        .slice(0, 2)
+        .map(([k, pct]) => `<span style="font-size:0.72rem; color:var(--text-muted);">${TERPENES_INFO[k]?.name || k}: ${pct}%</span>`)
+        .join(' · ');
+
+      return `
+        <div class="compare-column">
+          <!-- Botón quitar de la comparativa -->
+          <button class="compare-col-remove-btn" onclick="window.app && window.app.toggleCompareStrain('${strain.id}')" title="Quitar de la comparativa">✕</button>
+
+          <!-- Cabecera de la Cepa -->
+          <div class="compare-col-head">
+            <div class="compare-col-thumb-wrap" onclick="window.app && window.app.openImageLightbox('${strain.image || ''}', '${strain.name.replace(/'/g, "\\'")}', '${strain.bank.replace(/'/g, "\\'")}')" title="🔍 Ampliar fotografía botánica HD">
+              ${strain.image ? `<img src="${strain.image}" alt="${strain.name}" class="compare-col-thumb" onerror="this.style.display='none';" />` : ''}
+              <div class="compare-col-thumb-overlay">🔍</div>
+            </div>
+            <div class="compare-col-info">
+              <div class="compare-col-bank">🏛️ ${strain.bank}</div>
+              <h3 class="compare-col-name">${strain.name}</h3>
+              <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
+                <span class="badge-species ${strain.species.toLowerCase()}" style="font-size:0.7rem; padding: 2px 8px; border-radius:50px !important;">${strain.species}</span>
+                <span style="font-size: 0.74rem; color: #F59E0B; font-weight: 700;">${stars}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1. Cannabinoides (THC & CBD) -->
+          <div class="compare-metric-box">
+            <div class="compare-metric-title">
+              <span>🧪 Cannabinoides</span>
+              <span style="color:#FCD34D;">${thcVal}% THC</span>
+            </div>
+            
+            <div class="compare-cannabinoid-row">
+              <div class="compare-cannabinoid-label">
+                <span style="color:#A7F3D0;">🔥 THC (Psicoactividad)</span>
+                <span style="color:#fff;">${thcVal}%</span>
+              </div>
+              <div class="compare-bar-track">
+                <div class="compare-bar-fill-thc" style="width: ${thcPct}%;"></div>
+              </div>
+            </div>
+
+            <div class="compare-cannabinoid-row" style="margin-top:8px;">
+              <div class="compare-cannabinoid-label">
+                <span style="color:#93C5FD;">💧 CBD (Bienestar Físico)</span>
+                <span style="color:#fff;">${cbdVal}%</span>
+              </div>
+              <div class="compare-bar-track">
+                <div class="compare-bar-fill-cbd" style="width: ${cbdPct}%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Proporción Índica / Sativa -->
+          <div class="compare-metric-box">
+            <div class="compare-metric-title">
+              <span>🧬 Proporción Genética</span>
+              <span style="font-size:0.74rem; color:#E2E8F0;">${ratio.label}</span>
+            </div>
+            <div class="compare-species-track">
+              <div class="compare-species-indica" style="width: ${ratio.indica}%;" title="${ratio.indica}% Índica"></div>
+              <div class="compare-species-sativa" style="width: ${ratio.sativa}%;" title="${ratio.sativa}% Sativa"></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:0.7rem; margin-top:5px; color:var(--text-muted); font-weight:600;">
+              <span style="color:#C4B5FD;">🟣 Índica (${ratio.indica}%)</span>
+              <span style="color:#FCD34D;">🟠 Sativa (${ratio.sativa}%)</span>
+            </div>
+          </div>
+
+          <!-- 3. Semanas de Floración & Dificultad -->
+          <div class="compare-metric-box">
+            <div class="compare-metric-title">
+              <span>⏱️ Cultivo & Floración</span>
+              <span class="${diff.badgeClass}">${diff.level} (${diff.label})</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px;">
+              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center;">
+                <div style="font-size:0.7rem; color:var(--text-muted);">Floración</div>
+                <strong style="color:#fff; font-size:0.86rem;">${floweringWeeks} sem</strong>
+                <div style="font-size:0.68rem; color:#A7F3D0;">(${strain.floweringDays} días)</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center;">
+                <div style="font-size:0.7rem; color:var(--text-muted);">Rendimiento</div>
+                <strong style="color:#fff; font-size:0.86rem;">${strain.yieldIndoor} g/m²</strong>
+                <div style="font-size:0.68rem; color:#C4B5FD;">${strain.yieldOutdoor} g/pl</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Perfil de Terpenos & Aromas -->
+          <div class="compare-metric-box">
+            <div class="compare-metric-title">
+              <span>🌿 Terpenos & Aromas</span>
+              <span style="color:${terpeneData?.color || '#10B981'}; font-weight:800;">${terpeneData?.name || strain.dominantTerpene}</span>
+            </div>
+            <div style="margin-bottom:6px;">
+              <span style="font-size:0.75rem; color:#fff; font-weight:600;">Aroma:</span>
+              <span style="font-size:0.75rem; color:var(--text-muted); font-style:italic;">${terpeneData?.aroma || 'Perfil botánico complejo'}</span>
+            </div>
+            ${subTerpenes ? `<div style="margin-bottom:6px;">${subTerpenes}</div>` : ''}
+            <div style="display:flex; flex-wrap:wrap; gap:4px; margin-top:6px;">
+              ${(strain.flavors || []).map(f => `<span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:50px !important; padding:2px 8px; font-size:0.72rem; color:#fff;">👅 ${f}</span>`).join('')}
+            </div>
+          </div>
+
+          <!-- 5. Efectos Destacados -->
+          <div class="compare-metric-box">
+            <div class="compare-metric-title">
+              <span>⚡ Efectos Destacados</span>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:5px;">
+              ${(strain.effects || []).map(e => `<span style="background:rgba(16,185,129,0.14); border:1px solid rgba(16,185,129,0.3); border-radius:50px !important; padding:3px 9px; font-size:0.74rem; font-weight:700; color:#6EE7B7;">⚡ ${e}</span>`).join('')}
+            </div>
+          </div>
+
+          <!-- 6. Linaje Genético -->
+          <div class="compare-metric-box" style="margin-top:auto;">
+            <div class="compare-metric-title">
+              <span>📜 Linaje Genético</span>
+              <span style="font-size:0.72rem; color:var(--text-muted);">${strain.origin || 'Origen verificado'}</span>
+            </div>
+            <p style="font-size:0.78rem; color:#E2E8F0; margin:0 0 6px 0; font-weight:600; line-height:1.4;">
+              🧬 ${strain.genetics || strain.aka || 'Selección de élite'}
+            </p>
+            <button class="btn btn-primary" style="width:100%; padding:6px 12px; font-size:0.78rem; border-radius:8px !important; margin-top:6px;" onclick="document.getElementById('compare-modal').close(); document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
+              📋 Ver Ficha Completa
+            </button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    for (let i = 0; i < emptySlotsNeeded; i++) {
+      columnsHTML += `
+        <div class="compare-empty-col">
+          <div class="compare-empty-icon">⚖️</div>
+          <h4 style="font-size:1.05rem; font-weight:800; color:#fff; margin:0;">Ranura Disponible</h4>
+          <p class="compare-empty-text">Añade otra variedad desde el catálogo para contrastar sus terpenos, cannabinoides y genética frente a frente.</p>
+          <button class="btn btn-outline" style="border-radius:10px !important; font-size:0.8rem; padding:8px 16px;" onclick="document.getElementById('compare-modal').close();">
+            🔍 Explorar Catálogo
+          </button>
+        </div>
+      `;
+    }
+
+    this.compareModalContent.innerHTML = `
+      <div class="compare-modal-wrapper">
+        <div class="compare-modal-header">
+          <div>
+            <h2 class="compare-modal-title">
+              <span>⚖️</span> Comparador Botánico Cara a Cara
+              <span style="font-size:0.8rem; background:rgba(16,185,129,0.2); color:#10B981; border:1px solid rgba(16,185,129,0.4); padding:3px 10px; border-radius:50px !important; font-weight:800;">${strains.length}/3 cepas</span>
+            </h2>
+            <div class="compare-modal-subtitle">Análisis analítico y organoléptico en columnas paralelas con Dark Glassmorphism</div>
+          </div>
+          <div style="display:flex; gap:8px; align-items:center;">
+            ${strains.length > 0 ? `<button class="btn btn-outline-stash" style="padding:6px 12px; font-size:0.76rem; border-radius:8px !important;" onclick="window.app && window.app.clearComparedStrains()">🗑️ Limpiar Todo</button>` : ''}
+            <button class="close-modal-btn" onclick="document.getElementById('compare-modal').close()" title="Cerrar (ESC)" style="width:34px; height:34px; border-radius:50% !important; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.2); color:#fff; cursor:pointer;">✕</button>
+          </div>
+        </div>
+
+        <div class="compare-grid">
+          ${columnsHTML}
+        </div>
+      </div>
+    `;
   }
 }
 
