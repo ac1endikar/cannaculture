@@ -3725,9 +3725,14 @@ dialog.lightbox-dialog[open] {
   color: #FCA5A5;
   border-radius: 12px !important;
   padding: 8px 12px;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
 }
 
 .btn-compare-clear:hover {
@@ -4033,6 +4038,36 @@ dialog.lightbox-dialog[open] {
   }
   .compare-dock-name {
     max-width: 80px;
+  }
+}
+
+@media (max-width: 540px) {
+  .compare-dock {
+    padding: 6px 10px;
+    bottom: 10px;
+    width: 96vw;
+  }
+  .compare-dock-title {
+    display: none;
+  }
+  .compare-dock-slots {
+    gap: 5px;
+  }
+  .compare-dock-slot {
+    padding: 2px 6px 2px 4px;
+    max-width: 110px;
+  }
+  .compare-dock-name {
+    max-width: 55px;
+    font-size: 0.72rem;
+  }
+  .btn-compare-launch {
+    padding: 6px 10px !important;
+    font-size: 0.76rem !important;
+  }
+  .btn-compare-clear {
+    padding: 6px 8px;
+    font-size: 0.76rem;
   }
 }
 

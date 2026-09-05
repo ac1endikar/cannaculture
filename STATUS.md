@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-05 16:45  
+> **Última actualización:** 2026-09-05 17:15  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1`)
 
 ---
@@ -8,7 +8,7 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 402 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js`.
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_mobile_fix_v126`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_compare_v127`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
@@ -20,16 +20,28 @@
   - 402/402 referencias en `js/data.js` migradas a `.webp` (0 imágenes faltantes).
   - Lazy Loading (`loading="lazy"` + `decoding="async"`) activo en tarjetas del catálogo.
 - **Mobile Responsive Engine (Ficha Técnica):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
+- **Módulo Comparador Cara a Cara (v127):** **100% COMPLETADO Y OPERATIVO**.
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-05)
-1. ✅ **Optimización Mobile Responsive del Modal de Ficha Técnica (16:45):**
+1. ✅ **Implementación Fase 2 — Módulo Comparador Cara a Cara (17:15):**
+   - **Botón Toggle en Tarjetas de Cepa:** Integrado en el footer de cada tarjeta del catálogo con estados visuales activos ("⚖️ Comparando") e inactivos ("⚖️ Comparar").
+   - **Gestión de Estado Reactiva:** Array de cepas seleccionadas con límite estricto de máximo 3 variedades. Disparo de Toast defensivo si el usuario intenta seleccionar una 4ª variedad sin antes desmarcar alguna.
+   - **Dock Flotante Inferior (`#compare-floating-dock`):** Diseñado con estética nativa *Dark Glassmorphism* (fondo `#060b09f0`, blur 28px, bordes esmeralda). Contiene contador dinámico, miniaturas circulares HD con botón individual para remover, botón de vaciado rápido "🗑️ Limpiar" y botón de lanzamiento directo "⚖️ Comparar Cara a Cara (N/3)". Adaptado para dispositivos móviles (≤540px).
+   - **Modal Cara a Cara en Columnas Paralelas (`#compare-modal`):**
+     * Fotografía botánica macro HD con zoom lightbox interactivo y banco criador.
+     * Barras visuales calibradas con precisión milimétrica: THC (escala 0-35%) y CBD (escala 0-20%).
+     * Indicador visual de proporción genética Índica / Sativa.
+     * Tiempo de floración (semanas y días) junto con cálculo automático de dificultad (Baja / Media / Alta) mediante badges cromáticos.
+     * Perfil organoléptico: Terpeno principal con cromatografía oficial (`TERPENES_INFO`), terpenos secundarios, aromas, descriptores de sabor y linaje botánico/genético completo.
+   - **Build y Versión:** Bundle recompilado vía `python scripts/build_bundle.py` (608,331 bytes) y versión sincronizada en `index.html` a `?v=2026_compare_v127` en CSS y JS.
+
+2. ✅ **Optimización Mobile Responsive del Modal de Ficha Técnica (16:45):**
    - **Solapamiento superior resuelto:** Botón de cierre (✕) reubicado a `top: 10px; right: 10px; z-index: 60` en esfera dark glass de 34×34 px y badge "🔍 Toca para ver foto HD" a `top: 10px; left: 10px` con margen de seguridad, evitando colisión con títulos o badges.
    - **Eliminación de truncamientos en métricas (2 cols):** Padding ajustado a `8px 10px`, labels con `font-size: 0.70rem` flexible, valores a `1.15rem` y unidades `.pro-metric-unit` flexibles. Palabras como "CULTIVO OUTDOOR" y "1200 g/planta" se leen completas sin corte.
    - **Solapamiento inferior y scroll arreglado:** Incrementado el `padding-bottom` de `.pro-body-scrollable` a `110px !important` con `overscroll-behavior: contain` y `overflow-y: auto`, garantizando que el footer fijo "🚀 Generar Misión IA" nunca tape ningún dato al llegar al final.
    - **Ajuste de viewport en compactos (<400px):** `width: 95vw-96vw`, `height: 90vh`, `padding: 0 !important;` en el diálogo para que `.pro-spec-sheet` se ajuste con un borde verde esmeralda único y perfectamente alineado.
-   - **Versionado:** `js/bundle.js` recompilado exitosamente y versión actualizada a `?v=2026_mobile_fix_v126` en `index.html`.
 
 2. ✅ **Optimización WebP y Lazy Loading en Catálogo (16:30):**
    - Script `scripts/convert_to_webp.py` ejecutado para convertir 955 imágenes a WebP (calidad 85, resolución nativa 1:1).

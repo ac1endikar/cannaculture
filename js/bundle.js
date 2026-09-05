@@ -13538,6 +13538,19 @@ class CannaAppMAX {
       this.clearComparedStrains();
     });
 
+    if (this.compareModal) {
+      this.compareModal.addEventListener('click', (e) => {
+        const rect = this.compareModal.getBoundingClientRect();
+        const isInDialog = (
+          rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+          rect.left <= e.clientX && e.clientX <= rect.left + rect.width
+        );
+        if (!isInDialog) {
+          this.closeCompareModal();
+        }
+      });
+    }
+
     this.updateCompareUI();
   }
 
@@ -13607,6 +13620,10 @@ class CannaAppMAX {
           this.compareDockCounter.textContent = `${count}/3 cepas`;
         }
 
+        if (this.btnOpenCompareModal) {
+          this.btnOpenCompareModal.innerHTML = `⚖️ Comparar Cara a Cara (${count}/3)`;
+        }
+
         if (this.compareDockSlots) {
           this.compareDockSlots.innerHTML = this.comparedStrains.map(id => {
             const strain = STRAINS_DATABASE.find(s => s.id === id);
@@ -13623,6 +13640,9 @@ class CannaAppMAX {
         }
       } else {
         this.compareDock.style.display = 'none';
+        if (this.btnOpenCompareModal) {
+          this.btnOpenCompareModal.innerHTML = `⚖️ Comparar Cara a Cara (0/3)`;
+        }
       }
     }
   }
@@ -13715,7 +13735,7 @@ class CannaAppMAX {
       const thcPct = Math.min(100, Math.round((thcVal / 35) * 100));
 
       const cbdVal = parseFloat(strain.cbd) || 0;
-      const cbdPct = Math.min(100, Math.max(8, Math.round((cbdVal / 15) * 100)));
+      const cbdPct = Math.min(100, Math.max(cbdVal > 0 ? 5 : 0, Math.round((cbdVal / 20) * 100)));
 
       const subTerpenes = Object.entries(strain.terpenes || {})
         .filter(([k]) => k !== strain.dominantTerpene)
@@ -13748,26 +13768,26 @@ class CannaAppMAX {
           <div class="compare-metric-box">
             <div class="compare-metric-title">
               <span>🧪 Cannabinoides</span>
-              <span style="color:#FCD34D;">${thcVal}% THC</span>
+              <span style="color:#FCD34D;">${thcVal}% THC · ${cbdVal}% CBD</span>
             </div>
             
             <div class="compare-cannabinoid-row">
               <div class="compare-cannabinoid-label">
-                <span style="color:#A7F3D0;">🔥 THC (Psicoactividad)</span>
-                <span style="color:#fff;">${thcVal}%</span>
+                <span style="color:#A7F3D0;">🔥 THC (${thcVal}%)</span>
+                <span style="color:var(--text-muted); font-size:0.72rem;">Escala 0-35%</span>
               </div>
               <div class="compare-bar-track">
-                <div class="compare-bar-fill-thc" style="width: ${thcPct}%;"></div>
+                <div class="compare-bar-fill-thc" style="width: ${thcPct}%;" title="THC: ${thcVal}% (máx 35%)"></div>
               </div>
             </div>
 
             <div class="compare-cannabinoid-row" style="margin-top:8px;">
               <div class="compare-cannabinoid-label">
-                <span style="color:#93C5FD;">💧 CBD (Bienestar Físico)</span>
-                <span style="color:#fff;">${cbdVal}%</span>
+                <span style="color:#93C5FD;">💧 CBD (${cbdVal}%)</span>
+                <span style="color:var(--text-muted); font-size:0.72rem;">Escala 0-20%</span>
               </div>
               <div class="compare-bar-track">
-                <div class="compare-bar-fill-cbd" style="width: ${cbdPct}%;"></div>
+                <div class="compare-bar-fill-cbd" style="width: ${cbdPct}%;" title="CBD: ${cbdVal}% (máx 20%)"></div>
               </div>
             </div>
           </div>
