@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-05 17:45  
+> **Última actualización:** 2026-09-05 18:48  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1`)
 
 ---
@@ -20,20 +20,21 @@
   - 402/402 referencias en `js/data.js` migradas a `.webp` (0 imágenes faltantes).
   - Lazy Loading (`loading="lazy"` + `decoding="async"`) activo en tarjetas del catálogo.
 - **Mobile Responsive Engine (Ficha Técnica):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
-- **Módulo Comparador Emergente Dark Glass (v131):** **100% COMPLETADO Y OPERATIVO** (Alineación perfecta de alturas y textos en columnas, min-heights homogéneos, distribución equitativa `flex: 1 1 0`).
+- **Módulo Comparador Emergente Dark Glass (v131):** **100% COMPLETADO Y OPERATIVO** (Alineación perfecta de alturas y textos mediante selectores directos por atributos y clases reales).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-05)
-1. ✅ **Alineación de Alturas y Textos en Columnas del Comparador (#compare-modal) (v131) (17:45):**
-   - **Cabecera de Sección (Cultivo & Floración):** `.compare-metric-title` estandarizado a `display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 38px;`. Título protegido con `font-size: 0.78rem; white-space: nowrap; flex-shrink: 1; overflow: hidden; text-overflow: ellipsis;` y pastillas de dificultad calibradas con `white-space: nowrap; flex-shrink: 0; font-size: 0.70rem; padding: 3px 8px;`, impidiendo saltos de línea desalineados.
-   - **Alturas Homogéneas por Fila:**
-     * Contenedor de métricas de cultivo (`.compare-grow-metrics`): `min-height: 80px;`.
-     * Bloque de texto "Aroma" (`.compare-aroma-block`): `min-height: 42px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;` para reservar exactamente 2 líneas y evitar descalces.
-     * Bloque de lista de terpenos (`.compare-terpenes-list`): `min-height: 24px;` con preservación de espacio.
-     * Contenedor de píldoras (`.compare-pills-container`, `.compare-flavors-wrap`, `.compare-effects-wrap`): `min-height: 68px; align-content: flex-start;`.
-   - **Distribución Equitativa de Columnas:** `.compare-column` y `.compare-empty-col` con `flex: 1 1 0; min-width: 280px;` para asegurar un ancho idéntico en todas las columnas sin compresiones asimétricas.
-   - **Build y Versión:** Bundle recompilado con `python scripts/build_bundle.py` (607,685 bytes) y versión sincronizada en `index.html` a `?v=2026_compare_grid_v131` en CSS y JS.
+1. ✅ **Alineación de Alturas y Textos en Columnas del Comparador (#compare-modal) con Selectores Reales (v131) (17:52):**
+   - **Selectores Directos por Atributos y Clases Reales:**
+     * Columnas: `#compare-modal .compare-grid > *`, `#compare-modal [class*="compare-col"]` calibradas a `flex: 1 1 0% !important; min-width: 290px !important; box-sizing: border-box !important;`.
+     * Cabecera Cultivo & Floración: `#compare-modal [class*="cultivo"]`, `#compare-modal [class*="floracion"]` con `display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 6px !important; min-height: 38px !important;`.
+     * Títulos: `#compare-modal .compare-card-section-title`, `#compare-modal .compare-metric-title > span:first-child` protegidos con `white-space: nowrap !important; font-size: 0.75rem !important; overflow: hidden !important; text-overflow: ellipsis !important;`.
+     * Pastillas de dificultad: `#compare-modal [class*="badge"]`, `#compare-modal [class*="difficulty"]`, `#compare-modal [class*="diff"]` con `white-space: nowrap !important; flex-shrink: 0 !important; font-size: 0.68rem !important; padding: 2px 7px !important;`.
+     * Métricas numéricas de cultivo: `#compare-modal [class*="grow-grid"]`, `#compare-modal [class*="metrics"]` con `min-height: 85px !important; display: grid !important; grid-template-columns: 1fr 1fr !important; align-items: center !important;`.
+     * Bloque de texto de aromas: `#compare-modal [class*="aroma"]` fijado a `min-height: 44px !important; line-height: 1.35 !important; display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; overflow: hidden !important;`.
+     * Lista de terpenos y tags: `#compare-modal [class*="terpenes-list"]` con `min-height: 26px !important;` y tags `#compare-modal [class*="tags-container"]`, `#compare-modal [class*="pills-container"]` con `min-height: 72px !important;`.
+   - **Build y Versión:** Bundle recompilado con `python scripts/build_bundle.py` (608,074 bytes) y versión sincronizada en `index.html` a `?v=2026_compare_grid_v131` en CSS y JS. Commit `8d91f18` en `origin/main`.
 
 2. ✅ **Centrado Perfecto y Ajuste Responsive del Modal Comparador (#compare-modal) (v130) (17:35):**
    - **Centrado Absoluto en Viewport:** Configurado `#compare-modal[open]` y `dialog.compare-dialog[open]` con `position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0 auto; width: min(94vw, 1200px); max-height: 90vh; display: flex; flex-direction: column; border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.4); box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(16, 185, 129, 0.2);`.
