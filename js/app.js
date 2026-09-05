@@ -1747,7 +1747,7 @@ class CannaAppMAX {
           </div>
         </div>
 
-        <div class="compare-grid">
+        <div class="compare-grid compare-columns-container">
           ${columnsHTML}
         </div>
       </div>

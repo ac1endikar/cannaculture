@@ -3715,46 +3715,49 @@ dialog.lightbox-dialog[open] {
 }
 
 /* ======================================================
-   MODAL EMERGENTE DE COMPARACIÓN (#compare-modal)
-   Dark Glassmorphism Centrado
+   MODAL EMERGENTE DE COMPARACIÓN (#compare-modal / .compare-dialog)
+   Centrado Perfecto y Dark Glassmorphism
    ====================================================== */
-#compare-modal[open] {
+#compare-modal[open],
+dialog.compare-dialog[open] {
   position: fixed !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-  max-width: 1240px !important;
-  width: min(1240px, 94vw) !important;
-  height: 90vh !important;
+  margin: 0 auto !important;
+  width: min(94vw, 1200px) !important;
+  max-width: 1200px !important;
+  height: auto !important;
   max-height: 90vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(16, 185, 129, 0.4) !important;
   background: rgba(8, 12, 11, 0.95) !important;
   backdrop-filter: blur(25px) !important;
   -webkit-backdrop-filter: blur(25px) !important;
-  border: 1px solid rgba(16, 185, 129, 0.4) !important;
-  border-radius: 24px !important;
-  box-shadow: 
-    0 30px 100px rgba(0, 0, 0, 0.95),
-    0 0 50px rgba(16, 185, 129, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
-  padding: 1.4rem !important;
-  margin: 0 !important;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(16, 185, 129, 0.2) !important;
+  padding: 1.25rem !important;
   z-index: 999999 !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
   animation: modalPopCenter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
 }
 
-#compare-modal::backdrop {
-  background: rgba(0, 0, 0, 0.85) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
+#compare-modal::backdrop,
+dialog.compare-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
 
 .compare-modal-wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
+  max-height: calc(90vh - 2.5rem);
   overflow: hidden;
+  width: 100%;
 }
 
 .compare-modal-header {
@@ -3782,19 +3785,27 @@ dialog.lightbox-dialog[open] {
   margin-top: 3px;
 }
 
-.compare-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+.compare-grid,
+.compare-columns-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  gap: 16px !important;
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+  padding: 12px 6px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
   flex: 1;
-  overflow-y: auto;
-  padding-right: 6px;
 }
 
-.compare-grid::-webkit-scrollbar {
+.compare-grid::-webkit-scrollbar,
+.compare-columns-container::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
-.compare-grid::-webkit-scrollbar-thumb {
+.compare-grid::-webkit-scrollbar-thumb,
+.compare-columns-container::-webkit-scrollbar-thumb {
   background: rgba(16, 185, 129, 0.35);
   border-radius: 10px;
 }
@@ -4034,40 +4045,44 @@ dialog.lightbox-dialog[open] {
 }
 
 /* Responsive Grid para Columnas del Comparador */
-@media (max-width: 900px) {
-  .compare-grid {
-    display: flex !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    scroll-snap-type: x mandatory;
-    gap: 16px;
-    padding-bottom: 12px;
-  }
-  .compare-column,
-  .compare-empty-col {
-    min-width: 290px;
-    max-width: 330px;
-    flex: 0 0 85%;
-    scroll-snap-align: center;
-  }
-}
-
-@media (max-width: 600px) {
-  #compare-modal[open] {
-    width: 96vw !important;
-    height: 92vh !important;
-    max-height: 92vh !important;
-    padding: 1.1rem 0.9rem !important;
+@media (max-width: 768px) {
+  #compare-modal[open],
+  dialog.compare-dialog[open] {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 auto !important;
+    width: min(94vw, 1200px) !important;
+    max-width: 94vw !important;
+    padding: 1rem 0.75rem !important;
     border-radius: 20px !important;
   }
+
+  .compare-grid,
+  .compare-columns-container {
+    display: flex !important;
+    justify-content: flex-start !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 14px !important;
+    overflow-x: auto !important;
+    padding: 10px 4px !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+  }
+
   .compare-column,
   .compare-empty-col {
-    min-width: 270px;
-    flex: 0 0 92%;
+    min-width: 280px !important;
+    max-width: 320px !important;
+    flex: 0 0 85% !important;
+    scroll-snap-align: center !important;
   }
+
   .compare-modal-title {
     font-size: 1.15rem;
   }
+
   .btn-header-compare {
     padding: 5px 10px;
     font-size: 0.78rem;

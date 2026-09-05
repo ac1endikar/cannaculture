@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-05 17:30  
+> **Última actualización:** 2026-09-05 17:35  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1`)
 
 ---
@@ -8,7 +8,7 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 402 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js`.
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_modal_compare_v129`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_compare_center_v130`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
@@ -20,12 +20,19 @@
   - 402/402 referencias en `js/data.js` migradas a `.webp` (0 imágenes faltantes).
   - Lazy Loading (`loading="lazy"` + `decoding="async"`) activo en tarjetas del catálogo.
 - **Mobile Responsive Engine (Ficha Técnica):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
-- **Módulo Comparador Emergente Dark Glass (v129):** **100% COMPLETADO Y OPERATIVO** (Dock fijo eliminado, Sommelier IA 100% despejado).
+- **Módulo Comparador Emergente Dark Glass (v130):** **100% COMPLETADO Y OPERATIVO** (Centrado perfecto en viewport, diseño responsive y scroll-snap en móvil).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-05)
-1. ✅ **Rediseño del Módulo Comparador — Eliminación de Dock Fijo y Modal Emergente Dark Glass (17:30):**
+1. ✅ **Centrado Perfecto y Ajuste Responsive del Modal Comparador (#compare-modal) (v130) (17:35):**
+   - **Centrado Absoluto en Viewport:** Configurado `#compare-modal[open]` y `dialog.compare-dialog[open]` con `position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0 auto; width: min(94vw, 1200px); max-height: 90vh; display: flex; flex-direction: column; border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.4); box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(16, 185, 129, 0.2);`.
+   - **Backdrop Cinematic:** `background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(8px);`.
+   - **Contenedor Interno de Columnas (`.compare-grid / .compare-columns-container`):** En escritorio aplica centrado perfecto simétrico: `display: flex; justify-content: center; align-items: stretch; gap: 16px; overflow-x: auto; padding: 12px 6px; width: 100%;`.
+   - **Comportamiento Mobile Fluid (≤768px):** Transición automática a carrusel deslizable con `justify-content: flex-start; scroll-snap-type: x mandatory;`, y columnas fijadas en `min-width: 280px; max-width: 320px; flex: 0 0 85%; scroll-snap-align: center;`.
+   - **Build y Versión:** Bundle recompilado con `python scripts/build_bundle.py` (607,286 bytes) y versión sincronizada en `index.html` a `?v=2026_compare_center_v130` tanto en `<link rel="stylesheet">` como en `<script src="js/bundle.js">`.
+
+2. ✅ **Rediseño del Módulo Comparador — Eliminación de Dock Fijo y Modal Emergente Dark Glass (17:30):**
    - **Eliminación Total del Dock Inferior Fijo:** Removido `#compare-floating-dock` para desahogar por completo la vista inferior. El botón del Sommelier IA (`#ai-chat-trigger`) permanece inalterable en su posición natural (`bottom: 20px` en móviles, `bottom: 24px` en escritorio) sin empujes ni saltos de interfaz.
    - **Botón Disparador Discreto en Cabecera del Catálogo (`#btn-header-compare`):** Ubicado junto al contador de resultados en la cabecera del catálogo. Estilizado como una píldora Dark Glass con badge esmeralda dinámico (`N/3`). Al seleccionar o deseleccionar una cepa, el badge se actualiza y detona una suave animación de resplandor verde (`glow-pulse` vía `@keyframes compareGlow`).
    - **Modal Emergente Centrado (#compare-modal):** Ventana flotante limpia centrada en pantalla con fondo `rgba(8, 12, 11, 0.95)`, `backdrop-filter: blur(25px)`, borde fino verde esmeralda con resplandor difuminado y botón de cierre visible (✕). En móviles, las columnas de comparación se ordenan en un scroll horizontal táctil (`scroll-snap-type: x mandatory`).
