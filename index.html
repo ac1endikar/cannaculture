@@ -48,7 +48,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css?v=2026_compare_v127">
+  <link rel="stylesheet" href="css/styles.css?v=2026_dock_fix_v128">
 </head>
 
 <body>
@@ -970,29 +970,10 @@
        WIDGET FLOTANTE: AGENTE IA SOMMELIER
        ====================================================== -->
   <!-- Botón Gatillo Flotante -->
-  <button id="ai-chat-trigger" title="Hablar con Sommelier IA" style="
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 99999;
-    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-    color: #000;
-    font-weight: 900;
-    font-size: 0.92rem;
-    padding: 12px 20px;
-    border-radius: 50px !important;
-    border: 2px solid rgba(255,255,255,0.3);
-    box-shadow: 0 10px 30px rgba(16,185,129,0.4), 0 0 20px rgba(16,185,129,0.3);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  ">
-    <span style="font-size: 1.2rem;">🤖</span>
-    <span>Sommelier IA</span>
-    <span
-      style="background: #000; color: #10B981; font-size: 0.72rem; padding: 2px 6px; border-radius: 50px !important; font-weight: 800;">ONLINE</span>
+  <button id="ai-chat-trigger" class="sommelier-fab-btn" title="Hablar con Sommelier IA">
+    <span class="sommelier-fab-icon">🤖</span>
+    <span class="sommelier-fab-text">Sommelier IA</span>
+    <span class="sommelier-fab-status">ONLINE</span>
   </button>
 
   <!-- Ventana Flotante del Chat con la IA -->
@@ -1123,7 +1104,7 @@
       <div class="compare-dock-slots" id="compare-dock-slots"></div>
       <div class="compare-dock-actions">
         <button id="btn-open-compare-modal" class="btn btn-emerald-md btn-compare-launch">
-          ⚖️ Comparar Cara a Cara (0/3)
+          ⚖️ <span class="compare-btn-text-full">Comparar Cara a Cara</span><span class="compare-btn-text-short">Comparar</span> (0/3)
         </button>
         <button id="btn-clear-compare" class="btn btn-compare-clear" title="Limpiar todas las cepas seleccionadas">
           🗑️ Limpiar
@@ -1133,7 +1114,7 @@
   </div>
 
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=2026_compare_v127"></script>
+  <script src="js/bundle.js?v=2026_dock_fix_v128"></script>
 </body>
 
 </html>

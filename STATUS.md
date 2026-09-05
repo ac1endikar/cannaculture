@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-05 17:15  
+> **Última actualización:** 2026-09-05 17:22  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1`)
 
 ---
@@ -8,7 +8,7 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 402 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js`.
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_compare_v127`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_dock_fix_v128`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
@@ -20,12 +20,20 @@
   - 402/402 referencias en `js/data.js` migradas a `.webp` (0 imágenes faltantes).
   - Lazy Loading (`loading="lazy"` + `decoding="async"`) activo en tarjetas del catálogo.
 - **Mobile Responsive Engine (Ficha Técnica):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
-- **Módulo Comparador Cara a Cara (v127):** **100% COMPLETADO Y OPERATIVO**.
+- **Módulo Comparador Cara a Cara & HUD Táctil (v128):** **100% COMPLETADO Y OPERATIVO** (Cero colisiones con el Sommelier IA).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-05)
-1. ✅ **Implementación Fase 2 — Módulo Comparador Cara a Cara (17:15):**
+1. ✅ **Corrección de Superposición UI — Dock Comparador vs Botón Flotante Sommelier IA (17:22):**
+   - **Comportamiento Dinámico del Sommelier IA (`#ai-chat-trigger` / `.sommelier-fab-btn`):** Transición CSS suave `bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease`. Al activarse el comparador (clase reactiva `.compare-dock-visible` en `document.body`), el botón del Sommelier se desplaza automáticamente hacia arriba a `bottom: 110px !important;` en móviles anclado a la derecha (margen de 16px), con `z-index: 100` y sombra con blur esmeralda preservada, evitando cualquier solapamiento con los controles de comparación.
+   - **Refinamiento del Dock Comparador como HUD Táctil (`#compare-floating-dock`):**
+     * Fondo *Dark Glassmorphism* `rgba(6, 11, 9, 0.92)` con `backdrop-filter: blur(20px)`, borde superior `1px solid rgba(16, 185, 129, 0.35)` y sombra envolvente `0 -8px 30px rgba(0, 0, 0, 0.8)`.
+     * Safe-area padding para dispositivos modernos: `padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));`.
+     * Layout horizontal optimizado en móvil: Cabecera compacta a la izquierda (icono `⚖️` + badge contador `N/3`), carrusel horizontal táctil de chips con miniaturas HD en el centro, y a la derecha botón brillante de lanzamiento "⚖️ Comparar (N/3)" junto a botón de vaciado "🗑️ Limpiar".
+   - **Build y Versión:** Bundle recompilado vía `python scripts/build_bundle.py` (608,885 bytes) y versión sincronizada en `index.html` a `?v=2026_dock_fix_v128` tanto en `<link rel="stylesheet">` como en `<script src="js/bundle.js">`.
+
+2. ✅ **Implementación Fase 2 — Módulo Comparador Cara a Cara (17:15):**
    - **Botón Toggle en Tarjetas de Cepa:** Integrado en el footer de cada tarjeta del catálogo con estados visuales activos ("⚖️ Comparando") e inactivos ("⚖️ Comparar").
    - **Gestión de Estado Reactiva:** Array de cepas seleccionadas con límite estricto de máximo 3 variedades. Disparo de Toast defensivo si el usuario intenta seleccionar una 4ª variedad sin antes desmarcar alguna.
    - **Dock Flotante Inferior (`#compare-floating-dock`):** Diseñado con estética nativa *Dark Glassmorphism* (fondo `#060b09f0`, blur 28px, bordes esmeralda). Contiene contador dinámico, miniaturas circulares HD con botón individual para remover, botón de vaciado rápido "🗑️ Limpiar" y botón de lanzamiento directo "⚖️ Comparar Cara a Cara (N/3)". Adaptado para dispositivos móviles (≤540px).

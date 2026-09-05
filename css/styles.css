@@ -2504,6 +2504,45 @@ input[type="file"].file-input::file-selector-button:hover {
 }
 
 /* ======================================================
+   BOTÓN FLOTANTE: SOMMELIER IA (FAB)
+   ====================================================== */
+#ai-chat-trigger,
+.sommelier-fab-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: #000;
+  font-weight: 900;
+  font-size: 0.92rem;
+  padding: 12px 20px;
+  border-radius: 50px !important;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4), 0 0 20px rgba(16, 185, 129, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease, box-shadow 0.2s ease;
+}
+
+#ai-chat-trigger:hover,
+.sommelier-fab-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(16, 185, 129, 0.55), 0 0 25px rgba(16, 185, 129, 0.4);
+}
+
+.sommelier-fab-status {
+  background: #000;
+  color: #10B981;
+  font-size: 0.72rem;
+  padding: 2px 6px;
+  border-radius: 50px !important;
+  font-weight: 800;
+}
+
+/* ======================================================
    ESTILOS CHATBOT AGENTE IA SOMMELIER
    ====================================================== */
 .ai-msg {
@@ -4028,46 +4067,183 @@ dialog.lightbox-dialog[open] {
   line-height: 1.4;
 }
 
+/* Transición responsiva de textos del botón de lanzamiento */
+.compare-btn-text-short {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .compare-grid {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
-  .compare-dock {
-    padding: 8px 12px;
-    bottom: 16px;
-  }
-  .compare-dock-name {
-    max-width: 80px;
-  }
 }
 
-@media (max-width: 540px) {
-  .compare-dock {
-    padding: 6px 10px;
-    bottom: 10px;
-    width: 96vw;
+/* ======================================================
+   REFINAMIENTO TÁCTIL: DOCK COMPARADOR HUD & FAB SOMMELIER
+   ====================================================== */
+@media (max-width: 768px) {
+  /* Sommelier Flotante en Móvil */
+  #ai-chat-trigger,
+  .sommelier-fab-btn {
+    bottom: 20px;
+    right: 16px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    z-index: 100;
   }
+
+  /* Cuando el comparador está activo: desplazar Sommelier hacia arriba */
+  body.compare-dock-visible #ai-chat-trigger,
+  body.compare-dock-visible .sommelier-fab-btn,
+  .compare-dock-visible #ai-chat-trigger,
+  .compare-dock-visible .sommelier-fab-btn {
+    bottom: 110px !important;
+    right: 16px !important;
+    z-index: 100 !important;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.5), 0 0 25px rgba(16, 185, 129, 0.4) !important;
+  }
+
+  body.compare-dock-visible #ai-chat-window {
+    bottom: 175px !important;
+  }
+
+  /* Dock Comparador HUD Táctil en Móvil */
+  .compare-dock {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100vw;
+    border-radius: 20px 20px 0 0 !important;
+    border: none;
+    border-top: 1px solid rgba(16, 185, 129, 0.35);
+    background: rgba(6, 11, 9, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.8);
+    padding: 10px 14px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    z-index: 90;
+    animation: dockSlideUpMobile 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes dockSlideUpMobile {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .compare-dock-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  /* 1. Cabecera compacta a la izquierda (balanza + contador) */
+  .compare-dock-info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .compare-dock-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
   .compare-dock-title {
     display: none;
   }
-  .compare-dock-slots {
-    gap: 5px;
-  }
-  .compare-dock-slot {
-    padding: 2px 6px 2px 4px;
-    max-width: 110px;
-  }
-  .compare-dock-name {
-    max-width: 55px;
-    font-size: 0.72rem;
-  }
-  .btn-compare-launch {
-    padding: 6px 10px !important;
-    font-size: 0.76rem !important;
-  }
-  .btn-compare-clear {
-    padding: 6px 8px;
+
+  .compare-dock-count {
     font-size: 0.76rem;
+    font-weight: 800;
+    color: var(--primary-emerald);
+    background: rgba(16, 185, 129, 0.16);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    border-radius: 50px !important;
+    padding: 2px 7px;
+    white-space: nowrap;
+  }
+
+  /* 2. Carrusel de chips con miniaturas en el centro */
+  .compare-dock-slots {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 2px 0;
+  }
+
+  .compare-dock-slots::-webkit-scrollbar {
+    display: none;
+  }
+
+  .compare-dock-slot {
+    flex-shrink: 0;
+    max-width: 115px;
+    padding: 3px 6px 3px 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    border-radius: 50px !important;
+  }
+
+  .compare-dock-thumb {
+    width: 24px;
+    height: 24px;
+  }
+
+  .compare-dock-name {
+    max-width: 50px;
+    font-size: 0.70rem;
+  }
+
+  /* 3. Botón principal brillante a la derecha */
+  .compare-dock-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .compare-btn-text-full {
+    display: none;
+  }
+
+  .compare-btn-text-short {
+    display: inline;
+  }
+
+  .btn-compare-launch {
+    padding: 8px 12px !important;
+    font-size: 0.78rem !important;
+    font-weight: 800 !important;
+    white-space: nowrap;
+    border-radius: 10px !important;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.5) !important;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+    color: #000 !important;
+  }
+
+  .btn-compare-clear {
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    border-radius: 10px !important;
   }
 }
 

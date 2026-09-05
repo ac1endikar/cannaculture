@@ -1465,6 +1465,13 @@ class CannaAppMAX {
   updateCompareUI() {
     const count = (this.comparedStrains || []).length;
 
+    // Sincronizar estado visual global (HUD & Fab Sommelier)
+    if (count > 0) {
+      document.body.classList.add('compare-dock-visible');
+    } else {
+      document.body.classList.remove('compare-dock-visible');
+    }
+
     // Actualizar botones de catálogo
     document.querySelectorAll('.btn-compare-toggle').forEach(btn => {
       const id = btn.getAttribute('data-strain-id');
@@ -1483,13 +1490,14 @@ class CannaAppMAX {
     // Actualizar dock flotante
     if (this.compareDock) {
       if (count > 0) {
+        this.compareDock.classList.add('compare-dock-visible');
         this.compareDock.style.display = 'block';
         if (this.compareDockCounter) {
           this.compareDockCounter.textContent = `${count}/3 cepas`;
         }
 
         if (this.btnOpenCompareModal) {
-          this.btnOpenCompareModal.innerHTML = `⚖️ Comparar Cara a Cara (${count}/3)`;
+          this.btnOpenCompareModal.innerHTML = `⚖️ <span class="compare-btn-text-full">Comparar Cara a Cara</span><span class="compare-btn-text-short">Comparar</span> (${count}/3)`;
         }
 
         if (this.compareDockSlots) {
@@ -1507,9 +1515,10 @@ class CannaAppMAX {
           }).join('');
         }
       } else {
+        this.compareDock.classList.remove('compare-dock-visible');
         this.compareDock.style.display = 'none';
         if (this.btnOpenCompareModal) {
-          this.btnOpenCompareModal.innerHTML = `⚖️ Comparar Cara a Cara (0/3)`;
+          this.btnOpenCompareModal.innerHTML = `⚖️ <span class="compare-btn-text-full">Comparar Cara a Cara</span><span class="compare-btn-text-short">Comparar</span> (0/3)`;
         }
       }
     }
