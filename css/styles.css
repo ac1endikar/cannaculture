@@ -3724,11 +3724,11 @@ dialog.compare-dialog[open] {
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-  margin: 0 auto !important;
-  width: min(94vw, 1200px) !important;
-  max-width: 1200px !important;
+  margin: 0 !important;
+  width: min(94vw, 1100px) !important;
+  max-width: 1100px !important;
   height: auto !important;
-  max-height: 90vh !important;
+  max-height: 88vh !important;
   display: flex !important;
   flex-direction: column !important;
   border-radius: 20px !important;
@@ -3755,7 +3755,7 @@ dialog.compare-dialog::backdrop {
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-height: calc(90vh - 2.5rem);
+  max-height: calc(88vh - 2.5rem);
   overflow: hidden;
   width: 100%;
 }
@@ -3767,6 +3767,7 @@ dialog.compare-dialog::backdrop {
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 14px;
+  flex-shrink: 0;
 }
 
 .compare-modal-title {
@@ -3788,11 +3789,13 @@ dialog.compare-dialog::backdrop {
 .compare-grid,
 .compare-columns-container {
   display: flex !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   align-items: stretch !important;
   gap: 16px !important;
   overflow-x: auto !important;
   overflow-y: auto !important;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   padding: 12px 6px !important;
   width: 100% !important;
   box-sizing: border-box !important;
@@ -3814,16 +3817,17 @@ dialog.compare-dialog::backdrop {
   background: rgba(8, 14, 12, 0.85);
   border: 1.5px solid rgba(16, 185, 129, 0.25);
   border-radius: 18px !important;
-  padding: 16px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   gap: 14px;
   position: relative;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(15px);
-  flex: 1 1 0 !important;
-  min-width: 280px !important;
+  flex: 1 1 300px;
+  min-width: 290px;
   box-sizing: border-box;
+  scroll-snap-align: start;
 }
 
 .compare-col-remove-btn {
@@ -3927,20 +3931,16 @@ dialog.compare-dialog::backdrop {
   letter-spacing: 0.6px;
   color: #A7F3D0;
   margin-bottom: 8px;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 8px !important;
-  min-height: 38px !important;
-  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
-.compare-metric-title > span:first-child {
+.compare-card-section-title {
   font-size: 0.78rem;
-  white-space: nowrap;
-  flex-shrink: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
 /* Barras Cannabinoides */
@@ -4161,114 +4161,115 @@ dialog.compare-dialog::backdrop {
   .strain-card { break-inside: avoid; border: 1px solid #ccc; box-shadow: none; }
 }
 
-/* --- FIX ALINEACIÓN EXACTA COMPARADOR V131 --- */
-/* Asegurar que las columnas midan exactamente lo mismo */
-#compare-modal .compare-grid > *,
-#compare-modal [class*="compare-col"],
+/* ======================================================
+   COMPARADOR CARA A CARA: VENTANA EMERGENTE AIREADA (V133)
+   Modal flotante centrado, Dark Glassmorphism y scroll fluido
+   ====================================================== */
+#compare-modal[open],
+dialog.compare-dialog[open] {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+  width: min(94vw, 1100px) !important;
+  max-width: 1100px !important;
+  max-height: 88vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+#compare-modal .compare-modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: calc(88vh - 2.5rem);
+  overflow: hidden;
+}
+
+#compare-modal .compare-grid,
+#compare-modal .compare-columns-container {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  gap: 16px !important;
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+  scroll-snap-type: x mandatory !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding: 12px 6px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  flex: 1;
+}
+
 #compare-modal .compare-column,
 #compare-modal .compare-empty-col,
 .compare-col {
-    flex: 1 1 0% !important;
-    min-width: 290px !important;
-    box-sizing: border-box !important;
+  flex: 1 1 300px;
+  min-width: 290px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
 }
 
-/* Cabecera de Cultivo & Floración: impedir salto de línea del título */
-#compare-modal [class*="cultivo"], 
-#compare-modal [class*="floracion"],
-#compare-modal .compare-cultivo-header,
+/* Espaciado natural y respirable en textos y etiquetas */
 #compare-modal .compare-metric-title {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 6px !important;
-    min-height: 38px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
-#compare-modal .compare-card-section-title,
-#compare-modal .compare-metric-title > span:first-child,
-.compare-card-section-title {
-    white-space: nowrap !important;
-    font-size: 0.75rem !important;
-    letter-spacing: 0.3px !important;
-    flex-shrink: 1 !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
+#compare-modal .compare-card-section-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
-#compare-modal [class*="badge"],
-#compare-modal [class*="difficulty"],
-#compare-modal .compare-badge-difficulty,
-#compare-modal [class*="diff"],
-.compare-badge-difficulty {
-    white-space: nowrap !important;
-    flex-shrink: 0 !important;
-    font-size: 0.68rem !important;
-    padding: 2px 7px !important;
+#compare-modal .badge-diff-easy,
+#compare-modal .badge-diff-med,
+#compare-modal .badge-diff-hard,
+#compare-modal .compare-badge-difficulty {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-/* Forzar altura fija idéntica en las cajas numéricas */
-#compare-modal [class*="grow-grid"],
-#compare-modal [class*="metrics"],
-#compare-modal .compare-grow-grid,
-#compare-modal .compare-grow-metrics,
-.compare-grow-grid {
-    min-height: 85px !important;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 8px !important;
-    align-items: center !important;
-    box-sizing: border-box !important;
-}
-
-/* Texto de aromas: reservar siempre 2 líneas exactas para evitar desniveles */
-#compare-modal p:has(> em),
-#compare-modal [class*="aroma"],
-#compare-modal .compare-aroma-text,
-#compare-modal .compare-aroma-block,
-.compare-aroma-text {
-    min-height: 44px !important;
-    line-height: 1.35 !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-}
-
-#compare-modal .compare-terpenes-list,
-#compare-modal [class*="terpenes-list"],
-.compare-terpenes-list {
-    min-height: 26px !important;
-    display: flex !important;
-    align-items: center !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-    box-sizing: border-box !important;
-}
-
-#compare-modal .compare-tags-container,
-#compare-modal .compare-pills-container,
-#compare-modal [class*="tags-container"],
-#compare-modal [class*="pills-container"],
-.compare-tags-container {
-    min-height: 72px !important;
-    align-content: flex-start !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    box-sizing: border-box !important;
-}
-
+/* En móvil: columnas respirables con min-width 290px y scroll horizontal fluido */
 @media (max-width: 768px) {
-    #compare-modal .compare-grid > *,
-    #compare-modal [class*="compare-col"],
-    #compare-modal .compare-column,
-    #compare-modal .compare-empty-col,
-    .compare-col {
-        min-width: 280px !important;
-        max-width: 320px !important;
-        flex: 0 0 85% !important;
-        scroll-snap-align: center !important;
-    }
+  #compare-modal[open],
+  dialog.compare-dialog[open] {
+    width: 94vw !important;
+    max-width: 94vw !important;
+    max-height: 88vh !important;
+    padding: 1rem 0.75rem !important;
+  }
+
+  #compare-modal .compare-grid,
+  #compare-modal .compare-columns-container {
+    display: flex !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 10px 4px !important;
+  }
+
+  #compare-modal .compare-column,
+  #compare-modal .compare-empty-col,
+  .compare-col {
+    min-width: 290px !important;
+    max-width: 320px !important;
+    flex: 0 0 290px !important;
+    scroll-snap-align: start !important;
+  }
+}
+
+/* Dock inferior totalmente desactivado - Sommelier IA libre */
+#compare-floating-dock,
+.compare-dock,
+.compare-floating-dock {
+  display: none !important;
 }
