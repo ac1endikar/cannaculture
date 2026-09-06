@@ -8,7 +8,7 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 418 cepas únicas y consolidadas pertenecientes a 39 bancos de semillas premium en `js/data.js`.
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_medical_seeds_v137`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_medical_thc_v137`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
