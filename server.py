@@ -44,6 +44,17 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
 
+    def translate_path(self, path):
+        # Map any legacy image requests directly to the actual img/ directory
+        clean_path = path.split('?')[0].split('#')[0]
+        if clean_path.startswith('/images/strains/'):
+            clean_path = '/img/' + clean_path[len('/images/strains/'):]
+        elif clean_path.startswith('/images/'):
+            filename = clean_path[len('/images/'):]
+            if os.path.exists(os.path.join(DIRECTORY, 'img', filename)):
+                clean_path = '/img/' + filename
+        return super().translate_path(clean_path)
+
     def end_headers(self):
         # CORS - permitir acceso desde cualquier origen (móvil en LAN)
         self.send_header("Access-Control-Allow-Origin", "*")

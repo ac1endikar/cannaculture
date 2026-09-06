@@ -599,11 +599,15 @@ class CannaAppMAX {
       const bankName = strain.bank || strain.breeder || 'Banco Seleccionado';
       const icon = bankIcons[bankName] || '🌿';
       const stars = '★'.repeat(Math.round(strain.rating || 4)) + '☆'.repeat(5 - Math.round(strain.rating || 4));
-      const strainImg = strain.image || '';
+      let strainImg = strain.image || '';
+      if (strainImg && strainImg.startsWith('images/strains/')) {
+        strainImg = strainImg.replace('images/strains/', 'img/');
+      }
       const safeName = (strain.name || 'Variedad').replace(/'/g, "\\'");
       const safeBank = bankName.replace(/'/g, "\\'");
       const imgTag = strainImg ? `<img src="${strainImg}" alt="${strain.name}" class="card-visual-img" loading="lazy" decoding="async" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.opacity='1';" />` : '';
       const isCompared = (this.comparedStrains || []).includes(strain.id);
+      const displayGenetics = strain.genetics || strain.lineage || strain.aka || 'Genética Exclusiva';
 
       return `
         <div class="strain-card" style="--card-accent: ${strain.visualColor}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
@@ -626,7 +630,7 @@ class CannaAppMAX {
             <div class="strain-header">
               <div>
                 <h3 class="strain-title">${strain.name}</h3>
-                <div class="strain-bank-label">${strain.genetics}</div>
+                <div class="strain-bank-label">${displayGenetics}</div>
               </div>
               <span class="badge-species ${strain.species.toLowerCase()}">${strain.species}</span>
             </div>
@@ -1025,10 +1029,14 @@ class CannaAppMAX {
         </div>`;
     }).join('');
 
-    const mainImg = strain.image || '';
+    let mainImg = strain.image || '';
+    if (mainImg && mainImg.startsWith('images/strains/')) {
+      mainImg = mainImg.replace('images/strains/', 'img/');
+    }
     const bankName = strain.bank || strain.breeder || 'Banco Seleccionado';
     const safeName = (strain.name || 'Variedad').replace(/'/g, "\\'");
     const safeBank = bankName.replace(/'/g, "\\'");
+    const strainGenetics = strain.genetics || strain.lineage || strain.aka || 'Genética Exclusiva';
 
     this.strainDetailContent.innerHTML = `
       <div class="pro-spec-sheet">
@@ -1061,7 +1069,7 @@ class CannaAppMAX {
                     </span>
                   </div>
                   <h1 class="pro-strain-name-lg">${strain.name}</h1>
-                  <div class="pro-strain-aka">🧬 Linaje: ${strain.genetics}</div>
+                  <div class="pro-strain-aka">🧬 Linaje: ${strainGenetics}</div>
                 </div>
                 <div class="pro-hero-info-right">
                   <div class="pro-hero-rating-pill">
@@ -1078,11 +1086,11 @@ class CannaAppMAX {
                   <div class="pro-hero-badges-row">
                     <span class="badge-species ${strain.species.toLowerCase()}">${strain.species}</span>
                     <span class="pro-hero-bank-pill">
-                      🏛️ ${strain.bank}
+                      🏛️ ${bankName}
                     </span>
                   </div>
                   <h1 class="pro-strain-name-lg">${strain.name}</h1>
-                  <div class="pro-strain-aka">🧬 Linaje: ${strain.genetics}</div>
+                  <div class="pro-strain-aka">🧬 Linaje: ${strainGenetics}</div>
                 </div>
                 <div class="pro-hero-info-right">
                   <div class="pro-hero-rating-pill">

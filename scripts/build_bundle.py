@@ -36,7 +36,13 @@ for filename in files_in_order:
     bundled_code.append("\n")
 
 bundle_path = os.path.join(js_dir, 'bundle.js')
+full_content = "\n".join(bundled_code)
 with open(bundle_path, 'w', encoding='utf-8') as f:
-    f.write("\n".join(bundled_code))
+    f.write(full_content)
+
+bundle_v148_path = os.path.join(js_dir, 'bundle-v148.js')
+with open(bundle_v148_path, 'w', encoding='utf-8') as f:
+    f.write(full_content)
 
 print(f"✅ Created {bundle_path} ({os.path.getsize(bundle_path):,} bytes)")
+print(f"✅ Created {bundle_v148_path} ({os.path.getsize(bundle_v148_path):,} bytes)")
