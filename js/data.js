@@ -10932,7 +10932,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "malakoff",
-    image: "img/malakoff.webp",
+    image: "img/malakoff-hd.webp",
     name: "Malakoff",
     aka: "Strawberry Haze x White Widow",
     bank: "Medical Seeds",
