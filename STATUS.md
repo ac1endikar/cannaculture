@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-06 12:00  
+> **Última actualización:** 2026-09-06 12:35  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
@@ -8,16 +8,18 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 418 cepas únicas y consolidadas pertenecientes a 39 bancos de semillas premium en `js/data.js` (402 base previa + 16 Medical Seeds enriquecidas con terpenos, sabores y efectos).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_gemini_fullcloud_v144`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_gemini_conversational_v145`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
-- **Suite de Inteligencia Artificial Gemini 3.6 Flash & CannaDoctor:** **100% OPERATIVA (v144)**
-  - **Sommelier Mateo:** Respuestas en tiempo real con razonamiento neuro-terpénico y enlaces interactivos a las 418 variedades.
+- **Suite de Inteligencia Artificial Gemini 3.6 Flash & CannaDoctor:** **100% OPERATIVA (v145)**
+  - **Modo Conversacional Gemini Real:** Explica con rigor botánico y pedagógico el *porqué* de los procesos biológicos (oxidación de tricomas a CBN, clorosis y pH, efecto séquito, curado, etc.) sin forzar recomendaciones de cepas no solicitadas.
+  - **Memoria Conversacional Multi-Turn (`this.history`):** Mantiene el contexto a lo largo de múltiples preguntas y repreguntas.
+  - **Motor Científico Local de Respaldo:** Respuestas didácticas completas y exhaustivas sobre cultivo y ciencia cannábica sin conexión a la nube.
+  - **Recomendaciones Inteligentes a Petición:** Bloque de razonamiento neuro-terpénico y enlaces interactivos solo cuando el usuario pide sugerencias de cepas explícitas.
   - **CannaDoctor Multimodal:** Soporte para subida de fotos de hojas o cogollos con diagnóstico botánico de deficiencias, plagas y madurez de tricomas.
-  - **Conexión Cloud Directa en GitHub Pages:** Integrada clave predeterminada y fallback para que Gemini 3.6 Flash responda en la nube sin necesidad de proxy ni configuraciones adicionales.
 - **Automatización CI/CD con GitHub Actions:**
   - **Auto-PR Code Reviewer:** Workflow `.github/workflows/gemini_pr_reviewer.yml` que audita diffs con IA en cada Pull Request.
   - **Release Notes & Changelog Generator:** Workflow `.github/workflows/gemini_changelog.yml` activado en tags.
@@ -32,7 +34,14 @@
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-06)
-1. ✅ **Transición Limpia del Sommelier en GitHub Pages & Gestión Segura de API Key (v144):**
+1. ✅ **Inteligencia Conversacional Estilo Gemini & Respuestas Científicas sin Desvíos a Variedades (v145):**
+   - **Explicación del *Porqué* sin Recomendaciones Forzadas:** Si el usuario pregunta por qué los tricomas maduran a ámbar, por qué las hojas amarillean, qué es el efecto séquito o cómo influye el pH, Mateo responde con rigor científico y didáctico (estilo Google Gemini) sin encasquetar ni desviar la conversación hacia cepas del catálogo.
+   - **Memoria Conversacional Multi-Turn:** Implementado seguimiento de turnos mediante `this.history` enviado a Gemini 3.6 Flash para permitir repreguntas y continuidad natural en el diálogo.
+   - **Motor Didáctico Local de Profundidad:** Creada una base de conocimiento offline en `generateHumanResponse` que aborda tricomas, clorosis móvil/inmóvil, garras de nitrógeno, efecto séquito, lavado de raíces, curado 60/60 y temperaturas de ebullición.
+   - **Recomendaciones Solo a Petición Explícita:** El bloque de razonamiento terpénico y el filtrado del catálogo se reservan exclusivamente para cuando el usuario pida recomendaciones.
+   - **Recompilación y Caché:** Recompilado `js/bundle.js` (633,431 bytes) y versión actualizada a `?v=2026_gemini_conversational_v145`.
+
+2. ✅ **Transición Limpia del Sommelier en GitHub Pages & Gestión Segura de API Key (v144):**
    - **Eliminación de Warnings en Consola:** Suprimido el `console.warn` alarmante cuando la nube no está disponible; el sistema transiciona de forma limpia y transparente al motor heurístico local del Sommelier.
    - **Activación Rápida con Botón 🔑 o Chat:** En GitHub Pages, el usuario puede pulsar el botón `🔑 API Key` en la cabecera o pegar su clave directamente en el input del chat para activar Gemini 3.6 Flash y CannaDoctor en `localStorage` sin exponer secretos en el repositorio (cumpliendo al 100% con GitHub Push Protection).
    - **Recompilación de Bundle:** Generado `js/bundle.js` (631,894 bytes) y versión actualizada a `?v=2026_gemini_fullcloud_v144`.

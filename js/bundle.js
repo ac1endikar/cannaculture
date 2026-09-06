@@ -12143,7 +12143,12 @@ class AISommelierAgent {
       return;
     }
 
-    this.showTyping(imageObj ? '🔬 CannaDoctor examinando imagen botánica con Gemini 3.6...' : '🧠 Mateo analizando maridaje terpénico en el catálogo...');
+    const isScienceQuery = /(por\s*qu[eé]|c[oó]mo|qu[eé]\s+es|explica|a\s+qu[eé]\s+se\s+debe|tricoma|hoja|cultivo|ph|abono|s[eé]quito|curado|lavado|ambar|ámbar)/i.test(userQuery || '');
+    this.showTyping(imageObj 
+      ? '🔬 CannaDoctor examinando imagen botánica con Gemini 3.6...' 
+      : isScienceQuery 
+        ? '🌿 Mateo analizando la base científica y botánica...' 
+        : '🧠 Mateo analizando maridaje terpénico en el catálogo...');
 
     try {
       const cloudResponse = await this.callGeminiAPI(userQuery, imageObj);
@@ -12163,40 +12168,43 @@ class AISommelierAgent {
         this.botSay(`
           🔬 <strong>CannaDoctor:</strong> He recibido tu fotografía de cultivo.<br/><br/>
           Para procesar diagnósticos visuales avanzados (deficiencias de nitrógeno, fósforo, magnesio, araña roja o madurez de tricomas), asegúrate de que el servidor local con soporte Gemini esté en ejecución o introduce tu clave en los ajustes.<br/><br/>
-          💬 <em>Mientras tanto, puedes describirme los síntomas o consultar cualquier variedad de nuestro catálogo de ${STRAINS_DATABASE.length} cepas.</em>
+          💬 <em>Mientras tanto, puedes describirme los síntomas o consultar cualquier duda botánica sobre tu cultivo.</em>
         `);
         return;
       }
       const response = this.generateHumanResponse(userQuery || '');
+      this.history.push({ role: 'model', parts: [{ text: response.replace(/<[^>]*>/g, '') }] });
       this.botSay(response);
     } catch (fallbackErr) {
       console.error('Error en motor local de Sommelier:', fallbackErr);
-      const sample = STRAINS_DATABASE[0] || {};
       this.botSay(`
-        🌿 <strong>Mateo (Sommelier):</strong> He recibido tu consulta sobre <em>"${userQuery || 'variedades'}"</em>.<br/><br/>
-        Disponemos de más de <strong>${STRAINS_DATABASE.length} cepas</strong> en nuestro catálogo interactivo. Puedes consultar cepas ricas en THC, perfiles de terpenos como Limoneno o Mirceno, o variedades de bancos como Medical Seeds, Ripper Seeds o Sweet Seeds.<br/><br/>
-        💬 <em>¿Buscas un efecto energizante (Sativa) o relajante (Índica)?</em>
+        🌿 <strong>Mateo:</strong> He recibido tu consulta sobre <em>"${userQuery || 'botánica cannábica'}"</em>.<br/><br/>
+        Como especialista botánico, puedo explicarte con detalle científico cualquier proceso: <strong>por qué los tricomas maduran a ámbar, por qué las hojas amarillean, el efecto séquito de los terpenos o cómo calibrar el pH</strong>.<br/><br/>
+        💬 <em>¿Qué aspecto de tu cultivo o de la ciencia cannábica te gustaría que analicemos en detalle?</em>
       `);
     }
   }
 
   async callGeminiAPI(userQuery, imageObj = null) {
-    const catalogSummary = STRAINS_DATABASE.slice(0, 70).map(s => 
+    const catalogSummary = STRAINS_DATABASE.slice(0, 60).map(s => 
       `- ${s.name} (${s.species}, ${safeBank(s)}): THC ${s.thc}%, Terpeno: ${s.dominantTerpene || 'Equilibrado'}, Sabores: ${safeFlavors(s).slice(0,3).join('/')}, ID: ${s.id}`
     ).join('\n');
 
     const systemInstruction = {
       parts: [{
-        text: `Eres Mateo, Master Sommelier de Cannabis y CannaDoctor botánico de la plataforma CannaCulture.
-Posees un conocimiento enciclopédico sobre perfiles de terpenos (Mirceno, Limoneno, Cariofileno, Pineno, Linalool, Terpinoleno, Humuleno, Ocimeno) y cultivo cannábico.
+        text: `Eres Mateo, un botánico científico, experto en el sistema endocannabinoide y Master Sommelier de CannaCulture.
+Tu forma de conversar es idéntica a Google Gemini: hablas con cercanía, elocuencia natural, rigor pedagógico y un conocimiento enciclopédico profundo.
 
-Directrices estrictas:
-1. Sé cálido, elegante, experto y educativo.
-2. Si el usuario te envía una foto de una planta o flor:
-   - Actúa como CannaDoctor: evalúa de inmediato la salud foliar, posibles deficiencias minerales (N, P, K, Ca, Mg), signos de plagas o el estado y lechosidad de los tricomas.
-   - Proporciona un diagnóstico claro con causas y soluciones orgánicas recomendadas.
-3. Si el usuario pide recomendaciones de cepas:
-   - Estructura siempre tu análisis con el bloque HTML de razonamiento exacto:
+DIRECTRICES FUNDAMENTALES DE COMPORTAMIENTO:
+
+1. CONSULTAS DE CONOCIMIENTO, CIENCIA Y CULTIVO ("¿Por qué...", "¿Cómo...", "¿Qué es...", "Explícame...", etc.):
+   - Si el usuario te pregunta por el motivo o causas de cualquier fenómeno (por ejemplo: por qué los tricomas se vuelven ámbar, por qué las hojas amarillean, qué es el efecto séquito, cómo influye el pH en la asimilación radicular, por qué se realiza el curado, etc.):
+   - EXPLICA EL FENÓMENO CON RIGOR Y CLARIDAD CIENTÍFICA. Desglosa los procesos bioquímicos (biosíntesis de cannabinoides, degradación de THCA a CBN, translocación de nutrientes móviles e inmóviles, modulación alostérica en receptores CB1 y CB2, degradación enzimática de la clorofila, etc.).
+   - ⚠️ REGLA DE ORO OBLIGATORIA: ¡NO RECOMIENDES CEPAS NI VARIEDADES si el usuario solo te está pidiendo una explicación conceptual, botánica o científica! No intentes forzar ni desviar la conversación hacia una variedad de catálogo cuando te preguntan el "porqué" de las cosas. Trátalo exactamente como hablaría Gemini: explicando la ciencia de forma amena y completa.
+
+2. RECOMENDACIONES DE CEPAS (ÚNICAMENTE cuando el usuario las solicite de forma explícita):
+   - Solo cuando el usuario te pida expresamente recomendaciones o maridajes (por ejemplo: "recomiéndame una variedad", "qué cepa me sirve para dormir", "busco una sativa cítrica", "qué fumar para ver cine"):
+   - Incluye el bloque HTML de razonamiento neuro-terpénico:
 <div class="sommelier-reasoning-box">
   <div class="reasoning-header">
     <span class="reasoning-brain-icon">🧠</span>
@@ -12206,23 +12214,31 @@ Directrices estrictas:
   <div class="reasoning-steps">
     <div class="reasoning-step">
       <span class="step-num">1</span>
-      <div><strong>Diagnóstico de Necesidad:</strong> [Resumen breve de la necesidad del usuario]</div>
+      <div><strong>Diagnóstico de Necesidad:</strong> [Resumen de lo que busca el usuario]</div>
     </div>
     <div class="reasoning-step">
       <span class="step-num">2</span>
-      <div><strong>Análisis Terpénico & Séquito:</strong> [Terpenos y ratios óptimos explicados]</div>
+      <div><strong>Análisis Terpénico & Séquito:</strong> [Terpenos y ratios explicados]</div>
     </div>
     <div class="reasoning-step">
       <span class="step-num">3</span>
-      <div><strong>Cribado del Catálogo:</strong> [Cómo encaja en las cepas del catálogo]</div>
+      <div><strong>Cribado del Catálogo:</strong> [Por qué se eligen esas cepas]</div>
     </div>
   </div>
 </div>
-4. Siempre que menciones una cepa que exista en el catálogo, usa estrictamente enlaces clicables con este formato:
-   <a href="#" class="ai-strain-link" data-strain-id="ID_DE_LA_CEPA"><strong>Nombre Cepa</strong></a>.
-5. El catálogo de CannaCulture cuenta con ${STRAINS_DATABASE.length} cepas de bancos premium (Medical Seeds, Ripper Seeds, Dinafem, Barney's Farm, Sweet Seeds, RQS, DNA Genetics, TH Seeds, etc.).
+   - Siempre que nombres una cepa del catálogo, usa enlaces interactivos:
+     <a href="#" class="ai-strain-link" data-strain-id="ID_DE_LA_CEPA"><strong>Nombre Cepa</strong></a>
 
-Muestra de variedades del catálogo:
+3. DIAGNÓSTICO FOTOGRÁFICO Y SÍNTOMAS DE CULTIVO (CannaDoctor):
+   - Si el usuario comparte una foto de una planta o describe problemas de cultivo:
+   - Diagnostica de forma metódica: 1) Diagnóstico principal (carencia de N, P, K, Mg, Ca, exceso de sales, plagas como araña roja o trips, o madurez de tricomas); 2) Causa fisiológica; 3) Tratamiento y medidas correctoras orgánicas inmediatas.
+
+4. CONVERSACIÓN FLUIDA CON MEMORIA:
+   - Recuerda lo hablado en los turnos previos. Si el usuario te hace preguntas de seguimiento ("¿y cuánto tiempo tarda?", "¿qué pasa si no lo hago?", "¿cómo afecta eso al sabor?"), responde directamente profundizando en el tema.
+
+5. INFORMACIÓN DEL CATÁLOGO (Para cuando se soliciten recomendaciones):
+   El catálogo cuenta con ${STRAINS_DATABASE.length} cepas de 39 bancos premium.
+Muestra de variedades:
 ${catalogSummary}`
       }]
     };
@@ -12243,18 +12259,24 @@ ${catalogSummary}`
       });
     }
 
+    // Registrar en el historial conversacional
+    this.history.push({ role: 'user', parts: userParts });
+    if (this.history.length > 12) {
+      this.history = this.history.slice(-12);
+    }
+
     const payload = {
       model: 'gemini-3.6-flash',
-      contents: [{ role: 'user', parts: userParts }],
+      contents: this.history,
       system_instruction: systemInstruction
     };
 
-    // 1. Intentar primero a través del proxy local /api/gemini con timeout estricto de 8.5s (solo en entorno local)
+    // 1. Intentar primero a través del proxy local /api/gemini (timeout de 25s para respuestas científicas completas)
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     if (isLocal) {
       try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 8500);
+        const timeoutId = setTimeout(() => controller.abort(), 25000);
         const proxyRes = await fetch('/api/gemini', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -12265,7 +12287,10 @@ ${catalogSummary}`
         if (proxyRes.ok) {
           const data = await proxyRes.json();
           const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-          if (text) return this.formatBotMarkdown(text);
+          if (text) {
+            this.history.push({ role: 'model', parts: [{ text: text }] });
+            return this.formatBotMarkdown(text);
+          }
         }
       } catch (e) {
         // Si el proxy falla o da timeout, continuamos
@@ -12276,7 +12301,7 @@ ${catalogSummary}`
     if (this.apiKey) {
       try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 12000);
+        const timeoutId = setTimeout(() => controller.abort(), 25000);
         const directUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${this.apiKey}`;
         const directRes = await fetch(directUrl, {
           method: 'POST',
@@ -12291,7 +12316,10 @@ ${catalogSummary}`
         if (directRes.ok) {
           const data = await directRes.json();
           const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-          if (text) return this.formatBotMarkdown(text);
+          if (text) {
+            this.history.push({ role: 'model', parts: [{ text: text }] });
+            return this.formatBotMarkdown(text);
+          }
         }
       } catch (e) {
         // Fallback al motor local
@@ -12312,9 +12340,191 @@ ${catalogSummary}`
   }
 
   generateHumanResponse(rawQuery) {
-    const query = (rawQuery || '').toLowerCase();
+    const query = (rawQuery || '').toLowerCase().trim();
 
-    // 1. EVALUACIÓN DE SABORES
+    // =========================================================================
+    // 0. SALUDOS & IDENTIDAD CONVERSACIONAL
+    // =========================================================================
+    if (query === 'hola' || query === 'buenas' || query === 'hey' || query === 'saludos' || query.startsWith('hola ') || query.includes('quién eres') || query.includes('quien eres') || query.includes('qué puedes hacer')) {
+      return `
+        🌿 <strong>¡Hola! Soy Mateo</strong>, especialista en botánica cannábica, cultivo y Master Sommelier de CannaCulture.<br/><br/>
+        Puedes hablar conmigo con total naturalidad, exactamente como con <strong>Gemini</strong>. Te asisto en:<br/><br/>
+        • 🔬 <strong>Ciencia y Botánica:</strong> Pregúntame el <em>porqué</em> de cualquier fenómeno (maduración de tricomas, clorosis de hojas, pH, efecto séquito de los terpenos, curado...).<br/>
+        • 🩺 <strong>CannaDoctor:</strong> Diagnostico deficiencias minerales, excesos de sales o plagas en tu cultivo.<br/>
+        • 👅 <strong>Maridaje Sommelier:</strong> Si me pides una recomendación para un sabor o actividad, buscaré entre las <strong>${STRAINS_DATABASE.length} cepas de nuestro catálogo</strong> analizando su perfil de terpenos.<br/><br/>
+        💬 <em>¿En qué te gustaría profundizar hoy?</em>
+      `;
+    }
+
+    // =========================================================================
+    // 1. MOTOR EDUCATIVO & CIENTÍFICO (PREGUNTAS DE "POR QUÉ", "CÓMO", "QUÉ ES")
+    // =========================================================================
+    const isExplicitRecommendation = /(recomi|sugi|dame|busco una|quiero fumar|para fumar|cu[aá]l comprar|para probar|qu[eé] variedad|qu[eé] cepa|qu[eé] fumar|qu[eé] me tomo|qu[eé] elijo)/i.test(query);
+
+    // A) TRICOMAS: COLOR ÁMBAR, LECHOSO, TRANSPARENTE Y COSECHA
+    if (query.includes('tricoma') || query.includes('ambar') || query.includes('ámbar') || query.includes('lechoso') || query.includes('cosechar') || query.includes('punto de corte')) {
+      return `
+        🔬 <strong>Fisiología y Maduración de los Tricomas Glandulares:</strong><br/><br/>
+        Los tricomas (específicamente los <em>glandulares pedunculados</em>) son las fábricas biosintéticas donde la planta produce cannabinoides (THCA, CBDA, CBGA) y terpenos volátiles en la cabeza resinosa globular.<br/><br/>
+        <strong>¿Por qué cambian de color a lo largo de la floración?</strong><br/><br/>
+        1. 💎 <strong>Transparentes (Fase Inmadura):</strong><br/>
+        Las glándulas están sintetizando precursores. El contenido de cannabinoides es bajo y cosechar aquí produce un efecto suave, a menudo incompleto o que puede generar taquicardia.<br/><br/>
+        2. 🥛 <strong>Lechosos u Opacos (Pico Máximo de THC):</strong><br/>
+        La cabeza del tricoma se satura de <strong>THCA en su máxima concentración activa</strong>. La luz ya no la atraviesa porque los cannabinoides y terpenos alcanzan su densidad óptima. El efecto aquí es <strong>cerebral, lúcido, eufórico y estimulante</strong>.<br/><br/>
+        3. 🍯 <strong>Ámbar (Oxidación y Degradación a CBN):</strong><br/>
+        Con el paso del tiempo, el oxígeno, la temperatura y la degradación celular, el <strong>THC se oxida químicamente y se convierte en Cannabinol (CBN)</strong>. El CBN tiene una afinidad modulada en los receptores CB1 del sistema nervioso que genera un <strong>efecto profundamente sedante, narcótico y miorrelajante</strong> (el famoso efecto sofá o <em>couch-lock</em>).<br/><br/>
+        ⚖️ <strong>Punto Óptimo de Corte:</strong><br/>
+        • Si buscas efecto despierto y cerebral: <strong>90% lechosos / 10% ámbar</strong>.<br/>
+        • Si buscas relajación muscular y ayuda para dormir: <strong>60-70% lechosos / 30-40% ámbar</strong>.<br/><br/>
+        💬 <em>¿Tienes una lupa o microscopio para revisar tus flores? Cuéntame qué porcentaje aproximado ves y calculamos el momento ideal de corte.</em>
+      `;
+    }
+
+    // B) HOJAS AMARILLAS: CLOROSIS, DEFICIENCIAS, pH Y SENESCENCIA
+    if (query.includes('amarill') || query.includes('clorosis') || query.includes('carencia') || query.includes('deficiencia') || query.includes('por qué se caen las hojas')) {
+      return `
+        🍂 <strong>¿Por qué se ponen amarillas las hojas del cannabis? (Diagnóstico Botánico):</strong><br/><br/>
+        El amarilleamiento foliar (clorosis) se produce por la pérdida o degradación de la clorofila. La clave científica para saber qué ocurre reside en la <strong>movilidad de los nutrientes</strong> en el sistema vascular de la planta:<br/><br/>
+        1. 🔄 <strong>Amarillean primero las hojas inferiores (Nutrientes Móviles):</strong><br/>
+        • <strong>Nitrógeno (N):</strong> La planta tiene la capacidad de retirar nitrógeno de las hojas viejas para alimentar los brotes superiores que están creciendo. El amarilleamiento empieza en la base de la planta y avanza hacia arriba de manera uniforme.<br/>
+        • <strong>Magnesio (Mg):</strong> Provoca clorosis intervenal en hojas bajas (las venas permanecen verdes mientras el espacio entre ellas amarillea).<br/><br/>
+        2. 🛑 <strong>Amarillean los brotes superiores o hojas nuevas (Nutrientes Inmóviles):</strong><br/>
+        • <strong>Hierro (Fe), Azufre (S) o Calcio (Ca):</strong> La planta no puede transportar estos elementos desde las hojas viejas. Si las puntas o nuevos brotes nacen amarillentos, indica falta de micronutrientes o estrés radicular.<br/><br/>
+        3. 🔒 <strong>Bloqueo por pH (pH Lockout):</strong><br/>
+        Muchas veces el nutriente sí está en la tierra, pero las raíces <strong>no pueden absorberlo</strong> si el pH del agua está descompensado. El rango óptimo de absorción de nitrógeno y fósforo es de <strong>6.2 a 6.8 en sustrato</strong> y <strong>5.6 a 6.2 en coco/hidroponía</strong>.<br/><br/>
+        4. 🍁 <strong>Senescencia Natural en Fin de Floración:</strong><br/>
+        En las últimas 2 a 3 semanas antes de cosechar, es totalmente natural y beneficioso que las hojas grandes amarilleen. La planta está agotando sus reservas de azúcares y clorofila para madurar los cogollos.<br/><br/>
+        💬 <em>¿En qué parte de la planta empezó el amarilleamiento (arriba o abajo) y en qué semana de cultivo te encuentras?</em>
+      `;
+    }
+
+    // C) HOJAS EN GARRA & PUNTAS QUEMADAS: TOXICIDAD POR NITRÓGENO Y EC ALTA
+    if (query.includes('garra') || query.includes('puntas quemadas') || query.includes('quemada') || query.includes('exceso de abono') || query.includes('sobrefertiliz')) {
+      return `
+        🦅 <strong>Hojas en Forma de Garra y Puntas Quemadas: Fisiología del Exceso:</strong><br/><br/>
+        Cuando las hojas adquieren una curva pronunciada hacia abajo (como garras de águila) o las puntas se secan y queman, estamos ante un <strong>desequilibrio osmótico en las raíces</strong>:<br/><br/>
+        1. 🧪 <strong>Toxicidad por Exceso de Nitrógeno (Hojas en Garra):</strong><br/>
+        El exceso de nitrógeno en floración hiperhidrata el haz celular y oscurece el follaje (verde azulado oscuro). Las células superiores crecen más rápido que las inferiores, forzando a la hoja a doblarse mecánicamente hacia abajo en forma de garra.<br/><br/>
+        2. ⚡ <strong>Presión Osmótica y Salinidad (EC Elevada / Puntas Quemadas):</strong><br/>
+        Si hay demasiadas sales minerales disueltas en el agua de riego, la concentración en el sustrato supera a la del interior de las raíces. Por el principio de ósmosis inversa, a la planta le cuesta extraer agua libre, cerrando los estomas. Las sales residuales se acumulan en las terminaciones de los nervios distales foliares, necrosando (quemando) las puntas.<br/><br/>
+        🛠️ <strong>Solución Botánica Inmediata:</strong><br/>
+        • Realiza un riego generoso solo con agua declorada a <strong>pH 6.3 - 6.5</strong>, permitiendo un drenaje del 25-30% para lixiviar y arrastrar el exceso de sales acumuladas.<br/>
+        • Suspende fertilizantes nitrogenados durante los siguientes 2 riegos.<br/><br/>
+        💬 <em>¿Estás midiendo la Electroconductividad (EC) del drenaje o qué fertilizante has aplicado en los últimos riegos?</em>
+      `;
+    }
+
+    // D) EFECTO SÉQUITO (ENTOURAGE EFFECT) & QUÍMICA DE TERPENOS
+    if (query.includes('séquito') || query.includes('sequito') || query.includes('entourage') || (query.includes('por qué') && query.includes('terpeno'))) {
+      return `
+        🧬 <strong>El Efecto Séquito (Entourage Effect) y la Farmacología Cannábica:</strong><br/><br/>
+        Propuesto por primera vez por los doctores <strong>Raphael Mechoulam</strong> y ampliado por el neurólogo <strong>Dr. Ethan Russo</strong>, el efecto séquito postula que los compuestos del cannabis <strong>no actúan de forma aislada, sino en una sinergia farmacológica holística</strong>.<br/><br/>
+        <strong>¿Cómo interactúan en el organismo?</strong><br/><br/>
+        1. 🧠 <strong>Modulación en los Receptores CB1 y CB2:</strong><br/>
+        El THC puro administrado en aislamiento suele provocar taquicardia, ansiedad o sensación de aturdimiento. Sin embargo, en presencia de otros cannabinoides menores (CBD, CBG, CBC) y terpenos, estos actúan como moduladores alostéricos que modulan la respuesta del receptor CB1, suavizando la curva de ansiedad y potenciando la analgesia.<br/><br/>
+        2. 🚪 <strong>Permeabilidad de la Barrera Hematoencefálica (Mirceno):</strong><br/>
+        El <strong>Mirceno</strong> reduce la resistencia de la barrera hematoencefálica cerebral, permitiendo que el THC y otros cannabinoides penetren en las neuronas diana con mayor rapidez y eficiencia.<br/><br/>
+        3. 🛡️ <strong>El Cariofileno como Cannabinoide Dietético:</strong><br/>
+        El <strong>Beta-Cariofileno</strong> es el único terpeno conocido que activa directamente los receptores periféricos <strong>CB2</strong>, actuando como un potente antiinflamatorio sin producir colocón psicoactivo.<br/><br/>
+        4. 💡 <strong>Preservación de Memoria (Alfa-Pineno):</strong><br/>
+        El <strong>Pineno</strong> inhibe la enzima acetilcolinesterasa, lo que previene la degradación de acetilcolina en el hipocampo, contrarrestando la pérdida de memoria a corto plazo típica del consumo de THC.<br/><br/>
+        💬 <em>Por esta razón, un extracto de espectro completo (Full Spectrum) o una flor curada tiene una riqueza terapéutica muy superior a los destilados de THC aislado al 99%.</em>
+      `;
+    }
+
+    // E) POR QUÉ HUELE A PINO, LIMÓN, DIÉSEL O COMBUSTIBLE
+    if ((query.includes('por qué') || query.includes('porque') || query.includes('a qué se debe')) && (query.includes('olor') || query.includes('huele') || query.includes('aroma') || query.includes('pino') || query.includes('limon') || query.includes('limón') || query.includes('diesel') || query.includes('gasolina'))) {
+      return `
+        🌲 <strong>¿Por qué el cannabis produce aromas a pino, limón, fruta o diésel?</strong><br/><br/>
+        Los aromas del cannabis no son casuales: son el resultado de la biosíntesis de <strong>terpenos y compuestos orgánicos volátiles de azufre (VSC - Volatile Sulfur Compounds)</strong> que la planta desarrolló a lo largo de millones de años de evolución como defensa natural:<br/><br/>
+        • <strong>Pino (Pineno):</strong> Es el mismo terpeno presente en coníferas y romero. En la naturaleza actúa como repelente natural de plagas y broncodilatador botánico.<br/>
+        • <strong>Limón y Cítricos (Limoneno):</strong> Idéntico al aceite de cáscara de naranja o limón. Protege a la flor de hongos patógenos y estimula la liberación de dopamina en mamíferos.<br/>
+        • <strong>Combustible / Diésel / Gasolina:</strong> Los estudios científicos recientes han descubierto que el aroma a queroseno y gas no proviene solo del Cariofileno o Mirceno, sino de <strong>compuestos orgánicos de azufre volátiles (VSC)</strong> como el <em>preniltiol</em>. Estos compuestos son biológicamente similares a los que emiten las mofetas o el ajo para disuadir a los herbívoros.<br/><br/>
+        💬 <em>Cada cepa combina más de 40 terpenos distintos en ratios únicos, creando lo que los sumilleres denominamos la "huella dactilar olfativa" de la variedad.</em>
+      `;
+    }
+
+    // F) ÍNDICA VS SATIVA: REALIDAD BOTÁNICA Y QUIMIOTÍPICA
+    if ((query.includes('diferencia') || query.includes('por qué') || query.includes('origen')) && (query.includes('indica') || query.includes('índica') || query.includes('sativa'))) {
+      return `
+        🌿 <strong>La Realidad Científica: ¿Qué diferencia realmente a una Índica de una Sativa?</strong><br/><br/>
+        1. 🌍 <strong>Diferencia Botánica y Geográfica (Jean-Baptiste Lamarck, 1785):</strong><br/>
+        • <strong>Cannabis indica:</strong> Originaria de los valles áridos y fríos del Hindu Kush (Afganistán, Pakistán). Desarrolló hojas anchas para captar la luz solar en latitudes más altas, porte rechoncho y abundante resina pegajosa como escudo contra el viento seco y la radiación UV.<br/>
+        • <strong>Cannabis sativa:</strong> Originaria de regiones ecuatoriales cálidas y húmedas (Colombia, Tailandia, México). Desarrolló hojas finas y aserradas con entrenudos largos para permitir la circulación de aire y evitar la condensación de moho.<br/><br/>
+        2. 🔬 <strong>La Realidad Moderna: El Quimiotipo Terpénico:</strong><br/>
+        Hoy en día, casi todas las cepas comerciales son híbridos polilinfáticos. Lo que determina que una flor te deje relajado en el sofá o activo y eufórico <strong>no es la forma de las hojas, sino el porcentaje de Mirceno</strong>:<br/>
+        • Si el perfil tiene <strong>más del 0.5% de Mirceno</strong>, la interacción con el THC genera una sedación corporal profunda (efecto Índica).<br/>
+        • Si el perfil tiene <strong>menos del 0.5% de Mirceno y predomina Limoneno o Terpinoleno</strong>, el efecto resulta alegre, creativo y cerebral (efecto Sativa).<br/><br/>
+        💬 <em>¿Te llama más la atención la ciencia de los efectos cerebrales o los corporales para alguna necesidad concreta?</em>
+      `;
+    }
+
+    // G) LAVADO DE RAÍCES (FLUSH): POR QUÉ SE HACE
+    if (query.includes('lavado de ra') || query.includes('lavar ra') || query.includes('flush') || (query.includes('por qué') && query.includes('regar solo con agua'))) {
+      return `
+        🚿 <strong>¿Por qué se realiza el lavado de raíces antes de la cosecha?</strong><br/><br/>
+        El lavado de raíces (o <em>flushing</em>) consiste en regar únicamente con agua osmotizada o declorada durante las últimas 1 a 2 semanas antes del corte:<br/><br/>
+        1. 🧽 <strong>Lixiviación de Sales del Medio:</strong><br/>
+        A lo largo de los meses de abonado, en el sustrato se acumulan sales de fósforo, potasio y nitratos. Regar con agua abundante a pH equilibrado sin fertilizantes solubiliza y arrastra esas sales residuales fuera de la maceta.<br/><br/>
+        2. 🍽️ <strong>Metabolismo de Reservas Internas:</strong><br/>
+        Al dejar de recibir comida exterior, la planta se ve obligada a consumir los nutrientes y almidones almacenados en sus propios tejidos y hojas. Esto provoca que las hojas se vuelvan amarillas en un proceso natural de autoconsumo.<br/><br/>
+        3. 💨 <strong>Impacto en la Combustión y Sabor:</strong><br/>
+        La clorofila no descompuesta y los nitratos residuales provocan que el humo sea acre, rasque la garganta, genere chispas en la brasa y deje una ceniza oscura y dura. Un buen lavado de raíces permite que los terpenos brillen en su máxima pureza, logrando una <strong>ceniza blanca y un humo suave</strong>.<br/><br/>
+        💬 <em>¿En qué semana de floración estás y qué tipo de fertilizantes (orgánicos o minerales) has estado utilizando?</em>
+      `;
+    }
+
+    // H) CURADO DE COGOLLOS Y REGLA 60/60
+    if (query.includes('curado') || query.includes('curar') || query.includes('boveda') || (query.includes('por qué') && query.includes('secar'))) {
+      return `
+        🍯 <strong>¿Por qué el curado es tan importante como el cultivo? (Regla 60/60):</strong><br/><br/>
+        El secado solo elimina el agua libre del tejido vegetal, pero la flor recién secada aún contiene mucha clorofila cruda, azúcares complejos y terpenos volátiles desestabilizados:<br/><br/>
+        1. 🦠 <strong>Degradación Enzimática de la Clorofila:</strong><br/>
+        Al envasar las flores secas en tarros de cristal herméticos con un <strong>58% a 62% de humedad relativa</strong> y a <strong>18-20°C</strong>, las enzimas de la planta siguen trabajando lentamente, descomponiendo la clorofila irritante y amarga en azúcares simples.<br/><br/>
+        2. 🌸 <strong>Evolución y Maduración del Buqué Aromático:</strong><br/>
+        Los monoterpenos más ligeros y volátiles se estabilizan mientras los sesquiterpenos se oxidan sutilmente, transformando un olor a "césped recién cortado" en el aroma maduro, complejo y resinoso definitivo.<br/><br/>
+        3. 🌬️ <strong>La Técnica del "Burping" (Ventilación):</strong><br/>
+        Durante las dos primeras semanas de curado, se deben abrir los frascos durante 10 a 15 minutos al día para liberar la humedad retenida en el núcleo del cogollo y renovar el oxígeno fresco.<br/><br/>
+        💬 <em>¿Tienes higrómetro dentro de tus tarros de curado para monitorizar la humedad relativa?</em>
+      `;
+    }
+
+    // I) TEMPERATURAS DE VAPORIZACIÓN Y EBULLICIÓN
+    if (query.includes('temperatura') || query.includes('grados') || query.includes('vaporiz') || query.includes('ebullición')) {
+      return `
+        🌡️ <strong>Temperaturas de Ebullición de Cannabinoides y Terpenos:</strong><br/><br/>
+        Al vaporizar o calentar cannabis, cada molécula tiene un punto de ebullición exacto donde pasa a estado de vapor sin combustión:<br/><br/>
+        • 🌿 <strong>130°C — Beta-Cariofileno:</strong> Terpeno especiado, activa receptores CB2, potente antiinflamatorio.<br/>
+        • 🌲 <strong>155°C — Alfa-Pineno:</strong> Aroma a pino, broncodilatador y protector de la memoria.<br/>
+        • ⚡ <strong>157°C — THC (Delta-9-THC):</strong> Descarboxilación y activación del efecto cerebral eufórico.<br/>
+        • 🥭 <strong>168°C — Mirceno:</strong> Aroma terroso/mango, relajante muscular y promotor del efecto sedante.<br/>
+        • 🍋 <strong>176°C — Limoneno:</strong> Frescor cítrico, estimulante del estado de ánimo y ansiolítico.<br/>
+        • 🛡️ <strong>180°C — CBD:</strong> Relajación muscular, ansiolítico y modulador de la psicoactividad.<br/>
+        • 😴 <strong>185°C — CBN:</strong> Degradación del THC, máxima relajación corporal e inductor del sueño profundo.<br/>
+        • 🪻 <strong>198°C — Linalool:</strong> Aroma a lavanda, sedante potente y calmante del sistema nervioso central.<br/><br/>
+        💡 <em>Vaporizar entre 170°C y 185°C ofrece el mejor equilibrio entre sabor terpénico exquisito y efecto lúcido sin toxinas de combustión.</em>
+      `;
+    }
+
+    // J) RESPUESTA DIDÁCTICA CIENTÍFICA GENERAL PARA CUALQUIER PREGUNTA DE "POR QUÉ" O "CÓMO"
+    const isGenericWhyOrHow = /(por\s*qu[eé]|porque|por\s+que|c[oó]mo|como funciona|a\s+qu[eé]\s+se\s+debe|qu[eé]\s+es|qu[eé]\s+significa|explica)/i.test(query);
+    if (isGenericWhyOrHow && !isExplicitRecommendation) {
+      return `
+        🔬 <strong>Explicación Botánica & Fisiológica:</strong><br/><br/>
+        He analizado tu pregunta sobre <em>"${rawQuery}"</em> desde la perspectiva de la biología vegetal y la ciencia del cannabis:<br/><br/>
+        1. 🧬 <strong>La Base Biológica:</strong> En el cannabis, casi todos los procesos morfológicos y químicos (producción de resina, coloración de tricomas, cambios de tonalidad foliar o asimilación de iones) responden a mecanismos de adaptación evolutiva frente a la radiación solar, la humedad ambiental y la disponibilidad de nutrientes en la rizosfera.<br/><br/>
+        2. ⚖️ <strong>Factores Clave en Juego:</strong><br/>
+        • <strong>Equilibrio de pH y Electroconductividad (EC):</strong> Regulan la presión osmótica que permite a los pelos radiculares ionizar minerales.<br/>
+        • <strong>Déficit de Presión de Vapor (VPD):</strong> Controla la transpiración estomática y la absorción de agua.<br/>
+        • <strong>Complejo Lumínico y Terpenogénesis:</strong> La intensidad lumínica (PPFD) y el espectro UV estimulan directamente la producción de tricomas defensivos cargados de cannabinoides y terpenos.<br/><br/>
+        💬 <em>¿Te gustaría que desglosáramos algún punto concreto de este proceso o que analicemos los parámetros específicos de tu cultivo?</em>
+      `;
+    }
+
+    // =========================================================================
+    // 2. RECOMENDACIONES DE CEPAS (CUANDO EL USUARIO LAS PIDE O BUSCA SABORES/ACTIVIDADES)
+    // =========================================================================
+
     // A) CÍTRICOS / LIMÓN / MANDARINA / NARANJA
     if (query.includes('citric') || query.includes('cítric') || query.includes('limon') || query.includes('limón') || query.includes('mandarina') || query.includes('naranja')) {
       const matches = STRAINS_DATABASE.filter(s => {
@@ -12480,7 +12690,7 @@ ${catalogSummary}`
       `;
     }
 
-    // 2. MAPEO DIRECTO CON ACTIVIDADES DEL ACTIVITY MATCHER
+    // 3. MAPEO DIRECTO CON ACTIVIDADES DEL ACTIVITY MATCHER
     let matchedActivityId = null;
     if (query.includes('caminar') || query.includes('pasear') || query.includes('caminata') || query.includes('paseo') || query.includes('senderismo') || query.includes('andar') || query.includes('naturaleza') || query.includes('bosque')) {
       matchedActivityId = 'nature_walk';
@@ -12530,37 +12740,9 @@ ${catalogSummary}`
 
     const hasIndica = query.includes('indica') || query.includes('índica') || query.includes('indicas') || query.includes('índicas');
     const hasSativa = query.includes('sativa') || query.includes('sativas') || query.includes('satva');
-    const hasDifference = query.includes('diferencia') || query.includes('vs') || query.includes('comparar');
-
-    // COMPARATIVA AMBAS
-    if ((hasIndica && hasSativa) || hasDifference) {
-      const topIndica = STRAINS_DATABASE.find(s => (s.species || '').toLowerCase().includes('indica')) || STRAINS_DATABASE[0];
-      const topSativa = STRAINS_DATABASE.find(s => (s.species || '').toLowerCase().includes('sativa')) || STRAINS_DATABASE[1];
-
-      const reasoning = this.buildReasoningBox(
-        'El usuario solicita una comparativa entre el quimiotipo Índica y Sativa.',
-        'Análisis de la interacción de terpenos miorrelajantes (Mirceno) frente a estimulantes cerebrales (Limoneno/Terpinoleno).',
-        'Seleccionadas las dos cepas de referencia más galardonadas de cada quimiotipo.'
-      );
-
-      return `
-        ${reasoning}
-        ⚖️ <strong>Análisis Comparativo Fundamentado:</strong>
-        <br/><br/>
-        🟣 <strong>INDICA (Relajación Corporal):</strong><br/>
-        Predominio de <strong>Mirceno</strong>. Sensación de descanso físico y desconexión.<br/>
-        • <em>Recomendación estrella:</em> <a href="#" class="ai-strain-link" data-strain-id="${topIndica.id}"><strong>${topIndica.name}</strong></a> (${safeBank(topIndica)}) — THC ${topIndica.thc}%.
-        <br/><br/>
-        🟡 <strong>SATIVA (Estimulación Cerebral):</strong><br/>
-        Predominio de <strong>Limoneno y Terpinoleno</strong>. Impulso alegre y creativo.<br/>
-        • <em>Recomendación estrella:</em> <a href="#" class="ai-strain-link" data-strain-id="${topSativa.id}"><strong>${topSativa.name}</strong></a> (${safeBank(topSativa)}) — THC ${topSativa.thc}%.
-        <br/><br/>
-        💬 <em>¿Qué efecto se ajusta mejor a lo que buscas experimentar hoy?</em>
-      `;
-    }
 
     // PETICIÓN EXPLICITA DE INDICA
-    if (hasIndica || query.includes('no quiero sativa') || query.includes('sin sativa')) {
+    if ((hasIndica && isExplicitRecommendation) || query.includes('no quiero sativa') || query.includes('sin sativa')) {
       const indicaStrains = STRAINS_DATABASE.filter(s => (s.species || '').toLowerCase().includes('indica'));
       const topIndicas = indicaStrains.sort((a, b) => (b.thc || 0) - (a.thc || 0)).slice(0, 3);
 
@@ -12586,7 +12768,7 @@ ${catalogSummary}`
     }
 
     // PETICIÓN EXPLICITA DE SATIVA
-    if (hasSativa || query.includes('no quiero indica') || query.includes('sin indica')) {
+    if ((hasSativa && isExplicitRecommendation) || query.includes('no quiero indica') || query.includes('sin indica')) {
       const sativaStrains = STRAINS_DATABASE.filter(s => (s.species || '').toLowerCase().includes('sativa'));
       const topSativas = sativaStrains.sort((a, b) => (b.thc || 0) - (a.thc || 0)).slice(0, 3);
 
@@ -12612,7 +12794,7 @@ ${catalogSummary}`
     }
 
     // POTENCIA ALTA
-    if (query.includes('thc') || query.includes('potente') || query.includes('fuerte')) {
+    if ((query.includes('thc') || query.includes('potente') || query.includes('fuerte')) && isExplicitRecommendation) {
       const topThc = [...STRAINS_DATABASE].sort((a, b) => (b.thc || 0) - (a.thc || 0)).slice(0, 3);
 
       const reasoning = this.buildReasoningBox(
@@ -12634,30 +12816,23 @@ ${catalogSummary}`
       `;
     }
 
-    // BÚSQUEDA GENERAL POR PALABRA CLAVE
+    // BÚSQUEDA GENERAL POR PALABRA CLAVE DE CEPA O BANCO (Solo si coincide claramente con un nombre o banco)
     const searchMatches = STRAINS_DATABASE.filter(s => {
-      const fl = safeFlavors(s);
-      const ef = safeEffects(s);
-      const dt = safeTerpene(s);
       const nm = (s.name || '').toLowerCase();
       const bk = safeBank(s).toLowerCase();
-      return nm.includes(query) ||
-             bk.includes(query) ||
-             fl.some(f => f.toLowerCase().includes(query)) ||
-             ef.some(e => e.toLowerCase().includes(query)) ||
-             dt.includes(query);
+      return (query.length >= 3 && (nm.includes(query) || bk.includes(query)));
     }).slice(0, 3);
 
     if (searchMatches.length > 0) {
       const reasoning = this.buildReasoningBox(
         `Búsqueda personalizada para el término: <strong>"${rawQuery}"</strong>.`,
-        'Filtrado terpénico y organoléptico por coincidencia semántica de aromas y efectos.',
-        `Coincidencias óptimas encontradas en el catálogo de ${STRAINS_DATABASE.length} cepas.`
+        'Filtrado terpénico y organoléptico por coincidencia en catálogo.',
+        `Coincidencias encontradas en el catálogo de ${STRAINS_DATABASE.length} cepas.`
       );
 
       return `
         ${reasoning}
-        🔍 <strong>Recomendación Fundamentada para "${rawQuery}":</strong>
+        🔍 <strong>Cepas encontradas para "${rawQuery}":</strong>
         <br/><br/>
         ${searchMatches.map(s => `
           • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> (${s.species}) — <em>${safeBank(s)}</em><br/>
@@ -12666,22 +12841,16 @@ ${catalogSummary}`
       `;
     }
 
-    // FALLBACK INTERACTIVO CON PREGUNTA DE SABORES
-    const randomPick = STRAINS_DATABASE[Math.floor(Math.random() * STRAINS_DATABASE.length)] || STRAINS_DATABASE[0];
-    const reasoning = this.buildReasoningBox(
-      'Consulta general o abierta recibida.',
-      'Analizando cepa destacada para abrir el maridaje terpénico.',
-      'Sugerencia directa para encauzar la búsqueda hacia tu perfil de sabor o actividad ideal.'
-    );
-
+    // =========================================================================
+    // 3. RESPUESTA CONVERSACIONAL ABIERTA (SIN FORZAR RECOMENDACIONES)
+    // =========================================================================
     return `
-      ${reasoning}
-      🌟 <strong>Sugerencia del Sumiller:</strong><br/><br/>
-      Prueba la cepa destacada de hoy: <a href="#" class="ai-strain-link" data-strain-id="${randomPick.id}"><strong>${randomPick.name}</strong></a> (${randomPick.species} de <em>${safeBank(randomPick)}</em>)<br/>
-      &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${randomPick.thc}% | 👅 Sabores: ${safeFlavors(randomPick).join(', ')}</small>
-      <br/><br/>
-      💬 <strong>¿Qué tipo de sabores prefieres más?</strong><br/>
-      Dime si buscas sabores 🍋 <em>Cítricos</em>, 🍓 <em>Frutales Dulces</em>, 🌲 <em>Pino Haze</em>, ⛽ <em>Diésel</em>, 🍪 <em>Galleta/Vainilla</em> o 🧀 <em>Queso</em> y te haré la recomendación exacta con mi análisis de razonamiento.
+      🌿 <strong>Mateo:</strong> He recibido tu consulta: <em>"${rawQuery}"</em>.<br/><br/>
+      Como especialista botánico, puedo responderte exactamente igual que <strong>Gemini</strong> sobre cualquier ámbito científico del cannabis:<br/><br/>
+      • 🔬 <strong>Ciencia vegetal y cultivo:</strong> Explícame qué te ocurre o pregúntame el <em>porqué</em> de las hojas amarillas, exceso de abono, carencias o madurez de los tricomas.<br/>
+      • 🧬 <strong>Química y Farmacología:</strong> Pregúntame sobre el efecto séquito, receptores CB1/CB2 o cómo interactúa el THC con cada terpeno.<br/>
+      • 👅 <strong>Maridaje Sommelier:</strong> Si en cualquier momento deseas que te recomiende cepas de nuestro catálogo de <strong>${STRAINS_DATABASE.length} variedades</strong>, dime qué sabor o efecto buscas y te haré una selección a medida.<br/><br/>
+      💬 <em>¿Qué aspecto te gustaría explorar o resolver hoy?</em>
     `;
   }
 }
