@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-06 16:20  
+> **Última actualización:** 2026-09-06 16:35  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
@@ -8,13 +8,14 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 429 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo la colección fotoperiódica THC oficial de Eva Seeds con 11 variedades y Medical Seeds Co. con 16 variedades).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_eva_seeds_v140`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_eva_seeds_v142_monster_pro`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 - **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
+- **Fotografía Macro Profesional de Monster (Eva Seeds) v142:** **100% ACTUALIZADA** (Sustituida foto amateur por fotografía botánica macro de estudio 700x700 WebP sobre fondo oscuro sin marcas de agua ni elementos ajenos).
 - **Catálogo Fotoperiódico Eva Seeds (v140):** **100% INTEGRADO Y VERIFICADO** (11 variedades fotoperiódicas THC agregadas a `js/data.js` con fotos botánicas reales 700x700 WebP y ficha técnica completa).
 - **Suite de Inteligencia Artificial Gemini 3.8 Flash & CannaDoctor 2.0:** **100% OPERATIVA (v146)**
   - **Motor Neuronal Google Gemini 3.8 Flash:** Migración del Sommelier IA y CannaDoctor al modelo 3.8 con mayor velocidad, razonamiento botánico y visión artificial de última generación (con tolerancia a fallos en cascada a 3.6/2.5 y motor local).
@@ -36,7 +37,12 @@
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-06)
-1. ✅ **Integración del Catálogo Fotoperiódico THC de Eva Seeds — 11 Genéticas Oficiales con Fotografía Botánica Real (v140):**
+1. ✅ **Actualización Fotográfica Profesional de Monster (Eva Seeds) v142:**
+   - **Sustitución Visual de Calidad Superior:** Reemplazada la fotografía amateur previa por la toma macro botánica oficial de flor apical en alta resolución (`1152x1728` px original) con iluminación de estudio sobre fondo oscuro, repleta de tricomas y cálices maduros.
+   - **Normalización WebP Cuadrada 700x700:** Encuadre centrado sin marcas de agua ni elementos extraños, guardada en `img/monster.webp`, `images/strains/monster.webp` y `images/strains/eva-seeds/monster.webp`.
+   - **Recompilación y Despliegue:** Recompilados `js/bundle.js` y `js/bundle-v148.js` y actualizada versión de caché a `?v=2026_eva_seeds_v142_monster_pro` en `index.html`.
+
+2. ✅ **Integración del Catálogo Fotoperiódico THC de Eva Seeds — 11 Genéticas Oficiales con Fotografía Botánica Real (v140):**
    - **Catálogo Oficial 100% Completo:** Se integraron las 11 variedades fotoperiódicas THC oficiales de Eva Seeds: *Jamaican Dream, Monster, Veneno, Papa's Candy, High Level, Black Dream, Furious Candy, Missing In Barcelona, TNT Kush, Gipsy Haze, Lemon King*.
    - **Fotografía Oficial 100% Real (0 IA):** Descargadas e integradas fotos botánicas reales de cogollos y floraciones en resolución 700x700 WebP en `img/`, `images/strains/` y `images/strains/eva-seeds/`.
    - **Perfiles Botánicos Precisos:** Días de floración, rendimientos indoor/outdoor, dominancia terpénica calculada, cannabinoides (THC/CBD), linajes puros/híbridos contrastados y descripciones sensoriales completas.
