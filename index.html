@@ -16,6 +16,10 @@
   <meta name="target" content="adults" />
   <meta name="audience" content="all adults" />
 
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +32,16 @@
     window.addEventListener('error', function (e) {
       console.error('CannaCatalog Error:', e.message, e.filename, e.lineno);
     });
+
+    // Desregistrar de inmediato cualquier Service Worker previo que pueda interceptar bundle.js o styles.css
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (registrations) {
+        for (var reg of registrations) {
+          reg.unregister();
+          console.log('🧹 ServiceWorker legacy desregistrado con éxito:', reg);
+        }
+      }).catch(function () { });
+    }
 
     function autoUnlockCannaCatalog() {
       try {
@@ -48,7 +62,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css?v=2026_compare_clean_v133">
+  <link rel="stylesheet" href="css/styles.css?v=2026_compare_fix_v134">
 </head>
 
 <body>
@@ -1099,7 +1113,7 @@
   </dialog>
 
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=2026_compare_clean_v133"></script>
+  <script src="js/bundle.js?v=2026_compare_fix_v134"></script>
 </body>
 
 </html>

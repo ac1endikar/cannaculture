@@ -3723,6 +3723,8 @@ dialog.compare-dialog[open] {
   position: fixed !important;
   top: 50% !important;
   left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
   transform: translate(-50%, -50%) !important;
   margin: 0 !important;
   width: min(94vw, 1100px) !important;
@@ -3751,13 +3753,23 @@ dialog.compare-dialog::backdrop {
   -webkit-backdrop-filter: blur(8px) !important;
 }
 
+#compare-modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
 .compare-modal-wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-height: calc(88vh - 2.5rem);
+  max-height: 100%;
   overflow: hidden;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .compare-modal-header {
@@ -4111,8 +4123,10 @@ dialog.compare-dialog::backdrop {
     position: fixed !important;
     top: 50% !important;
     left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
     transform: translate(-50%, -50%) !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
     width: min(94vw, 1200px) !important;
     max-width: 94vw !important;
     padding: 1rem 0.75rem !important;
@@ -4170,6 +4184,8 @@ dialog.compare-dialog[open] {
   position: fixed !important;
   top: 50% !important;
   left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
   transform: translate(-50%, -50%) !important;
   margin: 0 !important;
   width: min(94vw, 1100px) !important;
@@ -4184,8 +4200,10 @@ dialog.compare-dialog[open] {
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-height: calc(88vh - 2.5rem);
+  max-height: 100%;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #compare-modal .compare-grid,
@@ -4239,6 +4257,13 @@ dialog.compare-dialog[open] {
 @media (max-width: 768px) {
   #compare-modal[open],
   dialog.compare-dialog[open] {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
     width: 94vw !important;
     max-width: 94vw !important;
     max-height: 88vh !important;

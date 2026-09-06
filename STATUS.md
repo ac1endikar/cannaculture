@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-05 18:48  
+> **Última actualización:** 2026-09-06 10:15  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1`)
 
 ---
@@ -8,7 +8,7 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 402 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js`.
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_compare_grid_v131`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_compare_fix_v134`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
@@ -20,12 +20,24 @@
   - 402/402 referencias en `js/data.js` migradas a `.webp` (0 imágenes faltantes).
   - Lazy Loading (`loading="lazy"` + `decoding="async"`) activo en tarjetas del catálogo.
 - **Mobile Responsive Engine (Ficha Técnica):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
-- **Módulo Comparador Emergente Dark Glass (v131):** **100% COMPLETADO Y OPERATIVO** (Alineación perfecta de alturas y textos mediante selectores directos por atributos y clases reales).
+- **Módulo Comparador Emergente Dark Glass (v134):** **100% OPERATIVO Y CENTRADO NATIVO** (Apertura nativa con `.showModal()`, anulación de inset residual con `right: auto; bottom: auto; margin: 0;`, contenedor `#compare-modal-content` calibrado al 100% y limpieza preventiva de Service Worker y caché).
 
 ---
 
-## 3. Tareas Completadas Recientemente (2026-09-05)
-1. ✅ **Alineación de Alturas y Textos en Columnas del Comparador (#compare-modal) con Selectores Reales (v131) (17:52):**
+## 3. Tareas Completadas Recientemente (2026-09-06)
+1. ✅ **Centrado Absoluto y Apertura Defensiva del Comparador (#compare-modal) (v134):**
+   - **Verificación y Apertura Nativa (`js/app.js`):** Confirmada y robustecida la llamada a `.showModal()` nativa en `openCompareModal()` y `.close()` en `closeCompareModal()`, con resolución diferida de `#compare-modal` y `#compare-modal-content`.
+   - **Geometría de Centrado Fijo en CSS (`css/styles.css`):**
+     * Añadido `right: auto !important; bottom: auto !important;` y `margin: 0 !important;` tanto en desktop como en responsive móvil (removiendo el `margin: 0 auto !important;` que desplazaba el modal a la derecha en móviles).
+     * Estilizado `#compare-modal-content` a `width: 100%; height: 100%; display: flex; flex-direction: column; overflow: hidden; box-sizing: border-box;` (idéntico a `#strain-detail-content`).
+     * Calibrado `.compare-modal-wrapper` a `max-height: 100%; width: 100%; box-sizing: border-box;`.
+   - **Políticas de Caché y Service Worker Defensivo (`index.html`):**
+     * No hay Service Worker en el repositorio. Se incorporó rutina de limpieza en `index.html` para desregistrar preventivamente cualquier `ServiceWorker` legacy en clientes previos.
+     * Añadidos meta tags de `Cache-Control: no-cache, no-store, must-revalidate` en `index.html`.
+     * Bump de versión a `?v=2026_compare_fix_v134` en `styles.css` y `bundle.js`.
+   - **Compilación de Bundle:** Ejecutado `python scripts/build_bundle.py` (608,666 bytes).
+
+2. ✅ **Alineación de Alturas y Textos en Columnas del Comparador (#compare-modal) con Selectores Reales (v131-v133):**
    - **Selectores Directos por Atributos y Clases Reales:**
      * Columnas: `#compare-modal .compare-grid > *`, `#compare-modal [class*="compare-col"]` calibradas a `flex: 1 1 0% !important; min-width: 290px !important; box-sizing: border-box !important;`.
      * Cabecera Cultivo & Floración: `#compare-modal [class*="cultivo"]`, `#compare-modal [class*="floracion"]` con `display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 6px !important; min-height: 38px !important;`.

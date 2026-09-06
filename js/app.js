@@ -1545,19 +1545,37 @@ class CannaAppMAX {
   }
 
   openCompareModal() {
+    if (!this.compareModal) {
+      this.compareModal = document.getElementById('compare-modal');
+    }
+    if (!this.compareModalContent) {
+      this.compareModalContent = document.getElementById('compare-modal-content');
+    }
+
     if (!this.comparedStrains || this.comparedStrains.length === 0) {
       this.showToast('⚖️ Selecciona hasta 3 variedades con el botón "⚖️ Comparar" en las tarjetas.');
       return;
     }
     this.renderCompareModal();
     if (this.compareModal && typeof this.compareModal.showModal === 'function') {
-      if (!this.compareModal.open) this.compareModal.showModal();
+      if (!this.compareModal.open) {
+        this.compareModal.showModal();
+      }
+    } else if (this.compareModal) {
+      this.compareModal.setAttribute('open', '');
     }
   }
 
   closeCompareModal() {
+    if (!this.compareModal) {
+      this.compareModal = document.getElementById('compare-modal');
+    }
     if (this.compareModal && this.compareModal.open) {
-      this.compareModal.close();
+      if (typeof this.compareModal.close === 'function') {
+        this.compareModal.close();
+      } else {
+        this.compareModal.removeAttribute('open');
+      }
     }
   }
 
