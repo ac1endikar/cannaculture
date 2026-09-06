@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-06 10:15  
+> **Última actualización:** 2026-09-06 10:20  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1`)
 
 ---
@@ -8,7 +8,7 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 402 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js`.
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_compare_fix_v134`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_compare_align_v135`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
@@ -20,12 +20,18 @@
   - 402/402 referencias en `js/data.js` migradas a `.webp` (0 imágenes faltantes).
   - Lazy Loading (`loading="lazy"` + `decoding="async"`) activo en tarjetas del catálogo.
 - **Mobile Responsive Engine (Ficha Técnica):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
-- **Módulo Comparador Emergente Dark Glass (v134):** **100% OPERATIVO Y CENTRADO NATIVO** (Apertura nativa con `.showModal()`, anulación de inset residual con `right: auto; bottom: auto; margin: 0;`, contenedor `#compare-modal-content` calibrado al 100% y limpieza preventiva de Service Worker y caché).
+- **Módulo Comparador Emergente Dark Glass (v135):** **100% OPERATIVO, CENTRADO Y NIVELADO** (Cabecera Cultivo & Floración nivelada estrictamente a min-height: 48px, flex column con line-height 1.2 y nowrap en pastillas de dificultad en todas las columnas).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-06)
-1. ✅ **Centrado Absoluto y Apertura Defensiva del Comparador (#compare-modal) (v134):**
+1. ✅ **Nivelación Estricta de Cabecera "Cultivo & Floración" en Columnas (#compare-modal) (v135):**
+   - **Contenedores de Cabecera:** `#compare-modal .compare-cultivo-header`, `#compare-modal .compare-floracion-header` y `#compare-modal .compare-cultivo-box .compare-metric-title` fijados con `min-height: 48px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 6px !important;`.
+   - **Títulos de Métricas:** Títulos `.compare-card-section-title` dentro de la cabecera de cultivo configurados con `display: flex !important; flex-direction: column !important; justify-content: center !important; line-height: 1.2 !important;`.
+   - **Pastillas de Dificultad:** Preservado y blindado `white-space: nowrap !important; flex-shrink: 0 !important;` en `.badge-diff-easy`, `.badge-diff-med`, `.badge-diff-hard` y `.compare-badge-difficulty`.
+   - **Build y Versión:** Bundle recompilado con `python scripts/build_bundle.py` (608,666 bytes) y versión sincronizada en `index.html` a `?v=2026_compare_align_v135`.
+
+2. ✅ **Centrado Absoluto y Apertura Defensiva del Comparador (#compare-modal) (v134):**
    - **Verificación y Apertura Nativa (`js/app.js`):** Confirmada y robustecida la llamada a `.showModal()` nativa en `openCompareModal()` y `.close()` en `closeCompareModal()`, con resolución diferida de `#compare-modal` y `#compare-modal-content`.
    - **Geometría de Centrado Fijo en CSS (`css/styles.css`):**
      * Añadido `right: auto !important; bottom: auto !important;` y `margin: 0 !important;` tanto en desktop como en responsive móvil (removiendo el `margin: 0 auto !important;` que desplazaba el modal a la derecha en móviles).

@@ -4239,6 +4239,26 @@ dialog.compare-dialog[open] {
   gap: 8px;
 }
 
+/* Nivelación estricta cabecera Cultivo & Floración (v135) */
+#compare-modal .compare-cultivo-header,
+#compare-modal .compare-floracion-header,
+#compare-modal .compare-cultivo-box .compare-metric-title {
+  min-height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 6px !important;
+}
+
+#compare-modal .compare-cultivo-header .compare-card-section-title,
+#compare-modal .compare-floracion-header .compare-card-section-title,
+#compare-modal .compare-cultivo-box .compare-card-section-title {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  line-height: 1.2 !important;
+}
+
 #compare-modal .compare-card-section-title {
   font-size: 0.78rem;
   font-weight: 700;
@@ -4249,8 +4269,8 @@ dialog.compare-dialog[open] {
 #compare-modal .badge-diff-med,
 #compare-modal .badge-diff-hard,
 #compare-modal .compare-badge-difficulty {
-  white-space: nowrap;
-  flex-shrink: 0;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 /* En móvil: columnas respirables con min-width 290px y scroll horizontal fluido */
