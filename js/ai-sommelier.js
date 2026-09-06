@@ -372,24 +372,27 @@ ${catalogSummary}`
       system_instruction: systemInstruction
     };
 
-    // 1. Intentar primero a través del proxy local /api/gemini con timeout estricto de 8.5s
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 8500);
-      const proxyRes = await fetch('/api/gemini', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-        signal: controller.signal
-      });
-      clearTimeout(timeoutId);
-      if (proxyRes.ok) {
-        const data = await proxyRes.json();
-        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (text) return this.formatBotMarkdown(text);
+    // 1. Intentar primero a través del proxy local /api/gemini con timeout estricto de 8.5s (solo en entorno local)
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (isLocal) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8500);
+        const proxyRes = await fetch('/api/gemini', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        if (proxyRes.ok) {
+          const data = await proxyRes.json();
+          const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (text) return this.formatBotMarkdown(text);
+        }
+      } catch (e) {
+        // Si el proxy falla o da timeout, continuamos
       }
-    } catch (e) {
-      // Si el proxy falla o da timeout, continuamos
     }
 
     // 2. Intentar directamente con la API Key si está guardada en localStorage

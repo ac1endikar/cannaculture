@@ -12222,24 +12222,27 @@ ${catalogSummary}`
       system_instruction: systemInstruction
     };
 
-    // 1. Intentar primero a través del proxy local /api/gemini con timeout estricto de 8.5s
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 8500);
-      const proxyRes = await fetch('/api/gemini', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-        signal: controller.signal
-      });
-      clearTimeout(timeoutId);
-      if (proxyRes.ok) {
-        const data = await proxyRes.json();
-        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (text) return this.formatBotMarkdown(text);
+    // 1. Intentar primero a través del proxy local /api/gemini con timeout estricto de 8.5s (solo en entorno local)
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (isLocal) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8500);
+        const proxyRes = await fetch('/api/gemini', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        if (proxyRes.ok) {
+          const data = await proxyRes.json();
+          const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (text) return this.formatBotMarkdown(text);
+        }
+      } catch (e) {
+        // Si el proxy falla o da timeout, continuamos
       }
-    } catch (e) {
-      // Si el proxy falla o da timeout, continuamos
     }
 
     // 2. Intentar directamente con la API Key si está guardada en localStorage
@@ -13250,22 +13253,25 @@ class CannaAppMAX {
     this.strainsGrid.innerHTML = strains.map(strain => {
       const terpeneData = TERPENES_INFO[strain.dominantTerpene] || 
         Object.values(TERPENES_INFO).find(t => t.name.toLowerCase() === (strain.dominantTerpene || '').toLowerCase());
-      const icon = bankIcons[strain.bank || strain.breeder] || '🌿';
-      const stars = '★'.repeat(Math.round(strain.rating)) + '☆'.repeat(5 - Math.round(strain.rating));
-      const strainImg = strain.image;
+      const bankName = strain.bank || strain.breeder || 'Banco Seleccionado';
+      const icon = bankIcons[bankName] || '🌿';
+      const stars = '★'.repeat(Math.round(strain.rating || 4)) + '☆'.repeat(5 - Math.round(strain.rating || 4));
+      const strainImg = strain.image || '';
+      const safeName = (strain.name || 'Variedad').replace(/'/g, "\\'");
+      const safeBank = bankName.replace(/'/g, "\\'");
       const imgTag = strainImg ? `<img src="${strainImg}" alt="${strain.name}" class="card-visual-img" loading="lazy" decoding="async" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.opacity='1';" />` : '';
       const isCompared = (this.comparedStrains || []).includes(strain.id);
 
       return `
         <div class="strain-card" style="--card-accent: ${strain.visualColor}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
-          <div class="card-visual-banner" onclick="event.stopPropagation(); window.app && window.app.openImageLightbox('${strainImg}', '${strain.name.replace(/'/g, "\\'")}', '${strain.bank.replace(/'/g, "\\'")}')" title="🔍 Haz clic para ver foto en alta resolución con Zoom HD">
+          <div class="card-visual-banner" onclick="event.stopPropagation(); window.app && window.app.openImageLightbox('${strainImg}', '${safeName}', '${safeBank}')" title="🔍 Haz clic para ver foto en alta resolución con Zoom HD">
             ${imgTag}
             <div class="card-visual-banner-inner" style="background: ${strain.visualColor}; ${strain.bgPattern}; opacity: ${strainImg ? '0' : '1'};"></div>
             <div class="card-banner-overlay"></div>
             ${strainImg ? `<div style="position: absolute; top: 8px; right: 8px; z-index: 10; background: rgba(0,0,0,0.75); backdrop-filter: blur(6px); border: 1px solid rgba(16,185,129,0.5); border-radius: 50px !important; padding: 3px 10px; font-size: 0.7rem; color: #6EE7B7; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">🔍 Zoom HD</div>` : ''}
             <div style="position: absolute; bottom: 8px; left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: center; color: #fff; z-index: 2;">
               <span style="font-size: 0.72rem; font-weight: 800; background: rgba(0,0,0,0.7); padding: 3px 10px; border-radius: 0 !important; backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.15);">
-                ${icon} ${strain.bank}
+                ${icon} ${bankName}
               </span>
               <span style="font-size: 0.78rem; color: #FFD700; font-weight: 700; text-shadow: 0 1px 4px rgba(0,0,0,0.9); background: rgba(0,0,0,0.6); padding: 3px 10px; border-radius: 0 !important; backdrop-filter: blur(4px);">
                 ${stars}
@@ -13665,7 +13671,10 @@ class CannaAppMAX {
         </div>`;
     }).join('');
 
-    const mainImg = strain.image;
+    const mainImg = strain.image || '';
+    const bankName = strain.bank || strain.breeder || 'Banco Seleccionado';
+    const safeName = (strain.name || 'Variedad').replace(/'/g, "\\'");
+    const safeBank = bankName.replace(/'/g, "\\'");
 
     this.strainDetailContent.innerHTML = `
       <div class="pro-spec-sheet">
@@ -13681,7 +13690,7 @@ class CannaAppMAX {
             <div style="position:absolute; inset:0; ${strain.bgPattern}; opacity:0.35; pointer-events:none;"></div>
             
             ${mainImg ? `
-            <div class="pro-hero-photo-wrapper" onclick="window.app && window.app.openImageLightbox('${mainImg}', '${strain.name.replace(/'/g, "\\'")}', '${strain.bank.replace(/'/g, "\\'")}')" title="Haz clic para ver la foto en alta resolución 🔍">
+            <div class="pro-hero-photo-wrapper" onclick="window.app && window.app.openImageLightbox('${mainImg}', '${safeName}', '${safeBank}')" title="Haz clic para ver la foto en alta resolución 🔍">
               <img src="${mainImg}" alt="${strain.name}" class="pro-hero-img" loading="lazy" decoding="async" onerror="this.style.display='none';" />
               <div class="pro-hero-vignette"></div>
               
@@ -13694,7 +13703,7 @@ class CannaAppMAX {
                   <div class="pro-hero-badges-row">
                     <span class="badge-species ${strain.species.toLowerCase()}">${strain.species}</span>
                     <span class="pro-hero-bank-pill">
-                      🏛️ ${strain.bank}
+                      🏛️ ${bankName}
                     </span>
                   </div>
                   <h1 class="pro-strain-name-lg">${strain.name}</h1>
@@ -14265,6 +14274,10 @@ class CannaAppMAX {
         .map(([k, pct]) => `<span style="font-size:0.72rem; color:var(--text-muted);">${TERPENES_INFO[k]?.name || k}: ${pct}%</span>`)
         .join(' · ');
 
+      const bankName = strain.bank || strain.breeder || 'Banco Seleccionado';
+      const safeName = (strain.name || 'Variedad').replace(/'/g, "\\'");
+      const safeBank = bankName.replace(/'/g, "\\'");
+
       return `
         <div class="compare-column compare-col">
           <!-- Botón quitar de la comparativa -->
@@ -14272,12 +14285,12 @@ class CannaAppMAX {
 
           <!-- Cabecera de la Cepa -->
           <div class="compare-col-head">
-            <div class="compare-col-thumb-wrap" onclick="window.app && window.app.openImageLightbox('${strain.image || ''}', '${strain.name.replace(/'/g, "\\'")}', '${strain.bank.replace(/'/g, "\\'")}')" title="🔍 Ampliar fotografía botánica HD">
+            <div class="compare-col-thumb-wrap" onclick="window.app && window.app.openImageLightbox('${strain.image || ''}', '${safeName}', '${safeBank}')" title="🔍 Ampliar fotografía botánica HD">
               ${strain.image ? `<img src="${strain.image}" alt="${strain.name}" class="compare-col-thumb" onerror="this.style.display='none';" />` : ''}
               <div class="compare-col-thumb-overlay">🔍</div>
             </div>
             <div class="compare-col-info">
-              <div class="compare-col-bank">🏛️ ${strain.bank}</div>
+              <div class="compare-col-bank">🏛️ ${bankName}</div>
               <h3 class="compare-col-name">${strain.name}</h3>
               <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
                 <span class="badge-species ${strain.species.toLowerCase()}" style="font-size:0.7rem; padding: 2px 8px; border-radius:50px !important;">${strain.species}</span>

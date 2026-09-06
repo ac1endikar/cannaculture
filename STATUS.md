@@ -8,16 +8,16 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 418 cepas únicas y consolidadas pertenecientes a 39 bancos de semillas premium en `js/data.js` (402 base previa + 16 Medical Seeds enriquecidas con terpenos, sabores y efectos).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_sommelier_shielded_v140`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_cannacatalog_fix_v142`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
-- **Suite de Inteligencia Artificial Gemini 3.6 Flash & CannaDoctor:** **100% OPERATIVA (v139)**
+- **Suite de Inteligencia Artificial Gemini 3.6 Flash & CannaDoctor:** **100% OPERATIVA (v142)**
   - **Sommelier Mateo:** Respuestas en tiempo real con razonamiento neuro-terpénico y enlaces interactivos a las 418 variedades.
   - **CannaDoctor Multimodal:** Soporte para subida de fotos de hojas o cogollos con diagnóstico botánico de deficiencias, plagas y madurez de tricomas.
-  - **Proxy Local Seguro:** Endpoint `POST /api/gemini` en `server.py` que lee `.env` sin exponer claves en el bundle de producción.
+  - **Proxy Local Seguro & Compatibilidad GitHub Pages:** Detección inteligente de entorno (evita peticiones POST 405 en GitHub Pages y conmuta al instante al motor heurístico o usa la clave guardada en localStorage).
 - **Automatización CI/CD con GitHub Actions:**
   - **Auto-PR Code Reviewer:** Workflow `.github/workflows/gemini_pr_reviewer.yml` que audita diffs con IA en cada Pull Request.
   - **Release Notes & Changelog Generator:** Workflow `.github/workflows/gemini_changelog.yml` activado en tags.
@@ -32,7 +32,13 @@
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-06)
-1. ✅ **Blindaje Defensivo del Sommelier IA & Timeout Gemini 3.6 (v140):**
+1. ✅ **Blindaje Defensivo en `initCatalog` (`.replace`) & Compatibilidad GitHub Pages (v142):**
+   - **Corrección de Excepción en Render:** En `js/app.js` (`renderStrainsGrid`, `renderStrainDetail`, `renderCompareModal`), se blindaron las llamadas `.replace()` al abrir modales de lightbox. Se sustituyó `strain.bank.replace(...)` por `(strain.bank || strain.breeder || 'Banco Seleccionado').replace(...)`, eliminando cualquier riesgo de error `Cannot read properties of undefined (reading 'replace')`.
+   - **Compatibilidad con GitHub Pages (Anti-405):** En `js/ai-sommelier.js` (`callGeminiAPI`), se condicionó la llamada `/api/gemini` únicamente a entornos con proxy local (`localhost`/`127.0.0.1`). En hosts estáticos como GitHub Pages, conmuta instantáneamente al motor heurístico local sin emitir un POST 405 en la consola (o usa la API key directa si se configuró en ajustes).
+   - **Invalidación Forzada de Caché:** Añadida purga automática de `CacheStorage` en `index.html` para erradicar cualquier versión residual o previa en navegadores clientes y sincronizada la versión a `?v=2026_cannacatalog_fix_v142`.
+   - **Recompilación de Bundle:** Compilado `js/bundle.js` (630,187 bytes).
+
+2. ✅ **Blindaje Defensivo del Sommelier IA & Timeout Gemini 3.6 (v140):**
    - **Diagnóstico y Corrección de Crash:** Corregida excepción no capturada `TypeError: Cannot read properties of undefined (reading 'some')` en `generateHumanResponse`. Ocurría al procesar consultas generales (como "hola", "recomiéndame algo") sobre variedades con esquemas heterogéneos (como las 16 cepas de Medical Seeds que no tenían `flavors` o `effects` en formato array).
    - **Extractores Seguros (Defensive Schema):** Implementadas funciones utilitarias `safeFlavors()`, `safeEffects()`, `safeTerpene()` y `safeBank()` que extraen arrays y strings normalizados con valores por defecto elegantes sin importar la procedencia de la cepa.
    - **Control de Tiempos de Espera (Timeout Abort):** Añadido `AbortController` con timeout de 8.5 segundos a las llamadas de red hacia Gemini. Si la red es lenta o no hay proxy activo, conmuta de inmediato al motor heurístico local sin dejar el indicador de escritura ("pensando...") colgado.

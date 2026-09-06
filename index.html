@@ -43,6 +43,12 @@
       }).catch(function () { });
     }
 
+    if ('caches' in window) {
+      caches.keys().then(function (names) {
+        for (var name of names) caches.delete(name);
+      }).catch(function () { });
+    }
+
     function autoUnlockCannaCatalog() {
       try {
         var lockStyle = document.getElementById('age-lock-style');
@@ -62,7 +68,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css?v=2026_sommelier_shielded_v140">
+  <link rel="stylesheet" href="css/styles.css?v=2026_cannacatalog_fix_v142">
 </head>
 
 <body>
@@ -1127,7 +1133,7 @@
   </dialog>
 
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=2026_sommelier_shielded_v140"></script>
+  <script src="js/bundle.js?v=2026_cannacatalog_fix_v142"></script>
 </body>
 
 </html>
