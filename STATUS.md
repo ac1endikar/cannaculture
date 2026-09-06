@@ -1,14 +1,14 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-06 10:22  
+> **Última actualización:** 2026-09-06 10:45  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1`)
 
 ---
 
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
-- **Base de datos:** 402 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js`.
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_compare_template_v136`).
+- **Base de datos:** 418 cepas únicas y consolidadas pertenecientes a 39 bancos de semillas premium en `js/data.js`.
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_medical_seeds_v137`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
@@ -17,15 +17,20 @@
 - **Fase 2 de Reemplazo y Optimización Visual de Imágenes:** **100% COMPLETADA (143/143)**
 - **Optimización WebP Masiva:** **100% COMPLETADA (955/955)**
   - Reducción de peso de assets: **388.69 MB ➔ 182.41 MB (Ahorro del 53.1%)**.
-  - 402/402 referencias en `js/data.js` migradas a `.webp` (0 imágenes faltantes).
   - Lazy Loading (`loading="lazy"` + `decoding="async"`) activo en tarjetas del catálogo.
 - **Mobile Responsive Engine (Ficha Técnica):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
-- **Módulo Comparador Emergente Dark Glass (v136):** **100% OPERATIVO, CENTRADO Y NIVELADO** (Plantilla HTML en `js/app.js` configurada con salto forzado `<br>` y estilos inline defensivos para garantizar 48px y 2 líneas idénticas en todas las columnas).
+- **Banco Medical Seeds (v137):** **100% INTEGRADO Y COMPROBADO** (16 variedades fotoperiódicas THC agregadas a `js/data.js` con verificación previa de cero colisiones de ID, soporte en selector de bancos, asignación de icono `⚕️` y compatibilidad completa con el comparador y sommelier).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-06)
-1. ✅ **Nivelación Directa en Plantilla HTML/JS de Cabecera "Cultivo & Floración" (#compare-modal) (v136):**
+1. ✅ **Integración de Medical Seeds - 16 Cepas Fotoperiódicas THC (#data.js) (v137):**
+   - **Variedades Integradas:** Channel+, 1024, 2046, Y Griega, No Name, Malakoff, Sour Diesel, Prozack, Devil Fruit, Jack La Mota, Mendocino Purple Kush, White Widow, Canadian Kush 2.0, Overdosis, Banana Z y Sundae Float.
+   - **Verificación Cero Duplicados:** Se ejecutó script de validación confirmando 0 IDs duplicados en el repositorio previo a la inserción (total en catálogo: 418 cepas únicas).
+   - **Soporte en Catálogo y Filtros:** Añadido `Medical Seeds: ⚕️` en `bankIcons` y `bankEmojis` de `js/app.js`, mapeo defensivo para `strain.bank || strain.breeder`, tags de terpenos y array defensivo para sabores y efectos.
+   - **Build y Versión:** Bundle recompilado con `python scripts/build_bundle.py` (627,170 bytes) y versión sincronizada en `index.html` a `?v=2026_medical_seeds_v137`.
+
+2. ✅ **Nivelación Directa en Plantilla HTML/JS de Cabecera "Cultivo & Floración" (#compare-modal) (v136):**
    - **Estructura HTML en `js/app.js`:** Sustituida la fila de métrica en `renderCompareModal` por contenedor con `min-height: 48px !important`, `display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 8px !important;`.
    - **Salto Forzado `<br>`:** El texto del título incluye de manera explícita `⏱️ CULTIVO &<br>FLORACIÓN` con `line-height: 1.2 !important` y `display: block !important`, garantizando que todas las columnas ocupen 2 líneas exactas sin importar el ancho o longitud de la pastilla adyacente.
    - **Pastilla de Dificultad:** Blindada con `white-space: nowrap !important; flex-shrink: 0 !important;`.

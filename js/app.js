@@ -463,7 +463,8 @@ class CannaAppMAX {
       "In-House Genetics": "🏠",
       "Ethos Genetics": "⚡",
       "Archive Seed Bank": "📦",
-      "Raw Genetics": "🥩"
+      "Raw Genetics": "🥩",
+      "Medical Seeds": "⚕️"
     };
 
     const currentVal = this.filterBank.value || 'all';
@@ -586,14 +587,16 @@ class CannaAppMAX {
       'Serious Seeds': '🎯',
       'TH Seeds': '🗽',
       'Paradise Seeds': '🌴',
-      'DNA Genetics': '🧬'
+      'DNA Genetics': '🧬',
+      'Medical Seeds': '⚕️'
     };
 
 
 
     this.strainsGrid.innerHTML = strains.map(strain => {
-      const terpeneData = TERPENES_INFO[strain.dominantTerpene];
-      const icon = bankIcons[strain.bank] || '🌿';
+      const terpeneData = TERPENES_INFO[strain.dominantTerpene] || 
+        Object.values(TERPENES_INFO).find(t => t.name.toLowerCase() === (strain.dominantTerpene || '').toLowerCase());
+      const icon = bankIcons[strain.bank || strain.breeder] || '🌿';
       const stars = '★'.repeat(Math.round(strain.rating)) + '☆'.repeat(5 - Math.round(strain.rating));
       const strainImg = strain.image;
       const imgTag = strainImg ? `<img src="${strainImg}" alt="${strain.name}" class="card-visual-img" loading="lazy" decoding="async" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.opacity='1';" />` : '';
@@ -640,7 +643,7 @@ class CannaAppMAX {
             </div>
 
             <div class="strain-tags">
-              ${strain.flavors.map(f => `<span class="tag-item">👅 ${f}</span>`).join('')}
+              ${(strain.flavors || []).map(f => `<span class="tag-item">👅 ${f}</span>`).join('')}
             </div>
 
             <div class="card-actions" onclick="event.stopPropagation()" style="display: flex; gap: 8px;">
@@ -1141,7 +1144,7 @@ class CannaAppMAX {
                   👅 Sabores & Aromas
                 </h4>
                 <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-                  ${strain.flavors.map(f => `
+                  ${(strain.flavors || []).map(f => `
                     <span style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #fff; padding: 5px 12px; border-radius: 50px !important; font-size: 0.8rem; font-weight: 600;">
                       👅 ${f}
                     </span>`).join('')}
@@ -1153,7 +1156,7 @@ class CannaAppMAX {
                   ✨ Efectos Sensoriales
                 </h4>
                 <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-                  ${strain.effects.map(e => `
+                  ${(strain.effects || []).map(e => `
                     <span style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #6EE7B7; padding: 5px 12px; border-radius: 50px !important; font-size: 0.8rem; font-weight: 700;">
                       ⚡ ${e}
                     </span>`).join('')}
