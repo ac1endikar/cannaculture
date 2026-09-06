@@ -1,23 +1,24 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-06 14:15  
+> **Última actualización:** 2026-09-06 16:20  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
 
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
-- **Base de datos:** 444 cepas únicas y consolidadas pertenecientes a 37 bancos de semillas premium en `js/data.js` (incluyendo la colección completa de 42 variedades feminizadas oficiales de Medical Seeds Co. con terpenos, aromas, sabores y efectos).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_medical_seeds_v147_real_photos`).
+- **Base de datos:** 429 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo la colección fotoperiódica THC oficial de Eva Seeds con 11 variedades y Medical Seeds Co. con 16 variedades).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_eva_seeds_v140`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 - **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
+- **Catálogo Fotoperiódico Eva Seeds (v140):** **100% INTEGRADO Y VERIFICADO** (11 variedades fotoperiódicas THC agregadas a `js/data.js` con fotos botánicas reales 700x700 WebP y ficha técnica completa).
 - **Suite de Inteligencia Artificial Gemini 3.8 Flash & CannaDoctor 2.0:** **100% OPERATIVA (v146)**
   - **Motor Neuronal Google Gemini 3.8 Flash:** Migración del Sommelier IA y CannaDoctor al modelo 3.8 con mayor velocidad, razonamiento botánico y visión artificial de última generación (con tolerancia a fallos en cascada a 3.6/2.5 y motor local).
-  - **Catálogo Completo de 418 Cepas:** Inyección de la base de datos completa de 418 cepas de los 39 bancos premium en el contexto de Gemini (eliminado el límite previo de 60 cepas). Mateo conoce todas las variedades (incluyendo Medical Seeds, Paradise, Ripper, Barney's, etc.).
+  - **Catálogo Completo de 429 Cepas:** Inyección de la base de datos completa de 429 cepas de los 38 bancos premium en el contexto de Gemini. Mateo conoce todas las variedades (incluyendo Eva Seeds, Medical Seeds, Paradise, Ripper, Barney's, etc.).
   - **CannaDoctor 2.0 con Drag & Drop y Chips Rápidos:** Arrastre directo de fotos de hojas o flores sobre el chat con chips preconfigurados de diagnóstico (*Madurez de Tricomas, Carencia foliar/pH, Plagas u hongos, Diagnóstico total*).
   - **Síntesis de Voz Botánica (Text-to-Speech):** Botón `🔊 Escuchar` / `⏹️ Detener` en cada mensaje de Mateo para locución auditiva en español neutro con Web Speech API nativa.
   - **Misiones IA Sensoriales Dinámicas:** Botón "🚀 Generar Misión IA" en la Ficha Técnica conectado a Gemini 3.8 Flash para generar experiencias sensoriales y lúdicas 100% personalizadas según el terpeno y la cepa (con fallback local).
@@ -30,12 +31,16 @@
 - **Fase 2 de Reemplazo y Optimización Visual de Imágenes:** **100% COMPLETADA (143/143)**
 - **Optimización WebP Masiva:** **100% COMPLETADA (955/955)**
 - **Mobile Responsive Engine (Ficha Técnica y Comparador):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
-- **Banco Medical Seeds (v138):** **100% INTEGRADO Y BLINDADO** (16 variedades fotoperiódicas THC agregadas a `js/data.js`).
+- **Banco Medical Seeds (v138-v139):** **100% INTEGRADO Y BLINDADO** (16 variedades fotoperiódicas THC agregadas a `js/data.js`).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-06)
-1. ✅ **Integración Total de Medical Seeds — 42 Cepas Feminizadas Oficiales con Fotografía Botánica Real (v147):**
+1. ✅ **Integración del Catálogo Fotoperiódico THC de Eva Seeds — 11 Genéticas Oficiales con Fotografía Botánica Real (v140):**
+   - **Catálogo Oficial 100% Completo:** Se integraron las 11 variedades fotoperiódicas THC oficiales de Eva Seeds: *Jamaican Dream, Monster, Veneno, Papa's Candy, High Level, Black Dream, Furious Candy, Missing In Barcelona, TNT Kush, Gipsy Haze, Lemon King*.
+   - **Fotografía Oficial 100% Real (0 IA):** Descargadas e integradas fotos botánicas reales de cogollos y floraciones en resolución 700x700 WebP en `img/`, `images/strains/` y `images/strains/eva-seeds/`.
+   - **Perfiles Botánicos Precisos:** Días de floración, rendimientos indoor/outdoor, dominancia terpénica calculada, cannabinoides (THC/CBD), linajes puros/híbridos contrastados y descripciones sensoriales completas.
+   - **Base de Datos y Producción:** Conteo verificado de 418 a 429 cepas totales (+11). Creado `js/eva_seeds.js` y anexado en `js/data.js`. Recompilado `js/bundle.js` (730,051 bytes) y `index.html` actualizado con versión `?v=2026_eva_seeds_v140`.
    - **Catálogo Oficial 100% Completo:** Se identificaron e integraron todas las 42 variedades fotoperiódicas feminizadas oficiales registradas en el pedigrí de Medical Seeds Co. (líneas THC clásicas y líneas terapéuticas CBD/CBG).
    - **Depuración Rigurosa:** Eliminadas entradas erróneas que no pertenecían a Medical Seeds (`sundae-float` de Cannarado e hilos informativos como `overdosis`). Añadida la original `canadian-kush`.
    - **Fotografía Oficial 100% Real (0 IA):** Descargadas y convertidas a WebP de 600x600 px en `img/` las fotografías oficiales reales de cogollos y empaques desde el repositorio oficial de Seedfinder y criadores para las 42 variedades. Ninguna imagen generada por IA.
