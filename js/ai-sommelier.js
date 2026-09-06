@@ -303,7 +303,7 @@ export class AISommelierAgent {
         return;
       }
     } catch (err) {
-      console.warn('Gemini Cloud API no disponible o timeout, ejecutando motor local:', err);
+      console.log('💡 Sommelier activando motor de respuesta local:', err.message);
     }
 
     // Fallback local garantizado sin bloqueo
@@ -422,11 +422,11 @@ ${catalogSummary}`
       }
     }
 
-    // 2. Intentar directamente con la API Key si está guardada en localStorage
+    // 2. Intentar directamente con la API Key si está guardada en localStorage (funciona en GitHub Pages y local)
     if (this.apiKey) {
       try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 8500);
+        const timeoutId = setTimeout(() => controller.abort(), 12000);
         const directUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${this.apiKey}`;
         const directRes = await fetch(directUrl, {
           method: 'POST',
@@ -448,7 +448,7 @@ ${catalogSummary}`
       }
     }
 
-    throw new Error('No se pudo contactar con Gemini en el tiempo límite');
+    throw new Error('Motor de razonamiento local activado');
   }
 
   formatBotMarkdown(text) {

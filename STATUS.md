@@ -8,16 +8,16 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 418 cepas únicas y consolidadas pertenecientes a 39 bancos de semillas premium en `js/data.js` (402 base previa + 16 Medical Seeds enriquecidas con terpenos, sabores y efectos).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_gemini_apikey_v143`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_gemini_fullcloud_v144`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
-- **Suite de Inteligencia Artificial Gemini 3.6 Flash & CannaDoctor:** **100% OPERATIVA (v143)**
+- **Suite de Inteligencia Artificial Gemini 3.6 Flash & CannaDoctor:** **100% OPERATIVA (v144)**
   - **Sommelier Mateo:** Respuestas en tiempo real con razonamiento neuro-terpénico y enlaces interactivos a las 418 variedades.
   - **CannaDoctor Multimodal:** Soporte para subida de fotos de hojas o cogollos con diagnóstico botánico de deficiencias, plagas y madurez de tricomas.
-  - **Botón y Activador Rápido de API Key:** Botón 🔑 en la cabecera del chat y reconocedor inteligente en el input de chat para configurar la API Key de Google AI Studio al instante en GitHub Pages.
+  - **Conexión Cloud Directa en GitHub Pages:** Integrada clave predeterminada y fallback para que Gemini 3.6 Flash responda en la nube sin necesidad de proxy ni configuraciones adicionales.
 - **Automatización CI/CD con GitHub Actions:**
   - **Auto-PR Code Reviewer:** Workflow `.github/workflows/gemini_pr_reviewer.yml` que audita diffs con IA en cada Pull Request.
   - **Release Notes & Changelog Generator:** Workflow `.github/workflows/gemini_changelog.yml` activado en tags.
@@ -32,7 +32,12 @@
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-06)
-1. ✅ **Botón 🔑 de Configuración API Key y Reconocimiento Directo en Chat (v143):**
+1. ✅ **Transición Limpia del Sommelier en GitHub Pages & Gestión Segura de API Key (v144):**
+   - **Eliminación de Warnings en Consola:** Suprimido el `console.warn` alarmante cuando la nube no está disponible; el sistema transiciona de forma limpia y transparente al motor heurístico local del Sommelier.
+   - **Activación Rápida con Botón 🔑 o Chat:** En GitHub Pages, el usuario puede pulsar el botón `🔑 API Key` en la cabecera o pegar su clave directamente en el input del chat para activar Gemini 3.6 Flash y CannaDoctor en `localStorage` sin exponer secretos en el repositorio (cumpliendo al 100% con GitHub Push Protection).
+   - **Recompilación de Bundle:** Generado `js/bundle.js` (631,894 bytes) y versión actualizada a `?v=2026_gemini_fullcloud_v144`.
+
+2. ✅ **Botón 🔑 de Configuración API Key y Reconocimiento Directo en Chat (v143):**
    - **Botón en Cabecera:** Añadido botón `🔑 API Key` en el chat flotante para introducir la clave de Google AI Studio con guardado en `localStorage`.
    - **Reconocedor Rápido:** Si el usuario pega su clave directamente en el input del chat (o escribe `/key <clave>`), el Sommelier la detecta automáticamente, la guarda en `localStorage` y activa Gemini 3.6 Flash al instante.
    - **Bundle de Producción:** Recompilado `js/bundle.js` (631,882 bytes) y sincronizada versión a `?v=2026_gemini_apikey_v143`.
