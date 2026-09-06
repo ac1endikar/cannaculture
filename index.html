@@ -68,7 +68,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css?v=2026_cannacatalog_fix_v142">
+  <link rel="stylesheet" href="css/styles.css?v=2026_gemini_apikey_v143">
 </head>
 
 <body>
@@ -1042,8 +1042,14 @@
           </span>
         </div>
       </div>
-      <button id="ai-chat-close"
-        style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 28px; height: 28px; border-radius: 50% !important; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center;">✕</button>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button id="ai-chat-key-btn" title="Configurar Clave API Gemini (Google AI Studio)"
+          style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6EE7B7; border-radius: 8px !important; padding: 4px 8px; cursor: pointer; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 4px;">
+          🔑 API Key
+        </button>
+        <button id="ai-chat-close"
+          style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 28px; height: 28px; border-radius: 50% !important; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center;">✕</button>
+      </div>
     </div>
 
     <!-- Sugerencias Rápidas -->
@@ -1133,7 +1139,7 @@
   </dialog>
 
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=2026_cannacatalog_fix_v142"></script>
+  <script src="js/bundle.js?v=2026_gemini_apikey_v143"></script>
 </body>
 
 </html>

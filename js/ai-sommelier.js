@@ -52,6 +52,24 @@ export class AISommelierAgent {
       if (this.chatWindow) this.chatWindow.style.display = 'none';
     });
 
+    this.keyBtn = document.getElementById('ai-chat-key-btn');
+    this.keyBtn?.addEventListener('click', () => {
+      const current = localStorage.getItem('gemini_api_key') || '';
+      const entered = prompt('Introduce tu API Key de Google Gemini (Google AI Studio):\n(Se almacenará localmente en tu navegador para activar Gemini 3.6 Flash y CannaDoctor)', current);
+      if (entered !== null) {
+        const clean = entered.trim();
+        if (clean) {
+          localStorage.setItem('gemini_api_key', clean);
+          this.apiKey = clean;
+          this.botSay('🔑 <strong>Clave API de Gemini activada con éxito.</strong> A partir de ahora tus consultas y fotos de cultivo serán procesadas directamente por <strong>Google Gemini 3.6 Flash</strong>.');
+        } else {
+          localStorage.removeItem('gemini_api_key');
+          this.apiKey = null;
+          this.botSay('ℹ️ Clave eliminada. El Sommelier volverá a funcionar con el motor heurístico local.');
+        }
+      }
+    });
+
     // Eventos de selección de archivo fotográfico (CannaDoctor)
     const handleFileSelect = (file) => {
       if (!file || !file.type.startsWith('image/')) return;
@@ -266,6 +284,15 @@ export class AISommelierAgent {
   }
 
   async processQuery(userQuery, imageObj = null) {
+    const trimmed = (userQuery || '').trim();
+    if (trimmed.startsWith('AQ.Ab') || trimmed.startsWith('AIzaSy') || trimmed.startsWith('/key ') || trimmed.startsWith('key:')) {
+      const newKey = trimmed.replace(/^\/key\s*|^key:\s*/i, '').trim();
+      localStorage.setItem('gemini_api_key', newKey);
+      this.apiKey = newKey;
+      this.botSay('🔑 <strong>¡Clave API configurada con éxito!</strong><br/><br/>He activado la conexión directa con <strong>Google Gemini 3.6 Flash</strong> y <strong>CannaDoctor Multimodal</strong>. A partir de ahora todas tus consultas se responderán con inteligencia multimodal en tiempo real.');
+      return;
+    }
+
     this.showTyping(imageObj ? '🔬 CannaDoctor examinando imagen botánica con Gemini 3.6...' : '🧠 Mateo analizando maridaje terpénico en el catálogo...');
 
     try {
