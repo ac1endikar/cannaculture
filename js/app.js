@@ -1675,9 +1675,13 @@ class CannaAppMAX {
 
           <!-- 3. Semanas de Floración & Dificultad -->
           <div class="compare-metric-box compare-cultivo-box">
-            <div class="compare-metric-title compare-cultivo-header compare-floracion-header">
-              <span class="compare-card-section-title">⏱️ Cultivo & Floración</span>
-              <span class="${diff.badgeClass} compare-badge-difficulty">${diff.level} (${diff.label})</span>
+            <div class="compare-metric-title compare-cultivo-header" style="display:flex !important; align-items:center !important; justify-content:space-between !important; min-height:48px !important; gap:8px !important;">
+              <span style="font-size:0.75rem !important; font-weight:700 !important; line-height:1.2 !important; display:block !important;">
+                ⏱️ CULTIVO &<br>FLORACIÓN
+              </span>
+              <span class="${diff.badgeClass} compare-badge-difficulty" style="white-space:nowrap !important; flex-shrink:0 !important;">
+                ${diff.level} (${diff.label})
+              </span>
             </div>
             <div class="compare-grow-metrics compare-grow-grid" style="gap: 8px; margin-top: 6px;">
               <div style="background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px !important; text-align:center; display:flex; flex-direction:column; justify-content:center; height:100%; box-sizing:border-box;">

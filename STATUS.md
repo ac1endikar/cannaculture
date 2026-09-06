@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-06 10:20  
+> **Última actualización:** 2026-09-06 10:22  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1`)
 
 ---
@@ -8,7 +8,7 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 402 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js`.
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_compare_align_v135`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_compare_template_v136`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
@@ -20,12 +20,18 @@
   - 402/402 referencias en `js/data.js` migradas a `.webp` (0 imágenes faltantes).
   - Lazy Loading (`loading="lazy"` + `decoding="async"`) activo en tarjetas del catálogo.
 - **Mobile Responsive Engine (Ficha Técnica):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
-- **Módulo Comparador Emergente Dark Glass (v135):** **100% OPERATIVO, CENTRADO Y NIVELADO** (Cabecera Cultivo & Floración nivelada estrictamente a min-height: 48px, flex column con line-height 1.2 y nowrap en pastillas de dificultad en todas las columnas).
+- **Módulo Comparador Emergente Dark Glass (v136):** **100% OPERATIVO, CENTRADO Y NIVELADO** (Plantilla HTML en `js/app.js` configurada con salto forzado `<br>` y estilos inline defensivos para garantizar 48px y 2 líneas idénticas en todas las columnas).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-06)
-1. ✅ **Nivelación Estricta de Cabecera "Cultivo & Floración" en Columnas (#compare-modal) (v135):**
+1. ✅ **Nivelación Directa en Plantilla HTML/JS de Cabecera "Cultivo & Floración" (#compare-modal) (v136):**
+   - **Estructura HTML en `js/app.js`:** Sustituida la fila de métrica en `renderCompareModal` por contenedor con `min-height: 48px !important`, `display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 8px !important;`.
+   - **Salto Forzado `<br>`:** El texto del título incluye de manera explícita `⏱️ CULTIVO &<br>FLORACIÓN` con `line-height: 1.2 !important` y `display: block !important`, garantizando que todas las columnas ocupen 2 líneas exactas sin importar el ancho o longitud de la pastilla adyacente.
+   - **Pastilla de Dificultad:** Blindada con `white-space: nowrap !important; flex-shrink: 0 !important;`.
+   - **Build y Versión:** Bundle recompilado con `python scripts/build_bundle.py` (609,016 bytes) y versión sincronizada en `index.html` a `?v=2026_compare_template_v136`.
+
+2. ✅ **Nivelación Estricta de Cabecera "Cultivo & Floración" en CSS (#compare-modal) (v135):**
    - **Contenedores de Cabecera:** `#compare-modal .compare-cultivo-header`, `#compare-modal .compare-floracion-header` y `#compare-modal .compare-cultivo-box .compare-metric-title` fijados con `min-height: 48px !important; display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 6px !important;`.
    - **Títulos de Métricas:** Títulos `.compare-card-section-title` dentro de la cabecera de cultivo configurados con `display: flex !important; flex-direction: column !important; justify-content: center !important; line-height: 1.2 !important;`.
    - **Pastillas de Dificultad:** Preservado y blindado `white-space: nowrap !important; flex-shrink: 0 !important;` en `.badge-diff-easy`, `.badge-diff-med`, `.badge-diff-hard` y `.compare-badge-difficulty`.
