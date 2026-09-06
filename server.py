@@ -11,6 +11,9 @@ import socket
 import os
 import sys
 import mimetypes
+import json
+import urllib.request
+import urllib.error
 
 # Configurar stdout/stderr para UTF-8 en consola de Windows
 if sys.stdout.encoding != 'utf-8':
@@ -55,6 +58,68 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
     def do_OPTIONS(self):
         """Responder a preflight CORS."""
         self.send_response(200)
+        self.end_headers()
+
+    def do_POST(self):
+        """Manejar endpoints de API (Proxy local seguro para Gemini)."""
+        if self.path == '/api/gemini' or self.path.startswith('/api/gemini?'):
+            try:
+                content_len = int(self.headers.get('Content-Length', 0))
+                body = self.rfile.read(content_len) if content_len > 0 else b'{}'
+                client_payload = json.loads(body.decode('utf-8'))
+
+                api_key = os.environ.get('GEMINI_API_KEY') or os.environ.get('GOOGLE_API_KEY')
+                if not api_key and os.path.exists(os.path.join(DIRECTORY, '.env')):
+                    with open(os.path.join(DIRECTORY, '.env'), 'r', encoding='utf-8') as f:
+                        for line in f:
+                            line = line.strip()
+                            if line and not line.startswith('#') and '=' in line:
+                                k, v = line.split('=', 1)
+                                if k.strip() in ('GEMINI_API_KEY', 'GOOGLE_API_KEY'):
+                                    api_key = v.strip()
+                                    break
+
+                if not api_key:
+                    self.send_response(400)
+                    self.send_header('Content-Type', 'application/json; charset=utf-8')
+                    self.end_headers()
+                    self.wfile.write(json.dumps({'error': 'No se encontró GEMINI_API_KEY en .env'}).encode('utf-8'))
+                    return
+
+                model = client_payload.get('model', 'gemini-3.6-flash')
+                gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+
+                gemini_body = {
+                    'contents': client_payload.get('contents', [])
+                }
+                if 'system_instruction' in client_payload and client_payload['system_instruction']:
+                    gemini_body['system_instruction'] = client_payload['system_instruction']
+
+                gemini_req = urllib.request.Request(
+                    gemini_url,
+                    data=json.dumps(gemini_body).encode('utf-8'),
+                    headers={'Content-Type': 'application/json'}
+                )
+                with urllib.request.urlopen(gemini_req, timeout=35) as resp:
+                    resp_data = resp.read()
+                    self.send_response(resp.status)
+                    self.send_header('Content-Type', 'application/json; charset=utf-8')
+                    self.end_headers()
+                    self.wfile.write(resp_data)
+            except urllib.error.HTTPError as he:
+                err_data = he.read()
+                self.send_response(he.code)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(err_data)
+            except Exception as ex:
+                self.send_response(500)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({'error': str(ex)}).encode('utf-8'))
+            return
+
+        self.send_response(404)
         self.end_headers()
 
     def log_message(self, format, *args):

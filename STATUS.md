@@ -1,30 +1,45 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-06 11:15  
-> **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1`)
+> **Última actualización:** 2026-09-06 11:40  
+> **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
 
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 418 cepas únicas y consolidadas pertenecientes a 39 bancos de semillas premium en `js/data.js` (402 base previa + 16 Medical Seeds).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_medical_catalog_v138`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_gemini_cannadoctor_v139`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
 
-## 2. Estado de la Fase Visual y Rendimiento
+## 2. Estado de la Fase Visual, IA y Rendimiento
+- **Suite de Inteligencia Artificial Gemini 3.6 Flash & CannaDoctor:** **100% OPERATIVA (v139)**
+  - **Sommelier Mateo:** Respuestas en tiempo real con razonamiento neuro-terpénico y enlaces interactivos a las 418 variedades.
+  - **CannaDoctor Multimodal:** Soporte para subida de fotos de hojas o cogollos con diagnóstico botánico de deficiencias, plagas y madurez de tricomas.
+  - **Proxy Local Seguro:** Endpoint `POST /api/gemini` en `server.py` que lee `.env` sin exponer claves en el bundle de producción.
+- **Automatización CI/CD con GitHub Actions:**
+  - **Auto-PR Code Reviewer:** Workflow `.github/workflows/gemini_pr_reviewer.yml` que audita diffs con IA en cada Pull Request.
+  - **Release Notes & Changelog Generator:** Workflow `.github/workflows/gemini_changelog.yml` activado en tags.
+- **Herramientas de Terminal CLI (`scripts/git_ai.py`):** Comandos `commit` (commits semánticos con IA), `doctor` (diagnóstico visual de archivos locales) y `enrich` (generador de JSON para nuevas cepas).
 - **Fase 2 de Reemplazo y Optimización Visual de Imágenes:** **100% COMPLETADA (143/143)**
 - **Optimización WebP Masiva:** **100% COMPLETADA (955/955)**
   - Reducción de peso de assets: **388.69 MB ➔ 182.41 MB (Ahorro del 53.1%)**.
   - Lazy Loading (`loading="lazy"` + `decoding="async"`) activo en tarjetas del catálogo.
 - **Mobile Responsive Engine (Ficha Técnica):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
-- **Banco Medical Seeds (v138):** **100% INTEGRADO Y BLINDADO** (16 variedades fotoperiódicas THC agregadas a `js/data.js` mediante inserción modular segura desde `js/medical_seeds.js`, totalizando 418 cepas únicas).
+- **Banco Medical Seeds (v138):** **100% INTEGRADO Y BLINDADO** (16 variedades fotoperiódicas THC agregadas a `js/data.js`).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-06)
-1. ✅ **Inserción Segura de 16 Cepas Medical Seeds (#data.js) (v138):**
+1. ✅ **Implementación de Suite IA (Gemini 3.6 Flash) & Automatizaciones GitHub (v139):**
+   - **CannaDoctor Multimodal:** Integrada cámara y selector de imágenes en la interfaz de chat (tanto inline como flotante) con renderizado de thumbnails en burbujas de mensaje.
+   - **Backend Proxy (`server.py`):** Creado endpoint `/api/gemini` con CORS y lectura segura de `GEMINI_API_KEY` desde `.env`.
+   - **GitHub Actions Workflows:** Añadidos `gemini_pr_reviewer.yml` (auditoría automática de PRs) y `gemini_changelog.yml` (creación de notas de lanzamiento).
+   - **Developer CLI Tool:** Creado `scripts/git_ai.py` con subcomandos `commit`, `doctor` y `enrich`.
+   - **Compilación de Bundle:** Reconstruido `js/bundle.js` (624,063 bytes) y sincronizada versión en `index.html` a `?v=2026_gemini_cannadoctor_v139`.
+
+2. ✅ **Inserción Segura de 16 Cepas Medical Seeds (#data.js) (v138):**
    - **Módulo Fuente:** Creado `js/medical_seeds.js` exportando las 16 variedades fotoperiódicas THC.
    - **Variedades Integradas:** Channel+, 1024, 2046, Y Griega, No Name, Malakoff, Sour Diesel, Prozack, Devil Fruit, Jack La Mota, Mendocino Purple Kush, White Widow, Canadian Kush 2.0, Overdosis, Banana Z y Sundae Float.
    - **Inserción Limpia:** Concatencación directa antes del cierre `];` de `STRAINS_DATABASE` sin truncar ninguna cepa previa.

@@ -4318,3 +4318,102 @@ dialog.compare-dialog[open] {
 .compare-floating-dock {
   display: none !important;
 }
+
+/* ==========================================================================
+   SOMMELIER IA & CANNADOCTOR MULTIMODAL (REASONING BOX & PREVIEWS)
+   ========================================================================== */
+.sommelier-reasoning-box {
+  background: rgba(6, 20, 15, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  border-radius: 14px !important;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.reasoning-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.reasoning-brain-icon {
+  font-size: 1.15rem;
+}
+
+.reasoning-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: #A7F3D0;
+  text-transform: uppercase;
+}
+
+.reasoning-badge {
+  margin-left: auto;
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid var(--primary-emerald);
+  color: #10B981;
+  padding: 2px 8px;
+  border-radius: 50px;
+}
+
+.reasoning-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reasoning-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #D1FAE5;
+}
+
+.reasoning-step .step-num {
+  background: var(--primary-emerald);
+  color: #05150E;
+  font-weight: 900;
+  font-size: 0.72rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ai-msg img {
+  border-radius: 10px;
+  border: 1.5px solid rgba(16, 185, 129, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.ai-msg img:hover {
+  transform: scale(1.03);
+}
+
+.ai-strain-link {
+  color: #6EE7B7 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.ai-strain-link:hover {
+  color: #A7F3D0 !important;
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}

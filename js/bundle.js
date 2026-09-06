@@ -11801,13 +11801,14 @@ class AdvancedTools {
 
 
 // --- ai-sommelier.js ---
-// CannaCatalog 2.0 - Agente IA Sommelier Humano (Con Motor de Razonamiento Lógico Neuro-Terpénico)
+// CannaCatalog 2.0 - Agente IA Sommelier Humano & CannaDoctor Multimodal (Google Gemini 3.6 Flash)
 
 class AISommelierAgent {
   constructor(appController) {
     this.app = appController;
     this.history = [];
     this.apiKey = localStorage.getItem('gemini_api_key') || null;
+    this.attachedImage = null; // { mimeType, data: base64, previewUrl, name }
     this.initUI();
   }
 
@@ -11826,6 +11827,14 @@ class AISommelierAgent {
     this.sendBtnInline = document.getElementById('ai-chat-send-inline');
     this.quickPills = document.querySelectorAll('.ai-suggest-pill');
 
+    // Elementos CannaDoctor Multimodal (Cámara / Subida de Foto)
+    this.fileInputFloating = document.getElementById('ai-chat-file');
+    this.fileInputInline = document.getElementById('ai-chat-file-inline');
+    this.btnPhotoFloating = document.getElementById('ai-chat-btn-photo');
+    this.btnPhotoInline = document.getElementById('ai-chat-btn-photo-inline');
+    this.previewFloating = document.getElementById('ai-attach-preview-floating');
+    this.previewInline = document.getElementById('ai-attach-preview-inline');
+
     // Toggle Floating Chat
     this.triggerBtn?.addEventListener('click', () => {
       const isVisible = this.chatWindow.style.display === 'flex';
@@ -11839,21 +11848,54 @@ class AISommelierAgent {
       if (this.chatWindow) this.chatWindow.style.display = 'none';
     });
 
+    // Eventos de selección de archivo fotográfico (CannaDoctor)
+    const handleFileSelect = (file) => {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const dataUrl = e.target.result;
+        const commaIdx = dataUrl.indexOf(',');
+        const base64 = commaIdx !== -1 ? dataUrl.slice(commaIdx + 1) : dataUrl;
+        this.attachedImage = {
+          mimeType: file.type,
+          data: base64,
+          previewUrl: dataUrl,
+          name: file.name
+        };
+        this.renderAttachPreviews();
+      };
+      reader.readAsDataURL(file);
+    };
+
+    this.btnPhotoFloating?.addEventListener('click', () => this.fileInputFloating?.click());
+    this.fileInputFloating?.addEventListener('change', (e) => {
+      if (e.target.files?.[0]) handleFileSelect(e.target.files[0]);
+    });
+
+    this.btnPhotoInline?.addEventListener('click', () => this.fileInputInline?.click());
+    this.fileInputInline?.addEventListener('change', (e) => {
+      if (e.target.files?.[0]) handleFileSelect(e.target.files[0]);
+    });
+
     // Send Message Events
     const handleSendFloating = () => {
-      const text = this.inputFloating?.value?.trim();
-      if (!text) return;
-      this.inputFloating.value = '';
-      this.userSay(text);
-      this.processQuery(text);
+      const text = this.inputFloating?.value?.trim() || '';
+      const img = this.attachedImage;
+      if (!text && !img) return;
+      if (this.inputFloating) this.inputFloating.value = '';
+      this.clearAttachedImage();
+      this.userSay(text || '🔬 [Foto enviada para análisis con CannaDoctor]', img);
+      this.processQuery(text, img);
     };
 
     const handleSendInline = () => {
-      const text = this.inputInline?.value?.trim();
-      if (!text) return;
-      this.inputInline.value = '';
-      this.userSay(text);
-      this.processQuery(text);
+      const text = this.inputInline?.value?.trim() || '';
+      const img = this.attachedImage;
+      if (!text && !img) return;
+      if (this.inputInline) this.inputInline.value = '';
+      this.clearAttachedImage();
+      this.userSay(text || '🔬 [Foto enviada para análisis con CannaDoctor]', img);
+      this.processQuery(text, img);
     };
 
     this.sendBtnFloating?.addEventListener('click', handleSendFloating);
@@ -11871,21 +11913,56 @@ class AISommelierAgent {
       pill.addEventListener('click', () => {
         const text = pill.getAttribute('data-prompt') || pill.textContent.trim();
         this.userSay(text);
-        this.processQuery(text);
+        this.processQuery(text, null);
       });
     });
 
-    // Saludo inicial con razomamiento activo
-    const greeting = '¡Hola! Soy <strong>Mateo</strong>, tu master sumiller en CannaCatalog. 🌿 Cuento con un <strong>motor de razonamiento neuro-terpénico</strong> para analizar tus gustos o tu actividad objetivo y argumentar de forma lógica la recomendación perfecta.<br/><br/>👅 <em>¿Qué actividad vas a realizar o qué perfil de aromas te atraen más? (🍋 Cítricos, 🍓 Frutales Dulces, 🌲 Pino Haze, ⛽ Diésel, 🍪 Galleta/Vainilla o 🧀 Queso)</em>';
+    // Saludo inicial con razonamiento activo y presentación de CannaDoctor
+    const totalCepas = STRAINS_DATABASE?.length || 418;
+    const greeting = `¡Hola! Soy <strong>Mateo</strong>, tu master sumiller botánico en CannaCulture. 🌿<br/><br/>
+    Cuento con un <strong>motor de razonamiento neuro-terpénico y visión multimodal</strong> conectado a nuestro catálogo de <strong>${totalCepas} cepas de 39 bancos premium</strong>.<br/><br/>
+    💡 <strong>¿En qué puedo asistirte hoy?</strong><br/>
+    • 👅 <em>Recomendación de cepa:</em> Dime tu perfil aromático deseado o la actividad que vas a realizar.<br/>
+    • 🔬 <strong>CannaDoctor Multimodal:</strong> Adjunta una foto de una hoja o cogollo (botón 📷) para diagnosticar carencias, plagas o madurez de tricomas.`;
     this.botSay(greeting);
   }
 
-  userSay(text) {
+  renderAttachPreviews() {
+    [this.previewFloating, this.previewInline].forEach(container => {
+      if (!container) return;
+      if (!this.attachedImage) {
+        container.style.display = 'none';
+        container.innerHTML = '';
+        return;
+      }
+      container.style.display = 'flex';
+      container.innerHTML = `
+        <span>📷 <strong>${this.attachedImage.name}</strong></span>
+        <button type="button" class="ai-detach-btn" style="background:none; border:none; color:#EF4444; font-weight:900; cursor:pointer; font-size:0.9rem; padding:0 4px;" title="Quitar foto">✕</button>
+      `;
+      container.querySelector('.ai-detach-btn')?.addEventListener('click', () => this.clearAttachedImage());
+    });
+  }
+
+  clearAttachedImage() {
+    this.attachedImage = null;
+    if (this.fileInputFloating) this.fileInputFloating.value = '';
+    if (this.fileInputInline) this.fileInputInline.value = '';
+    this.renderAttachPreviews();
+  }
+
+  userSay(text, imageObj = null) {
     this.messagesContainers.forEach(container => {
       if (!container) return;
       const msgEl = document.createElement('div');
       msgEl.className = 'ai-msg user-msg';
-      msgEl.textContent = text;
+      msgEl.innerHTML = `<div>${text}</div>`;
+      if (imageObj?.previewUrl) {
+        const imgWrap = document.createElement('div');
+        imgWrap.style.marginTop = '6px';
+        imgWrap.innerHTML = `<img src="${imageObj.previewUrl}" alt="Foto adjunta" style="max-width:180px; max-height:140px; border-radius:10px; border:1px solid #10B981; object-fit:cover; display:block;" />`;
+        msgEl.appendChild(imgWrap);
+      }
       container.appendChild(msgEl);
     });
     this.scrollToBottom();
@@ -11913,12 +11990,12 @@ class AISommelierAgent {
     this.scrollToBottom();
   }
 
-  showTyping() {
+  showTyping(customMessage = null) {
     this.messagesContainers.forEach(container => {
       if (!container) return;
       const typing = document.createElement('div');
       typing.className = 'ai-msg bot-msg typing-msg ai-typing-indicator-node';
-      typing.innerHTML = '<span>🧠 Mateo procesando razonamiento terpénico & maridaje...</span>';
+      typing.innerHTML = `<span>🧠 ${customMessage || 'Mateo & CannaDoctor analizando razonamiento botánico...'}</span>`;
       container.appendChild(typing);
     });
     this.scrollToBottom();
@@ -11968,8 +12045,8 @@ class AISommelierAgent {
 
     const scoredStrains = STRAINS_DATABASE.map(strain => {
       let score = 0;
-      if (activity.preferredTerpenes.includes(strain.dominantTerpene)) score += 40;
-      if (activity.recommendedSpecies.includes(strain.species)) score += 30;
+      if (activity.preferredTerpenes?.includes(strain.dominantTerpene)) score += 40;
+      if (activity.recommendedSpecies?.includes(strain.species)) score += 30;
       if (strain.activities && strain.activities.includes(activityId)) score += 50;
       score += (strain.rating * 5);
 
@@ -11983,34 +12060,51 @@ class AISommelierAgent {
     };
   }
 
-  async processQuery(userQuery) {
-    this.showTyping();
+  async processQuery(userQuery, imageObj = null) {
+    this.showTyping(imageObj ? '🔬 CannaDoctor examinando imagen botánica con Gemini 3.6...' : '🧠 Mateo analizando maridaje terpénico en el catálogo...');
 
-    if (this.apiKey) {
-      try {
-        const cloudResponse = await this.callGeminiAPI(userQuery);
-        this.hideTyping();
-        this.botSay(cloudResponse);
-        return;
-      } catch (err) {
-        console.warn('Error en Gemini API, usando motor Sommelier local:', err);
-      }
+    try {
+      const cloudResponse = await this.callGeminiAPI(userQuery, imageObj);
+      this.hideTyping();
+      this.botSay(cloudResponse);
+      return;
+    } catch (err) {
+      console.warn('Gemini Cloud API no disponible, ejecutando motor local:', err);
     }
 
+    // Fallback local si no hay conexión o no hay API Key
     setTimeout(() => {
       this.hideTyping();
+      if (imageObj) {
+        this.botSay(`
+          🔬 <strong>CannaDoctor:</strong> He recibido tu fotografía de cultivo.<br/><br/>
+          Para procesar diagnósticos visuales avanzados (deficiencias de nitrógeno, fósforo, magnesio, araña roja o madurez de tricomas), asegúrate de que el servidor local con soporte Gemini esté en ejecución o introduce tu clave en los ajustes.<br/><br/>
+          💬 <em>Mientras tanto, puedes describirme los síntomas o consultar cualquier variedad de nuestro catálogo de ${STRAINS_DATABASE.length} cepas.</em>
+        `);
+        return;
+      }
       const response = this.generateHumanResponse(userQuery.toLowerCase());
       this.botSay(response);
-    }, 450);
+    }, 350);
   }
 
-  async callGeminiAPI(userQuery) {
-    const catalogContext = STRAINS_DATABASE.map(s => 
-      `- ${s.name} (Especie: ${s.species}, Banco: ${s.bank}): THC ${s.thc}%, CBD ${s.cbd}%, Terpeno: ${s.dominantTerpene}, Sabores: ${s.flavors.join('/')}, Efectos: ${s.effects.join('/')}, ID: ${s.id}`
+  async callGeminiAPI(userQuery, imageObj = null) {
+    const catalogSummary = STRAINS_DATABASE.slice(0, 70).map(s => 
+      `- ${s.name} (${s.species}, ${s.bank}): THC ${s.thc}%, Terpeno: ${s.dominantTerpene}, Sabores: ${s.flavors?.slice(0,3).join('/')}, ID: ${s.id}`
     ).join('\n');
 
-    const systemPrompt = `Eres Mateo, un master sumiller de cannabis en CannaCatalog dotado de razonamiento estructurado.
-SIEMPRE debes empezar tu respuesta incluyendo el bloque HTML de razonamiento exacto:
+    const systemInstruction = {
+      parts: [{
+        text: `Eres Mateo, Master Sommelier de Cannabis y CannaDoctor botánico de la plataforma CannaCulture.
+Posees un conocimiento enciclopédico sobre perfiles de terpenos (Mirceno, Limoneno, Cariofileno, Pineno, Linalool, Terpinoleno, Humuleno, Ocimeno) y cultivo cannábico.
+
+Directrices estrictas:
+1. Sé cálido, elegante, experto y educativo.
+2. Si el usuario te envía una foto de una planta o flor:
+   - Actúa como CannaDoctor: evalúa de inmediato la salud foliar, posibles deficiencias minerales (N, P, K, Ca, Mg), signos de plagas o el estado y lechosidad de los tricomas.
+   - Proporciona un diagnóstico claro con causas y soluciones orgánicas recomendadas.
+3. Si el usuario pide recomendaciones de cepas:
+   - Estructura siempre tu análisis con el bloque HTML de razonamiento exacto:
 <div class="sommelier-reasoning-box">
   <div class="reasoning-header">
     <span class="reasoning-brain-icon">🧠</span>
@@ -12020,41 +12114,95 @@ SIEMPRE debes empezar tu respuesta incluyendo el bloque HTML de razonamiento exa
   <div class="reasoning-steps">
     <div class="reasoning-step">
       <span class="step-num">1</span>
-      <div><strong>Diagnóstico de Necesidad:</strong> [Describe brevemente qué busca el usuario]</div>
+      <div><strong>Diagnóstico de Necesidad:</strong> [Resumen breve de la necesidad del usuario]</div>
     </div>
     <div class="reasoning-step">
       <span class="step-num">2</span>
-      <div><strong>Análisis Terpénico & Séquito:</strong> [Explica qué terpenos y cannabinoides favorecen este estado]</div>
+      <div><strong>Análisis Terpénico & Séquito:</strong> [Terpenos y ratios óptimos explicados]</div>
     </div>
     <div class="reasoning-step">
       <span class="step-num">3</span>
-      <div><strong>Cribado del Catálogo:</strong> [Explica cómo se filtraron las mejores cepas]</div>
+      <div><strong>Cribado del Catálogo:</strong> [Cómo encaja en las cepas del catálogo]</div>
     </div>
   </div>
 </div>
+4. Siempre que menciones una cepa que exista en el catálogo, usa estrictamente enlaces clicables con este formato:
+   <a href="#" class="ai-strain-link" data-strain-id="ID_DE_LA_CEPA"><strong>Nombre Cepa</strong></a>.
+5. El catálogo de CannaCulture cuenta con 418 cepas de 39 bancos premium (Medical Seeds, Ripper Seeds, Dinafem, Barney's Farm, Sweet Seeds, RQS, DNA Genetics, TH Seeds, etc.).
 
-A continuación del bloque de razonamiento, ofrece tu recomendación final fundamentada.
-Cuando menciones una cepa, usa exactamente el formato de enlace: <a href="#" class="ai-strain-link" data-strain-id="ID_DE_LA_CEPA">Nombre Cepa</a>.
+Muestra de variedades del catálogo:
+${catalogSummary}`
+      }]
+    };
 
-Catálogo de cepas disponible:
-${catalogContext}`;
-
-    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${this.apiKey}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [
-          { role: 'user', parts: [{ text: `${systemPrompt}\n\nConsulta del cliente: ${userQuery}` }] }
-        ]
-      })
-    });
-
-    const data = await res.json();
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (text) {
-      return text.replace(/\n/g, '<br/>');
+    const userParts = [];
+    if (userQuery) {
+      userParts.push({ text: userQuery });
+    } else if (imageObj) {
+      userParts.push({ text: 'Analiza esta imagen botánica de cannabis (diagnóstico de salud, deficiencias, plagas o madurez de flor).' });
     }
-    throw new Error('Respuesta vacía de la API');
+
+    if (imageObj?.data && imageObj?.mimeType) {
+      userParts.push({
+        inlineData: {
+          mimeType: imageObj.mimeType,
+          data: imageObj.data
+        }
+      });
+    }
+
+    const payload = {
+      model: 'gemini-3.6-flash',
+      contents: [{ role: 'user', parts: userParts }],
+      system_instruction: systemInstruction
+    };
+
+    // 1. Intentar primero a través del proxy local /api/gemini (lee .env automáticamente)
+    try {
+      const proxyRes = await fetch('/api/gemini', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (proxyRes.ok) {
+        const data = await proxyRes.json();
+        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (text) return this.formatBotMarkdown(text);
+      }
+    } catch (e) {
+      // Continuar al intento directo si el proxy no responde
+    }
+
+    // 2. Intentar directamente con la API Key si está guardada en localStorage
+    if (this.apiKey) {
+      const directUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${this.apiKey}`;
+      const directRes = await fetch(directUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: payload.contents,
+          system_instruction: payload.system_instruction
+        })
+      });
+      if (directRes.ok) {
+        const data = await directRes.json();
+        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (text) return this.formatBotMarkdown(text);
+      }
+    }
+
+    throw new Error('No se pudo contactar con Gemini');
+  }
+
+  formatBotMarkdown(text) {
+    // Si ya contiene el bloque HTML de razonamiento, conservarlo y dar formato al resto
+    let formatted = text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/\n\n/g, '<br/><br/>')
+      .replace(/\n/g, '<br/>');
+
+    return formatted;
   }
 
   generateHumanResponse(rawQuery) {

@@ -62,7 +62,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css?v=2026_medical_catalog_v138">
+  <link rel="stylesheet" href="css/styles.css?v=2026_gemini_cannadoctor_v139">
 </head>
 
 <body>
@@ -439,9 +439,8 @@
     <section id="section-ai-agent" class="app-section">
       <div class="section-header">
         <div>
-          <h2>🤖 Sommelier de Inteligencia Artificial</h2>
-          <p class="section-desc">Consulta en lenguaje natural a nuestro asistente inteligente sobre 58 cepas, terpenos
-            y recomendaciones personalizadas.</p>
+          <h2>🤖 Sommelier de Inteligencia Artificial & CannaDoctor Multimodal</h2>
+          <p class="section-desc">Consulta en lenguaje natural a nuestro asistente inteligente sobre 418 cepas de 39 bancos premium o sube una fotografía para diagnóstico botánico con Gemini 3.6 Flash.</p>
         </div>
       </div>
 
@@ -456,15 +455,12 @@
               style="font-size: 2.2rem; background: rgba(16,185,129,0.15); border: 1px solid var(--primary-emerald); padding: 8px 14px; border-radius: 16px !important;">
               👨‍🌾</div>
             <div>
-              <h3 style="font-size: 1.2rem; font-weight: 900; color: #fff; margin: 0;">Mateo | Master Sumiller Canábico
-                IA</h3>
-              <span style="font-size: 0.8rem; color: #6EE7B7;">🟢 Conectado en vivo a 58 cepas — Asesoría Humana y
-                Empática</span>
+              <h3 style="font-size: 1.2rem; font-weight: 900; color: #fff; margin: 0;">Mateo | Master Sumiller & CannaDoctor</h3>
+              <span style="font-size: 0.8rem; color: #6EE7B7;">🟢 Conectado a 418 cepas — Google Gemini 3.6 Flash Multimodal</span>
             </div>
           </div>
           <span
-            style="background: rgba(16,185,129,0.2); color: #10B981; border: 1px solid var(--primary-emerald); padding: 4px 12px; font-size: 0.78rem; font-weight: 800; border-radius: 50px !important;">AGENTE
-            IA ACTIVO</span>
+            style="background: rgba(16,185,129,0.2); color: #10B981; border: 1px solid var(--primary-emerald); padding: 4px 12px; font-size: 0.78rem; font-weight: 800; border-radius: 50px !important;">GEMINI 3.6 ACTIVO</span>
         </div>
 
         <!-- Sugerencias Rápidas Inline con Sabores -->
@@ -495,14 +491,23 @@
           style="height: 380px; overflow-y: auto; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: 12px; border-radius: 16px !important;">
         </div>
 
-        <!-- Input Bar In-Page -->
-        <div style="display: flex; gap: 10px;">
+        <!-- Preview Adjuntos CannaDoctor -->
+        <div id="ai-attach-preview-inline" style="display:none; align-items:center; justify-content:space-between; padding:6px 14px; background:rgba(16,185,129,0.15); border:1px solid var(--primary-emerald); border-radius:10px; margin-bottom:8px; font-size:0.85rem; color:#A7F3D0;"></div>
+
+        <!-- Input Bar In-Page con CannaDoctor Button -->
+        <div style="display: flex; gap: 10px; align-items: stretch;">
+          <input type="file" id="ai-chat-file-inline" accept="image/*" style="display:none;" />
+          <button type="button" id="ai-chat-btn-photo-inline" class="btn"
+            style="background: rgba(16,185,129,0.15); border: 1px solid var(--primary-emerald); color: #A7F3D0; border-radius: 12px !important; padding: 0 16px; font-size: 0.88rem; font-weight: 700; white-space: nowrap; cursor: pointer; display: flex; align-items: center; gap: 6px;"
+            title="CannaDoctor: Subir foto de cultivo para diagnóstico de plagas, carencias o tricomas">
+            📷 CannaDoctor
+          </button>
           <input type="text" id="ai-chat-input-inline"
-            placeholder="Escribe lo que buscas (ej. cepa dulce para relajarme por las noches)..."
+            placeholder="Pregunta lo que buscas o describe tu cultivo..."
             style="flex: 1; border-radius: 12px !important; font-size: 0.95rem !important;" />
           <button id="ai-chat-send-inline" class="btn btn-emerald-lg"
             style="border-radius: 12px !important; padding: 0 24px;">
-            🚀 Preguntar al Sommelier IA
+            🚀 Consultar
           </button>
         </div>
 
@@ -1062,13 +1067,22 @@
     <div id="ai-chat-messages"
       style="flex: 1; padding: 14px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px;"></div>
 
+    <!-- Preview Adjuntos CannaDoctor Floating -->
+    <div id="ai-attach-preview-floating" style="display:none; align-items:center; justify-content:space-between; padding:4px 10px; background:rgba(16,185,129,0.15); border:1px solid var(--primary-emerald); border-radius:8px; margin:4px 14px; font-size:0.75rem; color:#A7F3D0;"></div>
+
     <!-- Input y Enviar -->
     <div
-      style="padding: 10px 14px; background: rgba(0,0,0,0.5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 8px;">
+      style="padding: 10px 14px; background: rgba(0,0,0,0.5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 8px; align-items: center;">
+      <input type="file" id="ai-chat-file" accept="image/*" style="display:none;" />
+      <button type="button" id="ai-chat-btn-photo"
+        style="background: rgba(16,185,129,0.15); border: 1px solid var(--primary-emerald); color: #A7F3D0; border-radius: 12px !important; padding: 8px 10px; cursor: pointer; font-size: 0.95rem; display: flex; align-items: center; justify-content: center;"
+        title="CannaDoctor: Subir foto">
+        📷
+      </button>
       <input type="text" id="ai-chat-input" placeholder="Pregunta al Sommelier IA..."
         style="flex: 1; border-radius: 12px !important; font-size: 0.85rem !important; padding: 0.7rem 1rem !important;" />
       <button id="ai-chat-send"
-        style="background: var(--primary-emerald); color: #000; font-weight: 900; border: none; padding: 0 16px; border-radius: 12px !important; cursor: pointer; font-size: 0.9rem;">
+        style="background: var(--primary-emerald); color: #000; font-weight: 900; border: none; padding: 0 16px; border-radius: 12px !important; cursor: pointer; font-size: 0.9rem; height: 38px;">
         🚀
       </button>
     </div>
@@ -1113,7 +1127,7 @@
   </dialog>
 
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=2026_medical_catalog_v138"></script>
+  <script src="js/bundle.js?v=2026_gemini_cannadoctor_v139"></script>
 </body>
 
 </html>
