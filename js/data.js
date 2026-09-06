@@ -10815,6 +10815,7 @@ id: "arc-z-mints",
       visualColor: "linear-gradient(135deg, #10B981 0%, #047857 100%)",
       bgPattern: "radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 70%)"
   },
+
   {
     id: "channel-plus",
     name: "Channel+",
@@ -11103,4 +11104,5 @@ id: "arc-z-mints",
     lineage: "Root Beer Float x Sundae Driver",
     image: "images/strains/sundae-float.webp"
   }
+
 ];
