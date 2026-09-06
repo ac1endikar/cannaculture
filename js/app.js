@@ -910,13 +910,24 @@ class CannaAppMAX {
       }
     });
 
-    document.addEventListener('generateMission', (e) => {
+    document.addEventListener('generateMission', async (e) => {
       const { strainId, activityId } = e.detail;
-      const missionData = MissionGenerator.generateMission(strainId, activityId);
-      MissionGenerator.renderMissionModal(missionData, 'mission-modal-content');
+      const content = document.getElementById('mission-modal-content');
+      if (content) {
+        content.innerHTML = `
+          <div class="mission-card glass-panel glow-purple" style="text-align:center; padding: 3.5rem 1.5rem;">
+            <div style="font-size: 2.8rem; margin-bottom: 1rem; animation: pulse 1.5s infinite;">🧠</div>
+            <h3 style="color: #fff; margin-bottom: 0.6rem;">Gemini 3.8 Flash Diseñando Misión...</h3>
+            <p style="color: #A7F3D0; font-size: 0.88rem; max-width: 380px; margin: 0 auto;">Analizando perfil terpénico, linaje botánico y sinergia farmacológica de la variedad...</p>
+          </div>
+        `;
+      }
       if (this.missionModal && typeof this.missionModal.showModal === 'function') {
         if (!this.missionModal.open) this.missionModal.showModal();
       }
+
+      const missionData = await MissionGenerator.generateMissionAsync(strainId, activityId);
+      MissionGenerator.renderMissionModal(missionData, 'mission-modal-content');
     });
 
     document.addEventListener('closeMissionModal', () => {

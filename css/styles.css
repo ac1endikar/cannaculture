@@ -4417,3 +4417,112 @@ dialog.compare-dialog[open] {
   color: #A7F3D0 !important;
   text-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
 }
+
+/* ==========================================================================
+   MEJORAS SUITE IA 3.8: VOZ TTS, VIVENCIAS, DRAG & DROP Y CANNADOCTOR CHIPS
+   ========================================================================== */
+.ai-msg-toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ai-voice-btn {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #A7F3D0;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px !important;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ai-voice-btn:hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: #10B981;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+}
+
+.ai-voice-btn[data-speaking="true"] {
+  background: rgba(239, 68, 68, 0.2) !important;
+  border-color: #EF4444 !important;
+  color: #FCA5A5 !important;
+  animation: voiceGlowPulse 1.2s infinite alternate;
+}
+
+@keyframes voiceGlowPulse {
+  0% { box-shadow: 0 0 4px rgba(239, 68, 68, 0.3); }
+  100% { box-shadow: 0 0 14px rgba(239, 68, 68, 0.7); }
+}
+
+.ai-save-bitacora-btn {
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  color: #DDD6FE;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px !important;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ai-save-bitacora-btn:hover {
+  background: rgba(139, 92, 246, 0.3);
+  border-color: #8B5CF6;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+}
+
+/* Drag & Drop Visual Zone */
+.ai-dragover-active {
+  outline: 2px dashed #10B981 !important;
+  outline-offset: -4px;
+  background: rgba(16, 185, 129, 0.12) !important;
+  box-shadow: inset 0 0 35px rgba(16, 185, 129, 0.3) !important;
+  transition: all 0.2s ease;
+}
+
+/* Chips de Diagnóstico Rápido CannaDoctor */
+.ai-quick-diagnosis-chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.ai-diag-chip {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #A7F3D0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 50px !important;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.ai-diag-chip:hover {
+  background: rgba(16, 185, 129, 0.28);
+  border-color: #10B981;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}

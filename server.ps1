@@ -120,8 +120,23 @@ while ($listener.IsListening) {
                     continue
                 }
 
-                $geminiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=$apiKey"
-                $resp = Invoke-RestMethod -Uri $geminiUrl -Method POST -Body $body -ContentType "application/json" -TimeoutSec 30
+                $targetModel = "gemini-3.8-flash"
+                try {
+                    $parsedBody = $body | ConvertFrom-Json
+                    if ($parsedBody.model) { $targetModel = $parsedBody.model }
+                } catch {}
+
+                $geminiUrl = "https://generativelanguage.googleapis.com/v1beta/models/${targetModel}:generateContent?key=$apiKey"
+                try {
+                    $resp = Invoke-RestMethod -Uri $geminiUrl -Method POST -Body $body -ContentType "application/json" -TimeoutSec 35
+                } catch {
+                    if ($targetModel -ne "gemini-3.6-flash") {
+                        $fallbackUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=$apiKey"
+                        $resp = Invoke-RestMethod -Uri $fallbackUrl -Method POST -Body $body -ContentType "application/json" -TimeoutSec 35
+                    } else {
+                        throw $_
+                    }
+                }
                 $jsonResp = $resp | ConvertTo-Json -Depth 10
                 $respBytes = [System.Text.Encoding]::UTF8.GetBytes($jsonResp)
 

@@ -7,7 +7,7 @@ Comandos disponibles:
   python scripts/git_ai.py commit        -> Redacta commit semántico a partir de git diff
   python scripts/git_ai.py doctor <img > -> Diagnóstico botánico de hoja o flor con Gemini Vision
   python scripts/git_ai.py enrich <name> -> Genera bloque JSON de una nueva cepa para data.js
-  python scripts/git_ai.py rescue        -> Asistente interactivo de solución de problemas de Git
+  python scripts/git_ai.py ask "<duda>"  -> Pregunta botánica directa a Mateo (Gemini 3.8 Flash)
 """
 
 import os, sys, json, base64, subprocess, urllib.request, urllib.error
@@ -35,7 +35,7 @@ def load_env():
 ENV = load_env()
 GEMINI_KEY = os.environ.get('GEMINI_API_KEY') or ENV.get('GEMINI_API_KEY') or ENV.get('GOOGLE_API_KEY')
 
-def call_gemini(prompt, image_path=None, model="gemini-3.6-flash"):
+def call_gemini(prompt, image_path=None, model="gemini-3.8-flash"):
     if not GEMINI_KEY:
         print("❌ Error: No se encontró GEMINI_API_KEY en .env ni en variables de entorno.")
         sys.exit(1)
@@ -157,6 +157,20 @@ Devuelve ÚNICAMENTE el bloque JSON válido sin markdown adicional."""
     print("="*60)
     print("💡 Puedes copiar este bloque directamente en js/data.js o js/medical_seeds.js")
 
+def cmd_ask(question):
+    """Consulta botánica directa a Mateo (Gemini 3.8 Flash)."""
+    print(f"🌿 Consultando a Mateo (Gemini 3.8 Flash): \"{question}\"...\n")
+    system_prompt = """Eres Mateo, master sumiller y botánico experto de CannaCulture.
+Responde con cercanía, elocuencia natural y rigor botánico/químico a la consulta del usuario.
+Si es una pregunta científica o de cultivo, explica los procesos biológicos (degradación de THCA a CBN, asimilación por pH, movilidad de nutrientes, efecto séquito, etc.)."""
+    full_prompt = f"{system_prompt}\n\nPregunta: {question}"
+    ans = call_gemini(full_prompt)
+    print("="*60)
+    print("🌿 RESPUESTA DE MATEO (CANNACULTURE):")
+    print("="*60)
+    print(ans)
+    print("="*60)
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
@@ -175,6 +189,11 @@ def main():
             print("Uso: python scripts/git_ai.py enrich <nombre_cepa>")
             return
         cmd_enrich(" ".join(sys.argv[2:]))
+    elif cmd == 'ask':
+        if len(sys.argv) < 3:
+            print("Uso: python scripts/git_ai.py ask \"<tu pregunta botánica>\"")
+            return
+        cmd_ask(" ".join(sys.argv[2:]))
     else:
         print(f"Comando desconocido '{cmd}'.\n")
         print(__doc__)

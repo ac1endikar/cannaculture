@@ -1,40 +1,58 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-06 12:35  
+> **Última actualización:** 2026-09-06 14:15  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
 
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
-- **Base de datos:** 418 cepas únicas y consolidadas pertenecientes a 39 bancos de semillas premium en `js/data.js` (402 base previa + 16 Medical Seeds enriquecidas con terpenos, sabores y efectos).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_gemini_conversational_v145`).
+- **Base de datos:** 444 cepas únicas y consolidadas pertenecientes a 37 bancos de semillas premium en `js/data.js` (incluyendo la colección completa de 42 variedades feminizadas oficiales de Medical Seeds Co. con terpenos, aromas, sabores y efectos).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_medical_seeds_v147_real_photos`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
+- **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
-- **Suite de Inteligencia Artificial Gemini 3.6 Flash & CannaDoctor:** **100% OPERATIVA (v145)**
-  - **Modo Conversacional Gemini Real:** Explica con rigor botánico y pedagógico el *porqué* de los procesos biológicos (oxidación de tricomas a CBN, clorosis y pH, efecto séquito, curado, etc.) sin forzar recomendaciones de cepas no solicitadas.
-  - **Memoria Conversacional Multi-Turn (`this.history`):** Mantiene el contexto a lo largo de múltiples preguntas y repreguntas.
-  - **Motor Científico Local de Respaldo:** Respuestas didácticas completas y exhaustivas sobre cultivo y ciencia cannábica sin conexión a la nube.
-  - **Recomendaciones Inteligentes a Petición:** Bloque de razonamiento neuro-terpénico y enlaces interactivos solo cuando el usuario pide sugerencias de cepas explícitas.
-  - **CannaDoctor Multimodal:** Soporte para subida de fotos de hojas o cogollos con diagnóstico botánico de deficiencias, plagas y madurez de tricomas.
+- **Suite de Inteligencia Artificial Gemini 3.8 Flash & CannaDoctor 2.0:** **100% OPERATIVA (v146)**
+  - **Motor Neuronal Google Gemini 3.8 Flash:** Migración del Sommelier IA y CannaDoctor al modelo 3.8 con mayor velocidad, razonamiento botánico y visión artificial de última generación (con tolerancia a fallos en cascada a 3.6/2.5 y motor local).
+  - **Catálogo Completo de 418 Cepas:** Inyección de la base de datos completa de 418 cepas de los 39 bancos premium en el contexto de Gemini (eliminado el límite previo de 60 cepas). Mateo conoce todas las variedades (incluyendo Medical Seeds, Paradise, Ripper, Barney's, etc.).
+  - **CannaDoctor 2.0 con Drag & Drop y Chips Rápidos:** Arrastre directo de fotos de hojas o flores sobre el chat con chips preconfigurados de diagnóstico (*Madurez de Tricomas, Carencia foliar/pH, Plagas u hongos, Diagnóstico total*).
+  - **Síntesis de Voz Botánica (Text-to-Speech):** Botón `🔊 Escuchar` / `⏹️ Detener` en cada mensaje de Mateo para locución auditiva en español neutro con Web Speech API nativa.
+  - **Misiones IA Sensoriales Dinámicas:** Botón "🚀 Generar Misión IA" en la Ficha Técnica conectado a Gemini 3.8 Flash para generar experiencias sensoriales y lúdicas 100% personalizadas según el terpeno y la cepa (con fallback local).
+  - **Integración con Vivencias:** Botón `📖 Guardar en Vivencias` en las recomendaciones de Mateo para archivar catas y consejos en la bitácora con un solo clic.
+  - **CLI `scripts/git_ai.py` Actualizado:** Nuevo comando `python scripts/git_ai.py ask "<duda>"` para consultar directamente a Mateo desde la terminal con Gemini 3.8 Flash.
 - **Automatización CI/CD con GitHub Actions:**
   - **Auto-PR Code Reviewer:** Workflow `.github/workflows/gemini_pr_reviewer.yml` que audita diffs con IA en cada Pull Request.
   - **Release Notes & Changelog Generator:** Workflow `.github/workflows/gemini_changelog.yml` activado en tags.
-- **Herramientas de Terminal CLI (`scripts/git_ai.py`):** Comandos `commit` (commits semánticos con IA), `doctor` (diagnóstico visual de archivos locales) y `enrich` (generador de JSON para nuevas cepas).
+- **Herramientas de Terminal CLI (`scripts/git_ai.py`):** Comandos `commit`, `doctor`, `enrich` y `ask`.
 - **Fase 2 de Reemplazo y Optimización Visual de Imágenes:** **100% COMPLETADA (143/143)**
 - **Optimización WebP Masiva:** **100% COMPLETADA (955/955)**
-  - Reducción de peso de assets: **388.69 MB ➔ 182.41 MB (Ahorro del 53.1%)**.
-  - Lazy Loading (`loading="lazy"` + `decoding="async"`) activo en tarjetas del catálogo.
-- **Mobile Responsive Engine (Ficha Técnica):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
+- **Mobile Responsive Engine (Ficha Técnica y Comparador):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
 - **Banco Medical Seeds (v138):** **100% INTEGRADO Y BLINDADO** (16 variedades fotoperiódicas THC agregadas a `js/data.js`).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-06)
-1. ✅ **Inteligencia Conversacional Estilo Gemini & Respuestas Científicas sin Desvíos a Variedades (v145):**
+1. ✅ **Integración Total de Medical Seeds — 42 Cepas Feminizadas Oficiales con Fotografía Botánica Real (v147):**
+   - **Catálogo Oficial 100% Completo:** Se identificaron e integraron todas las 42 variedades fotoperiódicas feminizadas oficiales registradas en el pedigrí de Medical Seeds Co. (líneas THC clásicas y líneas terapéuticas CBD/CBG).
+   - **Depuración Rigurosa:** Eliminadas entradas erróneas que no pertenecían a Medical Seeds (`sundae-float` de Cannarado e hilos informativos como `overdosis`). Añadida la original `canadian-kush`.
+   - **Fotografía Oficial 100% Real (0 IA):** Descargadas y convertidas a WebP de 600x600 px en `img/` las fotografías oficiales reales de cogollos y empaques desde el repositorio oficial de Seedfinder y criadores para las 42 variedades. Ninguna imagen generada por IA.
+   - **Perfiles Botánicos Completos:** Cada genética cuenta con días/semanas exactos de floración, producción indoor/outdoor, porcentajes índica/sativa, linajes contrastados, terpeno dominante y descripciones sensoriales en español.
+   - **Base de Datos y Producción:** Sincronizados `js/medical_seeds.js` (42 cepas) y `js/data.js` (444 cepas consolidadas en 37 bancos). Recompilado `js/bundle.js` (683,525 bytes) con cache-busting `?v=2026_medical_seeds_v147_real_photos`.
+
+2. ✅ **Suite de Inteligencia Artificial Google Gemini 3.8 Flash, Catálogo Completo (418 Cepas), CannaDoctor 2.0 con Drag & Drop, Síntesis de Voz Botánica (TTS) y Misiones IA Dinámicas (v146):**
+   - **Migración a Gemini 3.8 Flash:** Actualizados `server.py`, `server.ps1`, `scripts/git_ai.py` y `js/ai-sommelier.js` al nuevo motor `gemini-3.8-flash`. Implementado sistema de tolerancia a fallos en cascada (`gemini-3.8-flash` ➔ `gemini-3.6-flash` ➔ `gemini-2.5-flash` ➔ motor heurístico local).
+   - **Contexto Completo de 418 Cepas:** Mateo ahora recibe el índice compacto de las 418 variedades de los 39 bancos. Las búsquedas y maridajes reconocen instantáneamente variedades de Medical Seeds (*Channel+, 1024, 2046, Y Griega, Sour Diesel, No Name, etc.*) y del resto de bancos.
+   - **CannaDoctor 2.0:** Incorporada zona interactiva *Drag & Drop* para soltar fotografías botánicas directamente en el chat flotante o inline, con 4 chips de diagnóstico inmediato al adjuntar foto (*Tricomas, Carencias, Plagas, Diagnóstico Total*).
+   - **Narración Auditiva por Voz (TTS):** Implementado botón `🔊 Escuchar` en cada respuesta de Mateo para locución con Web Speech API nativa, timbre cálido y botón de pausa reactivo.
+   - **Guardado en Vivencias:** Botón `📖 Guardar en Vivencias` en las respuestas de recomendación que crea una nueva entrada en `bitacora.js` con un solo toque y confirmación Toast.
+   - **Misiones IA Dinámicas en Ficha Técnica:** `MissionGenerator.generateMissionAsync` genera planes vivenciales exclusivos usando Gemini 3.8 Flash basados en los terpenos y cannabinoides específicos de la cepa seleccionada.
+   - **CLI `ask` en Terminal:** Añadido `python scripts/git_ai.py ask "<pregunta>"` para consultas rápidas con Mateo desde PowerShell/Bash.
+   - **Compilación de Producción:** Recompilado `js/bundle.js` (666,393 bytes) y versión sincronizada a `?v=2026_gemini_38_ultra_v146` en `index.html` y `css/styles.css`.
+
+2. ✅ **Inteligencia Conversacional Estilo Gemini & Respuestas Científicas sin Desvíos a Variedades (v145):**
    - **Explicación del *Porqué* sin Recomendaciones Forzadas:** Si el usuario pregunta por qué los tricomas maduran a ámbar, por qué las hojas amarillean, qué es el efecto séquito o cómo influye el pH, Mateo responde con rigor científico y didáctico (estilo Google Gemini) sin encasquetar ni desviar la conversación hacia cepas del catálogo.
    - **Memoria Conversacional Multi-Turn:** Implementado seguimiento de turnos mediante `this.history` enviado a Gemini 3.6 Flash para permitir repreguntas y continuidad natural en el diálogo.
    - **Motor Didáctico Local de Profundidad:** Creada una base de conocimiento offline en `generateHumanResponse` que aborda tricomas, clorosis móvil/inmóvil, garras de nitrógeno, efecto séquito, lavado de raíces, curado 60/60 y temperaturas de ebullición.

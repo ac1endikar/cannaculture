@@ -10818,341 +10818,1055 @@ id: "arc-z-mints",
       visualColor: "linear-gradient(135deg, #10B981 0%, #047857 100%)",
       bgPattern: "radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 70%)"
   },
-{
+  {
     id: "channel-plus",
+    image: "img/channel-plus.webp",
     name: "Channel+",
+    aka: "Big Bud x Skunk",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Híbrida",
-    thc: 20,
-    cbd: 0.5,
-    indicaPct: 50,
-    sativaPct: 50,
-    floweringWeeks: 7,
-    floweringDays: 50,
-    yieldIndoor: 600,
-    yieldOutdoor: 1000,
+    thc: 20, cbd: 0.5,
+    indicaPct: 50, sativaPct: 50,
+    yieldIndoor: 600, yieldOutdoor: 1000,
+    floweringWeeks: 7, floweringDays: 50,
+    rating: 4.9, reviewsCount: 540,
+    genetics: "Big Bud x Skunk",
+    origin: "España",
     dominantTerpene: "myrcene",
+    terpenes: { myrcene: 50, caryophyllene: 30, pinene: 20 },
     aroma: "Dulce terroso, bouquet floral maduro y fondo especiado",
     flavors: ["Dulce Terroso", "Bouquet Floral", "Especiado"],
     effects: ["Relajación Profunda", "Bienestar Físico", "Calma"],
-    lineage: "Big Bud x Skunk",
-    image: "images/strains/channel-plus.webp"
+    activities: ["relax_sleep", "social", "gaming"],
+    description: "El buque insignia histórico de Medical Seeds y múltiple campeona de copas cannábicas. Famosa por su velocidad asombrosa de floración (menos de 50 días), su colosal producción de cogollos duros como piedras y un equilibrio físico-mental relajante y placentero.",
+    visualColor: "linear-gradient(135deg, #10B981 0%, #047857 100%)",
+    bgPattern: "radial-gradient(circle, rgba(16,185,129,0.25) 0%, transparent 70%)"
   },
   {
     id: "1024",
+    image: "img/1024.webp",
     name: "1024",
+    aka: "Selección Híbrida Sativa Secreta",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Sativa",
-    thc: 23,
-    cbd: 0.3,
-    indicaPct: 30,
-    sativaPct: 70,
-    floweringWeeks: 11,
-    floweringDays: 77,
-    yieldIndoor: 600,
-    yieldOutdoor: 800,
+    thc: 23, cbd: 0.3,
+    indicaPct: 30, sativaPct: 70,
+    yieldIndoor: 600, yieldOutdoor: 800,
+    floweringWeeks: 11, floweringDays: 77,
+    rating: 4.9, reviewsCount: 490,
+    genetics: "Genética secreta (Selección Híbrida Sativa)",
+    origin: "España",
     dominantTerpene: "terpinolene",
+    terpenes: { terpinolene: 45, limonene: 30, myrcene: 25 },
     aroma: "Incienso puro, especias orientales, almizcle y fruta madura",
     flavors: ["Incienso Puro", "Especias Orientales", "Fruta Madura"],
     effects: ["Euforia Mental", "Creatividad", "Energía Sativa"],
-    lineage: "Genética secreta (Selección Híbrida Sativa)",
-    image: "images/strains/1024.webp"
+    activities: ["creativity", "social", "nature_walk"],
+    description: "Una auténtica joya botánica de efecto eléctrico y sabores catedralicios. Su complejo buqué combina notas a incienso sagrado, madera noble y toques de mango maduro, desatando una oleada de creatividad efervescente inigualable.",
+    visualColor: "linear-gradient(135deg, #F59E0B 0%, #B45309 100%)",
+    bgPattern: "radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)"
   },
   {
     id: "2046",
+    image: "img/2046.webp",
     name: "2046",
+    aka: "Neville's Haze x Neville's Haze",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Sativa",
-    thc: 25,
-    cbd: 0.2,
-    indicaPct: 0,
-    sativaPct: 100,
-    floweringWeeks: 14,
-    floweringDays: 100,
-    yieldIndoor: 500,
-    yieldOutdoor: 700,
+    thc: 25, cbd: 0.2,
+    indicaPct: 0, sativaPct: 100,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 14, floweringDays: 100,
+    rating: 4.8, reviewsCount: 380,
+    genetics: "Neville's Haze x Neville's Haze",
+    origin: "España",
     dominantTerpene: "pinene",
+    terpenes: { pinene: 50, terpinolene: 30, caryophyllene: 20 },
     aroma: "Haze catedralicio puro, madera de cedro y fondo anisado",
     flavors: ["Haze Catedralicio", "Madera de Cedro", "Anisado"],
     effects: ["Subidón Psicoactivo", "Euforia Eléctrica", "Claridad"],
-    lineage: "Neville's Haze x Neville's Haze",
-    image: "images/strains/2046.webp"
+    activities: ["creativity", "nature_walk", "workout"],
+    description: "Una Sativa pura al 100% no apta para principiantes. Con 14 semanas de paciente floración, regala la experiencia más psicodélica y lúcida del banco, con una explosión terpénica a cedro fresco, pino salvaje e incienso de iglesia antigua.",
+    visualColor: "linear-gradient(135deg, #EAB308 0%, #A16207 100%)",
+    bgPattern: "radial-gradient(circle, rgba(234,179,8,0.25) 0%, transparent 70%)"
   },
   {
     id: "y-griega",
+    image: "img/y-griega.webp",
     name: "Y Griega",
+    aka: "Amnesia Haze x Kali Mist",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Sativa",
-    thc: 27,
-    cbd: 0.4,
-    indicaPct: 20,
-    sativaPct: 80,
-    floweringWeeks: 12,
-    floweringDays: 85,
-    yieldIndoor: 500,
-    yieldOutdoor: 600,
+    thc: 27, cbd: 0.4,
+    indicaPct: 20, sativaPct: 80,
+    yieldIndoor: 500, yieldOutdoor: 600,
+    floweringWeeks: 12, floweringDays: 85,
+    rating: 4.9, reviewsCount: 580,
+    genetics: "Amnesia Haze x Kali Mist",
+    origin: "España",
     dominantTerpene: "limonene",
+    terpenes: { limonene: 45, myrcene: 30, pinene: 25 },
     aroma: "Cítrico alimonado muy penetrante, notas florales silvestres",
     flavors: ["Cítrico Alimonado", "Floral Silvestre", "Haze Fresco"],
     effects: ["Potencia Cerebral", "Estimulación Creativa", "Energía"],
-    lineage: "Amnesia Haze x Kali Mist",
-    image: "images/strains/y-griega.webp"
+    activities: ["creativity", "social", "gaming"],
+    description: "Mítica leyenda de Medical Seeds que rompió récords históricos superando el 27% de THC en analíticas de cromatografía. Combina el vigor indomable de Kali Mist con el bouquet cítrico picante de Amnesia Haze en una flor densa y empapada en tricomas gigantescos.",
+    visualColor: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
+    bgPattern: "radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)"
   },
   {
     id: "no-name",
+    image: "img/no-name.webp",
     name: "No Name",
+    aka: "Cheese x Sensi Star",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
-    species: "Índica",
-    thc: 20,
-    cbd: 0.4,
-    indicaPct: 80,
-    sativaPct: 20,
-    floweringWeeks: 8,
-    floweringDays: 60,
-    yieldIndoor: 450,
-    yieldOutdoor: 600,
+    species: "Indica",
+    thc: 20, cbd: 0.4,
+    indicaPct: 80, sativaPct: 20,
+    yieldIndoor: 450, yieldOutdoor: 600,
+    floweringWeeks: 8, floweringDays: 60,
+    rating: 4.8, reviewsCount: 430,
+    genetics: "Cheese x Sensi Star",
+    origin: "España",
     dominantTerpene: "caryophyllene",
-    aroma: "Queso curado Skunk, regaliz dulce y fondo kush terroso",
-    flavors: ["Queso Curado Skunk", "Regaliz Dulce", "Kush Terroso"],
-    effects: ["Relajación Corporal", "Tranquilidad", "Efecto Sedante"],
-    lineage: "Cheese x Sensi Star",
-    image: "images/strains/no-name.webp"
-  },
-  {
-    id: "malakoff",
-    name: "Malakoff",
-    bank: "Medical Seeds",
-    breeder: "Medical Seeds",
-    species: "Sativa",
-    thc: 20,
-    cbd: 0.3,
-    indicaPct: 20,
-    sativaPct: 80,
-    floweringWeeks: 11,
-    floweringDays: 77,
-    yieldIndoor: 500,
-    yieldOutdoor: 800,
-    dominantTerpene: "ocimene",
-    aroma: "Frutal ácido, fresa ácida con toque terroso cremoso",
-    flavors: ["Fresa Ácida", "Frutal Cremoso", "Toque Terroso"],
-    effects: ["Energía Cerebral", "Motivación", "Claridad Sativa"],
-    lineage: "Strawberry Haze x White Widow",
-    image: "images/strains/malakoff.webp"
+    terpenes: { caryophyllene: 45, myrcene: 35, humulene: 20 },
+    aroma: "Queso curado penetrante, fondo a Skunk vieja escuela y regaliz",
+    flavors: ["Queso Curado", "Skunk Añejo", "Regaliz Negro"],
+    effects: ["Relajación Corporal", "Bienestar Somático", "Calma"],
+    activities: ["relax_sleep", "meditation"],
+    description: "Cruce sublime entre una selección selecta de Cheese y la mítica Sensi Star. Inicia con una estimulación cerebral muy alegre que rápidamente se transforma en un estado de profunda paz física y bienestar somático libre de estrés.",
+    visualColor: "linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%)",
+    bgPattern: "radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 70%)"
   },
   {
     id: "sour-diesel-medical",
+    image: "img/sour-diesel-medical.webp",
     name: "Sour Diesel",
+    aka: "Selección Original East Coast Sour Diesel",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Sativa",
-    thc: 25,
-    cbd: 0.3,
-    indicaPct: 30,
-    sativaPct: 70,
-    floweringWeeks: 10,
-    floweringDays: 70,
-    yieldIndoor: 500,
-    yieldOutdoor: 700,
-    dominantTerpene: "myrcene",
-    aroma: "Combustible diésel puro, cítrico agrio y notas químicas",
-    flavors: ["Gasolina Diésel", "Cítrico Agrio", "Químico Penetrante"],
-    effects: ["Euforia Energizante", "Enfoque Mental", "Bienestar"],
-    lineage: "Diesel x Northern Lights",
-    image: "images/strains/sour-diesel-medical.webp"
+    thc: 25, cbd: 0.3,
+    indicaPct: 30, sativaPct: 70,
+    yieldIndoor: 500, yieldOutdoor: 600,
+    floweringWeeks: 10, floweringDays: 70,
+    rating: 4.9, reviewsCount: 420,
+    genetics: "Selección Original Sour Diesel",
+    origin: "España",
+    dominantTerpene: "limonene",
+    terpenes: { limonene: 40, caryophyllene: 35, myrcene: 25 },
+    aroma: "Combustible diésel puro, cítrico químico y toques terrosos",
+    flavors: ["Gasolina Diésel", "Limón Químico", "Tierra Húmeda"],
+    effects: ["Euforia Dinámica", "Claridad Mental", "Motivación"],
+    activities: ["social", "workout", "creativity"],
+    description: "La versión maestra de Medical Seeds de la legendaria East Coast Sour Diesel. Desprende un aroma inconfundible a queroseno y limón ácido que llena cualquier espacio, ofreciendo un efecto energizante perfecto para proyectos artísticos y actividades diurnas.",
+    visualColor: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
+    bgPattern: "radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)"
   },
   {
     id: "prozack",
+    image: "img/prozack.webp",
     name: "Prozack",
+    aka: "Lavander x Kush",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
-    species: "Índica",
-    thc: 18,
-    cbd: 0.5,
-    indicaPct: 80,
-    sativaPct: 20,
-    floweringWeeks: 9,
-    floweringDays: 63,
-    yieldIndoor: 450,
-    yieldOutdoor: 500,
-    dominantTerpene: "caryophyllene",
-    aroma: "Hachís afgano tradicional, bosque húmedo y tierra mojada",
-    flavors: ["Hachís Afgano", "Bosque Húmedo", "Tierra Mojada"],
-    effects: ["Sedación Muscular", "Alivio Físico", "Sueño Reparador"],
-    lineage: "Lavander x Kush",
-    image: "images/strains/prozack.webp"
+    species: "Indica",
+    thc: 18, cbd: 0.8,
+    indicaPct: 80, sativaPct: 20,
+    yieldIndoor: 450, yieldOutdoor: 500,
+    floweringWeeks: 8, floweringDays: 56,
+    rating: 4.8, reviewsCount: 360,
+    genetics: "Lavander x Kush",
+    origin: "España",
+    dominantTerpene: "myrcene",
+    terpenes: { myrcene: 50, linalool: 30, caryophyllene: 20 },
+    aroma: "Hachís dulce de alta montaña, lavanda y tierra húmeda",
+    flavors: ["Hachís Dulce", "Lavanda Fresca", "Tierra Profunda"],
+    effects: ["Relajación Máxima", "Alivio de Tensión", "Paz Mental"],
+    activities: ["relax_sleep", "meditation"],
+    description: "Planta compacta de porte arbustivo ideal para extracciones de resina de campeonato. Une los matices florales a lavanda con el vigor terroso del Kush afgano, induciendo un efecto sedante sumamente agradable y terapéutico.",
+    visualColor: "linear-gradient(135deg, #8B5CF6 0%, #5B21B6 100%)",
+    bgPattern: "radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 70%)"
   },
   {
-    id: "devil-fruit",
-    name: "Devil Fruit",
-    bank: "Medical Seeds",
-    breeder: "Medical Seeds",
-    species: "Índica",
-    thc: 19,
-    cbd: 0.4,
-    indicaPct: 70,
-    sativaPct: 30,
-    floweringWeeks: 9,
-    floweringDays: 65,
-    yieldIndoor: 500,
-    yieldOutdoor: 600,
-    dominantTerpene: "linalool",
-    aroma: "Frutas tropicales dulces, uva madura y toque floral",
-    flavors: ["Frutas Tropicales", "Uva Madura", "Floral Dulce"],
-    effects: ["Relajación Placentera", "Paz Mental", "Bienestar Dulce"],
-    lineage: "Shiskaberry x Great White Shark",
-    image: "images/strains/devil-fruit.webp"
-  },
-  {
-    id: "jack-la-mota",
-    name: "Jack La Mota",
+    id: "malakoff",
+    image: "img/malakoff.webp",
+    name: "Malakoff",
+    aka: "Strawberry Haze x White Widow",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Sativa",
-    thc: 20,
-    cbd: 0.3,
-    indicaPct: 25,
-    sativaPct: 75,
-    floweringWeeks: 10,
-    floweringDays: 70,
-    yieldIndoor: 500,
-    yieldOutdoor: 800,
+    thc: 20, cbd: 0.4,
+    indicaPct: 20, sativaPct: 80,
+    yieldIndoor: 400, yieldOutdoor: 600,
+    floweringWeeks: 11, floweringDays: 75,
+    rating: 4.8, reviewsCount: 390,
+    genetics: "Strawberry Haze x White Widow",
+    origin: "España",
     dominantTerpene: "terpinolene",
-    aroma: "Pino silvestre, incienso especiado y maderas aromáticas",
-    flavors: ["Pino Silvestre", "Incienso Especiado", "Madera Aromática"],
-    effects: ["Euforia Activa", "Claridad Creativa", "Energía Mental"],
-    lineage: "Northern Lights #5 x Haze x Skunk",
-    image: "images/strains/jack-la-mota.webp"
+    terpenes: { terpinolene: 45, limonene: 30, myrcene: 25 },
+    aroma: "Fresas ácidas, crema dulce y fondo Haze resinoso",
+    flavors: ["Fresa Silvestre", "Crema Dulce", "Haze Especiado"],
+    effects: ["Subidón Cerebral", "Buen Humor", "Creatividad"],
+    activities: ["creativity", "social", "nature_walk"],
+    description: "Una Sativa fresca y sumamente resistente a hongos como el botrytis, perfecta para cultivadores de exterior en climas húmedos. Regala un delicioso sabor a fresas silvestres maduras con un fondo especiado que invita a la socialización y la risa.",
+    visualColor: "linear-gradient(135deg, #EC4899 0%, #BE185D 100%)",
+    bgPattern: "radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "jack-la-mota",
+    image: "img/jack-la-mota.webp",
+    name: "Jack La Mota",
+    aka: "Northern Lights #5 x Haze x Skunk",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Sativa",
+    thc: 20, cbd: 0.3,
+    indicaPct: 25, sativaPct: 75,
+    yieldIndoor: 500, yieldOutdoor: 800,
+    floweringWeeks: 9, floweringDays: 65,
+    rating: 4.9, reviewsCount: 510,
+    genetics: "Northern Lights #5 x Haze x Skunk",
+    origin: "España",
+    dominantTerpene: "terpinolene",
+    terpenes: { terpinolene: 40, pinene: 35, caryophyllene: 25 },
+    aroma: "Incienso puro, madera de pino y especias picantes",
+    flavors: ["Incienso Puro", "Pino Fresco", "Especias"],
+    effects: ["Euforia Activa", "Claridad Mental", "Energía Social"],
+    activities: ["social", "creativity", "nature_walk"],
+    description: "El homenaje definitivo de Medical Seeds a Jack Herer. Produce cálices voluminosos cubiertos de cristales plateados con un perfil organoléptico dominado por el incienso catedralicio y la resina de pino, otorgando una euforia lúcida y energética.",
+    visualColor: "linear-gradient(135deg, #F59E0B 0%, #B45309 100%)",
+    bgPattern: "radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)"
   },
   {
     id: "mendocino-purple-kush",
+    image: "img/mendocino-purple-kush.webp",
     name: "Mendocino Purple Kush",
+    aka: "Mendocino Purple x Bubba Kush",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
-    species: "Índica",
-    thc: 20,
-    cbd: 0.3,
-    indicaPct: 60,
-    sativaPct: 40,
-    floweringWeeks: 9,
-    floweringDays: 60,
-    yieldIndoor: 450,
-    yieldOutdoor: 600,
+    species: "Indica",
+    thc: 20, cbd: 0.4,
+    indicaPct: 60, sativaPct: 40,
+    yieldIndoor: 450, yieldOutdoor: 600,
+    floweringWeeks: 9, floweringDays: 60,
+    rating: 4.9, reviewsCount: 560,
+    genetics: "Mendocino Purple x Bubba Kush",
+    origin: "España",
+    dominantTerpene: "linalool",
+    terpenes: { linalool: 45, myrcene: 30, caryophyllene: 25 },
+    aroma: "Uva dulce madura, tierra mojada y fondo Kush intenso",
+    flavors: ["Uva Dulce", "Tierra Húmeda", "Kush Terroso"],
+    effects: ["Relajación Intensa", "Bienestar Físico", "Calma Serena"],
+    activities: ["relax_sleep", "meditation"],
+    description: "Una de las reinas visuales del catálogo con cuatro fenotipos que van del verde esmeralda al violeta más oscuro y aterciopelado. Su aroma recuerda a racimos de uvas maduras recién cosechadas combinadas con el cuerpo denso y narcótico de Bubba Kush.",
+    visualColor: "linear-gradient(135deg, #9333EA 0%, #581C87 100%)",
+    bgPattern: "radial-gradient(circle, rgba(147,51,234,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "devil-fruit",
+    image: "img/devil-fruit.webp",
+    name: "Devil Fruit",
+    aka: "Shiskaberry x Great White Shark",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 18, cbd: 0.5,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 600,
+    floweringWeeks: 9, floweringDays: 65,
+    rating: 4.8, reviewsCount: 370,
+    genetics: "Shiskaberry x Great White Shark",
+    origin: "España",
     dominantTerpene: "myrcene",
-    aroma: "Uva silvestre, frutas del bosque y fondo terroso kush",
-    flavors: ["Uva Silvestre", "Frutas del Bosque", "Kush Terroso"],
-    effects: ["Relajación Pesada", "Sedación Cálida", "Anti-Estrés"],
-    lineage: "Mendocino Purple x Bubba Kush",
-    image: "images/strains/mendocino-purple-kush.webp"
+    terpenes: { myrcene: 45, limonene: 35, caryophyllene: 20 },
+    aroma: "Frutas rojas maduras, bayas silvestres y fondo dulce almibarado",
+    flavors: ["Frutas Rojas", "Golosina Dulce", "Fondo Herbal"],
+    effects: ["Relajación Corporal", "Paz Mental", "Bienestar Suave"],
+    activities: ["relax_sleep", "social"],
+    description: "Variedad sumamente dulce y apetecible nacida del cruce entre Shiskaberry y Great White Shark. Su aroma a caramelo de frutos rojos envuelve los sentidos mientras su efecto físico relaja la musculatura sin dejarte clavado al sofá.",
+    visualColor: "linear-gradient(135deg, #EC4899 0%, #831843 100%)",
+    bgPattern: "radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%)"
   },
   {
     id: "white-widow-medical",
+    image: "img/white-widow-medical.webp",
     name: "White Widow",
+    aka: "Selección Original White Widow",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
-    species: "Índica",
-    thc: 19,
-    cbd: 0.5,
-    indicaPct: 60,
-    sativaPct: 40,
-    floweringWeeks: 8,
-    floweringDays: 58,
-    yieldIndoor: 450,
-    yieldOutdoor: 750,
+    species: "Híbrida",
+    thc: 18, cbd: 0.6,
+    indicaPct: 50, sativaPct: 50,
+    yieldIndoor: 450, yieldOutdoor: 750,
+    floweringWeeks: 9, floweringDays: 60,
+    rating: 4.8, reviewsCount: 440,
+    genetics: "Selección Original White Widow (Brazilian x South Indian)",
+    origin: "España",
     dominantTerpene: "myrcene",
-    aroma: "Especiado agridulce, pino fresco y madera con resina espesa",
-    flavors: ["Pino Fresco", "Especiado Agridulce", "Madera Resinosa"],
-    effects: ["Euforia Clásica", "Relax Corporal", "Equilibrio"],
-    lineage: "Landrace Brasil x Landrace Sur de la India",
-    image: "images/strains/white-widow-medical.webp"
+    terpenes: { myrcene: 40, caryophyllene: 35, pinene: 25 },
+    aroma: "Pino fresco, especias dulces y fondo floral terroso",
+    flavors: ["Pino Fresco", "Especias Dulces", "Terroso Clásico"],
+    effects: ["Equilibrio Mental", "Relajación Física", "Serenidad"],
+    activities: ["social", "gaming", "relax_sleep"],
+    description: "La versión pura de Medical Seeds del clásico holandés que definió los años 90. Destaca por su manto ininterrumpido de tricomas blancos como la nieve, su sabor especiado a bosque otoñal y su balance terapéutico reconfortante.",
+    visualColor: "linear-gradient(135deg, #10B981 0%, #065F46 100%)",
+    bgPattern: "radial-gradient(circle, rgba(16,185,129,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "canadian-kush",
+    image: "img/canadian-kush.webp",
+    name: "Canadian Kush",
+    aka: "Purple Kush x Special Kush",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 21, cbd: 0.3,
+    indicaPct: 100, sativaPct: 0,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 9, floweringDays: 63,
+    rating: 4.9, reviewsCount: 460,
+    genetics: "Purple Kush x Special Kush",
+    origin: "España",
+    dominantTerpene: "myrcene",
+    terpenes: { myrcene: 50, caryophyllene: 30, pinene: 20 },
+    aroma: "Pino húmedo, tierra mojada, uva terrosa y hachís afgano",
+    flavors: ["Pino Húmedo", "Tierra Mojada", "Hachís Dulce"],
+    effects: ["Narcótico Fuerte", "Relajación Corporal", "Paz Profunda"],
+    activities: ["relax_sleep", "meditation"],
+    description: "Una índica canadiense 100% pura y devastadora que combina la pigmentación violeta de Purple Kush con la potencia densa de Special Kush. Flores duras como piedras impregnadas en resina aromática a bosque boreal y hachís tradicional.",
+    visualColor: "linear-gradient(135deg, #6B21A8 0%, #3B0764 100%)",
+    bgPattern: "radial-gradient(circle, rgba(107,33,168,0.25) 0%, transparent 70%)"
   },
   {
     id: "canadian-kush-2",
+    image: "img/canadian-kush-2.webp",
     name: "Canadian Kush 2.0",
+    aka: "Canadian Kush x Casey Jones",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
-    species: "Índica",
-    thc: 21,
-    cbd: 0.3,
-    indicaPct: 70,
-    sativaPct: 30,
-    floweringWeeks: 9,
-    floweringDays: 63,
-    yieldIndoor: 500,
-    yieldOutdoor: 800,
-    dominantTerpene: "caryophyllene",
-    aroma: "Pino terroso, especias picantes y regusto a combustible",
-    flavors: ["Pino Terroso", "Pimienta Picante", "Combustible"],
-    effects: ["Sedación Profunda", "Alivio Corporal", "Relax Nocturno"],
-    lineage: "Canadian Kush x Casey Jones",
-    image: "images/strains/canadian-kush-2.webp"
-  },
-  {
-    id: "overdosis",
-    name: "Overdosis",
-    bank: "Medical Seeds",
-    breeder: "Medical Seeds",
-    species: "Índica",
-    thc: 24,
-    cbd: 0.2,
-    indicaPct: 75,
-    sativaPct: 25,
-    floweringWeeks: 9,
-    floweringDays: 60,
-    yieldIndoor: 500,
-    yieldOutdoor: 600,
-    dominantTerpene: "limonene",
-    aroma: "Cítrico cremoso, tarta de limón dulce y toques mentolados",
-    flavors: ["Tarta de Limón", "Cítrico Cremoso", "Menta Suave"],
-    effects: ["Potencia Indica", "Relajación Total", "Efecto Sofá"],
-    lineage: "Sunset Sherbert x Wedding Cake",
-    image: "images/strains/overdosis.webp"
+    species: "Indica",
+    thc: 22, cbd: 0.2,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 550,
+    floweringWeeks: 9, floweringDays: 63,
+    rating: 4.8, reviewsCount: 350,
+    genetics: "Canadian Kush x Casey Jones",
+    origin: "España",
+    dominantTerpene: "myrcene",
+    terpenes: { myrcene: 45, caryophyllene: 35, limonene: 20 },
+    aroma: "Tierra húmeda, gas diésel suave, pino resinoso y frutos oscuros",
+    flavors: ["Tierra Húmeda", "Diésel Suave", "Pino Resinoso"],
+    effects: ["Pegada Contundente", "Desconexión Total", "Paz Somática"],
+    activities: ["relax_sleep", "gaming"],
+    description: "Evolución magistral de la Canadian Kush cruzada con el vigor de Casey Jones. Incrementa la producción y aporta un regusto a carburante noble que complementa a la perfección su carácter terroso y relajante.",
+    visualColor: "linear-gradient(135deg, #7C3AED 0%, #4C1D95 100%)",
+    bgPattern: "radial-gradient(circle, rgba(124,58,237,0.25) 0%, transparent 70%)"
   },
   {
     id: "banana-z",
-    name: "Banana Z",
+    image: "img/banana-z.webp",
+    name: "Banana Zkittlez",
+    aka: "Banana Punch x Zkittlez",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Híbrida",
-    thc: 23,
-    cbd: 0.2,
-    indicaPct: 60,
-    sativaPct: 40,
-    floweringWeeks: 9,
-    floweringDays: 63,
-    yieldIndoor: 450,
-    yieldOutdoor: 500,
+    thc: 23, cbd: 0.2,
+    indicaPct: 60, sativaPct: 40,
+    yieldIndoor: 450, yieldOutdoor: 500,
+    floweringWeeks: 9, floweringDays: 63,
+    rating: 4.9, reviewsCount: 480,
+    genetics: "Banana Punch x Zkittlez",
+    origin: "España",
     dominantTerpene: "myrcene",
-    aroma: "Plátano maduro muy dulce, gominola y fondo Skunk",
+    terpenes: { myrcene: 45, limonene: 35, caryophyllene: 20 },
+    aroma: "Plátano maduro muy dulce, gominola y fondo Skunk cremoso",
     flavors: ["Plátano Maduro", "Gominola Dulce", "Skunk Cremoso"],
     effects: ["Euforia Alegre", "Relajación Dulce", "Bienestar"],
-    lineage: "Banana Punch x Zkittlez",
-    image: "images/strains/banana-z.webp"
+    activities: ["social", "gaming", "creativity"],
+    description: "Una auténtica fiesta tropical para el paladar. Reúne los terpenos a plátano dulce de Banana Punch con la explosión caramelizada de Zkittlez, brindando un colocón risueño y muy sociable perfecto para desconectar con una sonrisa.",
+    visualColor: "linear-gradient(135deg, #10B981 0%, #F59E0B 100%)",
+    bgPattern: "radial-gradient(circle, rgba(16,185,129,0.25) 0%, transparent 70%)"
   },
   {
-    id: "sundae-float",
-    name: "Sundae Float",
+    id: "banana-purp",
+    image: "img/banana-purp.webp",
+    name: "Banana Purp",
+    aka: "Banana Punch x Purple Punch",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 24, cbd: 0.2,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 10, floweringDays: 67,
+    rating: 4.9, reviewsCount: 410,
+    genetics: "Banana Punch x Purple Punch",
+    origin: "España",
+    dominantTerpene: "myrcene",
+    terpenes: { myrcene: 45, caryophyllene: 30, limonene: 25 },
+    aroma: "Plátano maduro dulce, uva silvestre, fondo terroso acaramelado",
+    flavors: ["Plátano Maduro", "Uva Silvestre", "Caramelo Dulce"],
+    effects: ["Relajación Muscular", "Sedación Placentera", "Paz Mental"],
+    activities: ["relax_sleep", "meditation"],
+    description: "Híbrido de impactantes tonos morados y aroma a batido de plátano con moras silvestres. Los cálices se hinchan cubriéndose de resina pegajosa que garantiza una sedación física ideal para combatir el insomnio y la fatiga.",
+    visualColor: "linear-gradient(135deg, #8B5CF6 0%, #D97706 100%)",
+    bgPattern: "radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "blue-hell",
+    image: "img/blue-hell.webp",
+    name: "Blue Hell",
+    aka: "DJ Short Blueberry Selección Original",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 21, cbd: 0.3,
+    indicaPct: 80, sativaPct: 20,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 10, floweringDays: 67,
+    rating: 4.9, reviewsCount: 520,
+    genetics: "DJ Short Blueberry (Selección Original)",
+    origin: "España",
+    dominantTerpene: "myrcene",
+    terpenes: { myrcene: 50, caryophyllene: 25, pinene: 25 },
+    aroma: "Arándanos frescos silvestres, bayas del bosque y matices florales",
+    flavors: ["Arándano Silvestre", "Frutas del Bosque", "Muffin Dulce"],
+    effects: ["Narcótico Suave", "Alivio de Dolores", "Descanso Físico"],
+    activities: ["relax_sleep", "meditation"],
+    description: "Una de las selecciones más prestigiosas del mítico clon original de DJ Short Blueberry de los años 2000. Conserva el bouquet legendario a tarta de arándanos con un humo denso y azulado que reconforta el cuerpo entero.",
+    visualColor: "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)",
+    bgPattern: "radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "bluehell-cbd",
+    image: "img/bluehell-cbd.webp",
+    name: "Bluehell CBD",
+    aka: "Blue Hell x Medical CBD",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 8, cbd: 14,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 9, floweringDays: 60,
+    rating: 4.8, reviewsCount: 380,
+    genetics: "Blue Hell x Medical CBD",
+    origin: "España",
+    dominantTerpene: "myrcene",
+    terpenes: { myrcene: 45, pinene: 30, caryophyllene: 25 },
+    aroma: "Arándano dulce azul, fruta madura y fondo herbal balsámico",
+    flavors: ["Arándano Azul", "Fruta Madura", "Herbal Balsámico"],
+    effects: ["Alivio Terapéutico", "Relajación Sin Niebla", "Calma Corporal"],
+    activities: ["meditation", "nature_walk", "relax_sleep"],
+    description: "La versión médica con ratio 1:2 (THC 8% : CBD 14%) del legendario clon Blue Hell. Mantiene intacto el irresistible perfil de frutos del bosque mientras aporta una profunda relajación somática libre de ansiedad o niebla mental.",
+    visualColor: "linear-gradient(135deg, #06B6D4 0%, #0E7490 100%)",
+    bgPattern: "radial-gradient(circle, rgba(6,182,212,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "chocogas",
+    image: "img/chocogas.webp",
+    name: "ChocoGas",
+    aka: "Chocolope x Gas",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 24, cbd: 0.1,
+    indicaPct: 80, sativaPct: 20,
+    yieldIndoor: 500, yieldOutdoor: 550,
+    floweringWeeks: 9, floweringDays: 63,
+    rating: 4.8, reviewsCount: 340,
+    genetics: "Chocolope x Gas",
+    origin: "España",
+    dominantTerpene: "caryophyllene",
+    terpenes: { caryophyllene: 45, myrcene: 35, humulene: 20 },
+    aroma: "Chocolate negro profundo, carburante diésel y toques amaderados",
+    flavors: ["Chocolate Negro", "Combustible Diésel", "Madera Noble"],
+    effects: ["Pegada Contundente", "Bienestar Cálido", "Relax Profundo"],
+    activities: ["relax_sleep", "gaming"],
+    description: "Una combinación seductora y penetrante que fusiona los tonos a cacao amargo de Chocolope con la agresividad resinosa y química del corte Gas. Potente efecto corporal con un retrogusto persistente a bombón de chocolate negro con queroseno.",
+    visualColor: "linear-gradient(135deg, #78350F 0%, #451A03 100%)",
+    bgPattern: "radial-gradient(circle, rgba(120,53,15,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "cookies-purple-punch",
+    image: "img/cookies-purple-punch.webp",
+    name: "Cookies Purple Punch",
+    aka: "Girl Scout Cookies x Purple Punch",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 24, cbd: 0.2,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 10, floweringDays: 70,
+    rating: 4.9, reviewsCount: 470,
+    genetics: "Girl Scout Cookies x Purple Punch",
+    origin: "España",
+    dominantTerpene: "caryophyllene",
+    terpenes: { caryophyllene: 40, limonene: 35, myrcene: 25 },
+    aroma: "Galletas recién horneadas, uva madura, caramelo y pastel de frutas",
+    flavors: ["Galleta Dulce", "Pastel de Uva", "Vainilla Especiada"],
+    effects: ["Placer Sensorial", "Sedación Gradual", "Eufórico Feliz"],
+    activities: ["social", "gaming", "relax_sleep"],
+    description: "El matrimonio perfecto de dos gigantes de la costa oeste estadounidense. Cogollos densos bañados en azúcar con matices a galleta de mantequilla, vainilla especiada y mosto de uva madura, desatando una dicha placentera instantánea.",
+    visualColor: "linear-gradient(135deg, #A855F7 0%, #6B21A8 100%)",
+    bgPattern: "radial-gradient(circle, rgba(168,85,247,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "deep-neville",
+    image: "img/deep-neville.webp",
+    name: "Deep Neville",
+    aka: "Neville's Haze x Deep Chunk",
     bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Híbrida",
-    thc: 25,
-    cbd: 0.2,
-    indicaPct: 50,
-    sativaPct: 50,
-    floweringWeeks: 9,
-    floweringDays: 63,
-    yieldIndoor: 450,
-    yieldOutdoor: 550,
+    thc: 22, cbd: 0.3,
+    indicaPct: 50, sativaPct: 50,
+    yieldIndoor: 500, yieldOutdoor: 550,
+    floweringWeeks: 10, floweringDays: 67,
+    rating: 4.8, reviewsCount: 390,
+    genetics: "Neville's Haze x Deep Chunk",
+    origin: "España",
+    dominantTerpene: "pinene",
+    terpenes: { pinene: 45, myrcene: 35, caryophyllene: 20 },
+    aroma: "Incienso metálico Haze, pino húmedo y fondo terroso afgano",
+    flavors: ["Incienso Metálico", "Pino Silvestre", "Terroso Afgano"],
+    effects: ["Psicoactividad Intensa", "Enfoque Mental", "Cuerpo Anclado"],
+    activities: ["creativity", "meditation"],
+    description: "Cruce fascinante que doma la legendaria Neville's Haze con la robustez ancestral de la Deep Chunk afgana. Genera flores firmes con un aroma punzante a resina de pino e incienso catedralicio y un subidón cerebral muy concentrado.",
+    visualColor: "linear-gradient(135deg, #10B981 0%, #065F46 100%)",
+    bgPattern: "radial-gradient(circle, rgba(16,185,129,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "eboshi-cbg",
+    image: "img/eboshi-cbg.webp",
+    name: "Eboshi CBG",
+    aka: "Eboshi CBG Selección Médica",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 0.2, cbd: 0.1,
+    indicaPct: 80, sativaPct: 20,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 8, floweringDays: 56,
+    rating: 4.9, reviewsCount: 320,
+    genetics: "Eboshi CBG Selection (~15% CBG puro)",
+    origin: "España",
+    dominantTerpene: "myrcene",
+    terpenes: { myrcene: 45, pinene: 35, caryophyllene: 20 },
+    aroma: "Cítrico terroso suave, sándalo y notas frescas herbales",
+    flavors: ["Cítrico Suave", "Sándalo", "Herbal Fresco"],
+    effects: ["Claridad Terapéutica", "Antiinflamatorio", "Relajación Pura"],
+    activities: ["meditation", "nature_walk", "workout"],
+    description: "Pionera mundial en la investigación de cannabinoides menores. Con un impresionante 15% de CBG (Cannabigerol) y menos de 0.2% de THC, no produce alteración psicoactiva alguna, ofreciendo extraordinarias propiedades antiinflamatorias y neuroprotectoras.",
+    visualColor: "linear-gradient(135deg, #06B6D4 0%, #047857 100%)",
+    bgPattern: "radial-gradient(circle, rgba(6,182,212,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "elixir-vitae-cbd",
+    image: "img/elixir-vitae-cbd.webp",
+    name: "Elixir Vitae CBD",
+    aka: "Jean Dark CBD x Medical CBD",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 0.2, cbd: 14,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 8, floweringDays: 57,
+    rating: 4.8, reviewsCount: 360,
+    genetics: "Jean Dark CBD x Medical CBD (<0.25% THC)",
+    origin: "España",
+    dominantTerpene: "terpinolene",
+    terpenes: { terpinolene: 40, myrcene: 35, pinene: 25 },
+    aroma: "Caramelo tostado, corteza de pino, flores silvestres y cítrico suave",
+    flavors: ["Caramelo Tostado", "Corteza de Pino", "Floral Silvestre"],
+    effects: ["Antiestrés Absoluto", "Alivio Muscular", "Claridad Terapéutica"],
+    activities: ["meditation", "relax_sleep", "nature_walk"],
+    description: "El auténtico bálsamo medicinal de Medical Seeds con ratio CBD:THC de 70:1 (<0.25% THC). Ideal para usuarios terapéuticos que buscan disolver la ansiedad cotidiana y el dolor articular manteniendo una mente totalmente despejada.",
+    visualColor: "linear-gradient(135deg, #0891B2 0%, #0E7490 100%)",
+    bgPattern: "radial-gradient(circle, rgba(8,145,178,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "gelato-242",
+    image: "img/gelato-242.webp",
+    name: "Gelato 242",
+    aka: "Sunset Sherbert x Thin Mint GSC",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 24, cbd: 0.2,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 10, floweringDays: 67,
+    rating: 4.9, reviewsCount: 490,
+    genetics: "Sunset Sherbert x Thin Mint Girl Scout Cookies",
+    origin: "España",
     dominantTerpene: "limonene",
-    aroma: "Vainilla cremosa, chocolate dulce y frutas de bosque",
-    flavors: ["Vainilla Cremosa", "Chocolate Dulce", "Frutas del Bosque"],
-    effects: ["Bienestar Sensorial", "Calma Mental", "Relax Corporal"],
-    lineage: "Root Beer Float x Sundae Driver",
-    image: "images/strains/sundae-float.webp"
+    terpenes: { limonene: 45, caryophyllene: 35, myrcene: 20 },
+    aroma: "Helado cremoso de naranja dulce, toques mentolados y fondo Kush",
+    flavors: ["Helado Cremoso", "Naranja Dulce", "Menta Fresca"],
+    effects: ["Euforia Risueña", "Relajación Corporal", "Bienestar Positivo"],
+    activities: ["social", "gaming", "creativity"],
+    description: "Selección exquisita del clon élite Gelato con un perfume inconfundible a sorbete de cítricos, repostería dulce y menta fresca. Su efecto llena de optimismo y ligereza mental antes de envolver el cuerpo en una calidez sumamente agradable.",
+    visualColor: "linear-gradient(135deg, #F59E0B 0%, #8B5CF6 100%)",
+    bgPattern: "radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "grape-fuel",
+    image: "img/grape-fuel.webp",
+    name: "Grape Fuel",
+    aka: "Grape Pie x Fuel",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 25, cbd: 0.1,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 9, floweringDays: 63,
+    rating: 4.9, reviewsCount: 430,
+    genetics: "Grape Pie x Fuel",
+    origin: "España",
+    dominantTerpene: "caryophyllene",
+    terpenes: { caryophyllene: 45, myrcene: 35, humulene: 20 },
+    aroma: "Uvas fermentadas, mosto dulce, queroseno agresivo y resina densa",
+    flavors: ["Uva Fermentada", "Combustible Jet-Fuel", "Mosto Dulce"],
+    effects: ["Golpe Contundente", "Pesadez Física", "Desconexión"],
+    activities: ["relax_sleep", "gaming"],
+    description: "Híbrido de tremenda contundencia donde el aroma afrutado de Grape Pie colisiona con el queroseno penetrante de Fuel. Flores extremadamente duras y repletas de tricomas que pegan con fuerza física sedante desde la primera calada.",
+    visualColor: "linear-gradient(135deg, #7C2D12 0%, #581C87 100%)",
+    bgPattern: "radial-gradient(circle, rgba(124,45,18,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "hammerhead",
+    image: "img/hammerhead.webp",
+    name: "Hammerhead",
+    aka: "White Rhino x Medicine Man",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 21, cbd: 0.4,
+    indicaPct: 80, sativaPct: 20,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 8, floweringDays: 57,
+    rating: 4.8, reviewsCount: 410,
+    genetics: "White Rhino x Medicine Man",
+    origin: "España",
+    dominantTerpene: "myrcene",
+    terpenes: { myrcene: 50, caryophyllene: 30, pinene: 20 },
+    aroma: "Madera húmeda, hachís tradicional afgano, pino y especias",
+    flavors: ["Hachís Afgano", "Madera Húmeda", "Especias Picantes"],
+    effects: ["Martillo Sedante", "Relajación Muscular Intensa", "Sueño Plácido"],
+    activities: ["relax_sleep", "meditation"],
+    description: "Bautizada con justicia como 'Cabeza de Martillo' por su demoledor efecto narcótico. Reúne la mítica White Rhino con Medicine Man, produciendo colas densas empapadas en resina terpénica a hachís afgano tradicional.",
+    visualColor: "linear-gradient(135deg, #475569 0%, #1E293B 100%)",
+    bgPattern: "radial-gradient(circle, rgba(71,85,105,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "medical-donuts",
+    image: "img/medical-donuts.webp",
+    name: "Medical Donuts",
+    aka: "Donut x Girl Scout Cookies",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Híbrida",
+    thc: 25, cbd: 0.2,
+    indicaPct: 50, sativaPct: 50,
+    yieldIndoor: 600, yieldOutdoor: 1000,
+    floweringWeeks: 9, floweringDays: 60,
+    rating: 4.9, reviewsCount: 460,
+    genetics: "Donut x Girl Scout Cookies",
+    origin: "España",
+    dominantTerpene: "limonene",
+    terpenes: { limonene: 45, caryophyllene: 35, linalool: 20 },
+    aroma: "Masa glaseada caliente, vainilla dulce, azúcar moreno y crema",
+    flavors: ["Masa Glaseada", "Vainilla Francesa", "Azúcar Tostado"],
+    effects: ["Optimismo Creativo", "Felicidad Dulce", "Relax Físico"],
+    activities: ["social", "gaming", "creativity"],
+    description: "Una auténtica pastelería hecha flor. Su aroma recrea fielmente el glaseado caliente de una rosquilla recién horneada con notas a vainilla francesa y caramelo tostado, complementado con un subidón eufórico muy equilibrado.",
+    visualColor: "linear-gradient(135deg, #D97706 0%, #92400E 100%)",
+    bgPattern: "radial-gradient(circle, rgba(217,119,6,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "medical-grape-cbd",
+    image: "img/medical-grape-cbd.webp",
+    name: "Medical Grape CBD",
+    aka: "Grape Selection x Medical CBD",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 0.3, cbd: 15,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 9, floweringDays: 60,
+    rating: 4.8, reviewsCount: 350,
+    genetics: "Grape Selection x Medical CBD (<0.3% THC)",
+    origin: "España",
+    dominantTerpene: "myrcene",
+    terpenes: { myrcene: 45, pinene: 35, caryophyllene: 20 },
+    aroma: "Golosina de uva morada, bayas silvestres y fondo cítrico suave",
+    flavors: ["Gominola de Uva", "Bayas Silvestres", "Cítrico Suave"],
+    effects: ["Calma Somática", "Alivio Terapéutico", "Sin Efectos Psicoactivos"],
+    activities: ["meditation", "relax_sleep", "nature_walk"],
+    description: "Deliciosa variedad rica en CBD puro con notas dulces a gominolas de uva morada. Proporciona una rápida sensación de alivio físico frente a la tensión muscular y el estrés sin producir ningún tipo de efecto psicoactivo.",
+    visualColor: "linear-gradient(135deg, #0891B2 0%, #7C3AED 100%)",
+    bgPattern: "radial-gradient(circle, rgba(8,145,178,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "medical-runntz",
+    image: "img/medical-runntz.webp",
+    name: "Medical Runntz",
+    aka: "Zkittlez x Gelato Selección",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 26, cbd: 0.2,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 9, floweringDays: 60,
+    rating: 4.9, reviewsCount: 530,
+    genetics: "Zkittlez x Gelato (Selección Medical Seeds)",
+    origin: "España",
+    dominantTerpene: "limonene",
+    terpenes: { limonene: 45, caryophyllene: 35, myrcene: 20 },
+    aroma: "Caramelo tutti-frutti, gas dulce, frutas tropicales ácidas y crema",
+    flavors: ["Caramelo Tutti-Frutti", "Gasolina Dulce", "Frutas Tropicales"],
+    effects: ["Subidón Eufórico", "Éxtasis Sensorial", "Relajación Aterciopelada"],
+    activities: ["social", "gaming", "creativity"],
+    description: "La interpretación de Medical Seeds del fenómeno Runtz. Cogollos resinosos en tonos morados con un perfil organoléptico superlativo a golosina tutti-frutti, sorbete tropical y gasolina dulce que provoca un bienestar eufórico incomparable.",
+    visualColor: "linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%)",
+    bgPattern: "radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "mendocino-chanel-kush",
+    image: "img/mendocino-chanel-kush.webp",
+    name: "Mendocino Chanel Kush",
+    aka: "Mendocino Purple Kush x Channel+",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 22, cbd: 0.4,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 8, floweringDays: 53,
+    rating: 4.9, reviewsCount: 480,
+    genetics: "Mendocino Purple Kush x Channel+",
+    origin: "España",
+    dominantTerpene: "linalool",
+    terpenes: { linalool: 45, myrcene: 35, caryophyllene: 20 },
+    aroma: "Perfume floral sofisticado, uva dulce, tierra húmeda y toques Kush",
+    flavors: ["Perfume Floral", "Uva Madura", "Kush Terroso"],
+    effects: ["Placer Físico Profundo", "Paz Interior", "Calma Duradera"],
+    activities: ["relax_sleep", "meditation"],
+    description: "Cruce titánico entre las dos genéticas más premiadas de Medical Seeds: Mendocino Purple Kush y Channel+. El resultado es una planta rápida, ultra resinosa y productiva con un sofisticado perfume a flores nobles y uvas maduras.",
+    visualColor: "linear-gradient(135deg, #8B5CF6 0%, #4C1D95 100%)",
+    bgPattern: "radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "og-kush-cbd",
+    image: "img/og-kush-cbd.webp",
+    name: "OG Kush CBD",
+    aka: "OG Kush x Medical CBD",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Sativa",
+    thc: 10, cbd: 10,
+    indicaPct: 30, sativaPct: 70,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 8, floweringDays: 53,
+    rating: 4.8, reviewsCount: 390,
+    genetics: "OG Kush x Medical CBD (Ratio 1:1)",
+    origin: "España",
+    dominantTerpene: "limonene",
+    terpenes: { limonene: 45, caryophyllene: 35, pinene: 20 },
+    aroma: "Limón químico penetrante, combustible OG, pino fresco y madera",
+    flavors: ["Limón Químico", "Combustible OG", "Pino Resinoso"],
+    effects: ["Equilibrio Psíquico", "Alivio del Dolor", "Lucidez Serena"],
+    activities: ["social", "nature_walk", "gaming"],
+    description: "Todo el sabor legendario a carburante y limón terroso de la auténtica OG Kush californiana combinado en un ratio equilibrado 1:1 (10% THC y 10% CBD) para disfrutar del colocón californiano sin taquicardias ni pesadez.",
+    visualColor: "linear-gradient(135deg, #06B6D4 0%, #D97706 100%)",
+    bgPattern: "radial-gradient(circle, rgba(6,182,212,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "over-dawg",
+    image: "img/over-dawg.webp",
+    name: "Over Dawg",
+    aka: "OG Kush x Sour Diesel",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Sativa",
+    thc: 23, cbd: 0.2,
+    indicaPct: 40, sativaPct: 60,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 9, floweringDays: 63,
+    rating: 4.8, reviewsCount: 420,
+    genetics: "OG Kush x Sour Diesel",
+    origin: "España",
+    dominantTerpene: "caryophyllene",
+    terpenes: { caryophyllene: 45, limonene: 35, myrcene: 20 },
+    aroma: "Combustible diésel penetrante, cítrico agrio, tierra y almizcle",
+    flavors: ["Diésel Penetrante", "Cítrico Agrio", "Almizcle Skunk"],
+    effects: ["Estimulación Mental", "Foco Activo", "Vigor Físico"],
+    activities: ["workout", "nature_walk", "creativity"],
+    description: "Una máquina de vigor y resina nacida del linaje Chemdawg y OG Kush. Ofrece un humo denso cargado de notas a petróleo y cítricos agrios, desatando un efecto dinámico y estimulante que despierta la mente al instante.",
+    visualColor: "linear-gradient(135deg, #F59E0B 0%, #10B981 100%)",
+    bgPattern: "radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "pink-sherbert",
+    image: "img/pink-sherbert.webp",
+    name: "Pink Sherbert",
+    aka: "Pink Panties x Sunset Sherbert",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 24, cbd: 0.2,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 9, floweringDays: 63,
+    rating: 4.9, reviewsCount: 450,
+    genetics: "Pink Panties x Sunset Sherbert",
+    origin: "España",
+    dominantTerpene: "caryophyllene",
+    terpenes: { caryophyllene: 40, limonene: 35, linalool: 25 },
+    aroma: "Fresa ácida, cítrico dulce, crema de sorbete y fondo herbal",
+    flavors: ["Sorbete de Fresa", "Cítrico Cremoso", "Frutas Rosadas"],
+    effects: ["Calma Embriagadora", "Sonrisas y Bienestar", "Desconexión"],
+    activities: ["social", "gaming", "relax_sleep"],
+    description: "Variedad californiana de flores rosáceas y aroma a sorbete helado de frutos rojos con toques cítricos. Su perfil suave en boca da paso a un estado de sosiego físico profundo y distensión emocional absoluta.",
+    visualColor: "linear-gradient(135deg, #EC4899 0%, #BE185D 100%)",
+    bgPattern: "radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "recovery-cbd",
+    image: "img/recovery-cbd.webp",
+    name: "Recovery CBD",
+    aka: "Medical CBD x Therapy CBD",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Híbrida",
+    thc: 0.3, cbd: 21,
+    indicaPct: 50, sativaPct: 50,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 8, floweringDays: 56,
+    rating: 4.9, reviewsCount: 380,
+    genetics: "Medical CBD x Therapy CBD (Ratio 1:70)",
+    origin: "España",
+    dominantTerpene: "myrcene",
+    terpenes: { myrcene: 50, caryophyllene: 30, pinene: 20 },
+    aroma: "Melocotón maduro, toques herbales de manzanilla y fondo terroso",
+    flavors: ["Melocotón Dulce", "Manzanilla Floral", "Terroso Suave"],
+    effects: ["Recuperación Muscular", "Reducción de Inflamación", "Sueño Reparador"],
+    activities: ["relax_sleep", "meditation", "workout"],
+    description: "El récord terapéutico del banco con un descomunal 21% de CBD y menos del 0.3% de THC. Diseñada especialmente para deportistas y pacientes que buscan regeneración muscular y alivio somático sin alteración cognitiva.",
+    visualColor: "linear-gradient(135deg, #06B6D4 0%, #059669 100%)",
+    bgPattern: "radial-gradient(circle, rgba(6,182,212,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "red-cross-cbd",
+    image: "img/red-cross-cbd.webp",
+    name: "Red Cross CBD",
+    aka: "Lambsbread x Medical CBD",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 0.2, cbd: 10,
+    indicaPct: 80, sativaPct: 20,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 8, floweringDays: 56,
+    rating: 4.8, reviewsCount: 340,
+    genetics: "Lambsbread x Medical CBD (<0.2% THC)",
+    origin: "España",
+    dominantTerpene: "myrcene",
+    terpenes: { myrcene: 45, pinene: 35, caryophyllene: 20 },
+    aroma: "Fruta confitada, fresas silvestres, flores rojas y fondo Skunk suave",
+    flavors: ["Fruta Confitada", "Fresas Silvestres", "Floral Skunk"],
+    effects: ["Alivio Terapéutico Sin Psicoactividad", "Calma Mental", "Relajación"],
+    activities: ["meditation", "relax_sleep"],
+    description: "Una bella variedad médica de cogollos escarchados con tonos rojizos. Su buqué a frutas confitadas y fresas silvestres la convierte en un placer para el paladar mientras su perfil de CBD garantiza una relajación corporal ininterrumpida.",
+    visualColor: "linear-gradient(135deg, #EF4444 0%, #991B1B 100%)",
+    bgPattern: "radial-gradient(circle, rgba(239,68,68,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "some-sweet",
+    image: "img/some-sweet.webp",
+    name: "Some Sweet",
+    aka: "Bluehell x Grapefruit",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 20, cbd: 0.3,
+    indicaPct: 80, sativaPct: 20,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 8, floweringDays: 53,
+    rating: 4.8, reviewsCount: 370,
+    genetics: "Bluehell x Grapefruit",
+    origin: "España",
+    dominantTerpene: "limonene",
+    terpenes: { limonene: 45, myrcene: 35, pinene: 20 },
+    aroma: "Pomelo rosado dulce, golosina de arándano y fondo afrutado fresco",
+    flavors: ["Pomelo Rosado", "Arándano Dulce", "Gominola Cítrica"],
+    effects: ["Placer Relajante", "Bienestar Afable", "Tranquilidad"],
+    activities: ["social", "relax_sleep", "gaming"],
+    description: "Cruce delicioso entre Bluehell y la refrescante Grapefruit. Desarrolla cogollos densos bañados en aromas cítricos a pomelo y gominola de frutos azules, con una floración exprés de apenas 53 días.",
+    visualColor: "linear-gradient(135deg, #F43F5E 0%, #BE123C 100%)",
+    bgPattern: "radial-gradient(circle, rgba(244,63,94,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "sour-glue",
+    image: "img/sour-glue.webp",
+    name: "Sour Glue",
+    aka: "Sour Diesel x Gorilla Glue #4",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 25, cbd: 0.2,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 9, floweringDays: 60,
+    rating: 4.9, reviewsCount: 510,
+    genetics: "Sour Diesel x Gorilla Glue #4",
+    origin: "España",
+    dominantTerpene: "caryophyllene",
+    terpenes: { caryophyllene: 45, limonene: 35, myrcene: 20 },
+    aroma: "Gasolina ácida penetrante, pegamento industrial, pino y tierra",
+    flavors: ["Gasolina Ácida", "Pegamento GG4", "Pino Terroso"],
+    effects: ["Impacto Demoledor", "Inmovilización Agradable", "Euforia Inicial"],
+    activities: ["relax_sleep", "gaming"],
+    description: "Una colisión brutal entre dos de las genéticas más resinosas y potentes de Estados Unidos. Resina pegajosa que desborda las tijeras de manicurado con un perfume penetrante a pegamento industrial y queroseno ácido.",
+    visualColor: "linear-gradient(135deg, #10B981 0%, #047857 100%)",
+    bgPattern: "radial-gradient(circle, rgba(16,185,129,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "strawberry-cake-cbd",
+    image: "img/strawberry-cake-cbd.webp",
+    name: "Strawberry Cake CBD",
+    aka: "Strawberry Selection x Medical CBD",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Sativa",
+    thc: 0.3, cbd: 15,
+    indicaPct: 40, sativaPct: 60,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 10, floweringDays: 70,
+    rating: 4.8, reviewsCount: 350,
+    genetics: "Strawberry Selection x Medical CBD (<0.3% THC)",
+    origin: "España",
+    dominantTerpene: "myrcene",
+    terpenes: { myrcene: 45, terpinolene: 35, pinene: 20 },
+    aroma: "Pastel de fresas con nata, masa dulce horneada y vainilla",
+    flavors: ["Pastel de Fresas", "Nata Montada", "Vainilla Dulce"],
+    effects: ["Alivio Terapéutico", "Serenidad Mental", "Antiestrés"],
+    activities: ["nature_walk", "creativity", "meditation"],
+    description: "Un dulce postre en forma de flor medicinal. Con un 15% de CBD y menos de 0.3% de THC, regala un aroma embriagador a tarta de fresas con nata montada mientras alivia la tensión muscular de forma suave y limpia.",
+    visualColor: "linear-gradient(135deg, #EC4899 0%, #06B6D4 100%)",
+    bgPattern: "radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "superfruit-cbd",
+    image: "img/superfruit-cbd.webp",
+    name: "Superfruit CBD",
+    aka: "Superfruit Selection x Medical CBD",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 0.3, cbd: 12,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 10, floweringDays: 67,
+    rating: 4.8, reviewsCount: 330,
+    genetics: "Superfruit Selection x Medical CBD (<0.3% THC)",
+    origin: "España",
+    dominantTerpene: "limonene",
+    terpenes: { limonene: 45, myrcene: 35, pinene: 20 },
+    aroma: "Cóctel de frutas exóticas, maracuyá, mango maduro y cítricos dulces",
+    flavors: ["Frutas Exóticas", "Maracuyá Ácida", "Mango Dulce"],
+    effects: ["Bienestar Corporal", "Claridad y Buen Humor", "Cero Psicoactividad"],
+    activities: ["social", "nature_walk", "meditation"],
+    description: "Un estallido multivitamínico de frutas tropicales en cogollos carnosos y resinosos. Excelente variedad para consumir a lo largo del día manteniendo un rendimiento cognitivo óptimo y una sensación corporal relajada.",
+    visualColor: "linear-gradient(135deg, #F59E0B 0%, #0891B2 100%)",
+    bgPattern: "radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "y-griega-cbd",
+    image: "img/y-griega-cbd.webp",
+    name: "Y Griega CBD",
+    aka: "Y Griega x Crew CBD",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Sativa",
+    thc: 10, cbd: 10,
+    indicaPct: 30, sativaPct: 70,
+    yieldIndoor: 500, yieldOutdoor: 400,
+    floweringWeeks: 10, floweringDays: 68,
+    rating: 4.9, reviewsCount: 460,
+    genetics: "Y Griega x Crew CBD (Ratio 1:1)",
+    origin: "España",
+    dominantTerpene: "limonene",
+    terpenes: { limonene: 45, myrcene: 30, pinene: 25 },
+    aroma: "Cítrico alimonado Haze, incienso fino, madera de sándalo y almizcle",
+    flavors: ["Limón Haze", "Incienso Catedralicio", "Sándalo Amaderado"],
+    effects: ["Efecto Terapéutico Lúcido", "Alivio Físico Sin Ansiedad", "Claridad Creativa"],
+    activities: ["creativity", "social", "gaming"],
+    description: "El clásico medicinal 1:1 más célebre de Medical Seeds en colaboración con CBD Crew. Mantiene la chispa alimonada e incensada de Y Griega con una equilibrada carga de CBD que modula el efecto eliminando cualquier rastro de ansiedad.",
+    visualColor: "linear-gradient(135deg, #F59E0B 0%, #06B6D4 100%)",
+    bgPattern: "radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "y-griega-cbd-2-0",
+    image: "img/y-griega-cbd-2-0.webp",
+    name: "Y Griega CBD 2.0",
+    aka: "Y Griega x Medical CBD",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Híbrida",
+    thc: 6, cbd: 12,
+    indicaPct: 50, sativaPct: 50,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 10, floweringDays: 70,
+    rating: 4.8, reviewsCount: 380,
+    genetics: "Y Griega x Medical CBD (Ratio 1:2)",
+    origin: "España",
+    dominantTerpene: "limonene",
+    terpenes: { limonene: 40, myrcene: 35, pinene: 25 },
+    aroma: "Limón maduro, flores silvestres, incienso ligero y fondo balsámico",
+    flavors: ["Limón Maduro", "Bouquet Floral", "Incienso Suave"],
+    effects: ["Alivio Profundo de Ansiedad", "Tranquilidad Terapéutica", "Enfoque Despejado"],
+    activities: ["meditation", "nature_walk", "relax_sleep"],
+    description: "Versión 2.0 optimizada con un ratio 1:2 (THC 6% : CBD 12%) que potencia la faceta sedante y ansiolítica de la planta. Aroma fresco y floral muy limpio que ayuda a desconectar el sistema nervioso tras jornadas intensas.",
+    visualColor: "linear-gradient(135deg, #10B981 0%, #0891B2 100%)",
+    bgPattern: "radial-gradient(circle, rgba(16,185,129,0.25) 0%, transparent 70%)"
+  },
+  {
+    id: "zkittlez",
+    image: "img/zkittlez.webp",
+    name: "Zkittlez",
+    aka: "Grape Ape x Grapefruit Selección Original",
+    bank: "Medical Seeds",
+    breeder: "Medical Seeds",
+    species: "Indica",
+    thc: 22, cbd: 0.2,
+    indicaPct: 70, sativaPct: 30,
+    yieldIndoor: 500, yieldOutdoor: 700,
+    floweringWeeks: 10, floweringDays: 70,
+    rating: 4.9, reviewsCount: 540,
+    genetics: "Grape Ape x Grapefruit (Selección Medical Seeds)",
+    origin: "España",
+    dominantTerpene: "caryophyllene",
+    terpenes: { caryophyllene: 45, limonene: 35, humulene: 20 },
+    aroma: "Caramelos masticables de frutas tropicales, uva dulce y fondo cítrico",
+    flavors: ["Caramelo de Frutas", "Uva Dulce", "Cítrico Tropical"],
+    effects: ["Felicidad Eufórica", "Relajación Suave", "Paz Sensorial"],
+    activities: ["social", "gaming", "relax_sleep"],
+    description: "La famosa genética de los caramelos de fruta seleccionada y estabilizada por Medical Seeds. Cogollos gruesos y escarchados que desprenden un perfume irresistible a golosina masticable de uva y frutas exóticas con una dicha física apacible.",
+    visualColor: "linear-gradient(135deg, #EC4899 0%, #F59E0B 100%)",
+    bgPattern: "radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%)"
   }
 ];
 
@@ -11588,6 +12302,106 @@ class MissionGenerator {
     };
   }
 
+  static async generateMissionAsync(strainId, activityId) {
+    const fallbackMission = this.generateMission(strainId, activityId);
+    const strain = STRAINS_DATABASE.find(s => s.id === strainId) || STRAINS_DATABASE[0];
+    const dominantTerpene = strain.dominantTerpene;
+    const terpeneName = TERPENES_INFO[dominantTerpene]?.name || dominantTerpene || 'Equilibrado';
+
+    const apiKey = localStorage.getItem('gemini_api_key');
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+    if (!isLocal && !apiKey) {
+      return fallbackMission;
+    }
+
+    const safeFlavors = (s) => (Array.isArray(s?.flavors) && s.flavors.length > 0) ? s.flavors : (s?.aroma ? [s.aroma] : ['Equilibrado']);
+    const safeEffects = (s) => (Array.isArray(s?.effects) && s.effects.length > 0) ? s.effects : (s?.effect ? [s.effect] : ['Relajación']);
+
+    const prompt = `Actúa como el Diseñador Maestro de Misiones Botánicas y Sensoriales de CannaCulture.
+Genera una misión lúdica, inmersiva y de bienestar única para la cepa "${strain.name}":
+- Especie: ${strain.species} (Banco: ${strain.breeder || strain.bank || 'Premium'})
+- THC: ${strain.thc}% | CBD: ${strain.cbd || 0.1}%
+- Terpeno dominante: ${terpeneName}
+- Perfil aromático y sabores: ${safeFlavors(strain).join(', ')}
+- Efectos reportados: ${safeEffects(strain).join(', ')}
+
+Diseña una experiencia sensorial que aproveche la farmacología y terpenos de esta variedad (estimulante/creativa si es sativa o relajante/inmersiva si es índica).
+Devuelve EXCLUSIVAMENTE un bloque JSON válido (sin markdown exterior) con este formato exacto:
+{
+  "title": "🎮 Misión: [Título Épico y Poético de la Experiencia]",
+  "tasks": [
+    "Paso 1 de preparación sensorial o ambiente sonoro",
+    "Paso 2 de degustación, inhalación lenta y apreciación terpénica",
+    "Paso 3 de inmersión en la actividad (arte, paseo, cine, introspección, etc.)",
+    "Paso 4 de cierre de relajación profunda o reflexión"
+  ],
+  "audioStyle": "[Género musical o atmósfera sonora recomendada]"
+}`;
+
+    const payload = {
+      model: 'gemini-3.8-flash',
+      contents: [{ role: 'user', parts: [{ text: prompt }] }]
+    };
+
+    try {
+      let rawJson = null;
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+      if (isLocal) {
+        const res = await fetch('/api/gemini', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        if (res.ok) {
+          const data = await res.json();
+          rawJson = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        }
+      } else if (apiKey) {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${apiKey}`;
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contents: payload.contents }),
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        if (res.ok) {
+          const data = await res.json();
+          rawJson = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        }
+      }
+
+      if (rawJson) {
+        let clean = rawJson.trim();
+        if (clean.startsWith('```json')) clean = clean.slice(7);
+        if (clean.startsWith('```')) clean = clean.slice(3);
+        if (clean.endsWith('```')) clean = clean.slice(0, -3);
+        const parsed = JSON.parse(clean.trim());
+
+        if (parsed.title && Array.isArray(parsed.tasks) && parsed.tasks.length > 0) {
+          return {
+            id: 'mission_ai_' + Date.now(),
+            strainName: strain.name,
+            strainSpecies: strain.species,
+            terpeneName: terpeneName,
+            title: parsed.title,
+            tasks: parsed.tasks,
+            audioStyle: parsed.audioStyle || 'Ambient Relax'
+          };
+        }
+      }
+    } catch (e) {
+      console.log('Fallo generando misión IA, usando plantilla local:', e.message);
+    }
+
+    return fallbackMission;
+  }
+
   static renderMissionModal(missionData, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -11849,7 +12663,7 @@ class AdvancedTools {
 
 
 // --- ai-sommelier.js ---
-// CannaCatalog 2.0 - Agente IA Sommelier Humano & CannaDoctor Multimodal (Google Gemini 3.6 Flash)
+// CannaCatalog 2.0 - Agente IA Sommelier Humano & CannaDoctor Multimodal (Google Gemini 3.8 Flash)
 
 // Helpers seguros de extracción de propiedades defensivas ante esquemas heterogéneos
 const safeFlavors = (s) => (Array.isArray(s?.flavors) && s.flavors.length > 0) ? s.flavors : (s?.aroma ? s.aroma.split(',').map(x => x.trim()).filter(Boolean) : ['Aroma equilibrado', 'Bouquet herbal']);
@@ -11863,7 +12677,9 @@ class AISommelierAgent {
     this.history = [];
     this.apiKey = localStorage.getItem('gemini_api_key') || null;
     this.attachedImage = null; // { mimeType, data: base64, previewUrl, name }
+    this.currentSpeakingBtn = null;
     this.initUI();
+    this.initDragAndDrop();
   }
 
   initUI() {
@@ -11905,13 +12721,13 @@ class AISommelierAgent {
     this.keyBtn = document.getElementById('ai-chat-key-btn');
     this.keyBtn?.addEventListener('click', () => {
       const current = localStorage.getItem('gemini_api_key') || '';
-      const entered = prompt('Introduce tu API Key de Google Gemini (Google AI Studio):\n(Se almacenará localmente en tu navegador para activar Gemini 3.6 Flash y CannaDoctor)', current);
+      const entered = prompt('Introduce tu API Key de Google Gemini (Google AI Studio):\n(Se almacenará localmente en tu navegador para activar Gemini 3.8 Flash y CannaDoctor)', current);
       if (entered !== null) {
         const clean = entered.trim();
         if (clean) {
           localStorage.setItem('gemini_api_key', clean);
           this.apiKey = clean;
-          this.botSay('🔑 <strong>Clave API de Gemini activada con éxito.</strong> A partir de ahora tus consultas y fotos de cultivo serán procesadas directamente por <strong>Google Gemini 3.6 Flash</strong>.');
+          this.botSay('🔑 <strong>Clave API de Gemini activada con éxito.</strong> A partir de ahora tus consultas y fotos de cultivo serán procesadas directamente por <strong>Google Gemini 3.8 Flash</strong>.');
         } else {
           localStorage.removeItem('gemini_api_key');
           this.apiKey = null;
@@ -11938,6 +12754,7 @@ class AISommelierAgent {
       };
       reader.readAsDataURL(file);
     };
+    this.handleFileSelect = handleFileSelect;
 
     this.btnPhotoFloating?.addEventListener('click', () => this.fileInputFloating?.click());
     this.fileInputFloating?.addEventListener('change', (e) => {
@@ -11992,11 +12809,50 @@ class AISommelierAgent {
     // Saludo inicial con razonamiento activo y presentación de CannaDoctor
     const totalCepas = STRAINS_DATABASE?.length || 418;
     const greeting = `¡Hola! Soy <strong>Mateo</strong>, tu master sumiller botánico en CannaCulture. 🌿<br/><br/>
-    Cuento con un <strong>motor de razonamiento neuro-terpénico y visión multimodal</strong> conectado a nuestro catálogo de <strong>${totalCepas} cepas de 39 bancos premium</strong>.<br/><br/>
+    Cuento con el nuevo motor <strong>Google Gemini 3.8 Flash con visión multimodal y síntesis de voz</strong> conectado a nuestro catálogo completo de <strong>${totalCepas} cepas de 39 bancos premium</strong>.<br/><br/>
     💡 <strong>¿En qué puedo asistirte hoy?</strong><br/>
-    • 👅 <em>Recomendación de cepa:</em> Dime tu perfil aromático deseado o la actividad que vas a realizar.<br/>
-    • 🔬 <strong>CannaDoctor Multimodal:</strong> Adjunta una foto de una hoja o cogollo (botón 📷) para diagnosticar carencias, plagas o madurez de tricomas.`;
+    • 👅 <em>Recomendación de cepa:</em> Pídeme un perfil aromático o actividad deseada y seleccionaré la cepa ideal con razonamiento neuro-terpénico.<br/>
+    • 🔬 <strong>CannaDoctor 2.0:</strong> Arrastra una foto aquí o pulsa el botón 📷 para diagnosticar carencias, plagas o madurez de tricomas.<br/>
+    • 🔊 <strong>Voz Interactiva:</strong> Pulsa el botón "🔊 Escuchar" en cualquiera de mis respuestas para escuchar la explicación en audio.`;
     this.botSay(greeting);
+  }
+
+  // Configuración de Drag & Drop para CannaDoctor
+  initDragAndDrop() {
+    const dropZones = [
+      this.chatWindow,
+      document.getElementById('section-sommelier'),
+      document.getElementById('ai-chat-messages-inline'),
+      document.getElementById('ai-chat-messages')
+    ].filter(Boolean);
+
+    dropZones.forEach(zone => {
+      ['dragenter', 'dragover'].forEach(name => {
+        zone.addEventListener(name, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          zone.classList.add('ai-dragover-active');
+        });
+      });
+
+      ['dragleave', 'drop'].forEach(name => {
+        zone.addEventListener(name, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          zone.classList.remove('ai-dragover-active');
+        });
+      });
+
+      zone.addEventListener('drop', (e) => {
+        const files = e.dataTransfer?.files;
+        if (files && files[0] && files[0].type.startsWith('image/')) {
+          this.handleFileSelect(files[0]);
+          if (this.chatWindow && this.chatWindow.style.display !== 'flex') {
+            this.chatWindow.style.display = 'flex';
+          }
+        }
+      });
+    });
   }
 
   renderAttachPreviews() {
@@ -12008,11 +12864,31 @@ class AISommelierAgent {
         return;
       }
       container.style.display = 'flex';
+      container.style.flexDirection = 'column';
+      container.style.gap = '6px';
       container.innerHTML = `
-        <span>📷 <strong>${this.attachedImage.name}</strong></span>
-        <button type="button" class="ai-detach-btn" style="background:none; border:none; color:#EF4444; font-weight:900; cursor:pointer; font-size:0.9rem; padding:0 4px;" title="Quitar foto">✕</button>
+        <div style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+          <span>📷 <strong>${this.attachedImage.name}</strong></span>
+          <button type="button" class="ai-detach-btn" style="background:none; border:none; color:#EF4444; font-weight:900; cursor:pointer; font-size:0.9rem; padding:0 4px;" title="Quitar foto">✕</button>
+        </div>
+        <div class="ai-quick-diagnosis-chips" style="display:flex; gap:6px; flex-wrap:wrap; margin-top:2px;">
+          <button type="button" class="ai-diag-chip" data-prompt="Diagnostica la madurez de los tricomas de esta flor. ¿Qué porcentaje de transparentes, lechosos y ámbar observas y cuándo cosechar?">🔬 Madurez Tricomas</button>
+          <button type="button" class="ai-diag-chip" data-prompt="Analiza las hojas: ¿Se trata de una carencia de Nitrógeno, Fósforo, Calcio o Magnesio, o un bloqueo de pH?">🍂 Carencia o pH</button>
+          <button type="button" class="ai-diag-chip" data-prompt="¿Observas síntomas de plagas como araña roja, trips, mosca blanca, oídio o botritis en esta planta?">🐛 Plagas u Hongos</button>
+          <button type="button" class="ai-diag-chip" data-prompt="Realiza un diagnóstico de salud botánica completo de esta planta de cannabis con plan de acción orgánico inmediato.">⚡ Diagnóstico Total</button>
+        </div>
       `;
       container.querySelector('.ai-detach-btn')?.addEventListener('click', () => this.clearAttachedImage());
+
+      container.querySelectorAll('.ai-diag-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          const promptText = chip.getAttribute('data-prompt');
+          const img = this.attachedImage;
+          this.clearAttachedImage();
+          this.userSay(promptText, img);
+          this.processQuery(promptText, img);
+        });
+      });
     });
   }
 
@@ -12046,6 +12922,37 @@ class AISommelierAgent {
       const msgEl = document.createElement('div');
       msgEl.className = 'ai-msg bot-msg';
       msgEl.innerHTML = htmlContent;
+
+      // Detectar si hay cepas recomendadas en este mensaje
+      const strainLinks = msgEl.querySelectorAll('.ai-strain-link');
+      const firstStrainId = strainLinks.length > 0 ? strainLinks[0].getAttribute('data-strain-id') : null;
+
+      // Barra de herramientas del mensaje (Voz TTS y Guardar en Vivencias)
+      const toolbar = document.createElement('div');
+      toolbar.className = 'ai-msg-toolbar';
+      toolbar.style.cssText = 'display:flex; gap:8px; align-items:center; margin-top:10px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.08); font-size:0.78rem;';
+
+      const voiceBtn = document.createElement('button');
+      voiceBtn.type = 'button';
+      voiceBtn.className = 'ai-voice-btn';
+      voiceBtn.title = 'Escuchar narración de Mateo';
+      voiceBtn.innerHTML = '🔊 Escuchar';
+      voiceBtn.addEventListener('click', () => this.speakMessage(htmlContent, voiceBtn));
+      toolbar.appendChild(voiceBtn);
+
+      if (firstStrainId) {
+        const bitacoraBtn = document.createElement('button');
+        bitacoraBtn.type = 'button';
+        bitacoraBtn.className = 'ai-save-bitacora-btn';
+        bitacoraBtn.title = 'Guardar esta recomendación en tu diario de Vivencias';
+        bitacoraBtn.innerHTML = '📖 Guardar en Vivencias';
+        bitacoraBtn.addEventListener('click', () => {
+          this.saveRecommendationToBitacora(firstStrainId, bitacoraBtn);
+        });
+        toolbar.appendChild(bitacoraBtn);
+      }
+
+      msgEl.appendChild(toolbar);
       container.appendChild(msgEl);
 
       // Re-bind strain link clicks
@@ -12060,6 +12967,79 @@ class AISommelierAgent {
       });
     });
     this.scrollToBottom();
+  }
+
+  // Locución con Web Speech API
+  speakMessage(htmlContent, btnElement) {
+    if (!('speechSynthesis' in window)) {
+      if (this.app?.showToast) this.app.showToast('⚠️ Tu navegador no soporta síntesis de voz.');
+      return;
+    }
+
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+      if (this.currentSpeakingBtn === btnElement) {
+        btnElement.innerHTML = '🔊 Escuchar';
+        this.currentSpeakingBtn = null;
+        return;
+      }
+    }
+
+    if (this.currentSpeakingBtn) {
+      this.currentSpeakingBtn.innerHTML = '🔊 Escuchar';
+      this.currentSpeakingBtn = null;
+    }
+
+    const cleanText = htmlContent
+      .replace(/<div class="sommelier-reasoning-box"[\s\S]*?<\/div>\s*<\/div>/gi, '') // omitir bloque técnico
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/[•*#🔍🍂🐛⚡]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    const utterance = new SpeechSynthesisUtterance(cleanText);
+    utterance.lang = 'es-ES';
+    utterance.rate = 1.02;
+    utterance.pitch = 0.96;
+
+    const voices = window.speechSynthesis.getVoices();
+    const esVoice = voices.find(v => (v.lang === 'es-ES' || v.lang.startsWith('es')) && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Pablo') || v.name.includes('Jorge') || v.name.includes('Helena')));
+    if (esVoice) utterance.voice = esVoice;
+
+    btnElement.innerHTML = '⏹️ Detener';
+    this.currentSpeakingBtn = btnElement;
+
+    utterance.onend = () => {
+      btnElement.innerHTML = '🔊 Escuchar';
+      this.currentSpeakingBtn = null;
+    };
+    utterance.onerror = () => {
+      btnElement.innerHTML = '🔊 Escuchar';
+      this.currentSpeakingBtn = null;
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  // Guardado directo en bitácora de vivencias
+  saveRecommendationToBitacora(strainId, btnElement) {
+    const strain = STRAINS_DATABASE.find(s => s.id === strainId);
+    const strainName = strain ? strain.name : 'Cepa Sommelier';
+    if (this.app?.bitacora) {
+      this.app.bitacora.addLog({
+        strainName: strainName,
+        location: 'Recomendación Sommelier IA (Mateo)',
+        preMood: 'Asesoría botánica personalizada',
+        postMood: 'Inspirado & Guiado',
+        rating: 5,
+        notes: `Recomendación por perfil terpénico: ${strain?.dominantTerpene || 'Equilibrado'} (${strain?.thc || 20}% THC). ${strain?.aroma || ''}`
+      });
+      btnElement.innerHTML = '✅ ¡Guardada en Vivencias!';
+      btnElement.disabled = true;
+      btnElement.style.opacity = '0.7';
+      if (this.app?.showToast) this.app.showToast(`📖 ¡${strainName} añadida a tus Vivencias!`);
+    }
   }
 
   showTyping(customMessage = null) {
@@ -12139,16 +13119,16 @@ class AISommelierAgent {
       const newKey = trimmed.replace(/^\/key\s*|^key:\s*/i, '').trim();
       localStorage.setItem('gemini_api_key', newKey);
       this.apiKey = newKey;
-      this.botSay('🔑 <strong>¡Clave API configurada con éxito!</strong><br/><br/>He activado la conexión directa con <strong>Google Gemini 3.6 Flash</strong> y <strong>CannaDoctor Multimodal</strong>. A partir de ahora todas tus consultas se responderán con inteligencia multimodal en tiempo real.');
+      this.botSay('🔑 <strong>¡Clave API configurada con éxito!</strong><br/><br/>He activado la conexión directa con <strong>Google Gemini 3.8 Flash</strong> y <strong>CannaDoctor Multimodal 2.0</strong>. A partir de ahora todas tus consultas se responderán con inteligencia multimodal de última generación en tiempo real.');
       return;
     }
 
     const isScienceQuery = /(por\s*qu[eé]|c[oó]mo|qu[eé]\s+es|explica|a\s+qu[eé]\s+se\s+debe|tricoma|hoja|cultivo|ph|abono|s[eé]quito|curado|lavado|ambar|ámbar)/i.test(userQuery || '');
     this.showTyping(imageObj 
-      ? '🔬 CannaDoctor examinando imagen botánica con Gemini 3.6...' 
+      ? '🔬 CannaDoctor examinando imagen botánica con Gemini 3.8 Flash...' 
       : isScienceQuery 
-        ? '🌿 Mateo analizando la base científica y botánica...' 
-        : '🧠 Mateo analizando maridaje terpénico en el catálogo...');
+        ? '🌿 Mateo analizando la base científica con Gemini 3.8...' 
+        : '🧠 Mateo analizando maridaje neuro-terpénico en el catálogo completo...');
 
     try {
       const cloudResponse = await this.callGeminiAPI(userQuery, imageObj);
@@ -12167,7 +13147,7 @@ class AISommelierAgent {
       if (imageObj) {
         this.botSay(`
           🔬 <strong>CannaDoctor:</strong> He recibido tu fotografía de cultivo.<br/><br/>
-          Para procesar diagnósticos visuales avanzados (deficiencias de nitrógeno, fósforo, magnesio, araña roja o madurez de tricomas), asegúrate de que el servidor local con soporte Gemini esté en ejecución o introduce tu clave en los ajustes.<br/><br/>
+          Para procesar diagnósticos visuales avanzados con <strong>Gemini 3.8 Flash</strong> (deficiencias de nitrógeno, fósforo, magnesio, araña roja o madurez de tricomas), asegúrate de que el servidor local esté en ejecución o introduce tu clave en el botón 🔑 de la cabecera.<br/><br/>
           💬 <em>Mientras tanto, puedes describirme los síntomas o consultar cualquier duda botánica sobre tu cultivo.</em>
         `);
         return;
@@ -12186,8 +13166,9 @@ class AISommelierAgent {
   }
 
   async callGeminiAPI(userQuery, imageObj = null) {
-    const catalogSummary = STRAINS_DATABASE.slice(0, 60).map(s => 
-      `- ${s.name} (${s.species}, ${safeBank(s)}): THC ${s.thc}%, Terpeno: ${s.dominantTerpene || 'Equilibrado'}, Sabores: ${safeFlavors(s).slice(0,3).join('/')}, ID: ${s.id}`
+    // Catálogo completo enriquecido de las 418 cepas
+    const catalogSummary = STRAINS_DATABASE.map(s => 
+      `- ${s.name} (${s.species}, ${safeBank(s)}): THC ${s.thc}%, Terp: ${s.dominantTerpene || 'Eq'}, Sab: ${safeFlavors(s).slice(0,2).join('/')}, ID: ${s.id}`
     ).join('\n');
 
     const systemInstruction = {
@@ -12236,9 +13217,9 @@ DIRECTRICES FUNDAMENTALES DE COMPORTAMIENTO:
 4. CONVERSACIÓN FLUIDA CON MEMORIA:
    - Recuerda lo hablado en los turnos previos. Si el usuario te hace preguntas de seguimiento ("¿y cuánto tiempo tarda?", "¿qué pasa si no lo hago?", "¿cómo afecta eso al sabor?"), responde directamente profundizando en el tema.
 
-5. INFORMACIÓN DEL CATÁLOGO (Para cuando se soliciten recomendaciones):
+5. INFORMACIÓN DEL CATÁLOGO COMPLETO (Para cuando se soliciten recomendaciones):
    El catálogo cuenta con ${STRAINS_DATABASE.length} cepas de 39 bancos premium.
-Muestra de variedades:
+Listado de todas las variedades:
 ${catalogSummary}`
       }]
     };
@@ -12266,17 +13247,17 @@ ${catalogSummary}`
     }
 
     const payload = {
-      model: 'gemini-3.6-flash',
+      model: 'gemini-3.8-flash',
       contents: this.history,
       system_instruction: systemInstruction
     };
 
-    // 1. Intentar primero a través del proxy local /api/gemini (timeout de 25s para respuestas científicas completas)
+    // 1. Intentar primero a través del proxy local /api/gemini (timeout de 30s)
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     if (isLocal) {
       try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 25000);
+        const timeoutId = setTimeout(() => controller.abort(), 30000);
         const proxyRes = await fetch('/api/gemini', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -12293,36 +13274,39 @@ ${catalogSummary}`
           }
         }
       } catch (e) {
-        // Si el proxy falla o da timeout, continuamos
+        // Fallback al canal directo o local
       }
     }
 
-    // 2. Intentar directamente con la API Key si está guardada en localStorage (funciona en GitHub Pages y local)
+    // 2. Intentar directamente con la API Key si está guardada en localStorage
     if (this.apiKey) {
-      try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 25000);
-        const directUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${this.apiKey}`;
-        const directRes = await fetch(directUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: payload.contents,
-            system_instruction: payload.system_instruction
-          }),
-          signal: controller.signal
-        });
-        clearTimeout(timeoutId);
-        if (directRes.ok) {
-          const data = await directRes.json();
-          const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-          if (text) {
-            this.history.push({ role: 'model', parts: [{ text: text }] });
-            return this.formatBotMarkdown(text);
+      const modelsToTry = ['gemini-3.8-flash', 'gemini-3.6-flash'];
+      for (const m of modelsToTry) {
+        try {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 28000);
+          const directUrl = `https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${this.apiKey}`;
+          const directRes = await fetch(directUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: payload.contents,
+              system_instruction: payload.system_instruction
+            }),
+            signal: controller.signal
+          });
+          clearTimeout(timeoutId);
+          if (directRes.ok) {
+            const data = await directRes.json();
+            const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (text) {
+              this.history.push({ role: 'model', parts: [{ text: text }] });
+              return this.formatBotMarkdown(text);
+            }
           }
+        } catch (e) {
+          // Continuar con el siguiente modelo en cascada
         }
-      } catch (e) {
-        // Fallback al motor local
       }
     }
 
@@ -13763,13 +14747,24 @@ class CannaAppMAX {
       }
     });
 
-    document.addEventListener('generateMission', (e) => {
+    document.addEventListener('generateMission', async (e) => {
       const { strainId, activityId } = e.detail;
-      const missionData = MissionGenerator.generateMission(strainId, activityId);
-      MissionGenerator.renderMissionModal(missionData, 'mission-modal-content');
+      const content = document.getElementById('mission-modal-content');
+      if (content) {
+        content.innerHTML = `
+          <div class="mission-card glass-panel glow-purple" style="text-align:center; padding: 3.5rem 1.5rem;">
+            <div style="font-size: 2.8rem; margin-bottom: 1rem; animation: pulse 1.5s infinite;">🧠</div>
+            <h3 style="color: #fff; margin-bottom: 0.6rem;">Gemini 3.8 Flash Diseñando Misión...</h3>
+            <p style="color: #A7F3D0; font-size: 0.88rem; max-width: 380px; margin: 0 auto;">Analizando perfil terpénico, linaje botánico y sinergia farmacológica de la variedad...</p>
+          </div>
+        `;
+      }
       if (this.missionModal && typeof this.missionModal.showModal === 'function') {
         if (!this.missionModal.open) this.missionModal.showModal();
       }
+
+      const missionData = await MissionGenerator.generateMissionAsync(strainId, activityId);
+      MissionGenerator.renderMissionModal(missionData, 'mission-modal-content');
     });
 
     document.addEventListener('closeMissionModal', () => {

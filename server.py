@@ -86,26 +86,39 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                     self.wfile.write(json.dumps({'error': 'No se encontró GEMINI_API_KEY en .env'}).encode('utf-8'))
                     return
 
-                model = client_payload.get('model', 'gemini-3.6-flash')
-                gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
-
+                model = client_payload.get('model', 'gemini-3.8-flash')
                 gemini_body = {
                     'contents': client_payload.get('contents', [])
                 }
                 if 'system_instruction' in client_payload and client_payload['system_instruction']:
                     gemini_body['system_instruction'] = client_payload['system_instruction']
 
-                gemini_req = urllib.request.Request(
-                    gemini_url,
-                    data=json.dumps(gemini_body).encode('utf-8'),
-                    headers={'Content-Type': 'application/json'}
-                )
-                with urllib.request.urlopen(gemini_req, timeout=35) as resp:
-                    resp_data = resp.read()
-                    self.send_response(resp.status)
-                    self.send_header('Content-Type', 'application/json; charset=utf-8')
-                    self.end_headers()
-                    self.wfile.write(resp_data)
+                def fetch_gemini(target_model):
+                    url = f"https://generativelanguage.googleapis.com/v1beta/models/{target_model}:generateContent?key={api_key}"
+                    req = urllib.request.Request(
+                        url,
+                        data=json.dumps(gemini_body).encode('utf-8'),
+                        headers={'Content-Type': 'application/json'}
+                    )
+                    with urllib.request.urlopen(req, timeout=35) as resp:
+                        return resp.status, resp.read()
+
+                try:
+                    status_code, resp_data = fetch_gemini(model)
+                except urllib.error.HTTPError as he:
+                    # Si el modelo falla por 404, 429 o 503, reintentar en cascada
+                    if he.code in (404, 429, 503) and model != 'gemini-3.6-flash':
+                        try:
+                            status_code, resp_data = fetch_gemini('gemini-3.6-flash')
+                        except urllib.error.HTTPError:
+                            status_code, resp_data = fetch_gemini('gemini-2.5-flash')
+                    else:
+                        raise
+
+                self.send_response(status_code)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(resp_data)
             except urllib.error.HTTPError as he:
                 err_data = he.read()
                 self.send_response(he.code)

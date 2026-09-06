@@ -95,6 +95,106 @@ export class MissionGenerator {
     };
   }
 
+  static async generateMissionAsync(strainId, activityId) {
+    const fallbackMission = this.generateMission(strainId, activityId);
+    const strain = STRAINS_DATABASE.find(s => s.id === strainId) || STRAINS_DATABASE[0];
+    const dominantTerpene = strain.dominantTerpene;
+    const terpeneName = TERPENES_INFO[dominantTerpene]?.name || dominantTerpene || 'Equilibrado';
+
+    const apiKey = localStorage.getItem('gemini_api_key');
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+    if (!isLocal && !apiKey) {
+      return fallbackMission;
+    }
+
+    const safeFlavors = (s) => (Array.isArray(s?.flavors) && s.flavors.length > 0) ? s.flavors : (s?.aroma ? [s.aroma] : ['Equilibrado']);
+    const safeEffects = (s) => (Array.isArray(s?.effects) && s.effects.length > 0) ? s.effects : (s?.effect ? [s.effect] : ['Relajación']);
+
+    const prompt = `Actúa como el Diseñador Maestro de Misiones Botánicas y Sensoriales de CannaCulture.
+Genera una misión lúdica, inmersiva y de bienestar única para la cepa "${strain.name}":
+- Especie: ${strain.species} (Banco: ${strain.breeder || strain.bank || 'Premium'})
+- THC: ${strain.thc}% | CBD: ${strain.cbd || 0.1}%
+- Terpeno dominante: ${terpeneName}
+- Perfil aromático y sabores: ${safeFlavors(strain).join(', ')}
+- Efectos reportados: ${safeEffects(strain).join(', ')}
+
+Diseña una experiencia sensorial que aproveche la farmacología y terpenos de esta variedad (estimulante/creativa si es sativa o relajante/inmersiva si es índica).
+Devuelve EXCLUSIVAMENTE un bloque JSON válido (sin markdown exterior) con este formato exacto:
+{
+  "title": "🎮 Misión: [Título Épico y Poético de la Experiencia]",
+  "tasks": [
+    "Paso 1 de preparación sensorial o ambiente sonoro",
+    "Paso 2 de degustación, inhalación lenta y apreciación terpénica",
+    "Paso 3 de inmersión en la actividad (arte, paseo, cine, introspección, etc.)",
+    "Paso 4 de cierre de relajación profunda o reflexión"
+  ],
+  "audioStyle": "[Género musical o atmósfera sonora recomendada]"
+}`;
+
+    const payload = {
+      model: 'gemini-3.8-flash',
+      contents: [{ role: 'user', parts: [{ text: prompt }] }]
+    };
+
+    try {
+      let rawJson = null;
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+      if (isLocal) {
+        const res = await fetch('/api/gemini', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        if (res.ok) {
+          const data = await res.json();
+          rawJson = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        }
+      } else if (apiKey) {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${apiKey}`;
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contents: payload.contents }),
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        if (res.ok) {
+          const data = await res.json();
+          rawJson = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        }
+      }
+
+      if (rawJson) {
+        let clean = rawJson.trim();
+        if (clean.startsWith('```json')) clean = clean.slice(7);
+        if (clean.startsWith('```')) clean = clean.slice(3);
+        if (clean.endsWith('```')) clean = clean.slice(0, -3);
+        const parsed = JSON.parse(clean.trim());
+
+        if (parsed.title && Array.isArray(parsed.tasks) && parsed.tasks.length > 0) {
+          return {
+            id: 'mission_ai_' + Date.now(),
+            strainName: strain.name,
+            strainSpecies: strain.species,
+            terpeneName: terpeneName,
+            title: parsed.title,
+            tasks: parsed.tasks,
+            audioStyle: parsed.audioStyle || 'Ambient Relax'
+          };
+        }
+      }
+    } catch (e) {
+      console.log('Fallo generando misión IA, usando plantilla local:', e.message);
+    }
+
+    return fallbackMission;
+  }
+
   static renderMissionModal(missionData, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
