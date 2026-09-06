@@ -2,3 +2,6 @@
 __pycache__/
 .vscode/
 *.tmp
+.env
+.env.*
+.env.txt
