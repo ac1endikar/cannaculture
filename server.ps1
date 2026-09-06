@@ -89,6 +89,60 @@ while ($listener.IsListening) {
             continue
         }
 
+        # Endpoint API Proxy local para Gemini
+        if ($request.HttpMethod -eq "POST" -and ($request.Url.AbsolutePath -eq "/api/gemini" -or $request.Url.AbsolutePath.StartsWith("/api/gemini"))) {
+            try {
+                $reader = [System.IO.StreamReader]::new($request.InputStream, [System.Text.Encoding]::UTF8)
+                $body = $reader.ReadToEnd()
+                $reader.Close()
+
+                $apiKey = $env:GEMINI_API_KEY
+                if (-not $apiKey) { $apiKey = $env:GOOGLE_API_KEY }
+                if (-not $apiKey -and (Test-Path "$DIRECTORY\.env")) {
+                    Get-Content "$DIRECTORY\.env" | ForEach-Object {
+                        $line = $_.Trim()
+                        if ($line -and -not $line.StartsWith("#") -and $line.Contains("=")) {
+                            $parts = $line.Split("=", 2)
+                            if ($parts[0].Trim() -in @("GEMINI_API_KEY", "GOOGLE_API_KEY")) {
+                                $apiKey = $parts[1].Trim()
+                            }
+                        }
+                    }
+                }
+
+                if (-not $apiKey) {
+                    $errBytes = [System.Text.Encoding]::UTF8.GetBytes('{"error":"No GEMINI_API_KEY in .env"}')
+                    $response.StatusCode = 400
+                    $response.ContentType = "application/json; charset=utf-8"
+                    $response.ContentLength64 = $errBytes.Length
+                    $response.OutputStream.Write($errBytes, 0, $errBytes.Length)
+                    $response.Close()
+                    continue
+                }
+
+                $geminiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=$apiKey"
+                $resp = Invoke-RestMethod -Uri $geminiUrl -Method POST -Body $body -ContentType "application/json" -TimeoutSec 30
+                $jsonResp = $resp | ConvertTo-Json -Depth 10
+                $respBytes = [System.Text.Encoding]::UTF8.GetBytes($jsonResp)
+
+                $response.StatusCode = 200
+                $response.ContentType = "application/json; charset=utf-8"
+                $response.ContentLength64 = $respBytes.Length
+                $response.OutputStream.Write($respBytes, 0, $respBytes.Length)
+                $response.Close()
+                continue
+            } catch {
+                $errMsg = $_.Exception.Message -replace '"', '\"'
+                $errBytes = [System.Text.Encoding]::UTF8.GetBytes("{`"error`":`"$errMsg`"}")
+                $response.StatusCode = 500
+                $response.ContentType = "application/json; charset=utf-8"
+                $response.ContentLength64 = $errBytes.Length
+                $response.OutputStream.Write($errBytes, 0, $errBytes.Length)
+                $response.Close()
+                continue
+            }
+        }
+
         # Resolver ruta del fichero
         $urlPath = $request.Url.AbsolutePath
         if ($urlPath -eq "/" -or $urlPath -eq "") { $urlPath = "/index.html" }

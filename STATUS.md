@@ -1,14 +1,14 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-06 11:40  
+> **Última actualización:** 2026-09-06 12:00  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
 
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
-- **Base de datos:** 418 cepas únicas y consolidadas pertenecientes a 39 bancos de semillas premium en `js/data.js` (402 base previa + 16 Medical Seeds).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_gemini_cannadoctor_v139`).
+- **Base de datos:** 418 cepas únicas y consolidadas pertenecientes a 39 bancos de semillas premium en `js/data.js` (402 base previa + 16 Medical Seeds enriquecidas con terpenos, sabores y efectos).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_sommelier_shielded_v140`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 
 ---
@@ -32,7 +32,16 @@
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-06)
-1. ✅ **Implementación de Suite IA (Gemini 3.6 Flash) & Automatizaciones GitHub (v139):**
+1. ✅ **Blindaje Defensivo del Sommelier IA & Timeout Gemini 3.6 (v140):**
+   - **Diagnóstico y Corrección de Crash:** Corregida excepción no capturada `TypeError: Cannot read properties of undefined (reading 'some')` en `generateHumanResponse`. Ocurría al procesar consultas generales (como "hola", "recomiéndame algo") sobre variedades con esquemas heterogéneos (como las 16 cepas de Medical Seeds que no tenían `flavors` o `effects` en formato array).
+   - **Extractores Seguros (Defensive Schema):** Implementadas funciones utilitarias `safeFlavors()`, `safeEffects()`, `safeTerpene()` y `safeBank()` que extraen arrays y strings normalizados con valores por defecto elegantes sin importar la procedencia de la cepa.
+   - **Control de Tiempos de Espera (Timeout Abort):** Añadido `AbortController` con timeout de 8.5 segundos a las llamadas de red hacia Gemini. Si la red es lenta o no hay proxy activo, conmuta de inmediato al motor heurístico local sin dejar el indicador de escritura ("pensando...") colgado.
+   - **Doble Red de Seguridad `try...catch`:** Blindado `processQuery` para capturar cualquier excepción inesperada tanto en la vía Cloud como en el motor local, asegurando que la interfaz de chat siempre responda al usuario.
+   - **Proxy en `server.ps1`:** Añadido soporte del endpoint `/api/gemini` en el servidor PowerShell nativo de Windows además del existente en Python.
+   - **Enriquecimiento de Medical Seeds:** Actualizadas las 16 cepas en `js/medical_seeds.js` y `js/data.js` con sus perfiles de sabores organolépticos y efectos corporales/mentales.
+   - **Recompilación de Producción:** Regenerado `js/bundle.js` (629,525 bytes) y versión actualizada en `index.html` a `?v=2026_sommelier_shielded_v140`.
+
+2. ✅ **Implementación de Suite IA (Gemini 3.6 Flash) & Automatizaciones GitHub (v139):**
    - **CannaDoctor Multimodal:** Integrada cámara y selector de imágenes en la interfaz de chat (tanto inline como flotante) con renderizado de thumbnails en burbujas de mensaje.
    - **Backend Proxy (`server.py`):** Creado endpoint `/api/gemini` con CORS y lectura segura de `GEMINI_API_KEY` desde `.env`.
    - **GitHub Actions Workflows:** Añadidos `gemini_pr_reviewer.yml` (auditoría automática de PRs) y `gemini_changelog.yml` (creación de notas de lanzamiento).

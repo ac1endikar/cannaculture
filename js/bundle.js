@@ -10821,6 +10821,7 @@ id: "arc-z-mints",
 {
     id: "channel-plus",
     name: "Channel+",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Híbrida",
     thc: 20,
@@ -10831,14 +10832,17 @@ id: "arc-z-mints",
     floweringDays: 50,
     yieldIndoor: 600,
     yieldOutdoor: 1000,
-    dominantTerpene: "Mirceno",
+    dominantTerpene: "myrcene",
     aroma: "Dulce terroso, bouquet floral maduro y fondo especiado",
+    flavors: ["Dulce Terroso", "Bouquet Floral", "Especiado"],
+    effects: ["Relajación Profunda", "Bienestar Físico", "Calma"],
     lineage: "Big Bud x Skunk",
     image: "images/strains/channel-plus.webp"
   },
   {
     id: "1024",
     name: "1024",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Sativa",
     thc: 23,
@@ -10849,14 +10853,17 @@ id: "arc-z-mints",
     floweringDays: 77,
     yieldIndoor: 600,
     yieldOutdoor: 800,
-    dominantTerpene: "Terpinoleno",
+    dominantTerpene: "terpinolene",
     aroma: "Incienso puro, especias orientales, almizcle y fruta madura",
+    flavors: ["Incienso Puro", "Especias Orientales", "Fruta Madura"],
+    effects: ["Euforia Mental", "Creatividad", "Energía Sativa"],
     lineage: "Genética secreta (Selección Híbrida Sativa)",
     image: "images/strains/1024.webp"
   },
   {
     id: "2046",
     name: "2046",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Sativa",
     thc: 25,
@@ -10867,14 +10874,17 @@ id: "arc-z-mints",
     floweringDays: 100,
     yieldIndoor: 500,
     yieldOutdoor: 700,
-    dominantTerpene: "Pineno",
+    dominantTerpene: "pinene",
     aroma: "Haze catedralicio puro, madera de cedro y fondo anisado",
+    flavors: ["Haze Catedralicio", "Madera de Cedro", "Anisado"],
+    effects: ["Subidón Psicoactivo", "Euforia Eléctrica", "Claridad"],
     lineage: "Neville's Haze x Neville's Haze",
     image: "images/strains/2046.webp"
   },
   {
     id: "y-griega",
     name: "Y Griega",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Sativa",
     thc: 27,
@@ -10885,14 +10895,17 @@ id: "arc-z-mints",
     floweringDays: 85,
     yieldIndoor: 500,
     yieldOutdoor: 600,
-    dominantTerpene: "Limoneno",
+    dominantTerpene: "limonene",
     aroma: "Cítrico alimonado muy penetrante, notas florales silvestres",
+    flavors: ["Cítrico Alimonado", "Floral Silvestre", "Haze Fresco"],
+    effects: ["Potencia Cerebral", "Estimulación Creativa", "Energía"],
     lineage: "Amnesia Haze x Kali Mist",
     image: "images/strains/y-griega.webp"
   },
   {
     id: "no-name",
     name: "No Name",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Índica",
     thc: 20,
@@ -10903,14 +10916,17 @@ id: "arc-z-mints",
     floweringDays: 60,
     yieldIndoor: 450,
     yieldOutdoor: 600,
-    dominantTerpene: "Cariofileno",
+    dominantTerpene: "caryophyllene",
     aroma: "Queso curado Skunk, regaliz dulce y fondo kush terroso",
+    flavors: ["Queso Curado Skunk", "Regaliz Dulce", "Kush Terroso"],
+    effects: ["Relajación Corporal", "Tranquilidad", "Efecto Sedante"],
     lineage: "Cheese x Sensi Star",
     image: "images/strains/no-name.webp"
   },
   {
     id: "malakoff",
     name: "Malakoff",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Sativa",
     thc: 20,
@@ -10921,14 +10937,17 @@ id: "arc-z-mints",
     floweringDays: 77,
     yieldIndoor: 500,
     yieldOutdoor: 800,
-    dominantTerpene: "Ocimeno",
+    dominantTerpene: "ocimene",
     aroma: "Frutal ácido, fresa ácida con toque terroso cremoso",
+    flavors: ["Fresa Ácida", "Frutal Cremoso", "Toque Terroso"],
+    effects: ["Energía Cerebral", "Motivación", "Claridad Sativa"],
     lineage: "Strawberry Haze x White Widow",
     image: "images/strains/malakoff.webp"
   },
   {
     id: "sour-diesel-medical",
     name: "Sour Diesel",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Sativa",
     thc: 25,
@@ -10939,14 +10958,17 @@ id: "arc-z-mints",
     floweringDays: 70,
     yieldIndoor: 500,
     yieldOutdoor: 700,
-    dominantTerpene: "Mirceno",
+    dominantTerpene: "myrcene",
     aroma: "Combustible diésel puro, cítrico agrio y notas químicas",
+    flavors: ["Gasolina Diésel", "Cítrico Agrio", "Químico Penetrante"],
+    effects: ["Euforia Energizante", "Enfoque Mental", "Bienestar"],
     lineage: "Diesel x Northern Lights",
     image: "images/strains/sour-diesel-medical.webp"
   },
   {
     id: "prozack",
     name: "Prozack",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Índica",
     thc: 18,
@@ -10957,14 +10979,17 @@ id: "arc-z-mints",
     floweringDays: 63,
     yieldIndoor: 450,
     yieldOutdoor: 500,
-    dominantTerpene: "Cariofileno",
+    dominantTerpene: "caryophyllene",
     aroma: "Hachís afgano tradicional, bosque húmedo y tierra mojada",
+    flavors: ["Hachís Afgano", "Bosque Húmedo", "Tierra Mojada"],
+    effects: ["Sedación Muscular", "Alivio Físico", "Sueño Reparador"],
     lineage: "Lavander x Kush",
     image: "images/strains/prozack.webp"
   },
   {
     id: "devil-fruit",
     name: "Devil Fruit",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Índica",
     thc: 19,
@@ -10975,14 +11000,17 @@ id: "arc-z-mints",
     floweringDays: 65,
     yieldIndoor: 500,
     yieldOutdoor: 600,
-    dominantTerpene: "Linalool",
+    dominantTerpene: "linalool",
     aroma: "Frutas tropicales dulces, uva madura y toque floral",
+    flavors: ["Frutas Tropicales", "Uva Madura", "Floral Dulce"],
+    effects: ["Relajación Placentera", "Paz Mental", "Bienestar Dulce"],
     lineage: "Shiskaberry x Great White Shark",
     image: "images/strains/devil-fruit.webp"
   },
   {
     id: "jack-la-mota",
     name: "Jack La Mota",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Sativa",
     thc: 20,
@@ -10993,14 +11021,17 @@ id: "arc-z-mints",
     floweringDays: 70,
     yieldIndoor: 500,
     yieldOutdoor: 800,
-    dominantTerpene: "Terpinoleno",
+    dominantTerpene: "terpinolene",
     aroma: "Pino silvestre, incienso especiado y maderas aromáticas",
+    flavors: ["Pino Silvestre", "Incienso Especiado", "Madera Aromática"],
+    effects: ["Euforia Activa", "Claridad Creativa", "Energía Mental"],
     lineage: "Northern Lights #5 x Haze x Skunk",
     image: "images/strains/jack-la-mota.webp"
   },
   {
     id: "mendocino-purple-kush",
     name: "Mendocino Purple Kush",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Índica",
     thc: 20,
@@ -11011,14 +11042,17 @@ id: "arc-z-mints",
     floweringDays: 60,
     yieldIndoor: 450,
     yieldOutdoor: 600,
-    dominantTerpene: "Mirceno",
+    dominantTerpene: "myrcene",
     aroma: "Uva silvestre, frutas del bosque y fondo terroso kush",
+    flavors: ["Uva Silvestre", "Frutas del Bosque", "Kush Terroso"],
+    effects: ["Relajación Pesada", "Sedación Cálida", "Anti-Estrés"],
     lineage: "Mendocino Purple x Bubba Kush",
     image: "images/strains/mendocino-purple-kush.webp"
   },
   {
     id: "white-widow-medical",
     name: "White Widow",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Índica",
     thc: 19,
@@ -11029,14 +11063,17 @@ id: "arc-z-mints",
     floweringDays: 58,
     yieldIndoor: 450,
     yieldOutdoor: 750,
-    dominantTerpene: "Mirceno",
+    dominantTerpene: "myrcene",
     aroma: "Especiado agridulce, pino fresco y madera con resina espesa",
+    flavors: ["Pino Fresco", "Especiado Agridulce", "Madera Resinosa"],
+    effects: ["Euforia Clásica", "Relax Corporal", "Equilibrio"],
     lineage: "Landrace Brasil x Landrace Sur de la India",
     image: "images/strains/white-widow-medical.webp"
   },
   {
     id: "canadian-kush-2",
     name: "Canadian Kush 2.0",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Índica",
     thc: 21,
@@ -11047,14 +11084,17 @@ id: "arc-z-mints",
     floweringDays: 63,
     yieldIndoor: 500,
     yieldOutdoor: 800,
-    dominantTerpene: "Cariofileno",
+    dominantTerpene: "caryophyllene",
     aroma: "Pino terroso, especias picantes y regusto a combustible",
+    flavors: ["Pino Terroso", "Pimienta Picante", "Combustible"],
+    effects: ["Sedación Profunda", "Alivio Corporal", "Relax Nocturno"],
     lineage: "Canadian Kush x Casey Jones",
     image: "images/strains/canadian-kush-2.webp"
   },
   {
     id: "overdosis",
     name: "Overdosis",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Índica",
     thc: 24,
@@ -11065,14 +11105,17 @@ id: "arc-z-mints",
     floweringDays: 60,
     yieldIndoor: 500,
     yieldOutdoor: 600,
-    dominantTerpene: "Limoneno",
+    dominantTerpene: "limonene",
     aroma: "Cítrico cremoso, tarta de limón dulce y toques mentolados",
+    flavors: ["Tarta de Limón", "Cítrico Cremoso", "Menta Suave"],
+    effects: ["Potencia Indica", "Relajación Total", "Efecto Sofá"],
     lineage: "Sunset Sherbert x Wedding Cake",
     image: "images/strains/overdosis.webp"
   },
   {
     id: "banana-z",
     name: "Banana Z",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Híbrida",
     thc: 23,
@@ -11083,14 +11126,17 @@ id: "arc-z-mints",
     floweringDays: 63,
     yieldIndoor: 450,
     yieldOutdoor: 500,
-    dominantTerpene: "Mirceno",
+    dominantTerpene: "myrcene",
     aroma: "Plátano maduro muy dulce, gominola y fondo Skunk",
+    flavors: ["Plátano Maduro", "Gominola Dulce", "Skunk Cremoso"],
+    effects: ["Euforia Alegre", "Relajación Dulce", "Bienestar"],
     lineage: "Banana Punch x Zkittlez",
     image: "images/strains/banana-z.webp"
   },
   {
     id: "sundae-float",
     name: "Sundae Float",
+    bank: "Medical Seeds",
     breeder: "Medical Seeds",
     species: "Híbrida",
     thc: 25,
@@ -11101,8 +11147,10 @@ id: "arc-z-mints",
     floweringDays: 63,
     yieldIndoor: 450,
     yieldOutdoor: 550,
-    dominantTerpene: "Limoneno",
+    dominantTerpene: "limonene",
     aroma: "Vainilla cremosa, chocolate dulce y frutas de bosque",
+    flavors: ["Vainilla Cremosa", "Chocolate Dulce", "Frutas del Bosque"],
+    effects: ["Bienestar Sensorial", "Calma Mental", "Relax Corporal"],
     lineage: "Root Beer Float x Sundae Driver",
     image: "images/strains/sundae-float.webp"
   }
@@ -11803,6 +11851,12 @@ class AdvancedTools {
 // --- ai-sommelier.js ---
 // CannaCatalog 2.0 - Agente IA Sommelier Humano & CannaDoctor Multimodal (Google Gemini 3.6 Flash)
 
+// Helpers seguros de extracción de propiedades defensivas ante esquemas heterogéneos
+const safeFlavors = (s) => (Array.isArray(s?.flavors) && s.flavors.length > 0) ? s.flavors : (s?.aroma ? s.aroma.split(',').map(x => x.trim()).filter(Boolean) : ['Aroma equilibrado', 'Bouquet herbal']);
+const safeEffects = (s) => (Array.isArray(s?.effects) && s.effects.length > 0) ? s.effects : (s?.effect ? [s.effect] : ['Equilibrado', 'Bienestar general']);
+const safeTerpene = (s) => (s?.dominantTerpene || '').toString().toLowerCase();
+const safeBank = (s) => s?.bank || s?.breeder || 'Banco Seleccionado';
+
 class AISommelierAgent {
   constructor(appController) {
     this.app = appController;
@@ -12045,10 +12099,11 @@ class AISommelierAgent {
 
     const scoredStrains = STRAINS_DATABASE.map(strain => {
       let score = 0;
-      if (activity.preferredTerpenes?.includes(strain.dominantTerpene)) score += 40;
+      const dt = safeTerpene(strain);
+      if (activity.preferredTerpenes?.some(t => t.toLowerCase() === dt)) score += 40;
       if (activity.recommendedSpecies?.includes(strain.species)) score += 30;
       if (strain.activities && strain.activities.includes(activityId)) score += 50;
-      score += (strain.rating * 5);
+      score += ((strain.rating || 4.5) * 5);
 
       return { strain, score };
     });
@@ -12065,16 +12120,18 @@ class AISommelierAgent {
 
     try {
       const cloudResponse = await this.callGeminiAPI(userQuery, imageObj);
-      this.hideTyping();
-      this.botSay(cloudResponse);
-      return;
+      if (cloudResponse) {
+        this.hideTyping();
+        this.botSay(cloudResponse);
+        return;
+      }
     } catch (err) {
-      console.warn('Gemini Cloud API no disponible, ejecutando motor local:', err);
+      console.warn('Gemini Cloud API no disponible o timeout, ejecutando motor local:', err);
     }
 
-    // Fallback local si no hay conexión o no hay API Key
-    setTimeout(() => {
-      this.hideTyping();
+    // Fallback local garantizado sin bloqueo
+    this.hideTyping();
+    try {
       if (imageObj) {
         this.botSay(`
           🔬 <strong>CannaDoctor:</strong> He recibido tu fotografía de cultivo.<br/><br/>
@@ -12083,14 +12140,22 @@ class AISommelierAgent {
         `);
         return;
       }
-      const response = this.generateHumanResponse(userQuery.toLowerCase());
+      const response = this.generateHumanResponse(userQuery || '');
       this.botSay(response);
-    }, 350);
+    } catch (fallbackErr) {
+      console.error('Error en motor local de Sommelier:', fallbackErr);
+      const sample = STRAINS_DATABASE[0] || {};
+      this.botSay(`
+        🌿 <strong>Mateo (Sommelier):</strong> He recibido tu consulta sobre <em>"${userQuery || 'variedades'}"</em>.<br/><br/>
+        Disponemos de más de <strong>${STRAINS_DATABASE.length} cepas</strong> en nuestro catálogo interactivo. Puedes consultar cepas ricas en THC, perfiles de terpenos como Limoneno o Mirceno, o variedades de bancos como Medical Seeds, Ripper Seeds o Sweet Seeds.<br/><br/>
+        💬 <em>¿Buscas un efecto energizante (Sativa) o relajante (Índica)?</em>
+      `);
+    }
   }
 
   async callGeminiAPI(userQuery, imageObj = null) {
     const catalogSummary = STRAINS_DATABASE.slice(0, 70).map(s => 
-      `- ${s.name} (${s.species}, ${s.bank}): THC ${s.thc}%, Terpeno: ${s.dominantTerpene}, Sabores: ${s.flavors?.slice(0,3).join('/')}, ID: ${s.id}`
+      `- ${s.name} (${s.species}, ${safeBank(s)}): THC ${s.thc}%, Terpeno: ${s.dominantTerpene || 'Equilibrado'}, Sabores: ${safeFlavors(s).slice(0,3).join('/')}, ID: ${s.id}`
     ).join('\n');
 
     const systemInstruction = {
@@ -12128,7 +12193,7 @@ Directrices estrictas:
 </div>
 4. Siempre que menciones una cepa que exista en el catálogo, usa estrictamente enlaces clicables con este formato:
    <a href="#" class="ai-strain-link" data-strain-id="ID_DE_LA_CEPA"><strong>Nombre Cepa</strong></a>.
-5. El catálogo de CannaCulture cuenta con 418 cepas de 39 bancos premium (Medical Seeds, Ripper Seeds, Dinafem, Barney's Farm, Sweet Seeds, RQS, DNA Genetics, TH Seeds, etc.).
+5. El catálogo de CannaCulture cuenta con ${STRAINS_DATABASE.length} cepas de bancos premium (Medical Seeds, Ripper Seeds, Dinafem, Barney's Farm, Sweet Seeds, RQS, DNA Genetics, TH Seeds, etc.).
 
 Muestra de variedades del catálogo:
 ${catalogSummary}`
@@ -12157,45 +12222,56 @@ ${catalogSummary}`
       system_instruction: systemInstruction
     };
 
-    // 1. Intentar primero a través del proxy local /api/gemini (lee .env automáticamente)
+    // 1. Intentar primero a través del proxy local /api/gemini con timeout estricto de 8.5s
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 8500);
       const proxyRes = await fetch('/api/gemini', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        signal: controller.signal
       });
+      clearTimeout(timeoutId);
       if (proxyRes.ok) {
         const data = await proxyRes.json();
         const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
         if (text) return this.formatBotMarkdown(text);
       }
     } catch (e) {
-      // Continuar al intento directo si el proxy no responde
+      // Si el proxy falla o da timeout, continuamos
     }
 
     // 2. Intentar directamente con la API Key si está guardada en localStorage
     if (this.apiKey) {
-      const directUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${this.apiKey}`;
-      const directRes = await fetch(directUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: payload.contents,
-          system_instruction: payload.system_instruction
-        })
-      });
-      if (directRes.ok) {
-        const data = await directRes.json();
-        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (text) return this.formatBotMarkdown(text);
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8500);
+        const directUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${this.apiKey}`;
+        const directRes = await fetch(directUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: payload.contents,
+            system_instruction: payload.system_instruction
+          }),
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        if (directRes.ok) {
+          const data = await directRes.json();
+          const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (text) return this.formatBotMarkdown(text);
+        }
+      } catch (e) {
+        // Fallback al motor local
       }
     }
 
-    throw new Error('No se pudo contactar con Gemini');
+    throw new Error('No se pudo contactar con Gemini en el tiempo límite');
   }
 
   formatBotMarkdown(text) {
-    // Si ya contiene el bloque HTML de razonamiento, conservarlo y dar formato al resto
     let formatted = text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.*?)\*/g, '<em>$1</em>')
@@ -12206,20 +12282,21 @@ ${catalogSummary}`
   }
 
   generateHumanResponse(rawQuery) {
-    const query = rawQuery.toLowerCase();
+    const query = (rawQuery || '').toLowerCase();
 
     // 1. EVALUACIÓN DE SABORES
     // A) CÍTRICOS / LIMÓN / MANDARINA / NARANJA
     if (query.includes('citric') || query.includes('cítric') || query.includes('limon') || query.includes('limón') || query.includes('mandarina') || query.includes('naranja')) {
-      const matches = STRAINS_DATABASE.filter(s => 
-        s.flavors.some(f => f.toLowerCase().includes('limón') || f.toLowerCase().includes('cítrico') || f.toLowerCase().includes('mandarina') || f.toLowerCase().includes('naranja') || f.toLowerCase().includes('citrus')) ||
-        s.dominantTerpene === 'limonene'
-      ).sort((a, b) => b.rating - a.rating).slice(0, 3);
+      const matches = STRAINS_DATABASE.filter(s => {
+        const fl = safeFlavors(s);
+        const dt = safeTerpene(s);
+        return fl.some(f => f.toLowerCase().includes('limón') || f.toLowerCase().includes('cítrico') || f.toLowerCase().includes('mandarina') || f.toLowerCase().includes('naranja') || f.toLowerCase().includes('citrus')) || dt === 'limonene';
+      }).sort((a, b) => (b.rating || 0) - (a.rating || 0)).slice(0, 3);
 
       const reasoning = this.buildReasoningBox(
         'El usuario busca una experiencia estimulante con frescor cítrico en paladar.',
         'Priorizo cepas con dominancia en <strong>Limoneno</strong>, responsable de la elevación del ánimo y la estimulación de dopamina.',
-        'Filtradas 267 cepas del catálogo seleccionando las 3 mejor puntuadas con notas a limón exprimido y mandarina.'
+        `Filtradas ${STRAINS_DATABASE.length} cepas del catálogo seleccionando las 3 mejor puntuadas con notas a limón exprimido y mandarina.`
       );
 
       return `
@@ -12229,8 +12306,8 @@ ${catalogSummary}`
         En base al análisis terpénico, estas cepas combinan notas cítricas con un efecto alegre y despejado:
         <br/><br/>
         ${matches.map(s => `
-          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(245,158,11,0.25); color:#FCD34D; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${s.bank}</em><br/>
-          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${s.flavors.join(', ')} | 🌿 Terpeno: ${TERPENES_INFO[s.dominantTerpene]?.name || s.dominantTerpene}</small>
+          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(245,158,11,0.25); color:#FCD34D; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${safeBank(s)}</em><br/>
+          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${safeFlavors(s).join(', ')} | 🌿 Terpeno: ${TERPENES_INFO[s.dominantTerpene]?.name || s.dominantTerpene || 'Equilibrado'}</small>
         `).join('<br/><br/>')}
         <br/><br/>
         💬 <em>¿Para qué actividad te gustaría maridar esta selección cítrica? (Gaming, Creatividad, Paseo o Deporte)</em>
@@ -12239,10 +12316,11 @@ ${catalogSummary}`
 
     // B) FRUTAL / DULCE / ARÁNDANOS / CARAMELO / FRESA / BAYAS
     if (query.includes('frutal') || query.includes('fruta') || query.includes('frutas') || query.includes('dulce') || query.includes('arándano') || query.includes('bayas') || query.includes('caramelo') || query.includes('fresa') || query.includes('uva') || query.includes('tropica')) {
-      const matches = STRAINS_DATABASE.filter(s => 
-        s.flavors.some(f => f.toLowerCase().includes('dulce') || f.toLowerCase().includes('fruta') || f.toLowerCase().includes('arándano') || f.toLowerCase().includes('caramelo') || f.toLowerCase().includes('bayas') || f.toLowerCase().includes('tropical')) ||
-        s.dominantTerpene === 'ocimene' || s.dominantTerpene === 'terpinolene'
-      ).sort((a, b) => b.rating - a.rating).slice(0, 3);
+      const matches = STRAINS_DATABASE.filter(s => {
+        const fl = safeFlavors(s);
+        const dt = safeTerpene(s);
+        return fl.some(f => f.toLowerCase().includes('dulce') || f.toLowerCase().includes('fruta') || f.toLowerCase().includes('arándano') || f.toLowerCase().includes('caramelo') || f.toLowerCase().includes('bayas') || f.toLowerCase().includes('tropical')) || dt === 'ocimene' || dt === 'terpinolene';
+      }).sort((a, b) => (b.rating || 0) - (a.rating || 0)).slice(0, 3);
 
       const reasoning = this.buildReasoningBox(
         'Búsqueda de perfil organoléptico frutal, dulce y goloso.',
@@ -12257,8 +12335,8 @@ ${catalogSummary}`
         Genéticas maridadas por su alta concentración de esteres aromáticos y terpenos dulces:
         <br/><br/>
         ${matches.map(s => `
-          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(236,72,153,0.25); color:#F472B6; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${s.bank}</em><br/>
-          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${s.flavors.join(', ')} | ✨ ${s.effects.slice(0,2).join(', ')}</small>
+          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(236,72,153,0.25); color:#F472B6; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${safeBank(s)}</em><br/>
+          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${safeFlavors(s).join(', ')} | ✨ ${safeEffects(s).slice(0,2).join(', ')}</small>
         `).join('<br/><br/>')}
         <br/><br/>
         💬 <em>¿Prefieres una genética más relajante (Índica) o eufórica (Sativa) con este sabor?</em>
@@ -12267,10 +12345,11 @@ ${catalogSummary}`
 
     // C) PINO / BOSQUE / MADERA / INCIENSO HAZE / CEDRO
     if (query.includes('pino') || query.includes('bosque') || query.includes('madera') || query.includes('incienso') || query.includes('haze') || query.includes('cedro')) {
-      const matches = STRAINS_DATABASE.filter(s => 
-        s.flavors.some(f => f.toLowerCase().includes('pino') || f.toLowerCase().includes('madera') || f.toLowerCase().includes('incienso') || f.toLowerCase().includes('haze') || f.toLowerCase().includes('cedro')) ||
-        s.dominantTerpene === 'pinene'
-      ).sort((a, b) => b.rating - a.rating).slice(0, 3);
+      const matches = STRAINS_DATABASE.filter(s => {
+        const fl = safeFlavors(s);
+        const dt = safeTerpene(s);
+        return fl.some(f => f.toLowerCase().includes('pino') || f.toLowerCase().includes('madera') || f.toLowerCase().includes('incienso') || f.toLowerCase().includes('haze') || f.toLowerCase().includes('cedro')) || dt === 'pinene';
+      }).sort((a, b) => (b.rating || 0) - (a.rating || 0)).slice(0, 3);
 
       const reasoning = this.buildReasoningBox(
         'Preferencia por matices amaderados, inciensados y resinosos de estilo Haze silvestre.',
@@ -12285,8 +12364,8 @@ ${catalogSummary}`
         Variedades seleccionadas por su aroma a sotobosque y su potente claridad cognitiva:
         <br/><br/>
         ${matches.map(s => `
-          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(6,182,212,0.25); color:#67E8F9; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${s.bank}</em><br/>
-          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${s.flavors.join(', ')} | 🧠 Claridad Láser</small>
+          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(6,182,212,0.25); color:#67E8F9; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${safeBank(s)}</em><br/>
+          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${safeFlavors(s).join(', ')} | 🧠 Claridad Láser</small>
         `).join('<br/><br/>')}
         <br/><br/>
         💬 <em>¿Te gustaría maridar esta cepa con naturaleza, senderismo o creación artística?</em>
@@ -12295,9 +12374,10 @@ ${catalogSummary}`
 
     // D) DIÉSEL / GASOLINA / COMBUSTIBLE / GAS
     if (query.includes('diesel') || query.includes('diésel') || query.includes('gasolina') || query.includes('combustible') || query.includes('gas')) {
-      const matches = STRAINS_DATABASE.filter(s => 
-        s.flavors.some(f => f.toLowerCase().includes('diésel') || f.toLowerCase().includes('diesel') || f.toLowerCase().includes('gasolina') || f.toLowerCase().includes('combustible'))
-      ).sort((a, b) => b.thc - a.thc).slice(0, 3);
+      const matches = STRAINS_DATABASE.filter(s => {
+        const fl = safeFlavors(s);
+        return fl.some(f => f.toLowerCase().includes('diésel') || f.toLowerCase().includes('diesel') || f.toLowerCase().includes('gasolina') || f.toLowerCase().includes('combustible'));
+      }).sort((a, b) => (b.thc || 0) - (a.thc || 0)).slice(0, 3);
 
       const reasoning = this.buildReasoningBox(
         'El cliente busca un aroma penetrante a combustible con pegada de alta intensidad.',
@@ -12312,17 +12392,18 @@ ${catalogSummary}`
         Selección de máxima intensidad terpénica con bouquet a queroseno y pegada eufórica:
         <br/><br/>
         ${matches.map(s => `
-          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(16,185,129,0.25); color:#6EE7B7; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${s.bank}</em><br/>
-          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${s.flavors.join(', ')} | ⚡ ${s.effects.slice(0,2).join(', ')}</small>
+          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(16,185,129,0.25); color:#6EE7B7; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${safeBank(s)}</em><br/>
+          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${safeFlavors(s).join(', ')} | ⚡ ${safeEffects(s).slice(0,2).join(', ')}</small>
         `).join('<br/><br/>')}
       `;
     }
 
     // E) GALLETA / COOKIES / VAINILLA / REPOSTERÍA / HELADO / CREMA
     if (query.includes('galleta') || query.includes('cookie') || query.includes('cookies') || query.includes('vainilla') || query.includes('reposteria') || query.includes('repostería') || query.includes('helado') || query.includes('crema')) {
-      const matches = STRAINS_DATABASE.filter(s => 
-        s.flavors.some(f => f.toLowerCase().includes('galleta') || f.toLowerCase().includes('cookie') || f.toLowerCase().includes('vainilla') || f.toLowerCase().includes('helado') || f.toLowerCase().includes('crema') || f.toLowerCase().includes('masa'))
-      ).sort((a, b) => b.rating - a.rating).slice(0, 3);
+      const matches = STRAINS_DATABASE.filter(s => {
+        const fl = safeFlavors(s);
+        return fl.some(f => f.toLowerCase().includes('galleta') || f.toLowerCase().includes('cookie') || f.toLowerCase().includes('vainilla') || f.toLowerCase().includes('helado') || f.toLowerCase().includes('crema') || f.toLowerCase().includes('masa'));
+      }).sort((a, b) => (b.rating || 0) - (a.rating || 0)).slice(0, 3);
 
       const reasoning = this.buildReasoningBox(
         'Preferencia por matices de repostería artesanal, vainilla y notas de crema pastelera.',
@@ -12337,21 +12418,22 @@ ${catalogSummary}`
         Genéticas seleccionadas por su densidad de humo cremoso y matices a postre horneado:
         <br/><br/>
         ${matches.map(s => `
-          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(139,92,246,0.25); color:#C084FC; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${s.bank}</em><br/>
-          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${s.flavors.join(', ')} | 😌 ${s.effects.slice(0,2).join(', ')}</small>
+          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(139,92,246,0.25); color:#C084FC; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${safeBank(s)}</em><br/>
+          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${safeFlavors(s).join(', ')} | 😌 ${safeEffects(s).slice(0,2).join(', ')}</small>
         `).join('<br/><br/>')}
       `;
     }
 
     // F) QUESO / CHEESE / SKUNK
     if (query.includes('queso') || query.includes('cheese') || query.includes('skunk')) {
-      const matches = STRAINS_DATABASE.filter(s => 
-        s.flavors.some(f => f.toLowerCase().includes('queso') || f.toLowerCase().includes('cheese') || f.toLowerCase().includes('skunk'))
-      ).sort((a, b) => b.rating - a.rating).slice(0, 3);
+      const matches = STRAINS_DATABASE.filter(s => {
+        const fl = safeFlavors(s);
+        return fl.some(f => f.toLowerCase().includes('queso') || f.toLowerCase().includes('cheese') || f.toLowerCase().includes('skunk'));
+      }).sort((a, b) => (b.rating || 0) - (a.rating || 0)).slice(0, 3);
 
       const reasoning = this.buildReasoningBox(
         'Búsqueda de aromas Old School profundos a lácteo maduro y fondo Skunk.',
-        'Análisis de compuesos de azufre orgánico y <strong>Mirceno potente</strong> característicos de las genéticas UK Cheese.',
+        'Análisis de compuestos de azufre orgánico y <strong>Mirceno potente</strong> característicos de las genéticas UK Cheese.',
         'Filtradas las variedades con buqué más añejo y bouquet terroso de Skunk tradicional.'
       );
 
@@ -12362,8 +12444,8 @@ ${catalogSummary}`
         Variedades con buqué añejo y personalidad única para paladares exigentes:
         <br/><br/>
         ${matches.map(s => `
-          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(234,179,8,0.25); color:#FDE047; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${s.bank}</em><br/>
-          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${s.flavors.join(', ')} | 🥳 ${s.effects.slice(0,2).join(', ')}</small>
+          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(234,179,8,0.25); color:#FDE047; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${safeBank(s)}</em><br/>
+          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${safeFlavors(s).join(', ')} | 🥳 ${safeEffects(s).slice(0,2).join(', ')}</small>
         `).join('<br/><br/>')}
       `;
     }
@@ -12394,7 +12476,7 @@ ${catalogSummary}`
 
         const reasoning = this.buildReasoningBox(
           `Optimización para la actividad objetivo: <strong>${activity.title}</strong>.`,
-          `Mapeo de terpenos sinérgicos (<strong>${terpeneNames}</strong>) y equilibrio cannabinode para evitar ansiedad o fatiga prematura.`,
+          `Mapeo de terpenos sinérgicos (<strong>${terpeneNames}</strong>) y equilibrio cannabinoide para evitar ansiedad o fatiga prematura.`,
           `Cruce de variables con el motor Activity Matcher puntuando especie (${activity.recommendedSpecies.join('/')}) y afinidad de actividad.`
         );
 
@@ -12407,8 +12489,8 @@ ${catalogSummary}`
           🏆 <strong>Top 3 cepas ganadoras según el razonamiento lógico:</strong>
           <br/><br/>
           ${topStrains.map((s, idx) => `
-            ${idx === 0 ? '🥇' : idx === 1 ? '🥈' : '🥉'} <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(16,185,129,0.2); color:#6EE7B7; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${s.bank}</em><br/>
-            &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 🌿 Terpeno: ${TERPENES_INFO[s.dominantTerpene]?.name || s.dominantTerpene} | 👅 Sabores: ${s.flavors.join(', ')}</small>
+            ${idx === 0 ? '🥇' : idx === 1 ? '🥈' : '🥉'} <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(16,185,129,0.2); color:#6EE7B7; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${safeBank(s)}</em><br/>
+            &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 🌿 Terpeno: ${TERPENES_INFO[s.dominantTerpene]?.name || s.dominantTerpene || 'Equilibrado'} | 👅 Sabores: ${safeFlavors(s).join(', ')}</small>
           `).join('<br/><br/>')}
           <br/><br/>
           💬 <em>¿Qué perfil de sabor prefieres para esta actividad? (🍋 Cítricos, 🍓 Frutal Dulce, 🌲 Pino Haze, ⛽ Diésel o 🍪 Galleta)</em>
@@ -12422,8 +12504,8 @@ ${catalogSummary}`
 
     // COMPARATIVA AMBAS
     if ((hasIndica && hasSativa) || hasDifference) {
-      const topIndica = STRAINS_DATABASE.find(s => s.species.toLowerCase().includes('indica'));
-      const topSativa = STRAINS_DATABASE.find(s => s.species.toLowerCase().includes('sativa'));
+      const topIndica = STRAINS_DATABASE.find(s => (s.species || '').toLowerCase().includes('indica')) || STRAINS_DATABASE[0];
+      const topSativa = STRAINS_DATABASE.find(s => (s.species || '').toLowerCase().includes('sativa')) || STRAINS_DATABASE[1];
 
       const reasoning = this.buildReasoningBox(
         'El usuario solicita una comparativa entre el quimiotipo Índica y Sativa.',
@@ -12437,11 +12519,11 @@ ${catalogSummary}`
         <br/><br/>
         🟣 <strong>INDICA (Relajación Corporal):</strong><br/>
         Predominio de <strong>Mirceno</strong>. Sensación de descanso físico y desconexión.<br/>
-        • <em>Recomendación estrella:</em> <a href="#" class="ai-strain-link" data-strain-id="${topIndica.id}"><strong>${topIndica.name}</strong></a> (${topIndica.bank}) — THC ${topIndica.thc}%.
+        • <em>Recomendación estrella:</em> <a href="#" class="ai-strain-link" data-strain-id="${topIndica.id}"><strong>${topIndica.name}</strong></a> (${safeBank(topIndica)}) — THC ${topIndica.thc}%.
         <br/><br/>
         🟡 <strong>SATIVA (Estimulación Cerebral):</strong><br/>
         Predominio de <strong>Limoneno y Terpinoleno</strong>. Impulso alegre y creativo.<br/>
-        • <em>Recomendación estrella:</em> <a href="#" class="ai-strain-link" data-strain-id="${topSativa.id}"><strong>${topSativa.name}</strong></a> (${topSativa.bank}) — THC ${topSativa.thc}%.
+        • <em>Recomendación estrella:</em> <a href="#" class="ai-strain-link" data-strain-id="${topSativa.id}"><strong>${topSativa.name}</strong></a> (${safeBank(topSativa)}) — THC ${topSativa.thc}%.
         <br/><br/>
         💬 <em>¿Qué efecto se ajusta mejor a lo que buscas experimentar hoy?</em>
       `;
@@ -12449,8 +12531,8 @@ ${catalogSummary}`
 
     // PETICIÓN EXPLICITA DE INDICA
     if (hasIndica || query.includes('no quiero sativa') || query.includes('sin sativa')) {
-      const indicaStrains = STRAINS_DATABASE.filter(s => s.species.toLowerCase().includes('indica'));
-      const topIndicas = indicaStrains.sort((a, b) => b.thc - a.thc).slice(0, 3);
+      const indicaStrains = STRAINS_DATABASE.filter(s => (s.species || '').toLowerCase().includes('indica'));
+      const topIndicas = indicaStrains.sort((a, b) => (b.thc || 0) - (a.thc || 0)).slice(0, 3);
 
       const reasoning = this.buildReasoningBox(
         'Búsqueda de quimiotipo Índica para relajación corporal o sedación nocturna.',
@@ -12465,8 +12547,8 @@ ${catalogSummary}`
         Selección de cepas miorrelajantes ideales para descansar y desconectar:
         <br/><br/>
         ${topIndicas.map(s => `
-          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(139,92,246,0.25); color:#C084FC; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${s.bank}</em><br/>
-          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${s.flavors.join(', ')} | ⚡ ${s.effects.join(', ')}</small>
+          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(139,92,246,0.25); color:#C084FC; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${safeBank(s)}</em><br/>
+          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 ${safeFlavors(s).join(', ')} | ⚡ ${safeEffects(s).join(', ')}</small>
         `).join('<br/><br/>')}
         <br/><br/>
         💬 <em>¿Prefieres tu Índica con sabor a Queso 🧀, Galletas/Vainilla 🍪 o Frutas Dulces 🍓?</em>
@@ -12475,8 +12557,8 @@ ${catalogSummary}`
 
     // PETICIÓN EXPLICITA DE SATIVA
     if (hasSativa || query.includes('no quiero indica') || query.includes('sin indica')) {
-      const sativaStrains = STRAINS_DATABASE.filter(s => s.species.toLowerCase().includes('sativa'));
-      const topSativas = sativaStrains.sort((a, b) => b.thc - a.thc).slice(0, 3);
+      const sativaStrains = STRAINS_DATABASE.filter(s => (s.species || '').toLowerCase().includes('sativa'));
+      const topSativas = sativaStrains.sort((a, b) => (b.thc || 0) - (a.thc || 0)).slice(0, 3);
 
       const reasoning = this.buildReasoningBox(
         'Búsqueda de quimiotipo Sativa para estimulación cerebral y energía.',
@@ -12491,8 +12573,8 @@ ${catalogSummary}`
         Selección de cepas eufóricas y alegres diseñadas para estar activo:
         <br/><br/>
         ${topSativas.map(s => `
-          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(245,158,11,0.25); color:#FCD34D; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${s.bank}</em><br/>
-          &nbsp;&nbsp;<small style="color:#A7F3D0;">⚡ THC: ${s.thc}% | 👅 Sabores: ${s.flavors.join(', ')} | ✨ ${s.effects.join(', ')}</small>
+          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> <span style="background:rgba(245,158,11,0.25); color:#FCD34D; padding:2px 8px; border-radius:50px; font-size:0.75rem; font-weight:800;">${s.species}</span> — <em>${safeBank(s)}</em><br/>
+          &nbsp;&nbsp;<small style="color:#A7F3D0;">⚡ THC: ${s.thc}% | 👅 Sabores: ${safeFlavors(s).join(', ')} | ✨ ${safeEffects(s).join(', ')}</small>
         `).join('<br/><br/>')}
         <br/><br/>
         💬 <em>¿Te llama más la atención el sabor Cítrico 🍋, Pino/Haze 🌲 o Diésel ⛽?</em>
@@ -12501,7 +12583,7 @@ ${catalogSummary}`
 
     // POTENCIA ALTA
     if (query.includes('thc') || query.includes('potente') || query.includes('fuerte')) {
-      const topThc = [...STRAINS_DATABASE].sort((a, b) => b.thc - a.thc).slice(0, 3);
+      const topThc = [...STRAINS_DATABASE].sort((a, b) => (b.thc || 0) - (a.thc || 0)).slice(0, 3);
 
       const reasoning = this.buildReasoningBox(
         'El usuario exige la máxima concentración de cannabinoides (THC elevado).',
@@ -12514,8 +12596,8 @@ ${catalogSummary}`
         🔥 <strong>Recomendación Fundamentada — Máxima Potencia THC:</strong>
         <br/><br/>
         ${topThc.map(s => `
-          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> (${s.species}) — <strong>${s.thc}% THC</strong> (<em>${s.bank}</em>)<br/>
-          &nbsp;&nbsp;<small style="color:#A7F3D0;">👅 Sabores: ${s.flavors.join(', ')} | ⚡ ${s.effects.join(', ')}</small>
+          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> (${s.species}) — <strong>${s.thc}% THC</strong> (<em>${safeBank(s)}</em>)<br/>
+          &nbsp;&nbsp;<small style="color:#A7F3D0;">👅 Sabores: ${safeFlavors(s).join(', ')} | ⚡ ${safeEffects(s).join(', ')}</small>
         `).join('<br/><br/>')}
         <br/><br/>
         💬 <em>¿Qué matiz aromático buscas en tu cepa potente?</em>
@@ -12523,18 +12605,24 @@ ${catalogSummary}`
     }
 
     // BÚSQUEDA GENERAL POR PALABRA CLAVE
-    const searchMatches = STRAINS_DATABASE.filter(s => 
-      s.name.toLowerCase().includes(query) ||
-      s.flavors.some(f => f.toLowerCase().includes(query)) ||
-      s.effects.some(e => e.toLowerCase().includes(query)) ||
-      s.dominantTerpene.toLowerCase().includes(query)
-    ).slice(0, 3);
+    const searchMatches = STRAINS_DATABASE.filter(s => {
+      const fl = safeFlavors(s);
+      const ef = safeEffects(s);
+      const dt = safeTerpene(s);
+      const nm = (s.name || '').toLowerCase();
+      const bk = safeBank(s).toLowerCase();
+      return nm.includes(query) ||
+             bk.includes(query) ||
+             fl.some(f => f.toLowerCase().includes(query)) ||
+             ef.some(e => e.toLowerCase().includes(query)) ||
+             dt.includes(query);
+    }).slice(0, 3);
 
     if (searchMatches.length > 0) {
       const reasoning = this.buildReasoningBox(
         `Búsqueda personalizada para el término: <strong>"${rawQuery}"</strong>.`,
         'Filtrado terpénico y organoléptico por coincidencia semántica de aromas y efectos.',
-        'Coincidencias óptimas encontradas en el catálogo de 267 cepas.'
+        `Coincidencias óptimas encontradas en el catálogo de ${STRAINS_DATABASE.length} cepas.`
       );
 
       return `
@@ -12542,33 +12630,31 @@ ${catalogSummary}`
         🔍 <strong>Recomendación Fundamentada para "${rawQuery}":</strong>
         <br/><br/>
         ${searchMatches.map(s => `
-          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> (${s.species}) — <em>${s.bank}</em><br/>
-          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 Sabores: ${s.flavors.join(', ')} | ⚡ ${s.effects.join(', ')}</small>
+          • <a href="#" class="ai-strain-link" data-strain-id="${s.id}"><strong>${s.name}</strong></a> (${s.species}) — <em>${safeBank(s)}</em><br/>
+          &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${s.thc}% | 👅 Sabores: ${safeFlavors(s).join(', ')} | ⚡ ${safeEffects(s).join(', ')}</small>
         `).join('<br/><br/>')}
       `;
     }
 
     // FALLBACK INTERACTIVO CON PREGUNTA DE SABORES
-    const randomPick = STRAINS_DATABASE[Math.floor(Math.random() * STRAINS_DATABASE.length)];
+    const randomPick = STRAINS_DATABASE[Math.floor(Math.random() * STRAINS_DATABASE.length)] || STRAINS_DATABASE[0];
     const reasoning = this.buildReasoningBox(
       'Consulta general o abierta recibida.',
-      'Analizando cepa aleatoria de alta puntuación para abrir el maridaje terpénico.',
+      'Analizando cepa destacada para abrir el maridaje terpénico.',
       'Sugerencia directa para encauzar la búsqueda hacia tu perfil de sabor o actividad ideal.'
     );
 
     return `
       ${reasoning}
       🌟 <strong>Sugerencia del Sumiller:</strong><br/><br/>
-      Prueba la cepa destacada de hoy: <a href="#" class="ai-strain-link" data-strain-id="${randomPick.id}"><strong>${randomPick.name}</strong></a> (${randomPick.species} de <em>${randomPick.bank}</em>)<br/>
-      &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${randomPick.thc}% | 👅 Sabores: ${randomPick.flavors.join(', ')}</small>
+      Prueba la cepa destacada de hoy: <a href="#" class="ai-strain-link" data-strain-id="${randomPick.id}"><strong>${randomPick.name}</strong></a> (${randomPick.species} de <em>${safeBank(randomPick)}</em>)<br/>
+      &nbsp;&nbsp;<small style="color:#A7F3D0;">🔥 THC: ${randomPick.thc}% | 👅 Sabores: ${safeFlavors(randomPick).join(', ')}</small>
       <br/><br/>
       💬 <strong>¿Qué tipo de sabores prefieres más?</strong><br/>
       Dime si buscas sabores 🍋 <em>Cítricos</em>, 🍓 <em>Frutales Dulces</em>, 🌲 <em>Pino Haze</em>, ⛽ <em>Diésel</em>, 🍪 <em>Galleta/Vainilla</em> o 🧀 <em>Queso</em> y te haré la recomendación exacta con mi análisis de razonamiento.
     `;
   }
 }
-
-
 
 
 
