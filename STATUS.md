@@ -1,21 +1,22 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-07 15:30  
+> **Última actualización:** 2026-09-07 15:55  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
 
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
-- **Base de datos:** 438 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo la expansión fotoperiódica THC de 00 Seeds Bank y Sweet Seeds, así como Eva Seeds y Medical Seeds Co.).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_expansion_spain_v143`).
+- **Base de datos:** 438 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo los catálogos completos de Eva Seeds con 11 variedades y Medical Seeds Co. con 16 variedades, más la expansión de 00 Seeds Bank y Sweet Seeds).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_eva_medical_v144`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 - **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
-- **Expansión Bancos Españoles (00 Seeds Bank + Sweet Seeds) v143:** **100% INTEGRADA (438 CEPAS)** (+9 variedades fotoperiódicas THC con ficha completa y activos fotográficos reales).
+- **Catálogos Completos Eva Seeds + Medical Seeds (v144):** **100% VERIFICADOS Y CONSOLIDADOS (438 CEPAS)** (11 variedades de Eva Seeds y 16 de Medical Seeds blindadas con 0 duplicados y fotografía botánica real).
+- **Expansión Bancos Españoles (00 Seeds Bank + Sweet Seeds) v143:** **100% INTEGRADA** (+9 variedades fotoperiódicas THC con ficha completa y activos fotográficos reales).
 - **Fotografía Macro Profesional de Monster (Eva Seeds) v142:** **100% ACTUALIZADA** (Sustituida foto amateur por fotografía botánica macro de estudio 700x700 WebP sobre fondo oscuro sin marcas de agua ni elementos ajenos).
 - **Catálogo Fotoperiódico Eva Seeds (v140):** **100% INTEGRADO Y VERIFICADO** (11 variedades fotoperiódicas THC agregadas a `js/data.js` con fotos botánicas reales 700x700 WebP y ficha técnica completa).
 - **Suite de Inteligencia Artificial Gemini 3.8 Flash & CannaDoctor 2.0:** **100% OPERATIVA (v146)**
@@ -31,7 +32,13 @@
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-07)
-1. ✅ **Fase 1: Expansión de Bancos Españoles — 00 Seeds Bank y Sweet Seeds (v143):**
+1. ✅ **Bloque 2: Consolidación y Verificación de Catálogos Completos de Eva Seeds y Medical Seeds (v144):**
+   - **Verificación Exhaustiva de 11 Variedades de Eva Seeds:** `jamaican-dream`, `monster`, `veneno`, `papas-candy`, `high-level`, `black-dream`, `furious-candy`, `missing-in-barcelona`, `tnt-kush`, `gipsy-haze`, `lemon-king`. 100% presentes, propiedad `bank: "Eva Seeds"`, imágenes oficiales WebP sin duplicados.
+   - **Verificación Exhaustiva de 16 Variedades de Medical Seeds:** `channel-plus`, `1024`, `2046`, `y-griega`, `no-name`, `malakoff`, `sour-diesel-medical`, `prozack`, `devil-fruit`, `jack-la-mota`, `mendocino-purple-kush`, `white-widow-medical`, `canadian-kush-2`, `overdosis`, `banana-z`, `sundae-float`. 100% presentes, propiedad `bank: "Medical Seeds"`, imágenes oficiales WebP sin duplicados.
+   - **Total Catálogo Activo:** 438 variedades fotoperiódicas ricas en THC en `js/data.js`.
+   - **Recompilación y Caché:** Bundle recompilado vía `python scripts/build_bundle.py` (740,183 bytes) y versión actualizada a `?v=2026_eva_medical_v144` en `index.html` (CSS y JS).
+
+2. ✅ **Fase 1: Expansión de Bancos Españoles — 00 Seeds Bank y Sweet Seeds (v143):**
    - **Incorporación de 9 Variedades Fotoperiódicas Ricas en THC:**
      * *00 Seeds Bank:* `00-kush` (00 Kush, 22% THC), `chocolate-skunk` (Chocolate Skunk, 20% THC), `gorilla-00` (Gorilla, 25% THC), `california-kush` (California Kush, 20% THC), `sweet-soma` (Sweet Soma, 22% THC).
      * *Sweet Seeds:* `gorilla-girl` (Gorilla Girl, 25% THC), `san-fernando-lemon-kush` (San Fernando Lemon Kush, 21% THC), `black-jack` (Black Jack, 21% THC), `sweet-tai` (Sweet Tai, 20% THC).
