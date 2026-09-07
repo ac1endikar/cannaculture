@@ -1,0 +1,1224 @@
+[
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 105.98973333333332,
+    "id": "ripper-kroma",
+    "name": "Kroma",
+    "bank": "Ripper Seeds",
+    "fname": "ripper-kroma-plant.jpg",
+    "size": [
+      800,
+      800
+    ],
+    "kb": 166
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 200.82706666666667,
+    "id": "ripper-candygaz",
+    "name": "CandyGaz",
+    "bank": "Ripper Seeds",
+    "fname": "ripper-candygaz.jpg",
+    "size": [
+      1100,
+      1422
+    ],
+    "kb": 120
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 214.90253333333334,
+    "id": "bsf-lebron-haze",
+    "name": "Lebron Haze",
+    "bank": "BSF Seeds",
+    "fname": "bsf-lebron-haze-fem-real.jpg",
+    "size": [
+      1200,
+      1200
+    ],
+    "kb": 147
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 207.36133333333333,
+    "id": "bsf-lebron-haze-auto",
+    "name": "Lebron Haze XXL Auto",
+    "bank": "BSF Seeds",
+    "fname": "bsf-lebron-haze-auto-real.jpg",
+    "size": [
+      1200,
+      1200
+    ],
+    "kb": 174
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 198.56213333333332,
+    "id": "pyramid-kryptonite",
+    "name": "Kryptonite",
+    "bank": "Pyramid Seeds",
+    "fname": "nirvana-og-kush-flower-hd.jpg",
+    "size": [
+      4800,
+      3202
+    ],
+    "kb": 1758
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 198.56213333333332,
+    "id": "blimburn-bruce-banner-3",
+    "name": "Bruce Banner #3",
+    "bank": "Blimburn Seeds",
+    "fname": "nirvana-og-kush-flower-hd.jpg",
+    "size": [
+      4800,
+      3202
+    ],
+    "kb": 1758
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 220.36773333333335,
+    "id": "blimburn-santa-muerte",
+    "name": "Santa Muerte",
+    "bank": "Blimburn Seeds",
+    "fname": "blimburn-santa-muerte-hd.jpg",
+    "size": [
+      1100,
+      1422
+    ],
+    "kb": 140
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 154.94733333333332,
+    "id": "cannabiogen-taskenti",
+    "name": "Taskenti",
+    "bank": "Cannabiogen",
+    "fname": "cannabiogen-taskenti-bud.jpg",
+    "size": [
+      381,
+      492
+    ],
+    "kb": 68
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 141.16013333333333,
+    "id": "cannabiogen-mangobiche-kush",
+    "name": "Mangobiche Kush",
+    "bank": "Cannabiogen",
+    "fname": "cannabiogen-mangobiche-kush-hd.jpg",
+    "size": [
+      800,
+      800
+    ],
+    "kb": 90
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 200.82706666666667,
+    "id": "ripper-candy-crack",
+    "name": "Candy Crack",
+    "bank": "Ripper Seeds",
+    "fname": "ripper-candygaz.jpg",
+    "size": [
+      1100,
+      1422
+    ],
+    "kb": 120
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 223.6536,
+    "id": "bf-lsd",
+    "name": "LSD",
+    "bank": "Barney's Farm",
+    "fname": "bf-wedding-cake.jpg",
+    "size": [
+      1080,
+      1080
+    ],
+    "kb": 462
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 223.6536,
+    "id": "bf-wedding-cake",
+    "name": "Wedding Cake",
+    "bank": "Barney's Farm",
+    "fname": "bf-wedding-cake.jpg",
+    "size": [
+      1080,
+      1080
+    ],
+    "kb": 462
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 85.92493333333334,
+    "id": "nirvana-gsc",
+    "name": "Girl Scout Cookies",
+    "bank": "Nirvana Seeds",
+    "fname": "nirvana-gsc-fullflower.jpg",
+    "size": [
+      643,
+      643
+    ],
+    "kb": 111
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 198.56213333333332,
+    "id": "nirvana-og-kush",
+    "name": "OG Kush",
+    "bank": "Nirvana Seeds",
+    "fname": "nirvana-og-kush-flower-hd.jpg",
+    "size": [
+      4800,
+      3202
+    ],
+    "kb": 1758
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 157.7888,
+    "id": "nirvana-gelato",
+    "name": "Gelato",
+    "bank": "Nirvana Seeds",
+    "fname": "nirvana-gelato-fullflower.jpg",
+    "size": [
+      643,
+      643
+    ],
+    "kb": 111
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 204.2644,
+    "id": "dna-la-confidential",
+    "name": "LA Confidential",
+    "bank": "DNA Genetics",
+    "fname": "dna-la-confidential.jpg",
+    "size": [
+      1000,
+      1000
+    ],
+    "kb": 95
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 206.3422666666667,
+    "id": "ths-mont-blanc",
+    "name": "Mont Blanc",
+    "bank": "TH Seeds",
+    "fname": "ths-mont-blanc.jpg",
+    "size": [
+      500,
+      700
+    ],
+    "kb": 70
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 183.09146666666666,
+    "id": "cpg-apples-and-bananas",
+    "name": "Apples and Bananas",
+    "bank": "Compound Genetics",
+    "fname": "cpg-apples-and-bananas.jpg",
+    "size": [
+      980,
+      980
+    ],
+    "kb": 366
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 216.86986666666664,
+    "id": "cpg-red-bullz",
+    "name": "Red Bullz",
+    "bank": "Compound Genetics",
+    "fname": "cpg-red-bullz.jpg",
+    "size": [
+      980,
+      735
+    ],
+    "kb": 204
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 220.17306666666664,
+    "id": "raw-stuffed-french-toast",
+    "name": "Stuffed French Toast",
+    "bank": "Raw Genetics",
+    "fname": "raw-stuffed-french-toast.jpg",
+    "size": [
+      1500,
+      1500
+    ],
+    "kb": 395
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 220.17306666666664,
+    "id": "raw-apples-and-french-toast",
+    "name": "Apples & French Toast",
+    "bank": "Raw Genetics",
+    "fname": "raw-apples-and-french-toast.jpg",
+    "size": [
+      1500,
+      1500
+    ],
+    "kb": 395
+  },
+  {
+    "wb_pct": 100.0,
+    "avg_bright": 220.17306666666664,
+    "id": "raw-peeled-banana",
+    "name": "Peeled Banana",
+    "bank": "Raw Genetics",
+    "fname": "raw-apples-and-french-toast.jpg",
+    "size": [
+      1500,
+      1500
+    ],
+    "kb": 395
+  },
+  {
+    "wb_pct": 99.48979591836735,
+    "avg_bright": 142.0653333333333,
+    "id": "eth-lilac-diesel",
+    "name": "Lilac Diesel",
+    "bank": "Ethos Genetics",
+    "fname": "eth-lilac-diesel.jpg",
+    "size": [
+      3000,
+      3000
+    ],
+    "kb": 1797
+  },
+  {
+    "wb_pct": 98.9795918367347,
+    "avg_bright": 247.0332,
+    "id": "aceseeds-malawi",
+    "name": "Malawi",
+    "bank": "ACE Seeds",
+    "fname": "aceseeds-super-malawi-haze-bud.jpg",
+    "size": [
+      969,
+      817
+    ],
+    "kb": 107
+  },
+  {
+    "wb_pct": 98.9795918367347,
+    "avg_bright": 247.0332,
+    "id": "aceseeds-super-malawi-haze",
+    "name": "Super Malawi Haze",
+    "bank": "ACE Seeds",
+    "fname": "aceseeds-super-malawi-haze-bud.jpg",
+    "size": [
+      969,
+      817
+    ],
+    "kb": 107
+  },
+  {
+    "wb_pct": 98.9795918367347,
+    "avg_bright": 226.6804,
+    "id": "arc-memory-loss",
+    "name": "Memory Loss",
+    "bank": "Archive Seed Bank",
+    "fname": "arc-memory-loss.jpg",
+    "size": [
+      1024,
+      1024
+    ],
+    "kb": 197
+  },
+  {
+    "wb_pct": 95.40816326530613,
+    "avg_bright": 225.16333333333336,
+    "id": "dinafem-sweet-grapefruit",
+    "name": "Sweet Deep Grapefruit",
+    "bank": "Dinafem Seeds",
+    "fname": "dinafem-sweet-grapefruit.jpg",
+    "size": [
+      700,
+      800
+    ],
+    "kb": 99
+  },
+  {
+    "wb_pct": 89.28571428571429,
+    "avg_bright": 214.71706666666665,
+    "id": "blimburn-chocolopez",
+    "name": "Chocolopez",
+    "bank": "Blimburn Seeds",
+    "fname": "blimburn-chocolopez-hd.jpg",
+    "size": [
+      600,
+      600
+    ],
+    "kb": 109
+  },
+  {
+    "wb_pct": 89.28571428571429,
+    "avg_bright": 200.43426666666667,
+    "id": "rqs-blue-mystic",
+    "name": "Blue Mystic",
+    "bank": "Royal Queen Seeds",
+    "fname": "rqs-blue-mystic.jpg",
+    "size": [
+      700,
+      800
+    ],
+    "kb": 167
+  },
+  {
+    "wb_pct": 89.28571428571429,
+    "avg_bright": 200.8612,
+    "id": "ss-bigdevil-xl",
+    "name": "Big Devil XL Auto",
+    "bank": "Sweet Seeds",
+    "fname": "sweet-big-devil-xl.jpg",
+    "size": [
+      581,
+      664
+    ],
+    "kb": 96
+  },
+  {
+    "wb_pct": 88.77551020408163,
+    "avg_bright": 204.4552,
+    "id": "00s-cheese-xl",
+    "name": "Cheese XL Auto",
+    "bank": "00 Seeds Bank",
+    "fname": "00s-critical-mass.jpg",
+    "size": [
+      670,
+      765
+    ],
+    "kb": 114
+  },
+  {
+    "wb_pct": 88.77551020408163,
+    "avg_bright": 204.4552,
+    "id": "00s-critical-mass",
+    "name": "Critical Mass CBD",
+    "bank": "00 Seeds Bank",
+    "fname": "00s-critical-mass.jpg",
+    "size": [
+      670,
+      765
+    ],
+    "kb": 114
+  },
+  {
+    "wb_pct": 87.75510204081633,
+    "avg_bright": 198.43186666666668,
+    "id": "dp-auto-mazar",
+    "name": "Auto Mazar",
+    "bank": "Dutch Passion",
+    "fname": "dp-auto-mazar.jpg",
+    "size": [
+      552,
+      631
+    ],
+    "kb": 90
+  },
+  {
+    "wb_pct": 87.24489795918367,
+    "avg_bright": 175.10466666666667,
+    "id": "ss-black-cream-auto",
+    "name": "Black Cream Auto",
+    "bank": "Sweet Seeds",
+    "fname": "sweet-black-cream-auto.jpg",
+    "size": [
+      700,
+      800
+    ],
+    "kb": 178
+  },
+  {
+    "wb_pct": 86.22448979591837,
+    "avg_bright": 212.50026666666665,
+    "id": "dna-the-og-18",
+    "name": "The OG #18",
+    "bank": "DNA Genetics",
+    "fname": "dna-the-og-18.jpg",
+    "size": [
+      800,
+      914
+    ],
+    "kb": 273
+  },
+  {
+    "wb_pct": 86.22448979591837,
+    "avg_bright": 212.50026666666665,
+    "id": "dna-gmo-kosher",
+    "name": "GMO Kosher",
+    "bank": "DNA Genetics",
+    "fname": "dna-the-og-18.jpg",
+    "size": [
+      800,
+      914
+    ],
+    "kb": 273
+  },
+  {
+    "wb_pct": 85.71428571428571,
+    "avg_bright": 207.59026666666668,
+    "id": "cannabiogen-nepal-jam",
+    "name": "Nepal Jam",
+    "bank": "Cannabiogen",
+    "fname": "cannabiogen-nepal-jam-hd.jpg",
+    "size": [
+      800,
+      914
+    ],
+    "kb": 274
+  },
+  {
+    "wb_pct": 85.20408163265306,
+    "avg_bright": 180.7628,
+    "id": "dp-mazar",
+    "name": "Mazar",
+    "bank": "Dutch Passion",
+    "fname": "dp-mazar.jpg",
+    "size": [
+      577,
+      659
+    ],
+    "kb": 125
+  },
+  {
+    "wb_pct": 84.6938775510204,
+    "avg_bright": 204.92533333333333,
+    "id": "ss-crystal-candy",
+    "name": "Crystal Candy",
+    "bank": "Sweet Seeds",
+    "fname": "sweet-crystal-candy.jpg",
+    "size": [
+      587,
+      670
+    ],
+    "kb": 113
+  },
+  {
+    "wb_pct": 84.18367346938776,
+    "avg_bright": 216.16146666666666,
+    "id": "dna-24k-gold",
+    "name": "24K Gold",
+    "bank": "DNA Genetics",
+    "fname": "dna-24k-gold.jpg",
+    "size": [
+      800,
+      914
+    ],
+    "kb": 242
+  },
+  {
+    "wb_pct": 84.18367346938776,
+    "avg_bright": 216.16146666666666,
+    "id": "dna-sleestack",
+    "name": "Sleestack",
+    "bank": "DNA Genetics",
+    "fname": "dna-24k-gold.jpg",
+    "size": [
+      800,
+      914
+    ],
+    "kb": 242
+  },
+  {
+    "wb_pct": 83.6734693877551,
+    "avg_bright": 196.114,
+    "id": "ss-sweet-amnesia-haze",
+    "name": "Sweet Amnesia Haze",
+    "bank": "Sweet Seeds",
+    "fname": "sweet-amnesia-haze.jpg",
+    "size": [
+      700,
+      799
+    ],
+    "kb": 196
+  },
+  {
+    "wb_pct": 83.6734693877551,
+    "avg_bright": 206.83613333333332,
+    "id": "dna-tangie",
+    "name": "Tangie",
+    "bank": "DNA Genetics",
+    "fname": "dna-tangie.jpg",
+    "size": [
+      800,
+      914
+    ],
+    "kb": 233
+  },
+  {
+    "wb_pct": 83.6734693877551,
+    "avg_bright": 206.83613333333332,
+    "id": "dna-sour-tangie",
+    "name": "Sour Tangie",
+    "bank": "DNA Genetics",
+    "fname": "dna-tangie.jpg",
+    "size": [
+      800,
+      914
+    ],
+    "kb": 233
+  },
+  {
+    "wb_pct": 82.6530612244898,
+    "avg_bright": 198.40053333333333,
+    "id": "rqs-purple-queen",
+    "name": "Purple Queen",
+    "bank": "Royal Queen Seeds",
+    "fname": "rqs-purple-queen.jpg",
+    "size": [
+      800,
+      914
+    ],
+    "kb": 257
+  },
+  {
+    "wb_pct": 82.6530612244898,
+    "avg_bright": 194.86253333333332,
+    "id": "wls-white-diesel",
+    "name": "White Diesel",
+    "bank": "White Label Seed Co.",
+    "fname": "wls-white-diesel.jpg",
+    "size": [
+      800,
+      800
+    ],
+    "kb": 142
+  },
+  {
+    "wb_pct": 81.63265306122449,
+    "avg_bright": 199.20226666666667,
+    "id": "phil-critical-sensi-star",
+    "name": "Critical Sensi Star",
+    "bank": "Philosopher Seeds",
+    "fname": "philo-critical-sensi-star.jpg",
+    "size": [
+      700,
+      800
+    ],
+    "kb": 191
+  },
+  {
+    "wb_pct": 81.12244897959184,
+    "avg_bright": 202.77413333333334,
+    "id": "blimburn-mamba-negra",
+    "name": "Mamba Negra",
+    "bank": "Blimburn Seeds",
+    "fname": "blimburn-mamba-negra-hd.jpg",
+    "size": [
+      600,
+      600
+    ],
+    "kb": 117
+  },
+  {
+    "wb_pct": 81.12244897959184,
+    "avg_bright": 168.43146666666667,
+    "id": "heavyweight-budzilla",
+    "name": "Budzilla",
+    "bank": "Heavyweight Seeds",
+    "fname": "heavyweight-budzilla-bud.jpg",
+    "size": [
+      904,
+      904
+    ],
+    "kb": 176
+  },
+  {
+    "wb_pct": 81.12244897959184,
+    "avg_bright": 168.43146666666667,
+    "id": "heavyweight-lemon-cake",
+    "name": "Lemon Cake",
+    "bank": "Heavyweight Seeds",
+    "fname": "heavyweight-budzilla-bud.jpg",
+    "size": [
+      904,
+      904
+    ],
+    "kb": 176
+  },
+  {
+    "wb_pct": 81.12244897959184,
+    "avg_bright": 200.22986666666668,
+    "id": "tfd-voyager",
+    "name": "Voyager",
+    "bank": "The Flying Dutchmen",
+    "fname": "tfd-voyager.jpg",
+    "size": [
+      800,
+      934
+    ],
+    "kb": 235
+  },
+  {
+    "wb_pct": 80.61224489795919,
+    "avg_bright": 208.0084,
+    "id": "bf-acapulco-gold",
+    "name": "Acapulco Gold",
+    "bank": "Barney's Farm",
+    "fname": "bf-acapulco-gold.jpg",
+    "size": [
+      800,
+      914
+    ],
+    "kb": 223
+  },
+  {
+    "wb_pct": 80.61224489795919,
+    "avg_bright": 189.86733333333333,
+    "id": "phil-bubbas-gift",
+    "name": "Bubba's Gift",
+    "bank": "Philosopher Seeds",
+    "fname": "philo-bubbas-gift.jpg",
+    "size": [
+      600,
+      685
+    ],
+    "kb": 158
+  },
+  {
+    "wb_pct": 80.10204081632652,
+    "avg_bright": 181.03973333333332,
+    "id": "dp-frisian-dew",
+    "name": "Frisian Dew",
+    "bank": "Dutch Passion",
+    "fname": "dp-frisian-dew.jpg",
+    "size": [
+      566,
+      647
+    ],
+    "kb": 140
+  },
+  {
+    "wb_pct": 79.08163265306123,
+    "avg_bright": 217.96706666666665,
+    "id": "ripper-double-glock",
+    "name": "Double Glock",
+    "bank": "Ripper Seeds",
+    "fname": "ripper-double-glock-plant.jpg",
+    "size": [
+      800,
+      934
+    ],
+    "kb": 108
+  },
+  {
+    "wb_pct": 79.08163265306123,
+    "avg_bright": 175.60386666666668,
+    "id": "rqs-og-kush-auto",
+    "name": "OG Kush Auto",
+    "bank": "Royal Queen Seeds",
+    "fname": "rqs-og-kush-auto.jpg",
+    "size": [
+      573,
+      654
+    ],
+    "kb": 149
+  },
+  {
+    "wb_pct": 78.06122448979592,
+    "avg_bright": 190.5992,
+    "id": "blimburn-girl-scout-cookies",
+    "name": "Girl Scout Cookies",
+    "bank": "Blimburn Seeds",
+    "fname": "blimburn-girl-scout-cookies-official.jpg",
+    "size": [
+      600,
+      600
+    ],
+    "kb": 108
+  },
+  {
+    "wb_pct": 78.06122448979592,
+    "avg_bright": 177.386,
+    "id": "heavyweight-dream-machine",
+    "name": "Dream Machine",
+    "bank": "Heavyweight Seeds",
+    "fname": "heavyweight-dream-machine-bud.jpg",
+    "size": [
+      600,
+      600
+    ],
+    "kb": 109
+  },
+  {
+    "wb_pct": 77.55102040816327,
+    "avg_bright": 189.25013333333334,
+    "id": "wls-super-skunk",
+    "name": "Super Skunk",
+    "bank": "White Label Seed Co.",
+    "fname": "wls-super-skunk.jpg",
+    "size": [
+      1000,
+      1000
+    ],
+    "kb": 290
+  },
+  {
+    "wb_pct": 77.04081632653062,
+    "avg_bright": 194.4252,
+    "id": "bf-pineapple-chunk",
+    "name": "Pineapple Chunk",
+    "bank": "Barney's Farm",
+    "fname": "bf-pineapple-chunk.jpg",
+    "size": [
+      800,
+      914
+    ],
+    "kb": 303
+  },
+  {
+    "wb_pct": 76.53061224489795,
+    "avg_bright": 193.8088,
+    "id": "heavyweight-monster-profit",
+    "name": "Monster Profit",
+    "bank": "Heavyweight Seeds",
+    "fname": "heavyweight-monster-profit-bud.jpg",
+    "size": [
+      480,
+      480
+    ],
+    "kb": 78
+  },
+  {
+    "wb_pct": 76.53061224489795,
+    "avg_bright": 165.28213333333332,
+    "id": "serious-kali-bubba",
+    "name": "Kali Bubba",
+    "bank": "Serious Seeds",
+    "fname": "serious-kali-bubba-official.jpg",
+    "size": [
+      3566,
+      3123
+    ],
+    "kb": 2599
+  },
+  {
+    "wb_pct": 75.0,
+    "avg_bright": 168.34813333333332,
+    "id": "wls-orange-bud",
+    "name": "Orange Bud",
+    "bank": "White Label Seed Co.",
+    "fname": "wls-orange-bud.jpg",
+    "size": [
+      500,
+      700
+    ],
+    "kb": 146
+  },
+  {
+    "wb_pct": 74.48979591836735,
+    "avg_bright": 164.87706666666668,
+    "id": "positronics-claustrum",
+    "name": "Claustrum",
+    "bank": "Positronics Seeds",
+    "fname": "positronics-claustrum-bud.jpg",
+    "size": [
+      381,
+      492
+    ],
+    "kb": 78
+  },
+  {
+    "wb_pct": 74.48979591836735,
+    "avg_bright": 188.318,
+    "id": "heavyweight-goldmine",
+    "name": "Goldmine",
+    "bank": "Heavyweight Seeds",
+    "fname": "heavyweight-goldmine-bud.jpg",
+    "size": [
+      1800,
+      1800
+    ],
+    "kb": 838
+  },
+  {
+    "wb_pct": 73.9795918367347,
+    "avg_bright": 175.12346666666667,
+    "id": "ths-burmese-kush",
+    "name": "Burmese Kush",
+    "bank": "TH Seeds",
+    "fname": "ths-burmese-kush.jpg",
+    "size": [
+      412,
+      500
+    ],
+    "kb": 73
+  },
+  {
+    "wb_pct": 71.93877551020408,
+    "avg_bright": 180.568,
+    "id": "rqs-royal-gorilla",
+    "name": "Royal Gorilla",
+    "bank": "Royal Queen Seeds",
+    "fname": "rqs-royal-gorilla-bud.jpg",
+    "size": [
+      600,
+      600
+    ],
+    "kb": 264
+  },
+  {
+    "wb_pct": 71.93877551020408,
+    "avg_bright": 180.568,
+    "id": "bsf-gorilla-glue-4",
+    "name": "Gorilla Glue #4",
+    "bank": "BSF Seeds",
+    "fname": "bsf-gorilla-glue-4.jpg",
+    "size": [
+      600,
+      600
+    ],
+    "kb": 264
+  },
+  {
+    "wb_pct": 71.93877551020408,
+    "avg_bright": 180.568,
+    "id": "bsf-el-gaucho-fast",
+    "name": "El Gaucho (Faster)",
+    "bank": "BSF Seeds",
+    "fname": "bsf-gorilla-glue-4.jpg",
+    "size": [
+      600,
+      600
+    ],
+    "kb": 264
+  },
+  {
+    "wb_pct": 71.93877551020408,
+    "avg_bright": 180.568,
+    "id": "blimburn-gorilla-glue-4",
+    "name": "Gorilla Glue #4",
+    "bank": "Blimburn Seeds",
+    "fname": "bsf-gorilla-glue-4.jpg",
+    "size": [
+      600,
+      600
+    ],
+    "kb": 264
+  },
+  {
+    "wb_pct": 71.93877551020408,
+    "avg_bright": 180.568,
+    "id": "rqs-honey-cream",
+    "name": "Honey Cream",
+    "bank": "Royal Queen Seeds",
+    "fname": "rqs-royal-gorilla-bud.jpg",
+    "size": [
+      600,
+      600
+    ],
+    "kb": 264
+  },
+  {
+    "wb_pct": 69.89795918367348,
+    "avg_bright": 152.74213333333333,
+    "id": "sdm-mama-thai",
+    "name": "Mama Thai",
+    "bank": "Seedsman",
+    "fname": "sdm-mama-thai-hd.jpg",
+    "size": [
+      1100,
+      1422
+    ],
+    "kb": 187
+  },
+  {
+    "wb_pct": 66.83673469387756,
+    "avg_bright": 192.92746666666667,
+    "id": "serious-chronic",
+    "name": "Chronic",
+    "bank": "Serious Seeds",
+    "fname": "serious-chronic-official.jpg",
+    "size": [
+      849,
+      977
+    ],
+    "kb": 342
+  },
+  {
+    "wb_pct": 63.26530612244898,
+    "avg_bright": 113.93106666666668,
+    "id": "ripper-pink-rozay",
+    "name": "Pink Rozay",
+    "bank": "Ripper Seeds",
+    "fname": "ripper-radical-juice-bud.jpg",
+    "size": [
+      500,
+      700
+    ],
+    "kb": 299
+  },
+  {
+    "wb_pct": 60.71428571428571,
+    "avg_bright": 157.1368,
+    "id": "heavyweight-green-ninja",
+    "name": "Green Ninja",
+    "bank": "Heavyweight Seeds",
+    "fname": "heavyweight-green-ninja-bud.jpg",
+    "size": [
+      420,
+      420
+    ],
+    "kb": 91
+  },
+  {
+    "wb_pct": 58.673469387755105,
+    "avg_bright": 160.72,
+    "id": "blimburn-bcn-diesel",
+    "name": "Bcn Diesel",
+    "bank": "Blimburn Seeds",
+    "fname": "heavyweight-superb-og-bud.jpg",
+    "size": [
+      1800,
+      1800
+    ],
+    "kb": 674
+  },
+  {
+    "wb_pct": 58.673469387755105,
+    "avg_bright": 160.72,
+    "id": "heavyweight-fruit-punch",
+    "name": "Fruit Punch",
+    "bank": "Heavyweight Seeds",
+    "fname": "heavyweight-superb-og-bud.jpg",
+    "size": [
+      1800,
+      1800
+    ],
+    "kb": 674
+  },
+  {
+    "wb_pct": 58.673469387755105,
+    "avg_bright": 160.72,
+    "id": "heavyweight-superb-og",
+    "name": "Superb OG",
+    "bank": "Heavyweight Seeds",
+    "fname": "heavyweight-superb-og-bud.jpg",
+    "size": [
+      1800,
+      1800
+    ],
+    "kb": 674
+  },
+  {
+    "wb_pct": 58.673469387755105,
+    "avg_bright": 160.72,
+    "id": "heavyweight-strawberry-cake",
+    "name": "Strawberry Cake",
+    "bank": "Heavyweight Seeds",
+    "fname": "heavyweight-superb-og-bud.jpg",
+    "size": [
+      1800,
+      1800
+    ],
+    "kb": 674
+  },
+  {
+    "wb_pct": 57.14285714285714,
+    "avg_bright": 165.13,
+    "id": "bsf-moby-d",
+    "name": "Moby-D",
+    "bank": "BSF Seeds",
+    "fname": "official/bsf-seeds-moby-d-feminizada.webp",
+    "size": [
+      600,
+      600
+    ],
+    "kb": 70
+  },
+  {
+    "wb_pct": 55.61224489795919,
+    "avg_bright": 158.89226666666667,
+    "id": "soma-amnesia-haze",
+    "name": "Amnesia Haze",
+    "bank": "Soma Seeds",
+    "fname": "soma-amnesia-haze.jpg",
+    "size": [
+      500,
+      700
+    ],
+    "kb": 166
+  },
+  {
+    "wb_pct": 55.10204081632652,
+    "avg_bright": 166.67706666666666,
+    "id": "ripper-sideral",
+    "name": "Sideral",
+    "bank": "Ripper Seeds",
+    "fname": "ripper-sideral-official.jpg",
+    "size": [
+      700,
+      700
+    ],
+    "kb": 124
+  },
+  {
+    "wb_pct": 53.57142857142857,
+    "avg_bright": 129.2144,
+    "id": "hso-blue-fire",
+    "name": "Blue Fire",
+    "bank": "Humboldt Seed",
+    "fname": "hso-blue-fire-4k.jpg",
+    "size": [
+      1000,
+      1000
+    ],
+    "kb": 213
+  },
+  {
+    "wb_pct": 53.06122448979592,
+    "avg_bright": 91.74026666666666,
+    "id": "positronics-critical-47",
+    "name": "Critical 47",
+    "bank": "Positronics Seeds",
+    "fname": "positronics-critical-47-bud.jpg",
+    "size": [
+      381,
+      492
+    ],
+    "kb": 75
+  },
+  {
+    "wb_pct": 53.06122448979592,
+    "avg_bright": 80.94906666666667,
+    "id": "positronics-somango-47",
+    "name": "Somango 47",
+    "bank": "Positronics Seeds",
+    "fname": "positronics-somango-47-bud.jpg",
+    "size": [
+      381,
+      492
+    ],
+    "kb": 71
+  },
+  {
+    "wb_pct": 53.06122448979592,
+    "avg_bright": 80.94906666666667,
+    "id": "positronics-purple-haze",
+    "name": "Purple Haze #1",
+    "bank": "Positronics Seeds",
+    "fname": "positronics-somango-47-bud.jpg",
+    "size": [
+      381,
+      492
+    ],
+    "kb": 71
+  },
+  {
+    "wb_pct": 53.06122448979592,
+    "avg_bright": 154.61893333333333,
+    "id": "positronics-cum-laude",
+    "name": "Cum Laude",
+    "bank": "Positronics Seeds",
+    "fname": "positronics-cum-laude-bud.jpg",
+    "size": [
+      381,
+      492
+    ],
+    "kb": 66
+  },
+  {
+    "wb_pct": 53.06122448979592,
+    "avg_bright": 95.6524,
+    "id": "positronics-caramelice",
+    "name": "Caramelice",
+    "bank": "Positronics Seeds",
+    "fname": "positronics-caramelice-bud.jpg",
+    "size": [
+      381,
+      492
+    ],
+    "kb": 73
+  },
+  {
+    "wb_pct": 53.06122448979592,
+    "avg_bright": 104.98306666666667,
+    "id": "positronics-amnesia-mystery",
+    "name": "Amnesia Mystery",
+    "bank": "Positronics Seeds",
+    "fname": "positronics-amnesia-mystery-bud.jpg",
+    "size": [
+      381,
+      492
+    ],
+    "kb": 67
+  },
+  {
+    "wb_pct": 53.06122448979592,
+    "avg_bright": 81.0512,
+    "id": "positronics-black-widow",
+    "name": "Black Widow",
+    "bank": "Positronics Seeds",
+    "fname": "positronics-black-widow-bud.jpg",
+    "size": [
+      381,
+      492
+    ],
+    "kb": 80
+  },
+  {
+    "wb_pct": 53.06122448979592,
+    "avg_bright": 88.07173333333334,
+    "id": "positronics-supercheese",
+    "name": "Supercheese",
+    "bank": "Positronics Seeds",
+    "fname": "positronics-supercheese-bud.jpg",
+    "size": [
+      381,
+      492
+    ],
+    "kb": 68
+  },
+  {
+    "wb_pct": 50.51020408163265,
+    "avg_bright": 93.8556,
+    "id": "serious-warlock",
+    "name": "Warlock",
+    "bank": "Serious Seeds",
+    "fname": "serious-warlock-official.jpg",
+    "size": [
+      1657,
+      1310
+    ],
+    "kb": 701
+  },
+  {
+    "wb_pct": 50.0,
+    "avg_bright": 151.37066666666666,
+    "id": "wls-double-gum",
+    "name": "Double Gum",
+    "bank": "White Label Seed Co.",
+    "fname": "wls-double-gum.jpg",
+    "size": [
+      500,
+      700
+    ],
+    "kb": 171
+  },
+  {
+    "wb_pct": 45.40816326530612,
+    "avg_bright": 179.61386666666667,
+    "id": "serious-kali-mist",
+    "name": "Kali Mist",
+    "bank": "Serious Seeds",
+    "fname": "serious-kali-mist-bud-hd.jpg",
+    "size": [
+      775,
+      1024
+    ],
+    "kb": 353
+  }
+]

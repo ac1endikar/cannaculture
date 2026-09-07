@@ -1,0 +1,1762 @@
+[
+  {
+    "id": "ripper-double-glock",
+    "name": "Double Glock",
+    "bank": "Ripper Seeds",
+    "old_image": "img/ripper-double-glock-bud-hd.jpg",
+    "new_image": "img/ripper-double-glock-bud-real.jpg",
+    "old_dim": [
+      800,
+      934
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial Ripper Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ripper-candygaz",
+    "name": "CandyGaz",
+    "bank": "Ripper Seeds",
+    "old_image": "img/ripper-candygaz-bud-hd.jpg",
+    "new_image": "img/ripper-candygaz-bud-real.jpg",
+    "old_dim": [
+      1100,
+      1422
+    ],
+    "new_dim": [
+      1100,
+      1100
+    ],
+    "source": "Catálogo Oficial Ripper Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "bf-pineapple-express",
+    "name": "Pineapple Express",
+    "bank": "Barney",
+    "old_image": "img/bf-pineapple-express-official.jpg",
+    "new_image": "img/bf-pineapple-express-bud-real.jpg",
+    "old_dim": [
+      1000,
+      1200
+    ],
+    "new_dim": [
+      1000,
+      1000
+    ],
+    "source": "Catálogo Oficial Barney (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "bf-sherbet-queen",
+    "name": "Sherbet Queen",
+    "bank": "Barney",
+    "old_image": "img/bf-sherbet-queen-plant.jpg",
+    "new_image": "img/bf-sherbet-queen-bud-real.jpg",
+    "old_dim": [
+      600,
+      800
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Barney (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "sweet-tropicanna-poison",
+    "name": "Tropicanna Poison",
+    "bank": "Sweet Seeds",
+    "old_image": "img/sweet-tropicanna-poison-plant.jpg",
+    "new_image": "img/sweet-tropicanna-poison-bud-real.jpg",
+    "old_dim": [
+      800,
+      914
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial Sweet Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "rqs-northern-light",
+    "name": "Northern Light",
+    "bank": "Royal Queen Seeds",
+    "old_image": "img/northern-lights-real-hd.jpg",
+    "new_image": "img/rqs-northern-light-bud-real.jpg",
+    "old_dim": [
+      650,
+      800
+    ],
+    "new_dim": [
+      650,
+      650
+    ],
+    "source": "Catálogo Oficial Royal Queen Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "rqs-wedding-glue",
+    "name": "Wedding Glue",
+    "bank": "Royal Queen Seeds",
+    "old_image": "img/rqs-wedding-glue-plant.jpg",
+    "new_image": "img/rqs-wedding-glue-bud-real.jpg",
+    "old_dim": [
+      3096,
+      4128
+    ],
+    "new_dim": [
+      3096,
+      3096
+    ],
+    "source": "Catálogo Oficial Royal Queen Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "dp-passion-fruit",
+    "name": "Passion Fruit",
+    "bank": "Dutch Passion",
+    "old_image": "img/dp-passion-fruit-flowering.jpg",
+    "new_image": "img/dp-passion-fruit-bud-real.jpg",
+    "old_dim": [
+      1800,
+      1681
+    ],
+    "new_dim": [
+      1681,
+      1681
+    ],
+    "source": "Catálogo Oficial Dutch Passion (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "philo-blues",
+    "name": "The Blues",
+    "bank": "Philosopher Seeds",
+    "old_image": "img/philo-blues-bud.jpg",
+    "new_image": "img/philo-blues-bud-real.jpg",
+    "old_dim": [
+      917,
+      986
+    ],
+    "new_dim": [
+      917,
+      917
+    ],
+    "source": "Catálogo Oficial Philosopher Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "oo-super-skunk",
+    "name": "Super Skunk",
+    "bank": "00 Seeds Bank",
+    "old_image": "img/oo-super-skunk-flowering.jpg",
+    "new_image": "img/oo-super-skunk-bud-real.jpg",
+    "old_dim": [
+      800,
+      914
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial 00 Seeds Bank (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "bsf-el-gaucho-fast",
+    "name": "El Gaucho (Faster)",
+    "bank": "BSF Seeds",
+    "old_image": "img/bsf-el-gaucho-fast-bud-hd.jpg",
+    "new_image": "img/bsf-el-gaucho-fast-bud-real.jpg",
+    "old_dim": [
+      601,
+      600
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial BSF Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "dinafem-sweet-grapefruit",
+    "name": "Sweet Deep Grapefruit",
+    "bank": "Dinafem Seeds",
+    "old_image": "img/dinafem-sweet-grapefruit-bud-hd.jpg",
+    "new_image": "img/dinafem-sweet-grapefruit-bud-real.jpg",
+    "old_dim": [
+      700,
+      800
+    ],
+    "new_dim": [
+      700,
+      700
+    ],
+    "source": "Catálogo Oficial Dinafem Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "positronics-critical-47",
+    "name": "Critical 47",
+    "bank": "Positronics Seeds",
+    "old_image": "img/positronics-critical-47-bud-hd.jpg",
+    "new_image": "img/positronics-critical-47-bud-real.jpg",
+    "old_dim": [
+      600,
+      774
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Positronics Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "positronics-somango-47",
+    "name": "Somango 47",
+    "bank": "Positronics Seeds",
+    "old_image": "img/positronics-somango-47-bud-hd.jpg",
+    "new_image": "img/positronics-somango-47-bud-real.jpg",
+    "old_dim": [
+      600,
+      774
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Positronics Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "positronics-purple-haze",
+    "name": "Purple Haze #1",
+    "bank": "Positronics Seeds",
+    "old_image": "img/positronics-purple-haze-bud-hd.jpg",
+    "new_image": "img/positronics-purple-haze-bud-real.jpg",
+    "old_dim": [
+      600,
+      774
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Positronics Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "positronics-claustrum",
+    "name": "Claustrum",
+    "bank": "Positronics Seeds",
+    "old_image": "img/positronics-claustrum-bud-hd.jpg",
+    "new_image": "img/positronics-claustrum-bud-real.jpg",
+    "old_dim": [
+      600,
+      748
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Positronics Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "positronics-cum-laude",
+    "name": "Cum Laude",
+    "bank": "Positronics Seeds",
+    "old_image": "img/positronics-cum-laude-bud-hd.jpg",
+    "new_image": "img/positronics-cum-laude-bud-real.jpg",
+    "old_dim": [
+      600,
+      774
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Positronics Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "positronics-caramelice",
+    "name": "Caramelice",
+    "bank": "Positronics Seeds",
+    "old_image": "img/positronics-caramelice-bud-hd.jpg",
+    "new_image": "img/positronics-caramelice-bud-real.jpg",
+    "old_dim": [
+      600,
+      774
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Positronics Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "positronics-amnesia-mystery",
+    "name": "Amnesia Mystery",
+    "bank": "Positronics Seeds",
+    "old_image": "img/positronics-amnesia-mystery-bud-hd.jpg",
+    "new_image": "img/positronics-amnesia-mystery-bud-real.jpg",
+    "old_dim": [
+      600,
+      774
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Positronics Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "positronics-black-widow",
+    "name": "Black Widow",
+    "bank": "Positronics Seeds",
+    "old_image": "img/positronics-black-widow-bud-hd.jpg",
+    "new_image": "img/positronics-black-widow-bud-real.jpg",
+    "old_dim": [
+      600,
+      774
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Positronics Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "positronics-supercheese",
+    "name": "Supercheese",
+    "bank": "Positronics Seeds",
+    "old_image": "img/positronics-supercheese-bud-hd.jpg",
+    "new_image": "img/positronics-supercheese-bud-real.jpg",
+    "old_dim": [
+      600,
+      774
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Positronics Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "aceseeds-malawi",
+    "name": "Malawi",
+    "bank": "ACE Seeds",
+    "old_image": "img/aceseeds-malawi-bud-hd.jpg",
+    "new_image": "img/aceseeds-malawi-bud-real.jpg",
+    "old_dim": [
+      969,
+      817
+    ],
+    "new_dim": [
+      817,
+      817
+    ],
+    "source": "Catálogo Oficial ACE Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "aceseeds-super-malawi-haze",
+    "name": "Super Malawi Haze",
+    "bank": "ACE Seeds",
+    "old_image": "img/aceseeds-super-malawi-haze-bud-hd.jpg",
+    "new_image": "img/aceseeds-super-malawi-haze-bud-real.jpg",
+    "old_dim": [
+      969,
+      817
+    ],
+    "new_dim": [
+      817,
+      817
+    ],
+    "source": "Catálogo Oficial ACE Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "blimburn-gorilla-glue-4",
+    "name": "Gorilla Glue #4",
+    "bank": "Blimburn Seeds",
+    "old_image": "img/blimburn-gorilla-glue-4-bud-hd.jpg",
+    "new_image": "img/blimburn-gorilla-glue-4-bud-real.jpg",
+    "old_dim": [
+      600,
+      774
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Blimburn Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "blimburn-santa-muerte",
+    "name": "Santa Muerte",
+    "bank": "Blimburn Seeds",
+    "old_image": "img/blimburn-santa-muerte-bud-hd.jpg",
+    "new_image": "img/blimburn-santa-muerte-bud-real.jpg",
+    "old_dim": [
+      1100,
+      1422
+    ],
+    "new_dim": [
+      1100,
+      1100
+    ],
+    "source": "Catálogo Oficial Blimburn Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "blimburn-bcn-diesel",
+    "name": "Bcn Diesel",
+    "bank": "Blimburn Seeds",
+    "old_image": "img/blimburn-bcn-diesel-bud-hd.jpg",
+    "new_image": "img/blimburn-bcn-diesel-bud-real.jpg",
+    "old_dim": [
+      600,
+      774
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Blimburn Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "genehtik-super-silver-bilbo",
+    "name": "Super Silver Bilbo",
+    "bank": "Genehtik Seeds",
+    "old_image": "img/genehtik-super-silver-bilbo-bud.jpg",
+    "new_image": "img/genehtik-super-silver-bilbo-bud-real.jpg",
+    "old_dim": [
+      709,
+      779
+    ],
+    "new_dim": [
+      709,
+      709
+    ],
+    "source": "Catálogo Oficial Genehtik Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "genehtik-zuri-widow",
+    "name": "Zuri Widow",
+    "bank": "Genehtik Seeds",
+    "old_image": "img/genehtik-zuri-widow-bud.jpg",
+    "new_image": "img/genehtik-zuri-widow-bud-real.jpg",
+    "old_dim": [
+      673,
+      670
+    ],
+    "new_dim": [
+      670,
+      670
+    ],
+    "source": "Catálogo Oficial Genehtik Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "genehtik-txees-bilbo",
+    "name": "Txees Bilbo",
+    "bank": "Genehtik Seeds",
+    "old_image": "img/genehtik-txees-bilbo-bud.jpg",
+    "new_image": "img/genehtik-txees-bilbo-bud-real.jpg",
+    "old_dim": [
+      642,
+      672
+    ],
+    "new_dim": [
+      642,
+      642
+    ],
+    "source": "Catálogo Oficial Genehtik Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "genehtik-amnesia-bilbo",
+    "name": "Amnesia Bilbo",
+    "bank": "Genehtik Seeds",
+    "old_image": "img/genehtik-amnesia-bilbo-bud.jpg",
+    "new_image": "img/genehtik-amnesia-bilbo-bud-real.jpg",
+    "old_dim": [
+      624,
+      741
+    ],
+    "new_dim": [
+      624,
+      624
+    ],
+    "source": "Catálogo Oficial Genehtik Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "genehtik-northern-lights-x",
+    "name": "Northern Lights X",
+    "bank": "Genehtik Seeds",
+    "old_image": "img/genehtik-northern-lights-x-bud.jpg",
+    "new_image": "img/genehtik-northern-lights-x-bud-real.jpg",
+    "old_dim": [
+      646,
+      652
+    ],
+    "new_dim": [
+      646,
+      646
+    ],
+    "source": "Catálogo Oficial Genehtik Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "genehtik-blubonik",
+    "name": "Blubonik",
+    "bank": "Genehtik Seeds",
+    "old_image": "img/genehtik-blubonik-bud.jpg",
+    "new_image": "img/genehtik-blubonik-bud-real.jpg",
+    "old_dim": [
+      709,
+      758
+    ],
+    "new_dim": [
+      709,
+      709
+    ],
+    "source": "Catálogo Oficial Genehtik Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "genehtik-santa-bilbo",
+    "name": "Santa Bilbo",
+    "bank": "Genehtik Seeds",
+    "old_image": "img/genehtik-santa-bilbo-bud.jpg",
+    "new_image": "img/genehtik-santa-bilbo-bud-real.jpg",
+    "old_dim": [
+      645,
+      673
+    ],
+    "new_dim": [
+      645,
+      645
+    ],
+    "source": "Catálogo Oficial Genehtik Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "heavyweight-money-bush",
+    "name": "Money Bush",
+    "bank": "Heavyweight Seeds",
+    "old_image": "img/heavyweight-money-bush-hd.jpg",
+    "new_image": "img/heavyweight-money-bush-bud-real.jpg",
+    "old_dim": [
+      750,
+      600
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Heavyweight Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "heavyweight-strawberry-cake",
+    "name": "Strawberry Cake",
+    "bank": "Heavyweight Seeds",
+    "old_image": "img/heavyweight-strawberry-cake-bud-hd.jpg",
+    "new_image": "img/heavyweight-strawberry-cake-bud-real.jpg",
+    "old_dim": [
+      600,
+      774
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Heavyweight Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "cannabiogen-taskenti",
+    "name": "Taskenti",
+    "bank": "Cannabiogen",
+    "old_image": "img/cannabiogen-taskenti-bud-hd.jpg",
+    "new_image": "img/cannabiogen-taskenti-bud-real.jpg",
+    "old_dim": [
+      600,
+      774
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Cannabiogen (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "cannabiogen-peyote-purple",
+    "name": "Peyote Purple",
+    "bank": "Cannabiogen",
+    "old_image": "img/cannabiogen-peyote-purple-hd.jpg",
+    "new_image": "img/cannabiogen-peyote-purple-bud-real.jpg",
+    "old_dim": [
+      800,
+      600
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Cannabiogen (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "cannabiogen-nepal-jam",
+    "name": "Nepal Jam",
+    "bank": "Cannabiogen",
+    "old_image": "img/cannabiogen-nepal-jam-bud-hd.jpg",
+    "new_image": "img/cannabiogen-nepal-jam-bud-real.jpg",
+    "old_dim": [
+      800,
+      914
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial Cannabiogen (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "cannabiogen-jamaica-blue-mountain",
+    "name": "Jamaica Blue Mountain",
+    "bank": "Cannabiogen",
+    "old_image": "img/cannabiogen-jamaica-blue-mountain-bud.jpg",
+    "new_image": "img/cannabiogen-jamaica-blue-mountain-bud-real.jpg",
+    "old_dim": [
+      600,
+      800
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Cannabiogen (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "cannabiogen-hash-fruit",
+    "name": "Hash Fruit",
+    "bank": "Cannabiogen",
+    "old_image": "img/cannabiogen-hash-fruit-bud.jpg",
+    "new_image": "img/cannabiogen-hash-fruit-bud-real.jpg",
+    "old_dim": [
+      1738,
+      1796
+    ],
+    "new_dim": [
+      1738,
+      1738
+    ],
+    "source": "Catálogo Oficial Cannabiogen (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "sensi-jack-herer",
+    "name": "Jack Herer",
+    "bank": "Sensi Seeds",
+    "old_image": "img/sensi-jack-herer-bud.jpg",
+    "new_image": "img/sensi-jack-herer-bud-real.jpg",
+    "old_dim": [
+      650,
+      800
+    ],
+    "new_dim": [
+      650,
+      650
+    ],
+    "source": "Catálogo Oficial Sensi Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "sensi-super-skunk",
+    "name": "Super Skunk",
+    "bank": "Sensi Seeds",
+    "old_image": "img/sensi-super-skunk-bud.jpg",
+    "new_image": "img/sensi-super-skunk-bud-real.jpg",
+    "old_dim": [
+      650,
+      800
+    ],
+    "new_dim": [
+      650,
+      650
+    ],
+    "source": "Catálogo Oficial Sensi Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "sensi-black-domina",
+    "name": "Black Domina",
+    "bank": "Sensi Seeds",
+    "old_image": "img/sensi-black-domina-official.jpg",
+    "new_image": "img/sensi-black-domina-bud-real.jpg",
+    "old_dim": [
+      650,
+      800
+    ],
+    "new_dim": [
+      650,
+      650
+    ],
+    "source": "Catálogo Oficial Sensi Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "sensi-northern-lights",
+    "name": "Northern Lights",
+    "bank": "Sensi Seeds",
+    "old_image": "img/sensi-northern-lights-bud.jpg",
+    "new_image": "img/sensi-northern-lights-bud-real.jpg",
+    "old_dim": [
+      650,
+      800
+    ],
+    "new_dim": [
+      650,
+      650
+    ],
+    "source": "Catálogo Oficial Sensi Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "sensi-hindu-kush",
+    "name": "Hindu Kush",
+    "bank": "Sensi Seeds",
+    "old_image": "img/sensi-hindu-kush-bud.jpg",
+    "new_image": "img/sensi-hindu-kush-bud-real.jpg",
+    "old_dim": [
+      650,
+      800
+    ],
+    "new_dim": [
+      650,
+      650
+    ],
+    "source": "Catálogo Oficial Sensi Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "sensi-skunk-1",
+    "name": "Skunk #1",
+    "bank": "Sensi Seeds",
+    "old_image": "img/sensi-skunk-1-bud.jpg",
+    "new_image": "img/sensi-skunk-1-bud-real.jpg",
+    "old_dim": [
+      650,
+      800
+    ],
+    "new_dim": [
+      650,
+      650
+    ],
+    "source": "Catálogo Oficial Sensi Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "sensi-hash-plant",
+    "name": "Hash Plant",
+    "bank": "Sensi Seeds",
+    "old_image": "img/sensi-hash-plant-bud.jpg",
+    "new_image": "img/sensi-hash-plant-bud-real.jpg",
+    "old_dim": [
+      650,
+      800
+    ],
+    "new_dim": [
+      650,
+      650
+    ],
+    "source": "Catálogo Oficial Sensi Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "sensi-sensi-skunk",
+    "name": "Sensi Skunk",
+    "bank": "Sensi Seeds",
+    "old_image": "img/sensi-sensi-skunk-bud.jpg",
+    "new_image": "img/sensi-sensi-skunk-bud-real.jpg",
+    "old_dim": [
+      650,
+      800
+    ],
+    "new_dim": [
+      650,
+      650
+    ],
+    "source": "Catálogo Oficial Sensi Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ghs-super-lemon-haze",
+    "name": "Super Lemon Haze",
+    "bank": "Green House Seed Co.",
+    "old_image": "img/ghs-super-lemon-haze-hd.jpg",
+    "new_image": "img/ghs-super-lemon-haze-bud-real.jpg",
+    "old_dim": [
+      800,
+      1048
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial Green House Seed Co. (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ghs-super-silver-haze",
+    "name": "Super Silver Haze",
+    "bank": "Green House Seed Co.",
+    "old_image": "img/ghs-super-silver-haze-hd.jpg",
+    "new_image": "img/ghs-super-silver-haze-bud-real.jpg",
+    "old_dim": [
+      800,
+      1048
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial Green House Seed Co. (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ghs-kings-juice",
+    "name": "King",
+    "bank": "Green House Seed Co.",
+    "old_image": "img/ghs-kings-juice-bud.jpg",
+    "new_image": "img/ghs-kings-juice-bud-real.jpg",
+    "old_dim": [
+      800,
+      1048
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial Green House Seed Co. (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "serious-ak-47",
+    "name": "AK-47",
+    "bank": "Serious Seeds",
+    "old_image": "img/serious-ak47-bud-hd.jpg",
+    "new_image": "img/serious-ak-47-bud-real.jpg",
+    "old_dim": [
+      3047,
+      2854
+    ],
+    "new_dim": [
+      2854,
+      2854
+    ],
+    "source": "Catálogo Oficial Serious Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "serious-white-russian",
+    "name": "White Russian",
+    "bank": "Serious Seeds",
+    "old_image": "img/serious-white-russian-bud-hd.jpg",
+    "new_image": "img/serious-white-russian-bud-real.jpg",
+    "old_dim": [
+      775,
+      1024
+    ],
+    "new_dim": [
+      775,
+      775
+    ],
+    "source": "Catálogo Oficial Serious Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "serious-chronic",
+    "name": "Chronic",
+    "bank": "Serious Seeds",
+    "old_image": "img/serious-chronic-bud-hd.jpg",
+    "new_image": "img/serious-chronic-bud-real.jpg",
+    "old_dim": [
+      849,
+      977
+    ],
+    "new_dim": [
+      849,
+      849
+    ],
+    "source": "Catálogo Oficial Serious Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "serious-bubble-gum",
+    "name": "Bubble Gum",
+    "bank": "Serious Seeds",
+    "old_image": "img/serious-bubble-gum-hd.jpg",
+    "new_image": "img/serious-bubble-gum-bud-real.jpg",
+    "old_dim": [
+      775,
+      1024
+    ],
+    "new_dim": [
+      775,
+      775
+    ],
+    "source": "Catálogo Oficial Serious Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "serious-kali-mist",
+    "name": "Kali Mist",
+    "bank": "Serious Seeds",
+    "old_image": "img/serious-kali-mist-bud-hd.jpg",
+    "new_image": "img/serious-kali-mist-bud-real.jpg",
+    "old_dim": [
+      775,
+      1024
+    ],
+    "new_dim": [
+      775,
+      775
+    ],
+    "source": "Catálogo Oficial Serious Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "serious-serious-6",
+    "name": "Serious 6",
+    "bank": "Serious Seeds",
+    "old_image": "img/serious-serious-6-hd.jpg",
+    "new_image": "img/serious-serious-6-bud-real.jpg",
+    "old_dim": [
+      2304,
+      3072
+    ],
+    "new_dim": [
+      2304,
+      2304
+    ],
+    "source": "Catálogo Oficial Serious Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "serious-warlock",
+    "name": "Warlock",
+    "bank": "Serious Seeds",
+    "old_image": "img/serious-warlock-bud-hd.jpg",
+    "new_image": "img/serious-warlock-bud-real.jpg",
+    "old_dim": [
+      1657,
+      1310
+    ],
+    "new_dim": [
+      1310,
+      1310
+    ],
+    "source": "Catálogo Oficial Serious Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "serious-biddy-early",
+    "name": "Biddy Early",
+    "bank": "Serious Seeds",
+    "old_image": "img/serious-biddy-early-official.jpg",
+    "new_image": "img/serious-biddy-early-bud-real.jpg",
+    "old_dim": [
+      775,
+      1024
+    ],
+    "new_dim": [
+      775,
+      775
+    ],
+    "source": "Catálogo Oficial Serious Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "serious-serious-happiness",
+    "name": "Serious Happiness",
+    "bank": "Serious Seeds",
+    "old_image": "img/serious-serious-happiness-bud.jpg",
+    "new_image": "img/serious-serious-happiness-bud-real.jpg",
+    "old_dim": [
+      1890,
+      2508
+    ],
+    "new_dim": [
+      1890,
+      1890
+    ],
+    "source": "Catálogo Oficial Serious Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "serious-kali-bubba",
+    "name": "Kali Bubba",
+    "bank": "Serious Seeds",
+    "old_image": "img/serious-kali-bubba-bud-hd.jpg",
+    "new_image": "img/serious-kali-bubba-bud-real.jpg",
+    "old_dim": [
+      3566,
+      3123
+    ],
+    "new_dim": [
+      3123,
+      3123
+    ],
+    "source": "Catálogo Oficial Serious Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ripper-candy-crack",
+    "name": "Candy Crack",
+    "bank": "Ripper Seeds",
+    "old_image": "img/ripper-candy-crack-bud-hd.jpg",
+    "new_image": "img/ripper-candy-crack-bud-real.jpg",
+    "old_dim": [
+      1100,
+      1422
+    ],
+    "new_dim": [
+      1100,
+      1100
+    ],
+    "source": "Catálogo Oficial Ripper Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "bf-pineapple-chunk",
+    "name": "Pineapple Chunk",
+    "bank": "Barney",
+    "old_image": "img/bf-pineapple-chunk-bud-hd.jpg",
+    "new_image": "img/bf-pineapple-chunk-bud-real.jpg",
+    "old_dim": [
+      800,
+      914
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial Barney (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "bf-acapulco-gold",
+    "name": "Acapulco Gold",
+    "bank": "Barney",
+    "old_image": "img/bf-acapulco-gold-bud-hd.jpg",
+    "new_image": "img/bf-acapulco-gold-bud-real.jpg",
+    "old_dim": [
+      800,
+      914
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial Barney (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "rqs-og-kush-auto",
+    "name": "OG Kush Auto",
+    "bank": "Royal Queen Seeds",
+    "old_image": "img/rqs-og-kush-auto-bud-hd.jpg",
+    "new_image": "img/rqs-og-kush-auto-bud-real.jpg",
+    "old_dim": [
+      600,
+      684
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Royal Queen Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "rqs-purple-queen",
+    "name": "Purple Queen",
+    "bank": "Royal Queen Seeds",
+    "old_image": "img/rqs-purple-queen-bud-hd.jpg",
+    "new_image": "img/rqs-purple-queen-bud-real.jpg",
+    "old_dim": [
+      800,
+      914
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial Royal Queen Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "rqs-blue-mystic",
+    "name": "Blue Mystic",
+    "bank": "Royal Queen Seeds",
+    "old_image": "img/rqs-blue-mystic-bud-hd.jpg",
+    "new_image": "img/rqs-blue-mystic-bud-real.jpg",
+    "old_dim": [
+      700,
+      800
+    ],
+    "new_dim": [
+      700,
+      700
+    ],
+    "source": "Catálogo Oficial Royal Queen Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ss-sweet-amnesia-haze",
+    "name": "Sweet Amnesia Haze",
+    "bank": "Sweet Seeds",
+    "old_image": "img/ss-sweet-amnesia-haze-bud-hd.jpg",
+    "new_image": "img/ss-sweet-amnesia-haze-bud-real.jpg",
+    "old_dim": [
+      700,
+      799
+    ],
+    "new_dim": [
+      700,
+      700
+    ],
+    "source": "Catálogo Oficial Sweet Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ss-crystal-candy",
+    "name": "Crystal Candy",
+    "bank": "Sweet Seeds",
+    "old_image": "img/ss-crystal-candy-bud-hd.jpg",
+    "new_image": "img/ss-crystal-candy-bud-real.jpg",
+    "old_dim": [
+      600,
+      684
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Sweet Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ss-black-cream-auto",
+    "name": "Black Cream Auto",
+    "bank": "Sweet Seeds",
+    "old_image": "img/ss-black-cream-auto-bud-hd.jpg",
+    "new_image": "img/ss-black-cream-auto-bud-real.jpg",
+    "old_dim": [
+      700,
+      800
+    ],
+    "new_dim": [
+      700,
+      700
+    ],
+    "source": "Catálogo Oficial Sweet Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ss-bigdevil-xl",
+    "name": "Big Devil XL Auto",
+    "bank": "Sweet Seeds",
+    "old_image": "img/ss-bigdevil-xl-bud-hd.jpg",
+    "new_image": "img/ss-bigdevil-xl-bud-real.jpg",
+    "old_dim": [
+      600,
+      685
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Sweet Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "dp-frisian-dew",
+    "name": "Frisian Dew",
+    "bank": "Dutch Passion",
+    "old_image": "img/dp-frisian-dew-bud-hd.jpg",
+    "new_image": "img/dp-frisian-dew-bud-real.jpg",
+    "old_dim": [
+      600,
+      685
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Dutch Passion (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "dp-mazar",
+    "name": "Mazar",
+    "bank": "Dutch Passion",
+    "old_image": "img/dp-mazar-bud-hd.jpg",
+    "new_image": "img/dp-mazar-bud-real.jpg",
+    "old_dim": [
+      600,
+      685
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Dutch Passion (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "dp-auto-mazar",
+    "name": "Auto Mazar",
+    "bank": "Dutch Passion",
+    "old_image": "img/dp-auto-mazar-bud-hd.jpg",
+    "new_image": "img/dp-auto-mazar-bud-real.jpg",
+    "old_dim": [
+      600,
+      685
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Dutch Passion (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "phil-critical-sensi-star",
+    "name": "Critical Sensi Star",
+    "bank": "Philosopher Seeds",
+    "old_image": "img/phil-critical-sensi-star-bud-hd.jpg",
+    "new_image": "img/phil-critical-sensi-star-bud-real.jpg",
+    "old_dim": [
+      700,
+      800
+    ],
+    "new_dim": [
+      700,
+      700
+    ],
+    "source": "Catálogo Oficial Philosopher Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "phil-bubbas-gift",
+    "name": "Bubba",
+    "bank": "Philosopher Seeds",
+    "old_image": "img/phil-bubbas-gift-bud-hd.jpg",
+    "new_image": "img/phil-bubbas-gift-bud-real.jpg",
+    "old_dim": [
+      600,
+      685
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Philosopher Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "hso-707-headband",
+    "name": "707 Headband",
+    "bank": "Humboldt Seed",
+    "old_image": "img/hso-707-headband-4k.jpg",
+    "new_image": "img/hso-707-headband-bud-real.jpg",
+    "old_dim": [
+      3000,
+      2250
+    ],
+    "new_dim": [
+      2250,
+      2250
+    ],
+    "source": "Catálogo Oficial Humboldt Seed (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "00s-critical-mass",
+    "name": "Critical Mass CBD",
+    "bank": "00 Seeds Bank",
+    "old_image": "img/00s-critical-mass-bud-hd.jpg",
+    "new_image": "img/00s-critical-mass-bud-real.jpg",
+    "old_dim": [
+      670,
+      765
+    ],
+    "new_dim": [
+      670,
+      670
+    ],
+    "source": "Catálogo Oficial 00 Seeds Bank (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "00s-afghan-mass",
+    "name": "Afghan Mass",
+    "bank": "00 Seeds Bank",
+    "old_image": "img/wls-afghani-1-cand0.jpg",
+    "new_image": "img/00s-afghan-mass-bud-real.jpg",
+    "old_dim": [
+      1080,
+      1350
+    ],
+    "new_dim": [
+      1080,
+      1080
+    ],
+    "source": "Catálogo Oficial 00 Seeds Bank (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ths-mk-ultra",
+    "name": "MK Ultra",
+    "bank": "TH Seeds",
+    "old_image": "img/ths-mk-ultra.jpg",
+    "new_image": "img/ths-mk-ultra-bud-real.jpg",
+    "old_dim": [
+      778,
+      772
+    ],
+    "new_dim": [
+      772,
+      772
+    ],
+    "source": "Catálogo Oficial TH Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ths-burmese-kush",
+    "name": "Burmese Kush",
+    "bank": "TH Seeds",
+    "old_image": "img/ths-burmese-kush-bud-hd.jpg",
+    "new_image": "img/ths-burmese-kush-bud-real.jpg",
+    "old_dim": [
+      600,
+      728
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial TH Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "dna-tangie",
+    "name": "Tangie",
+    "bank": "DNA Genetics",
+    "old_image": "img/dna-tangie-bud-hd.jpg",
+    "new_image": "img/dna-tangie-bud-real.jpg",
+    "old_dim": [
+      800,
+      914
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial DNA Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "dna-24k-gold",
+    "name": "24K Gold",
+    "bank": "DNA Genetics",
+    "old_image": "img/dna-24k-gold-bud-hd.jpg",
+    "new_image": "img/dna-24k-gold-bud-real.jpg",
+    "old_dim": [
+      800,
+      914
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial DNA Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "dna-the-og-18",
+    "name": "The OG #18",
+    "bank": "DNA Genetics",
+    "old_image": "img/dna-the-og-18-bud-hd.jpg",
+    "new_image": "img/dna-the-og-18-bud-real.jpg",
+    "old_dim": [
+      800,
+      914
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial DNA Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "dna-3peat",
+    "name": "3peat",
+    "bank": "DNA Genetics",
+    "old_image": "img/dna-3peat.jpg",
+    "new_image": "img/dna-3peat-bud-real.jpg",
+    "old_dim": [
+      600,
+      628
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial DNA Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "wls-snow-white",
+    "name": "Snow White",
+    "bank": "White Label Seed Co.",
+    "old_image": "img/wls-snow-white.jpg",
+    "new_image": "img/wls-snow-white-bud-real.jpg",
+    "old_dim": [
+      1125,
+      1500
+    ],
+    "new_dim": [
+      1125,
+      1125
+    ],
+    "source": "Catálogo Oficial White Label Seed Co. (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "wls-northern-lights",
+    "name": "Northern Lights",
+    "bank": "White Label Seed Co.",
+    "old_image": "img/wls-northern-lights.jpg",
+    "new_image": "img/wls-northern-lights-bud-real.jpg",
+    "old_dim": [
+      1125,
+      1500
+    ],
+    "new_dim": [
+      1125,
+      1125
+    ],
+    "source": "Catálogo Oficial White Label Seed Co. (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "wls-shiva-skunk",
+    "name": "Shiva Skunk",
+    "bank": "White Label Seed Co.",
+    "old_image": "img/wls-shiva-skunk.jpg",
+    "new_image": "img/wls-shiva-skunk-bud-real.jpg",
+    "old_dim": [
+      1500,
+      1125
+    ],
+    "new_dim": [
+      1125,
+      1125
+    ],
+    "source": "Catálogo Oficial White Label Seed Co. (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "soma-somango",
+    "name": "Somango",
+    "bank": "Soma Seeds",
+    "old_image": "img/soma-somango.jpg",
+    "new_image": "img/soma-somango-bud-real.jpg",
+    "old_dim": [
+      1080,
+      1350
+    ],
+    "new_dim": [
+      1080,
+      1080
+    ],
+    "source": "Catálogo Oficial Soma Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "soma-buddhas-sister",
+    "name": "Buddha",
+    "bank": "Soma Seeds",
+    "old_image": "img/soma-buddhas-sister.jpg",
+    "new_image": "img/soma-buddhas-sister-bud-real.jpg",
+    "old_dim": [
+      1080,
+      1350
+    ],
+    "new_dim": [
+      1080,
+      1080
+    ],
+    "source": "Catálogo Oficial Soma Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "soma-soma-rockbud",
+    "name": "Soma Rockbud",
+    "bank": "Soma Seeds",
+    "old_image": "img/soma-soma-rockbud.jpg",
+    "new_image": "img/soma-soma-rockbud-bud-real.jpg",
+    "old_dim": [
+      915,
+      1144
+    ],
+    "new_dim": [
+      915,
+      915
+    ],
+    "source": "Catálogo Oficial Soma Seeds (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "tfd-pineapple-punch",
+    "name": "Pineapple Punch",
+    "bank": "The Flying Dutchmen",
+    "old_image": "img/tfd-pineapple-punch.jpg",
+    "new_image": "img/tfd-pineapple-punch-bud-real.jpg",
+    "old_dim": [
+      800,
+      914
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial The Flying Dutchmen (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "tfd-voyager",
+    "name": "Voyager",
+    "bank": "The Flying Dutchmen",
+    "old_image": "img/tfd-voyager-bud-hd.jpg",
+    "new_image": "img/tfd-voyager-bud-real.jpg",
+    "old_dim": [
+      800,
+      934
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial The Flying Dutchmen (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "sdm-mama-thai",
+    "name": "Mama Thai",
+    "bank": "Seedsman",
+    "old_image": "img/sdm-mama-thai-bud-hd.jpg",
+    "new_image": "img/sdm-mama-thai-bud-real.jpg",
+    "old_dim": [
+      1100,
+      1422
+    ],
+    "new_dim": [
+      1100,
+      1100
+    ],
+    "source": "Catálogo Oficial Seedsman (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "sdm-bad-azz-cheese",
+    "name": "Bad Azz Cheese",
+    "bank": "Seedsman",
+    "old_image": "img/sdm-bad-azz-cheese.jpg",
+    "new_image": "img/sdm-bad-azz-cheese-bud-real.jpg",
+    "old_dim": [
+      778,
+      898
+    ],
+    "new_dim": [
+      778,
+      778
+    ],
+    "source": "Catálogo Oficial Seedsman (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "cpg-red-bullz",
+    "name": "Red Bullz",
+    "bank": "Compound Genetics",
+    "old_image": "img/cpg-red-bullz-bud-hd.jpg",
+    "new_image": "img/cpg-red-bullz-bud-real.jpg",
+    "old_dim": [
+      980,
+      735
+    ],
+    "new_dim": [
+      735,
+      735
+    ],
+    "source": "Catálogo Oficial Compound Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "cpg-high-society",
+    "name": "High Society",
+    "bank": "Compound Genetics",
+    "old_image": "img/cpg-high-society.jpg",
+    "new_image": "img/cpg-high-society-bud-real.jpg",
+    "old_dim": [
+      2869,
+      3000
+    ],
+    "new_dim": [
+      2869,
+      2869
+    ],
+    "source": "Catálogo Oficial Compound Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ihg-jelly-breath",
+    "name": "Jelly Breath",
+    "bank": "In-House Genetics",
+    "old_image": "img/ihg-jelly-breath.jpg",
+    "new_image": "img/ihg-jelly-breath-bud-real.jpg",
+    "old_dim": [
+      768,
+      1024
+    ],
+    "new_dim": [
+      768,
+      768
+    ],
+    "source": "Catálogo Oficial In-House Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ihg-terple",
+    "name": "Terple",
+    "bank": "In-House Genetics",
+    "old_image": "img/ihg-terple.jpg",
+    "new_image": "img/ihg-terple-bud-real.jpg",
+    "old_dim": [
+      4055,
+      5027
+    ],
+    "new_dim": [
+      4055,
+      4055
+    ],
+    "source": "Catálogo Oficial In-House Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "ihg-black-cherry-pie",
+    "name": "Black Cherry Pie",
+    "bank": "In-House Genetics",
+    "old_image": "img/ihg-black-cherry-pie.jpg",
+    "new_image": "img/ihg-black-cherry-pie-bud-real.jpg",
+    "old_dim": [
+      2250,
+      3000
+    ],
+    "new_dim": [
+      2250,
+      2250
+    ],
+    "source": "Catálogo Oficial In-House Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "eth-grandpas-cookies",
+    "name": "Grandpa",
+    "bank": "Ethos Genetics",
+    "old_image": "img/eth-grandpas-cookies.jpg",
+    "new_image": "img/eth-grandpas-cookies-bud-real.jpg",
+    "old_dim": [
+      1460,
+      1800
+    ],
+    "new_dim": [
+      1460,
+      1460
+    ],
+    "source": "Catálogo Oficial Ethos Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "eth-cherry-gar-see-ya",
+    "name": "Cherry Gar-See-Ya",
+    "bank": "Ethos Genetics",
+    "old_image": "img/eth-cherry-gar-see-ya.jpg",
+    "new_image": "img/eth-cherry-gar-see-ya-bud-real.jpg",
+    "old_dim": [
+      3024,
+      3780
+    ],
+    "new_dim": [
+      3024,
+      3024
+    ],
+    "source": "Catálogo Oficial Ethos Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "eth-member-berry",
+    "name": "Member Berry",
+    "bank": "Ethos Genetics",
+    "old_image": "img/eth-member-berry.jpg",
+    "new_image": "img/eth-member-berry-bud-real.jpg",
+    "old_dim": [
+      1440,
+      1914
+    ],
+    "new_dim": [
+      1440,
+      1440
+    ],
+    "source": "Catálogo Oficial Ethos Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "arc-dosidos",
+    "name": "Dosidos",
+    "bank": "Archive Seed Bank",
+    "old_image": "img/arc-dosidos.jpg",
+    "new_image": "img/arc-dosidos-bud-real.jpg",
+    "old_dim": [
+      1034,
+      1081
+    ],
+    "new_dim": [
+      1034,
+      1034
+    ],
+    "source": "Catálogo Oficial Archive Seed Bank (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "arc-moonbow",
+    "name": "Moonbow",
+    "bank": "Archive Seed Bank",
+    "old_image": "img/arc-moonbow.jpg",
+    "new_image": "img/arc-moonbow-bud-real.jpg",
+    "old_dim": [
+      1920,
+      2560
+    ],
+    "new_dim": [
+      1920,
+      1920
+    ],
+    "source": "Catálogo Oficial Archive Seed Bank (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "arc-rudeboi-og",
+    "name": "RudeBoi OG",
+    "bank": "Archive Seed Bank",
+    "old_image": "img/arc-rudeboi-og.jpg",
+    "new_image": "img/arc-rudeboi-og-bud-real.jpg",
+    "old_dim": [
+      800,
+      914
+    ],
+    "new_dim": [
+      800,
+      800
+    ],
+    "source": "Catálogo Oficial Archive Seed Bank (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "arc-valley-girl",
+    "name": "Valley Girl",
+    "bank": "Archive Seed Bank",
+    "old_image": "img/arc-valley-girl.jpg",
+    "new_image": "img/arc-valley-girl-bud-real.jpg",
+    "old_dim": [
+      3000,
+      2250
+    ],
+    "new_dim": [
+      2250,
+      2250
+    ],
+    "source": "Catálogo Oficial Archive Seed Bank (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "raw-georgia-pie",
+    "name": "Georgia Pie",
+    "bank": "Raw Genetics",
+    "old_image": "img/raw-georgia-pie.jpg",
+    "new_image": "img/raw-georgia-pie-bud-real.jpg",
+    "old_dim": [
+      1460,
+      1800
+    ],
+    "new_dim": [
+      1460,
+      1460
+    ],
+    "source": "Catálogo Oficial Raw Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "raw-peeled-banana",
+    "name": "Peeled Banana",
+    "bank": "Raw Genetics",
+    "old_image": "img/raw-peeled-banana-bud-hd.jpg",
+    "new_image": "img/raw-peeled-banana-bud-real.jpg",
+    "old_dim": [
+      600,
+      750
+    ],
+    "new_dim": [
+      600,
+      600
+    ],
+    "source": "Catálogo Oficial Raw Genetics (Macro botánica centrada 1:1)"
+  },
+  {
+    "id": "raw-runtz-pop",
+    "name": "Runtz Pop",
+    "bank": "Raw Genetics",
+    "old_image": "img/raw-runtz-pop.jpg",
+    "new_image": "img/raw-runtz-pop-bud-real.jpg",
+    "old_dim": [
+      1000,
+      1200
+    ],
+    "new_dim": [
+      1000,
+      1000
+    ],
+    "source": "Catálogo Oficial Raw Genetics (Macro botánica centrada 1:1)"
+  }
+]

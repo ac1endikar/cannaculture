@@ -1,0 +1,178 @@
+[
+  {
+    "id": "sweet-black-jack",
+    "name": "Black Jack",
+    "bank": "Sweet Seeds",
+    "image": "img/sweet-black-jack-bud-real.jpg",
+    "dim": [
+      740,
+      740
+    ],
+    "source": "https://bucket.growdiaries.com/static/post/photo/64590/3271541_sweet-seeds-black-jack-grow-journal-by-chachogreencrownsweet-seedsblack-jack.jpg"
+  },
+  {
+    "id": "rqs-lemon-shining-silver",
+    "name": "Lemon Shining Silver Haze",
+    "bank": "Royal Queen Seeds",
+    "image": "img/rqs-lemon-shining-silver-bud-real.jpg",
+    "dim": [
+      720,
+      720
+    ],
+    "source": "https://www.royalqueenseeds.com/img/cms/lemon-shining-silver-haze-phone_1.jpg"
+  },
+  {
+    "id": "dp-skywalker-og",
+    "name": "Skywalker OG",
+    "bank": "Dutch Passion",
+    "image": "img/dp-skywalker-og-bud-real.jpg",
+    "dim": [
+      800,
+      800
+    ],
+    "source": "https://dutch-passion.com/2848-large_default/skywalker-haze.jpg"
+  },
+  {
+    "id": "sensi-sensi-amnesia",
+    "name": "Sensi Amnesia",
+    "bank": "Sensi Seeds",
+    "image": "img/sensi-sensi-amnesia-bud-real.jpg",
+    "dim": [
+      1884,
+      1884
+    ],
+    "source": "https://bucket.growdiaries.com/static/post/photo/328312/12813494_403341d8f2d8f4143b69cd10cc0e501d.jpg"
+  },
+  {
+    "id": "hso-trainwreck",
+    "name": "Trainwreck",
+    "bank": "Humboldt Seed",
+    "image": "img/hso-trainwreck-bud-real.jpg",
+    "dim": [
+      600,
+      600
+    ],
+    "source": "https://www.growbarato.net/47345-large_default/trainwreck.jpg"
+  },
+  {
+    "id": "bsf-gorilla-rainbows",
+    "name": "Gorilla Rainbows",
+    "bank": "BSF Seeds",
+    "image": "img/bsf-gorilla-rainbows-bud-real.jpg",
+    "dim": [
+      600,
+      600
+    ],
+    "source": "https://www.gbthegreenbrand.com/37191-large_default/gorilla-rainbows.jpg"
+  },
+  {
+    "id": "pyramid-blue-pyramid",
+    "name": "Blue Pyramid",
+    "bank": "Pyramid Seeds",
+    "image": "img/pyramid-blue-pyramid-bud-real.jpg",
+    "dim": [
+      720,
+      720
+    ],
+    "source": "https://pyramidseeds.com/6-product_main/blue-pyramid.jpg"
+  },
+  {
+    "id": "pyramid-shark",
+    "name": "Shark",
+    "bank": "Pyramid Seeds",
+    "image": "img/pyramid-shark-bud-real.jpg",
+    "dim": [
+      720,
+      720
+    ],
+    "source": "https://pyramidseeds.com/3-product_main/shark.jpg"
+  },
+  {
+    "id": "buddha-deimos",
+    "name": "Deimos",
+    "bank": "Buddha Seeds",
+    "image": "img/buddha-deimos-bud-real.jpg",
+    "dim": [
+      1080,
+      1080
+    ],
+    "source": "https://buddhaseedbank.com/wp-content/uploads/2020/12/177-Buddha-Deimos-Auto.jpg"
+  },
+  {
+    "id": "blimburn-guanabana",
+    "name": "Guanabana",
+    "bank": "Blimburn Seeds",
+    "image": "img/blimburn-guanabana-bud-real.jpg",
+    "dim": [
+      600,
+      600
+    ],
+    "source": "https://blimburnseeds.com/wp-content/uploads/2021/04/Guanabana.webp"
+  },
+  {
+    "id": "bsf-rainbows",
+    "name": "Rainbows",
+    "bank": "BSF Seeds",
+    "image": "img/bsf-rainbows-bud-real.jpg",
+    "dim": [
+      600,
+      600
+    ],
+    "source": "https://www.growbarato.net/29108-large_default/rainbows.jpg"
+  },
+  {
+    "id": "cannabiogen-sandstorm",
+    "name": "Sandstorm",
+    "bank": "Cannabiogen",
+    "image": "img/cannabiogen-sandstorm-bud-real.jpg",
+    "dim": [
+      600,
+      600
+    ],
+    "source": "Cannabiogen Oficial (Macro Botánica Dark Studio)"
+  },
+  {
+    "id": "cannabiogen-caribe",
+    "name": "Caribe",
+    "bank": "Cannabiogen",
+    "image": "img/cannabiogen-caribe-bud-real.jpg",
+    "dim": [
+      600,
+      600
+    ],
+    "source": "Cannabiogen Oficial (Macro Botánica Dark Studio)"
+  },
+  {
+    "id": "soma-free-white",
+    "name": "Free White",
+    "bank": "Soma Seeds",
+    "image": "img/soma-free-white-bud-real.jpg",
+    "dim": [
+      1000,
+      1000
+    ],
+    "source": "Soma Seeds Oficial (Macro Botánica Dark Studio)"
+  },
+  {
+    "id": "tfd-the-real-mccoy",
+    "name": "The Real McCoy",
+    "bank": "The Flying Dutchmen",
+    "image": "img/tfd-the-real-mccoy-bud-real.jpg",
+    "dim": [
+      600,
+      600
+    ],
+    "source": "The Flying Dutchmen Oficial (Macro Botánica Dark Studio)"
+  },
+  {
+    "id": "raw-rainbow-studz",
+    "name": "Rainbow Studz",
+    "bank": "Raw Genetics",
+    "image": "img/raw-rainbow-studz-bud-real.jpg",
+    "dim": [
+      4800,
+      4800
+    ],
+    "source": "Raw Genetics Oficial (Macro Botánica Dark Studio)"
+  }
+]

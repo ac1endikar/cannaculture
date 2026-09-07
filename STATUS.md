@@ -1,30 +1,24 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-06 16:35  
+> **Última actualización:** 2026-09-07 15:30  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
 
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
-- **Base de datos:** 429 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo la colección fotoperiódica THC oficial de Eva Seeds con 11 variedades y Medical Seeds Co. con 16 variedades).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_eva_seeds_v142_monster_pro`).
+- **Base de datos:** 438 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo la expansión fotoperiódica THC de 00 Seeds Bank y Sweet Seeds, así como Eva Seeds y Medical Seeds Co.).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_expansion_spain_v143`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 - **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
+- **Expansión Bancos Españoles (00 Seeds Bank + Sweet Seeds) v143:** **100% INTEGRADA (438 CEPAS)** (+9 variedades fotoperiódicas THC con ficha completa y activos fotográficos reales).
 - **Fotografía Macro Profesional de Monster (Eva Seeds) v142:** **100% ACTUALIZADA** (Sustituida foto amateur por fotografía botánica macro de estudio 700x700 WebP sobre fondo oscuro sin marcas de agua ni elementos ajenos).
 - **Catálogo Fotoperiódico Eva Seeds (v140):** **100% INTEGRADO Y VERIFICADO** (11 variedades fotoperiódicas THC agregadas a `js/data.js` con fotos botánicas reales 700x700 WebP y ficha técnica completa).
 - **Suite de Inteligencia Artificial Gemini 3.8 Flash & CannaDoctor 2.0:** **100% OPERATIVA (v146)**
-  - **Motor Neuronal Google Gemini 3.8 Flash:** Migración del Sommelier IA y CannaDoctor al modelo 3.8 con mayor velocidad, razonamiento botánico y visión artificial de última generación (con tolerancia a fallos en cascada a 3.6/2.5 y motor local).
-  - **Catálogo Completo de 429 Cepas:** Inyección de la base de datos completa de 429 cepas de los 38 bancos premium en el contexto de Gemini. Mateo conoce todas las variedades (incluyendo Eva Seeds, Medical Seeds, Paradise, Ripper, Barney's, etc.).
-  - **CannaDoctor 2.0 con Drag & Drop y Chips Rápidos:** Arrastre directo de fotos de hojas o flores sobre el chat con chips preconfigurados de diagnóstico (*Madurez de Tricomas, Carencia foliar/pH, Plagas u hongos, Diagnóstico total*).
-  - **Síntesis de Voz Botánica (Text-to-Speech):** Botón `🔊 Escuchar` / `⏹️ Detener` en cada mensaje de Mateo para locución auditiva en español neutro con Web Speech API nativa.
-  - **Misiones IA Sensoriales Dinámicas:** Botón "🚀 Generar Misión IA" en la Ficha Técnica conectado a Gemini 3.8 Flash para generar experiencias sensoriales y lúdicas 100% personalizadas según el terpeno y la cepa (con fallback local).
-  - **Integración con Vivencias:** Botón `📖 Guardar en Vivencias` en las recomendaciones de Mateo para archivar catas y consejos en la bitácora con un solo clic.
-  - **CLI `scripts/git_ai.py` Actualizado:** Nuevo comando `python scripts/git_ai.py ask "<duda>"` para consultar directamente a Mateo desde la terminal con Gemini 3.8 Flash.
 - **Automatización CI/CD con GitHub Actions:**
   - **Auto-PR Code Reviewer:** Workflow `.github/workflows/gemini_pr_reviewer.yml` que audita diffs con IA en cada Pull Request.
   - **Release Notes & Changelog Generator:** Workflow `.github/workflows/gemini_changelog.yml` activado en tags.
@@ -36,8 +30,16 @@
 
 ---
 
-## 3. Tareas Completadas Recientemente (2026-09-06)
-1. ✅ **Actualización Fotográfica Profesional de Monster (Eva Seeds) v142:**
+## 3. Tareas Completadas Recientemente (2026-09-07)
+1. ✅ **Fase 1: Expansión de Bancos Españoles — 00 Seeds Bank y Sweet Seeds (v143):**
+   - **Incorporación de 9 Variedades Fotoperiódicas Ricas en THC:**
+     * *00 Seeds Bank:* `00-kush` (00 Kush, 22% THC), `chocolate-skunk` (Chocolate Skunk, 20% THC), `gorilla-00` (Gorilla, 25% THC), `california-kush` (California Kush, 20% THC), `sweet-soma` (Sweet Soma, 22% THC).
+     * *Sweet Seeds:* `gorilla-girl` (Gorilla Girl, 25% THC), `san-fernando-lemon-kush` (San Fernando Lemon Kush, 21% THC), `black-jack` (Black Jack, 21% THC), `sweet-tai` (Sweet Tai, 20% THC).
+   - **Integración sin Alteraciones:** El catálogo pasa de 429 a **438 variedades**. Fichas técnicas completas con porcentajes índica/sativa, floración en días, producción indoor/outdoor, terpeno dominante, aromas y linajes botánicos.
+   - **Activos Fotográficos Reales:** Fotografías botánicas reales vinculadas en formato `.jpg`.
+   - **Recompilación y Caché:** Bundle recompilado vía `python scripts/build_bundle.py` (740,183 bytes) y versión actualizada a `?v=2026_expansion_spain_v143` en `index.html` (CSS y JS).
+
+2. ✅ **Actualización Fotográfica Profesional de Monster (Eva Seeds) v142:**
    - **Sustitución Visual de Calidad Superior:** Reemplazada la fotografía amateur previa por la toma macro botánica oficial de flor apical en alta resolución (`1152x1728` px original) con iluminación de estudio sobre fondo oscuro, repleta de tricomas y cálices maduros.
    - **Normalización WebP Cuadrada 700x700:** Encuadre centrado sin marcas de agua ni elementos extraños, guardada en `img/monster.webp`, `images/strains/monster.webp` y `images/strains/eva-seeds/monster.webp`.
    - **Recompilación y Despliegue:** Recompilados `js/bundle.js` y `js/bundle-v148.js` y actualizada versión de caché a `?v=2026_eva_seeds_v142_monster_pro` en `index.html`.
