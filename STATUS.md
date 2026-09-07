@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-07 20:15  
+> **Última actualización:** 2026-09-08 00:35  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
@@ -8,19 +8,34 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 464 cepas únicas y consolidadas pertenecientes a 40 bancos de semillas premium en `js/data.js` (incluyendo la incorporación de Fase A: Delicious Seeds con 8 variedades y Mr. Nice Seedbank con 8 variedades legendarias, más Nirvana Seeds con 15 variedades, Eva Seeds con 11 variedades, Medical Seeds Co. con 16 variedades, 00 Seeds Bank y Sweet Seeds).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_faseA_v148`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_mrnice_hd_v149`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
-- **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders, 0 fotos no botánicas).
+- **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders, 0 fotos no botánicas, 0 miniaturas pixeladas).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
-- **Integración Fase A — Delicious Seeds & Mr. Nice Seedbank (v148):** **100% OPERATIVA Y VERIFICADA** (+16 genéticas fotoperiódicas legendarias ricas en THC integradas con estructura agronómica 100% numérica, sin strings ni guiones en rendimiento/cannabinoides. Fotografías botánicas reales en alta resolución 800x800 integradas en `images/strains/` e `img/`. DOM verificado en headless Edge con 464 tarjetas activas).
-- **Calibración Botánica Nirvana Seeds & Sustitución de Fotografías Ajenas (v151):** **100% OPERATIVA Y VERIFICADA** (Detectadas y reemplazadas 3 fotos no cannábicas en la web: huerto de mandarinas en `nirvana-northern-light` y `rqs-northern-light`, y campo de brotes de trigo en `nirvana-gsc`. Descargadas e integradas fotografías macro botánicas 100% oficiales de `nirvanashop.com` en WebP 800x800. Unificadas además las 15 genéticas de Nirvana Seeds con proporciones exactas `indicaPct`/`sativaPct`, rendimientos numéricos limpios y THC oficial).
+- **Actualización Fotográfica Oficial Mr. Nice Seedbank (v149):** **100% OPERATIVA Y VERIFICADA** (Reemplazadas las 8 fotografías de Mr. Nice Seedbank que eran miniaturas de 150px pixeladas por fotografías macro botánicas y de estudio 100% oficiales en alta definición 800x800 px, calidad 95, en formatos JPG y WebP para `images/strains/` e `img/`).
+- **Integración Fase A — Delicious Seeds & Mr. Nice Seedbank (v148):** **100% OPERATIVA Y VERIFICADA** (+16 genéticas fotoperiódicas legendarias ricas en THC integradas con estructura agronómica 100% numérica, sin strings ni guiones en rendimiento/cannabinoides. DOM verificado en headless Edge con 464 tarjetas activas).
+- **Calibración Botánica Nirvana Seeds & Sustitución de Fotografías Ajenas (v151):** **100% OPERATIVA Y VERIFICADA** (Detectadas y reemplazadas 3 fotos no cannábicas en la web: huerto de mandarinas en `nirvana-northern-light` y `rqs-northern-light`, y campo de brotes de trigo en `nirvana-gsc`. Descargadas e integradas fotografías macro botánicas 100% oficiales de `nirvanashop.com` en WebP 800x800).
 
 ---
 
-## 3. Tareas Completadas Recientemente (2026-09-07)
+## 3. Tareas Completadas Recientemente (2026-09-08)
+1. ✅ **Sustitución de Fotografías de Mr. Nice Seedbank por el Catálogo Oficial en Alta Resolución HD (v149):**
+   - **Problema Detectado:** Las fotos previas de las 8 genéticas de Mr. Nice Seedbank procedían de previsualizaciones thumbnail de 90x200 / 150x200 px que al redimensionarse a 800x800 se apreciaban borrosas y de baja calidad.
+   - **Localización y Descarga de Fuentes Oficiales HD:**
+     * `super-silver-haze-mrnice`: Macro oficial de cogollo repleto de tricomas resplandecientes y pistilos ámbar (Alchimia/Mr. Nice).
+     * `black-widow`: Macro oficial de cogollo cristalino con densa cobertura de resina blanca Shantibaba (Alchimia/Mr. Nice).
+     * `critical-mass-mrnice`: Enorme cola floral compacta con pistilos rosados y tricomas espesos (CannaConnection/Mr. Nice).
+     * `medicine-man`: Cogollo macro de White Rhino / Medicine Man con cobertura de resina escarchada (Alchimia/Mr. Nice).
+     * `nevilles-haze-mrnice`: Fotografía botánica de estudio sobre fondo oscuro con cálices florales sativa definidos (Alchimia/Mr. Nice).
+     * `shark-shock`: Fotografía oficial de estudio Shantibaba sobre fondo negro profundo (CannaConnection/Mr. Nice).
+     * `mango-haze`: Fotografía macro Ultra-HD con glándulas capitadas de tricomas individuales nítidas (Alchimia/Mr. Nice).
+     * `early-skunk-mrnice`: Fotografía botánica auténtica en floración temprana de la línea Early Skunk (La Huerta/Mr. Nice).
+   - **Procesamiento Botánico:** Recorte cuadrado centrado en la floración, escalado Lanczos a 800x800 px, máscara de enfoque suave y exportación a JPG y WebP (calidad 95).
+   - **Despliegue Dual:** Actualizados los 16 archivos en `images/strains/` y replicados en `img/`.
+   - **Recompilación y Caché:** Bundle recompilado (`python scripts/build_bundle.py`). Versionado cache-busting en `index.html` actualizado a `?v=2026_mrnice_hd_v149`.
 1. ✅ **Integración de la Fase A — Delicious Seeds (8) y Mr. Nice Seedbank (8) (v148):**
    - **Incorporación de 16 Variedades Fotoperiódicas Legendarias:**
      * **Delicious Seeds (8 cepas):** `sugar-black-rose` (25% THC), `eleven-roses` (24% THC), `golosa` (26% THC), `marmalate` (21% THC), `cotton-candy-kush` (23% THC), `caramelo` (24% THC), `critical-kali-mist` (22% THC), `unknown-kush` (23% THC).
