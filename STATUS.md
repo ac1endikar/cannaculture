@@ -1,23 +1,24 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-07 16:40  
+> **Última actualización:** 2026-09-07 17:00  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
 
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
-- **Base de datos:** 438 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo los catálogos completos de Eva Seeds con 11 variedades y Medical Seeds Co. con 16 variedades, más la expansión de 00 Seeds Bank y Sweet Seeds).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_full_optimization_v148`).
+- **Base de datos:** 448 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo la gran expansión de Nirvana Seeds con 15 variedades históricas, Eva Seeds con 11 variedades, Medical Seeds Co. con 16 variedades, más 00 Seeds Bank y Sweet Seeds).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_nirvana_expansion_v149`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
-- **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA).
+- **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
-- **Optimización Integral de Toda la Página (v148):** **100% OPERATIVA** (Contención CSS `content-visibility: auto` para renderizado ultra rápido de 438 cepas, debounce reactivo en buscador, targets táctiles accesibles de 44px, `:focus-visible` y cobertura total de `aria-label` WCAG).
-- **Arquitectura de Inteligencia Dual en Mateo Sommelier IA (v147):** **100% OPERATIVA** (Inferencia de máxima potencia con **Google Gemini 3.8 Ultra** para consultas de CannaCulture, cultivo, botánica y catálogo de 438 cepas; conmutación automática a **Gemini Ligero (Eco)** para temas generales de bajo consumo de recursos).
-- **Catálogos Completos Eva Seeds + Medical Seeds (v144):** **100% VERIFICADOS Y CONSOLIDADOS (438 CEPAS)** (11 variedades de Eva Seeds y 16 de Medical Seeds blindadas con 0 duplicados y fotografía botánica real).
+- **Expansión Oficial Nirvana Seeds (v149):** **100% OPERATIVA** (+10 cepas legendarias propietarias del banco holandés con macrofotografía botánica oficial 800x800 WebP de `nirvanashop.com`, llevando Nirvana Seeds de 5 a 15 cepas y el catálogo total de 438 a 448 variedades sin duplicados ni errores).
+- **Optimización Integral de Toda la Página (v148):** **100% OPERATIVA** (Contención CSS `content-visibility: auto` para renderizado ultra rápido del catálogo completo, debounce reactivo en buscador, targets táctiles accesibles de 44px, `:focus-visible` y cobertura total de `aria-label` WCAG).
+- **Arquitectura de Inteligencia Dual en Mateo Sommelier IA (v147):** **100% OPERATIVA** (Inferencia de máxima potencia con **Google Gemini 3.8 Ultra** para consultas de CannaCulture, cultivo, botánica y catálogo completo de 448 cepas; conmutación automática a **Gemini Ligero (Eco)** para temas generales de bajo consumo de recursos).
+- **Catálogos Completos Eva Seeds + Medical Seeds (v144):** **100% VERIFICADOS Y CONSOLIDADOS** (11 variedades de Eva Seeds y 16 de Medical Seeds blindadas con 0 duplicados y fotografía botánica real).
 - **Expansión Bancos Españoles (00 Seeds Bank + Sweet Seeds) v143:** **100% INTEGRADA** (+9 variedades fotoperiódicas THC con ficha completa y activos fotográficos reales).
 - **Fotografía Macro Profesional de Monster (Eva Seeds) v142:** **100% ACTUALIZADA** (Sustituida foto amateur por fotografía botánica macro de estudio 700x700 WebP sobre fondo oscuro sin marcas de agua ni elementos ajenos).
 - **Catálogo Fotoperiódico Eva Seeds (v140):** **100% INTEGRADO Y VERIFICADO** (11 variedades fotoperiódicas THC agregadas a `js/data.js` con fotos botánicas reales 700x700 WebP y ficha técnica completa).
@@ -33,7 +34,24 @@
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-07)
-1. ✅ **Optimización Integral de Rendimiento, DOM, Contención CSS y Accesibilidad (v148):**
+1. ✅ **Expansión de Catálogo: Nirvana Seeds (+10 Cepas Legendarias Propietarias) (v149):**
+   - **Auditoría e Identificación de Prioridad:** Auditoría del catálogo completo que identificó a Nirvana Seeds como el banco prioritario #1 para ampliación botánica histórica.
+   - **Incorporación de 10 Variedades Propietarias Clásicas:**
+     * `nirvana-aurora-indica` (Aurora Indica, 20% THC, 90% Índica - Afghan x Northern Lights).
+     * `nirvana-bubblelicious` (Bubblelicious, 18% THC, Híbrida 70/30 - Indiana Bubblegum x Nirvana Secret Hybrid).
+     * `nirvana-master-kush` (Master Kush, 22% THC, Índica pura - Hindu Kush Landrace, bicampeona Cannabis Cup).
+     * `nirvana-ak-48` (AK-48, 20% THC, Híbrida 50/50 - Colombian x Mexican x Thai x Afghani, floración récord 50 días).
+     * `nirvana-wonder-woman` (Wonder Woman, 21% THC, Híbrida 60/40 - White Widow x Top Skunk x Ice, producción masiva).
+     * `nirvana-somango-xxl` (Somango XXL, 19% THC, Híbrida 75/25 - Somango x Critical+, terpenos a mango maduro).
+     * `nirvana-papaya` (Papaya, 20% THC, Índica dulce - Jock Horror x Skunk #1).
+     * `nirvana-hawaii-maui-waui` (Hawaii Maui Waui, 19% THC, Sativa pura - Hawaiian Sativa Landrace IBL).
+     * `nirvana-super-skunk` (Super Skunk, 20% THC, Híbrida 75/25 - Skunk #1 x Afghani Hash Plant).
+     * `nirvana-blackjack` (Blackjack, 22% THC, Híbrida 50/50 - Black Domino x Jock Horror).
+   - **Fotografía Macro Oficial 100% Real:** Descargados activos de alta resolución directamente del CDN oficial de `nirvanashop.com`, redimensionados y optimizados a 800x800 WebP de alta fidelidad guardados en `img/` y respaldados en `images/strains/nirvana-seeds/`. Cero imágenes sintéticas o placeholders.
+   - **Integración de Datos:** Enriquecidas todas las fichas con perfiles terpénicos exactos, cannabinoides, días de floración, rendimientos interior/exterior, paletas de degradado cromático y actividades recomendadas.
+   - **Recompilación y Caché:** Bundle recompilado con `python scripts/build_bundle.py` generando `js/bundle.js` y `js/bundle-v149.js` (759,546 bytes). Versionado de cache-busting en `index.html` actualizado a `?v=2026_nirvana_expansion_v149`. Catálogo consolidado en **448 variedades** (Nirvana Seeds pasa de 5 a 15 cepas).
+
+2. ✅ **Optimización Integral de Rendimiento, DOM, Contención CSS y Accesibilidad (v148):**
    - **Renderizado Eficiente del Catálogo (438 Tarjetas):** Implementación de `content-visibility: auto; contain-intrinsic-size: 300px 480px; contain: layout style;` en `.strain-card`. El navegador descarta los cálculos de maquetación y pintado de las ~425 tarjetas que quedan fuera del viewport inicial, permitiendo una carga instantánea y scroll a 60 FPS sin saturar la memoria GPU.
    - **Estabilidad Visual y Eliminación de CLS:** Aplicado `contain: paint;` a `.card-visual-banner` y `aspect-ratio: 16 / 10;` a `.card-visual-img` para aislar animaciones hover y garantizar espacio reservado antes de la descarga de cada fotografía.
    - **Debounce Reactivo en Buscador:** Implementado temporizador de debounce (160ms) en `#search-input` y optimización con comprobaciones primitivas previas en `applyFiltersAndSort()`, evitando miles de llamadas innecesarias a `toLowerCase()` cuando no hay texto ingresado.
