@@ -120,22 +120,35 @@ while ($listener.IsListening) {
                     continue
                 }
 
-                $targetModel = "gemini-3.8-flash"
+                $targetModel = "gemini-3.8-ultra"
                 try {
                     $parsedBody = $body | ConvertFrom-Json
                     if ($parsedBody.model) { $targetModel = $parsedBody.model }
                 } catch {}
 
-                $geminiUrl = "https://generativelanguage.googleapis.com/v1beta/models/${targetModel}:generateContent?key=$apiKey"
-                try {
-                    $resp = Invoke-RestMethod -Uri $geminiUrl -Method POST -Body $body -ContentType "application/json" -TimeoutSec 35
-                } catch {
-                    if ($targetModel -ne "gemini-3.6-flash") {
-                        $fallbackUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=$apiKey"
-                        $resp = Invoke-RestMethod -Uri $fallbackUrl -Method POST -Body $body -ContentType "application/json" -TimeoutSec 35
-                    } else {
-                        throw $_
+                if ($targetModel -eq "gemini-3.8-ultra") {
+                    $cascade = @("gemini-3.8-ultra", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-2.5-flash")
+                } elseif ($targetModel -in @("gemini-2.5-flash", "gemini-1.5-flash")) {
+                    $cascade = @("gemini-2.5-flash", "gemini-1.5-flash", "gemini-3.6-flash")
+                } else {
+                    $cascade = @($targetModel, "gemini-3.8-ultra", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-2.5-flash")
+                }
+
+                $resp = $null
+                $lastEx = $null
+                foreach ($m in $cascade) {
+                    $geminiUrl = "https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=$apiKey"
+                    try {
+                        $resp = Invoke-RestMethod -Uri $geminiUrl -Method POST -Body $body -ContentType "application/json" -TimeoutSec 35
+                        if ($resp) { break }
+                    } catch {
+                        $lastEx = $_
                     }
+                }
+
+                if (-not $resp) {
+                    if ($lastEx) { throw $lastEx }
+                    throw "No se pudo obtener respuesta de ningún modelo en la cascada."
                 }
                 $jsonResp = $resp | ConvertTo-Json -Depth 10
                 $respBytes = [System.Text.Encoding]::UTF8.GetBytes($jsonResp)

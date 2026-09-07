@@ -4526,3 +4526,36 @@ dialog.compare-dialog[open] {
   transform: translateY(-1px);
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
 }
+
+/* Badges de Motor IA en Toolbar (Gemini 3.8 Ultra vs Gemini Ligero Eco) */
+.ai-model-tag {
+  font-size: 0.70rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  letter-spacing: 0.2px;
+  transition: all 0.2s ease;
+}
+
+.ai-model-tag.ultra {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: #34D399;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.ai-model-tag.eco {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #9CA3AF;
+}
+
+.ai-model-tag.local {
+  background: rgba(234, 179, 8, 0.12);
+  border: 1px solid rgba(234, 179, 8, 0.4);
+  color: #FDE047;
+}

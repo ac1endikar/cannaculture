@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-07 15:55  
+> **Última actualización:** 2026-09-07 16:15  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
@@ -8,22 +8,22 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 438 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo los catálogos completos de Eva Seeds con 11 variedades y Medical Seeds Co. con 16 variedades, más la expansión de 00 Seeds Bank y Sweet Seeds).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_eva_medical_v144`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_gemini_38_ultra_dual_v147`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 - **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
+- **Arquitectura de Inteligencia Dual en Mateo Sommelier IA (v147):** **100% OPERATIVA** (Inferencia de máxima potencia con **Google Gemini 3.8 Ultra** para consultas de CannaCulture, cultivo, botánica y catálogo de 438 cepas; conmutación automática a **Gemini Ligero (Eco)** para temas generales de bajo consumo de recursos).
 - **Catálogos Completos Eva Seeds + Medical Seeds (v144):** **100% VERIFICADOS Y CONSOLIDADOS (438 CEPAS)** (11 variedades de Eva Seeds y 16 de Medical Seeds blindadas con 0 duplicados y fotografía botánica real).
 - **Expansión Bancos Españoles (00 Seeds Bank + Sweet Seeds) v143:** **100% INTEGRADA** (+9 variedades fotoperiódicas THC con ficha completa y activos fotográficos reales).
 - **Fotografía Macro Profesional de Monster (Eva Seeds) v142:** **100% ACTUALIZADA** (Sustituida foto amateur por fotografía botánica macro de estudio 700x700 WebP sobre fondo oscuro sin marcas de agua ni elementos ajenos).
 - **Catálogo Fotoperiódico Eva Seeds (v140):** **100% INTEGRADO Y VERIFICADO** (11 variedades fotoperiódicas THC agregadas a `js/data.js` con fotos botánicas reales 700x700 WebP y ficha técnica completa).
-- **Suite de Inteligencia Artificial Gemini 3.8 Flash & CannaDoctor 2.0:** **100% OPERATIVA (v146)**
 - **Automatización CI/CD con GitHub Actions:**
   - **Auto-PR Code Reviewer:** Workflow `.github/workflows/gemini_pr_reviewer.yml` que audita diffs con IA en cada Pull Request.
   - **Release Notes & Changelog Generator:** Workflow `.github/workflows/gemini_changelog.yml` activado en tags.
-- **Herramientas de Terminal CLI (`scripts/git_ai.py`):** Comandos `commit`, `doctor`, `enrich` y `ask`.
+- **Herramientas de Terminal CLI (`scripts/git_ai.py`):** Comandos `commit`, `doctor`, `enrich` y `ask` (actualizado a `gemini-3.8-ultra`).
 - **Fase 2 de Reemplazo y Optimización Visual de Imágenes:** **100% COMPLETADA (143/143)**
 - **Optimización WebP Masiva:** **100% COMPLETADA (955/955)**
 - **Mobile Responsive Engine (Ficha Técnica y Comparador):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
@@ -32,7 +32,15 @@
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-07)
-1. ✅ **Bloque 2: Consolidación y Verificación de Catálogos Completos de Eva Seeds y Medical Seeds (v144):**
+1. ✅ **Arquitectura de Inteligencia Dual en Mateo Sommelier IA — Gemini 3.8 Ultra vs Gemini Ligero Eco (v147):**
+   - **Clasificador Inteligente de Temática (`isCannaCultureQuery`):** El sistema analiza en tiempo real si la consulta corresponde a CannaCulture (variedades, terpenos, cannabinoides, cultivo, plagas, deficiencias, maridajes, botánica o imágenes de CannaDoctor) o a una charla general/cotidiana.
+   - **Modo CannaCulture de Máxima Precisión (Gemini 3.8 Ultra):** Para consultas cannábicas o diagnóstico visual, se activa `gemini-3.8-ultra` con el contexto enriquecido de las 438 cepas del catálogo y análisis neuro-terpénico profundo.
+   - **Modo Conversación General de Bajo Consumo (Gemini Ligero Eco):** Para temas generales ajenos al catálogo, Mateo conmuta automáticamente a `gemini-2.5-flash`, omitiendo el volcado masivo del catálogo y ahorrando ~5,000 tokens por petición para minimizar latencia y consumo de cuota.
+   - **Cascada de Tolerancia a Fallos en Servidor (`server.py` y `server.ps1`):** Cascada bidireccional inteligente: `gemini-3.8-ultra` ➔ `gemini-3.8-flash` ➔ `gemini-3.6-flash` ➔ `gemini-2.5-flash` en modo CannaCulture; y `gemini-2.5-flash` ➔ `gemini-1.5-flash` en modo Eco.
+   - **Badges Visuales en Chat:** Añadidos tags distintivos en el pie de mensaje (`⚡ Gemini 3.8 Ultra` y `🌱 Gemini Ligero (Eco)`) con estilos *Dark Glassmorphism*.
+   - **Recompilación y Caché:** Bundle recompilado vía `python scripts/build_bundle.py` (744,858 bytes) y versión actualizada a `?v=2026_gemini_38_ultra_dual_v147` en `index.html` (CSS y JS).
+
+2. ✅ **Bloque 2: Consolidación y Verificación de Catálogos Completos de Eva Seeds y Medical Seeds (v144):**
    - **Verificación Exhaustiva de 11 Variedades de Eva Seeds:** `jamaican-dream`, `monster`, `veneno`, `papas-candy`, `high-level`, `black-dream`, `furious-candy`, `missing-in-barcelona`, `tnt-kush`, `gipsy-haze`, `lemon-king`. 100% presentes, propiedad `bank: "Eva Seeds"`, imágenes oficiales WebP sin duplicados.
    - **Verificación Exhaustiva de 16 Variedades de Medical Seeds:** `channel-plus`, `1024`, `2046`, `y-griega`, `no-name`, `malakoff`, `sour-diesel-medical`, `prozack`, `devil-fruit`, `jack-la-mota`, `mendocino-purple-kush`, `white-widow-medical`, `canadian-kush-2`, `overdosis`, `banana-z`, `sundae-float`. 100% presentes, propiedad `bank: "Medical Seeds"`, imágenes oficiales WebP sin duplicados.
    - **Total Catálogo Activo:** 438 variedades fotoperiódicas ricas en THC en `js/data.js`.

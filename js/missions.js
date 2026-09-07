@@ -133,14 +133,14 @@ Devuelve EXCLUSIVAMENTE un bloque JSON válido (sin markdown exterior) con este 
 }`;
 
     const payload = {
-      model: 'gemini-3.8-flash',
+      model: 'gemini-3.8-ultra',
       contents: [{ role: 'user', parts: [{ text: prompt }] }]
     };
 
     try {
       let rawJson = null;
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 12000);
+      const timeoutId = setTimeout(() => controller.abort(), 14000);
 
       if (isLocal) {
         const res = await fetch('/api/gemini', {
@@ -155,14 +155,26 @@ Devuelve EXCLUSIVAMENTE un bloque JSON válido (sin markdown exterior) con este 
           rawJson = data.candidates?.[0]?.content?.parts?.[0]?.text;
         }
       } else if (apiKey) {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${apiKey}`;
-        const res = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contents: payload.contents }),
-          signal: controller.signal
-        });
+        for (const m of ['gemini-3.8-ultra', 'gemini-3.8-flash', 'gemini-3.6-flash']) {
+          try {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${apiKey}`;
+            const res = await fetch(url, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ contents: payload.contents }),
+              signal: controller.signal
+            });
+            if (res.ok) {
+              const data = await res.json();
+              rawJson = data.candidates?.[0]?.content?.parts?.[0]?.text;
+              if (rawJson) break;
+            }
+          } catch (e) {
+            // Reintentar con siguiente modelo
+          }
+        }
         clearTimeout(timeoutId);
+      }
         if (res.ok) {
           const data = await res.json();
           rawJson = data.candidates?.[0]?.content?.parts?.[0]?.text;

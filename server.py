@@ -97,7 +97,7 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                     self.wfile.write(json.dumps({'error': 'No se encontró GEMINI_API_KEY en .env'}).encode('utf-8'))
                     return
 
-                model = client_payload.get('model', 'gemini-3.8-flash')
+                model = client_payload.get('model', 'gemini-3.8-ultra')
                 gemini_body = {
                     'contents': client_payload.get('contents', [])
                 }
@@ -114,17 +114,31 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                     with urllib.request.urlopen(req, timeout=35) as resp:
                         return resp.status, resp.read()
 
-                try:
-                    status_code, resp_data = fetch_gemini(model)
-                except urllib.error.HTTPError as he:
-                    # Si el modelo falla por 404, 429 o 503, reintentar en cascada
-                    if he.code in (404, 429, 503) and model != 'gemini-3.6-flash':
-                        try:
-                            status_code, resp_data = fetch_gemini('gemini-3.6-flash')
-                        except urllib.error.HTTPError:
-                            status_code, resp_data = fetch_gemini('gemini-2.5-flash')
-                    else:
+                # Cascada inteligente según el modo de inferencia solicitado
+                if model == 'gemini-3.8-ultra':
+                    cascade = ['gemini-3.8-ultra', 'gemini-3.8-flash', 'gemini-3.6-flash', 'gemini-2.5-flash']
+                elif model in ('gemini-2.5-flash', 'gemini-1.5-flash'):
+                    cascade = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-3.6-flash']
+                else:
+                    cascade = [model, 'gemini-3.8-ultra', 'gemini-3.8-flash', 'gemini-3.6-flash', 'gemini-2.5-flash']
+
+                status_code = 500
+                resp_data = None
+                last_error = None
+
+                for target_m in cascade:
+                    try:
+                        status_code, resp_data = fetch_gemini(target_m)
+                        break
+                    except urllib.error.HTTPError as he:
+                        last_error = he
+                        # Si el modelo no está disponible (400, 404), límite de tasa (429) o sobrecarga (500, 503), pasar al siguiente
+                        if he.code in (400, 404, 429, 500, 503):
+                            continue
                         raise
+                else:
+                    if last_error:
+                        raise last_error
 
                 self.send_response(status_code)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')

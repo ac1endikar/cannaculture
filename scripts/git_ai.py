@@ -35,7 +35,7 @@ def load_env():
 ENV = load_env()
 GEMINI_KEY = os.environ.get('GEMINI_API_KEY') or ENV.get('GEMINI_API_KEY') or ENV.get('GOOGLE_API_KEY')
 
-def call_gemini(prompt, image_path=None, model="gemini-3.8-flash"):
+def call_gemini(prompt, image_path=None, model="gemini-3.8-ultra"):
     if not GEMINI_KEY:
         print("❌ Error: No se encontró GEMINI_API_KEY en .env ni en variables de entorno.")
         sys.exit(1)
@@ -57,17 +57,35 @@ def call_gemini(prompt, image_path=None, model="gemini-3.8-flash"):
             }
         })
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_KEY}"
-    payload = {"contents": [{"parts": parts}]}
+    cascade = [model]
+    if model == "gemini-3.8-ultra":
+        cascade = ["gemini-3.8-ultra", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-2.5-flash"]
+    elif model in ("gemini-2.5-flash", "gemini-1.5-flash"):
+        cascade = ["gemini-2.5-flash", "gemini-1.5-flash", "gemini-3.6-flash"]
 
-    req = urllib.request.Request(
-        url,
-        data=json.dumps(payload).encode('utf-8'),
-        headers={'Content-Type': 'application/json'}
-    )
-    with urllib.request.urlopen(req, timeout=40) as resp:
-        data = json.loads(resp.read().decode('utf-8'))
-        return data['candidates'][0]['content']['parts'][0]['text']
+    payload = {"contents": [{"parts": parts}]}
+    last_ex = None
+
+    for m in cascade:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={GEMINI_KEY}"
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(payload).encode('utf-8'),
+            headers={'Content-Type': 'application/json'}
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=40) as resp:
+                data = json.loads(resp.read().decode('utf-8'))
+                return data['candidates'][0]['content']['parts'][0]['text']
+        except urllib.error.HTTPError as he:
+            last_ex = he
+            if he.code in (400, 404, 429, 500, 503):
+                continue
+            raise
+
+    if last_ex:
+        raise last_ex
+    raise RuntimeError("No se pudo obtener respuesta de ningún modelo Gemini.")
 
 def cmd_commit():
     """Genera mensaje de commit semántico con IA."""
@@ -158,13 +176,13 @@ Devuelve ÚNICAMENTE el bloque JSON válido sin markdown adicional."""
     print("💡 Puedes copiar este bloque directamente en js/data.js o js/medical_seeds.js")
 
 def cmd_ask(question):
-    """Consulta botánica directa a Mateo (Gemini 3.8 Flash)."""
-    print(f"🌿 Consultando a Mateo (Gemini 3.8 Flash): \"{question}\"...\n")
+    """Consulta botánica directa a Mateo (Gemini 3.8 Ultra)."""
+    print(f"🌿 Consultando a Mateo (Gemini 3.8 Ultra): \"{question}\"...\n")
     system_prompt = """Eres Mateo, master sumiller y botánico experto de CannaCulture.
 Responde con cercanía, elocuencia natural y rigor botánico/químico a la consulta del usuario.
 Si es una pregunta científica o de cultivo, explica los procesos biológicos (degradación de THCA a CBN, asimilación por pH, movilidad de nutrientes, efecto séquito, etc.)."""
     full_prompt = f"{system_prompt}\n\nPregunta: {question}"
-    ans = call_gemini(full_prompt)
+    ans = call_gemini(full_prompt, model="gemini-3.8-ultra")
     print("="*60)
     print("🌿 RESPUESTA DE MATEO (CANNACULTURE):")
     print("="*60)
