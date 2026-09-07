@@ -21,7 +21,7 @@ try:
                 print("HTML Line:", line.strip())
         
         # Check bundle
-        bundle_url = 'https://ac1endikar.github.io/cannaculture/js/bundle.js?v=' + str(resp.headers.get('Date', ''))
+        bundle_url = 'https://ac1endikar.github.io/cannaculture/js/bundle.js?v=test_' + str(int(__import__('time').time()))
         req_b = urllib.request.Request(bundle_url, headers={'User-Agent': 'Mozilla/5.0', 'Cache-Control': 'no-cache'})
         with urllib.request.urlopen(req_b, timeout=10) as resp_b:
             b_text = resp_b.read().decode('utf-8')
