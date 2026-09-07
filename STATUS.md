@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-07 19:15  
+> **Última actualización:** 2026-09-07 19:50  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
@@ -8,20 +8,33 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 448 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo la gran expansión de Nirvana Seeds con 15 variedades históricas, Eva Seeds con 11 variedades, Medical Seeds Co. con 16 variedades, más 00 Seeds Bank y Sweet Seeds).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_render_fix_v147`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_nirvana_botany_v151`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
-- **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders).
+- **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders, 0 fotos no botánicas).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
-- **Corrección Crítica de Renderizado y Estabilización de Catálogo 448 Cepas (v147):** **100% OPERATIVA Y VERIFICADA** (Subsanado error de sintaxis en `js/missions.js` que impedía la ejecución del bundle, normalizados valores `species: "Híbrida"` en las 6 cepas de Nirvana Seeds, añadidos `indicaPct` y `sativaPct` al bloque completo. DOM validado en motor Chromium headless con 448 tarjetas renderizadas y métricas vivas: 448 Total, 38 Bancos, 202 Índicas, 110 Sativas, 136 Híbridas, 22% Avg THC).
+- **Calibración Botánica Nirvana Seeds & Sustitución de Fotografías Ajenas (v151):** **100% OPERATIVA Y VERIFICADA** (Detectadas y reemplazadas 3 fotos no cannábicas en la web: huerto de mandarinas en `nirvana-northern-light` y `rqs-northern-light`, y campo de brotes de trigo en `nirvana-gsc`. Descargadas e integradas fotografías macro botánicas 100% oficiales de `nirvanashop.com` en WebP 800x800. Unificadas además las 15 genéticas de Nirvana Seeds con proporciones exactas `indicaPct`/`sativaPct`, rendimientos numéricos limpios y THC oficial).
+- **Corrección Crítica de Renderizado y Estabilización de Catálogo 448 Cepas (v147):** **100% OPERATIVA Y VERIFICADA** (Subsanado error de sintaxis en `js/missions.js`, normalizados valores en el DOM validado en motor Chromium headless con 448 tarjetas renderizadas y métricas vivas: 448 Total, 38 Bancos, 202 Índicas, 110 Sativas, 136 Híbridas, 22% Avg THC).
 - **Consolidación Visual de 448 Cepas en Producción (v150):** **100% OPERATIVA** (Actualizados todos los contadores estáticos de hero, barra de estadísticas, buscador y sommelier IA en `index.html` a 448 cepas).
 - **Expansión Oficial Nirvana Seeds (v149-v150):** **100% OPERATIVA** (+10 cepas legendarias propietarias del banco holandés con macrofotografía botánica oficial 800x800 WebP de `nirvanashop.com`, llevando Nirvana Seeds de 5 a 15 cepas y el catálogo total de 438 a 448 variedades sin duplicados ni errores).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-07)
+1. ✅ **Calibración Botánica Nirvana Seeds & Reemplazo de 3 Fotografías No Cannábicas (v151):**
+   - **Detección y Sustitución de 3 Genéticas con Fotos No Cannábicas:**
+     * `nirvana-northern-light`: Se detectó que utilizaba una foto de un huerto de mandarinos/cítricos (`nirvana-northern-light-flower-hd.webp`). Se sustituyó por la fotografía botánica macro oficial de flor de Northern Light de Nirvana Seeds (`img/nirvana-northern-light.webp` e `images/strains/nirvana-seeds/nirvana-northern-light.webp`).
+     * `nirvana-gsc` (Girl Scout Cookies): Se detectó que utilizaba una foto de un campo de cultivo de cereal/trigo (`nirvana-gsc-flower-hd.webp`). Se sustituyó por la fotografía botánica macro oficial de flor de GSC de Nirvana Seeds (`img/nirvana-gsc.webp` e `images/strains/nirvana-seeds/nirvana-gsc.webp`).
+     * `rqs-northern-light` (Royal Queen Seeds): Compartía la foto del huerto de cítricos. Se sustituyó por la fotografía botánica auténtica de cogollo maduro de Royal Queen Seeds Northern Light (`img/rqs-northern-light.webp`).
+   - **Unificación Visual al 100% de Nirvana Seeds:** Se actualizaron además `nirvana-og-kush`, `nirvana-gelato` y `nirvana-white-widow` con sus fotografías macro oficiales de flor con el fondo de acuarela característico de Nirvana Seeds, logrando que las 15 cepas del banco compartan la misma estética oficial de alta gama.
+   - **Auditoría y Normalización Botánica de las 15 Cepas de Nirvana Seeds:**
+     * Calibración de porcentajes de linaje (`indicaPct` y `sativaPct`) sumando exactamente 100% en todas las variedades.
+     * Conversión de campos de rendimiento `yieldIndoor` y `yieldOutdoor` de cadenas a valores numéricos enteros (ej: `500`, `650`) para un ordenamiento y cálculo estadístico infalible.
+     * Ajuste de niveles de THC a los rangos oficiales del criador (Nirvana Shop).
+   - **Recompilación y Caché:** Bundle recompilado con `python scripts/build_bundle.py` generando `js/bundle.js` y `js/bundle-v151.js` (759,908 bytes). Cache-busting actualizado en `index.html` a `?v=2026_nirvana_botany_v151`.
+   - **Verificación Automática:** 448 tarjetas de cepas renderizadas sin errores en el DOM con motor Chromium headless.
 1. ✅ **Corrección Crítica de Renderizado en Producción & Normalización de Fichas (v147):**
    - **Diagnóstico Preciso de Excepción Sintáctica:** Localizado `Uncaught SyntaxError: Missing catch or finally after try` en `js/missions.js` (bloque huérfano remanente tras la integración de Gemini 3.8 Ultra). El SyntaxError impedía que `bundle.js` se ejecutara, dejando la cuadrícula vacía y las estadísticas en guiones ("—").
    - **Depuración de Campos en `js/data.js`:** Corregido el valor de `species: "Hybrid"` a `species: "Híbrida"` en 6 genéticas de Nirvana Seeds (`bubblelicious`, `ak-48`, `wonder-woman`, `somango-xxl`, `super-skunk`, `blackjack`), garantizando compatibilidad absoluta con filtros de especie y badges CSS.
