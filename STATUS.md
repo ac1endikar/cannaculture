@@ -1,28 +1,34 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-07 19:50  
+> **Última actualización:** 2026-09-07 20:15  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
 
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
-- **Base de datos:** 448 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo la gran expansión de Nirvana Seeds con 15 variedades históricas, Eva Seeds con 11 variedades, Medical Seeds Co. con 16 variedades, más 00 Seeds Bank y Sweet Seeds).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_nirvana_botany_v151`).
+- **Base de datos:** 464 cepas únicas y consolidadas pertenecientes a 40 bancos de semillas premium en `js/data.js` (incluyendo la incorporación de Fase A: Delicious Seeds con 8 variedades y Mr. Nice Seedbank con 8 variedades legendarias, más Nirvana Seeds con 15 variedades, Eva Seeds con 11 variedades, Medical Seeds Co. con 16 variedades, 00 Seeds Bank y Sweet Seeds).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_faseA_v148`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 - **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders, 0 fotos no botánicas).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
+- **Integración Fase A — Delicious Seeds & Mr. Nice Seedbank (v148):** **100% OPERATIVA Y VERIFICADA** (+16 genéticas fotoperiódicas legendarias ricas en THC integradas con estructura agronómica 100% numérica, sin strings ni guiones en rendimiento/cannabinoides. Fotografías botánicas reales en alta resolución 800x800 integradas en `images/strains/` e `img/`. DOM verificado en headless Edge con 464 tarjetas activas).
 - **Calibración Botánica Nirvana Seeds & Sustitución de Fotografías Ajenas (v151):** **100% OPERATIVA Y VERIFICADA** (Detectadas y reemplazadas 3 fotos no cannábicas en la web: huerto de mandarinas en `nirvana-northern-light` y `rqs-northern-light`, y campo de brotes de trigo en `nirvana-gsc`. Descargadas e integradas fotografías macro botánicas 100% oficiales de `nirvanashop.com` en WebP 800x800. Unificadas además las 15 genéticas de Nirvana Seeds con proporciones exactas `indicaPct`/`sativaPct`, rendimientos numéricos limpios y THC oficial).
-- **Corrección Crítica de Renderizado y Estabilización de Catálogo 448 Cepas (v147):** **100% OPERATIVA Y VERIFICADA** (Subsanado error de sintaxis en `js/missions.js`, normalizados valores en el DOM validado en motor Chromium headless con 448 tarjetas renderizadas y métricas vivas: 448 Total, 38 Bancos, 202 Índicas, 110 Sativas, 136 Híbridas, 22% Avg THC).
-- **Consolidación Visual de 448 Cepas en Producción (v150):** **100% OPERATIVA** (Actualizados todos los contadores estáticos de hero, barra de estadísticas, buscador y sommelier IA en `index.html` a 448 cepas).
-- **Expansión Oficial Nirvana Seeds (v149-v150):** **100% OPERATIVA** (+10 cepas legendarias propietarias del banco holandés con macrofotografía botánica oficial 800x800 WebP de `nirvanashop.com`, llevando Nirvana Seeds de 5 a 15 cepas y el catálogo total de 438 a 448 variedades sin duplicados ni errores).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-07)
+1. ✅ **Integración de la Fase A — Delicious Seeds (8) y Mr. Nice Seedbank (8) (v148):**
+   - **Incorporación de 16 Variedades Fotoperiódicas Legendarias:**
+     * **Delicious Seeds (8 cepas):** `sugar-black-rose` (25% THC), `eleven-roses` (24% THC), `golosa` (26% THC), `marmalate` (21% THC), `cotton-candy-kush` (23% THC), `caramelo` (24% THC), `critical-kali-mist` (22% THC), `unknown-kush` (23% THC).
+     * **Mr. Nice Seedbank (8 cepas):** `super-silver-haze-mrnice` (21% THC), `black-widow` (20% THC), `critical-mass-mrnice` (20% THC), `medicine-man` (20% THC), `nevilles-haze-mrnice` (22% THC), `early-skunk-mrnice` (18% THC), `shark-shock` (19% THC), `mango-haze` (21% THC).
+   - **Estructura Agronómica 100% Numérica y Limpia:** Todos los campos de rendimiento (`yieldIndoor`, `yieldOutdoor`), cannabinoides (`thc`, `cbd`), floración (`floweringDays`) y linaje (`indicaPct`, `sativaPct`) formateados estrictamente como valores numéricos sin cadenas ni guiones.
+   - **Fotografía Botánica Real 100% Oficial:** Descargadas y optimizadas a 800x800 px las 16 imágenes reales de flores de los criadores originales, almacenadas en `images/strains/` y replicadas en `img/`.
+   - **Recompilación y Caché:** Bundle recompilado con `python scripts/build_bundle.py` (782,642 bytes). Versionado de cache-busting en `index.html` actualizado a `?v=2026_faseA_v148`.
+   - **Verificación Automatizada:** DOM verificado mediante motor Chromium headless con **464 tarjetas** renderizadas y estadísticas calculadas en tiempo real.
 1. ✅ **Calibración Botánica Nirvana Seeds & Reemplazo de 3 Fotografías No Cannábicas (v151):**
    - **Detección y Sustitución de 3 Genéticas con Fotos No Cannábicas:**
      * `nirvana-northern-light`: Se detectó que utilizaba una foto de un huerto de mandarinos/cítricos (`nirvana-northern-light-flower-hd.webp`). Se sustituyó por la fotografía botánica macro oficial de flor de Northern Light de Nirvana Seeds (`img/nirvana-northern-light.webp` e `images/strains/nirvana-seeds/nirvana-northern-light.webp`).
