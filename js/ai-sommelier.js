@@ -150,7 +150,7 @@ export class AISommelierAgent {
     });
 
     // Saludo inicial con arquitectura de inteligencia dual (Ultra + Eco)
-    const totalCepas = STRAINS_DATABASE?.length || 438;
+    const totalCepas = STRAINS_DATABASE?.length || 448;
     const greeting = `¡Hola! Soy <strong>Mateo</strong>, tu master sumiller botánico en CannaCulture. 🌿<br/><br/>
     Cuento con un sistema de inteligencia dual con <strong>Google Gemini 3.8 Ultra</strong> para consultas botánicas especializadas de CannaCulture y visión multimodal, junto a un <strong>Modo Ligero de Ahorro de Recursos</strong> para conversaciones generales.<br/><br/>
     💡 <strong>¿En qué puedo asistirte hoy?</strong><br/>

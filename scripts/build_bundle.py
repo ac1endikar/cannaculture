@@ -40,9 +40,9 @@ full_content = "\n".join(bundled_code)
 with open(bundle_path, 'w', encoding='utf-8') as f:
     f.write(full_content)
 
-bundle_v149_path = os.path.join(js_dir, 'bundle-v149.js')
-with open(bundle_v149_path, 'w', encoding='utf-8') as f:
+bundle_v150_path = os.path.join(js_dir, 'bundle-v150.js')
+with open(bundle_v150_path, 'w', encoding='utf-8') as f:
     f.write(full_content)
 
 print(f"✅ Created {bundle_path} ({os.path.getsize(bundle_path):,} bytes)")
-print(f"✅ Created {bundle_v149_path} ({os.path.getsize(bundle_v149_path):,} bytes)")
+print(f"✅ Created {bundle_v150_path} ({os.path.getsize(bundle_v150_path):,} bytes)")

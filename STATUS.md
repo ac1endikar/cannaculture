@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-07 17:00  
+> **Última actualización:** 2026-09-07 17:08  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
@@ -8,14 +8,15 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 448 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo la gran expansión de Nirvana Seeds con 15 variedades históricas, Eva Seeds con 11 variedades, Medical Seeds Co. con 16 variedades, más 00 Seeds Bank y Sweet Seeds).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_nirvana_expansion_v149`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_nirvana_expansion_v150_live`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 - **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
-- **Expansión Oficial Nirvana Seeds (v149):** **100% OPERATIVA** (+10 cepas legendarias propietarias del banco holandés con macrofotografía botánica oficial 800x800 WebP de `nirvanashop.com`, llevando Nirvana Seeds de 5 a 15 cepas y el catálogo total de 438 a 448 variedades sin duplicados ni errores).
+- **Consolidación Visual de 448 Cepas en Producción (v150):** **100% OPERATIVA** (Actualizados todos los contadores estáticos de hero, barra de estadísticas, buscador y sommelier IA en `index.html` a 448 cepas. Cache-busting nuclear `v150_live` para garantizar visualización inmediata en clientes públicos sin retención de caché residual).
+- **Expansión Oficial Nirvana Seeds (v149-v150):** **100% OPERATIVA** (+10 cepas legendarias propietarias del banco holandés con macrofotografía botánica oficial 800x800 WebP de `nirvanashop.com`, llevando Nirvana Seeds de 5 a 15 cepas y el catálogo total de 438 a 448 variedades sin duplicados ni errores).
 - **Optimización Integral de Toda la Página (v148):** **100% OPERATIVA** (Contención CSS `content-visibility: auto` para renderizado ultra rápido del catálogo completo, debounce reactivo en buscador, targets táctiles accesibles de 44px, `:focus-visible` y cobertura total de `aria-label` WCAG).
 - **Arquitectura de Inteligencia Dual en Mateo Sommelier IA (v147):** **100% OPERATIVA** (Inferencia de máxima potencia con **Google Gemini 3.8 Ultra** para consultas de CannaCulture, cultivo, botánica y catálogo completo de 448 cepas; conmutación automática a **Gemini Ligero (Eco)** para temas generales de bajo consumo de recursos).
 - **Catálogos Completos Eva Seeds + Medical Seeds (v144):** **100% VERIFICADOS Y CONSOLIDADOS** (11 variedades de Eva Seeds y 16 de Medical Seeds blindadas con 0 duplicados y fotografía botánica real).
