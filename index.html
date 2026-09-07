@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CannaCatalog 2.0 ULTRA | 429 Cepas de 38 Bancos Premium (18+)</title>
+  <title>CannaCatalog 2.0 ULTRA MAX | 438 Cepas de 38 Bancos Premium (18+)</title>
   <meta name="description"
-    content="Catálogo ultra extendido con 429 variedades de Eva Seeds (11 cepas), Medical Seeds (16 cepas), Fast Buds, Mephisto, Humboldt Seed, Dutch Passion, Nirvana Seeds, Ripper Seeds, Barney's Farm, Sweet Seeds, RQS, Paradise Seeds, DNA Genetics y 26 bancos más. Clasificadas por Índica, Sativa e Híbrida con 8 terpenos.">
+    content="Catálogo ultra extendido con 438 variedades botánicas de 38 bancos premium mundiales (Eva Seeds, Medical Seeds, Ripper Seeds, Barney's Farm, Sweet Seeds, Dutch Passion, Green House, Nirvana y 30 más). Clasificadas por Índica, Sativa e Híbrida con 8 terpenos clave y Sommelier Inteligente Mateo.">
   <meta name="theme-color" content="#0B0F0E">
 
   <!-- Indica el tipo de público objetivo -->
@@ -68,7 +68,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css?v=2026_gemini_38_ultra_dual_v147">
+  <link rel="stylesheet" href="css/styles.css?v=2026_full_optimization_v148">
 </head>
 
 <body>
@@ -109,12 +109,12 @@
           <p class="age-prompt-text">¿Confirmas que tienes <strong>18 años o más</strong> para acceder a la plataforma?
           </p>
           <div class="age-actions-grid">
-            <button id="btn-age-confirm" class="btn btn-age-yes">
+            <button id="btn-age-confirm" class="btn btn-age-yes" aria-label="Confirmar que tengo 18 años o más">
               <span class="btn-icon">✅</span>
               <span class="btn-text-main">Sí, tengo 18 años o más</span>
               <span class="btn-text-sub">Entrar a la plataforma</span>
             </button>
-            <button id="btn-age-reject" class="btn btn-age-no">
+            <button id="btn-age-reject" class="btn btn-age-no" aria-label="Rechazar acceso por ser menor de 18 años">
               <span class="btn-icon">❌</span>
               <span class="btn-text-main">No, soy menor de 18 años</span>
               <span class="btn-text-sub">Salir o ver información</span>
@@ -149,7 +149,8 @@
             🚪 Salida Segura (Ir a Google)
           </a>
           <button id="btn-age-retry" class="btn btn-outline"
-            style="width: 100%; margin-top: 0.6rem; justify-content: center;">
+            style="width: 100%; margin-top: 0.6rem; justify-content: center;"
+            aria-label="Reintentar verificación de edad">
             🔄 He cometido un error (Volver a verificar)
           </button>
         </div>
@@ -159,36 +160,36 @@
   </dialog>
 
   <!-- NAVEGACIÓN PRINCIPAL -->
-  <header class="main-header glass-nav">
+  <header class="main-header glass-nav" role="banner">
     <div class="container header-container">
-      <a href="#" class="brand-logo" id="logo-btn">
+      <a href="#" class="brand-logo" id="logo-btn" aria-label="CannaCatalog 2.0 MAX Inicio">
         <span class="logo-icon">🌿</span>
         <span class="logo-text">CANNA<span class="highlight">CATALOG</span> <small class="version-tag">2.0
             MAX</small></span>
       </a>
 
-      <nav class="nav-links">
-        <button class="nav-btn active" data-target="section-catalog">
+      <nav class="nav-links" role="navigation" aria-label="Navegación Principal">
+        <button class="nav-btn active" data-target="section-catalog" aria-label="Ir a sección Catálogo Ampliado">
           <span class="nav-btn-icon">📚</span>
           <span class="nav-btn-text">Catálogo Ampliado</span>
         </button>
-        <button class="nav-btn" data-target="section-matcher">
+        <button class="nav-btn" data-target="section-matcher" aria-label="Ir a sección Ruleta y Activity Matcher">
           <span class="nav-btn-icon">🎲</span>
           <span class="nav-btn-text">Activity Matcher</span>
         </button>
-        <button class="nav-btn" data-target="section-ai-agent">
+        <button class="nav-btn" data-target="section-ai-agent" aria-label="Ir a sección Sommelier Inteligente IA">
           <span class="nav-btn-icon">🤖</span>
           <span class="nav-btn-text">Sommelier IA</span>
         </button>
-        <button class="nav-btn" data-target="section-blender">
+        <button class="nav-btn" data-target="section-blender" aria-label="Ir a sección Mezclador y Comparador">
           <span class="nav-btn-icon">🧪</span>
           <span class="nav-btn-text">Mezclador &amp; Comparador</span>
         </button>
-        <button class="nav-btn" data-target="section-bitacora">
+        <button class="nav-btn" data-target="section-bitacora" aria-label="Ir a sección Bitácora de Vivencias">
           <span class="nav-btn-icon">📖</span>
           <span class="nav-btn-text">Vivencias</span>
         </button>
-        <button class="nav-btn" data-target="section-terpenes">
+        <button class="nav-btn" data-target="section-terpenes" aria-label="Ir a sección Terpenos y Vaporización">
           <span class="nav-btn-icon">🧬</span>
           <span class="nav-btn-text">Terpenos &amp; Vapo</span>
         </button>
@@ -197,23 +198,23 @@
       <!-- Selector de Tema Visual & Botón MODO SOBRIO -->
       <div class="header-extra-controls">
         <!-- Indicador Estado +18 -->
-        <button id="btn-age-status" class="btn btn-age-status-pill" title="Estado de Verificación +18">
+        <button id="btn-age-status" class="btn btn-age-status-pill" title="Estado de Verificación +18" aria-label="Estado de Verificación de Mayoría de Edad +18">
           🛡️ <span id="age-status-text">+18 Verificado</span>
         </button>
 
         <!-- Botón Iniciar Sesión / Perfil -->
-        <button id="btn-user-auth" class="btn btn-auth-pill" title="Mi Cuenta / Iniciar Sesión">
+        <button id="btn-user-auth" class="btn btn-auth-pill" title="Mi Cuenta / Iniciar Sesión" aria-label="Mi Cuenta de Usuario o Iniciar Sesión">
           👤 <span id="auth-btn-text">Iniciar Sesión</span>
         </button>
 
-        <select id="theme-selector" class="custom-select-sm">
+        <select id="theme-selector" class="custom-select-sm" aria-label="Seleccionar tema visual de interfaz">
           <option value="emerald">🟢 Esmeralda</option>
           <option value="cyberpurple">🟣 Cyber Purple</option>
           <option value="sunsetgold">🟠 Sunset Gold</option>
           <option value="obsidian">🔵 Obsidian Cyan</option>
         </select>
 
-        <button id="btn-sobrio-mode" class="btn btn-sobrio-pulse">
+        <button id="btn-sobrio-mode" class="btn btn-sobrio-pulse" aria-label="Activar Modo Sobrio y Calma S.O.S.">
           🛡️ Modo Sobrio
         </button>
       </div>
@@ -332,25 +333,25 @@
           </p>
         </div>
         <div class="catalog-header-actions">
-          <button id="btn-header-compare" class="btn-header-compare" title="Abrir Comparador Cara a Cara">
+          <button id="btn-header-compare" class="btn-header-compare" title="Abrir Comparador Cara a Cara" aria-label="Abrir Comparador de Variedades Cara a Cara">
             <span class="compare-icon">⚖️</span>
             <span class="compare-label">Comparador</span>
             <span class="compare-badge" id="header-compare-badge">0/3</span>
           </button>
-          <span class="results-count" id="catalog-count">Mostrando cepas...</span>
+          <span class="results-count" id="catalog-count">Mostrando 438 cepas...</span>
         </div>
       </div>
 
       <!-- STATS BAR -->
       <div id="stats-bar" class="stats-bar glass-panel">
         <div class="stat-item">
-          <span class="stat-number" id="stat-total">82</span>
+          <span class="stat-number" id="stat-total">438</span>
           <span class="stat-label">Cepas Totales</span>
         </div>
 
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-number" id="stat-banks">22</span>
+          <span class="stat-number" id="stat-banks">38</span>
           <span class="stat-label">Bancos Premium</span>
         </div>
 
@@ -434,7 +435,7 @@
         </div>
 
         <div class="roulette-action-area">
-          <button id="btn-spin-roulette" class="btn btn-emerald-lg glow-pulse">
+          <button id="btn-spin-roulette" class="btn btn-emerald-lg glow-pulse" aria-label="Girar Ruleta y Emparejar Cepa Ideal">
             🎲 ¡Girar Ruleta & Emparejar Cepa Ideal!
           </button>
         </div>
@@ -448,7 +449,7 @@
       <div class="section-header">
         <div>
           <h2>🤖 Sommelier de Inteligencia Artificial & CannaDoctor Multimodal</h2>
-          <p class="section-desc">Consulta en lenguaje natural a nuestro asistente inteligente sobre 429 cepas de 38 bancos premium o sube una fotografía para diagnóstico botánico con Gemini 3.6 Flash.</p>
+          <p class="section-desc">Consulta en lenguaje natural a nuestro asistente inteligente sobre 438 cepas de 38 bancos premium o sube una fotografía para diagnóstico botánico con Gemini 3.6 Flash.</p>
         </div>
       </div>
 
@@ -464,7 +465,7 @@
               👨‍🌾</div>
             <div>
               <h3 style="font-size: 1.2rem; font-weight: 900; color: #fff; margin: 0;">Mateo | Master Sumiller & CannaDoctor 2.0</h3>
-              <span style="font-size: 0.8rem; color: #6EE7B7;">🟢 Conectado a 418 cepas — Google Gemini 3.8 Flash Multimodal & Voz</span>
+              <span style="font-size: 0.8rem; color: #6EE7B7;">🟢 Conectado a 438 cepas — Google Gemini 3.8 Flash Multimodal & Voz</span>
             </div>
           </div>
           <span
@@ -519,14 +520,17 @@
           <input type="file" id="ai-chat-file-inline" accept="image/*" style="display:none;" />
           <button type="button" id="ai-chat-btn-photo-inline" class="btn"
             style="background: rgba(16,185,129,0.15); border: 1px solid var(--primary-emerald); color: #A7F3D0; border-radius: 12px !important; padding: 0 16px; font-size: 0.88rem; font-weight: 700; white-space: nowrap; cursor: pointer; display: flex; align-items: center; gap: 6px;"
-            title="CannaDoctor: Subir foto de cultivo para diagnóstico de plagas, carencias o tricomas">
+            title="CannaDoctor: Subir foto de cultivo para diagnóstico de plagas, carencias o tricomas"
+            aria-label="CannaDoctor: Subir foto de cultivo para diagnóstico de plagas, carencias o tricomas">
             📷 CannaDoctor
           </button>
           <input type="text" id="ai-chat-input-inline"
             placeholder="Pregunta lo que buscas o describe tu cultivo..."
-            style="flex: 1; border-radius: 12px !important; font-size: 0.95rem !important;" />
+            style="flex: 1; border-radius: 12px !important; font-size: 0.95rem !important;"
+            aria-label="Pregunta al Sommelier IA Mateo" />
           <button id="ai-chat-send-inline" class="btn btn-emerald-lg"
-            style="border-radius: 12px !important; padding: 0 24px;">
+            style="border-radius: 12px !important; padding: 0 24px;"
+            aria-label="Enviar consulta al Sommelier IA Mateo">
             🚀 Consultar
           </button>
         </div>
@@ -559,7 +563,7 @@
               <label for="blend-ratio">Proporción de Cepa 1 (<span id="ratio-val">50</span>%)</label>
               <input type="range" id="blend-ratio" min="10" max="90" value="50" class="custom-range" />
             </div>
-            <button type="submit" class="btn btn-emerald-md">🧪 Calcular Perfil Resultante</button>
+            <button type="submit" class="btn btn-emerald-md" aria-label="Calcular perfil resultante de la mezcla">🧪 Calcular Perfil Resultante</button>
           </form>
 
           <div id="blend-result" class="tool-result-box"></div>
@@ -576,7 +580,7 @@
               <label for="compare-strain-2">Cepa B</label>
               <select id="compare-strain-2" class="custom-select"></select>
             </div>
-            <button type="submit" class="btn btn-accent">📊 Comparar Cepas</button>
+            <button type="submit" class="btn btn-accent" aria-label="Comparar cepas seleccionadas">📊 Comparar Cepas</button>
           </form>
 
           <div id="compare-result" class="tool-result-box"></div>
@@ -591,7 +595,7 @@
           <h2>📖 Vivencias</h2>
           <p class="section-desc">Guarda tus recuerdos de cata, sensaciones, momentos vividos y notas personales.</p>
         </div>
-        <button id="btn-open-add-log" class="btn btn-emerald-md">
+        <button id="btn-open-add-log" class="btn btn-emerald-md" aria-label="Registrar nueva vivencia o nota de cata">
           ➕ Registrar Nueva Vivencia
         </button>
       </div>
@@ -676,7 +680,7 @@
     <div class="dialog-content text-center">
       <div class="modal-header">
         <h2>🛡️ Modo Sobrio (Clear Mind Sanctuary)</h2>
-        <button class="close-modal-btn"
+        <button class="close-modal-btn" aria-label="Cerrar ventana de Modo Sobrio"
           onclick="document.getElementById('sobrio-modal').close(); window.audioEngine.stopAll();">✕</button>
       </div>
       <p class="hero-desc">Tómate un momento de tranquilidad. Sigue el ritmo del círculo para sincronizar tu
@@ -689,9 +693,9 @@
       </div>
 
       <div class="audio-controls" style="margin-top: 1.5rem;">
-        <button id="btn-play-solfeggio" class="btn btn-accent">🎧 Activar Frecuencia Solfeggio 432Hz</button>
-        <button id="btn-play-noise" class="btn btn-outline-stash">🌧️ Sonido de Lluvia / Ruido Rosa</button>
-        <button id="btn-stop-audio" class="btn btn-danger-sm">⏹️ Detener Sonido</button>
+        <button id="btn-play-solfeggio" class="btn btn-accent" aria-label="Activar Frecuencia Solfeggio 432Hz">🎧 Activar Frecuencia Solfeggio 432Hz</button>
+        <button id="btn-play-noise" class="btn btn-outline-stash" aria-label="Activar Sonido de Lluvia y Ruido Rosa">🌧️ Sonido de Lluvia / Ruido Rosa</button>
+        <button id="btn-stop-audio" class="btn btn-danger-sm" aria-label="Detener reproducción de sonido">⏹️ Detener Sonido</button>
       </div>
     </div>
   </dialog>
@@ -719,7 +723,7 @@
           <h3 style="font-size: 1.5rem; font-weight: 900; color: #fff; margin: 0;">📖 Registrar Nueva Vivencia & Nota de
             Cata</h3>
         </div>
-        <button class="close-modal-btn" onclick="document.getElementById('add-log-modal').close()"
+        <button class="close-modal-btn" onclick="document.getElementById('add-log-modal').close()" aria-label="Cerrar ventana de registro de vivencia"
           style="background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 36px; height: 36px;cursor: pointer; font-size: 1.1rem;">✕</button>
       </div>
 
@@ -835,7 +839,7 @@
           <h3 id="auth-modal-title" style="font-size: 1.5rem; font-weight: 900; color: #fff; margin: 0;">🔑 Iniciar
             Sesión / Registro</h3>
         </div>
-        <button class="close-modal-btn" onclick="document.getElementById('auth-modal').close()"
+        <button class="close-modal-btn" onclick="document.getElementById('auth-modal').close()" aria-label="Cerrar ventana de inicio de sesión"
           style="background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 36px; height: 36px;cursor: pointer; font-size: 1.1rem;">✕</button>
       </div>
 
@@ -845,11 +849,11 @@
         <!-- TABS PESTAÑAS -->
         <div
           style="display: flex; gap: 0.5rem; margin-bottom: 1.4rem; background: rgba(0,0,0,0.4); padding: 4px; border: 1px solid rgba(255,255,255,0.08);">
-          <button id="tab-login-btn" class="auth-tab-btn active"
+          <button id="tab-login-btn" class="auth-tab-btn active" aria-label="Pestaña Iniciar Sesión"
             style="flex: 1; padding: 0.7rem; background: var(--primary-emerald); color: #000; font-weight: 900; border: none; cursor: pointer;font-size: 0.88rem;">
             🔑 Iniciar Sesión
           </button>
-          <button id="tab-register-btn" class="auth-tab-btn"
+          <button id="tab-register-btn" class="auth-tab-btn" aria-label="Pestaña Registrarse"
             style="flex: 1; padding: 0.7rem; background: transparent; color: var(--text-muted); font-weight: 800; border: none; cursor: pointer;font-size: 0.88rem;">
             ✨ Registrarse
           </button>
@@ -1018,7 +1022,7 @@
        WIDGET FLOTANTE: AGENTE IA SOMMELIER
        ====================================================== -->
   <!-- Botón Gatillo Flotante -->
-  <button id="ai-chat-trigger" class="sommelier-fab-btn" title="Hablar con Sommelier IA">
+  <button id="ai-chat-trigger" class="sommelier-fab-btn" title="Hablar con Sommelier IA" aria-label="Abrir Sommelier Botánico Mateo">
     <span class="sommelier-fab-icon">🤖</span>
     <span class="sommelier-fab-text">Sommelier IA</span>
     <span class="sommelier-fab-status">ONLINE</span>
@@ -1059,11 +1063,11 @@
         </div>
       </div>
       <div style="display: flex; align-items: center; gap: 8px;">
-        <button id="ai-chat-key-btn" title="Configurar Clave API Gemini (Google AI Studio)"
+        <button id="ai-chat-key-btn" title="Configurar Clave API Gemini (Google AI Studio)" aria-label="Configurar Clave API Gemini"
           style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6EE7B7; border-radius: 8px !important; padding: 4px 8px; cursor: pointer; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 4px;">
           🔑 API Key
         </button>
-        <button id="ai-chat-close"
+        <button id="ai-chat-close" aria-label="Cerrar chat de Mateo"
           style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 28px; height: 28px; border-radius: 50% !important; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center;">✕</button>
       </div>
     </div>
@@ -1108,14 +1112,14 @@
     <div
       style="padding: 10px 14px; background: rgba(0,0,0,0.5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 8px; align-items: center;">
       <input type="file" id="ai-chat-file" accept="image/*" style="display:none;" />
-      <button type="button" id="ai-chat-btn-photo"
+      <button type="button" id="ai-chat-btn-photo" aria-label="CannaDoctor: Subir foto para análisis botánico"
         style="background: rgba(16,185,129,0.15); border: 1px solid var(--primary-emerald); color: #A7F3D0; border-radius: 12px !important; padding: 8px 10px; cursor: pointer; font-size: 0.95rem; display: flex; align-items: center; justify-content: center;"
         title="CannaDoctor: Subir foto">
         📷
       </button>
-      <input type="text" id="ai-chat-input" placeholder="Pregunta al Sommelier IA..."
+      <input type="text" id="ai-chat-input" placeholder="Pregunta al Sommelier IA..." aria-label="Escribe tu consulta para el Sommelier IA"
         style="flex: 1; border-radius: 12px !important; font-size: 0.85rem !important; padding: 0.7rem 1rem !important;" />
-      <button id="ai-chat-send"
+      <button id="ai-chat-send" aria-label="Enviar mensaje a Mateo"
         style="background: var(--primary-emerald); color: #000; font-weight: 900; border: none; padding: 0 16px; border-radius: 12px !important; cursor: pointer; font-size: 0.9rem; height: 38px;">
         🚀
       </button>
@@ -1129,7 +1133,7 @@
     <div class="lightbox-wrapper">
       <!-- Botón cierre flotante -->
       <button class="lightbox-close-btn" id="lightbox-close-btn"
-        onclick="document.getElementById('image-lightbox-modal').close()" title="Cerrar (ESC)">✕</button>
+        onclick="document.getElementById('image-lightbox-modal').close()" title="Cerrar (ESC)" aria-label="Cerrar visor de fotografía en alta resolución">✕</button>
 
       <!-- Info superior -->
       <div class="lightbox-header">
@@ -1151,17 +1155,17 @@
 
       <!-- Barra de controles flotante estilo CannaCatalog Glass -->
       <div class="lightbox-controls-bar">
-        <button id="lightbox-btn-zoom-out" class="lightbox-ctrl-btn" title="Alejar (-)">➖ Alejar</button>
-        <button id="lightbox-btn-reset" class="lightbox-ctrl-btn" title="Restablecer (100%)">🔄 100%</button>
-        <button id="lightbox-btn-zoom-in" class="lightbox-ctrl-btn" title="Acercar (+)">➕ Acercar</button>
-        <button id="lightbox-btn-hd" class="lightbox-ctrl-btn hd-btn" title="Zoom Macro HD 2.5x">🔬 Macro 2.5x
+        <button id="lightbox-btn-zoom-out" class="lightbox-ctrl-btn" title="Alejar (-)" aria-label="Alejar fotografía (-)">➖ Alejar</button>
+        <button id="lightbox-btn-reset" class="lightbox-ctrl-btn" title="Restablecer (100%)" aria-label="Restablecer tamaño original (100%)">🔄 100%</button>
+        <button id="lightbox-btn-zoom-in" class="lightbox-ctrl-btn" title="Acercar (+)" aria-label="Acercar fotografía (+)">➕ Acercar</button>
+        <button id="lightbox-btn-hd" class="lightbox-ctrl-btn hd-btn" title="Zoom Macro HD 2.5x" aria-label="Zoom Macro HD 2.5x">🔬 Macro 2.5x
           HD</button>
       </div>
     </div>
   </dialog>
 
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=2026_gemini_38_ultra_dual_v147"></script>
+  <script src="js/bundle.js?v=2026_full_optimization_v148"></script>
 </body>
 
 </html>

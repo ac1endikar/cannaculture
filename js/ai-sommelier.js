@@ -32,6 +32,13 @@ export class AISommelierAgent {
     this.sendBtnFloating = document.getElementById('ai-chat-send');
     this.sendBtnInline = document.getElementById('ai-chat-send-inline');
     this.quickPills = document.querySelectorAll('.ai-suggest-pill');
+    this.quickPills.forEach(pill => {
+      const p = pill.getAttribute('data-prompt');
+      if (p && !pill.getAttribute('aria-label')) {
+        pill.setAttribute('aria-label', `Preguntar: ${p}`);
+        pill.setAttribute('title', p);
+      }
+    });
 
     // Elementos CannaDoctor Multimodal (Cámara / Subida de Foto)
     this.fileInputFloating = document.getElementById('ai-chat-file');

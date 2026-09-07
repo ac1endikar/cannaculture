@@ -56,6 +56,11 @@ html {
   overflow-x: hidden; /* Previene scroll horizontal en todo el documento */
 }
 
+:focus-visible {
+  outline: 2px solid var(--primary-emerald);
+  outline-offset: 3px;
+}
+
 body {
   background-color: var(--bg-main);
   background-image:
@@ -703,6 +708,9 @@ body::before {
   transition: var(--transition-smooth);
   overflow: hidden;
   cursor: default;
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 480px;
+  contain: layout style;
 }
 
 .strain-card::before {
@@ -740,6 +748,7 @@ body::before {
   overflow: hidden;
   flex-shrink: 0;
   background: #080C0B;
+  contain: paint;
 }
 
 .card-visual-img {
@@ -747,6 +756,7 @@ body::before {
   inset: 0;
   width: 100%;
   height: 100%;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: center;
   z-index: 1;
@@ -1422,15 +1432,24 @@ dialog.app-modal::backdrop {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
   color: var(--text-muted);
-  width: 32px; height: 32px;
+  width: 36px; height: 36px;
+  min-width: 36px; min-height: 36px;
   border-radius: var(--radius-full);
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition-fast);
   flex-shrink: 0;
+  position: relative;
+}
+.close-modal-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 44px; min-height: 44px;
 }
 .close-modal-btn:hover {
   background: rgba(239,68,68,0.2);

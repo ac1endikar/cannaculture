@@ -12490,6 +12490,13 @@ class AISommelierAgent {
     this.sendBtnFloating = document.getElementById('ai-chat-send');
     this.sendBtnInline = document.getElementById('ai-chat-send-inline');
     this.quickPills = document.querySelectorAll('.ai-suggest-pill');
+    this.quickPills.forEach(pill => {
+      const p = pill.getAttribute('data-prompt');
+      if (p && !pill.getAttribute('aria-label')) {
+        pill.setAttribute('aria-label', `Preguntar: ${p}`);
+        pill.setAttribute('title', p);
+      }
+    });
 
     // Elementos CannaDoctor Multimodal (Cámara / Subida de Foto)
     this.fileInputFloating = document.getElementById('ai-chat-file');
@@ -14191,23 +14198,24 @@ class CannaAppMAX {
       let filtered = (STRAINS_DATABASE || []).filter(strain => {
         if (!strain || typeof strain !== 'object' || !strain.name) return false;
 
+        // Micro-optimización de rendimiento: comprobaciones primitivas inmediatas
+        if (bank !== 'all' && strain.bank !== bank) return false;
+        if (species !== 'all' && strain.species !== species) return false;
+        if (terpene !== 'all' && strain.dominantTerpene !== terpene) return false;
+
+        // Si no hay término de búsqueda, pasa de inmediato sin asignar cadenas
+        if (!query) return true;
+
         const sName = (strain.name || '').toLowerCase();
+        if (sName.includes(query)) return true;
         const sGenetics = (strain.genetics || '').toLowerCase();
+        if (sGenetics.includes(query)) return true;
         const sBank = (strain.bank || '').toLowerCase();
+        if (sBank.includes(query)) return true;
         const sAka = (strain.aka || '').toLowerCase();
+        if (sAka.includes(query)) return true;
         const sFlavors = Array.isArray(strain.flavors) ? strain.flavors : [];
-
-        const matchQuery = !query ||
-                           sName.includes(query) ||
-                           sGenetics.includes(query) ||
-                           sBank.includes(query) ||
-                           sAka.includes(query) ||
-                           sFlavors.some(f => (f || '').toLowerCase().includes(query));
-        const matchBank = bank === 'all' || strain.bank === bank;
-        const matchSpecies = species === 'all' || strain.species === species;
-        const matchTerpene = terpene === 'all' || strain.dominantTerpene === terpene;
-
-        return matchQuery && matchBank && matchSpecies && matchTerpene;
+        return sFlavors.some(f => (f || '').toLowerCase().includes(query));
       });
 
       if (sortCriterion === 'indoor') {
@@ -14226,7 +14234,13 @@ class CannaAppMAX {
       this.renderStrainsGrid(this.currentStrains);
     };
 
-    this.searchInput?.addEventListener('input', applyFiltersAndSort);
+    // Debounce reactivo de 160ms para evitar re-renderizados continuos al teclear
+    let searchDebounceTimer = null;
+    this.searchInput?.addEventListener('input', () => {
+      clearTimeout(searchDebounceTimer);
+      searchDebounceTimer = setTimeout(applyFiltersAndSort, 160);
+    });
+
     this.filterBank?.addEventListener('change', applyFiltersAndSort);
     this.filterSpecies?.addEventListener('change', applyFiltersAndSort);
     this.filterTerpene?.addEventListener('change', applyFiltersAndSort);
@@ -14300,8 +14314,8 @@ class CannaAppMAX {
       const displayGenetics = strain.genetics || strain.lineage || strain.aka || 'Genética Exclusiva';
 
       return `
-        <div class="strain-card" style="--card-accent: ${strain.visualColor}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
-          <div class="card-visual-banner" onclick="event.stopPropagation(); window.app && window.app.openImageLightbox('${strainImg}', '${safeName}', '${safeBank}')" title="🔍 Haz clic para ver foto en alta resolución con Zoom HD">
+        <div class="strain-card" role="article" aria-label="${safeName} (${strain.species} - ${safeBank})" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))}" style="--card-accent: ${strain.visualColor}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
+          <div class="card-visual-banner" onclick="event.stopPropagation(); window.app && window.app.openImageLightbox('${strainImg}', '${safeName}', '${safeBank}')" title="🔍 Haz clic para ver foto en alta resolución con Zoom HD" role="button" aria-label="Ver imagen ampliada de ${safeName}">
             ${imgTag}
             <div class="card-visual-banner-inner" style="background: ${strain.visualColor}; ${strain.bgPattern}; opacity: ${strainImg ? '0' : '1'};"></div>
             <div class="card-banner-overlay"></div>
@@ -14344,10 +14358,10 @@ class CannaAppMAX {
             </div>
 
             <div class="card-actions" onclick="event.stopPropagation()" style="display: flex; gap: 8px;">
-              <button class="btn btn-primary" style="flex: 1; border-radius: 8px !important;" onclick="event.stopPropagation(); document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
+              <button class="btn btn-primary" aria-label="Ver ficha botánica detallada de ${safeName}" style="flex: 1; border-radius: 8px !important;" onclick="event.stopPropagation(); document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
                 📋 Ficha
               </button>
-              <button class="btn-compare-toggle ${isCompared ? 'active' : ''}" data-strain-id="${strain.id}" onclick="event.stopPropagation(); window.app && window.app.toggleCompareStrain('${strain.id}')" title="${isCompared ? 'Quitar del comparador' : 'Comparar (hasta 3 cepas)'}">
+              <button class="btn-compare-toggle ${isCompared ? 'active' : ''}" data-strain-id="${strain.id}" aria-label="${isCompared ? 'Quitar ' + safeName + ' del comparador' : 'Añadir ' + safeName + ' al comparador'}" onclick="event.stopPropagation(); window.app && window.app.toggleCompareStrain('${strain.id}')" title="${isCompared ? 'Quitar del comparador' : 'Comparar (hasta 3 cepas)'}">
                 ⚖️ ${isCompared ? 'Comparando' : 'Comparar'}
               </button>
             </div>
