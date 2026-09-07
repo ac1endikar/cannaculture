@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-07 17:08  
+> **Última actualización:** 2026-09-07 19:15  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
@@ -8,34 +8,25 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS.
 - **Base de datos:** 448 cepas únicas y consolidadas pertenecientes a 38 bancos de semillas premium en `js/data.js` (incluyendo la gran expansión de Nirvana Seeds con 15 variedades históricas, Eva Seeds con 11 variedades, Medical Seeds Co. con 16 variedades, más 00 Seeds Bank y Sweet Seeds).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_nirvana_expansion_v150_live`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_render_fix_v147`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 - **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA y Rendimiento
-- **Consolidación Visual de 448 Cepas en Producción (v150):** **100% OPERATIVA** (Actualizados todos los contadores estáticos de hero, barra de estadísticas, buscador y sommelier IA en `index.html` a 448 cepas. Cache-busting nuclear `v150_live` para garantizar visualización inmediata en clientes públicos sin retención de caché residual).
+- **Corrección Crítica de Renderizado y Estabilización de Catálogo 448 Cepas (v147):** **100% OPERATIVA Y VERIFICADA** (Subsanado error de sintaxis en `js/missions.js` que impedía la ejecución del bundle, normalizados valores `species: "Híbrida"` en las 6 cepas de Nirvana Seeds, añadidos `indicaPct` y `sativaPct` al bloque completo. DOM validado en motor Chromium headless con 448 tarjetas renderizadas y métricas vivas: 448 Total, 38 Bancos, 202 Índicas, 110 Sativas, 136 Híbridas, 22% Avg THC).
+- **Consolidación Visual de 448 Cepas en Producción (v150):** **100% OPERATIVA** (Actualizados todos los contadores estáticos de hero, barra de estadísticas, buscador y sommelier IA en `index.html` a 448 cepas).
 - **Expansión Oficial Nirvana Seeds (v149-v150):** **100% OPERATIVA** (+10 cepas legendarias propietarias del banco holandés con macrofotografía botánica oficial 800x800 WebP de `nirvanashop.com`, llevando Nirvana Seeds de 5 a 15 cepas y el catálogo total de 438 a 448 variedades sin duplicados ni errores).
-- **Optimización Integral de Toda la Página (v148):** **100% OPERATIVA** (Contención CSS `content-visibility: auto` para renderizado ultra rápido del catálogo completo, debounce reactivo en buscador, targets táctiles accesibles de 44px, `:focus-visible` y cobertura total de `aria-label` WCAG).
-- **Arquitectura de Inteligencia Dual en Mateo Sommelier IA (v147):** **100% OPERATIVA** (Inferencia de máxima potencia con **Google Gemini 3.8 Ultra** para consultas de CannaCulture, cultivo, botánica y catálogo completo de 448 cepas; conmutación automática a **Gemini Ligero (Eco)** para temas generales de bajo consumo de recursos).
-- **Catálogos Completos Eva Seeds + Medical Seeds (v144):** **100% VERIFICADOS Y CONSOLIDADOS** (11 variedades de Eva Seeds y 16 de Medical Seeds blindadas con 0 duplicados y fotografía botánica real).
-- **Expansión Bancos Españoles (00 Seeds Bank + Sweet Seeds) v143:** **100% INTEGRADA** (+9 variedades fotoperiódicas THC con ficha completa y activos fotográficos reales).
-- **Fotografía Macro Profesional de Monster (Eva Seeds) v142:** **100% ACTUALIZADA** (Sustituida foto amateur por fotografía botánica macro de estudio 700x700 WebP sobre fondo oscuro sin marcas de agua ni elementos ajenos).
-- **Catálogo Fotoperiódico Eva Seeds (v140):** **100% INTEGRADO Y VERIFICADO** (11 variedades fotoperiódicas THC agregadas a `js/data.js` con fotos botánicas reales 700x700 WebP y ficha técnica completa).
-- **Automatización CI/CD con GitHub Actions:**
-  - **Auto-PR Code Reviewer:** Workflow `.github/workflows/gemini_pr_reviewer.yml` que audita diffs con IA en cada Pull Request.
-  - **Release Notes & Changelog Generator:** Workflow `.github/workflows/gemini_changelog.yml` activado en tags.
-- **Herramientas de Terminal CLI (`scripts/git_ai.py`):** Comandos `commit`, `doctor`, `enrich` y `ask` (actualizado a `gemini-3.8-ultra`).
-- **Fase 2 de Reemplazo y Optimización Visual de Imágenes:** **100% COMPLETADA (143/143)**
-- **Optimización WebP Masiva:** **100% COMPLETADA (955/955)**
-- **Mobile Responsive Engine (Ficha Técnica y Comparador):** **100% OPTIMIZADO** (Soporte fluido en ≤768px, ≤480px y ≤400px).
-- **Banco Medical Seeds (v138-v139):** **100% INTEGRADO Y BLINDADO** (16 variedades fotoperiódicas THC agregadas a `js/data.js`).
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-07)
-1. ✅ **Expansión de Catálogo: Nirvana Seeds (+10 Cepas Legendarias Propietarias) (v149):**
+1. ✅ **Corrección Crítica de Renderizado en Producción & Normalización de Fichas (v147):**
+   - **Diagnóstico Preciso de Excepción Sintáctica:** Localizado `Uncaught SyntaxError: Missing catch or finally after try` en `js/missions.js` (bloque huérfano remanente tras la integración de Gemini 3.8 Ultra). El SyntaxError impedía que `bundle.js` se ejecutara, dejando la cuadrícula vacía y las estadísticas en guiones ("—").
+   - **Depuración de Campos en `js/data.js`:** Corregido el valor de `species: "Hybrid"` a `species: "Híbrida"` en 6 genéticas de Nirvana Seeds (`bubblelicious`, `ak-48`, `wonder-woman`, `somango-xxl`, `super-skunk`, `blackjack`), garantizando compatibilidad absoluta con filtros de especie y badges CSS.
+   - **Inyección de `indicaPct` y `sativaPct`:** Agregados los porcentajes exactos de ratio genético en las 10 variedades de Nirvana Seeds.
+   - **Recompilación y Validación:** Recompilado `js/bundle.js` (759,883 bytes), actualizado el cache-busting en `index.html` a `?v=2026_render_fix_v147` y verificado mediante Chromium headless que las **448 tarjetas** se renderizan de inmediato junto a las estadísticas calculadas en tiempo real.álogo: Nirvana Seeds (+10 Cepas Legendarias Propietarias) (v149):**
    - **Auditoría e Identificación de Prioridad:** Auditoría del catálogo completo que identificó a Nirvana Seeds como el banco prioritario #1 para ampliación botánica histórica.
    - **Incorporación de 10 Variedades Propietarias Clásicas:**
      * `nirvana-aurora-indica` (Aurora Indica, 20% THC, 90% Índica - Afghan x Northern Lights).

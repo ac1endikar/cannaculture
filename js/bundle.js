@@ -5759,6 +5759,8 @@ const STRAINS_DATABASE = [
         aka: "Aurora Pure Indica",
         bank: "Nirvana Seeds",
         species: "Indica",
+        indicaPct: 90,
+        sativaPct: 10,
         thc: 20, cbd: 0.8,
         yieldIndoor: 500, yieldOutdoor: 600,
         floweringDays: 60, rating: 4.8, reviewsCount: 1450,
@@ -5779,7 +5781,9 @@ const STRAINS_DATABASE = [
         name: "Bubblelicious",
         aka: "Nirvana Bubblegum",
         bank: "Nirvana Seeds",
-        species: "Hybrid",
+        species: "Híbrida",
+        indicaPct: 70,
+        sativaPct: 30,
         thc: 18, cbd: 0.5,
         yieldIndoor: 500, yieldOutdoor: 650,
         floweringDays: 63, rating: 4.8, reviewsCount: 1680,
@@ -5801,6 +5805,8 @@ const STRAINS_DATABASE = [
         aka: "High Times Cannabis Cup Winner Kush",
         bank: "Nirvana Seeds",
         species: "Indica",
+        indicaPct: 100,
+        sativaPct: 0,
         thc: 22, cbd: 0.9,
         yieldIndoor: 500, yieldOutdoor: 600,
         floweringDays: 58, rating: 4.9, reviewsCount: 1890,
@@ -5821,7 +5827,9 @@ const STRAINS_DATABASE = [
         name: "AK-48",
         aka: "Nirvana 48-Hour Blast",
         bank: "Nirvana Seeds",
-        species: "Hybrid",
+        species: "Híbrida",
+        indicaPct: 50,
+        sativaPct: 50,
         thc: 20, cbd: 0.4,
         yieldIndoor: 500, yieldOutdoor: 650,
         floweringDays: 50, rating: 4.8, reviewsCount: 1950,
@@ -5842,7 +5850,9 @@ const STRAINS_DATABASE = [
         name: "Wonder Woman",
         aka: "Nirvana Wonder Heavy Producer",
         bank: "Nirvana Seeds",
-        species: "Hybrid",
+        species: "Híbrida",
+        indicaPct: 40,
+        sativaPct: 60,
         thc: 21, cbd: 0.6,
         yieldIndoor: 600, yieldOutdoor: 750,
         floweringDays: 63, rating: 4.7, reviewsCount: 1280,
@@ -5863,7 +5873,9 @@ const STRAINS_DATABASE = [
         name: "Somango XXL",
         aka: "The Mango Beast",
         bank: "Nirvana Seeds",
-        species: "Hybrid",
+        species: "Híbrida",
+        indicaPct: 75,
+        sativaPct: 25,
         thc: 19, cbd: 0.5,
         yieldIndoor: 650, yieldOutdoor: 800,
         floweringDays: 65, rating: 4.8, reviewsCount: 1540,
@@ -5885,6 +5897,8 @@ const STRAINS_DATABASE = [
         aka: "Nirvana Tropical Papaya",
         bank: "Nirvana Seeds",
         species: "Indica",
+        indicaPct: 80,
+        sativaPct: 20,
         thc: 20, cbd: 0.7,
         yieldIndoor: 450, yieldOutdoor: 550,
         floweringDays: 60, rating: 4.9, reviewsCount: 1720,
@@ -5906,6 +5920,8 @@ const STRAINS_DATABASE = [
         aka: "Maui Wowie Old School Sativa",
         bank: "Nirvana Seeds",
         species: "Sativa",
+        indicaPct: 0,
+        sativaPct: 100,
         thc: 19, cbd: 0.4,
         yieldIndoor: 450, yieldOutdoor: 600,
         floweringDays: 70, rating: 4.8, reviewsCount: 1610,
@@ -5926,7 +5942,9 @@ const STRAINS_DATABASE = [
         name: "Super Skunk",
         aka: "Nirvana Super Skunk Supreme",
         bank: "Nirvana Seeds",
-        species: "Hybrid",
+        species: "Híbrida",
+        indicaPct: 75,
+        sativaPct: 25,
         thc: 20, cbd: 0.8,
         yieldIndoor: 550, yieldOutdoor: 700,
         floweringDays: 60, rating: 4.8, reviewsCount: 1840,
@@ -5947,7 +5965,9 @@ const STRAINS_DATABASE = [
         name: "Blackjack",
         aka: "Nirvana Black Jack F1",
         bank: "Nirvana Seeds",
-        species: "Hybrid",
+        species: "Híbrida",
+        indicaPct: 50,
+        sativaPct: 50,
         thc: 22, cbd: 0.7,
         yieldIndoor: 500, yieldOutdoor: 650,
         floweringDays: 65, rating: 4.8, reviewsCount: 1510,
@@ -12373,11 +12393,6 @@ Devuelve EXCLUSIVAMENTE un bloque JSON válido (sin markdown exterior) con este 
           }
         }
         clearTimeout(timeoutId);
-      }
-        if (res.ok) {
-          const data = await res.json();
-          rawJson = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        }
       }
 
       if (rawJson) {

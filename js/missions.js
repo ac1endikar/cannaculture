@@ -175,11 +175,6 @@ Devuelve EXCLUSIVAMENTE un bloque JSON válido (sin markdown exterior) con este 
         }
         clearTimeout(timeoutId);
       }
-        if (res.ok) {
-          const data = await res.json();
-          rawJson = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        }
-      }
 
       if (rawJson) {
         let clean = rawJson.trim();
