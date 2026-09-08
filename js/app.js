@@ -941,10 +941,15 @@ class CannaAppMAX {
       const content = document.getElementById('mission-modal-content');
       if (content) {
         content.innerHTML = `
-          <div class="mission-card glass-panel glow-purple" style="text-align:center; padding: 3.5rem 1.5rem;">
-            <div style="font-size: 2.8rem; margin-bottom: 1rem; animation: pulse 1.5s infinite;">🧠</div>
-            <h3 style="color: #fff; margin-bottom: 0.6rem;">Gemini 3.8 Flash Diseñando Misión...</h3>
-            <p style="color: #A7F3D0; font-size: 0.88rem; max-width: 380px; margin: 0 auto;">Analizando perfil terpénico, linaje botánico y sinergia farmacológica de la variedad...</p>
+          <div class="mission-modal-wrap" style="text-align: center; padding: 3.5rem 2rem;">
+            <button class="mission-modal-close-btn" onclick="document.getElementById('mission-modal').close()" title="Cerrar (ESC)" aria-label="Cerrar">✕</button>
+            <div style="font-size: 3rem; margin-bottom: 1rem; animation: pulse 1.5s infinite;">🧠</div>
+            <h3 style="color: #fff; font-size: 1.35rem; font-weight: 900; margin-bottom: 0.6rem; font-family: var(--font-heading);">
+              Gemini 3.8 Flash Diseñando Misión...
+            </h3>
+            <p style="color: #A7F3D0; font-size: 0.88rem; max-width: 420px; margin: 0 auto; line-height: 1.5;">
+              Analizando perfil terpénico, linaje botánico y sinergia farmacológica de la variedad...
+            </p>
           </div>
         `;
       }
@@ -960,6 +965,19 @@ class CannaAppMAX {
       if (this.missionModal) this.missionModal.close();
       this.showToast('🚀 ¡Misión Aceptada!');
     });
+
+    if (this.missionModal) {
+      this.missionModal.addEventListener('click', (e) => {
+        const rect = this.missionModal.getBoundingClientRect();
+        const isInDialog = (
+          rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+          rect.left <= e.clientX && e.clientX <= rect.left + rect.width
+        );
+        if (!isInDialog) {
+          this.missionModal.close();
+        }
+      });
+    }
 
     if (this.strainDetailModal) {
       this.strainDetailModal.addEventListener('click', (e) => {

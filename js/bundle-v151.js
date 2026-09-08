@@ -12900,25 +12900,56 @@ Devuelve EXCLUSIVAMENTE un bloque JSON válido (sin markdown exterior) con este 
     if (!container) return;
 
     container.innerHTML = `
-      <div class="mission-card glass-panel glow-purple">
-        <div class="mission-header">
-          <span class="mission-tag">🎮 MISIÓN ACTIVA</span>
-          <span class="mission-strain">Cepa: ${missionData.strainName} (${missionData.strainSpecies})</span>
+      <div class="mission-modal-wrap">
+        <!-- BOTÓN CIERRE FLOTANTE -->
+        <button class="mission-modal-close-btn" onclick="document.getElementById('mission-modal').close()" title="Cerrar (ESC)" aria-label="Cerrar modal de misión">✕</button>
+
+        <!-- HEADER DE LA MISIÓN -->
+        <div class="mission-modal-header">
+          <div class="mission-badges-line">
+            <span class="mission-badge-pill">🎮 MISIÓN SENSORIAL IA</span>
+            <span class="mission-strain-pill">
+              🌿 <strong>${missionData.strainName}</strong>
+              <span class="badge-species ${(missionData.strainSpecies || 'Híbrida').toLowerCase()}">${missionData.strainSpecies || 'Híbrida'}</span>
+            </span>
+          </div>
+          <h3 class="mission-modal-title">${missionData.title}</h3>
         </div>
-        <h3 class="mission-title">${missionData.title}</h3>
-        <div class="mission-terpene-hint">
-          <span>🌿 Potenciado por Terpeno: <strong>${missionData.terpeneName}</strong></span>
-          <span>🎧 Banda Sonora Recomendada: <strong>${missionData.audioStyle}</strong></span>
+
+        <!-- MÉTRICAS DE LA EXPERIENCIA (2 CARDS GLASSMORPHISM) -->
+        <div class="mission-sensory-grid">
+          <div class="mission-sensory-card terpene-card">
+            <div class="mission-sensory-label">🔬 TERPENO ESTIMULANTE</div>
+            <div class="mission-sensory-val">🌿 ${missionData.terpeneName}</div>
+            <div class="mission-sensory-sub">Sinergia botánica activa</div>
+          </div>
+          <div class="mission-sensory-card audio-card">
+            <div class="mission-sensory-label">🎧 BANDA SONORA RECOMENDADA</div>
+            <div class="mission-sensory-val">🎵 ${missionData.audioStyle}</div>
+            <div class="mission-sensory-sub">Frecuencia acústica óptima</div>
+          </div>
         </div>
-        <div class="mission-tasks">
-          <h4>Objetivos de la Experiencia:</h4>
-          <ul>
-            ${missionData.tasks.map(t => `<li><span class="check-box"></span> ${t}</li>`).join('')}
-          </ul>
+
+        <!-- OBJETIVOS / PASOS DE LA EXPERIENCIA -->
+        <div class="mission-objectives-box">
+          <h4 class="mission-objectives-title">🎯 Objetivos y Dinámica de la Experiencia:</h4>
+          <div class="mission-tasks-list">
+            ${(missionData.tasks || []).map(t => `
+              <div class="mission-task-item">
+                <div class="mission-task-icon">✦</div>
+                <div class="mission-task-text">${t}</div>
+              </div>
+            `).join('')}
+          </div>
         </div>
-        <div class="mission-footer">
-          <button class="btn btn-primary" onclick="document.dispatchEvent(new CustomEvent('closeMissionModal'))">
-            ✅ ¡Aceptar Misión!
+
+        <!-- FOOTER BOTONES -->
+        <div class="mission-modal-footer">
+          <button class="btn btn-outline-stash" onclick="document.getElementById('mission-modal').close()" style="border-radius: 12px !important; padding: 0.75rem 1.4rem;">
+            ✕ Descartar
+          </button>
+          <button class="btn btn-emerald-lg mission-start-btn" onclick="document.dispatchEvent(new CustomEvent('closeMissionModal'))" style="border-radius: 12px !important; padding: 0.75rem 1.8rem; font-weight: 900; font-size: 0.92rem;">
+            🚀 ¡Aceptar y Comenzar Misión!
           </button>
         </div>
       </div>
@@ -15928,10 +15959,15 @@ class CannaAppMAX {
       const content = document.getElementById('mission-modal-content');
       if (content) {
         content.innerHTML = `
-          <div class="mission-card glass-panel glow-purple" style="text-align:center; padding: 3.5rem 1.5rem;">
-            <div style="font-size: 2.8rem; margin-bottom: 1rem; animation: pulse 1.5s infinite;">🧠</div>
-            <h3 style="color: #fff; margin-bottom: 0.6rem;">Gemini 3.8 Flash Diseñando Misión...</h3>
-            <p style="color: #A7F3D0; font-size: 0.88rem; max-width: 380px; margin: 0 auto;">Analizando perfil terpénico, linaje botánico y sinergia farmacológica de la variedad...</p>
+          <div class="mission-modal-wrap" style="text-align: center; padding: 3.5rem 2rem;">
+            <button class="mission-modal-close-btn" onclick="document.getElementById('mission-modal').close()" title="Cerrar (ESC)" aria-label="Cerrar">✕</button>
+            <div style="font-size: 3rem; margin-bottom: 1rem; animation: pulse 1.5s infinite;">🧠</div>
+            <h3 style="color: #fff; font-size: 1.35rem; font-weight: 900; margin-bottom: 0.6rem; font-family: var(--font-heading);">
+              Gemini 3.8 Flash Diseñando Misión...
+            </h3>
+            <p style="color: #A7F3D0; font-size: 0.88rem; max-width: 420px; margin: 0 auto; line-height: 1.5;">
+              Analizando perfil terpénico, linaje botánico y sinergia farmacológica de la variedad...
+            </p>
           </div>
         `;
       }
@@ -15947,6 +15983,19 @@ class CannaAppMAX {
       if (this.missionModal) this.missionModal.close();
       this.showToast('🚀 ¡Misión Aceptada!');
     });
+
+    if (this.missionModal) {
+      this.missionModal.addEventListener('click', (e) => {
+        const rect = this.missionModal.getBoundingClientRect();
+        const isInDialog = (
+          rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+          rect.left <= e.clientX && e.clientX <= rect.left + rect.width
+        );
+        if (!isInDialog) {
+          this.missionModal.close();
+        }
+      });
+    }
 
     if (this.strainDetailModal) {
       this.strainDetailModal.addEventListener('click', (e) => {

@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-08 01:15  
+> **Última actualización:** 2026-09-08 01:35  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
@@ -8,7 +8,7 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS + Firebase SDK v10 (compat CDN).
 - **Base de datos:** 464 cepas únicas y consolidadas pertenecientes a 40 bancos de semillas premium en `js/data.js` (incluyendo la incorporación de Fase A: Delicious Seeds con 8 variedades y Mr. Nice Seedbank con 8 variedades legendarias, más Nirvana Seeds con 15 variedades, Eva Seeds con 11 variedades, Medical Seeds Co. con 16 variedades, 00 Seeds Bank y Sweet Seeds).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_community_live_v151`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_mission_dark_v152`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
 - **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders, 0 fotos no botánicas, 0 miniaturas pixeladas).
 - **Comunidad & Nube:** Firebase Authentication (Google Auth Popup con selector de cuenta), Cloud Firestore (`users/{uid}/favorites` y colección pública `reviews`).
@@ -16,20 +16,26 @@
 ---
 
 ## 2. Estado de la Fase Visual, IA, Comunidad y Rendimiento
+- **Rediseño Estético High-End del Modal de Misiones IA (v152):** **100% OPERATIVO Y VERIFICADO**.
+  * Eliminado el fondo blanco plano heredado por defecto en la etiqueta `<dialog>` del navegador.
+  * Implementado Dark Glassmorphism de lujo con fondo `#050A08`, desenfoque `blur(35px)`, borde neón esmeralda `rgba(16, 185, 129, 0.55)` y resplandor multidimensional `box-shadow`.
+  * Botón de cierre flotante circular `✕` con rotación suave y cierre por clic exterior en el backdrop.
+  * Píldoras de identificación para `🎮 MISIÓN SENSORIAL IA` y la cepa con su especie correspondiente.
+  * Rejilla de 2 tarjetas ejecutivas para el terpeno estimulante dominante y la banda sonora recomendada.
+  * Contenedor de objetivos de experiencia con iconos dorados/esmeralda y tarjetas interactivas.
+  * Botón de acción con resplandor verde esmeralda `🚀 ¡Aceptar y Comenzar Misión!` y botón para descartar.
 - **Integración Oficial Firebase SDK, Google Auth, Favoritos y Reseñas (v151):** **100% OPERATIVA Y VERIFICADA**.
-  * `js/firebase-config.js` creado con credenciales validadas para el proyecto `cannaculture-fb927`.
-  * Carga asíncrona de Firebase App, Auth y Firestore Compat (10.8.0) en `index.html`.
-  * Módulo `js/community.js` (`CommunityManager`) con escucha reactiva de estado (`onAuthStateChanged`):
-    - Sin sesión: botón "Iniciar con Google" en el header con icono de Google.
-    - Con sesión: avatar circular del usuario, primer nombre y botón "Salir / Cerrar sesión".
-  * Sistema de Favoritos con Corazón reactivo (❤️/🤍) en cada tarjeta del catálogo (banner y acciones) y modal, persistido en `users/${user.uid}/favorites`. Si el usuario no está autenticado, abre el popup de Google Auth automáticamente.
-  * Pestaña interactiva "⭐ Reseñas & Vivencias" en el Modal de Detalle botánico: permite valorar de 1 a 5 estrellas, redactar experiencias y vivencias, guardando en Firestore colección `reviews`, y listar reseñas existentes filtradas por `strainId` ordenadas cronológicamente.
 - **Actualización Fotográfica Oficial Mr. Nice Seedbank (v149):** **100% OPERATIVA Y VERIFICADA**.
 - **Integración Fase A — Delicious Seeds & Mr. Nice Seedbank (v148):** **100% OPERATIVA Y VERIFICADA**.
 
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-08)
+1. ✅ **Rediseño Completo del Modal de Misiones IA a la Estética Oficial Dark Glassmorphism (v152):**
+   - **Corrección de Estilo en el Contenedor:** Se asignaron reglas fijas para `#mission-modal[open]` y `#mission-modal::backdrop` en `css/styles.css`, eliminando la apariencia blanca/clara que desentonaba con la paleta oscura de CannaCatalog.
+   - **Refactorización de la Plantilla en `js/missions.js`:** Nueva interfaz con botón de cierre (✕), cabecera luminosa, cuadrícula sensorial de terpenos y audio, y objetivos presentados como bloques interactivos de alta legibilidad.
+   - **Spinner de IA y Backdrop Listener en `js/app.js`:** El estado de carga mientras Gemini 3.8 Flash diseña la misión ahora comparte la misma estética oscura con microanimaciones, y hacer clic fuera del modal lo cierra de forma limpia.
+   - **Recompilación y Caché:** Bundle recompilado con `python scripts/build_bundle.py` (817,468 bytes). Cache-busting actualizado a `?v=2026_mission_dark_v152`.
 1. ✅ **Integración de Cliente Firebase SDK, Login con Google, Favoritos y Reseñas en CannaCatalog (v151):**
    - **Módulo de Configuración (`js/firebase-config.js`):** Implementada la inicialización de Firebase con credenciales oficiales del proyecto `cannaculture-fb927`, exponiendo `auth`, `db` (Firestore) y `googleProvider` a nivel global.
    - **Inclusión CDN Compat en `index.html`:** Enlazadas librerías oficiales de Firebase v10.8.0 (`firebase-app-compat.js`, `firebase-auth-compat.js`, `firebase-firestore-compat.js`) y `firebase-config.js` antes de `bundle.js`.
