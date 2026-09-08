@@ -4578,3 +4578,104 @@ dialog.compare-dialog[open] {
   border: 1px solid rgba(234, 179, 8, 0.4);
   color: #FDE047;
 }
+
+/* ==========================================================================
+   CANNACATALOG 2.0 - COMUNIDAD, FAVORITOS Y RESEÑAS (FIREBASE LIVE)
+   ========================================================================== */
+.card-fav-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50% !important;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  padding: 0;
+}
+.card-fav-btn:hover {
+  transform: scale(1.15);
+  border-color: rgba(239, 68, 68, 0.6);
+  background: rgba(0, 0, 0, 0.9);
+}
+.card-fav-btn.active {
+  border-color: rgba(239, 68, 68, 0.8);
+  background: rgba(239, 68, 68, 0.25);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+}
+
+.btn-fav-toggle {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px !important;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-fav-toggle:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.5);
+  transform: translateY(-1px);
+}
+.btn-fav-toggle.active {
+  background: rgba(239, 68, 68, 0.22);
+  border-color: rgba(239, 68, 68, 0.6);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+
+.pro-modal-tab-bar {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.6rem 1.5rem 0;
+}
+.pro-modal-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.pro-modal-tab:hover {
+  color: #fff;
+}
+.pro-modal-tab.active {
+  color: var(--primary-emerald);
+  border-bottom-color: var(--primary-emerald);
+  background: rgba(16, 185, 129, 0.08);
+  border-radius: 8px 8px 0 0;
+}
+
+.modal-fav-btn {
+  transition: all 0.2s ease;
+}
+.modal-fav-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.rating-stars-interactive span:hover {
+  transform: scale(1.25);
+}

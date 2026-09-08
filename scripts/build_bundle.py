@@ -14,6 +14,7 @@ files_in_order = [
     'audio.js',
     'tools.js',
     'ai-sommelier.js',
+    'community.js',
     'app.js'
 ]
 

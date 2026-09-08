@@ -256,7 +256,7 @@ class CannaAppMAX {
     }
   }
 
-  /* SISTEMA DE AUTENTICACIÓN Y CONTROL DE USUARIOS VIP */
+  /* SISTEMA DE AUTENTICACIÓN Y CONTROL DE USUARIOS VIP (SINCRONIZADO CON FIREBASE) */
   initAuth() {
     this.authModal = document.getElementById('auth-modal');
     this.btnUserAuth = document.getElementById('btn-user-auth');
@@ -270,6 +270,11 @@ class CannaAppMAX {
     this.authLoginForm = document.getElementById('auth-login-form');
     this.authRegisterForm = document.getElementById('auth-register-form');
     this.btnLogout = document.getElementById('btn-logout');
+
+    // Inicializar módulo oficial Firebase Community Manager
+    if (window.communityManager) {
+      window.communityManager.init();
+    }
 
     this.updateUserSessionUI();
 
@@ -614,6 +619,7 @@ class CannaAppMAX {
       const safeBank = bankName.replace(/'/g, "\\'");
       const imgTag = strainImg ? `<img src="${strainImg}" alt="${strain.name}" class="card-visual-img" loading="lazy" decoding="async" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.opacity='1';" />` : '';
       const isCompared = (this.comparedStrains || []).includes(strain.id);
+      const isFav = window.communityManager ? window.communityManager.isFavorite(strain.id) : false;
       const displayGenetics = strain.genetics || strain.lineage || strain.aka || 'Genética Exclusiva';
 
       return `
@@ -622,6 +628,12 @@ class CannaAppMAX {
             ${imgTag}
             <div class="card-visual-banner-inner" style="background: ${strain.visualColor}; ${strain.bgPattern}; opacity: ${strainImg ? '0' : '1'};"></div>
             <div class="card-banner-overlay"></div>
+            
+            <!-- BOTÓN FAVORITO CORAZÓN EN BANNER -->
+            <button class="card-fav-btn ${isFav ? 'active' : ''}" data-strain-id="${strain.id}" onclick="event.stopPropagation(); window.communityManager && window.communityManager.toggleFavorite('${strain.id}')" title="${isFav ? 'Quitar de Favoritos' : 'Guardar en Favoritos'}" aria-label="Favorito">
+              <span class="fav-icon">${isFav ? '❤️' : '🤍'}</span>
+            </button>
+
             ${strainImg ? `<div style="position: absolute; top: 8px; right: 8px; z-index: 10; background: rgba(0,0,0,0.75); backdrop-filter: blur(6px); border: 1px solid rgba(16,185,129,0.5); border-radius: 50px !important; padding: 3px 10px; font-size: 0.7rem; color: #6EE7B7; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">🔍 Zoom HD</div>` : ''}
             <div style="position: absolute; bottom: 8px; left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: center; color: #fff; z-index: 2;">
               <span style="font-size: 0.72rem; font-weight: 800; background: rgba(0,0,0,0.7); padding: 3px 10px; border-radius: 0 !important; backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.15);">
@@ -660,12 +672,15 @@ class CannaAppMAX {
               ${(strain.flavors || []).map(f => `<span class="tag-item">👅 ${f}</span>`).join('')}
             </div>
 
-            <div class="card-actions" onclick="event.stopPropagation()" style="display: flex; gap: 8px;">
+            <div class="card-actions" onclick="event.stopPropagation()" style="display: flex; gap: 8px; align-items: center;">
               <button class="btn btn-primary" aria-label="Ver ficha botánica detallada de ${safeName}" style="flex: 1; border-radius: 8px !important;" onclick="event.stopPropagation(); document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
                 📋 Ficha
               </button>
               <button class="btn-compare-toggle ${isCompared ? 'active' : ''}" data-strain-id="${strain.id}" aria-label="${isCompared ? 'Quitar ' + safeName + ' del comparador' : 'Añadir ' + safeName + ' al comparador'}" onclick="event.stopPropagation(); window.app && window.app.toggleCompareStrain('${strain.id}')" title="${isCompared ? 'Quitar del comparador' : 'Comparar (hasta 3 cepas)'}">
                 ⚖️ ${isCompared ? 'Comparando' : 'Comparar'}
+              </button>
+              <button class="btn-fav-toggle ${isFav ? 'active' : ''}" data-strain-id="${strain.id}" onclick="event.stopPropagation(); window.communityManager && window.communityManager.toggleFavorite('${strain.id}')" title="${isFav ? 'Quitar de Favoritos' : 'Guardar en Favoritos'}" aria-label="Favorito">
+                ${isFav ? '❤️' : '🤍'}
               </button>
             </div>
           </div>
@@ -1044,6 +1059,7 @@ class CannaAppMAX {
     const safeName = (strain.name || 'Variedad').replace(/'/g, "\\'");
     const safeBank = bankName.replace(/'/g, "\\'");
     const strainGenetics = strain.genetics || strain.lineage || strain.aka || 'Genética Exclusiva';
+    const isFav = window.communityManager ? window.communityManager.isFavorite(strain.id) : false;
 
     this.strainDetailContent.innerHTML = `
       <div class="pro-spec-sheet">
@@ -1079,11 +1095,11 @@ class CannaAppMAX {
                   <div class="pro-strain-aka">🧬 Linaje: ${strainGenetics}</div>
                 </div>
                 <div class="pro-hero-info-right">
-                  <div class="pro-hero-rating-pill">
+                  <div class="pro-hero-rating-pill" onclick="window.communityManager && window.communityManager.switchModalTab('reviews')" style="cursor: pointer;" title="Ver reseñas de la comunidad">
                     <span>${stars}</span>
                     <span>${strain.rating}/5</span>
                   </div>
-                  <div class="pro-hero-reviews-text">(${strain.reviewsCount} reseñas verificadas)</div>
+                  <div class="pro-hero-reviews-text" onclick="window.communityManager && window.communityManager.switchModalTab('reviews')" style="cursor: pointer;" title="Ver reseñas de la comunidad">(${strain.reviewsCount} reseñas)</div>
                 </div>
               </div>
             </div>` : `
@@ -1100,115 +1116,132 @@ class CannaAppMAX {
                   <div class="pro-strain-aka">🧬 Linaje: ${strainGenetics}</div>
                 </div>
                 <div class="pro-hero-info-right">
-                  <div class="pro-hero-rating-pill">
+                  <div class="pro-hero-rating-pill" onclick="window.communityManager && window.communityManager.switchModalTab('reviews')" style="cursor: pointer;" title="Ver reseñas de la comunidad">
                     ${stars} ${strain.rating}/5
                   </div>
-                  <div class="pro-hero-reviews-text">(${strain.reviewsCount} reseñas)</div>
+                  <div class="pro-hero-reviews-text" onclick="window.communityManager && window.communityManager.switchModalTab('reviews')" style="cursor: pointer;" title="Ver reseñas de la comunidad">(${strain.reviewsCount} reseñas)</div>
                 </div>
               </div>
             </div>`}
           </div>
 
-          <!-- CUADRO DE MÉTRICAS CLAVE (4 CARDS EJECUTIVAS REDONDEADAS) -->
-          <div class="pro-metrics-grid">
-            <div class="pro-metric-card">
-              <span class="pro-metric-label">🔥 Concentración THC</span>
-              <div class="pro-metric-value">${strain.thc}%</div>
-              <div class="pro-metric-sub">${strain.thc > 20 ? 'Alta Potencia' : 'Potencia Moderada'}</div>
+          <!-- PESTAÑAS DEL MODAL: FICHA BOTÁNICA VS RESEÑAS Y VIVENCIAS -->
+          <div class="pro-modal-tab-bar">
+            <button class="pro-modal-tab active" id="tab-btn-spec" onclick="window.communityManager && window.communityManager.switchModalTab('spec')">
+              📋 Ficha Botánica &amp; Terpenos
+            </button>
+            <button class="pro-modal-tab" id="tab-btn-reviews" onclick="window.communityManager && window.communityManager.switchModalTab('reviews')">
+              ⭐ Reseñas &amp; Vivencias (<span id="modal-reviews-count-badge">...</span>)
+            </button>
+          </div>
+
+          <!-- CONTENIDO TAB 1: FICHA TÉCNICA Y BOTÁNICA -->
+          <div id="modal-tab-spec-content">
+            <!-- CUADRO DE MÉTRICAS CLAVE (4 CARDS EJECUTIVAS REDONDEADAS) -->
+            <div class="pro-metrics-grid">
+              <div class="pro-metric-card">
+                <span class="pro-metric-label">🔥 Concentración THC</span>
+                <div class="pro-metric-value">${strain.thc}%</div>
+                <div class="pro-metric-sub">${strain.thc > 20 ? 'Alta Potencia' : 'Potencia Moderada'}</div>
+              </div>
+              <div class="pro-metric-card">
+                <span class="pro-metric-label">💚 Concentración CBD</span>
+                <div class="pro-metric-value" style="color: #6EE7B7;">${strain.cbd}%</div>
+                <div class="pro-metric-sub">Ratio Equilibrado</div>
+              </div>
+              <div class="pro-metric-card">
+                <span class="pro-metric-label">🏠 Cultivo Indoor</span>
+                <div class="pro-metric-value" style="color: #60A5FA;">${strain.yieldIndoor} <small class="pro-metric-unit">g/m²</small></div>
+                <div class="pro-metric-sub">🗓️ ${strain.floweringDays} Días Floración</div>
+              </div>
+              <div class="pro-metric-card">
+                <span class="pro-metric-label">🌳 Cultivo Outdoor</span>
+                <div class="pro-metric-value" style="color: #F59E0B;">${strain.yieldOutdoor} <small class="pro-metric-unit">g/planta</small></div>
+                <div class="pro-metric-sub">🌍 ${strain.origin}</div>
+              </div>
             </div>
-            <div class="pro-metric-card">
-              <span class="pro-metric-label">💚 Concentración CBD</span>
-              <div class="pro-metric-value" style="color: #6EE7B7;">${strain.cbd}%</div>
-              <div class="pro-metric-sub">Ratio Equilibrado</div>
-            </div>
-            <div class="pro-metric-card">
-              <span class="pro-metric-label">🏠 Cultivo Indoor</span>
-              <div class="pro-metric-value" style="color: #60A5FA;">${strain.yieldIndoor} <small class="pro-metric-unit">g/m²</small></div>
-              <div class="pro-metric-sub">🗓️ ${strain.floweringDays} Días Floración</div>
-            </div>
-            <div class="pro-metric-card">
-              <span class="pro-metric-label">🌳 Cultivo Outdoor</span>
-              <div class="pro-metric-value" style="color: #F59E0B;">${strain.yieldOutdoor} <small class="pro-metric-unit">g/planta</small></div>
-              <div class="pro-metric-sub">🌍 ${strain.origin}</div>
+
+            <!-- CUERPO PRINCIPAL CON DETALLES TÉCNICOS -->
+            <div class="pro-details-container">
+              
+              <!-- DESCRIPCIÓN BOTÁNICA -->
+              <div class="pro-section-card">
+                <h3 class="pro-section-title">📝 Perfil Botánico y Resumen del Criador</h3>
+                <p class="pro-desc-quote">${strain.description}</p>
+              </div>
+
+              <!-- ANÁLISIS TERPÉNICO & VAPORIZACIÓN -->
+              <div class="pro-section-card" style="background: rgba(16, 185, 129, 0.06); border: 1.5px solid rgba(16, 185, 129, 0.35);">
+                <h3 class="pro-section-title" style="color: ${terpeneData?.color || '#10B981'}; font-size: 1.15rem;">
+                  <span>🔬 Perfil Cromatográfico — Terpeno Dominante: <strong>${terpeneData?.name || strain.dominantTerpene}</strong></span>
+                </h3>
+                
+                <div class="pro-terp-vape-grid">
+                  <div>
+                    <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 600;">Espectro relativo de terpenos en floración seca:</p>
+                    ${terpeneBars}
+                  </div>
+                  <div>
+                    ${vapeTemp ? `
+                    <div style="background: rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px !important; padding: 1.2rem; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                      <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-muted); display: block; margin-bottom: 6px;">🌡️ Vaporización Óptima</span>
+                      <div style="font-size: 1.75rem; font-weight: 900; color: ${terpeneData?.color || '#10B981'};">
+                        ${vapeTemp.tempC}°C <small style="font-size: 0.95rem; color: var(--text-muted);">(${vapeTemp.tempF}°F)</small>
+                      </div>
+                      <p style="font-size: 0.85rem; color: rgba(255,255,255,0.9); margin-top: 8px; line-height: 1.45;">
+                        ⚡ ${vapeTemp.effect}
+                      </p>
+                    </div>` : ''}
+                  </div>
+                </div>
+              </div>
+
+              <!-- SABORES, EFECTOS Y ACTIVIDADES -->
+              <div class="pro-tri-cards-grid">
+                
+                <div class="pro-section-card" style="margin-bottom: 0;">
+                  <h4 style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+                    👅 Sabores & Aromas
+                  </h4>
+                  <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                    ${(strain.flavors || []).map(f => `
+                      <span style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #fff; padding: 5px 12px; border-radius: 50px !important; font-size: 0.8rem; font-weight: 600;">
+                        👅 ${f}
+                      </span>`).join('')}
+                  </div>
+                </div>
+
+                <div class="pro-section-card" style="margin-bottom: 0;">
+                  <h4 style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+                    ✨ Efectos Sensoriales
+                  </h4>
+                  <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                    ${(strain.effects || []).map(e => `
+                      <span style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #6EE7B7; padding: 5px 12px; border-radius: 50px !important; font-size: 0.8rem; font-weight: 700;">
+                        ⚡ ${e}
+                      </span>`).join('')}
+                  </div>
+                </div>
+
+                <div class="pro-section-card" style="margin-bottom: 0;">
+                  <h4 style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+                    🎯 Actividades Ideales
+                  </h4>
+                  <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                    ${(strain.activities || []).map(a => `
+                      <span style="background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: #FCD34D; padding: 5px 12px; border-radius: 50px !important; font-size: 0.8rem; font-weight: 700;">
+                        ${activityIcons[a] || '🌀'} ${activityLabels[a] || a}
+                      </span>`).join('')}
+                  </div>
+                </div>
+
+              </div>
+
             </div>
           </div>
 
-          <!-- CUERPO PRINCIPAL CON DETALLES TÉCNICOS -->
-          <div class="pro-details-container">
-            
-            <!-- DESCRIPCIÓN BOTÁNICA -->
-            <div class="pro-section-card">
-              <h3 class="pro-section-title">📝 Perfil Botánico y Resumen del Criador</h3>
-              <p class="pro-desc-quote">${strain.description}</p>
-            </div>
-
-            <!-- ANÁLISIS TERPÉNICO & VAPORIZACIÓN -->
-            <div class="pro-section-card" style="background: rgba(16, 185, 129, 0.06); border: 1.5px solid rgba(16, 185, 129, 0.35);">
-              <h3 class="pro-section-title" style="color: ${terpeneData?.color || '#10B981'}; font-size: 1.15rem;">
-                <span>🔬 Perfil Cromatográfico — Terpeno Dominante: <strong>${terpeneData?.name || strain.dominantTerpene}</strong></span>
-              </h3>
-              
-              <div class="pro-terp-vape-grid">
-                <div>
-                  <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 600;">Espectro relativo de terpenos en floración seca:</p>
-                  ${terpeneBars}
-                </div>
-                <div>
-                  ${vapeTemp ? `
-                  <div style="background: rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px !important; padding: 1.2rem; height: 100%; display: flex; flex-direction: column; justify-content: center;">
-                    <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-muted); display: block; margin-bottom: 6px;">🌡️ Vaporización Óptima</span>
-                    <div style="font-size: 1.75rem; font-weight: 900; color: ${terpeneData?.color || '#10B981'};">
-                      ${vapeTemp.tempC}°C <small style="font-size: 0.95rem; color: var(--text-muted);">(${vapeTemp.tempF}°F)</small>
-                    </div>
-                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.9); margin-top: 8px; line-height: 1.45;">
-                      ⚡ ${vapeTemp.effect}
-                    </p>
-                  </div>` : ''}
-                </div>
-              </div>
-            </div>
-
-            <!-- SABORES, EFECTOS Y ACTIVIDADES -->
-            <div class="pro-tri-cards-grid">
-              
-              <div class="pro-section-card" style="margin-bottom: 0;">
-                <h4 style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
-                  👅 Sabores & Aromas
-                </h4>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-                  ${(strain.flavors || []).map(f => `
-                    <span style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #fff; padding: 5px 12px; border-radius: 50px !important; font-size: 0.8rem; font-weight: 600;">
-                      👅 ${f}
-                    </span>`).join('')}
-                </div>
-              </div>
-
-              <div class="pro-section-card" style="margin-bottom: 0;">
-                <h4 style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
-                  ✨ Efectos Sensoriales
-                </h4>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-                  ${(strain.effects || []).map(e => `
-                    <span style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #6EE7B7; padding: 5px 12px; border-radius: 50px !important; font-size: 0.8rem; font-weight: 700;">
-                      ⚡ ${e}
-                    </span>`).join('')}
-                </div>
-              </div>
-
-              <div class="pro-section-card" style="margin-bottom: 0;">
-                <h4 style="font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
-                  🎯 Actividades Ideales
-                </h4>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-                  ${(strain.activities || []).map(a => `
-                    <span style="background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: #FCD34D; padding: 5px 12px; border-radius: 50px !important; font-size: 0.8rem; font-weight: 700;">
-                      ${activityIcons[a] || '🌀'} ${activityLabels[a] || a}
-                    </span>`).join('')}
-                </div>
-              </div>
-
-            </div>
-
+          <!-- CONTENIDO TAB 2: RESEÑAS Y VIVENCIAS DE LA COMUNIDAD -->
+          <div id="modal-tab-reviews-content" style="display: none; padding: 1.25rem 1.5rem 2rem;">
           </div>
 
         </div>
@@ -1219,7 +1252,10 @@ class CannaAppMAX {
             <span>🏛️ Banco Criador: <strong style="color: #fff;">${strain.bank}</strong></span>
           </div>
 
-          <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+          <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center;">
+            <button class="modal-fav-btn ${isFav ? 'active' : ''}" data-strain-id="${strain.id}" onclick="window.communityManager && window.communityManager.toggleFavorite('${strain.id}')" title="Guardar en Favoritos" style="background: ${isFav ? 'rgba(239,68,68,0.2)' : 'rgba(255,255,255,0.08)'}; border: 1px solid ${isFav ? 'rgba(239,68,68,0.5)' : 'rgba(255,255,255,0.2)'}; color: ${isFav ? '#FCA5A5' : '#fff'}; padding: 8px 14px; border-radius: 50px; font-weight: 700; font-size: 0.82rem; cursor: pointer;">
+              ${isFav ? '❤️ En tus Favoritos' : '🤍 Guardar en Favoritos'}
+            </button>
             <button class="btn btn-emerald-lg"
               onclick="document.dispatchEvent(new CustomEvent('generateMission', { detail: { strainId: '${strain.id}', activityId: '${strain.activities?.[0] || 'nature_walk'}' } })); document.getElementById('strain-detail-modal').close();">
               🚀 Generar Misión IA
@@ -1233,8 +1269,11 @@ class CannaAppMAX {
     if (this.strainDetailModal && typeof this.strainDetailModal.showModal === 'function') {
       if (!this.strainDetailModal.open) this.strainDetailModal.showModal();
     }
-  }
 
+    if (window.communityManager) {
+      window.communityManager.initModalForStrain(strainId);
+    }
+  }
 
   /* LIGHTBOX ULTRA ZOOM & HD VIEWER ENGINE (Blindado y Defensivo) */
   initImageLightboxEngine() {
