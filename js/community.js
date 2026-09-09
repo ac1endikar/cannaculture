@@ -77,6 +77,9 @@ export class CommunityManager {
         this.userFavorites.clear();
         this.updateAllFavoriteHearts();
         this.updateHeaderAuthUI(null);
+        if (window.app && window.app.filterFavoritesOnly && typeof window.app.setFavoritesFilter === 'function') {
+          window.app.setFavoritesFilter(false);
+        }
         if (window.app && typeof window.app.showToast === 'function') {
           window.app.showToast('👋 Has cerrado sesión correctamente.');
         }
@@ -150,6 +153,9 @@ export class CommunityManager {
       const snap = await this.db.collection('users').doc(uid).collection('favorites').get();
       this.userFavorites = new Set(snap.docs.map(doc => doc.id));
       this.updateAllFavoriteHearts();
+      if (window.app && window.app.filterFavoritesOnly && typeof window.app.applyFiltersAndSort === 'function') {
+        window.app.applyFiltersAndSort();
+      }
       
       // Sincronizar con Stash de bitácora si existe
       if (window.app && window.app.bitacora) {
@@ -221,6 +227,11 @@ export class CommunityManager {
       }
       window.app.updateStashCounter();
     }
+
+    this.updateFavoritesBadges();
+    if (window.app && window.app.filterFavoritesOnly && typeof window.app.applyFiltersAndSort === 'function') {
+      window.app.applyFiltersAndSort();
+    }
   }
 
   updateFavoriteButtonUI(strainId, isFav) {
@@ -268,6 +279,21 @@ export class CommunityManager {
       btn.classList.toggle('active', isFav);
       btn.innerHTML = isFav ? '❤️ En tus Favoritos' : '🤍 Guardar en Favoritos';
     });
+
+    this.updateFavoritesBadges();
+  }
+
+  updateFavoritesBadges() {
+    const count = this.userFavorites ? this.userFavorites.size : 0;
+    const navBadge = document.getElementById('nav-fav-badge');
+    const headerBadge = document.getElementById('header-fav-badge');
+    const headerBtn = document.getElementById('btn-header-favorites');
+
+    if (navBadge) navBadge.textContent = count;
+    if (headerBadge) headerBadge.textContent = count;
+    if (headerBtn) {
+      headerBtn.classList.toggle('has-favorites', count > 0);
+    }
   }
 
   // 4. PESTAÑA DE RESEÑAS Y VIVENCIAS EN MODAL DE DETALLE

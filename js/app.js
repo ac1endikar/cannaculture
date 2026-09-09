@@ -75,6 +75,11 @@ class CannaAppMAX {
     this.lightboxSubtitle = document.getElementById('lightbox-subtitle');
     this.btnHeaderCompare = document.getElementById('btn-header-compare');
     this.headerCompareBadge = document.getElementById('header-compare-badge');
+    this.btnHeaderFavorites = document.getElementById('btn-header-favorites');
+    this.headerFavBadge = document.getElementById('header-fav-badge');
+    this.navBtnFavorites = document.getElementById('nav-btn-favorites');
+    this.navFavBadge = document.getElementById('nav-fav-badge');
+    this.filterFavoritesOnly = false;
     this.compareModal = document.getElementById('compare-modal');
     this.compareModalContent = document.getElementById('compare-modal-content');
   }
@@ -196,6 +201,14 @@ class CannaAppMAX {
       btn.addEventListener('click', () => {
         const targetId = btn.getAttribute('data-target');
         if (!targetId) return;
+
+        if (btn.id === 'nav-btn-favorites') {
+          this.setFavoritesFilter(true);
+          return;
+        } else if (targetId === 'section-catalog' && this.filterFavoritesOnly) {
+          this.setFavoritesFilter(false);
+          return;
+        }
 
         navButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
@@ -495,6 +508,7 @@ class CannaAppMAX {
 
   initCatalog() {
     this.populateBankDropdown();
+    this.filterFavoritesOnly = false;
 
     const applyFiltersAndSort = () => {
       const query = (this.searchInput?.value || '').toLowerCase().trim();
@@ -505,6 +519,12 @@ class CannaAppMAX {
 
       let filtered = (STRAINS_DATABASE || []).filter(strain => {
         if (!strain || typeof strain !== 'object' || !strain.name) return false;
+
+        // Filtro rápido de favoritos guardados
+        if (this.filterFavoritesOnly) {
+          const isFav = window.communityManager ? window.communityManager.isFavorite(strain.id) : false;
+          if (!isFav) return false;
+        }
 
         // Micro-optimización de rendimiento: comprobaciones primitivas inmediatas
         if (bank !== 'all' && strain.bank !== bank) return false;
@@ -542,6 +562,8 @@ class CannaAppMAX {
       this.renderStrainsGrid(this.currentStrains);
     };
 
+    this.applyFiltersAndSort = applyFiltersAndSort;
+
     // Debounce reactivo de 160ms para evitar re-renderizados continuos al teclear
     let searchDebounceTimer = null;
     this.searchInput?.addEventListener('input', () => {
@@ -554,16 +576,43 @@ class CannaAppMAX {
     this.filterTerpene?.addEventListener('change', applyFiltersAndSort);
     this.sortBy?.addEventListener('change', applyFiltersAndSort);
 
+    this.btnHeaderFavorites?.addEventListener('click', () => {
+      this.setFavoritesFilter(!this.filterFavoritesOnly);
+    });
+
     applyFiltersAndSort();
   }
 
   renderStrainsGrid(strains) {
     if (!this.strainsGrid) return;
     if (this.catalogCount) {
-      this.catalogCount.textContent = `Mostrando ${strains.length} cepa(s)`;
+      if (this.filterFavoritesOnly) {
+        this.catalogCount.textContent = `Mostrando ${strains.length} favorita(s) ❤️`;
+      } else {
+        this.catalogCount.textContent = `Mostrando ${strains.length} cepa(s)`;
+      }
     }
 
     if (strains.length === 0) {
+      if (this.filterFavoritesOnly) {
+        this.strainsGrid.innerHTML = `
+          <div class="empty-state empty-favorites-state" style="grid-column: 1 / -1; padding: 3rem 1.5rem; text-align: center;">
+            <div class="empty-icon" style="font-size: 3.5rem; margin-bottom: 0.8rem; filter: drop-shadow(0 0 16px rgba(239, 68, 68, 0.4));">❤️</div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; color: #fff; font-weight: 800;">Aún no tienes cepas en Favoritos</h3>
+            <p style="color: var(--text-muted); max-width: 480px; margin: 0 auto 1.4rem; line-height: 1.55; font-size: 0.95rem;">
+              Haz clic en el corazón en cualquier variedad del catálogo para guardarla aquí y tenerla siempre a mano.
+            </p>
+            <button class="btn-primary" id="btn-empty-clear-fav-filter" style="margin: 0 auto; display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; border-radius: 50px; font-weight: 700; cursor: pointer;">
+              <span>🌐</span> Ver todo el catálogo
+            </button>
+          </div>
+        `;
+        document.getElementById('btn-empty-clear-fav-filter')?.addEventListener('click', () => {
+          this.setFavoritesFilter(false);
+        });
+        return;
+      }
+
       this.strainsGrid.innerHTML = `
         <div class="empty-state" style="grid-column: 1 / -1;">
           <div class="empty-icon">🔍</div>
@@ -709,6 +758,55 @@ class CannaAppMAX {
   updateStashCounter() {
     if (this.stashCounter) {
       this.stashCounter.textContent = this.bitacora.stash.length;
+    }
+  }
+
+  setFavoritesFilter(enable) {
+    if (enable) {
+      if (window.communityManager && !window.communityManager.currentUser) {
+        if (typeof window.communityManager.loginWithGoogle === 'function') {
+          this.showToast('ℹ️ Inicia sesión con Google para sincronizar tus favoritos.');
+          window.communityManager.loginWithGoogle();
+        }
+      }
+    }
+
+    this.filterFavoritesOnly = Boolean(enable);
+
+    if (this.btnHeaderFavorites) {
+      this.btnHeaderFavorites.classList.toggle('active', this.filterFavoritesOnly);
+    }
+    if (this.navBtnFavorites) {
+      this.navBtnFavorites.classList.toggle('active', this.filterFavoritesOnly);
+    }
+
+    const catalogSection = document.getElementById('section-catalog');
+    if (catalogSection && !catalogSection.classList.contains('active-section')) {
+      document.querySelectorAll('.app-section').forEach(s => s.classList.remove('active-section'));
+      catalogSection.classList.add('active-section');
+      
+      document.querySelectorAll('.nav-btn').forEach(b => {
+        if (this.filterFavoritesOnly && b.id === 'nav-btn-favorites') {
+          b.classList.add('active');
+        } else if (!this.filterFavoritesOnly && b.getAttribute('data-target') === 'section-catalog' && b.id !== 'nav-btn-favorites') {
+          b.classList.add('active');
+        } else {
+          b.classList.remove('active');
+        }
+      });
+    } else {
+      const navCatalog = document.querySelector('.nav-btn[data-target="section-catalog"]:not(#nav-btn-favorites)');
+      if (this.filterFavoritesOnly) {
+        this.navBtnFavorites?.classList.add('active');
+        navCatalog?.classList.remove('active');
+      } else {
+        this.navBtnFavorites?.classList.remove('active');
+        navCatalog?.classList.add('active');
+      }
+    }
+
+    if (typeof this.applyFiltersAndSort === 'function') {
+      this.applyFiltersAndSort();
     }
   }
 

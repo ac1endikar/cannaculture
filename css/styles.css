@@ -294,6 +294,30 @@ body::before {
   font-weight: 800;
 }
 
+.nav-fav-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: #F87171;
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  margin-left: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-btn.active .nav-fav-badge,
+.nav-btn:hover .nav-fav-badge {
+  background: #EF4444;
+  color: #fff;
+  border-color: #EF4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.45);
+}
+
 .header-extra-controls {
   display: flex;
   align-items: center;
@@ -685,6 +709,93 @@ body::before {
     border-color: rgba(16, 185, 129, 0.35);
     transform: scale(1);
   }
+}
+
+/* ======================================================
+   BOTÓN RÁPIDO DE MIS FAVORITOS EN HEADER Y ESTADO VACÍO
+   ====================================================== */
+.btn-header-favorites {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(8, 14, 12, 0.85);
+  border: 1.5px solid rgba(239, 68, 68, 0.35);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 50px !important;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-header-favorites:hover {
+  border-color: #EF4444;
+  background: rgba(239, 68, 68, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
+}
+
+.btn-header-favorites .fav-icon {
+  font-size: 1rem;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-header-favorites:hover .fav-icon {
+  transform: scale(1.2);
+}
+
+.btn-header-favorites .fav-label {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.btn-header-favorites .fav-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: #F87171;
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 50px !important;
+  min-width: 18px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.btn-header-favorites.has-favorites {
+  border-color: rgba(239, 68, 68, 0.55);
+}
+
+.btn-header-favorites.has-favorites .fav-badge {
+  background: rgba(239, 68, 68, 0.35);
+  color: #FECACA;
+}
+
+.btn-header-favorites.active {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.28) 0%, rgba(185, 28, 28, 0.18) 100%);
+  border-color: #EF4444;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-header-favorites.active .fav-badge {
+  background: #EF4444;
+  color: #fff;
+  border-color: #EF4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.6);
+}
+
+.empty-favorites-state {
+  background: radial-gradient(circle at center, rgba(239, 68, 68, 0.08) 0%, rgba(10, 16, 14, 0.8) 70%);
+  border: 1px dashed rgba(239, 68, 68, 0.35);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
 }
 
 /* ========================
@@ -4436,7 +4547,8 @@ dialog.compare-dialog::backdrop {
     font-size: 1.15rem;
   }
 
-  .btn-header-compare {
+  .btn-header-compare,
+  .btn-header-favorites {
     padding: 5px 10px;
     font-size: 0.78rem;
   }

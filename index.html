@@ -68,7 +68,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css?v=2026_mission_dark_v152">
+  <link rel="stylesheet" href="css/styles.css?v=2026_favorites_filter_v153">
 </head>
 
 <body>
@@ -172,6 +172,11 @@
         <button class="nav-btn active" data-target="section-catalog" aria-label="Ir a sección Catálogo Ampliado">
           <span class="nav-btn-icon">📚</span>
           <span class="nav-btn-text">Catálogo Ampliado</span>
+        </button>
+        <button class="nav-btn" id="nav-btn-favorites" data-target="section-catalog" aria-label="Ver mis cepas favoritas">
+          <span class="nav-btn-icon">❤️</span>
+          <span class="nav-btn-text">Mis Favoritos</span>
+          <span class="nav-fav-badge" id="nav-fav-badge">0</span>
         </button>
         <button class="nav-btn" data-target="section-matcher" aria-label="Ir a sección Ruleta y Activity Matcher">
           <span class="nav-btn-icon">🎲</span>
@@ -336,6 +341,11 @@
           </p>
         </div>
         <div class="catalog-header-actions">
+          <button id="btn-header-favorites" class="btn-header-favorites" title="Filtrar sólo mis cepas favoritas" aria-label="Filtrar cepas favoritas">
+            <span class="fav-icon">❤️</span>
+            <span class="fav-label">Mis Favoritos</span>
+            <span class="fav-badge" id="header-fav-badge">0</span>
+          </button>
           <button id="btn-header-compare" class="btn-header-compare" title="Abrir Comparador Cara a Cara" aria-label="Abrir Comparador de Variedades Cara a Cara">
             <span class="compare-icon">⚖️</span>
             <span class="compare-label">Comparador</span>
@@ -1174,7 +1184,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=2026_mission_dark_v152"></script>
+  <script src="js/bundle.js?v=2026_favorites_filter_v153"></script>
 </body>
 
 </html>
