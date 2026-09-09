@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-09 10:15  
+> **Última actualización:** 2026-09-09 11:25  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
@@ -8,14 +8,19 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS + Firebase SDK v10 (compat CDN).
 - **Base de datos:** 464 cepas únicas y consolidadas pertenecientes a 40 bancos de semillas premium en `js/data.js` (incluyendo la incorporación de Fase A: Delicious Seeds con 8 variedades y Mr. Nice Seedbank con 8 variedades legendarias, más Nirvana Seeds con 15 variedades, Eva Seeds con 11 variedades, Medical Seeds Co. con 16 variedades, 00 Seeds Bank y Sweet Seeds).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_favorites_filter_v153`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_audit_photos_v154`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
-- **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders, 0 fotos no botánicas, 0 miniaturas pixeladas).
+- **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders, 0 fotos no botánicas, 0 folletos publicitarios, 0 miniaturas pixeladas).
 - **Comunidad & Nube:** Firebase Authentication (Google Auth Popup con selector de cuenta), Cloud Firestore (`users/{uid}/favorites` y colección pública `reviews`).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA, Comunidad y Rendimiento
+- **Auditoría Visual y Botánica Integral de 464 Cepas (v154):** **100% COMPLETADA Y VALIDADA**.
+  * Inspección visual completa de las 464 variedades del catálogo mediante hojas de contacto fotográficas (29 contact sheets de 16 imágenes c/u).
+  * Detección y sustitución sistemática de 38 imágenes irregulares: plantas/flores no cannábicas (hibiscos, pasiflora, lirios de la paz, flores de lupino, orquídeas, flores de sandía, suculentas jade, edelweiss, brotes), ilustraciones/renders generados por IA, esquemas CAD 3D, folletos y paquetes de semillas comerciales.
+  * Reemplazo por fotografías botánicas auténticas en alta resolución procedentes de bancos oficiales (Sensi Seeds CDN oficial, Serious Seeds, Dutch Passion, Pyramid Seeds, Positronics, R-Kiem, Delicious Seeds, DNA Genetics, Ripper Seeds, Seedsman, TH Seeds, Archive Seeds, ACE Seeds).
+  * Estandarización de formato a 800x800 px con enfoque central, preservando metadatos y compatibilidad dual (`.webp` y `.jpg`).
 - **Filtro Rápido de "Mis Favoritos (❤️)" en Navegación y Cabecera del Catálogo (v153):** **100% OPERATIVO Y VERIFICADO**.
   * Botón interactivo en la barra superior de navegación (`#nav-btn-favorites`) con contador reactivo (`#nav-fav-badge`).
   * Botón toggle en la barra de herramientas del catálogo (`#btn-header-favorites`) con píldora de recuento sincronizada (`#header-fav-badge`).
@@ -30,7 +35,50 @@
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-09)
-1. ✅ **Filtro Rápido de "Mis Favoritos (❤️)" en Barra de Navegación y Cabecera del Catálogo (v153):**
+1. ✅ **Auditoría Visual y Botánica Integral de 464 Cepas — Reemplazo de 38 Imágenes No Botánicas e IA por Flores Reales Oficiales (v154):**
+   - **Auditoría 100% de la Galería:** Generadas 29 hojas de contacto de 16 cepas cada una (`scratch/sheets/sheet_01.jpg` a `sheet_29.jpg`), revisando manualmente las 464 variedades de CannaCatalog.
+   - **Genéticas Corregidas (38 variedades):**
+     1. `ripper-hawaiian-wave`: Reemplazada flor de Hibiscus/Morning Glory por racimo floral maduro de Hawaiian Wave (Ripper Seeds).
+     2. `dp-passion-fruit`: Reemplazada enredadera de fruta de maracuyá por flor oficial de Passion Fruit de Dutch Passion.
+     3. `bsf-lebron-haze-auto`: Reemplazado cartel/folleto tipográfico por cogollo denso y resinado de Lebron Haze Auto.
+     4. `rkiem-zkiem`: Reemplazado capullo de caléndula por cogollo cristalino de ZKiem (R-Kiem Seeds).
+     5. `positronics-claustrum`: Reemplazado render robótico 3D por colas florales maduras de Claustrum (Positronics Seeds).
+     6. `positronics-cum-laude`: Reemplazada flor de orquídea por cola de Cum Laude (Positronics Seeds).
+     7. `positronics-somango-47`: Reemplazado cartel de cómic publicitario por rama floral de Somango 47 (Positronics Seeds).
+     8. `pyramid-anubis`: Reemplazada flor de Spathiphyllum (lirio de paz) por cogollo auténtico de Anubis (Pyramid Seeds).
+     9. `pyramid-blue-pyramid`: Reemplazada flor de víbora/echium por cogollo azulado de Blue Pyramid (Pyramid Seeds).
+     10. `pyramid-ramses`: Reemplazada flor de kniphofia por cogollo resinoso de Ramses (Pyramid Seeds).
+     11. `pyramid-galaxy`: Reemplazada planta de salón neón IA por cogollo floral real de Galaxy (Pyramid Seeds).
+     12. `pyramid-shark`: Reemplazada flor silvestre de tajinaste por cogollo de Shark (Pyramid Seeds).
+     13. `heavyweight-money-bush`: Reemplazada suculenta jade por cogollo gigante de Money Bush (Heavyweight Seeds).
+     14. `cannabiogen-sandstorm`: Reemplazada espiga de lupino morado por cogollo púrpura de Sandstorm (Cannabiogen).
+     15. `serious-kali-bubba`: Reemplazada foto de sobres de cartón por enorme planta en floración directa de seriousseeds.com.
+     16. `rqs-purple-queen`: Reemplazada campanilla morada por flor púrpura oficial de Purple Queen (Royal Queen Seeds).
+     17. `rqs-watermelon`: Reemplazada flor de enredadera de sandía por cogollo denso de Watermelon (Royal Queen Seeds).
+     18. `ths-mont-blanc`: Reemplazada flor de Edelweiss alpina por planta en floración de Mont Blanc (T.H. Seeds).
+     19. `tfd-the-real-mccoy`: Reemplazada flor Aristolochia por flor real de The Real McCoy (The Flying Dutchmen).
+     20. `sdm-mama-thai`: Reemplazada flor de árbol bala por sativa gigante en exterior de Mama Thai (Seedsman).
+     21. `cpg-apples-and-bananas`: Reemplazado dibujo botánico de manzano por flor púrpura de Apples and Bananas (Compound Genetics).
+     22. `arc-memory-loss`: Reemplazados brotes de soja y margaritas por cogollo escarchado de Memory Loss (Archive Seed Bank).
+     23. `dna-chocolope`: Reemplazado render neón púrpura IA por cola sativa real de Chocolope (DNA Genetics).
+     24. `sweet-soma`: Reemplazado flyer de Somango 47 por flor real de Sweet Soma (00 Seeds).
+     25. `ripper-kmintz`: Reemplazados plantones en vasos por cogollo maduro de KMintz (Ripper Seeds).
+     26. `ripper-double-glock`: Reemplazados esquejes de vivero por cogollo maduro de Double Glock (Ripper Seeds).
+     27. `aceseeds-panama`: Reemplazados brotes bajo luz blurple por cogollo maduro con pistilos rosa de Panama (ACE Seeds).
+     28. `arc-valley-girl`: Reemplazadas hojas vegetativas verdes por flor madura de Valley Girl (Archive Seed Bank).
+     29. `sugar-black-rose`: Cogollo escarchado de Sugar Black Rose (Delicious Seeds) validado sin artefactos.
+     30. `eleven-roses`: Cogollo maduro de Eleven Roses (Delicious Seeds) validado sin artefactos.
+     31. `sensi-jack-herer`: Flor oficial recortada con calidad de estudio Sensi Seeds (reemplazado cutout tosco).
+     32. `sensi-super-skunk`: Flor oficial de estudio Sensi Seeds (reemplazado cutout tosco).
+     33. `sensi-northern-lights`: Flor oficial legendaria de Northern Lights Sensi Seeds CDN (reemplazado cutout tosco).
+     34. `sensi-hindu-kush`: Flor oficial de Hindu Kush Sensi Seeds (reemplazado cutout tosco).
+     35. `sensi-skunk-1`: Flor oficial de Skunk #1 Sensi Seeds (reemplazado cutout tosco).
+     36. `sensi-early-skunk`: Flor oficial de Early Skunk Sensi Seeds (reemplazado cutout tosco).
+     37. `sensi-sensi-skunk`: Flor oficial de Sensi Skunk Sensi Seeds (reemplazado cutout tosco).
+     38. `sensi-hash-plant`: Flor oficial de Hash Plant Sensi Seeds (reemplazado cutout tosco).
+   - **Instalación y Verificación:** Script de despliegue `scratch/install_photos.py` actualizó rutas en `img/` y `images/strains/`. Hojas de contacto regeneradas y validadas con 100% de coherencia botánica.
+   - **Caché y Despliegue:** Recompilado bundle JS y actualizado cache-busting en `index.html` a `?v=2026_audit_photos_v154`.
+2. ✅ **Filtro Rápido de "Mis Favoritos (❤️)" en Barra de Navegación y Cabecera del Catálogo (v153):**
    - **Navegación y Cabecera (`index.html`):** Añadido `<button class="nav-btn" id="nav-btn-favorites">` con badge `#nav-fav-badge`, y `<button class="btn-header-favorites" id="btn-header-favorites">` con badge `#header-fav-badge` junto al comparador cara a cara.
    - **Estilos Dark Glassmorphism (`css/styles.css`):** Implementados `.btn-header-favorites`, `.nav-fav-badge`, estados `:hover`, `.active`, `.has-favorites` y diseño para `.empty-favorites-state`.
    - **Controlador Reactivo (`js/app.js`):** Añadidos `filterFavoritesOnly`, `setFavoritesFilter(enable)`, soporte en `applyFiltersAndSort()`, actualización del texto `catalogCount`, y renderizado dinámico del empty state con botón de regreso.
