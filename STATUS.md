@@ -1,7 +1,19 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-09 14:55  
+> **Última actualización:** 2026-09-09 15:00  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
+> **Commit de cierre:** `257a7ca` (sincronizado con `origin/main`)
+
+---
+
+## 📌 Punto de Reanudación para la Siguiente Sesión
+- **Estado de la Galería:** 100% de las 464 variedades de CannaCatalog cuentan con fotos botánicas auténticas en alta resolución (0 IA, 0 placeholders, 0 logos/marcas, 0 herramientas o cintas métricas).
+- **Última Tarea Cerrada (v155):** Sustitución y recorte limpio de las 24 genéticas solicitadas específicamente (*Hawaiian Wave, ZKiem, Somango 47, Blue Pyramid, Ramses, Shark, Sandstorm, Purple Queen, The Real McCoy, Mama Thai, Apples and Bananas, Double Glock, Panama, Valley Girl, Sugar Black Rose, Eleven Roses, Jack Herer, Anesthesia, Green Ninja, Hindu Kush, Skunk #1, Early Skunk, Sensi Skunk y Hash Plant*).
+- **Entorno Listo:** `bundle.js` reincorporado, `index.html` cache-busting en `?v=2026_audit_photos_v155`, repositorio limpio y subido a GitHub.
+- **Acciones para Iniciar Siguiente Sesión:**
+  1. Ejecutar `git pull origin main` (Fase de arranque según [AGENTS.md](file:///d:/cannaculture/AGENTS.md)).
+  2. Levantar servidor con `powershell -ExecutionPolicy Bypass -File server.ps1` si se requiere prueba visual.
+  3. Abordar el siguiente requerimiento que indique el usuario.
 
 ---
 
