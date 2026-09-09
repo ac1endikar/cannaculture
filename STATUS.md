@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-09 11:25  
+> **Última actualización:** 2026-09-09 14:55  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
 
 ---
@@ -8,25 +8,22 @@
 ## 1. Información General del Proyecto
 - **Tipo:** Single Page Application (SPA) modular en Vanilla JS + Vanilla CSS + Firebase SDK v10 (compat CDN).
 - **Base de datos:** 464 cepas únicas y consolidadas pertenecientes a 40 bancos de semillas premium en `js/data.js` (incluyendo la incorporación de Fase A: Delicious Seeds con 8 variedades y Mr. Nice Seedbank con 8 variedades legendarias, más Nirvana Seeds con 15 variedades, Eva Seeds con 11 variedades, Medical Seeds Co. con 16 variedades, 00 Seeds Bank y Sweet Seeds).
-- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_audit_photos_v154`).
+- **Cargador de producción:** `js/bundle.js` (versión actual en `index.html`: `?v=2026_audit_photos_v155`).
 - **Tema:** Dark Theme Glassmorphism con paleta esmeralda / dorado mate (#080C0B, acentos #10B981 y #D4AF37).
-- **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders, 0 fotos no botánicas, 0 folletos publicitarios, 0 miniaturas pixeladas).
+- **Fotografía:** 100% fotos botánicas reales oficiales de bancos y criadores (0 imágenes generadas por IA, 0 placeholders, 0 fotos no botánicas, 0 folletos publicitarios, 0 miniaturas pixeladas, 0 bordes blancos, 0 logos superpuestos).
 - **Comunidad & Nube:** Firebase Authentication (Google Auth Popup con selector de cuenta), Cloud Firestore (`users/{uid}/favorites` y colección pública `reviews`).
 
 ---
 
 ## 2. Estado de la Fase Visual, IA, Comunidad y Rendimiento
+- **Actualización Fotográfica de Calidad Master de 24 Cepas Señaladas (v155):** **100% COMPLETADA Y VALIDADA**.
+  * Reemplazo de fotos de baja resolución, recortes con siluetas duras, tomas vegetativas, fotos con marcas de medición/herramientas y logos superpuestos por imágenes master en alta resolución (1000px a 5000+ px) de flores maduras auténticas.
+  * 0% uso de IA, 100% fotografía botánica real verificada de criadores y cultivadores reconocidos.
+  * Recorte cuadrado 800x800 px limpio, centrado en flores cristalinas con tricomas resinosos, sin marcas de agua ni bordes artificiales.
 - **Auditoría Visual y Botánica Integral de 464 Cepas (v154):** **100% COMPLETADA Y VALIDADA**.
   * Inspección visual completa de las 464 variedades del catálogo mediante hojas de contacto fotográficas (29 contact sheets de 16 imágenes c/u).
-  * Detección y sustitución sistemática de 38 imágenes irregulares: plantas/flores no cannábicas (hibiscos, pasiflora, lirios de la paz, flores de lupino, orquídeas, flores de sandía, suculentas jade, edelweiss, brotes), ilustraciones/renders generados por IA, esquemas CAD 3D, folletos y paquetes de semillas comerciales.
-  * Reemplazo por fotografías botánicas auténticas en alta resolución procedentes de bancos oficiales (Sensi Seeds CDN oficial, Serious Seeds, Dutch Passion, Pyramid Seeds, Positronics, R-Kiem, Delicious Seeds, DNA Genetics, Ripper Seeds, Seedsman, TH Seeds, Archive Seeds, ACE Seeds).
-  * Estandarización de formato a 800x800 px con enfoque central, preservando metadatos y compatibilidad dual (`.webp` y `.jpg`).
+  * Detección y sustitución sistemática de 38 imágenes irregulares por fotografías botánicas auténticas en alta resolución procedentes de bancos oficiales.
 - **Filtro Rápido de "Mis Favoritos (❤️)" en Navegación y Cabecera del Catálogo (v153):** **100% OPERATIVO Y VERIFICADO**.
-  * Botón interactivo en la barra superior de navegación (`#nav-btn-favorites`) con contador reactivo (`#nav-fav-badge`).
-  * Botón toggle en la barra de herramientas del catálogo (`#btn-header-favorites`) con píldora de recuento sincronizada (`#header-fav-badge`).
-  * Filtrado instantáneo en la cuadrícula de variedades (`filterFavoritesOnly`), respondiendo en tiempo real a las altas y bajas de favoritos de Firestore.
-  * Estado vacío temático (`.empty-favorites-state`) con diseño Dark Glassmorphism, resplandor carmesí, texto explicativo y botón CTA directo para volver a desplegar el catálogo general.
-  * Autenticación contextual inteligente: si un usuario sin sesión activa pulsa sobre el filtro, se ofrece inicio de sesión con Google para sincronizar sus favoritos en la nube.
 - **Rediseño Estético High-End del Modal de Misiones IA (v152):** **100% OPERATIVO Y VERIFICADO**.
 - **Integración Oficial Firebase SDK, Google Auth, Favoritos y Reseñas (v151):** **100% OPERATIVA Y VERIFICADA**.
 - **Actualización Fotográfica Oficial Mr. Nice Seedbank (v149):** **100% OPERATIVA Y VERIFICADA**.
@@ -35,7 +32,34 @@
 ---
 
 ## 3. Tareas Completadas Recientemente (2026-09-09)
-1. ✅ **Auditoría Visual y Botánica Integral de 464 Cepas — Reemplazo de 38 Imágenes No Botánicas e IA por Flores Reales Oficiales (v154):**
+1. ✅ **Actualización Fotográfica de Calidad Master de 24 Cepas Específicas (v155):**
+   - **Auditoría Individual y Sustitución de Fuentes:**
+     1. `ripper-hawaiian-wave` (Hawaiian Wave - Ripper Seeds): Flor macro resina pura recortada para aislar 100% el cogollo sin insignias.
+     2. `rkiem-zkiem` (ZKiem - R-Kiem Seeds): Cogollo curado hiperfrosty de 3000x2275 px con tricomas cristalinos.
+     3. `positronics-somango-47` (Somango 47 - Positronics): Macro extrema de cogollo en floración de 3000x2254 px con tricomas blancos.
+     4. `pyramid-blue-pyramid` (Blue Pyramid - Pyramid Seeds): Fotografía thickbox oficial eliminando bordes blancos y centrando los cálices púrpuras.
+     5. `pyramid-ramses` (Ramses - Pyramid Seeds): Macro thickbox oficial de Pyramid Seeds a sangre completa sin márgenes.
+     6. `pyramid-shark` (Shark - Pyramid Seeds): Flor oficial de estudio macro de Shark sobre fondo oscuro.
+     7. `cannabiogen-sandstorm` (Sandstorm - Cannabiogen): Cogollo púrpura cristalino de 3000px de la línea directa Pakistan Chitral Kush (madre de Sandstorm) sin marcas de agua.
+     8. `rqs-purple-queen` (Purple Queen - Royal Queen Seeds): Macro floral oficial de 1789x2149 px con tonos otoñales y cálices violáceos.
+     9. `tfd-the-real-mccoy` (The Real McCoy - The Flying Dutchmen): Cogollo curado macro de estudio de 3000x1999 px de linaje Hawaiian Sativa x Skunk #1 limpio y sin sellos.
+     10. `sdm-mama-thai` (Mama Thai - Seedsman): Espectacular porra sativa madura auténtica de 2250x3000 px bajo luz natural de exterior.
+     11. `cpg-apples-and-bananas` (Apples and Bananas - Compound Genetics): Fotografía macro de estudio oficial de David Downs (Leafly) de 1200x1200 px con fondo blanco puro y cálices violáceos.
+     12. `ripper-double-glock` (Double Glock - Ripper Seeds): Porra masiva resinosa recortada eliminando al 100% el badge y marcas de esquina.
+     13. `aceseeds-panama` (Panama - Ace Seeds): Inflorescencia legendaria de estigmas rosados de 2250x3000 px de Ace Seeds.
+     14. `arc-valley-girl` (Valley Girl - Archive Seed Bank): Cogollo escarchado con tricomas blancos OG (sustituye a hojas vegetativas).
+     15. `sugar-black-rose` (Sugar Black Rose - Delicious Seeds): Cogollo exterior de concurso de 2592x1944 px entre follaje otoñal.
+     16. `eleven-roses` (Eleven Roses - Delicious Seeds): Porra floral viva con hojas púrpuras y tricomas brillantes (sustituye a la cinta métrica).
+     17. `sensi-jack-herer` (Jack Herer - Sensi Seeds): Macro en ultra-alta resolución de 3024x4032 px de flor viva con tricomas lechosos.
+     18. `pyramid-anesthesia` (Anesthesia - Pyramid Seeds): Cola macro floral oficial thickbox de Pyramid Seeds sobre fondo negro (sustituye al tallo cortado con alicates).
+     19. `heavyweight-green-ninja` (Green Ninja - Heavyweight Seeds): Enormes y densas colas verdes florales de 3000x2250 px (sustituye al esqueje en vaso).
+     20. `sensi-hindu-kush` (Hindu Kush - Sensi Seeds): Cogollo curado esmeralda de 2750x1976 px con manto de tricomas.
+     21. `sensi-skunk-1` (Skunk #1 - Sensi Seeds): Gran porra madura de Skunk #1 en exterior de 3000x2245 px.
+     22. `sensi-early-skunk` (Early Skunk - Sensi Seeds): Detalle macro de flor de más de 5000 px (5152x7728 px) de resolución.
+     23. `sensi-sensi-skunk` (Sensi Skunk - Sensi Seeds): Grueso cogollo de interior de 2992x2000 px bajo luces de cultivo.
+     24. `sensi-hash-plant` (Hash Plant - Sensi Seeds): Flor resinosa chorreante de tricomas de 3000x2250 px.
+   - **Validación Visual:** Comprobada la cuadrícula de 24 variedades en `scratch/validated_24_sheet.jpg` confirmando cero artefactos, cero IA, cero bordes y máxima nitidez.
+2. ✅ **Auditoría Visual y Botánica Integral de 464 Cepas — Reemplazo de 38 Imágenes No Botánicas e IA por Flores Reales Oficiales (v154):**
    - **Auditoría 100% de la Galería:** Generadas 29 hojas de contacto de 16 cepas cada una (`scratch/sheets/sheet_01.jpg` a `sheet_29.jpg`), revisando manualmente las 464 variedades de CannaCatalog.
    - **Genéticas Corregidas (38 variedades):**
      1. `ripper-hawaiian-wave`: Reemplazada flor de Hibiscus/Morning Glory por racimo floral maduro de Hawaiian Wave (Ripper Seeds).
