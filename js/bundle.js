@@ -3868,7 +3868,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "sensi-early-skunk",
-        image: "img/sensi-early-skunk-bud.webp",
+        image: "img/sensi-early-skunk.webp",
         name: "Early Skunk",
         aka: "Skunk #1 x Early Pearl",
         bank: "Sensi Seeds",
@@ -11920,7 +11920,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "eleven-roses",
-    image: "images/strains/eleven-roses.jpg",
+    image: "img/eleven-roses.webp",
     name: "Eleven Roses",
     aka: "Eleven Roses Elite",
     bank: "Delicious Seeds",
@@ -12065,7 +12065,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "critical-kali-mist",
-    image: "images/strains/critical-kali-mist.jpg",
+    image: "img/critical-kali-mist.webp",
     name: "Critical Kali Mist",
     aka: "Critical Haze Queen",
     bank: "Delicious Seeds",
@@ -12268,7 +12268,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "early-skunk-mrnice",
-    image: "images/strains/early-skunk-mrnice.jpg",
+    image: "img/early-skunk-mrnice.webp",
     name: "Early Skunk",
     aka: "Outdoor Guerilla Master",
     bank: "Mr. Nice Seedbank",

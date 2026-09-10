@@ -1,19 +1,39 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-10 16:38  
+> **Última actualización:** 2026-09-10 18:25  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
-> **Commit de cierre:** v158 (`fix(catalog): sustitucion de fotos duplicadas por imagenes botanicas unicas v158`)
+> **Commit de cierre:** v159 (`fix(catalog): sustitucion de 20 fotografias de baja calidad por macros botanicos master v159`)
 
 ---
 
 ## 📌 Punto de Reanudación para la Siguiente Sesión
-- **Estado del Catálogo:** **535 cepas en 44 bancos** (Auditoría Fotográfica v158 completada).
-- **Auditoría y Erradicación de Fotos Duplicadas v158:**
-  * **63 cepas actualizadas** con fotografías botánicas 100% originales, únicas e individuales.
-  * **0% IA, 0% duplicados de hash:** Verificación criptográfica SHA-256 de 63/63 hashes distintos sin colisiones cruzadas en el catálogo.
-  * **Procesamiento de imagen:** Formato WebP (800x800 px, 1:1 square crop, Lanczos resampling) instalado en `img/{id}.webp` e `images/strains/{id}.webp`.
-  * Bancos cubiertos: Karma Genetics (10), Canuk Seeds (10), Samsara Seeds (8), Elev8 Seeds (8), Dutch Passion (2), Delicious Seeds (7), Mr. Nice Seedbank (5), Philosopher Seeds (7), Humboldt Seed (6).
-- **Bundle & Cache-Busting:** Recompilado a 913,043 bytes (`js/bundle.js` y `js/bundle-v151.js`). Cache-busting actualizado a `?v=2026_unique_photos_v158`.
+- **Estado del Catálogo:** **535 cepas en 44 bancos** (Auditoría Fotográfica v159 completada).
+- **Curación y Sustitución de 20 Fotografías Críticas v159:**
+  * **20 cepas renovadas con macros botánicos master de máxima calidad:**
+    1. `canuk-banana-cream` (Canuk Seeds) — Macro de cogollo morado ultra resinoso.
+    2. `eleven-roses` (Delicious Seeds) — Cáliz oscuro Black Rose con tricomas cristalinos.
+    3. `critical-kali-mist` (Delicious Seeds) — Macro extremo de glándulas de resina y pistilos ambarinos sobre fondo oscuro.
+    4. `delicious-la-diva` (Delicious Seeds) — Cola Chitral Kush violeta/verde sobre fondo negro.
+    5. `sensi-early-skunk` (Sensi Seeds) — Cola Skunk resinosa verde vibrante sobre fondo negro.
+    6. `early-skunk-mrnice` (Mr. Nice Seedbank) — Cola Skunk #1 clásica, densa y escarchada sobre fondo negro (100% independiente de Sensi, sin duplicado).
+    7. `mrnice-g13-haze` (Mr. Nice Seedbank) — Cola Haze dorada cristalina sobre fondo negro puro (sin logos ni mallas).
+    8. `mrnice-ash` (Mr. Nice Seedbank) — Enorme cola Índica afgana resplandeciente sobre fondo negro (cero guantes/manos).
+    9. `mrnice-devil` (Mr. Nice Seedbank) — Cola escarchada Devil sobre fondo negro (sin manos ni logos).
+    10. `philo-twisted-kush` (Philosopher Seeds) — Macro de tricomas dorados y cálices densos Kush.
+    11. `hso-chemdawg` (Humboldt Seed Org) — Cola Chemdawg cristalina con cobertura densa de tricomas.
+    12. `dp-frisian-dew` (Dutch Passion) — Espectacular cola púrpura de exterior con gruesa capa de resina (sin marcas de agua).
+    13. `samsara-spiritual-punk` (Samsara Seeds) — Macro ultra-cercano de cabezas de tricomas y pistilos ámbar Northern Lights.
+    14. `samsara-tropimango` (Samsara Seeds) — Cogollo Somango blanco de tricomas sobre fondo neutro.
+    15. `samsara-thai-stick` (Samsara Seeds) — Floración satíva tailandesa pura (espigas cristalinas sobre fondo oscuro).
+    16. `samsara-romulan-grapefruit` (Samsara Seeds) — Cogollo cónico denso y resinoso sobre fondo oscuro.
+    17. `samsara-killing-fields` (Samsara Seeds) — Macro púrpura oscuro saturado de tricomas sobre fondo negro.
+    18. `samsara-shark-bite` (Samsara Seeds) — Enorme cogollo Great White Shark blanco de resina (sin logos).
+    19. `samsara-sunrise-kush` (Samsara Seeds) — Macro de cogollo curado Kush denso y resinoso.
+    20. `samsara-timewarp` (Samsara Seeds) — Cola masiva y cristalina Skunk sobre fondo negro.
+  * **0% fotos pésimas:** Erradicados envoltorios/cajas, dibujos animados/cartoons, macetas, mallas scrog, manos/guantes y marcas de agua.
+  * **0% duplicados de hash:** 20/20 hashes SHA-256 únicos sin colisión con ninguna cepa del catálogo.
+  * **Procesamiento de imagen:** Formato WebP (800x800 px, 1:1 square crop, Lanczos resampling) instalado en `img/{id}.webp` e `images/strains/{id}.webp`, con fallback `.jpg`.
+- **Bundle & Cache-Busting:** Recompilado a 913,009 bytes (`js/bundle.js` y `js/bundle-v151.js`). Cache-busting actualizado a `?v=2026_master_macros_v159`.
 - **Acciones para Iniciar Siguiente Sesión:**
   1. Ejecutar `git pull origin main` (Fase de arranque según [AGENTS.md](file:///d:/cannaculture/AGENTS.md)).
   2. Levantar servidor con `powershell -ExecutionPolicy Bypass -File server.ps1` si se requiere prueba visual.
