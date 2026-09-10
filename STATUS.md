@@ -1,23 +1,19 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-10 16:00  
+> **Última actualización:** 2026-09-10 16:38  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
-> **Commit de cierre:** v157 (`fix(catalog): purga de autoflorecientes y correccion de linajes oficiales v157`)
+> **Commit de cierre:** v158 (`fix(catalog): sustitucion de fotos duplicadas por imagenes botanicas unicas v158`)
 
 ---
 
 ## 📌 Punto de Reanudación para la Siguiente Sesión
-- **Estado del Catálogo:** **535 cepas en 44 bancos** (Corrección Botánica Estricta v157 completada).
-- **Corrección Botánica v157 (Purga de Autoflorecientes y Linajes Erróneos):**
-  1. `dp-think-different` (Auto) → `dp-mazar` (Mazar, Dutch Passion - Afghani x Skunk #1, 21% THC, Índica 100%).
-  2. `delicious-auto-pounder` (Auto) → `delicious-lord-kush` (Lord Kush, Delicious Seeds - Unknown Kush x Death Star, 26% THC, Índica 85%).
-  3. `philo-auto-sugar-candy` (Auto) → `philo-black-bomb` (Black Bomb, Philosopher Seeds - Black Domina 98 x Tropimango, 22% THC, Índica 80%).
-  4. `samsara-golden-tiger` (Linaje erróneo) → `samsara-spiritual-punk` (Spiritual Punk, Samsara Seeds - Northern Lights x Mazar, 21% THC, Índica 80%).
-  5. `philo-ace-of-spades` (Linaje erróneo) → `philo-heavens-fruit` (Heaven's Fruit, Philosopher Seeds - Tropimango x NYCD, 20% THC, Híbrida 60/40).
-  6. `mrnice-the-church` (Linaje erróneo) → `mrnice-ash` (Ash, Mr. Nice Seedbank - Afghan Skunk x Afghan Haze, 20% THC, Híbrida 50/50).
-  7. `mrnice-laughing-buddha` (Linaje erróneo) → `mrnice-devil` (Devil, Mr. Nice Seedbank - Afghani x Afghan/Skunk, 19% THC, Índica 80%).
-- **Fotografía:** Fotos botánicas auténticas y correspondientes operativas en `img/` e `images/strains/`.
-- **Bundle:** Recompilado a 913,043 bytes (`js/bundle.js` y `js/bundle-v151.js`). Cache-busting actualizado a `?v=2026_botanical_fix_v157`.
+- **Estado del Catálogo:** **535 cepas en 44 bancos** (Auditoría Fotográfica v158 completada).
+- **Auditoría y Erradicación de Fotos Duplicadas v158:**
+  * **63 cepas actualizadas** con fotografías botánicas 100% originales, únicas e individuales.
+  * **0% IA, 0% duplicados de hash:** Verificación criptográfica SHA-256 de 63/63 hashes distintos sin colisiones cruzadas en el catálogo.
+  * **Procesamiento de imagen:** Formato WebP (800x800 px, 1:1 square crop, Lanczos resampling) instalado en `img/{id}.webp` e `images/strains/{id}.webp`.
+  * Bancos cubiertos: Karma Genetics (10), Canuk Seeds (10), Samsara Seeds (8), Elev8 Seeds (8), Dutch Passion (2), Delicious Seeds (7), Mr. Nice Seedbank (5), Philosopher Seeds (7), Humboldt Seed (6).
+- **Bundle & Cache-Busting:** Recompilado a 913,043 bytes (`js/bundle.js` y `js/bundle-v151.js`). Cache-busting actualizado a `?v=2026_unique_photos_v158`.
 - **Acciones para Iniciar Siguiente Sesión:**
   1. Ejecutar `git pull origin main` (Fase de arranque según [AGENTS.md](file:///d:/cannaculture/AGENTS.md)).
   2. Levantar servidor con `powershell -ExecutionPolicy Bypass -File server.ps1` si se requiere prueba visual.
