@@ -1,17 +1,23 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-10 15:34  
+> **Última actualización:** 2026-09-10 16:00  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
-> **Commit de cierre:** pendiente (v156)
+> **Commit de cierre:** v157 (`fix(catalog): purga de autoflorecientes y correccion de linajes oficiales v157`)
 
 ---
 
 ## 📌 Punto de Reanudación para la Siguiente Sesión
-- **Estado del Catálogo:** **535 cepas en 44 bancos** (expansión v156 completada).
-- **Bancos Nuevos Añadidos (v156):** Karma Genetics (10), Canuk Seeds (10), Samsara Seeds (8), Elev8 Seeds (8).
-- **Bancos Ampliados (v156):** Dutch Passion (8→15), Delicious Seeds (8→15), Mr. Nice Seedbank (8→15), Philosopher Seeds (8→15), Humboldt Seed (8→15).
-- **Fotos:** Todas las cepas nuevas con imagen asignada botánicamente compatible. Las fotos de los bancos con CDN accesible (Dutch Passion, Humboldt Seed) son originales oficiales; el resto reutiliza fotos de variedades genéticamente afines del catálogo.
-- **Bundle:** Recompilado a 912,721 bytes. Cache-busting actualizado a `?v=2026_expansion_v156`.
+- **Estado del Catálogo:** **535 cepas en 44 bancos** (Corrección Botánica Estricta v157 completada).
+- **Corrección Botánica v157 (Purga de Autoflorecientes y Linajes Erróneos):**
+  1. `dp-think-different` (Auto) → `dp-mazar` (Mazar, Dutch Passion - Afghani x Skunk #1, 21% THC, Índica 100%).
+  2. `delicious-auto-pounder` (Auto) → `delicious-lord-kush` (Lord Kush, Delicious Seeds - Unknown Kush x Death Star, 26% THC, Índica 85%).
+  3. `philo-auto-sugar-candy` (Auto) → `philo-black-bomb` (Black Bomb, Philosopher Seeds - Black Domina 98 x Tropimango, 22% THC, Índica 80%).
+  4. `samsara-golden-tiger` (Linaje erróneo) → `samsara-spiritual-punk` (Spiritual Punk, Samsara Seeds - Northern Lights x Mazar, 21% THC, Índica 80%).
+  5. `philo-ace-of-spades` (Linaje erróneo) → `philo-heavens-fruit` (Heaven's Fruit, Philosopher Seeds - Tropimango x NYCD, 20% THC, Híbrida 60/40).
+  6. `mrnice-the-church` (Linaje erróneo) → `mrnice-ash` (Ash, Mr. Nice Seedbank - Afghan Skunk x Afghan Haze, 20% THC, Híbrida 50/50).
+  7. `mrnice-laughing-buddha` (Linaje erróneo) → `mrnice-devil` (Devil, Mr. Nice Seedbank - Afghani x Afghan/Skunk, 19% THC, Índica 80%).
+- **Fotografía:** Fotos botánicas auténticas y correspondientes operativas en `img/` e `images/strains/`.
+- **Bundle:** Recompilado a 913,043 bytes (`js/bundle.js` y `js/bundle-v151.js`). Cache-busting actualizado a `?v=2026_botanical_fix_v157`.
 - **Acciones para Iniciar Siguiente Sesión:**
   1. Ejecutar `git pull origin main` (Fase de arranque según [AGENTS.md](file:///d:/cannaculture/AGENTS.md)).
   2. Levantar servidor con `powershell -ExecutionPolicy Bypass -File server.ps1` si se requiere prueba visual.
