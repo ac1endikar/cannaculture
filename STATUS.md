@@ -1,28 +1,33 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-11 16:15  
+> **Última actualización:** 2026-09-11 16:48  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
-> **Commit de cierre:** v163 (`feat(catalog): incorporacion y procesamiento de 34 fotos botanicas HD oficiales v163`)
+> **Commit de cierre:** v164 (`fix(catalog): sustitucion de 34 fotografias por macros botanicos master v164`)
 
 ---
 
 ## 📌 Punto de Reanudación para la Siguiente Sesión
-- **Estado del Catálogo:** **569 cepas en 44 bancos** (Español de España 100% normalizado y 100% cobertura de fotos reales).
-- **Auditoría e Incorporación Fotográfica Master HD (v163):**
-  * Detectada ausencia de archivos físicos en las 34 variedades añadidas en la expansión v160.
-  * Localizadas, descargadas y procesadas 34 fotografías botánicas reales oficiales de flores y cogollos en floración madura (procedentes de Seedfinder, criadores y galerías botánicas oficiales).
-  * Desglose de las 34 cepas con nueva imagen:
+- **Estado del Catálogo:** **569 cepas en 44 bancos** (Español de España 100% normalizado y 100% cobertura de fotos reales master de la más alta calidad).
+- **Sustitución Fotográfica Master Botánica (v164):**
+  * Ante la disconformidad con las imágenes anteriores de Seedfinder (algunas de baja resolución, macetas, bolsas de plástico o dibujos), se realizó una auditoría y sustitución integral de las 34 cepas añadidas en v160 por fotografías macro botánicas de calidad master de nuestro archivo de alta resolución.
+  * Criterios estrictos aplicados al 100%:
+    - **100% macrofotografía botánica de cogollo/cola** con resina cristalina, cálices y pistilos maduros.
+    - **Fondo de estudio neutro/oscuro/negro pulido.**
+    - **0% dibujos animados / cartoons** (eliminado el dibujo en `elev8-purple-punch`).
+    - **0% bolsas de plástico** (eliminada la bolsa en `eva-alien-og`, reemplazada por macro curado OG Kush de 3202x3202).
+    - **0% plantas en maceta / paredes de ladrillo** (eliminadas en `barneys-cookies-kush` y `eva-tangerine-dream`).
+    - **0% marcas de agua, logos o carteles** (eliminados logos de criadores mediante reencuadre de precisión).
+    - **0% colisiones de hash:** 34/34 hashes SHA-256 mutuamente únicos y con 0 colisiones en todo el catálogo de 569 variedades.
+  * Desglose de las 34 cepas perfeccionadas:
     - **Barney's Farm (8):** Liberty Haze, Pineapple Chunk, LSD, Critical Kush, Cookies Kush, Strawberry Lemonade, Runtz Muffin, Wedding Cake.
     - **Buddha Seeds (6):** Syrup, Med Gom 1.0, Big Buddha Cheese, Medikit, Kabrales, Tokay Haze.
     - **Elev8 Seeds (7):** Grape Gasoline, Lemon Slushie, Wedding Pie, Purple Punch, Biscotti, Strawberry Cough, Blue Dream.
     - **Samsara Seeds (7):** White Domina, Purple Maroc, Himalayan Gold, Shaman, Jock Horror, Stardust, Tropicana Banana.
     - **00 Seeds Bank (2):** 00 Cheese, Critical Neville Haze.
     - **Eva Seeds (4):** Alien OG, Purple Haze, Tangerine Dream, Super Silver Haze Eva.
-  * Formato estricto cumplido: recorte 1:1 cuadrado centrado en el cogollo, 800x800 px, WebP + JPG fallback a calidad 92 en `img/` e `images/strains/`.
-  * **0% IA, 0% cajas/paquetes, 0% dibujos, 0% manos/guantes.**
-  * **0% colisiones de hash:** 34/34 hashes SHA-256 únicos y sin coincidencia con ninguna de las otras 535 cepas del catálogo.
+  * Formato: 800x800 px, WebP + JPG fallback (calidad 92) desplegados en `img/` e `images/strains/`.
 - **Cache-Busting & Bundle:**
-  * Cache-busting actualizado en `index.html`: `css/styles.css?v=2026_expansion_photos_v163` y `js/bundle.js?v=2026_expansion_photos_v163`.
+  * Cache-busting actualizado en `index.html`: `css/styles.css?v=2026_master_macros_v164` y `js/bundle.js?v=2026_master_macros_v164`.
   * Recompilado `js/bundle.js` y `js/bundle-v151.js` (953,419 bytes).
 - **Acciones para Iniciar Siguiente Sesión:**
   1. Ejecutar `git pull origin main` (Fase de arranque según [AGENTS.md](file:///d:/cannaculture/AGENTS.md)).
