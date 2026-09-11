@@ -1,20 +1,28 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-11 15:25  
+> **Última actualización:** 2026-09-11 16:15  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
-> **Commit de cierre:** v162 (`fix(encoding): erradicacion total de mojibake y actualizacion de cache-busting v162`)
+> **Commit de cierre:** v163 (`feat(catalog): incorporacion y procesamiento de 34 fotos botanicas HD oficiales v163`)
 
 ---
 
 ## 📌 Punto de Reanudación para la Siguiente Sesión
-- **Estado del Catálogo:** **569 cepas en 44 bancos** (Español de España 100% normalizado).
-- **Limpieza y Erradicación Total de Mojibake (v161 - v162):**
-  * Eliminadas todas las secuencias de codificación rota (mojibake) detectadas en la interfaz web (`index.html`).
-  * Restaurados todos los emojis nativos limpios: `🌿`, `📚`, `⭐`, `🎲`, `🤗`, `🧪`, `📖`, `🧬`, `🛡️`, etc., sustituyendo artefactos como `ðŸ...`, `â...`, `ï¸`.
-  * Preservadas y corregidas todas las tildes y caracteres del español de España (`Catálogo`, `Más`, `Colección`, `Genéticas`, `Fotografía Botánica`, `Ámbar`, `Ánimo`, `Índica`, `Híbrida`, `España`).
-  * 0 caracteres de control C1 (`\x80-\x9F`), 0 caracteres de reemplazo (`\ufffd`), y 0 secuencias rotas en todo el proyecto verificado por script automatizado.
+- **Estado del Catálogo:** **569 cepas en 44 bancos** (Español de España 100% normalizado y 100% cobertura de fotos reales).
+- **Auditoría e Incorporación Fotográfica Master HD (v163):**
+  * Detectada ausencia de archivos físicos en las 34 variedades añadidas en la expansión v160.
+  * Localizadas, descargadas y procesadas 34 fotografías botánicas reales oficiales de flores y cogollos en floración madura (procedentes de Seedfinder, criadores y galerías botánicas oficiales).
+  * Desglose de las 34 cepas con nueva imagen:
+    - **Barney's Farm (8):** Liberty Haze, Pineapple Chunk, LSD, Critical Kush, Cookies Kush, Strawberry Lemonade, Runtz Muffin, Wedding Cake.
+    - **Buddha Seeds (6):** Syrup, Med Gom 1.0, Big Buddha Cheese, Medikit, Kabrales, Tokay Haze.
+    - **Elev8 Seeds (7):** Grape Gasoline, Lemon Slushie, Wedding Pie, Purple Punch, Biscotti, Strawberry Cough, Blue Dream.
+    - **Samsara Seeds (7):** White Domina, Purple Maroc, Himalayan Gold, Shaman, Jock Horror, Stardust, Tropicana Banana.
+    - **00 Seeds Bank (2):** 00 Cheese, Critical Neville Haze.
+    - **Eva Seeds (4):** Alien OG, Purple Haze, Tangerine Dream, Super Silver Haze Eva.
+  * Formato estricto cumplido: recorte 1:1 cuadrado centrado en el cogollo, 800x800 px, WebP + JPG fallback a calidad 92 en `img/` e `images/strains/`.
+  * **0% IA, 0% cajas/paquetes, 0% dibujos, 0% manos/guantes.**
+  * **0% colisiones de hash:** 34/34 hashes SHA-256 únicos y sin coincidencia con ninguna de las otras 535 cepas del catálogo.
 - **Cache-Busting & Bundle:**
-  * Cache-busting actualizado en `index.html`: `css/styles.css?v=2026_clean_encoding_v162` y `js/bundle.js?v=2026_clean_encoding_v162`.
+  * Cache-busting actualizado en `index.html`: `css/styles.css?v=2026_expansion_photos_v163` y `js/bundle.js?v=2026_expansion_photos_v163`.
   * Recompilado `js/bundle.js` y `js/bundle-v151.js` (953,419 bytes).
 - **Acciones para Iniciar Siguiente Sesión:**
   1. Ejecutar `git pull origin main` (Fase de arranque según [AGENTS.md](file:///d:/cannaculture/AGENTS.md)).
