@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CannaCatalog 2.0 ULTRA MAX | 569 Cepas de 44 Bancos Premium (18+)</title>
   <meta name="description"
-    content="CatÃ¡logo ultra extendido con 464 variedades botÃ¡nicas de 40 bancos premium mundiales (Eva Seeds, Medical Seeds, Ripper Seeds, Barney's Farm, Sweet Seeds, Dutch Passion, Green House, Nirvana Seeds y 30 mÃ¡s). Clasificadas por Ãndica, Sativa e HÃ­brida con 8 terpenos clave y Sommelier Inteligente Mateo.">
+    content="Catálogo ultra extendido con 569 variedades botánicas de 44 bancos premium mundiales (Eva Seeds, Medical Seeds, Ripper Seeds, Barney's Farm, Sweet Seeds, Dutch Passion, Green House, Nirvana Seeds y 30 más). Clasificadas por Índica, Sativa e Híbrida con 8 terpenos clave y Sommelier Inteligente Mateo.">
   <meta name="theme-color" content="#0B0F0E">
 
-  <!-- Indica el tipo de pÃºblico objetivo -->
+  <!-- Indica el tipo de público objetivo -->
   <meta name="rating" content="RTA-5042-1996-1400-1577-RTA" />
   <meta name="rating" content="adult" />
   <meta name="age-rating" content="18+" />
@@ -38,7 +38,7 @@
       navigator.serviceWorker.getRegistrations().then(function (registrations) {
         for (var reg of registrations) {
           reg.unregister();
-          console.log('ðŸ§¹ ServiceWorker legacy desregistrado con Ã©xito:', reg);
+          console.log('🧹 ServiceWorker legacy desregistrado con éxito:', reg);
         }
       }).catch(function () { });
     }
@@ -73,85 +73,85 @@
 
 <body>
 
-  <!-- VERIFICACIÃ“N DE EDAD MODAL (AGE-GATE 18+) -->
+  <!-- VERIFICACIÓN DE EDAD MODAL (AGE-GATE 18+) -->
   <dialog id="age-modal" class="age-gate-dialog">
     <div class="age-gate-card glow-emerald">
 
-      <!-- ESCENA 1: PREGUNTA Y VERIFICACIÃ“N -->
+      <!-- ESCENA 1: PREGUNTA Y VERIFICACIÓN -->
       <div id="age-step-verify" class="age-step active">
         <div class="age-badge-icon">
-          <span class="shield-emerald">ðŸ›¡ï¸</span>
+          <span class="shield-emerald">🛡️</span>
           <span class="age-number-pill">+18</span>
         </div>
 
-        <h2 class="age-title">Control de Acceso (MayorÃ­a de Edad)</h2>
-        <p class="age-subtitle">CannaCatalog 2.0 ULTRA contiene informaciÃ³n enciclopÃ©dica, botÃ¡nica y profilÃ¡ctica sobre
-          genÃ©tica cannÃ¡bica exclusiva para mayores de edad (+18).</p>
+        <h2 class="age-title">Control de Acceso (Mayoría de Edad)</h2>
+        <p class="age-subtitle">CannaCatalog 2.0 ULTRA contiene información enciclopédica, botánica y profiláctica sobre
+          genética cannábica exclusiva para mayores de edad (+18).</p>
 
         <div class="age-legal-box">
           <div class="legal-item">
-            <span>ðŸ“š</span>
+            <span>📚</span>
             <div>
-              <strong>Contenido Educativo y BotÃ¡nico</strong>
-              <p>ClasificaciÃ³n tÃ©cnica de +267 genÃ©ticas de 24 bancos mundiales.</p>
+              <strong>Contenido Educativo y Botánico</strong>
+              <p>Clasificación técnica de +267 genéticas de 24 bancos mundiales.</p>
             </div>
           </div>
           <div class="legal-item">
-            <span>âš–ï¸</span>
+            <span>⚖️</span>
             <div>
-              <strong>Cumplimiento Legal y ReducciÃ³n de Riesgos</strong>
-              <p>Acceso restringido conforme a la normativa vigente de protecciÃ³n de menores.</p>
+              <strong>Cumplimiento Legal y Reducción de Riesgos</strong>
+              <p>Acceso restringido conforme a la normativa vigente de protección de menores.</p>
             </div>
           </div>
         </div>
 
         <div class="age-prompt-container">
-          <p class="age-prompt-text">Â¿Confirmas que tienes <strong>18 aÃ±os o mÃ¡s</strong> para acceder a la plataforma?
+          <p class="age-prompt-text">¿Confirmas que tienes <strong>18 años o más</strong> para acceder a la plataforma?
           </p>
           <div class="age-actions-grid">
-            <button id="btn-age-confirm" class="btn btn-age-yes" aria-label="Confirmar que tengo 18 aÃ±os o mÃ¡s">
-              <span class="btn-icon">âœ…</span>
-              <span class="btn-text-main">SÃ­, tengo 18 aÃ±os o mÃ¡s</span>
+            <button id="btn-age-confirm" class="btn btn-age-yes" aria-label="Confirmar que tengo 18 años o más">
+              <span class="btn-icon">✅</span>
+              <span class="btn-text-main">Sí, tengo 18 años o más</span>
               <span class="btn-text-sub">Entrar a la plataforma</span>
             </button>
-            <button id="btn-age-reject" class="btn btn-age-no" aria-label="Rechazar acceso por ser menor de 18 aÃ±os">
-              <span class="btn-icon">âŒ</span>
-              <span class="btn-text-main">No, soy menor de 18 aÃ±os</span>
-              <span class="btn-text-sub">Salir o ver informaciÃ³n</span>
+            <button id="btn-age-reject" class="btn btn-age-no" aria-label="Rechazar acceso por ser menor de 18 años">
+              <span class="btn-icon">❌</span>
+              <span class="btn-text-main">No, soy menor de 18 años</span>
+              <span class="btn-text-sub">Salir o ver información</span>
             </button>
           </div>
         </div>
 
         <div class="age-footer-legal">
-          <p>ðŸ”’ Tu preferencia se guardarÃ¡ localmente. El consumo o cultivo debe cumplir estrictamente la legislaciÃ³n
-            local de tu jurisdicciÃ³n.</p>
+          <p>🔒 Tu preferencia se guardará localmente. El consumo o cultivo debe cumplir estrictamente la legislación
+            local de tu jurisdicción.</p>
         </div>
       </div>
 
       <!-- ESCENA 2: ACCESO DENEGADO (MENORES DE 18) -->
       <div id="age-step-denied" class="age-step" style="display: none;">
         <div class="age-badge-icon danger-shield">
-          <span>ðŸš«</span>
+          <span>🚫</span>
         </div>
 
         <h2 class="age-title text-danger">Acceso Restringido (+18)</h2>
-        <p class="age-subtitle">Lo sentimos, esta plataforma estÃ¡ reservada exclusivamente para personas mayores de 18
-          aÃ±os.</p>
+        <p class="age-subtitle">Lo sentimos, esta plataforma está reservada exclusivamente para personas mayores de 18
+          años.</p>
 
         <div class="denied-info-card">
-          <p>De acuerdo con la regulaciÃ³n vigente y nuestras polÃ­ticas de responsabilidad social, no estÃ¡ permitido el
+          <p>De acuerdo con la regulación vigente y nuestras políticas de responsabilidad social, no está permitido el
             acceso a menores de edad a contenidos sobre variedades o cultivo de cannabis.</p>
         </div>
 
         <div class="age-actions-stacked" style="margin-top: 1.5rem;">
           <a href="https://www.google.com" class="btn btn-emerald-lg"
             style="width: 100%; text-decoration: none; justify-content: center;">
-            ðŸšª Salida Segura (Ir a Google)
+            🚪 Salida Segura (Ir a Google)
           </a>
           <button id="btn-age-retry" class="btn btn-outline"
             style="width: 100%; margin-top: 0.6rem; justify-content: center;"
-            aria-label="Reintentar verificaciÃ³n de edad">
-            ðŸ”„ He cometido un error (Volver a verificar)
+            aria-label="Reintentar verificación de edad">
+            🔄 He cometido un error (Volver a verificar)
           </button>
         </div>
       </div>
@@ -159,77 +159,77 @@
     </div>
   </dialog>
 
-  <!-- NAVEGACIÃ“N PRINCIPAL -->
+  <!-- NAVEGACIÓN PRINCIPAL -->
   <header class="main-header glass-nav" role="banner">
     <div class="container header-container">
       <a href="#" class="brand-logo" id="logo-btn" aria-label="CannaCatalog 2.0 MAX Inicio">
-        <span class="logo-icon">ðŸŒ¿</span>
+        <span class="logo-icon">🌿</span>
         <span class="logo-text">CANNA<span class="highlight">CATALOG</span> <small class="version-tag">2.0
             MAX</small></span>
       </a>
 
-      <nav class="nav-links" role="navigation" aria-label="NavegaciÃ³n Principal">
-        <button class="nav-btn active" data-target="section-catalog" aria-label="Ir a secciÃ³n CatÃ¡logo Ampliado">
-          <span class="nav-btn-icon">ðŸ“š</span>
-          <span class="nav-btn-text">CatÃ¡logo Ampliado</span>
+      <nav class="nav-links" role="navigation" aria-label="Navegación Principal">
+        <button class="nav-btn active" data-target="section-catalog" aria-label="Ir a sección Catálogo Ampliado">
+          <span class="nav-btn-icon">📚</span>
+          <span class="nav-btn-text">Catálogo Ampliado</span>
         </button>
         <button class="nav-btn" id="nav-btn-favorites" data-target="section-catalog" aria-label="Ver mis cepas favoritas">
-          <span class="nav-btn-icon">â¤ï¸</span>
+          <span class="nav-btn-icon">❤️</span>
           <span class="nav-btn-text">Mis Favoritos</span>
           <span class="nav-fav-badge" id="nav-fav-badge">0</span>
         </button>
-        <button class="nav-btn" data-target="section-matcher" aria-label="Ir a secciÃ³n Ruleta y Activity Matcher">
-          <span class="nav-btn-icon">ðŸŽ²</span>
+        <button class="nav-btn" data-target="section-matcher" aria-label="Ir a sección Ruleta y Activity Matcher">
+          <span class="nav-btn-icon">🎲</span>
           <span class="nav-btn-text">Activity Matcher</span>
         </button>
-        <button class="nav-btn" data-target="section-ai-agent" aria-label="Ir a secciÃ³n Sommelier Inteligente IA">
-          <span class="nav-btn-icon">ðŸ¤–</span>
+        <button class="nav-btn" data-target="section-ai-agent" aria-label="Ir a sección Sommelier Inteligente IA">
+          <span class="nav-btn-icon">🤖</span>
           <span class="nav-btn-text">Sommelier IA</span>
         </button>
-        <button class="nav-btn" data-target="section-blender" aria-label="Ir a secciÃ³n Mezclador y Comparador">
-          <span class="nav-btn-icon">ðŸ§ª</span>
+        <button class="nav-btn" data-target="section-blender" aria-label="Ir a sección Mezclador y Comparador">
+          <span class="nav-btn-icon">🧪</span>
           <span class="nav-btn-text">Mezclador &amp; Comparador</span>
         </button>
-        <button class="nav-btn" data-target="section-bitacora" aria-label="Ir a secciÃ³n BitÃ¡cora de Vivencias">
-          <span class="nav-btn-icon">ðŸ“–</span>
+        <button class="nav-btn" data-target="section-bitacora" aria-label="Ir a sección Bitácora de Vivencias">
+          <span class="nav-btn-icon">📖</span>
           <span class="nav-btn-text">Vivencias</span>
         </button>
-        <button class="nav-btn" data-target="section-terpenes" aria-label="Ir a secciÃ³n Terpenos y VaporizaciÃ³n">
-          <span class="nav-btn-icon">ðŸ§¬</span>
+        <button class="nav-btn" data-target="section-terpenes" aria-label="Ir a sección Terpenos y Vaporización">
+          <span class="nav-btn-icon">🧬</span>
           <span class="nav-btn-text">Terpenos &amp; Vapo</span>
         </button>
       </nav>
 
-      <!-- Selector de Tema Visual & BotÃ³n MODO SOBRIO -->
+      <!-- Selector de Tema Visual & Botón MODO SOBRIO -->
       <div class="header-extra-controls">
         <!-- Indicador Estado +18 -->
-        <button id="btn-age-status" class="btn btn-age-status-pill" title="Estado de VerificaciÃ³n +18" aria-label="Estado de VerificaciÃ³n de MayorÃ­a de Edad +18">
-          ðŸ›¡ï¸ <span id="age-status-text">+18 Verificado</span>
+        <button id="btn-age-status" class="btn btn-age-status-pill" title="Estado de Verificación +18" aria-label="Estado de Verificación de Mayoría de Edad +18">
+          🛡️ <span id="age-status-text">+18 Verificado</span>
         </button>
 
-        <!-- Contenedor SesiÃ³n / Google Auth -->
+        <!-- Contenedor Sesión / Google Auth -->
         <div id="auth-container" class="auth-header-controls" style="display: inline-flex; align-items: center;">
-          <button id="btn-user-auth" class="btn btn-auth-pill" title="Iniciar con Google" aria-label="Iniciar sesiÃ³n con Google" onclick="window.communityManager && window.communityManager.loginWithGoogle()">
+          <button id="btn-user-auth" class="btn btn-auth-pill" title="Iniciar con Google" aria-label="Iniciar sesión con Google" onclick="window.communityManager && window.communityManager.loginWithGoogle()">
             <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align: middle; flex-shrink: 0;"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
             <span id="auth-btn-text">Iniciar con Google</span>
           </button>
         </div>
 
         <select id="theme-selector" class="custom-select-sm" aria-label="Seleccionar tema visual de interfaz">
-          <option value="emerald">ðŸŸ¢ Esmeralda</option>
-          <option value="cyberpurple">ðŸŸ£ Cyber Purple</option>
-          <option value="sunsetgold">ðŸŸ  Sunset Gold</option>
-          <option value="obsidian">ðŸ”µ Obsidian Cyan</option>
+          <option value="emerald">🟢 Esmeralda</option>
+          <option value="cyberpurple">🟣 Cyber Purple</option>
+          <option value="sunsetgold">🟠 Sunset Gold</option>
+          <option value="obsidian">🔵 Obsidian Cyan</option>
         </select>
 
         <button id="btn-sobrio-mode" class="btn btn-sobrio-pulse" aria-label="Activar Modo Sobrio y Calma S.O.S.">
-          ðŸ›¡ï¸ Modo Sobrio
+          🛡️ Modo Sobrio
         </button>
       </div>
     </div>
   </header>
 
-  <!-- BARRERA DE ACCESO: oculta header y main hasta verificaciÃ³n -->
+  <!-- BARRERA DE ACCESO: oculta header y main hasta verificación -->
   <style id="age-lock-style">
     #main-app,
     .main-header {
@@ -242,24 +242,24 @@
     <!-- HERO BANNER -->
     <section class="hero-section glass-panel">
       <div class="hero-content">
-        <span class="hero-subtitle">+464 CEPAS DE 40 BANCOS PREMIUM Â· 8 TERPENOS Â· 7 ACTIVIDADES</span>
-        <h1 class="hero-title">El CatÃ¡logo MÃ¡s Completo: Nirvana Seeds, Paradise Seeds, TH Seeds, Serious Seeds, Sensi &
-          MÃ¡s</h1>
+        <span class="hero-subtitle">+569 CEPAS DE 44 BANCOS PREMIUM · 8 TERPENOS · 7 ACTIVIDADES</span>
+        <h1 class="hero-title">El Catálogo Más Completo: Nirvana Seeds, Paradise Seeds, TH Seeds, Serious Seeds, Sensi &
+          Más</h1>
         <p class="hero-desc">
-          Explora la colecciÃ³n completa de <strong>464 genÃ©ticas de 40 grandes bancos</strong>: Eva Seeds (11 cepas) Â· Medical Seeds (16 cepas) Â· Nirvana Seeds (15 cepas) Â· Dinafem Seeds Â· Ripper Seeds Â· BSF
-          Seeds Â· Barney's Farm Â· Sweet Seeds Â· Royal Queen Seeds Â· Dutch Passion Â· Philosopher Seeds Â· Humboldt Seed Â·
-          00 Seeds Bank Â· Buddha Seeds Â· R-Kiem Seeds Â· Positronics Seeds Â· ACE Seeds Â· Pyramid Seeds Â· Blimburn Seeds Â·
-          Genehtik Seeds Â· Heavyweight Seeds Â· Cannabiogen Â· Sensi Seeds Â· Green House Seed Co. Â· Serious Seeds Â· TH
-          Seeds Â· Paradise Seeds Â· DNA Genetics Â· White Label Seed Co. Â· Soma Seeds Â· The Flying Dutchmen Â· Seedsman Â· Exotic Genetix Â· Compound Genetics Â· In-House Genetics Â· Ethos Genetics Â· Archive Seed Bank Â· Raw Genetics. Con perfiles de <strong>8 terpenos</strong> y <strong>7 actividades</strong> para
+          Explora la colección completa de <strong>569 genéticas de 44 grandes bancos</strong>: Eva Seeds (11 cepas) · Medical Seeds (16 cepas) · Nirvana Seeds (15 cepas) · Dinafem Seeds · Ripper Seeds · BSF
+          Seeds · Barney's Farm · Sweet Seeds · Royal Queen Seeds · Dutch Passion · Philosopher Seeds · Humboldt Seed ·
+          00 Seeds Bank · Buddha Seeds · R-Kiem Seeds · Positronics Seeds · ACE Seeds · Pyramid Seeds · Blimburn Seeds ·
+          Genehtik Seeds · Heavyweight Seeds · Cannabiogen · Sensi Seeds · Green House Seed Co. · Serious Seeds · TH
+          Seeds · Paradise Seeds · DNA Genetics · White Label Seed Co. · Soma Seeds · The Flying Dutchmen · Seedsman · Exotic Genetix · Compound Genetics · In-House Genetics · Ethos Genetics · Archive Seed Bank · Raw Genetics. Con perfiles de <strong>8 terpenos</strong> y <strong>7 actividades</strong> para
           encontrar tu cepa perfecta.
         </p>
 
-        <!-- Barra de BÃºsqueda y Filtros de OrdenaciÃ³n -->
+        <!-- Barra de Búsqueda y Filtros de Ordenación -->
         <div class="search-filter-bar">
           <div class="search-input-wrapper">
-            <span class="search-icon">ðŸ”</span>
+            <span class="search-icon">🔍</span>
             <input type="text" id="search-input"
-              placeholder="Buscar por nombre, genÃ©tica o sabor (ej. AK-48, Moby Dick, Critical +, Lebron Haze, Wappa)..." />
+              placeholder="Buscar por nombre, genética o sabor (ej. AK-48, Moby Dick, Critical +, Lebron Haze, Wappa)..." />
           </div>
 
                     <div class="filter-controls">
@@ -354,22 +354,22 @@
       </div>
     </section>
 
-    <!-- SECCIÃ“N: CATÃLOGO DE CEPAS -->
+    <!-- SECCIÓN: CATÃLOGO DE CEPAS -->
     <section id="section-catalog" class="app-section active-section">
       <div class="section-header">
         <div>
-          <h2>ðŸ“š CatÃ¡logo Mundial Ultra Extendido</h2>
-          <p class="section-desc">Perfiles genÃ©ticos completos, porcentajes de THC/CBD, terpenos y actividades idÃ³neas.
+          <h2>📚 Catálogo Mundial Ultra Extendido</h2>
+          <p class="section-desc">Perfiles genéticos completos, porcentajes de THC/CBD, terpenos y actividades idóneas.
           </p>
         </div>
         <div class="catalog-header-actions">
-          <button id="btn-header-favorites" class="btn-header-favorites" title="Filtrar sÃ³lo mis cepas favoritas" aria-label="Filtrar cepas favoritas">
-            <span class="fav-icon">â¤ï¸</span>
+          <button id="btn-header-favorites" class="btn-header-favorites" title="Filtrar sólo mis cepas favoritas" aria-label="Filtrar cepas favoritas">
+            <span class="fav-icon">❤️</span>
             <span class="fav-label">Mis Favoritos</span>
             <span class="fav-badge" id="header-fav-badge">0</span>
           </button>
           <button id="btn-header-compare" class="btn-header-compare" title="Abrir Comparador Cara a Cara" aria-label="Abrir Comparador de Variedades Cara a Cara">
-            <span class="compare-icon">âš–ï¸</span>
+            <span class="compare-icon">⚖️</span>
             <span class="compare-label">Comparador</span>
             <span class="compare-badge" id="header-compare-badge">0/3</span>
           </button>
@@ -392,27 +392,27 @@
 
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-number" id="stat-indicas">â€”</span>
-          <span class="stat-label">ðŸ’œ Ãndicas</span>
+          <span class="stat-number" id="stat-indicas">—</span>
+          <span class="stat-label">💜 Índicas</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-number" id="stat-sativas">â€”</span>
+          <span class="stat-number" id="stat-sativas">—</span>
           <span class="stat-label">⚡ Sativas</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-number" id="stat-hibridas">â€”</span>
+          <span class="stat-number" id="stat-hibridas">—</span>
           <span class="stat-label">🟢 Híbridas</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-number" id="stat-avg-thc">â€”</span>
+          <span class="stat-number" id="stat-avg-thc">—</span>
           <span class="stat-label">% THC Medio</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-number" id="stat-top-rated">â€”</span>
+          <span class="stat-number" id="stat-top-rated">—</span>
           <span class="stat-label">â­ Top Valorada</span>
         </div>
       </div>
@@ -420,12 +420,12 @@
       <div id="strains-grid" class="strains-grid"></div>
     </section>
 
-    <!-- SECCIÃ“N: ACTIVITY MATCHER & RULETA -->
+    <!-- SECCIÓN: ACTIVITY MATCHER & RULETA -->
     <section id="section-matcher" class="app-section">
       <div class="section-header">
         <div>
-          <h2>ðŸŽ² Modo 'Ruleta & Actividad' (Walk & Game Matcher)</h2>
-          <p class="section-desc">Selecciona tu plan del dÃ­a y la app encontrarÃ¡ la cepa ideal de nuestra colecciÃ³n
+          <h2>🎲 Modo 'Ruleta & Actividad' (Walk & Game Matcher)</h2>
+          <p class="section-desc">Selecciona tu plan del día y la app encontrará la cepa ideal de nuestra colección
             extendida.</p>
         </div>
       </div>
@@ -433,45 +433,45 @@
       <div class="matcher-container glass-panel">
         <div class="activities-grid">
           <div class="activity-card" data-activity="nature_walk">
-            <span class="activity-icon">ðŸŒ²</span>
+            <span class="activity-icon">🌲</span>
             <h3>Safari de Caminatas & Naturaleza</h3>
             <p>Senderismo, parques, aire libre y paseos reconectores.</p>
           </div>
           <div class="activity-card" data-activity="gaming">
-            <span class="activity-icon">ðŸŽ®</span>
-            <h3>SesiÃ³n Gaming & Co-Op</h3>
-            <p>InmersiÃ³n tÃ¡ctica, reflejos Ã¡giles o multijugador.</p>
+            <span class="activity-icon">🎮</span>
+            <h3>Sesión Gaming & Co-Op</h3>
+            <p>Inmersión táctica, reflejos ágiles o multijugador.</p>
           </div>
           <div class="activity-card" data-activity="creativity">
-            <span class="activity-icon">ðŸŽ¨</span>
-            <h3>CreaciÃ³n ArtÃ­stica & MÃºsica</h3>
-            <p>ComposiciÃ³n, dibujo, escritura y flujo creativo.</p>
+            <span class="activity-icon">🎨</span>
+            <h3>Creación Artística & Música</h3>
+            <p>Composición, dibujo, escritura y flujo creativo.</p>
           </div>
           <div class="activity-card" data-activity="social">
-            <span class="activity-icon">ðŸŽ‰</span>
+            <span class="activity-icon">🎉</span>
             <h3>Social & Conversaciones</h3>
             <p>Tertulias profundas, risas y amigos.</p>
           </div>
           <div class="activity-card" data-activity="relax_sleep">
-            <span class="activity-icon">ðŸŒ™</span>
+            <span class="activity-icon">🌙</span>
             <h3>Relax Profundo & Cine</h3>
-            <p>DesconexiÃ³n nocturna, descanso y sueÃ±o reparador.</p>
+            <p>Desconexión nocturna, descanso y sueño reparador.</p>
           </div>
           <div class="activity-card" data-activity="meditation">
-            <span class="activity-icon">ðŸ§˜</span>
-            <h3>MeditaciÃ³n & Yoga</h3>
-            <p>IntrospecciÃ³n, consciencia plena y mindfulness.</p>
+            <span class="activity-icon">🧘</span>
+            <h3>Meditación & Yoga</h3>
+            <p>Introspección, consciencia plena y mindfulness.</p>
           </div>
           <div class="activity-card" data-activity="workout">
-            <span class="activity-icon">ðŸ‹ï¸</span>
+            <span class="activity-icon">🏋️</span>
             <h3>Deporte & Entrenamiento</h3>
-            <p>Pre o post-workout, motivaciÃ³n y recuperaciÃ³n muscular.</p>
+            <p>Pre o post-workout, motivación y recuperación muscular.</p>
           </div>
         </div>
 
         <div class="roulette-action-area">
           <button id="btn-spin-roulette" class="btn btn-emerald-lg glow-pulse" aria-label="Girar Ruleta y Emparejar Cepa Ideal">
-            ðŸŽ² Â¡Girar Ruleta & Emparejar Cepa Ideal!
+            🎲 ¡Girar Ruleta & Emparejar Cepa Ideal!
           </button>
         </div>
 
@@ -479,12 +479,12 @@
       </div>
     </section>
 
-    <!-- SECCIÃ“N: AGENTE SOMMELIER IA -->
+    <!-- SECCIÓN: AGENTE SOMMELIER IA -->
     <section id="section-ai-agent" class="app-section">
       <div class="section-header">
         <div>
-          <h2>ðŸ¤– Sommelier de Inteligencia Artificial & CannaDoctor Multimodal</h2>
-          <p class="section-desc">Consulta en lenguaje natural a nuestro asistente inteligente sobre 464 cepas de 40 bancos premium o sube una fotografÃ­a para diagnÃ³stico botÃ¡nico con Gemini 3.6 Flash.</p>
+          <h2>🤖 Sommelier de Inteligencia Artificial & CannaDoctor Multimodal</h2>
+          <p class="section-desc">Consulta en lenguaje natural a nuestro asistente inteligente sobre 569 cepas de 44 bancos premium o sube una fotografía para diagnóstico botánico con Gemini 3.6 Flash.</p>
         </div>
       </div>
 
@@ -497,48 +497,48 @@
           <div style="display: flex; align-items: center; gap: 12px;">
             <div
               style="font-size: 2.2rem; background: rgba(16,185,129,0.15); border: 1px solid var(--primary-emerald); padding: 8px 14px; border-radius: 16px !important;">
-              ðŸ‘¨â€ðŸŒ¾</div>
+              👨‍🌾</div>
             <div>
               <h3 style="font-size: 1.2rem; font-weight: 900; color: #fff; margin: 0;">Mateo | Master Sumiller & CannaDoctor 2.0</h3>
-              <span style="font-size: 0.8rem; color: #6EE7B7;">ðŸŸ¢ Conectado a 464 cepas â€” Google Gemini 3.8 Flash Multimodal & Voz</span>
+              <span style="font-size: 0.8rem; color: #6EE7B7;">🟢 Conectado a 569 cepas — Google Gemini 3.8 Flash Multimodal & Voz</span>
             </div>
           </div>
           <span
             style="background: rgba(16,185,129,0.2); color: #10B981; border: 1px solid var(--primary-emerald); padding: 4px 12px; font-size: 0.78rem; font-weight: 800; border-radius: 50px !important;">GEMINI 3.8 ULTRA</span>
         </div>
 
-        <!-- Sugerencias RÃ¡pidas Inline con Sabores, BotÃ¡nica y Charla Dual -->
+        <!-- Sugerencias Rápidas Inline con Sabores, Botánica y Charla Dual -->
         <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.2rem;">
-          <button class="ai-suggest-pill" data-prompt="Hola Mateo, Â¿cÃ³mo estÃ¡s? CuÃ©ntame una curiosidad fascinante sobre el universo"
-            style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); color: #E5E7EB; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">ðŸŒ±
+          <button class="ai-suggest-pill" data-prompt="Hola Mateo, ¿cómo estás? Cuéntame una curiosidad fascinante sobre el universo"
+            style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); color: #E5E7EB; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">🌱
             Probar Charla General (Eco)</button>
-          <button class="ai-suggest-pill" data-prompt="Â¿QuÃ© variedad de tu catÃ¡logo me recomiendas para relajarme y ver una pelÃ­cula?"
-            style="background: rgba(16,185,129,0.22); border: 1px solid #10B981; color: #6EE7B7; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 800;">âš¡
+          <button class="ai-suggest-pill" data-prompt="¿Qué variedad de tu catálogo me recomiendas para relajarme y ver una película?"
+            style="background: rgba(16,185,129,0.22); border: 1px solid #10B981; color: #6EE7B7; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 800;">⚡
             Probar CannaCulture (Ultra)</button>
-          <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor cÃ­trico a limÃ³n o mandarina"
-            style="background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4); color: #FCD34D; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">ðŸ‹
-            Sabor CÃ­trico</button>
+          <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor cítrico a limón o mandarina"
+            style="background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4); color: #FCD34D; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">🍋
+            Sabor Cítrico</button>
           <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor frutal dulce o caramelos"
-            style="background: rgba(236,72,153,0.15); border: 1px solid rgba(236,72,153,0.4); color: #F472B6; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">ðŸ“
+            style="background: rgba(236,72,153,0.15); border: 1px solid rgba(236,72,153,0.4); color: #F472B6; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">🍓
             Frutal Dulce</button>
           <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor a pino, madera o incienso Haze"
-            style="background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.4); color: #67E8F9; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">ðŸŒ²
+            style="background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.4); color: #67E8F9; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">🌲
             Pino Haze</button>
-          <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor a diÃ©sel o combustible"
-            style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6EE7B7; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">â›½
-            DiÃ©sel</button>
-          <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor a galleta o reposterÃ­a dulce"
-            style="background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.4); color: #C084FC; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">ðŸª
+          <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor a diésel o combustible"
+            style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6EE7B7; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">⛽
+            Diésel</button>
+          <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor a galleta o repostería dulce"
+            style="background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.4); color: #C084FC; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">🍪
             Galleta</button>
-          <button class="ai-suggest-pill" data-prompt="Â¿Por quÃ© los tricomas maduran de transparentes a lechosos y Ã¡mbar?"
-            style="background: rgba(16,185,129,0.18); border: 1px solid var(--primary-emerald); color: #A7F3D0; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">ðŸ”¬
+          <button class="ai-suggest-pill" data-prompt="¿Por qué los tricomas maduran de transparentes a lechosos y ámbar?"
+            style="background: rgba(16,185,129,0.18); border: 1px solid var(--primary-emerald); color: #A7F3D0; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">🔬
             Tricomas: Ãmbar vs Lechosos</button>
-          <button class="ai-suggest-pill" data-prompt="Â¿Por quÃ© se ponen amarillas las hojas y cÃ³mo influye el pH?"
-            style="background: rgba(234,179,8,0.15); border: 1px solid rgba(234,179,8,0.4); color: #FDE047; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">ðŸ‚
-            Â¿Por quÃ© Hojas Amarillas?</button>
-          <button class="ai-suggest-pill" data-prompt="ExplÃ­came quÃ© es el efecto sÃ©quito y cÃ³mo interactÃºan terpenos y cannabinoides"
-            style="background: rgba(147,51,234,0.15); border: 1px solid rgba(147,51,234,0.4); color: #E9D5FF; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">ðŸ§¬
-            Efecto SÃ©quito</button>
+          <button class="ai-suggest-pill" data-prompt="¿Por qué se ponen amarillas las hojas y cómo influye el pH?"
+            style="background: rgba(234,179,8,0.15); border: 1px solid rgba(234,179,8,0.4); color: #FDE047; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">🍂
+            ¿Por qué Hojas Amarillas?</button>
+          <button class="ai-suggest-pill" data-prompt="Explícame qué es el efecto séquito y cómo interactúan terpenos y cannabinoides"
+            style="background: rgba(147,51,234,0.15); border: 1px solid rgba(147,51,234,0.4); color: #E9D5FF; font-size: 0.8rem; padding: 6px 14px; border-radius: 50px !important; cursor: pointer; font-weight: 700;">🧬
+            Efecto Séquito</button>
         </div>
 
 
@@ -555,9 +555,9 @@
           <input type="file" id="ai-chat-file-inline" accept="image/*" style="display:none;" />
           <button type="button" id="ai-chat-btn-photo-inline" class="btn"
             style="background: rgba(16,185,129,0.15); border: 1px solid var(--primary-emerald); color: #A7F3D0; border-radius: 12px !important; padding: 0 16px; font-size: 0.88rem; font-weight: 700; white-space: nowrap; cursor: pointer; display: flex; align-items: center; gap: 6px;"
-            title="CannaDoctor: Subir foto de cultivo para diagnÃ³stico de plagas, carencias o tricomas"
-            aria-label="CannaDoctor: Subir foto de cultivo para diagnÃ³stico de plagas, carencias o tricomas">
-            ðŸ“· CannaDoctor
+            title="CannaDoctor: Subir foto de cultivo para diagnóstico de plagas, carencias o tricomas"
+            aria-label="CannaDoctor: Subir foto de cultivo para diagnóstico de plagas, carencias o tricomas">
+            📷 CannaDoctor
           </button>
           <input type="text" id="ai-chat-input-inline"
             placeholder="Pregunta lo que buscas o describe tu cultivo..."
@@ -566,25 +566,25 @@
           <button id="ai-chat-send-inline" class="btn btn-emerald-lg"
             style="border-radius: 12px !important; padding: 0 24px;"
             aria-label="Enviar consulta al Sommelier IA Mateo">
-            ðŸš€ Consultar
+            🚀 Consultar
           </button>
         </div>
 
       </div>
     </section>
 
-    <!-- SECCIÃ“N: MEZCLADOR & COMPARADOR -->
+    <!-- SECCIÓN: MEZCLADOR & COMPARADOR -->
     <section id="section-blender" class="app-section">
       <div class="section-header">
         <div>
-          <h2>ðŸ§ª Creador de Blends & Comparador Frente a Frente</h2>
-          <p class="section-desc">Calcula mezclas personalizadas de cepas y compara perfiles quÃ­micos lado a lado.</p>
+          <h2>🧪 Creador de Blends & Comparador Frente a Frente</h2>
+          <p class="section-desc">Calcula mezclas personalizadas de cepas y compara perfiles químicos lado a lado.</p>
         </div>
       </div>
 
       <div class="blender-grid">
         <div class="glass-panel tool-panel">
-          <h3>ðŸ¥£ Calculadora de Mezclas (Salad Bowl)</h3>
+          <h3>🥣 Calculadora de Mezclas (Salad Bowl)</h3>
           <form id="blend-form" class="app-form">
             <div class="form-group">
               <label for="blend-strain-1">Primera Cepa</label>
@@ -595,17 +595,17 @@
               <select id="blend-strain-2" class="custom-select"></select>
             </div>
             <div class="form-group">
-              <label for="blend-ratio">ProporciÃ³n de Cepa 1 (<span id="ratio-val">50</span>%)</label>
+              <label for="blend-ratio">Proporción de Cepa 1 (<span id="ratio-val">50</span>%)</label>
               <input type="range" id="blend-ratio" min="10" max="90" value="50" class="custom-range" />
             </div>
-            <button type="submit" class="btn btn-emerald-md" aria-label="Calcular perfil resultante de la mezcla">ðŸ§ª Calcular Perfil Resultante</button>
+            <button type="submit" class="btn btn-emerald-md" aria-label="Calcular perfil resultante de la mezcla">🧪 Calcular Perfil Resultante</button>
           </form>
 
           <div id="blend-result" class="tool-result-box"></div>
         </div>
 
         <div class="glass-panel tool-panel">
-          <h3>ðŸ¤ Comparador Frente a Frente</h3>
+          <h3>🤝 Comparador Frente a Frente</h3>
           <form id="compare-form" class="app-form">
             <div class="form-group">
               <label for="compare-strain-1">Cepa A</label>
@@ -615,7 +615,7 @@
               <label for="compare-strain-2">Cepa B</label>
               <select id="compare-strain-2" class="custom-select"></select>
             </div>
-            <button type="submit" class="btn btn-accent" aria-label="Comparar cepas seleccionadas">ðŸ“Š Comparar Cepas</button>
+            <button type="submit" class="btn btn-accent" aria-label="Comparar cepas seleccionadas">📊 Comparar Cepas</button>
           </form>
 
           <div id="compare-result" class="tool-result-box"></div>
@@ -623,86 +623,86 @@
       </div>
     </section>
 
-    <!-- SECCIÃ“N: VIVENCIAS -->
+    <!-- SECCIÓN: VIVENCIAS -->
     <section id="section-bitacora" class="app-section">
       <div class="section-header">
         <div>
-          <h2>ðŸ“– Vivencias</h2>
+          <h2>📖 Vivencias</h2>
           <p class="section-desc">Guarda tus recuerdos de cata, sensaciones, momentos vividos y notas personales.</p>
         </div>
         <button id="btn-open-add-log" class="btn btn-emerald-md" aria-label="Registrar nueva vivencia o nota de cata">
-          âž• Registrar Nueva Vivencia
+          ➕ Registrar Nueva Vivencia
         </button>
       </div>
 
       <div id="bitacora-list" class="bitacora-grid"></div>
     </section>
 
-    <!-- SECCIÃ“N: TERPENOS & VAPORIZACIÃ“N -->
+    <!-- SECCIÓN: TERPENOS & VAPORIZACIÓN -->
     <section id="section-terpenes" class="app-section">
       <div class="section-header">
         <div>
-          <h2>ðŸ§¬ La Ciencia de Terpenos & GuÃ­a de VaporizaciÃ³n</h2>
-          <p class="section-desc">Puntos de ebulliciÃ³n Ã³ptimos para liberar cada compuesto aromÃ¡tico.</p>
+          <h2>🧬 La Ciencia de Terpenos & Guía de Vaporización</h2>
+          <p class="section-desc">Puntos de ebullición óptimos para liberar cada compuesto aromático.</p>
         </div>
       </div>
 
       <div class="terpenes-wrapper">
         <div class="glass-panel vape-guide-box">
-          <h3>ðŸŒ¡ï¸ Temperatura Ã“ptima de VaporizaciÃ³n por Terpeno</h3>
+          <h3>🌡️ Temperatura Óptima de Vaporización por Terpeno</h3>
           <div id="vape-temp-grid" class="vape-temp-grid"></div>
         </div>
 
-        <h3 style="margin: 2rem 0 1rem 0;">ðŸ“š Enciclopedia de Terpenos</h3>
+        <h3 style="margin: 2rem 0 1rem 0;">📚 Enciclopedia de Terpenos</h3>
         <div id="terpenes-grid" class="terpenes-grid"></div>
       </div>
     </section>
 
-    <!-- SECCIÃ“N: AVISO LEGAL & BLINDAJE INFORMATIVO (SIEMPRE VISIBLE EN TODOS LOS APARTADOS) -->
+    <!-- SECCIÓN: AVISO LEGAL & BLINDAJE INFORMATIVO (SIEMPRE VISIBLE EN TODOS LOS APARTADOS) -->
     <footer id="section-disclaimer" class="disclaimer-section glass-panel">
       <div class="disclaimer-header">
         <div class="disclaimer-icon-badge">
-          <span>ðŸ›¡ï¸</span>
+          <span>🛡️</span>
         </div>
         <div>
           <h2 class="disclaimer-title">Aviso Legal e Informativo</h2>
-          <p class="disclaimer-subtitle">ReducciÃ³n de daÃ±os, fines divulgativos y cumplimiento normativo</p>
+          <p class="disclaimer-subtitle">Reducción de daños, fines divulgativos y cumplimiento normativo</p>
         </div>
       </div>
 
       <div class="disclaimer-grid">
         <div class="disclaimer-card">
           <div class="disclaimer-card-header">
-            <span class="disclaimer-card-icon">ðŸ¤</span>
-            <h3>Sin Ãnimo de Lucro & ReducciÃ³n de DaÃ±os</h3>
+            <span class="disclaimer-card-icon">🤝</span>
+            <h3>Sin Ãnimo de Lucro & Reducción de Daños</h3>
           </div>
           <p>
-            Este sitio web es un catÃ¡logo de acceso gratuito con fines estrictamente informativos, educativos y de
-            reducciÃ³n de daÃ±os. <strong>No vende, distribuye ni facilita</strong> la adquisiciÃ³n de sustancias ilegales
+            Este sitio web es un catálogo de acceso gratuito con fines estrictamente informativos, educativos y de
+            reducción de daños. <strong>No vende, distribuye ni facilita</strong> la adquisición de sustancias ilegales
             o reguladas.
           </p>
         </div>
 
         <div class="disclaimer-card">
           <div class="disclaimer-card-header">
-            <span class="disclaimer-card-icon">ðŸ©º</span>
-            <h3>Salud PÃºblica & DivulgaciÃ³n BotÃ¡nica</h3>
+            <span class="disclaimer-card-icon">🩺</span>
+            <h3>Salud Pública & Divulgación Botánica</h3>
           </div>
           <p>
-            La informaciÃ³n presentada en esta enciclopedia no constituye asesoramiento mÃ©dico, diagnÃ³stico ni
-            prescripciÃ³n farmacolÃ³gica. Si tienes dudas sobre tu salud o tratamiento, consulta siempre a un
+            La información presentada en esta enciclopedia no constituye asesoramiento médico, diagnóstico ni
+            prescripción farmacológica. Si tienes dudas sobre tu salud o tratamiento, consulta siempre a un
             <strong>profesional sanitario cualificado</strong>.
           </p>
         </div>
 
         <div class="disclaimer-card">
           <div class="disclaimer-card-header">
-            <span class="disclaimer-card-icon">âš–ï¸</span>
+            <span class="disclaimer-card-icon">⚖️</span>
             <h3>Cumplimiento Legal y Responsabilidad</h3>
           </div>
           <p>
-            El usuario es el Ãºnico responsable de conocer y cumplir las leyes sobre el cannabis vigentes en su paÃ­s o
-            jurisdicciÃ³n territorial. CannaCatalog promueve la responsabilidad legal y ciudadana.
+            El usuario es el único responsable de conocer y cumplir las leyes sobre el cannabis vigentes en su país o
+            jurisdicción territorial. CannaCatalog promueve la responsabilidad legal y ciudadana.
           </p>
         </div>
       </div>
@@ -714,12 +714,12 @@
   <dialog id="sobrio-modal" class="glass-dialog glow-purple">
     <div class="dialog-content text-center">
       <div class="modal-header">
-        <h2>ðŸ›¡ï¸ Modo Sobrio (Clear Mind Sanctuary)</h2>
+        <h2>🛡️ Modo Sobrio (Clear Mind Sanctuary)</h2>
         <button class="close-modal-btn" aria-label="Cerrar ventana de Modo Sobrio"
-          onclick="document.getElementById('sobrio-modal').close(); window.audioEngine.stopAll();">âœ•</button>
+          onclick="document.getElementById('sobrio-modal').close(); window.audioEngine.stopAll();">✕</button>
       </div>
-      <p class="hero-desc">TÃ³mate un momento de tranquilidad. Sigue el ritmo del cÃ­rculo para sincronizar tu
-        respiraciÃ³n.</p>
+      <p class="hero-desc">Tómate un momento de tranquilidad. Sigue el ritmo del círculo para sincronizar tu
+        respiración.</p>
 
       <div class="breathing-container">
         <div class="breathing-circle">
@@ -728,14 +728,14 @@
       </div>
 
       <div class="audio-controls" style="margin-top: 1.5rem;">
-        <button id="btn-play-solfeggio" class="btn btn-accent" aria-label="Activar Frecuencia Solfeggio 432Hz">ðŸŽ§ Activar Frecuencia Solfeggio 432Hz</button>
-        <button id="btn-play-noise" class="btn btn-outline-stash" aria-label="Activar Sonido de Lluvia y Ruido Rosa">ðŸŒ§ï¸ Sonido de Lluvia / Ruido Rosa</button>
-        <button id="btn-stop-audio" class="btn btn-danger-sm" aria-label="Detener reproducciÃ³n de sonido">â¹ï¸ Detener Sonido</button>
+        <button id="btn-play-solfeggio" class="btn btn-accent" aria-label="Activar Frecuencia Solfeggio 432Hz">🎧 Activar Frecuencia Solfeggio 432Hz</button>
+        <button id="btn-play-noise" class="btn btn-outline-stash" aria-label="Activar Sonido de Lluvia y Ruido Rosa">🌧️ Sonido de Lluvia / Ruido Rosa</button>
+        <button id="btn-stop-audio" class="btn btn-danger-sm" aria-label="Detener reproducción de sonido">⏹️ Detener Sonido</button>
       </div>
     </div>
   </dialog>
 
-  <!-- MODAL: FICHA TÃ‰CNICA -->
+  <!-- MODAL: FICHA TÉCNICA -->
   <dialog id="strain-detail-modal" class="glass-dialog large-modal">
     <div class="dialog-content" id="strain-detail-content"></div>
   </dialog>
@@ -753,62 +753,62 @@
         <div>
           <div
             style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-emerald); margin-bottom: 4px;">
-            ðŸ›¡ï¸ REGISTRO OFICIAL DE VIVENCIAS
+            🛡️ REGISTRO OFICIAL DE VIVENCIAS
           </div>
-          <h3 style="font-size: 1.5rem; font-weight: 900; color: #fff; margin: 0;">ðŸ“– Registrar Nueva Vivencia & Nota de
+          <h3 style="font-size: 1.5rem; font-weight: 900; color: #fff; margin: 0;">📖 Registrar Nueva Vivencia & Nota de
             Cata</h3>
         </div>
         <button class="close-modal-btn" onclick="document.getElementById('add-log-modal').close()" aria-label="Cerrar ventana de registro de vivencia"
-          style="background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 36px; height: 36px;cursor: pointer; font-size: 1.1rem;">âœ•</button>
+          style="background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 36px; height: 36px;cursor: pointer; font-size: 1.1rem;">✕</button>
       </div>
 
       <form id="add-log-form" class="app-form">
 
-        <!-- SECCIÃ“N 1: GENÃ‰TICA Y ENTORNO -->
+        <!-- SECCIÓN 1: GENÉTICA Y ENTORNO -->
         <div
           style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; margin-bottom: 1.2rem;">
           <h4
             style="font-size: 0.86rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--primary-emerald); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px;">
-            ðŸŒ¿ GenÃ©tica Consumida & UbicaciÃ³n del Momento
+            🌿 Genética Consumida & Ubicación del Momento
           </h4>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
             <div class="form-group">
               <label for="log-strain-select"
-                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸ§¬
+                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">🧬
                 Cepa Seleccionada</label>
               <select id="log-strain-select" class="custom-select" required></select>
             </div>
 
             <div class="form-group">
               <label for="log-location-input"
-                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸ“
-                Entorno / UbicaciÃ³n</label>
+                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">📍
+                Entorno / Ubicación</label>
               <input type="text" id="log-location-input" placeholder="Ej. Retiro, Playa, Mirador, Casa..." required />
             </div>
           </div>
         </div>
 
-        <!-- SECCIÃ“N 2: EVOLUCIÃ“N SENSORIAL Y VALORACIÃ“N -->
+        <!-- SECCIÓN 2: EVOLUCIÓN SENSORIAL Y VALORACIÓN -->
         <div
           style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; margin-bottom: 1.2rem;">
           <h4
             style="font-size: 0.86rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #60A5FA; margin-bottom: 1rem; display: flex; align-items: center; gap: 6px;">
-            âš¡ Estado Ãnimo & EvaluaciÃ³n de Experiencia
+            ⚡ Estado Ãnimo & Evaluación de Experiencia
           </h4>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
             <div class="form-group">
               <label for="log-premood-input"
-                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸ§˜
+                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">🧘
                 Ãnimo Inicial</label>
-              <input type="text" id="log-premood-input" placeholder="Ej. Cansado, Con EstrÃ©s..." required />
+              <input type="text" id="log-premood-input" placeholder="Ej. Cansado, Con Estrés..." required />
             </div>
             <div class="form-group">
               <label for="log-postmood-input"
-                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸš€
+                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">🚀
                 Ãnimo Posterior</label>
-              <input type="text" id="log-postmood-input" placeholder="Ej. Inspirado, SÃºper Alegre..." required />
+              <input type="text" id="log-postmood-input" placeholder="Ej. Inspirado, Súper Alegre..." required />
             </div>
             <div class="form-group">
               <label for="log-rating-select"
@@ -825,42 +825,42 @@
           </div>
         </div>
 
-        <!-- SECCIÃ“N 3: EVIDENCIA VISUAL Y NOTAS PERSONALIZADAS -->
+        <!-- SECCIÓN 3: EVIDENCIA VISUAL Y NOTAS PERSONALIZADAS -->
         <div
           style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; margin-bottom: 1.4rem;">
           <h4
             style="font-size: 0.86rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #F59E0B; margin-bottom: 1rem; display: flex; align-items: center; gap: 6px;">
-            ðŸ“¸ Evidencia Visual & Notas de Cata
+            📸 Evidencia Visual & Notas de Cata
           </h4>
 
           <div class="form-group" style="margin-bottom: 1rem;">
             <label for="log-photo-file"
-              style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸ“·
-              FotografÃ­a del Cogollo / Entorno</label>
+              style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">📷
+              Fotografía del Cogollo / Entorno</label>
             <input type="file" id="log-photo-file" accept="image/*" class="file-input" />
             <div id="photo-preview" class="photo-preview-box" style="margin-top: 8px;"></div>
           </div>
 
           <div class="form-group" style="margin-bottom: 0;">
             <label for="log-notes-input"
-              style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸ“
+              style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">📝
               Impresiones y Detalles de la Vivencia</label>
             <textarea id="log-notes-input" rows="3"
-              placeholder="Describe los matices organolÃ©pticos, sensaciones fÃ­sicas, pensamientos o actividades realizadas..."></textarea>
+              placeholder="Describe los matices organolépticos, sensaciones físicas, pensamientos o actividades realizadas..."></textarea>
           </div>
         </div>
 
         <div class="form-actions" style="margin-top: 1rem;">
           <button type="submit" class="btn btn-emerald-lg"
             style="width: 100%;padding: 1rem; font-size: 1rem; font-weight: 900; letter-spacing: 0.5px;">
-            ðŸ’¾ Guardar Vivencia en Mi Diario
+            💾 Guardar Vivencia en Mi Diario
           </button>
         </div>
       </form>
     </div>
   </dialog>
 
-  <!-- MODAL: INICIAR SESIÃ“N / REGISTRO / MI PERFIL -->
+  <!-- MODAL: INICIAR SESIÓN / REGISTRO / MI PERFIL -->
   <dialog id="auth-modal" class="glass-dialog">
     <div class="dialog-content">
 
@@ -869,61 +869,61 @@
         <div>
           <div
             style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-emerald); margin-bottom: 4px;">
-            ðŸ›¡ï¸ ACCESO VIP Y CONTROL DE USUARIO
+            🛡️ ACCESO VIP Y CONTROL DE USUARIO
           </div>
-          <h3 id="auth-modal-title" style="font-size: 1.5rem; font-weight: 900; color: #fff; margin: 0;">ðŸ”‘ Iniciar
-            SesiÃ³n / Registro</h3>
+          <h3 id="auth-modal-title" style="font-size: 1.5rem; font-weight: 900; color: #fff; margin: 0;">🔑 Iniciar
+            Sesión / Registro</h3>
         </div>
-        <button class="close-modal-btn" onclick="document.getElementById('auth-modal').close()" aria-label="Cerrar ventana de inicio de sesiÃ³n"
-          style="background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 36px; height: 36px;cursor: pointer; font-size: 1.1rem;">âœ•</button>
+        <button class="close-modal-btn" onclick="document.getElementById('auth-modal').close()" aria-label="Cerrar ventana de inicio de sesión"
+          style="background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 36px; height: 36px;cursor: pointer; font-size: 1.1rem;">✕</button>
       </div>
 
       <!-- VISTA 1: FORMULARIOS DE ACCESO (LOGIN / REGISTRO) -->
       <div id="auth-forms-wrapper">
 
-        <!-- TABS PESTAÃ‘AS -->
+        <!-- TABS PESTAÑAS -->
         <div
           style="display: flex; gap: 0.5rem; margin-bottom: 1.4rem; background: rgba(0,0,0,0.4); padding: 4px; border: 1px solid rgba(255,255,255,0.08);">
-          <button id="tab-login-btn" class="auth-tab-btn active" aria-label="PestaÃ±a Iniciar SesiÃ³n"
+          <button id="tab-login-btn" class="auth-tab-btn active" aria-label="Pestaña Iniciar Sesión"
             style="flex: 1; padding: 0.7rem; background: var(--primary-emerald); color: #000; font-weight: 900; border: none; cursor: pointer;font-size: 0.88rem;">
-            ðŸ”‘ Iniciar SesiÃ³n
+            🔑 Iniciar Sesión
           </button>
-          <button id="tab-register-btn" class="auth-tab-btn" aria-label="PestaÃ±a Registrarse"
+          <button id="tab-register-btn" class="auth-tab-btn" aria-label="Pestaña Registrarse"
             style="flex: 1; padding: 0.7rem; background: transparent; color: var(--text-muted); font-weight: 800; border: none; cursor: pointer;font-size: 0.88rem;">
-            âœ¨ Registrarse
+            ✨ Registrarse
           </button>
         </div>
 
-        <!-- FORMULARIO 1: INICIAR SESIÃ“N -->
+        <!-- FORMULARIO 1: INICIAR SESIÓN -->
         <form id="auth-login-form" class="app-form">
           <div class="form-group" style="margin-bottom: 1.2rem;">
             <label for="login-email"
-              style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸ“§
+              style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">📧
               Email o Usuario</label>
             <input type="text" id="login-email" placeholder="ejemplo@cannacatalog.com" required />
           </div>
 
           <div class="form-group" style="margin-bottom: 1.4rem;">
             <label for="login-password"
-              style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸ”’
-              ContraseÃ±a</label>
-            <input type="password" id="login-password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required />
+              style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">🔒
+              Contraseña</label>
+            <input type="password" id="login-password" placeholder="••••••••••••" required />
           </div>
 
           <div
             style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.84rem; color: var(--text-muted);">
             <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
               <input type="checkbox" id="login-remember" checked style="accent-color: var(--primary-emerald);" />
-              Recordar mi sesiÃ³n
+              Recordar mi sesión
             </label>
             <a href="#" onclick="alert('Contacta al administrador para restablecer tu clave.'); return false;"
-              style="color: var(--primary-emerald); text-decoration: none; font-weight: 600;">Â¿Olvidaste tu
-              contraseÃ±a?</a>
+              style="color: var(--primary-emerald); text-decoration: none; font-weight: 600;">¿Olvidaste tu
+              contraseña?</a>
           </div>
 
           <button type="submit" class="btn btn-emerald-lg"
             style="width: 100%;padding: 0.9rem; font-size: 1rem; font-weight: 900;">
-            ðŸ”‘ Entrar a Mi Cuenta
+            🔑 Entrar a Mi Cuenta
           </button>
         </form>
 
@@ -932,14 +932,14 @@
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
             <div class="form-group">
               <label for="reg-name"
-                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸ‘¤
+                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">👤
                 Nombre / Alias VIP</label>
               <input type="text" id="reg-name" placeholder="Ej. Alex Canna" required />
             </div>
             <div class="form-group">
               <label for="reg-email"
-                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸ“§
-                Correo ElectrÃ³nico</label>
+                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">📧
+                Correo Electrónico</label>
               <input type="email" id="reg-email" placeholder="alex@cannacatalog.com" required />
             </div>
           </div>
@@ -947,49 +947,49 @@
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
             <div class="form-group">
               <label for="reg-password"
-                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸ”’
-                ContraseÃ±a</label>
-              <input type="password" id="reg-password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required />
+                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">🔒
+                Contraseña</label>
+              <input type="password" id="reg-password" placeholder="••••••••••••" required />
             </div>
             <div class="form-group">
               <label for="reg-confirm-password"
-                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸ”’
-                Confirmar ContraseÃ±a</label>
-              <input type="password" id="reg-confirm-password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required />
+                style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">🔒
+                Confirmar Contraseña</label>
+              <input type="password" id="reg-confirm-password" placeholder="••••••••••••" required />
             </div>
           </div>
 
           <div class="form-group" style="margin-bottom: 1.4rem;">
             <label for="reg-favorite-bank"
-              style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">ðŸ›ï¸
+              style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">🏛️
               Banco de Semillas Preferido (Opcional)</label>
             <select id="reg-favorite-bank" class="custom-select">
-              <option value="Dinafem Seeds">ðŸŒ± Dinafem Seeds</option>
-              <option value="BSF Seeds">ðŸ”¥ BSF Seeds</option>
-              <option value="Ripper Seeds">ðŸŒ» Ripper Seeds</option>
-              <option value="Barney's Farm">ðŸ‡³ðŸ‡± Barney's Farm</option>
-              <option value="Sweet Seeds">ðŸ“ Sweet Seeds</option>
-              <option value="Royal Queen Seeds">ðŸ‘‘ Royal Queen Seeds</option>
-              <option value="Dutch Passion">ðŸŒ· Dutch Passion</option>
-              <option value="Philosopher Seeds">ðŸ§  Philosopher Seeds</option>
-              <option value="Humboldt Seed">ðŸŒ² Humboldt Seed</option>
-              <option value="00 Seeds Bank">ðŸ”¢ 00 Seeds Bank</option>
-              <option value="Buddha Seeds">ðŸª· Buddha Seeds</option>
-              <option value="R-Kiem Seeds">ðŸŽ¨ R-Kiem Seeds</option>
-              <option value="Positronics Seeds">âš¡ Positronics Seeds</option>
-              <option value="ACE Seeds">ðŸŒ ACE Seeds</option>
-              <option value="Pyramid Seeds">ðŸ”º Pyramid Seeds</option>
-              <option value="Blimburn Seeds">ðŸ”¥ Blimburn Seeds</option>
-              <option value="Genehtik Seeds">ðŸ§¬ Genehtik Seeds</option>
-              <option value="Heavyweight Seeds">ðŸ¥Š Heavyweight Seeds</option>
-              <option value="Cannabiogen">ðŸ§ª Cannabiogen</option>
-              <option value="Sensi Seeds">ðŸ›ï¸ Sensi Seeds</option>
-              <option value="Green House Seed Co.">ðŸ¡ Green House Seed Co.</option>
-              <option value="Serious Seeds">ðŸŽ¯ Serious Seeds</option>
-              <option value="TH Seeds">ðŸ—½ TH Seeds</option>
-              <option value="Paradise Seeds">ðŸŒ´ Paradise Seeds</option>
-              <option value="Medical Seeds">âš•ï¸ Medical Seeds</option>
-              <option value="Eva Seeds">ðŸŒ± Eva Seeds</option>
+              <option value="Dinafem Seeds">🌱 Dinafem Seeds</option>
+              <option value="BSF Seeds">🔥 BSF Seeds</option>
+              <option value="Ripper Seeds">🌻 Ripper Seeds</option>
+              <option value="Barney's Farm">🇳🇱 Barney's Farm</option>
+              <option value="Sweet Seeds">🍓 Sweet Seeds</option>
+              <option value="Royal Queen Seeds">👑 Royal Queen Seeds</option>
+              <option value="Dutch Passion">🌷 Dutch Passion</option>
+              <option value="Philosopher Seeds">🧠 Philosopher Seeds</option>
+              <option value="Humboldt Seed">🌲 Humboldt Seed</option>
+              <option value="00 Seeds Bank">🔢 00 Seeds Bank</option>
+              <option value="Buddha Seeds">🪷 Buddha Seeds</option>
+              <option value="R-Kiem Seeds">🎨 R-Kiem Seeds</option>
+              <option value="Positronics Seeds">⚡ Positronics Seeds</option>
+              <option value="ACE Seeds">🌍 ACE Seeds</option>
+              <option value="Pyramid Seeds">🔺 Pyramid Seeds</option>
+              <option value="Blimburn Seeds">🔥 Blimburn Seeds</option>
+              <option value="Genehtik Seeds">🧬 Genehtik Seeds</option>
+              <option value="Heavyweight Seeds">🥊 Heavyweight Seeds</option>
+              <option value="Cannabiogen">🧪 Cannabiogen</option>
+              <option value="Sensi Seeds">🏛️ Sensi Seeds</option>
+              <option value="Green House Seed Co.">🏡 Green House Seed Co.</option>
+              <option value="Serious Seeds">🎯 Serious Seeds</option>
+              <option value="TH Seeds">🗽 TH Seeds</option>
+              <option value="Paradise Seeds">🌴 Paradise Seeds</option>
+              <option value="Medical Seeds">⚕️ Medical Seeds</option>
+              <option value="Eva Seeds">🌱 Eva Seeds</option>
             </select>
 
 
@@ -997,7 +997,7 @@
 
           <button type="submit" class="btn btn-emerald-lg"
             style="width: 100%;padding: 0.9rem; font-size: 1rem; font-weight: 900;">
-            ðŸš€ Registrarse & Empezar
+            🚀 Registrarse & Empezar
           </button>
         </form>
       </div>
@@ -1006,7 +1006,7 @@
       <div id="auth-profile-wrapper" style="display: none;">
         <div
           style="background: rgba(16,185,129,0.06); border: 1.5px solid rgba(16,185,129,0.35); padding: 1.5rem; text-align: center; margin-bottom: 1.4rem;">
-          <div style="font-size: 3rem; margin-bottom: 0.5rem;">ðŸŒ¿</div>
+          <div style="font-size: 3rem; margin-bottom: 0.5rem;">🌿</div>
           <h3 id="profile-user-name" style="font-size: 1.6rem; font-weight: 900; color: #fff; margin-bottom: 4px;">
             Usuario VIP</h3>
           <p id="profile-user-email"
@@ -1021,14 +1021,14 @@
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
           <div
             style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1rem; text-align: center;">
-            <span style="font-size: 0.76rem; text-transform: uppercase; color: var(--text-muted); display: block;">ðŸ“–
+            <span style="font-size: 0.76rem; text-transform: uppercase; color: var(--text-muted); display: block;">📖
               Vivencias Registradas</span>
             <div id="profile-stats-logs" style="font-size: 1.6rem; font-weight: 900; color: #fff; margin-top: 4px;">0
             </div>
           </div>
           <div
             style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1rem; text-align: center;">
-            <span style="font-size: 0.76rem; text-transform: uppercase; color: var(--text-muted); display: block;">ðŸ›ï¸
+            <span style="font-size: 0.76rem; text-transform: uppercase; color: var(--text-muted); display: block;">🏛️
               Estado de Cuenta</span>
             <div style="font-size: 1.1rem; font-weight: 800; color: #6EE7B7; margin-top: 8px;">Verificado (+18)</div>
           </div>
@@ -1036,7 +1036,7 @@
 
         <button id="btn-logout" class="btn btn-danger-sm"
           style="width: 100%;padding: 0.85rem; font-size: 0.95rem; font-weight: 800;">
-          ðŸšª Cerrar SesiÃ³n
+          🚪 Cerrar Sesión
         </button>
       </div>
 
@@ -1056,9 +1056,9 @@
   <!-- ======================================================
        WIDGET FLOTANTE: AGENTE IA SOMMELIER
        ====================================================== -->
-  <!-- BotÃ³n Gatillo Flotante -->
-  <button id="ai-chat-trigger" class="sommelier-fab-btn" title="Hablar con Sommelier IA" aria-label="Abrir Sommelier BotÃ¡nico Mateo">
-    <span class="sommelier-fab-icon">ðŸ¤–</span>
+  <!-- Botón Gatillo Flotante -->
+  <button id="ai-chat-trigger" class="sommelier-fab-btn" title="Hablar con Sommelier IA" aria-label="Abrir Sommelier Botánico Mateo">
+    <span class="sommelier-fab-icon">🤖</span>
     <span class="sommelier-fab-text">Sommelier IA</span>
     <span class="sommelier-fab-status">ONLINE</span>
   </button>
@@ -1087,7 +1087,7 @@
     <div
       style="background: rgba(16,185,129,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
       <div style="display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 1.4rem;">ðŸ‘¨â€ðŸŒ¾</span>
+        <span style="font-size: 1.4rem;">👨‍🌾</span>
         <div>
           <h4 style="font-size: 0.92rem; font-weight: 800; color: #fff; margin: 0;">Mateo | Sumiller IA Humano</h4>
           <span style="font-size: 0.74rem; color: #6EE7B7; display: flex; align-items: center; gap: 4px;">
@@ -1100,39 +1100,39 @@
       <div style="display: flex; align-items: center; gap: 8px;">
         <button id="ai-chat-key-btn" title="Configurar Clave API Gemini (Google AI Studio)" aria-label="Configurar Clave API Gemini"
           style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6EE7B7; border-radius: 8px !important; padding: 4px 8px; cursor: pointer; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 4px;">
-          ðŸ”‘ API Key
+          🔑 API Key
         </button>
         <button id="ai-chat-close" aria-label="Cerrar chat de Mateo"
-          style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 28px; height: 28px; border-radius: 50% !important; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center;">âœ•</button>
+          style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 28px; height: 28px; border-radius: 50% !important; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center;">✕</button>
       </div>
     </div>
 
-    <!-- Sugerencias RÃ¡pidas -->
+    <!-- Sugerencias Rápidas -->
     <div
       style="display: flex; gap: 6px; padding: 10px 14px; overflow-x: auto; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.06); flex-shrink: 0;">
-      <button class="ai-suggest-pill" data-prompt="Hola Mateo, Â¿cÃ³mo estÃ¡s? CuÃ©ntame una curiosidad fascinante sobre el universo"
-        style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); color: #E5E7EB; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">ðŸŒ±
+      <button class="ai-suggest-pill" data-prompt="Hola Mateo, ¿cómo estás? Cuéntame una curiosidad fascinante sobre el universo"
+        style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); color: #E5E7EB; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">🌱
         Charla General (Eco)</button>
-      <button class="ai-suggest-pill" data-prompt="Â¿QuÃ© variedad de tu catÃ¡logo me recomiendas para relajarme y ver una pelÃ­cula?"
-        style="background: rgba(16,185,129,0.22); border: 1px solid #10B981; color: #6EE7B7; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 800;">âš¡
+      <button class="ai-suggest-pill" data-prompt="¿Qué variedad de tu catálogo me recomiendas para relajarme y ver una película?"
+        style="background: rgba(16,185,129,0.22); border: 1px solid #10B981; color: #6EE7B7; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 800;">⚡
         CannaCulture (Ultra)</button>
-      <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor cÃ­trico a limÃ³n o mandarina"
-        style="background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4); color: #FCD34D; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">ðŸ‹
-        Sabor CÃ­trico</button>
+      <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor cítrico a limón o mandarina"
+        style="background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4); color: #FCD34D; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">🍋
+        Sabor Cítrico</button>
       <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor frutal dulce o caramelos"
-        style="background: rgba(236,72,153,0.15); border: 1px solid rgba(236,72,153,0.4); color: #F472B6; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">ðŸ“
+        style="background: rgba(236,72,153,0.15); border: 1px solid rgba(236,72,153,0.4); color: #F472B6; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">🍓
         Frutal Dulce</button>
       <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor a pino, madera o incienso Haze"
-        style="background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.4); color: #67E8F9; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">ðŸŒ²
+        style="background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.4); color: #67E8F9; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">🌲
         Pino Haze</button>
-      <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor a diÃ©sel o combustible"
-        style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6EE7B7; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">â›½
-        DiÃ©sel</button>
-      <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor a galleta o reposterÃ­a dulce"
-        style="background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.4); color: #C084FC; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">ðŸª
+      <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor a diésel o combustible"
+        style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6EE7B7; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">⛽
+        Diésel</button>
+      <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor a galleta o repostería dulce"
+        style="background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.4); color: #C084FC; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">🍪
         Galleta</button>
       <button class="ai-suggest-pill" data-prompt="Busco cepas con sabor a queso curado o Skunk"
-        style="background: rgba(234,179,8,0.15); border: 1px solid rgba(234,179,8,0.4); color: #FDE047; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">ðŸ§€
+        style="background: rgba(234,179,8,0.15); border: 1px solid rgba(234,179,8,0.4); color: #FDE047; font-size: 0.74rem; padding: 4px 10px; border-radius: 50px !important; white-space: nowrap; cursor: pointer; font-weight: 700;">🧀
         Queso</button>
     </div>
 
@@ -1147,36 +1147,36 @@
     <div
       style="padding: 10px 14px; background: rgba(0,0,0,0.5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 8px; align-items: center;">
       <input type="file" id="ai-chat-file" accept="image/*" style="display:none;" />
-      <button type="button" id="ai-chat-btn-photo" aria-label="CannaDoctor: Subir foto para anÃ¡lisis botÃ¡nico"
+      <button type="button" id="ai-chat-btn-photo" aria-label="CannaDoctor: Subir foto para análisis botánico"
         style="background: rgba(16,185,129,0.15); border: 1px solid var(--primary-emerald); color: #A7F3D0; border-radius: 12px !important; padding: 8px 10px; cursor: pointer; font-size: 0.95rem; display: flex; align-items: center; justify-content: center;"
         title="CannaDoctor: Subir foto">
-        ðŸ“·
+        📷
       </button>
       <input type="text" id="ai-chat-input" placeholder="Pregunta al Sommelier IA..." aria-label="Escribe tu consulta para el Sommelier IA"
         style="flex: 1; border-radius: 12px !important; font-size: 0.85rem !important; padding: 0.7rem 1rem !important;" />
       <button id="ai-chat-send" aria-label="Enviar mensaje a Mateo"
         style="background: var(--primary-emerald); color: #000; font-weight: 900; border: none; padding: 0 16px; border-radius: 12px !important; cursor: pointer; font-size: 0.9rem; height: 38px;">
-        ðŸš€
+        🚀
       </button>
     </div>
   </div>
 
   <!-- ======================================================
-       MODAL LIGHTBOX â€” VISOR ULTRA ZOOM EN ALTA RESOLUCIÃ“N HD
+       MODAL LIGHTBOX — VISOR ULTRA ZOOM EN ALTA RESOLUCIÓN HD
        ====================================================== -->
   <dialog id="image-lightbox-modal" class="lightbox-dialog">
     <div class="lightbox-wrapper">
-      <!-- BotÃ³n cierre flotante -->
+      <!-- Botón cierre flotante -->
       <button class="lightbox-close-btn" id="lightbox-close-btn"
-        onclick="document.getElementById('image-lightbox-modal').close()" title="Cerrar (ESC)" aria-label="Cerrar visor de fotografÃ­a en alta resoluciÃ³n">âœ•</button>
+        onclick="document.getElementById('image-lightbox-modal').close()" title="Cerrar (ESC)" aria-label="Cerrar visor de fotografía en alta resolución">✕</button>
 
       <!-- Info superior -->
       <div class="lightbox-header">
         <div style="display: flex; align-items: center; gap: 10px;">
-          <span style="font-size: 1.4rem;">ðŸŒ¿</span>
+          <span style="font-size: 1.4rem;">🌿</span>
           <div>
-            <h3 id="lightbox-title" class="lightbox-title-text">GenÃ©tica</h3>
-            <span id="lightbox-subtitle" class="lightbox-subtitle-text">FOTOGRAFÃA BOTÃNICA â€¢ ALTA RESOLUCIÃ“N HD</span>
+            <h3 id="lightbox-title" class="lightbox-title-text">Genética</h3>
+            <span id="lightbox-subtitle" class="lightbox-subtitle-text">FOTOGRAFÍA BOTÃNICA • ALTA RESOLUCIÓN HD</span>
           </div>
         </div>
         <div id="lightbox-zoom-indicator" class="lightbox-zoom-indicator">100% (Vista Original)</div>
@@ -1184,16 +1184,16 @@
 
       <!-- Viewport / Canvas interactivo para Zoom y Arrastre -->
       <div id="lightbox-viewport" class="lightbox-viewport">
-        <img id="lightbox-img" src="" alt="Foto en alta resoluciÃ³n" class="lightbox-main-img" draggable="false" />
-        <div class="lightbox-zoom-hint">ðŸ” Rueda del ratÃ³n / PellÃ­zcalo para hacer Zoom â€¢ Arrastra para mover</div>
+        <img id="lightbox-img" src="" alt="Foto en alta resolución" class="lightbox-main-img" draggable="false" />
+        <div class="lightbox-zoom-hint">🔍 Rueda del ratón / Pellízcalo para hacer Zoom • Arrastra para mover</div>
       </div>
 
       <!-- Barra de controles flotante estilo CannaCatalog Glass -->
       <div class="lightbox-controls-bar">
-        <button id="lightbox-btn-zoom-out" class="lightbox-ctrl-btn" title="Alejar (-)" aria-label="Alejar fotografÃ­a (-)">âž– Alejar</button>
-        <button id="lightbox-btn-reset" class="lightbox-ctrl-btn" title="Restablecer (100%)" aria-label="Restablecer tamaÃ±o original (100%)">ðŸ”„ 100%</button>
-        <button id="lightbox-btn-zoom-in" class="lightbox-ctrl-btn" title="Acercar (+)" aria-label="Acercar fotografÃ­a (+)">âž• Acercar</button>
-        <button id="lightbox-btn-hd" class="lightbox-ctrl-btn hd-btn" title="Zoom Macro HD 2.5x" aria-label="Zoom Macro HD 2.5x">ðŸ”¬ Macro 2.5x
+        <button id="lightbox-btn-zoom-out" class="lightbox-ctrl-btn" title="Alejar (-)" aria-label="Alejar fotografía (-)">➖ Alejar</button>
+        <button id="lightbox-btn-reset" class="lightbox-ctrl-btn" title="Restablecer (100%)" aria-label="Restablecer tamaño original (100%)">🔄 100%</button>
+        <button id="lightbox-btn-zoom-in" class="lightbox-ctrl-btn" title="Acercar (+)" aria-label="Acercar fotografía (+)">➕ Acercar</button>
+        <button id="lightbox-btn-hd" class="lightbox-ctrl-btn hd-btn" title="Zoom Macro HD 2.5x" aria-label="Zoom Macro HD 2.5x">🔬 Macro 2.5x
           HD</button>
       </div>
     </div>
