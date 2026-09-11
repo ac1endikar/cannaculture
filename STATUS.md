@@ -1,15 +1,38 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-10 18:25  
+> **Última actualización:** 2026-09-11 15:00  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
-> **Commit de cierre:** v159 (`fix(catalog): sustitucion de 20 fotografias de baja calidad por macros botanicos master v159`)
+> **Commit de cierre:** v160 (`feat(catalog): expansion a 569 cepas + traduccion completa al espanol v160`)
 
 ---
 
 ## 📌 Punto de Reanudación para la Siguiente Sesión
-- **Estado del Catálogo:** **535 cepas en 44 bancos** (Auditoría Fotográfica v159 completada).
-- **Curación y Sustitución de 20 Fotografías Críticas v159:**
-  * **20 cepas renovadas con macros botánicos master de máxima calidad:**
+- **Estado del Catálogo:** **569 cepas en 44 bancos** (Expansión v160 completada).
+- **Expansión de Cepas v160 (+34 cepas nuevas):**
+  * **Barney's Farm (+8):** Liberty Haze, Pineapple Chunk, LSD, Critical Kush, Cookies Kush, Strawberry Lemonade, Runtz Muffin, Wedding Cake.
+  * **Buddha Seeds (+6):** Syrup, Med Gom 1.0, Big Buddha Cheese, Medikit, Kabrales, Tokay Haze.
+  * **Elev8 Seeds (+7):** Grape Gasoline, Lemon Slushie, Wedding Pie, Purple Punch, Biscotti, Strawberry Cough, Blue Dream.
+  * **Samsara Seeds (+7):** White Domina, Purple Maroc, Himalayan Gold, Shaman, Jock Horror, Stardust, Tropicana Banana.
+  * **00 Seeds Bank (+2):** 00 Cheese, Critical Neville Haze.
+  * **Eva Seeds (+4):** Alien OG, Purple Haze, Tangerine Dream, Super Silver Haze Eva.
+- **Traducción Completa al Español de España v160:**
+  * Normalización de `species` en todo `js/data.js`: `"Indica"` (223) → `"Índica"`, `"Hibrida"` (65) → `"Híbrida"`. Total: 535 cepas normalizadas.
+  * Filtro `<select id="filter-species">` actualizado: `value="Índica"` / `value="Híbrida"` sincronizados con datos.
+  * Dropdown `<select id="filter-bank">` expandido de 27 a 44 bancos, agrupados por región (España, Ámsterdam/Holanda, Norteamérica).
+  * Textos `"Indoor"` → `"Interior"`, `"Outdoor"` → `"Exterior"` en comparador de `js/app.js`.
+  * Sort options `"Rendimiento Indoor"` → `"Rendimiento Interior"` en HTML.
+  * Stats bar `#stat-total` → 569, `#stat-banks` → 44, labels corregidos (Índicas, Híbridas).
+  * Iconos añadidos para todos los bancos en `bankIcons` de `app.js` (Samsara 🌀, Elev8 ⬆️, etc.).
+  * Title `<title>` actualizado a `569 Cepas de 44 Bancos Premium`.
+  * `getCatalogStats` en `tools.js` actualizado para contar `'Índica'` correctamente.
+- **Bundle & Cache-Busting:** Recompilado a 953,419 bytes. Cache-busting actualizado a `?v=2026_es_expansion_v160`.
+- **Acciones para Iniciar Siguiente Sesión:**
+  1. Ejecutar `git pull origin main` (Fase de arranque según [AGENTS.md](file:///d:/cannaculture/AGENTS.md)).
+  2. Levantar servidor con `powershell -ExecutionPolicy Bypass -File server.ps1` si se requiere prueba visual.
+  3. Abordar el siguiente requerimiento que indique el usuario.
+
+---
+
     1. `canuk-banana-cream` (Canuk Seeds) — Macro de cogollo morado ultra resinoso.
     2. `eleven-roses` (Delicious Seeds) — Cáliz oscuro Black Rose con tricomas cristalinos.
     3. `critical-kali-mist` (Delicious Seeds) — Macro extremo de glándulas de resina y pistilos ambarinos sobre fondo oscuro.

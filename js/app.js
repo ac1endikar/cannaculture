@@ -649,7 +649,25 @@ class CannaAppMAX {
       'TH Seeds': '🗽',
       'Paradise Seeds': '🌴',
       'DNA Genetics': '🧬',
-      'Medical Seeds': '⚕️'
+      'Medical Seeds': '⚕️',
+      'Nirvana Seeds': '🧘',
+      'Eva Seeds': '🌱',
+      'White Label Seed Co.': '🏷️',
+      'Mr. Nice Seedbank': '😎',
+      'Delicious Seeds': '🍬',
+      'Soma Seeds': '🌸',
+      'Seedsman': '🌾',
+      'The Flying Dutchmen': '✈️',
+      'Exotic Genetix': '🦋',
+      'Compound Genetics': '⚗️',
+      'In-House Genetics': '🏠',
+      'Ethos Genetics': '🔬',
+      'Archive Seed Bank': '📦',
+      'Raw Genetics': '💎',
+      'Karma Genetics': '☯️',
+      'Canuk Seeds': '🍁',
+      'Samsara Seeds': '🌀',
+      'Elev8 Seeds': '⬆️'
     };
 
 
@@ -700,7 +718,7 @@ class CannaAppMAX {
                 <h3 class="strain-title">${strain.name}</h3>
                 <div class="strain-bank-label">${displayGenetics}</div>
               </div>
-              <span class="badge-species ${strain.species.toLowerCase()}">${strain.species}</span>
+              <span class="badge-species ${(strain.species || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g,'-')}">${strain.species}</span>
             </div>
 
             <div class="strain-stats">
@@ -931,13 +949,13 @@ class CannaAppMAX {
           <div style="display: flex; gap: 1rem; justify-content: space-between; margin-top: 0.5rem;">
             <div>
               <strong>${comp.strain1.name}</strong> (${comp.strain1.species})
-              <p>THC: ${comp.strain1.thc}% | Indoor: ${comp.strain1.yieldIndoor}g | Outdoor: ${comp.strain1.yieldOutdoor}g</p>
+              <p>THC: ${comp.strain1.thc}% | Interior: ${comp.strain1.yieldIndoor}g/m² | Exterior: ${comp.strain1.yieldOutdoor}g/planta</p>
               <p>Sabores: ${comp.strain1.flavors.join(', ')}</p>
             </div>
             <div>VS</div>
             <div>
               <strong>${comp.strain2.name}</strong> (${comp.strain2.species})
-              <p>THC: ${comp.strain2.thc}% | Indoor: ${comp.strain2.yieldIndoor}g | Outdoor: ${comp.strain2.yieldOutdoor}g</p>
+              <p>THC: ${comp.strain2.thc}% | Interior: ${comp.strain2.yieldIndoor}g/m² | Exterior: ${comp.strain2.yieldOutdoor}g/planta</p>
               <p>Sabores: ${comp.strain2.flavors.join(', ')}</p>
             </div>
           </div>

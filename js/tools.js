@@ -69,7 +69,7 @@ export class AdvancedTools {
     if (!strains || strains.length === 0) return null;
     const parseYield = y => typeof y === 'number' ? y : (parseInt(y) || 0);
     const banks = [...new Set(strains.map(s => s.bank))].length;
-    const indicas = strains.filter(s => s.species === 'Indica').length;
+    const indicas = strains.filter(s => s.species === 'Índica' || s.species === 'Índica' || s.species === 'Indica').length;
     const sativas = strains.filter(s => s.species === 'Sativa').length;
     const hibridas = strains.filter(s => s.species === 'Híbrida' || s.species === 'Hibrida').length;
     const avgThc = (strains.reduce((sum, s) => sum + (typeof s.thc === 'number' ? s.thc : parseFloat(s.thc) || 0), 0) / strains.length).toFixed(1);
