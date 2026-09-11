@@ -123,7 +123,7 @@ export const ACTIVITIES_DATA = [
 export const STRAINS_DATABASE = [
   {
       id: "ripper-kmintz",
-        image: "img/ripper-kmintz-plant.webp",
+        image: "img/ripper-kmintz.webp",
         name: "Kmintz",
         aka: "Zkittlez x Kush Mints",
         bank: "Ripper Seeds",
@@ -144,7 +144,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ripper-zombie-kush",
-        image: "img/ripper-zombie-kush-flowering.webp",
+        image: "img/ripper-zombie-kush.webp",
         name: "Zombie Kush",
         aka: "Sideral x Bubba Kush",
         bank: "Ripper Seeds",
@@ -165,7 +165,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ripper-radical-juice",
-        image: "img/ripper-radical-juice-plant.webp",
+        image: "img/ripper-radical-juice.webp",
         name: "Radical Juice",
         aka: "Tropicana Cookies x Runtz",
         bank: "Ripper Seeds",
@@ -207,7 +207,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ripper-sour-ripper",
-        image: "img/ripper-sour-ripper-bud.webp",
+        image: "img/ripper-sour-ripper.webp",
         name: "Sour Ripper",
         aka: "Sour Diesel Selection",
         bank: "Ripper Seeds",
@@ -228,7 +228,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ripper-ripper-haze",
-        image: "img/ripper-haze-flowering.webp",
+        image: "img/ripper-ripper-haze.webp",
         name: "Ripper Haze",
         aka: "Amnesia Haze Selection (Amnesia Ripping)",
         bank: "Ripper Seeds",
@@ -249,7 +249,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ripper-hawaiian-wave",
-        image: "img/ripper-hawaiian-wave-bud.webp",
+        image: "img/ripper-hawaiian-wave.webp",
         name: "Hawaiian Wave",
         aka: "Hawaiian Haze x Double Glock",
         bank: "Ripper Seeds",
@@ -270,7 +270,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ripper-double-glock",
-        image: "img/ripper-double-glock-plant.webp",
+        image: "img/ripper-double-glock.webp",
         name: "Double Glock",
         aka: "Índica Afgana 100%",
         bank: "Ripper Seeds",
@@ -291,7 +291,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ripper-criminal-plus",
-        image: "img/ripper-criminal-plus-plant.webp",
+        image: "img/ripper-criminal-plus.webp",
         name: "Criminal +",
         aka: "Critical Mass x Double Glock",
         bank: "Ripper Seeds",
@@ -312,7 +312,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ripper-toxic",
-        image: "img/ripper-toxic-bud.webp",
+        image: "img/ripper-toxic.webp",
         name: "Toxic",
         aka: "Ripper Haze x Criminal +",
         bank: "Ripper Seeds",
@@ -333,7 +333,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ripper-brain-cake",
-        image: "img/ripper-brain-cake-plant.webp",
+        image: "img/ripper-brain-cake.webp",
         name: "Brain Cake",
         aka: "Do-Si-Dos S1",
         bank: "Ripper Seeds",
@@ -354,7 +354,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ripper-kroma",
-        image: "img/ripper-kroma-plant.webp",
+        image: "img/ripper-kroma.webp",
         name: "Kroma",
         aka: "Kmintz x Zkittlez",
         bank: "Ripper Seeds",
@@ -439,7 +439,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ripper-jungle-punch",
-        image: "img/ripper-jungle-punch-flowering.webp",
+        image: "img/ripper-jungle-punch.webp",
         gallery: ["img/ripper-jungle-punch.webp"],
         name: "Jungle Punch",
         aka: "Tropicana Cookies x Banana Punch",
@@ -503,7 +503,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "bf-dos-si-dos-33",
-        image: "img/bf-dos-si-dos-33-bud.webp",
+        image: "img/bf-dos-si-dos-33.webp",
         name: "Dos Si Dos 33",
         aka: "Do-Si-Dos x Gelato #33",
         bank: "Barney's Farm",
@@ -524,7 +524,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "bf-pineapple-express",
-        image: "img/bf-pineapple-express-bud.webp",
+        image: "img/bf-pineapple-express.webp",
         name: "Pineapple Express",
         aka: "Hawaiian x Trainwreck",
         bank: "Barney's Farm",
@@ -545,7 +545,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "bf-laughing-buddha",
-        image: "img/bf-laughing-buddha-plant.webp",
+        image: "img/bf-laughing-buddha.webp",
         name: "Laughing Buddha",
         aka: "Thai x Jamaican Sativa",
         bank: "Barney's Farm",
@@ -566,7 +566,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "bf-critical-kush",
-        image: "img/bf-critical-kush-plant.webp",
+        image: "img/bf-critical-kush.webp",
         name: "Critical Kush",
         aka: "Critical Mass x OG Kush",
         bank: "Barney's Farm",
@@ -587,7 +587,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "bf-sherbet-queen",
-        image: "img/bf-sherbet-queen-plant.webp",
+        image: "img/bf-sherbet-queen.webp",
         name: "Sherbet Queen",
         aka: "GSC x Pink Panties",
         bank: "Barney's Farm",
@@ -608,7 +608,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "sweet-green-poison",
-        image: "img/sweet-green-poison-plant.webp",
+        image: "img/sweet-green-poison.webp",
         name: "Green Poison",
         aka: "Selección Índica Rápida",
         bank: "Sweet Seeds",
@@ -671,7 +671,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "sweet-black-jack",
-        image: "img/sweet-black-jack-plant.webp",
+        image: "img/sweet-black-jack.webp",
         name: "Black Jack",
         aka: "Black Domina x Jack Herer",
         bank: "Sweet Seeds",
@@ -692,7 +692,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "sweet-tropicanna-poison",
-        image: "img/sweet-tropicanna-poison-plant.webp",
+        image: "img/sweet-tropicanna-poison.webp",
         name: "Tropicanna Poison",
         aka: "Tropicanna Cookies x Poison",
         bank: "Sweet Seeds",
@@ -734,7 +734,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "rqs-royal-gorilla",
-        image: "img/rqs-royal-gorilla-bud.webp",
+        image: "img/rqs-royal-gorilla.webp",
         name: "Royal Gorilla",
         aka: "GG#4 Selection RQS",
         bank: "Royal Queen Seeds",
@@ -776,7 +776,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "rqs-amnesia-haze",
-        image: "img/rqs-amnesia-haze-plant.webp",
+        image: "img/rqs-amnesia-haze.webp",
         name: "Amnesia Haze",
         aka: "Original Haze Hybrids",
         bank: "Royal Queen Seeds",
@@ -797,7 +797,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "rqs-wedding-glue",
-        image: "img/rqs-wedding-glue-plant.webp",
+        image: "img/rqs-wedding-glue.webp",
         name: "Wedding Glue",
         aka: "Wedding Cake x GG#4",
         bank: "Royal Queen Seeds",
@@ -818,7 +818,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "rqs-fat-banana",
-        image: "img/rqs-fat-banana-plant.webp",
+        image: "img/rqs-fat-banana.webp",
         name: "Fat Banana",
         aka: "OG Kush x Banana",
         bank: "Royal Queen Seeds",
@@ -860,7 +860,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "dp-auto-blueberry",
-        image: "img/dp-auto-blueberry-flowering.webp",
+        image: "img/dp-auto-blueberry.webp",
         name: "Auto Blueberry",
         aka: "Blueberry Auto Classic",
         bank: "Dutch Passion",
@@ -902,7 +902,7 @@ export const STRAINS_DATABASE = [
   },
   {
       id: "dp-zkittlez",
-        image: "img/dp-zkittlez-bud.webp",
+        image: "img/dp-zkittlez.webp",
         name: "Zkittlez",
         aka: "Zkittlez Original Elite",
         bank: "Dutch Passion",
@@ -923,7 +923,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "dp-passion-fruit",
-        image: "img/dp-passion-fruit-flowering.webp",
+        image: "img/dp-passion-fruit.webp",
         name: "Passion Fruit",
         aka: "Exótica Tropical Premium",
         bank: "Dutch Passion",
@@ -986,7 +986,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "philo-sugar-black-rose",
-        image: "img/philo-sugar-black-rose-flowering.webp",
+        image: "img/philo-sugar-black-rose.webp",
         name: "Sugar Black Rose",
         aka: "Black Domina x Critical +",
         bank: "Philosopher Seeds",
@@ -1049,7 +1049,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "hso-og-eddy-lepp",
-        image: "img/hso-og-eddy-lepp-plant.webp",
+        image: "img/hso-og-eddy-lepp.webp",
         name: "OG Eddy Lepp",
         aka: "SFV OG x OG Kush Elite",
         bank: "Humboldt Seed",
@@ -1070,7 +1070,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "hso-blue-dream",
-        image: "img/hso-blue-dream-official.webp",
+        image: "img/hso-blue-dream.webp",
         name: "Blue Dream",
         aka: "Blueberry x Haze Californiana",
         bank: "Humboldt Seed",
@@ -1175,7 +1175,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "oo-super-skunk",
-        image: "img/oo-super-skunk-bud.webp",
+        image: "img/oo-super-skunk.webp",
         gallery: ["img/oo-super-skunk-bud.webp", "img/oo-super-skunk-plant.webp", "img/oo-super-skunk-flowering.webp"],
         name: "Super Skunk",
         aka: "Skunk #1 x Afghani",
@@ -1239,7 +1239,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "bsf-moby-d",
-        image: "img/official/bsf-seeds-moby-d-feminizada.webp",
+        image: "img/bsf-moby-d.webp",
         name: "Moby-D",
     
         aka: "Jack Herer x White Widow",
@@ -1828,7 +1828,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "buddha-magnum",
-        image: "img/buddha-magnum-bud.webp",
+        image: "img/buddha-magnum.webp",
         name: "Magnum",
         aka: "XXL Autoflowering Sativa",
         bank: "Buddha Seeds",
@@ -1849,7 +1849,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "buddha-deimos",
-        image: "img/buddha-deimos-bud.webp",
+        image: "img/buddha-deimos.webp",
         name: "Deimos",
         aka: "Northern Lights Auto Selection",
         bank: "Buddha Seeds",
@@ -1870,7 +1870,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "buddha-white-dwarf",
-        image: "img/buddha-white-dwarf-bud.webp",
+        image: "img/buddha-white-dwarf.webp",
         name: "White Dwarf",
         aka: "Low Rider II Selection Auto",
         bank: "Buddha Seeds",
@@ -1891,7 +1891,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "buddha-purple-kush",
-        image: "img/buddha-purple-kush-bud.webp",
+        image: "img/buddha-purple-kush.webp",
         name: "Buddha Purple Kush",
         aka: "Purple Kush Feminizada",
         bank: "Buddha Seeds",
@@ -1912,7 +1912,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "buddha-gorila",
-        image: "img/buddha-gorila-bud.webp",
+        image: "img/buddha-gorila.webp",
         name: "Gorila",
         aka: "Gorilla Glue #4 Selection",
         bank: "Buddha Seeds",
@@ -1933,7 +1933,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "buddha-gelato",
-        image: "img/buddha-gelato-bud.webp",
+        image: "img/buddha-gelato.webp",
         name: "Buddha Gelato",
         aka: "Gelato USA Collection",
         bank: "Buddha Seeds",
@@ -1954,7 +1954,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "buddha-cookie",
-        image: "img/buddha-cookie-bud.webp",
+        image: "img/buddha-cookie.webp",
         name: "Buddha Cookie",
         aka: "Girl Scout Cookies Selection",
         bank: "Buddha Seeds",
@@ -1975,7 +1975,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "buddha-dosi2",
-        image: "img/buddha-dosi2-bud.webp",
+        image: "img/buddha-dosi2.webp",
         name: "Buddha DoSi2",
         aka: "Do-Si-Dos USA Collection",
         bank: "Buddha Seeds",
@@ -1996,7 +1996,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "buddha-wedding-cheesecake",
-        image: "img/buddha-wedding-cheesecake-bud.webp",
+        image: "img/buddha-wedding-cheesecake.webp",
         name: "Wedding Cheesecake",
         aka: "Buddha Wedding Cheesecake USA Collection",
         bank: "Buddha Seeds",
@@ -2059,7 +2059,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "rkiem-icer",
-        image: "img/rkiem-icer-bud.webp",
+        image: "img/rkiem-icer.webp",
         name: "Icer",
         aka: "San Fernando Valley OG x Ice Cream",
         bank: "R-Kiem Seeds",
@@ -2101,7 +2101,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "rkiem-portela",
-        image: "img/rkiem-portela-bud.webp",
+        image: "img/rkiem-portela.webp",
         name: "Portela",
         aka: "Icer x Jamaicana Lambsbread",
         bank: "R-Kiem Seeds",
@@ -2143,7 +2143,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "rkiem-zkiem",
-        image: "img/rkiem-zkiem-bud.webp",
+        image: "img/rkiem-zkiem.webp",
         name: "ZKiem",
         aka: "Zkittlez x Selección Afgana (Harybo)",
         bank: "R-Kiem Seeds",
@@ -2248,7 +2248,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "positronics-somango-47",
-        image: "img/positronics-somango-47-bud.webp",
+        image: "img/positronics-somango-47.webp",
         name: "Somango 47",
         aka: "Somango x Critical 47",
         bank: "Positronics Seeds",
@@ -2290,7 +2290,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "positronics-claustrum",
-        image: "img/positronics-claustrum-bud.webp",
+        image: "img/positronics-claustrum.webp",
         name: "Claustrum",
         aka: "(SSH x Jack Herer) x Kali Mist",
         bank: "Positronics Seeds",
@@ -2311,7 +2311,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "positronics-cum-laude",
-        image: "img/positronics-cum-laude-bud.webp",
+        image: "img/positronics-cum-laude.webp",
         name: "Cum Laude",
         aka: "(Reina Madre x Tijuana) x Original Haze",
         bank: "Positronics Seeds",
@@ -2332,7 +2332,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "positronics-caramelice",
-        image: "img/positronics-caramelice-bud.webp",
+        image: "img/positronics-caramelice.webp",
         name: "Caramelice",
         aka: "Caramela x Super Skunk",
         bank: "Positronics Seeds",
@@ -2353,7 +2353,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "positronics-blue-rhino",
-        image: "img/positronics-blue-rhino-bud.webp",
+        image: "img/positronics-blue-rhino.webp",
         name: "Blue Rhino",
         aka: "Blueberry x White Rhino",
         bank: "Positronics Seeds",
@@ -2374,7 +2374,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "positronics-amnesia-mystery",
-        image: "img/positronics-amnesia-mystery-bud.webp",
+        image: "img/positronics-amnesia-mystery.webp",
         name: "Amnesia Mystery",
         aka: "Amnesia Haze x California Sativa",
         bank: "Positronics Seeds",
@@ -2437,7 +2437,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "aceseeds-panama",
-        image: "img/aceseeds-panama-bud.webp",
+        image: "img/aceseeds-panama.webp",
         name: "Panama",
         aka: "Panama Diosa x Panama Verde/Roja",
         bank: "ACE Seeds",
@@ -2458,7 +2458,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "aceseeds-malawi",
-        image: "img/aceseeds-malawi-bud.webp",
+        image: "img/aceseeds-malawi.webp",
         name: "Malawi",
         aka: "Killer Malawi Landrace P3",
         bank: "ACE Seeds",
@@ -2521,7 +2521,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "aceseeds-pakistan-chitral-kush",
-        image: "img/aceseeds-pakistan-chitral-kush-bud.webp",
+        image: "img/aceseeds-pakistan-chitral-kush.webp",
         name: "Pakistan Chitral Kush",
         aka: "PCK Landrace P2",
         bank: "ACE Seeds",
@@ -2542,7 +2542,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "aceseeds-violeta",
-        image: "img/aceseeds-violeta-bud.webp",
+        image: "img/aceseeds-violeta.webp",
         name: "Violeta",
         aka: "PCK x Killer Malawi",
         bank: "ACE Seeds",
@@ -2563,7 +2563,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "aceseeds-purple-haze-x-malawi",
-        image: "img/aceseeds-purple-haze-x-malawi-bud.webp",
+        image: "img/aceseeds-purple-haze-x-malawi.webp",
         name: "Purple Haze x Malawi",
         aka: "Purple Haze #1 x Killer Malawi",
         bank: "ACE Seeds",
@@ -2626,7 +2626,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "aceseeds-guawi",
-        image: "img/aceseeds-guawi-bud.webp",
+        image: "img/aceseeds-guawi.webp",
         name: "Guawi",
         aka: "Old Malawi Killer x Guatemala Landrace",
         bank: "ACE Seeds",
@@ -2647,7 +2647,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "pyramid-tutankhamon",
-        image: "img/pyramid-tutankhamon-bud.webp?v=2026_custom_hd",
+        image: "img/pyramid-tutankhamon-bud.webp",
         name: "Tutankhamon",
         aka: "Selección Élite AK-47",
         bank: "Pyramid Seeds",
@@ -2668,7 +2668,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "pyramid-anesthesia",
-        image: "img/pyramid-anesthesia-bud.webp",
+        image: "img/pyramid-anesthesia.webp",
         name: "Anesthesia",
         aka: "Northern Lights x Black Domina",
         bank: "Pyramid Seeds",
@@ -2731,7 +2731,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "pyramid-anubis",
-        image: "img/pyramid-anubis-bud.webp",
+        image: "img/pyramid-anubis.webp",
         name: "Anubis",
         aka: "Somango x Wembley",
         bank: "Pyramid Seeds",
@@ -2752,7 +2752,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "pyramid-blue-pyramid",
-        image: "img/pyramid-blue-pyramid-bud.webp",
+        image: "img/pyramid-blue-pyramid.webp",
         name: "Blue Pyramid",
         aka: "Selección Élite Blueberry",
         bank: "Pyramid Seeds",
@@ -2773,7 +2773,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "pyramid-ramses",
-        image: "img/pyramid-ramses-bud.webp",
+        image: "img/pyramid-ramses.webp",
         name: "Ramses",
         aka: "Amnesia Haze x Selección Pyramid",
         bank: "Pyramid Seeds",
@@ -2794,7 +2794,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "pyramid-galaxy",
-        image: "img/pyramid-galaxy-bud.webp",
+        image: "img/pyramid-galaxy.webp",
         name: "Galaxy",
         aka: "Afghani x Northern Lights",
         bank: "Pyramid Seeds",
@@ -2815,7 +2815,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "pyramid-wembley",
-        image: "img/pyramid-wembley-bud.webp?v=2026_custom_hd",
+        image: "img/pyramid-wembley-bud.webp",
         name: "Wembley",
         aka: "AK-47 x Bubble Gum",
         bank: "Pyramid Seeds",
@@ -2836,7 +2836,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "pyramid-shark",
-        image: "img/pyramid-shark-bud.webp",
+        image: "img/pyramid-shark.webp",
         name: "Shark",
         aka: "Super Skunk x Northern Lights",
         bank: "Pyramid Seeds",
@@ -2857,7 +2857,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "blimburn-mamba-negra",
-        image: "img/blimburn-mamba-negra-bud.webp",
+        image: "img/blimburn-mamba-negra.webp",
         name: "Mamba Negra",
         aka: "Critical Mass x Skunk #1",
         bank: "Blimburn Seeds",
@@ -2878,7 +2878,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "blimburn-granddaddy-purple",
-        image: "img/blimburn-granddaddy-purple-bud.webp",
+        image: "img/blimburn-granddaddy-purple.webp",
         name: "Granddaddy Purple",
         aka: "Purple Urkle x Big Bud",
         bank: "Blimburn Seeds",
@@ -2920,7 +2920,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "blimburn-gorilla-glue-4",
-        image: "img/blimburn-gorilla-glue-4-bud.webp",
+        image: "img/blimburn-gorilla-glue-4.webp",
         name: "Gorilla Glue #4",
         aka: "Chem's Sister x Sour Dubb x Chocolate Diesel",
         bank: "Blimburn Seeds",
@@ -2983,7 +2983,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "blimburn-santa-muerte",
-        image: "img/blimburn-santa-muerte-bud.webp",
+        image: "img/blimburn-santa-muerte.webp",
         name: "Santa Muerte",
         aka: "Mexican Sativa Selection",
         bank: "Blimburn Seeds",
@@ -3067,7 +3067,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "genehtik-kritikal-bilbo",
-        image: "img/genehtik-kritikal-bilbo-bud.webp",
+        image: "img/genehtik-kritikal-bilbo.webp",
         name: "Kritikal Bilbo",
         aka: "Clon Élite Bilbo (Critical Mass)",
         bank: "Genehtik Seeds",
@@ -3088,7 +3088,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "genehtik-txomango",
-        image: "img/genehtik-txomango-bud.webp",
+        image: "img/genehtik-txomango.webp",
         name: "Txomango",
         aka: "Selección Somango Bilbo",
         bank: "Genehtik Seeds",
@@ -3109,7 +3109,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "genehtik-super-silver-bilbo",
-        image: "img/genehtik-super-silver-bilbo-bud.webp",
+        image: "img/genehtik-super-silver-bilbo.webp",
         name: "Super Silver Bilbo",
         aka: "Selección Super Silver Haze",
         bank: "Genehtik Seeds",
@@ -3130,7 +3130,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "genehtik-zuri-widow",
-        image: "img/genehtik-zuri-widow-bud.webp",
+        image: "img/genehtik-zuri-widow.webp",
         name: "Zuri Widow",
         aka: "Selección White Widow Élite",
         bank: "Genehtik Seeds",
@@ -3151,7 +3151,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "genehtik-txees-bilbo",
-        image: "img/genehtik-txees-bilbo-bud.webp",
+        image: "img/genehtik-txees-bilbo.webp",
         name: "Txees Bilbo",
         aka: "Selección UK Cheese",
         bank: "Genehtik Seeds",
@@ -3172,7 +3172,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "genehtik-amnesia-bilbo",
-        image: "img/genehtik-amnesia-bilbo-bud.webp",
+        image: "img/genehtik-amnesia-bilbo.webp",
         name: "Amnesia Bilbo",
         aka: "Selección Amnesia Haze",
         bank: "Genehtik Seeds",
@@ -3193,7 +3193,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "genehtik-northern-lights-x",
-        image: "img/genehtik-northern-lights-x-bud.webp",
+        image: "img/genehtik-northern-lights-x.webp",
         name: "Northern Lights X",
         aka: "Northern Lights Selección Élite",
         bank: "Genehtik Seeds",
@@ -3214,7 +3214,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "genehtik-blubonik",
-        image: "img/genehtik-blubonik-bud.webp",
+        image: "img/genehtik-blubonik.webp",
         name: "Blubonik",
         aka: "Kootenay Blueberry x Blueberry",
         bank: "Genehtik Seeds",
@@ -3235,7 +3235,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "genehtik-og-lemon-bilbo",
-        image: "img/genehtik-og-lemon-bilbo-bud.webp",
+        image: "img/genehtik-og-lemon-bilbo.webp",
         name: "OG Lemon Bilbo",
         aka: "OG Kush Lemon Cut x Selección Bilbo",
         bank: "Genehtik Seeds",
@@ -3256,7 +3256,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "genehtik-santa-bilbo",
-        image: "img/genehtik-santa-bilbo-bud.webp",
+        image: "img/genehtik-santa-bilbo.webp",
         name: "Santa Bilbo",
         aka: "Brasil Amazonia x Selección Bilbo",
         bank: "Genehtik Seeds",
@@ -3277,7 +3277,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "heavyweight-fruit-punch",
-        image: "img/heavyweight-fruit-punch-bud.webp",
+        image: "img/heavyweight-fruit-punch.webp",
         name: "Fruit Punch",
         aka: "Skunk #1 x Haze x Northern Lights",
         bank: "Heavyweight Seeds",
@@ -3298,7 +3298,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "heavyweight-green-ninja",
-        image: "img/heavyweight-green-ninja-bud.webp",
+        image: "img/heavyweight-green-ninja.webp",
         name: "Green Ninja",
         aka: "Northern Lights x Afgana Pura",
         bank: "Heavyweight Seeds",
@@ -3319,7 +3319,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "heavyweight-budzilla",
-        image: "img/heavyweight-budzilla-bud.webp",
+        image: "img/heavyweight-budzilla.webp",
         name: "Budzilla",
         aka: "G13 x Skunk #1",
         bank: "Heavyweight Seeds",
@@ -3340,7 +3340,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "heavyweight-money-bush",
-        image: "img/heavyweight-money-bush-bud.webp",
+        image: "img/heavyweight-money-bush.webp",
         name: "Money Bush",
         aka: "Afghani x Critical Mass",
         bank: "Heavyweight Seeds",
@@ -3361,7 +3361,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "heavyweight-goldmine",
-        image: "img/heavyweight-goldmine-bud.webp?v=2026_custom_hd",
+        image: "img/heavyweight-goldmine-bud.webp",
         name: "Goldmine",
         aka: "Mazar x AK-47",
         bank: "Heavyweight Seeds",
@@ -3424,7 +3424,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "heavyweight-lemon-cake",
-        image: "img/heavyweight-lemon-cake-bud.webp",
+        image: "img/heavyweight-lemon-cake.webp",
         name: "Lemon Cake",
         aka: "Lemon Skunk x Cheese",
         bank: "Heavyweight Seeds",
@@ -3445,7 +3445,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "heavyweight-dream-machine",
-        image: "img/heavyweight-dream-machine-bud.webp",
+        image: "img/heavyweight-dream-machine.webp",
         name: "Dream Machine",
         aka: "Afghan x Indian x Brazilian Landrace",
         bank: "Heavyweight Seeds",
@@ -3466,7 +3466,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "heavyweight-strawberry-cake",
-        image: "img/heavyweight-strawberry-cake-bud.webp",
+        image: "img/heavyweight-strawberry-cake.webp",
         name: "Strawberry Cake",
         aka: "Chronic x White Widow x Cheese",
         bank: "Heavyweight Seeds",
@@ -3487,7 +3487,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "cannabiogen-taskenti",
-        image: "img/cannabiogen-taskenti-bud.webp",
+        image: "img/cannabiogen-taskenti.webp",
         name: "Taskenti",
         aka: "Uzbekistán Landrace x NL#1",
         bank: "Cannabiogen",
@@ -3508,7 +3508,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "cannabiogen-peyote-purple",
-        image: "img/cannabiogen-peyote-purple-bud.webp",
+        image: "img/cannabiogen-peyote-purple.webp",
         name: "Peyote Purple",
         aka: "Selección Bubba Kush (Corte Morado)",
         bank: "Cannabiogen",
@@ -3529,7 +3529,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "cannabiogen-sandstorm",
-        image: "img/cannabiogen-sandstorm-bud.webp",
+        image: "img/cannabiogen-sandstorm.webp",
         name: "Sandstorm",
         aka: "Chitral Kush x Morocco Landrace",
         bank: "Cannabiogen",
@@ -3550,7 +3550,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "cannabiogen-nepal-jam",
-        image: "img/cannabiogen-nepal-jam-bud.webp",
+        image: "img/cannabiogen-nepal-jam.webp",
         name: "Nepal Jam",
         aka: "Nepal Sativa x Jamaica Blue Mountain",
         bank: "Cannabiogen",
@@ -3571,7 +3571,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "cannabiogen-caribe",
-        image: "img/cannabiogen-caribe-bud.webp",
+        image: "img/cannabiogen-caribe.webp",
         name: "Caribe",
         aka: "Jamaica Blue Mountain x NL5 Haze",
         bank: "Cannabiogen",
@@ -3592,7 +3592,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "cannabiogen-jamaica-blue-mountain",
-        image: "img/cannabiogen-jamaica-blue-mountain-bud.webp",
+        image: "img/cannabiogen-jamaica-blue-mountain.webp",
         name: "Jamaica Blue Mountain",
         aka: "Jamaica Blue Mountain Landrace",
         bank: "Cannabiogen",
@@ -3613,7 +3613,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "cannabiogen-leshaze",
-        image: "img/cannabiogen-leshaze-bud.webp",
+        image: "img/cannabiogen-leshaze.webp",
         name: "Leshaze",
         aka: "Lesotho Landrace x Skunk Haze",
         bank: "Cannabiogen",
@@ -3634,7 +3634,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "cannabiogen-panama-dc",
-        image: "img/cannabiogen-panama-dc-bud.webp",
+        image: "img/cannabiogen-panama-dc.webp",
         name: "Panama DC",
         aka: "Panama Goddess x Deep Chunk",
         bank: "Cannabiogen",
@@ -3655,7 +3655,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "cannabiogen-mangobiche-kush",
-        image: "img/cannabiogen-mangobiche-kush-bud.webp",
+        image: "img/cannabiogen-mangobiche-kush.webp",
         name: "Mangobiche Kush",
         aka: "Colombia Mangobiche x Peyote Purple",
         bank: "Cannabiogen",
@@ -3676,7 +3676,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "cannabiogen-hash-fruit",
-        image: "img/cannabiogen-hash-fruit-bud.webp",
+        image: "img/cannabiogen-hash-fruit.webp",
         name: "Hash Fruit",
         aka: "Sandstorm x Peyote Purple",
         bank: "Cannabiogen",
@@ -3697,7 +3697,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "sensi-jack-herer",
-        image: "img/sensi-jack-herer-bud.webp",
+        image: "img/sensi-jack-herer.webp",
         name: "Jack Herer",
         aka: "Haze x NL#5 x Shiva Skunk",
         bank: "Sensi Seeds",
@@ -3718,7 +3718,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "sensi-super-skunk",
-        image: "img/sensi-super-skunk-bud.webp",
+        image: "img/sensi-super-skunk.webp",
         name: "Super Skunk",
         aka: "Skunk #1 x Afgana Pura",
         bank: "Sensi Seeds",
@@ -3760,7 +3760,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "sensi-northern-lights",
-        image: "img/sensi-northern-lights-bud.webp",
+        image: "img/sensi-northern-lights.webp",
         name: "Northern Lights",
         aka: "NL #2 x NL #5 Landrace Afgana",
         bank: "Sensi Seeds",
@@ -3781,7 +3781,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "sensi-hindu-kush",
-        image: "img/sensi-hindu-kush-bud.webp",
+        image: "img/sensi-hindu-kush.webp",
         name: "Hindu Kush",
         aka: "Hindu Kush Mountain Landrace",
         bank: "Sensi Seeds",
@@ -3802,7 +3802,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "sensi-skunk-1",
-        image: "img/sensi-skunk-1-bud.webp",
+        image: "img/sensi-skunk-1.webp",
         name: "Skunk #1",
         aka: "Sativa Landrace x Afghani",
         bank: "Sensi Seeds",
@@ -3844,7 +3844,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "sensi-hash-plant",
-        image: "img/sensi-hash-plant-bud.webp",
+        image: "img/sensi-hash-plant.webp",
         name: "Hash Plant",
         aka: "Original Hash Plant x Northern Lights #1",
         bank: "Sensi Seeds",
@@ -3886,7 +3886,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "sensi-sensi-skunk",
-        image: "img/sensi-sensi-skunk-bud.webp",
+        image: "img/sensi-sensi-skunk.webp",
         name: "Sensi Skunk",
         aka: "Skunk #1 x Selección Cítrica",
         bank: "Sensi Seeds",
@@ -3928,7 +3928,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ghs-super-silver-haze",
-        image: "img/ghs-super-silver-haze-bud.webp",
+        image: "img/ghs-super-silver-haze.webp",
         name: "Super Silver Haze",
         aka: "Skunk #1 x NL #5 x Haze",
         bank: "Green House Seed Co.",
@@ -3991,7 +3991,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ghs-hawaiian-snow",
-        image: "img/ghs-hawaiian-snow-bud.webp",
+        image: "img/ghs-hawaiian-snow.webp",
         name: "Hawaiian Snow",
         aka: "Hawaiian Sativa x Neville's Haze",
         bank: "Green House Seed Co.",
@@ -4012,7 +4012,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ghs-francos-lemon-cheese",
-        image: "img/ghs-francos-lemon-cheese-bud.webp",
+        image: "img/ghs-francos-lemon-cheese.webp",
         name: "Franco's Lemon Cheese",
         aka: "Super Lemon Haze x Exodus Cheese",
         bank: "Green House Seed Co.",
@@ -4033,7 +4033,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ghs-exodus-cheese",
-        image: "img/ghs-exodus-cheese-bud.webp",
+        image: "img/ghs-exodus-cheese.webp",
         name: "Exodus Cheese",
         aka: "Selección Clón Original UK Cheese",
         bank: "Green House Seed Co.",
@@ -4054,7 +4054,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ghs-bubba-kush",
-        image: "img/ghs-bubba-kush-bud.webp",
+        image: "img/ghs-bubba-kush.webp",
         name: "Bubba Kush",
         aka: "Bubble Gum x OG Kush",
         bank: "Green House Seed Co.",
@@ -4096,7 +4096,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ghs-kings-juice",
-        image: "img/ghs-kings-juice-bud.webp",
+        image: "img/ghs-kings-juice.webp",
         name: "King's Juice",
         aka: "Mimosa x King's Kush",
         bank: "Green House Seed Co.",
@@ -4117,7 +4117,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "serious-ak-47",
-        image: "img/serious-ak-47-bud.webp",
+        image: "img/serious-ak-47.webp",
         name: "AK-47",
         aka: "Colombia x México x Tailandia x Afganistán",
         bank: "Serious Seeds",
@@ -4138,7 +4138,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "serious-white-russian",
-        image: "img/serious-white-russian-bud.webp",
+        image: "img/serious-white-russian.webp",
         name: "White Russian",
         aka: "AK-47 x White Widow",
         bank: "Serious Seeds",
@@ -4159,7 +4159,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "serious-chronic",
-        image: "img/serious-chronic-bud.webp",
+        image: "img/serious-chronic.webp",
         name: "Chronic",
         aka: "Northern Lights x Skunk x AK-47",
         bank: "Serious Seeds",
@@ -4180,7 +4180,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "serious-bubble-gum",
-        image: "img/serious-bubble-gum-bud.webp",
+        image: "img/serious-bubble-gum.webp",
         name: "Bubble Gum",
         aka: "Selección Indiana Bubblegum",
         bank: "Serious Seeds",
@@ -4201,7 +4201,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "serious-kali-mist",
-        image: "img/serious-kali-mist-bud.webp",
+        image: "img/serious-kali-mist.webp",
         name: "Kali Mist",
         aka: "Cruce Sativo Secreto 2ª Gen",
         bank: "Serious Seeds",
@@ -4222,7 +4222,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "serious-serious-6",
-        image: "img/serious-serious-6-bud.webp",
+        image: "img/serious-serious-6.webp",
         name: "Serious 6",
         aka: "Canadian Landrace x Sativa Africana",
         bank: "Serious Seeds",
@@ -4243,7 +4243,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "serious-warlock",
-        image: "img/serious-warlock-bud.webp",
+        image: "img/serious-warlock.webp",
         name: "Warlock",
         aka: "Skunk #1 x Afghani",
         bank: "Serious Seeds",
@@ -4264,7 +4264,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "serious-biddy-early",
-        image: "img/serious-biddy-early-bud.webp",
+        image: "img/serious-biddy-early.webp",
         name: "Biddy Early",
         aka: "Early Skunk x Warlock",
         bank: "Serious Seeds",
@@ -4285,7 +4285,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "serious-serious-happiness",
-        image: "img/serious-serious-happiness-bud.webp",
+        image: "img/serious-serious-happiness.webp",
         name: "Serious Happiness",
         aka: "AK-47 x Warlock",
         bank: "Serious Seeds",
@@ -4306,7 +4306,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "serious-kali-bubba",
-        image: "img/serious-kali-bubba-bud.webp",
+        image: "img/serious-kali-bubba.webp",
         name: "Kali Bubba",
         aka: "Kali Mist x Bubble Gum",
         bank: "Serious Seeds",
@@ -4663,7 +4663,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ss-crystal-candy",
-        image: "img/sweet-crystal-candy.webp",
+        image: "img/ss-crystal-candy.webp",
         name: "Crystal Candy",
         aka: "Blue Black x Maple Leaf Indica x White Widow",
         bank: "Sweet Seeds",
@@ -4684,7 +4684,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ss-red-hot-cookies",
-        image: "img/sweet-red-hot-cookies.webp",
+        image: "img/ss-red-hot-cookies.webp",
         name: "Red Hot Cookies",
         aka: "Ghost OG x Thin Mint Cookies",
         bank: "Sweet Seeds",
@@ -4705,7 +4705,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ss-black-cream-auto",
-        image: "img/sweet-black-cream-auto.webp",
+        image: "img/ss-black-cream-auto.webp",
         name: "Black Cream Auto",
         aka: "Black Domina x Cream Caramel x Ruderalis",
         bank: "Sweet Seeds",
@@ -4726,7 +4726,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "ss-bigdevil-xl",
-        image: "img/sweet-big-devil-xl.webp",
+        image: "img/ss-bigdevil-xl.webp",
         name: "Big Devil XL Auto",
         aka: "Jack Herer x Big Devil",
         bank: "Sweet Seeds",
@@ -4831,7 +4831,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "phil-lemon-og-candy",
-        image: "img/philo-lemon-og-candy.webp",
+        image: "img/phil-lemon-og-candy.webp",
         name: "Lemon OG Candy",
         aka: "Lemon Skunk x OG Kush",
         bank: "Philosopher Seeds",
@@ -4852,7 +4852,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "phil-critical-sensi-star",
-        image: "img/philo-critical-sensi-star.webp",
+        image: "img/phil-critical-sensi-star.webp",
         name: "Critical Sensi Star",
         aka: "Critical Mass x Sensi Star",
         bank: "Philosopher Seeds",
@@ -4894,7 +4894,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "phil-snow-storm",
-        image: "img/philo-snow-storm.webp",
+        image: "img/phil-snow-storm.webp",
         name: "Snow Storm",
         aka: "White Widow x Power Plant",
         bank: "Philosopher Seeds",
@@ -4915,7 +4915,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "hso-liberty-haze",
-        image: "img/hso-liberty-haze-official.webp",
+        image: "img/hso-liberty-haze.webp",
         name: "Liberty Haze",
         aka: "G13 x ChemDawg 91",
         bank: "Humboldt Seed",
@@ -4936,7 +4936,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "hso-sapphire-og",
-        image: "img/hso-sapphire-og-official.webp",
+        image: "img/hso-sapphire-og.webp",
         name: "Sapphire OG",
         aka: "Blueberry x OG Kush",
         bank: "Humboldt Seed",
@@ -4957,7 +4957,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "hso-707-headband",
-        image: "img/hso-707-headband-4k.webp",
+        image: "img/hso-707-headband.webp",
         name: "707 Headband",
         aka: "OG Kush x Sour Diesel",
         bank: "Humboldt Seed",
@@ -4978,7 +4978,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "hso-blue-fire",
-        image: "img/hso-blue-fire-4k.webp",
+        image: "img/hso-blue-fire.webp",
         name: "Blue Fire",
         aka: "Blueberry x Fire OG",
         bank: "Humboldt Seed",
@@ -5062,7 +5062,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "00s-afghan-mass",
-        image: "img/oo-super-skunk.webp",
+        image: "img/00s-afghan-mass.webp",
         name: "Afghan Mass",
         aka: "Afghan x Critical Mass",
         bank: "00 Seeds Bank",
@@ -5251,7 +5251,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-wappa",
-        image: "img/paradise-wappa-flower-v2-hd.webp",
+        image: "img/paradise-wappa.webp",
         name: "Wappa",
         aka: "Big Bud Secret",
         bank: "Paradise Seeds",
@@ -5276,7 +5276,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-sensi-star",
-        image: "img/paradise-sensi-star-flower-v2-hd.webp",
+        image: "img/paradise-sensi-star.webp",
         name: "Sensi Star",
         aka: "Star of Sensi",
         bank: "Paradise Seeds",
@@ -5301,7 +5301,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-atomical-haze",
-        image: "img/paradise-atomical-haze-flower-hd.webp",
+        image: "img/paradise-atomical-haze.webp",
         name: "Atomical Haze",
         aka: "White Widow x Amnesia",
         bank: "Paradise Seeds",
@@ -5326,7 +5326,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-durga-mata",
-        image: "img/paradise-durga-mata-flower-hd.webp",
+        image: "img/paradise-durga-mata.webp",
         name: "Durga Mata",
         aka: "Landrace Indica Original",
         bank: "Paradise Seeds",
@@ -5351,7 +5351,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-space-cookies",
-        image: "img/paradise-space-cookies-flower-hd.webp",
+        image: "img/paradise-space-cookies.webp",
         name: "Space Cookies",
         aka: "Girl Scout Cookies x OG Kush Selection",
         bank: "Paradise Seeds",
@@ -5376,7 +5376,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-slipstream",
-        image: "img/paradise-slipstream-flower-hd.webp",
+        image: "img/paradise-slipstream.webp",
         name: "Slipstream",
         aka: "OG Kush x Zkittlez",
         bank: "Paradise Seeds",
@@ -5401,7 +5401,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-sunset-paradise",
-        image: "img/paradise-sunset-paradise-flower-hd.webp",
+        image: "img/paradise-sunset-paradise.webp",
         name: "Sunset Paradise",
         aka: "Zkittlez x Gelato Selection",
         bank: "Paradise Seeds",
@@ -5426,7 +5426,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-rainbow-road",
-        image: "img/paradise-rainbow-road-flower-hd.webp",
+        image: "img/paradise-rainbow-road.webp",
         name: "Rainbow Road",
         aka: "Tropical Fruits x Paradise Selection",
         bank: "Paradise Seeds",
@@ -5451,7 +5451,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-mendocino-skunk",
-        image: "img/paradise-mendocino-skunk-flower-hd.webp",
+        image: "img/paradise-mendocino-skunk.webp",
         name: "Mendocino Skunk",
         aka: "Skunk Californiana Mendocino County",
         bank: "Paradise Seeds",
@@ -5476,7 +5476,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-stromboli-auto",
-        image: "img/paradise-stromboli-auto-flower-hd.webp",
+        image: "img/paradise-stromboli-auto.webp",
         name: "Stromboli Auto",
         aka: "Autoflowering Italian Selection",
         bank: "Paradise Seeds",
@@ -5501,7 +5501,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-red-velvet-auto",
-        image: "img/paradise-red-velvet-auto-flower-hd.webp",
+        image: "img/paradise-red-velvet-auto.webp",
         name: "Red Velvet Auto",
         aka: "Purple x Indica Auto Paradise",
         bank: "Paradise Seeds",
@@ -5526,7 +5526,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-dutch-dragon",
-        image: "img/paradise-dutch-dragon-flower-hd.webp",
+        image: "img/paradise-dutch-dragon.webp",
         name: "Dutch Dragon",
         aka: "Sativa Holandesa Clásica",
         bank: "Paradise Seeds",
@@ -5551,7 +5551,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-californian-gold",
-        image: "img/paradise-californian-gold-flower-hd.webp",
+        image: "img/paradise-californian-gold.webp",
         name: "Californian Gold",
         aka: "Cali Gold Haze",
         bank: "Paradise Seeds",
@@ -5576,7 +5576,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-opium",
-        image: "img/paradise-opium-flower-hd.webp",
+        image: "img/paradise-opium.webp",
         name: "Opium",
         aka: "Indica Power Strain",
         bank: "Paradise Seeds",
@@ -5601,7 +5601,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "paradise-glowstarz",
-        image: "img/paradise-glowstarz-flower-hd.webp",
+        image: "img/paradise-glowstarz.webp",
         name: "Glowstarz",
         aka: "Tropicana Cookies x Runtz Paradise",
         bank: "Paradise Seeds",
@@ -6474,7 +6474,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "dna-blue-dream",
-        image: "img/dna-blue-dream-official.webp",
+        image: "img/dna-blue-dream.webp",
         name: "Blue Dream",
         aka: "Blueberry x Super Silver Haze",
         bank: "DNA Genetics",
@@ -6842,7 +6842,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "wls-master-kush",
-          image: "img/wls-master-kush-official.webp",
+          image: "img/wls-master-kush.webp",
           name: "Master Kush",
           aka: "High Hindu Kush Selection",
           bank: "White Label Seed Co.",
@@ -6923,7 +6923,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "wls-afghani-1",
-          image: "img/wls-afghani-1-official.webp",
+          image: "img/wls-afghani-1.webp",
           name: "Afghani #1",
           aka: "Pure Afghan Hash Plant",
           bank: "White Label Seed Co.",
@@ -8013,7 +8013,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "tfd-dame-blanche",
-        image: "img/tfd-dame-blanche-hd.webp",
+        image: "img/tfd-dame-blanche.webp",
           name: "Dame Blanche",
           aka: "White Widow x Skunk #1",
           bank: "The Flying Dutchmen",
@@ -10487,7 +10487,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "arc-dank-dough",
-          image: "img/arc-dank-dough-curedbud.webp",
+          image: "img/arc-dank-dough.webp",
           name: "Dank Dough",
           aka: "Gelato #41 x Moonbow #75",
           bank: "Archive Seed Bank",
@@ -10528,7 +10528,7 @@ export const STRAINS_DATABASE = [
       },
   {
       id: "arc-double-cross",
-          image: "img/arc-double-cross-official.webp",
+          image: "img/arc-double-cross.webp",
           name: "Double Cross",
           aka: "Moonbow #73 x Face Off OG",
           bank: "Archive Seed Bank",
@@ -11172,7 +11172,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "malakoff",
-    image: "img/malakoff-hd.webp",
+    image: "img/malakoff.webp",
     name: "Malakoff",
     aka: "Strawberry Haze x White Widow",
     bank: "Medical Seeds",
@@ -11681,7 +11681,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "00-kush",
-    image: "images/strains/00-kush.jpg",
+    image: "img/00-kush.webp",
     name: "00 Kush",
     aka: "Selección OG Kush",
     bank: "00 Seeds Bank",
@@ -11773,7 +11773,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "sweet-soma",
-    image: "images/strains/sweet-soma.jpg",
+    image: "img/sweet-soma.webp",
     name: "Sweet Soma",
     aka: "Somango x Indica Selection",
     bank: "00 Seeds Bank",
@@ -11796,7 +11796,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "gorilla-girl",
-    image: "images/strains/gorilla-girl.jpg",
+    image: "img/gorilla-girl.webp",
     name: "Gorilla Girl",
     aka: "Gorilla Glue x Girl Scout Cookies",
     bank: "Sweet Seeds",
@@ -11842,7 +11842,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "black-jack",
-    image: "images/strains/black-jack.jpg",
+    image: "img/black-jack.webp",
     name: "Black Jack",
     aka: "Black Domina x Jack Herer",
     bank: "Sweet Seeds",
@@ -11865,7 +11865,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "sweet-tai",
-    image: "images/strains/sweet-tai.jpg",
+    image: "img/sweet-tai.webp",
     name: "Sweet Tai",
     aka: "Super Tai x Early Skunk",
     bank: "Sweet Seeds",
@@ -11888,7 +11888,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "sugar-black-rose",
-    image: "images/strains/sugar-black-rose.jpg",
+    image: "img/sugar-black-rose.webp",
     name: "Sugar Black Rose",
     aka: "SBR Legend",
     bank: "Delicious Seeds",
@@ -11946,7 +11946,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "golosa",
-    image: "images/strains/golosa.jpg",
+    image: "img/golosa.webp",
     name: "Golosa",
     aka: "Delicious Dark Gem",
     bank: "Delicious Seeds",
@@ -11975,7 +11975,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "marmalate",
-    image: "images/strains/marmalate.jpg",
+    image: "img/marmalate.webp",
     name: "Marmalate",
     aka: "Critical x Lavender Marmalade",
     bank: "Delicious Seeds",
@@ -12004,7 +12004,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "cotton-candy-kush",
-    image: "images/strains/cotton-candy-kush.jpg",
+    image: "img/cotton-candy-kush.webp",
     name: "Cotton Candy Kush",
     aka: "Cotton Candy Sweet Sativa",
     bank: "Delicious Seeds",
@@ -12033,7 +12033,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "caramelo",
-    image: "images/strains/caramelo.jpg",
+    image: "img/caramelo.webp",
     name: "Caramelo",
     aka: "Lavender Selection Pure Passion",
     bank: "Delicious Seeds",
@@ -12091,7 +12091,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "unknown-kush",
-    image: "images/strains/unknown-kush.jpg",
+    image: "img/unknown-kush.webp",
     name: "Unknown Kush",
     aka: "Desconocida Kush",
     bank: "Delicious Seeds",
@@ -12120,7 +12120,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "super-silver-haze-mrnice",
-    image: "images/strains/super-silver-haze-mrnice.jpg",
+    image: "img/super-silver-haze-mrnice.webp",
     name: "Super Silver Haze",
     aka: "SSH Shantibaba Original",
     bank: "Mr. Nice Seedbank",
@@ -12149,7 +12149,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "black-widow",
-    image: "images/strains/black-widow.jpg",
+    image: "img/black-widow.webp",
     name: "Black Widow",
     aka: "The Original White Widow 1994",
     bank: "Mr. Nice Seedbank",
@@ -12178,7 +12178,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "critical-mass-mrnice",
-    image: "images/strains/critical-mass-mrnice.jpg",
+    image: "img/critical-mass-mrnice.webp",
     name: "Critical Mass",
     aka: "Big Bud Revamped by Shantibaba",
     bank: "Mr. Nice Seedbank",
@@ -12207,7 +12207,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "medicine-man",
-    image: "images/strains/medicine-man.jpg",
+    image: "img/medicine-man.webp",
     name: "Medicine Man",
     aka: "White Rhino Original",
     bank: "Mr. Nice Seedbank",
@@ -12236,7 +12236,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "nevilles-haze-mrnice",
-    image: "images/strains/nevilles-haze-mrnice.jpg",
+    image: "img/nevilles-haze-mrnice.webp",
     name: "Neville's Haze",
     aka: "The Holy Grail of Pure Hazes",
     bank: "Mr. Nice Seedbank",
@@ -12294,7 +12294,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "shark-shock",
-    image: "images/strains/shark-shock.jpg",
+    image: "img/shark-shock.webp",
     name: "Shark Shock",
     aka: "Great White Shark Original / Peacemaker",
     bank: "Mr. Nice Seedbank",
@@ -12323,7 +12323,7 @@ export const STRAINS_DATABASE = [
   },
   {
     id: "mango-haze",
-    image: "images/strains/mango-haze.jpg",
+    image: "img/mango-haze.webp",
     name: "Mango Haze",
     aka: "Tropical Haze Sister",
     bank: "Mr. Nice Seedbank",

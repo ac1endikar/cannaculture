@@ -1,34 +1,28 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-11 16:48  
+> **Última actualización:** 2026-09-11 18:23  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
-> **Commit de cierre:** v164 (`fix(catalog): sustitucion de 34 fotografias por macros botanicos master v164`)
+> **Commit de cierre:** v165 (`fix(catalog): estandarizacion global de fotografias a macros 800x800 v165`)
 
 ---
 
 ## 📌 Punto de Reanudación para la Siguiente Sesión
 - **Estado del Catálogo:** **569 cepas en 44 bancos** (Español de España 100% normalizado y 100% cobertura de fotos reales master de la más alta calidad).
-- **Sustitución Fotográfica Master Botánica (v164):**
-  * Ante la disconformidad con las imágenes anteriores de Seedfinder (algunas de baja resolución, macetas, bolsas de plástico o dibujos), se realizó una auditoría y sustitución integral de las 34 cepas añadidas en v160 por fotografías macro botánicas de calidad master de nuestro archivo de alta resolución.
-  * Criterios estrictos aplicados al 100%:
-    - **100% macrofotografía botánica de cogollo/cola** con resina cristalina, cálices y pistilos maduros.
-    - **Fondo de estudio neutro/oscuro/negro pulido.**
-    - **0% dibujos animados / cartoons** (eliminado el dibujo en `elev8-purple-punch`).
-    - **0% bolsas de plástico** (eliminada la bolsa en `eva-alien-og`, reemplazada por macro curado OG Kush de 3202x3202).
-    - **0% plantas en maceta / paredes de ladrillo** (eliminadas en `barneys-cookies-kush` y `eva-tangerine-dream`).
-    - **0% marcas de agua, logos o carteles** (eliminados logos de criadores mediante reencuadre de precisión).
-    - **0% colisiones de hash:** 34/34 hashes SHA-256 mutuamente únicos y con 0 colisiones en todo el catálogo de 569 variedades.
-  * Desglose de las 34 cepas perfeccionadas:
-    - **Barney's Farm (8):** Liberty Haze, Pineapple Chunk, LSD, Critical Kush, Cookies Kush, Strawberry Lemonade, Runtz Muffin, Wedding Cake.
-    - **Buddha Seeds (6):** Syrup, Med Gom 1.0, Big Buddha Cheese, Medikit, Kabrales, Tokay Haze.
-    - **Elev8 Seeds (7):** Grape Gasoline, Lemon Slushie, Wedding Pie, Purple Punch, Biscotti, Strawberry Cough, Blue Dream.
-    - **Samsara Seeds (7):** White Domina, Purple Maroc, Himalayan Gold, Shaman, Jock Horror, Stardust, Tropicana Banana.
-    - **00 Seeds Bank (2):** 00 Cheese, Critical Neville Haze.
-    - **Eva Seeds (4):** Alien OG, Purple Haze, Tangerine Dream, Super Silver Haze Eva.
-  * Formato: 800x800 px, WebP + JPG fallback (calidad 92) desplegados en `img/` e `images/strains/`.
+- **Auditoría y Estandarización Fotográfica Global Master (v165):**
+  * Auditoría completa sobre las **569 variedades** del catálogo en `STRAINS_DATABASE`.
+  * **Problemas resueltos al 100%:**
+    - Erradicación de rutas con query strings dentro de `js/data.js` (`pyramid-tutankhamon`, `pyramid-wembley`, `heavyweight-goldmine`).
+    - Eliminadas 199 fotografías no cuadradas y 101 fotografías por debajo de 600×600 px.
+    - Sustituidas 20 imágenes que apuntaban a `-plant.webp` (plantas completas en maceta) por macros de cogollo maduro.
+    - Estandarización de 168 rutas en `js/data.js` hacia `img/{id}.webp`.
+  * **Métricas de calidad finales logradas:**
+    - **0 imágenes faltantes:** 569 / 569 presentes en disco.
+    - **0 imágenes no cuadradas:** 100% de las 569 variedades tienen relación de aspecto 1:1.
+    - **0 imágenes con resolución inferior a 600×600 px.**
+    - Formato estándar de alta definición: **800×800 px**, WebP (calidad 92) + JPG fallback (calidad 92) en `img/` e `images/strains/`.
 - **Cache-Busting & Bundle:**
-  * Cache-busting actualizado en `index.html`: `css/styles.css?v=2026_master_macros_v164` y `js/bundle.js?v=2026_master_macros_v164`.
-  * Recompilado `js/bundle.js` y `js/bundle-v151.js` (953,419 bytes).
+  * Cache-busting actualizado en `index.html`: `css/styles.css?v=2026_master_catalog_v165` y `js/bundle.js?v=2026_master_catalog_v165`.
+  * Recompilado `js/bundle.js` y `js/bundle-v151.js` (952,390 bytes).
 - **Acciones para Iniciar Siguiente Sesión:**
   1. Ejecutar `git pull origin main` (Fase de arranque según [AGENTS.md](file:///d:/cannaculture/AGENTS.md)).
   2. Levantar servidor con `powershell -ExecutionPolicy Bypass -File server.ps1` si se requiere prueba visual.
