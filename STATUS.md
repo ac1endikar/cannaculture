@@ -1,31 +1,21 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-11 15:00  
+> **Última actualización:** 2026-09-11 15:25  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
-> **Commit de cierre:** v160 (`feat(catalog): expansion a 569 cepas + traduccion completa al espanol v160`)
+> **Commit de cierre:** v162 (`fix(encoding): erradicacion total de mojibake y actualizacion de cache-busting v162`)
 
 ---
 
 ## 📌 Punto de Reanudación para la Siguiente Sesión
-- **Estado del Catálogo:** **569 cepas en 44 bancos** (Expansión v160 completada).
-- **Expansión de Cepas v160 (+34 cepas nuevas):**
-  * **Barney's Farm (+8):** Liberty Haze, Pineapple Chunk, LSD, Critical Kush, Cookies Kush, Strawberry Lemonade, Runtz Muffin, Wedding Cake.
-  * **Buddha Seeds (+6):** Syrup, Med Gom 1.0, Big Buddha Cheese, Medikit, Kabrales, Tokay Haze.
-  * **Elev8 Seeds (+7):** Grape Gasoline, Lemon Slushie, Wedding Pie, Purple Punch, Biscotti, Strawberry Cough, Blue Dream.
-  * **Samsara Seeds (+7):** White Domina, Purple Maroc, Himalayan Gold, Shaman, Jock Horror, Stardust, Tropicana Banana.
-  * **00 Seeds Bank (+2):** 00 Cheese, Critical Neville Haze.
-  * **Eva Seeds (+4):** Alien OG, Purple Haze, Tangerine Dream, Super Silver Haze Eva.
-- **Traducción Completa al Español de España v160:**
-  * Normalización de `species` en todo `js/data.js`: `"Indica"` (223) → `"Índica"`, `"Hibrida"` (65) → `"Híbrida"`. Total: 535 cepas normalizadas.
-  * Filtro `<select id="filter-species">` actualizado: `value="Índica"` / `value="Híbrida"` sincronizados con datos.
-  * Dropdown `<select id="filter-bank">` expandido de 27 a 44 bancos, agrupados por región (España, Ámsterdam/Holanda, Norteamérica).
-  * Textos `"Indoor"` → `"Interior"`, `"Outdoor"` → `"Exterior"` en comparador de `js/app.js`.
-  * Sort options `"Rendimiento Indoor"` → `"Rendimiento Interior"` en HTML.
-  * Stats bar `#stat-total` → 569, `#stat-banks` → 44, labels corregidos (Índicas, Híbridas).
-  * Iconos añadidos para todos los bancos en `bankIcons` de `app.js` (Samsara 🌀, Elev8 ⬆️, etc.).
-  * Title `<title>` actualizado a `569 Cepas de 44 Bancos Premium`.
-  * `getCatalogStats` en `tools.js` actualizado para contar `'Índica'` correctamente.
-- **Bundle & Cache-Busting:** Recompilado a 953,419 bytes. Cache-busting actualizado a `?v=2026_es_expansion_v160`.
+- **Estado del Catálogo:** **569 cepas en 44 bancos** (Español de España 100% normalizado).
+- **Limpieza y Erradicación Total de Mojibake (v161 - v162):**
+  * Eliminadas todas las secuencias de codificación rota (mojibake) detectadas en la interfaz web (`index.html`).
+  * Restaurados todos los emojis nativos limpios: `🌿`, `📚`, `⭐`, `🎲`, `🤗`, `🧪`, `📖`, `🧬`, `🛡️`, etc., sustituyendo artefactos como `ðŸ...`, `â...`, `ï¸`.
+  * Preservadas y corregidas todas las tildes y caracteres del español de España (`Catálogo`, `Más`, `Colección`, `Genéticas`, `Fotografía Botánica`, `Ámbar`, `Ánimo`, `Índica`, `Híbrida`, `España`).
+  * 0 caracteres de control C1 (`\x80-\x9F`), 0 caracteres de reemplazo (`\ufffd`), y 0 secuencias rotas en todo el proyecto verificado por script automatizado.
+- **Cache-Busting & Bundle:**
+  * Cache-busting actualizado en `index.html`: `css/styles.css?v=2026_clean_encoding_v162` y `js/bundle.js?v=2026_clean_encoding_v162`.
+  * Recompilado `js/bundle.js` y `js/bundle-v151.js` (953,419 bytes).
 - **Acciones para Iniciar Siguiente Sesión:**
   1. Ejecutar `git pull origin main` (Fase de arranque según [AGENTS.md](file:///d:/cannaculture/AGENTS.md)).
   2. Levantar servidor con `powershell -ExecutionPolicy Bypass -File server.ps1` si se requiere prueba visual.
