@@ -1,28 +1,27 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-13 19:15  
+> **Ultima actualizacion:** 2026-09-13 19:25  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.ps1` o `server.py`)  
-> **Commit de cierre:** `fix(assets): auditoria global y reemplazo de imagenes por macros HD 800x800 v168`  
-> **Version Cache-Busting:** `?v=2026_photo_audit_global_v168`
+> **Commit de cierre:** `legal: incorporar clausula de propiedad intelectual, marcas y enlaces externos v169`  
+> **Version Cache-Busting:** `?v=2026_legal_ip_shield_v169`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
 - **Estado del Catalogo:** **595 cepas unicas en 46 bancos** - 100% fotoperiodicas, datos numericos estrictos y cobertura fotografica total.
-- **Auditoria Fotografica Global y Reemplazo HD v168 (100% COMPLETADA):**
-  * Total cepas auditadas con Pillow: **595 / 595**
-  * Total cepas con fallos iniciales detectados en Fase 1: **37 cepas** (reportadas en `audit_failures.json`)
-  * Total cepas conformes tras ejecucion de pipeline Fase 2 y Fase 3: **595 / 595 (100% de cumplimiento)**
-  * Desglose de anomalías saneadas:
-    - **30 cepas con espejo faltante en `images/strains/`**: Sincronizadas y normalizadas a 800x800 px Lanczos calidad 92 con espejo completo WebP + JPG.
-    - **2 archivos corruptos reparados**: `serious-warlock` y `serious-biddy-early` re-exportados limpiamente desde sus masters nativos.
-    - **11 cepas con resolucion baja (< 700x700 px) o rutas heredadas**: Saneadas a macros 800x800 px Lanczos (`rkiem-el-xupet-negre`, `positronics-black-widow`, `positronics-supercheese`, `aceseeds-golden-tiger`, `aceseeds-zamaldelica`, `pyramid-tutankhamon`, `ghs-kalashnikova`, `ss-sweet-amnesia-haze`, `phil-bubbas-gift`, etc.).
-    - **5 archivos con peso de thumbnail sospechoso (< 45 KB)**: Saneados a macros HD de alta resolucion con peso superior a 100 KB (`dna-la-confidential`: 105 KB, `rkiem-klementine`: 157 KB, `tfd-the-real-mccoy`: 214 KB).
-  * Estandarizacion visual estricta: 800x800 px, recorte centrado 1:1, reescalado Lanczos de alta fidelidad, exportacion WebP (q=92) y espejo JPG (q=92) en `img/` y `images/strains/`.
-  * Verificacion botanica real: 0% inteligencia artificial generativa, 0 logos de bancos o distribuidores, 0 marcas de agua, 0 recortes con fondo blanco artificial.
+- **Aviso Legal & Blindaje Informativo (v169 - 100% COMPLETADO):**
+  * Incorporada la **4ª tarjeta legal de Propiedad Intelectual & Enlaces** en el footer (`index.html`):
+    - Protección explícita de marcas registradas, nombres comerciales, logotipos y material gráfico botánico pertenecientes a sus respectivos bancos de semillas y creadores.
+    - Declaración de fines meramente divulgativos, educativos y de atribución de origen botánico para enlaces externos.
+    - Canal de notificación y retirada/rectificación inmediata para titulares de derechos.
+  * **Diseño y Maquetación Responsive de 4 Columnas (`css/styles.css`):**
+    - Grid optimizado: `grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem;`
+    - Distribución en Desktop: 4 tarjetas fluidas e idénticas en una fila completa.
+    - Distribución en Tablet (<= 900px): Cuadrícula simétrica 2x2.
+    - Distribución en Móvil (<= 580px): Columna única apilada con márgenes ergonómicos.
 - **Compilacion y Cache-Busting:**
   * Recompilado `bundle.js` con `scripts/build_bundle.py` (982,357 bytes).
-  * Cache-busting actualizado en `index.html` a `?v=2026_photo_audit_global_v168`.
+  * Cache-busting actualizado en `index.html` a `?v=2026_legal_ip_shield_v169`.
 - **Acciones para Iniciar Siguiente Sesion:**
   1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
   2. Levantar servidor local con `powershell -ExecutionPolicy Bypass -File server.ps1`.
@@ -35,4 +34,5 @@
 - **Bancos Activos:** 46
 - **Fotoperiodicas:** 100%
 - **Archivos de Imagen Activos:** 1,190+ (595 WebP + 595 JPG en doble ubicacion `img/` y `images/strains/` + enlaces de retrocompatibilidad)
+- **Tarjetas en Aviso Legal:** 4 (Sin Ánimo de Lucro, Salud Pública, Responsabilidad Legal, Propiedad Intelectual & Enlaces)
 - **Bundle Principal:** `js/bundle.js` (982 KB)
