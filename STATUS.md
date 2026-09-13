@@ -1,26 +1,27 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-13 06:00  
+> **Última actualización:** 2026-09-13 11:55  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)  
-> **Commit de cierre:** `feat(assets): descarga automatizada y normalizacion 800x800 de 32 fotos reales v166`  
-> **Versión Cache-Busting:** `?v=2026_expansion_v166_all_assets_live`
+> **Commit de cierre:** `fix(encoding): erradicacion completa de caracteres mojibake y simbolos rotos en index.html v166`  
+> **Versión Cache-Busting:** `?v=2026_expansion_v166_clean_encoding`
 
 ---
 
-## 📌 Punto de Reanudación para la Siguiente Sesión
+## Punto de Reanudación para la Siguiente Sesión
 - **Estado del Catálogo:** **595 cepas únicas (602 IDs) en 46 bancos** — 100% fotoperiódicas, datos numéricos estrictos y cobertura fotográfica total.
 - **Auditoría & Descarga Automatizada de Activos v166 (100% COMPLETADA):**
-  * ✅ **0 intervención manual y 0 IA:** Descarga automatizada multi-fuente mediante emulación de sesión Chrome y acceso a repositorios oficiales y CDNs públicos verificados.
-  * ✅ **Serious Seeds (4/4 saneadas):** Fotos corruptas sustituidas por macros master de alta resolución oficiales de Serious Seeds (`serious-white-russian`, `serious-chronic`, `serious-bubble-gum`, `serious-kali-mist`).
-  * ✅ **Kannabia Seeds (10/10 activas):** Descarga de flores reales (`kannabia-white-domina`, `kannabia-uk-cheese`, `kannabia-karibbean-mango`, `kannabia-amnesia`, `kannabia-referral-kush`, `kannabia-mimosa-dream`, `kannabia-purple-kush`, `kannabia-stonewall`, `kannabia-baby-boom`, `kannabia-russian-doll`).
-  * ✅ **Kera Seeds (10/10 activas):** Normalización de flores (`kera-california-orange`, `kera-crystal-meth`, `kera-cherry-pie-kera`, `kera-gorilla-glue-kera`, `kera-strawberry-cough-kera`, `kera-lemon-haze-kera`, `kera-critical-kush-kera`, `kera-pineapple-chunk-kera`, `kera-purple-haze-kera`, `kera-white-widow-kera`).
-  * ✅ **Ampliaciones (6/6 activas):** Flores de RQS, Sensi Seeds y ACE Seeds (`rqs-critical`, `rqs-special-kush-1`, `sensi-shiva-skunk`, `sensi-big-bud`, `aceseeds-morocco-beldia`, `aceseeds-zamal`).
-  * ✅ **Normalización visual estricta:** Todas procesadas a 800×800 px, recorte cuadrado centrado, filtro UnsharpMask y compresión WebP q=92 + JPG q=92.
-  * ✅ **Réplica dual:** Activos sincronizados tanto en `img/` como en `images/strains/`.
-  * ✅ **Auditoría de catálogo:** 0 fotos faltantes, 0 corruptas.
-- **Bundle & Despliegue:**
+  * 0 intervención manual y 0 IA: Descarga automatizada multi-fuente mediante emulación de sesión Chrome y acceso a repositorios oficiales y CDNs públicos verificados.
+  * Serious Seeds (4/4 saneadas): Fotos corruptas sustituidas por macros master de alta resolución oficiales de Serious Seeds (`serious-white-russian`, `serious-chronic`, `serious-bubble-gum`, `serious-kali-mist`).
+  * Kannabia Seeds (10/10 activas): Descarga de flores reales (`kannabia-white-domina`, `kannabia-uk-cheese`, `kannabia-karibbean-mango`, `kannabia-amnesia`, `kannabia-referral-kush`, `kannabia-mimosa-dream`, `kannabia-purple-kush`, `kannabia-stonewall`, `kannabia-baby-boom`, `kannabia-russian-doll`).
+  * Kera Seeds (10/10 activas): Normalización de flores (`kera-california-orange`, `kera-crystal-meth`, `kera-cherry-pie-kera`, `kera-gorilla-glue-kera`, `kera-strawberry-cough-kera`, `kera-lemon-haze-kera`, `kera-critical-kush-kera`, `kera-pineapple-chunk-kera`, `kera-purple-haze-kera`, `kera-white-widow-kera`).
+  * Ampliaciones (6/6 activas): Flores de RQS, Sensi Seeds y ACE Seeds (`rqs-critical`, `rqs-special-kush-1`, `sensi-shiva-skunk`, `sensi-big-bud`, `aceseeds-morocco-beldia`, `aceseeds-zamal`).
+  * Normalización visual estricta: Todas procesadas a 800×800 px, recorte cuadrado centrado, filtro UnsharpMask y compresión WebP q=92 + JPG q=92.
+  * Réplica dual: Activos sincronizados tanto en `img/` como en `images/strains/`.
+  * Auditoría de catálogo: 0 fotos faltantes, 0 corruptas.
+- **Saneamiento de Encoding:**
+  * index.html completamente saneado de mojibake, tildes y caracteres rotos.
   * Bundle recompilado: `js/bundle.js` (982,357 bytes).
-  * Cache-busting actualizado en `index.html`: `?v=2026_expansion_v166_all_assets_live`.
+  * Cache-busting actualizado en `index.html`: `?v=2026_expansion_v166_clean_encoding`.
 - **Acciones para Iniciar Siguiente Sesión:**
   1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
   2. Levantar servidor local con `powershell -ExecutionPolicy Bypass -File server.ps1`.
