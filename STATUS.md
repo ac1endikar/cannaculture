@@ -1,9 +1,40 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-13 11:55  
+> **Última actualización:** 2026-09-13 16:30  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)  
-> **Commit de cierre:** `fix(encoding): erradicacion completa de caracteres mojibake y simbolos rotos en index.html v166`  
-> **Versión Cache-Busting:** `?v=2026_expansion_v166_clean_encoding`
+> **Commit de cierre:** `fix(catalog): renovacion fotografica master de Samsara Seeds y saneamiento de 11 imagenes v167`  
+> **Versión Cache-Busting:** `?v=2026_expansion_v167_samsara_macros`
+
+---
+
+## Punto de Reanudación para la Siguiente Sesión
+- **Estado del Catálogo:** **595 cepas únicas en 46 bancos** — 100% fotoperiódicas, datos numéricos estrictos y cobertura fotográfica total.
+- **Renovación Fotográfica Master de Samsara Seeds (100% COMPLETADA):**
+  * Erradicación total de fotografías de baja calidad, tomas borrosas o no florales:
+    - `samsara-thai-stick`: Sustituida la miniatura pixelada de 50px por un macro auténtico de cogollo Thai de Humboldt Seed Organization con tricomas cristalinos (sharpness 3610.1).
+    - `samsara-spiritual-punk`: Reemplazada foto casera borrosa por el macro oficial de flor madura de Samsara Seeds con fondo oscuro y cáliz cubierto de tricomas (sharpness 4156.3).
+    - `samsara-timewarp`: Sustituida toma de hojas por macro de cola madura de Texada Timewarp (Next Generation) con tricomas violáceos (sharpness 5185.9).
+    - `samsara-romulan-grapefruit`: Reemplazada foto con flash sobreexpuesto por macro de flor Romulan de KOS (sharpness 4067.9).
+    - `samsara-killing-fields`: Sustituida toma borrosa por macro de cogollo Ultra Sour (parental oficial) de TH Seeds con fondo negro puro (sharpness 942.4).
+    - `samsara-shark-bite`: Sustituida toma amarilla por macro master oficial de flor Great White Shark de Green House Seeds (sharpness 6833.3).
+    - `samsara-sunrise-kush`: Sustituidos cogollos secos en lata por macro de flor Lemon Haze de Green House Seeds (sharpness 5046.4).
+    - `samsara-himalayan-gold`: Sustituida imagen con marca de agua 'WETCUT' por macro oficial de flor madura de Green House Seeds (sharpness 4217.7).
+    - `samsara-jock-horror`: Sustituida toma lejana de hojas por macro de flor madura púrpura de Nirvana Seeds (sharpness 5245.2).
+    - `samsara-stardust`: Sustituida imagen ruidosa por macro limpio de cola con fondo negro.
+    - `samsara-tropimango`: Sustituido archivo JPG corrupto/truncado por macro oficial de flor Somango de Soma Seeds (sharpness 4059.0).
+    - `samsara-tropicana-banana`: Instalado master oficial de alta fidelidad de Barney's Farm (sharpness 7225.3).
+  * Cobertura de pares complementarios: Generados los archivos `.jpg` complementarios que faltaban para 6 cepas en `img/` y `images/strains/`.
+- **Saneamiento de 11 Imágenes Corruptas Preexistentes:**
+  * Reparadas 11 imágenes WebP con cabecera truncada identificadas en la auditoría binaria:
+    `ths-french-cookies`, `dna-sour-tangie`, `rkiem-klementine-bud`, `dna-24k-gold`, `ths-pisthash`, `rkiem-negra-44-bud`, `rkiem-sublimator-bud`, `dna-la-confidential`, `dna-lemon-skunk`, `ths-sage-n-sour`, `y-griega`.
+- **Normalización Visual Estricta:**
+  * Todas procesadas a 800x800 px, recorte cuadrado centrado, filtro UnsharpMask y compresión WebP q=92 + JPG q=92.
+  * Réplica dual: Activos sincronizados tanto en `img/` como en `images/strains/`.
+  * Auditoría de catálogo: 0 fotos faltantes, 0 corruptas, 0 imágenes con baja resolución.
+- **Acciones para Iniciar Siguiente Sesión:**
+  1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
+  2. Levantar servidor local con `powershell -ExecutionPolicy Bypass -File server.ps1`.
+  3. Visualizar catálogo en `http://localhost:8080`.
 
 ---
 
