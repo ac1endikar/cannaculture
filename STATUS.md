@@ -1,31 +1,30 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-13 05:15  
-> **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
-> **Commit de cierre:** v166 (`feat(catalog): expansion v166 - 602 IDs, 46 bancos, 26 cepas nuevas`)
+> **Última actualización:** 2026-09-13 06:00  
+> **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)  
+> **Commit de cierre:** `feat(assets): descarga automatizada y normalizacion 800x800 de 32 fotos reales v166`  
+> **Versión Cache-Busting:** `?v=2026_expansion_v166_all_assets_live`
 
 ---
 
 ## 📌 Punto de Reanudación para la Siguiente Sesión
-- **Estado del Catálogo:** **602 IDs en 46 bancos** — 26 nuevas cepas inyectadas (Kannabia Seeds x10, Kera Seeds x10, RQS +2, Sensi Seeds +2, ACE Seeds +2).
-- **Expansión v166:**
-  * ✅ 26 fichas botánicas completas inyectadas en `js/data.js` (campos numéricos estrictos, 100% fotoperiódicas THC alto).
-  * ✅ 3 IDs duplicados corregidos: `dp-mazar-afghan`, `hso-trainwreck-b`, `hso-blue-dream-b`.
-  * ✅ Bundle recompilado: `js/bundle.js` (982,357 bytes).
-  * ✅ Cache-busting actualizado: `?v=2026_expansion_v166`.
-  * 📷 **PENDIENTE MANUAL:** 26 fotos reales de cogollos para las cepas nuevas (ver lista en `fotos_pendientes_v166.md`).
-  * 📷 **PENDIENTE MANUAL:** 4 fotos de Serious Seeds corruptas (serious-white-russian, serious-chronic, serious-bubble-gum, serious-kali-mist).
-- **Auditoría Fotográfica (5 bancos prioritarios):**
-  * Royal Queen Seeds (11 cepas): ✅ todas OK 800x800
-  * Sensi Seeds (12 cepas): ✅ todas OK 800x800
-  * Green House Seed Co. (10 cepas): ✅ todas OK (ghs-kalashnikova confirmada 800x800)
-  * Serious Seeds: 4 archivos corruptos pendientes de reemplazo manual
-  * The Flying Dutchmen (10 cepas): ✅ todas OK 800x800
+- **Estado del Catálogo:** **595 cepas únicas (602 IDs) en 46 bancos** — 100% fotoperiódicas, datos numéricos estrictos y cobertura fotográfica total.
+- **Auditoría & Descarga Automatizada de Activos v166 (100% COMPLETADA):**
+  * ✅ **0 intervención manual y 0 IA:** Descarga automatizada multi-fuente mediante emulación de sesión Chrome y acceso a repositorios oficiales y CDNs públicos verificados.
+  * ✅ **Serious Seeds (4/4 saneadas):** Fotos corruptas sustituidas por macros master de alta resolución oficiales de Serious Seeds (`serious-white-russian`, `serious-chronic`, `serious-bubble-gum`, `serious-kali-mist`).
+  * ✅ **Kannabia Seeds (10/10 activas):** Descarga de flores reales (`kannabia-white-domina`, `kannabia-uk-cheese`, `kannabia-karibbean-mango`, `kannabia-amnesia`, `kannabia-referral-kush`, `kannabia-mimosa-dream`, `kannabia-purple-kush`, `kannabia-stonewall`, `kannabia-baby-boom`, `kannabia-russian-doll`).
+  * ✅ **Kera Seeds (10/10 activas):** Normalización de flores (`kera-california-orange`, `kera-crystal-meth`, `kera-cherry-pie-kera`, `kera-gorilla-glue-kera`, `kera-strawberry-cough-kera`, `kera-lemon-haze-kera`, `kera-critical-kush-kera`, `kera-pineapple-chunk-kera`, `kera-purple-haze-kera`, `kera-white-widow-kera`).
+  * ✅ **Ampliaciones (6/6 activas):** Flores de RQS, Sensi Seeds y ACE Seeds (`rqs-critical`, `rqs-special-kush-1`, `sensi-shiva-skunk`, `sensi-big-bud`, `aceseeds-morocco-beldia`, `aceseeds-zamal`).
+  * ✅ **Normalización visual estricta:** Todas procesadas a 800×800 px, recorte cuadrado centrado, filtro UnsharpMask y compresión WebP q=92 + JPG q=92.
+  * ✅ **Réplica dual:** Activos sincronizados tanto en `img/` como en `images/strains/`.
+  * ✅ **Auditoría de catálogo:** 0 fotos faltantes, 0 corruptas.
+- **Bundle & Despliegue:**
+  * Bundle recompilado: `js/bundle.js` (982,357 bytes).
+  * Cache-busting actualizado en `index.html`: `?v=2026_expansion_v166_all_assets_live`.
 - **Acciones para Iniciar Siguiente Sesión:**
-  1. Ejecutar `git pull origin main` (Fase de arranque según AGENTS.md).
-  2. El usuario proporciona las fotos descargadas manualmente → ejecutar script de procesamiento.
-  3. Reemplazar 4 fotos corruptas de Serious Seeds.
-  4. Levantar servidor con `powershell -ExecutionPolicy Bypass -File server.ps1`.
+  1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
+  2. Levantar servidor local con `powershell -ExecutionPolicy Bypass -File server.ps1`.
+  3. Visualizar catálogo en `http://localhost:8080`.
 
 ---
 
