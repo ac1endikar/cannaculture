@@ -1,0 +1,575 @@
+[
+  {
+    "id": "rkiem-muse",
+    "name": "Muse",
+    "bank": "R-Kiem Seeds",
+    "image": "img/rkiem-muse-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\rkiem-muse-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\rkiem-muse-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "rkiem-eli",
+    "name": "Eli",
+    "bank": "R-Kiem Seeds",
+    "image": "img/rkiem-eli-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\rkiem-eli-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\rkiem-eli-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "rkiem-2y2",
+    "name": "2y2",
+    "bank": "R-Kiem Seeds",
+    "image": "img/rkiem-2y2-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\rkiem-2y2-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\rkiem-2y2-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "rkiem-el-xupet-negre",
+    "name": "El Xupet Negre",
+    "bank": "R-Kiem Seeds",
+    "image": "img/rkiem-el-xupet-negre-bud.webp",
+    "issues": [
+      {
+        "path": "img\\\\rkiem-el-xupet-negre-bud.webp",
+        "type": "low_resolution",
+        "detail": "Dimensions 600x600 < 700x700"
+      },
+      {
+        "path": "images\\\\strains\\\\rkiem-el-xupet-negre-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\rkiem-el-xupet-negre-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "rkiem-klementine",
+    "name": "Klementine",
+    "bank": "R-Kiem Seeds",
+    "image": "img/rkiem-klementine-bud.webp",
+    "issues": [
+      {
+        "path": "img\\\\rkiem-klementine-bud.webp",
+        "type": "suspicious_thumbnail",
+        "detail": "File size too small: 22 KB (< 45 KB)"
+      },
+      {
+        "path": "images\\\\strains\\\\rkiem-klementine-bud.webp",
+        "type": "suspicious_thumbnail",
+        "detail": "File size too small: 22 KB (< 45 KB)"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "positronics-critical-47",
+    "name": "Critical 47",
+    "bank": "Positronics Seeds",
+    "image": "img/positronics-critical-47-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\positronics-critical-47-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\positronics-critical-47-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "positronics-purple-haze",
+    "name": "Purple Haze #1",
+    "bank": "Positronics Seeds",
+    "image": "img/positronics-purple-haze-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\positronics-purple-haze-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\positronics-purple-haze-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "positronics-black-widow",
+    "name": "Black Widow",
+    "bank": "Positronics Seeds",
+    "image": "img/positronics-black-widow-bud.webp",
+    "issues": [
+      {
+        "path": "img\\\\positronics-black-widow-bud.webp",
+        "type": "low_resolution",
+        "detail": "Dimensions 600x600 < 700x700"
+      },
+      {
+        "path": "images\\\\strains\\\\positronics-black-widow-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\positronics-black-widow-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "positronics-supercheese",
+    "name": "Supercheese",
+    "bank": "Positronics Seeds",
+    "image": "img/positronics-supercheese-bud.webp",
+    "issues": [
+      {
+        "path": "img\\\\positronics-supercheese-bud.webp",
+        "type": "low_resolution",
+        "detail": "Dimensions 600x600 < 700x700"
+      },
+      {
+        "path": "images\\\\strains\\\\positronics-supercheese-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\positronics-supercheese-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "aceseeds-golden-tiger",
+    "name": "Golden Tiger",
+    "bank": "ACE Seeds",
+    "image": "img/aceseeds-golden-tiger-bud.webp",
+    "issues": [
+      {
+        "path": "img\\\\aceseeds-golden-tiger-bud.webp",
+        "type": "low_resolution",
+        "detail": "Dimensions 643x643 < 700x700"
+      },
+      {
+        "path": "images\\\\strains\\\\aceseeds-golden-tiger-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\aceseeds-golden-tiger-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "aceseeds-zamaldelica",
+    "name": "Zamaldelica",
+    "bank": "ACE Seeds",
+    "image": "img/aceseeds-zamaldelica-bud.webp",
+    "issues": [
+      {
+        "path": "img\\\\aceseeds-zamaldelica-bud.webp",
+        "type": "low_resolution",
+        "detail": "Dimensions 600x600 < 700x700"
+      },
+      {
+        "path": "images\\\\strains\\\\aceseeds-zamaldelica-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\aceseeds-zamaldelica-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "aceseeds-super-malawi-haze",
+    "name": "Super Malawi Haze",
+    "bank": "ACE Seeds",
+    "image": "img/aceseeds-super-malawi-haze-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\aceseeds-super-malawi-haze-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\aceseeds-super-malawi-haze-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "aceseeds-congo",
+    "name": "Congo",
+    "bank": "ACE Seeds",
+    "image": "img/aceseeds-congo-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\aceseeds-congo-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\aceseeds-congo-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "pyramid-tutankhamon",
+    "name": "Tutankhamon",
+    "bank": "Pyramid Seeds",
+    "image": "img/pyramid-tutankhamon-bud.webp",
+    "issues": [
+      {
+        "path": "img\\\\pyramid-tutankhamon-bud.webp",
+        "type": "low_resolution",
+        "detail": "Dimensions 600x600 < 700x700"
+      },
+      {
+        "path": "images\\\\strains\\\\pyramid-tutankhamon-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\pyramid-tutankhamon-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "pyramid-nefertiti",
+    "name": "Nefertiti",
+    "bank": "Pyramid Seeds",
+    "image": "img/pyramid-nefertiti-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\pyramid-nefertiti-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\pyramid-nefertiti-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "pyramid-kryptonite",
+    "name": "Kryptonite",
+    "bank": "Pyramid Seeds",
+    "image": "img/pyramid-kryptonite-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\pyramid-kryptonite-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\pyramid-kryptonite-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "pyramid-wembley",
+    "name": "Wembley",
+    "bank": "Pyramid Seeds",
+    "image": "img/pyramid-wembley-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\pyramid-wembley-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\pyramid-wembley-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "blimburn-girl-scout-cookies",
+    "name": "Girl Scout Cookies",
+    "bank": "Blimburn Seeds",
+    "image": "img/blimburn-girl-scout-cookies-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\blimburn-girl-scout-cookies-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\blimburn-girl-scout-cookies-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "blimburn-green-crack",
+    "name": "Green Crack",
+    "bank": "Blimburn Seeds",
+    "image": "img/blimburn-green-crack-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\blimburn-green-crack-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\blimburn-green-crack-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "blimburn-guanabana",
+    "name": "Guanabana",
+    "bank": "Blimburn Seeds",
+    "image": "img/blimburn-guanabana-bud-real.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\blimburn-guanabana-bud-real.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\blimburn-guanabana-bud-real.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "blimburn-chocolopez",
+    "name": "Chocolopez",
+    "bank": "Blimburn Seeds",
+    "image": "img/blimburn-chocolopez-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\blimburn-chocolopez-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\blimburn-chocolopez-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "blimburn-bcn-diesel",
+    "name": "Bcn Diesel",
+    "bank": "Blimburn Seeds",
+    "image": "img/blimburn-bcn-diesel-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\blimburn-bcn-diesel-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\blimburn-bcn-diesel-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "heavyweight-goldmine",
+    "name": "Goldmine",
+    "bank": "Heavyweight Seeds",
+    "image": "img/heavyweight-goldmine-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\heavyweight-goldmine-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\heavyweight-goldmine-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "heavyweight-monster-profit",
+    "name": "Monster Profit",
+    "bank": "Heavyweight Seeds",
+    "image": "img/heavyweight-monster-profit-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\heavyweight-monster-profit-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\heavyweight-monster-profit-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "heavyweight-superb-og",
+    "name": "Superb OG",
+    "bank": "Heavyweight Seeds",
+    "image": "img/heavyweight-superb-og-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\heavyweight-superb-og-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\heavyweight-superb-og-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "sensi-black-domina",
+    "name": "Black Domina",
+    "bank": "Sensi Seeds",
+    "image": "img/sensi-black-domina-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\sensi-black-domina-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\sensi-black-domina-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "sensi-sensi-amnesia",
+    "name": "Sensi Amnesia",
+    "bank": "Sensi Seeds",
+    "image": "img/sensi-sensi-amnesia-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\sensi-sensi-amnesia-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\sensi-sensi-amnesia-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "ghs-super-lemon-haze",
+    "name": "Super Lemon Haze",
+    "bank": "Green House Seed Co.",
+    "image": "img/ghs-super-lemon-haze-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\ghs-super-lemon-haze-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\ghs-super-lemon-haze-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "ghs-white-widow",
+    "name": "White Widow",
+    "bank": "Green House Seed Co.",
+    "image": "img/ghs-white-widow-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\ghs-white-widow-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\ghs-white-widow-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "ghs-great-white-shark",
+    "name": "Great White Shark",
+    "bank": "Green House Seed Co.",
+    "image": "img/ghs-great-white-shark-bud.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\ghs-great-white-shark-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\ghs-great-white-shark-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "ghs-kalashnikova",
+    "name": "Kalashnikova",
+    "bank": "Green House Seed Co.",
+    "image": "img/ghs-kalashnikova-bud.webp",
+    "issues": [
+      {
+        "path": "img\\\\ghs-kalashnikova-bud.webp",
+        "type": "low_resolution",
+        "detail": "Dimensions 600x600 < 700x700"
+      },
+      {
+        "path": "images\\\\strains\\\\ghs-kalashnikova-bud.webp",
+        "type": "missing_file",
+        "detail": "File not found: images\\\\strains\\\\ghs-kalashnikova-bud.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "serious-warlock",
+    "name": "Warlock",
+    "bank": "Serious Seeds",
+    "image": "img/serious-warlock.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\serious-warlock.webp",
+        "type": "corrupt_file",
+        "detail": "Corrupted or unreadable image: cannot identify image file images/strains/serious-warlock.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "serious-biddy-early",
+    "name": "Biddy Early",
+    "bank": "Serious Seeds",
+    "image": "img/serious-biddy-early.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\serious-biddy-early.webp",
+        "type": "corrupt_file",
+        "detail": "Corrupted or unreadable image: cannot identify image file images/strains/serious-biddy-early.webp"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "ss-sweet-amnesia-haze",
+    "name": "Sweet Amnesia Haze",
+    "bank": "Sweet Seeds",
+    "image": "img/sweet-amnesia-haze.webp",
+    "issues": [
+      {
+        "path": "img\\\\sweet-amnesia-haze.webp",
+        "type": "low_resolution",
+        "detail": "Dimensions 600x600 < 700x700"
+      },
+      {
+        "path": "images\\\\strains\\\\sweet-amnesia-haze.webp",
+        "type": "low_resolution",
+        "detail": "Dimensions 600x600 < 700x700"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "phil-bubbas-gift",
+    "name": "Bubba",
+    "bank": "Philosopher Seeds",
+    "image": "img/philo-bubbas-gift.webp",
+    "issues": [
+      {
+        "path": "img\\\\philo-bubbas-gift.webp",
+        "type": "low_resolution",
+        "detail": "Dimensions 600x600 < 700x700"
+      },
+      {
+        "path": "images\\\\strains\\\\philo-bubbas-gift.webp",
+        "type": "low_resolution",
+        "detail": "Dimensions 600x600 < 700x700"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "dna-la-confidential",
+    "name": "LA Confidential",
+    "bank": "DNA Genetics",
+    "image": "img/dna-la-confidential.webp",
+    "issues": [
+      {
+        "path": "img\\\\dna-la-confidential.webp",
+        "type": "suspicious_thumbnail",
+        "detail": "File size too small: 23 KB (< 45 KB)"
+      },
+      {
+        "path": "images\\\\strains\\\\dna-la-confidential.webp",
+        "type": "suspicious_thumbnail",
+        "detail": "File size too small: 23 KB (< 45 KB)"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  },
+  {
+    "id": "tfd-the-real-mccoy",
+    "name": "The Real McCoy",
+    "bank": "The Flying Dutchmen",
+    "image": "img/tfd-the-real-mccoy.webp",
+    "issues": [
+      {
+        "path": "images\\\\strains\\\\tfd-the-real-mccoy.webp",
+        "type": "suspicious_thumbnail",
+        "detail": "File size too small: 40 KB (< 45 KB)"
+      }
+    ],
+    "status_v168": "RESOLVED (800x800 Lanczos q=92 mirrored WebP + JPG)"
+  }
+]
