@@ -1,63 +1,31 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Última actualización:** 2026-09-11 18:23  
+> **Última actualización:** 2026-09-13 05:15  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado vía `server.ps1` o `server.py`)
-> **Commit de cierre:** v165 (`fix(catalog): estandarizacion global de fotografias a macros 800x800 v165`)
+> **Commit de cierre:** v166 (`feat(catalog): expansion v166 - 602 IDs, 46 bancos, 26 cepas nuevas`)
 
 ---
 
 ## 📌 Punto de Reanudación para la Siguiente Sesión
-- **Estado del Catálogo:** **569 cepas en 44 bancos** (Español de España 100% normalizado y 100% cobertura de fotos reales master de la más alta calidad).
-- **Auditoría y Estandarización Fotográfica Global Master (v165):**
-  * Auditoría completa sobre las **569 variedades** del catálogo en `STRAINS_DATABASE`.
-  * **Problemas resueltos al 100%:**
-    - Erradicación de rutas con query strings dentro de `js/data.js` (`pyramid-tutankhamon`, `pyramid-wembley`, `heavyweight-goldmine`).
-    - Eliminadas 199 fotografías no cuadradas y 101 fotografías por debajo de 600×600 px.
-    - Sustituidas 20 imágenes que apuntaban a `-plant.webp` (plantas completas en maceta) por macros de cogollo maduro.
-    - Estandarización de 168 rutas en `js/data.js` hacia `img/{id}.webp`.
-  * **Métricas de calidad finales logradas:**
-    - **0 imágenes faltantes:** 569 / 569 presentes en disco.
-    - **0 imágenes no cuadradas:** 100% de las 569 variedades tienen relación de aspecto 1:1.
-    - **0 imágenes con resolución inferior a 600×600 px.**
-    - Formato estándar de alta definición: **800×800 px**, WebP (calidad 92) + JPG fallback (calidad 92) en `img/` e `images/strains/`.
-- **Cache-Busting & Bundle:**
-  * Cache-busting actualizado en `index.html`: `css/styles.css?v=2026_master_catalog_v165` y `js/bundle.js?v=2026_master_catalog_v165`.
-  * Recompilado `js/bundle.js` y `js/bundle-v151.js` (952,390 bytes).
+- **Estado del Catálogo:** **602 IDs en 46 bancos** — 26 nuevas cepas inyectadas (Kannabia Seeds x10, Kera Seeds x10, RQS +2, Sensi Seeds +2, ACE Seeds +2).
+- **Expansión v166:**
+  * ✅ 26 fichas botánicas completas inyectadas en `js/data.js` (campos numéricos estrictos, 100% fotoperiódicas THC alto).
+  * ✅ 3 IDs duplicados corregidos: `dp-mazar-afghan`, `hso-trainwreck-b`, `hso-blue-dream-b`.
+  * ✅ Bundle recompilado: `js/bundle.js` (982,357 bytes).
+  * ✅ Cache-busting actualizado: `?v=2026_expansion_v166`.
+  * 📷 **PENDIENTE MANUAL:** 26 fotos reales de cogollos para las cepas nuevas (ver lista en `fotos_pendientes_v166.md`).
+  * 📷 **PENDIENTE MANUAL:** 4 fotos de Serious Seeds corruptas (serious-white-russian, serious-chronic, serious-bubble-gum, serious-kali-mist).
+- **Auditoría Fotográfica (5 bancos prioritarios):**
+  * Royal Queen Seeds (11 cepas): ✅ todas OK 800x800
+  * Sensi Seeds (12 cepas): ✅ todas OK 800x800
+  * Green House Seed Co. (10 cepas): ✅ todas OK (ghs-kalashnikova confirmada 800x800)
+  * Serious Seeds: 4 archivos corruptos pendientes de reemplazo manual
+  * The Flying Dutchmen (10 cepas): ✅ todas OK 800x800
 - **Acciones para Iniciar Siguiente Sesión:**
-  1. Ejecutar `git pull origin main` (Fase de arranque según [AGENTS.md](file:///d:/cannaculture/AGENTS.md)).
-  2. Levantar servidor con `powershell -ExecutionPolicy Bypass -File server.ps1` si se requiere prueba visual.
-  3. Abordar el siguiente requerimiento que indique el usuario.
-
----
-
-    1. `canuk-banana-cream` (Canuk Seeds) — Macro de cogollo morado ultra resinoso.
-    2. `eleven-roses` (Delicious Seeds) — Cáliz oscuro Black Rose con tricomas cristalinos.
-    3. `critical-kali-mist` (Delicious Seeds) — Macro extremo de glándulas de resina y pistilos ambarinos sobre fondo oscuro.
-    4. `delicious-la-diva` (Delicious Seeds) — Cola Chitral Kush violeta/verde sobre fondo negro.
-    5. `sensi-early-skunk` (Sensi Seeds) — Cola Skunk resinosa verde vibrante sobre fondo negro.
-    6. `early-skunk-mrnice` (Mr. Nice Seedbank) — Cola Skunk #1 clásica, densa y escarchada sobre fondo negro (100% independiente de Sensi, sin duplicado).
-    7. `mrnice-g13-haze` (Mr. Nice Seedbank) — Cola Haze dorada cristalina sobre fondo negro puro (sin logos ni mallas).
-    8. `mrnice-ash` (Mr. Nice Seedbank) — Enorme cola Índica afgana resplandeciente sobre fondo negro (cero guantes/manos).
-    9. `mrnice-devil` (Mr. Nice Seedbank) — Cola escarchada Devil sobre fondo negro (sin manos ni logos).
-    10. `philo-twisted-kush` (Philosopher Seeds) — Macro de tricomas dorados y cálices densos Kush.
-    11. `hso-chemdawg` (Humboldt Seed Org) — Cola Chemdawg cristalina con cobertura densa de tricomas.
-    12. `dp-frisian-dew` (Dutch Passion) — Espectacular cola púrpura de exterior con gruesa capa de resina (sin marcas de agua).
-    13. `samsara-spiritual-punk` (Samsara Seeds) — Macro ultra-cercano de cabezas de tricomas y pistilos ámbar Northern Lights.
-    14. `samsara-tropimango` (Samsara Seeds) — Cogollo Somango blanco de tricomas sobre fondo neutro.
-    15. `samsara-thai-stick` (Samsara Seeds) — Floración satíva tailandesa pura (espigas cristalinas sobre fondo oscuro).
-    16. `samsara-romulan-grapefruit` (Samsara Seeds) — Cogollo cónico denso y resinoso sobre fondo oscuro.
-    17. `samsara-killing-fields` (Samsara Seeds) — Macro púrpura oscuro saturado de tricomas sobre fondo negro.
-    18. `samsara-shark-bite` (Samsara Seeds) — Enorme cogollo Great White Shark blanco de resina (sin logos).
-    19. `samsara-sunrise-kush` (Samsara Seeds) — Macro de cogollo curado Kush denso y resinoso.
-    20. `samsara-timewarp` (Samsara Seeds) — Cola masiva y cristalina Skunk sobre fondo negro.
-  * **0% fotos pésimas:** Erradicados envoltorios/cajas, dibujos animados/cartoons, macetas, mallas scrog, manos/guantes y marcas de agua.
-  * **0% duplicados de hash:** 20/20 hashes SHA-256 únicos sin colisión con ninguna cepa del catálogo.
-  * **Procesamiento de imagen:** Formato WebP (800x800 px, 1:1 square crop, Lanczos resampling) instalado en `img/{id}.webp` e `images/strains/{id}.webp`, con fallback `.jpg`.
-- **Bundle & Cache-Busting:** Recompilado a 913,009 bytes (`js/bundle.js` y `js/bundle-v151.js`). Cache-busting actualizado a `?v=2026_master_macros_v159`.
-- **Acciones para Iniciar Siguiente Sesión:**
-  1. Ejecutar `git pull origin main` (Fase de arranque según [AGENTS.md](file:///d:/cannaculture/AGENTS.md)).
-  2. Levantar servidor con `powershell -ExecutionPolicy Bypass -File server.ps1` si se requiere prueba visual.
-  3. Abordar el siguiente requerimiento que indique el usuario.
+  1. Ejecutar `git pull origin main` (Fase de arranque según AGENTS.md).
+  2. El usuario proporciona las fotos descargadas manualmente → ejecutar script de procesamiento.
+  3. Reemplazar 4 fotos corruptas de Serious Seeds.
+  4. Levantar servidor con `powershell -ExecutionPolicy Bypass -File server.ps1`.
 
 ---
 
