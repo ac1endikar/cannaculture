@@ -1,27 +1,30 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-13 19:25  
+> **Ultima actualizacion:** 2026-09-14 11:00  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.ps1` o `server.py`)  
-> **Commit de cierre:** `legal: incorporar clausula de propiedad intelectual, marcas y enlaces externos v169`  
-> **Version Cache-Busting:** `?v=2026_legal_ip_shield_v169`
+> **Commit de cierre:** `feat(catalog): hito 600 cepas - adicion de 5 geneticas elite y macros HD v170`  
+> **Version Cache-Busting:** `?v=2026_milestone_600_strains_v170`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
-- **Estado del Catalogo:** **595 cepas unicas en 46 bancos** - 100% fotoperiodicas, datos numericos estrictos y cobertura fotografica total.
-- **Aviso Legal & Blindaje Informativo (v169 - 100% COMPLETADO):**
-  * Incorporada la **4ª tarjeta legal de Propiedad Intelectual & Enlaces** en el footer (`index.html`):
-    - Protección explícita de marcas registradas, nombres comerciales, logotipos y material gráfico botánico pertenecientes a sus respectivos bancos de semillas y creadores.
-    - Declaración de fines meramente divulgativos, educativos y de atribución de origen botánico para enlaces externos.
-    - Canal de notificación y retirada/rectificación inmediata para titulares de derechos.
-  * **Diseño y Maquetación Responsive de 4 Columnas (`css/styles.css`):**
-    - Grid optimizado: `grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem;`
-    - Distribución en Desktop: 4 tarjetas fluidas e idénticas en una fila completa.
-    - Distribución en Tablet (<= 900px): Cuadrícula simétrica 2x2.
-    - Distribución en Móvil (<= 580px): Columna única apilada con márgenes ergonómicos.
+- **Estado del Catalogo:** **Hito 600 cepas unicas en 46 bancos mundiales alcanzado (100% fotoperiodicas, datos numericos estrictos y cobertura fotografica total).**
+- **Expansión Final Botánica (v170 - 100% COMPLETADA):**
+  * Verificación previa realizada: base de datos contaba con exactamente 595 cepas antes de la inserción.
+  * Actualización in-situ de especificaciones para `dna-holy-grail-kush` (Holy Grail Kush - DNA Genetics, 27% THC, híbrida) y `ripper-kmintz` (Kmintz - Ripper Seeds, 25% THC, índica).
+  * Inyección de 5 nuevas genéticas de élite fotoperiódicas con perfiles botánicos completos:
+    1. `barneys-biscotti-mintz` (Biscotti Mintz - Barney's Farm | Índica 80% / 20% Sativa | 26% THC | Limoneno | Biscotti x Mintz).
+    2. `sweet-green-poison-f1` (Green Poison F1 Fast - Sweet Seeds | Índica 70% / 30% Sativa | 20% THC | Mirceno | Floración 42 días).
+    3. `sensi-silver-haze` (Silver Haze - Sensi Seeds | Sativa 75% / 25% Índica | 22% THC | Terpinoleno | Silver Pearl x Haze).
+    4. `dna-kandy-kush` (Kandy Kush - DNA Genetics | Índica 60% / 40% Sativa | 22% THC | Limoneno | OG Kush x Trainwreck).
+    5. `ripper-chempie` (Chempie - Ripper Seeds | Híbrida 60% / 40% | 26% THC | Cariofileno | Cherry Pie x Chemdawg).
+  * Estandarización visual estricta: macros florales reales en alta resolución descargados desde CDNs oficiales (0% IA, 0% packaging, 0% logos).
+  * Recorte centrado 1:1, reescalado Lanczos a 800x800 píxeles, exportación WebP (q=92) y espejo JPEG (q=92) en `img/` y `images/strains/`.
+  * Verificación técnica sin excepciones: 0 archivos corruptos, 0 archivos con peso inferior a 45 KB (pesos entre 88 KB y 290 KB), 0 IDs duplicados.
 - **Compilacion y Cache-Busting:**
-  * Recompilado `bundle.js` con `scripts/build_bundle.py` (982,357 bytes).
-  * Cache-busting actualizado en `index.html` a `?v=2026_legal_ip_shield_v169`.
+  * Recompilado `bundle.js` con `scripts/build_bundle.py` (990,830 bytes).
+  * Cache-busting actualizado en `index.html` a `?v=2026_milestone_600_strains_v170`.
+  * Titulares y contadores en DOM actualizados al hito de 600 cepas.
 - **Acciones para Iniciar Siguiente Sesion:**
   1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
   2. Levantar servidor local con `powershell -ExecutionPolicy Bypass -File server.ps1`.
@@ -30,9 +33,9 @@
 ---
 
 ## Metricas del Catalogo
-- **Variedades Totales:** 595
+- **Variedades Totales:** 600
 - **Bancos Activos:** 46
 - **Fotoperiodicas:** 100%
-- **Archivos de Imagen Activos:** 1,190+ (595 WebP + 595 JPG en doble ubicacion `img/` y `images/strains/` + enlaces de retrocompatibilidad)
+- **Archivos de Imagen Activos:** 1,200+ (600 WebP + 600 JPG en doble ubicacion `img/` y `images/strains/` + enlaces de retrocompatibilidad)
 - **Tarjetas en Aviso Legal:** 4 (Sin Ánimo de Lucro, Salud Pública, Responsabilidad Legal, Propiedad Intelectual & Enlaces)
-- **Bundle Principal:** `js/bundle.js` (982 KB)
+- **Bundle Principal:** `js/bundle.js` (990 KB)
