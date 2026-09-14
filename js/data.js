@@ -145,13 +145,6 @@ export const STRAINS_DATABASE = [
         visualColor: "linear-gradient(135deg, #EC4899 0%, #10B981 100%)",
         bgPattern: "radial-gradient(circle, rgba(236,72,153,0.2) 0%, transparent 70%)"
       },
-        flavors: ["Caramelo de Frutas", "Menta Fresca", "Dulce Cítrico"],
-        effects: ["Relajación Corporal", "Euforia Suave", "Bienestar"],
-        activities: ["relax_sleep", "social", "gaming"],
-        description: "Obra maestra premiada (1er Spannabis Champions Cup 2020). Cruce entre Zkittlez y Kush Mints: densidad de resina extrema, colores violetas profundos y un sabor a caramelo frutal mentolado inconfundible.",
-        visualColor: "linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)",
-        bgPattern: "radial-gradient(circle, rgba(139,92,246,0.2) 0%, transparent 70%)"
-      },
   {
       id: "ripper-zombie-kush",
         image: "img/ripper-zombie-kush.webp",
@@ -6104,13 +6097,6 @@ export const STRAINS_DATABASE = [
         effects: ["Euforia Sedante", "Alivio Corporal", "Bienestar Profundo"],
         activities: ["relax_sleep", "music"],
         description: "El Santo Grial de las variedades de DNA Genetics: cruce magistral entre Kosher Kush y The OG #18. Ganadora de múltiples Cannabis Cups, produce flores densas de potencia estratosférica (27% THC) con un fondo inconfundible de pino resinoso y combustible Kush.",
-        visualColor: "linear-gradient(135deg, #D4AF37 0%, #92400E 100%)",
-        bgPattern: "radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%)"
-      },
-        flavors: ["Kush Especiado", "Pimienta Negra", "Diesel Dulce"],
-        effects: ["Euforia Sedante", "Alivio Corporal", "Bienestar Profundo"],
-        activities: ["relax_sleep", "music"],
-        description: "El Santo Grial de las índicas: un cruce entre las dos mejores genéticas de DNA. Combina la potencia demoledora de Kosher Kush con la estructura productiva de The OG #18. Ganadora de múltiples premios, ofrece un viaje de euforia que desemboca en relajación total.",
         visualColor: "linear-gradient(135deg, #D4AF37 0%, #92400E 100%)",
         bgPattern: "radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%)"
       },
