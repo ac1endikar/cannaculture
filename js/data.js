@@ -484,27 +484,6 @@ export const STRAINS_DATABASE = [
         bgPattern: "radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%)"
       },
   {
-      id: "bf-runtz-muffin",
-        image: "img/bf-runtz-muffin.webp",
-        name: "Runtz Muffin",
-        aka: "Zkittlez x Gelato x Orange Punch",
-        bank: "Barney's Farm",
-        species: "Índica",
-        thc: 29, cbd: 0.2,
-        yieldIndoor: 600, yieldOutdoor: 1000,
-        floweringDays: 60, rating: 4.9, reviewsCount: 650,
-        genetics: "Zkittlez x Gelato #33 x Orange Punch",
-        origin: "Ámsterdam",
-        dominantTerpene: "caryophyllene",
-        terpenes: { caryophyllene: 45, limonene: 35, linalool: 20 },
-        flavors: ["Tarta de Maracuyá", "Piña Dulce", "Caramelo Cremoso"],
-        effects: ["Relax Físico Profundo", "Euforia Mental", "Imaginación"],
-        activities: ["relax_sleep", "creativity"],
-        description: "Postre cannábico premium. Triple genética Zkittlez-Gelato-Orange Punch en perfecta armonía. Sabor tropical cremoso a pastel de frutas exóticas y un subidón potente que abraza el cuerpo.",
-        visualColor: "linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%)",
-        bgPattern: "radial-gradient(circle, rgba(236,72,153,0.2) 0%, transparent 70%)"
-      },
-  {
       id: "bf-dos-si-dos-33",
         image: "img/bf-dos-si-dos-33.webp",
         name: "Dos Si Dos 33",
@@ -566,27 +545,6 @@ export const STRAINS_DATABASE = [
         description: "Ganadora del High Times Cannabis Cup 2003. Pura Sativa asiática con un efecto alegre y eufórico que eleva el ánimo durante horas. El nombre no miente.",
         visualColor: "linear-gradient(135deg, #F59E0B 0%, #EC4899 100%)",
         bgPattern: "radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%)"
-      },
-  {
-      id: "bf-critical-kush",
-        image: "img/bf-critical-kush.webp",
-        name: "Critical Kush",
-        aka: "Critical Mass x OG Kush",
-        bank: "Barney's Farm",
-        species: "Índica",
-        thc: 25, cbd: 0.2,
-        yieldIndoor: 600, yieldOutdoor: 1000,
-        floweringDays: 56, rating: 4.9, reviewsCount: 890,
-        genetics: "Critical Mass x OG Kush",
-        origin: "Ámsterdam / California",
-        dominantTerpene: "myrcene",
-        terpenes: { myrcene: 50, caryophyllene: 30, linalool: 20 },
-        flavors: ["OG Terroso", "Pino Especiado", "Limón Kush"],
-        effects: ["Relajación Corporal Profunda", "Sedación Moderada", "Bienestar"],
-        activities: ["relax_sleep", "gaming"],
-        description: "El clásico de Barney's Farm. Critical Mass mezclada con OG Kush: robusta, muy productiva (1000g/planta outdoor) y con un sabor OG puro y reconfortante.",
-        visualColor: "linear-gradient(135deg, #047857 0%, #6D28D9 100%)",
-        bgPattern: "radial-gradient(circle, rgba(4,120,87,0.2) 0%, transparent 70%)"
       },
   {
       id: "bf-sherbet-queen",
@@ -986,27 +944,6 @@ export const STRAINS_DATABASE = [
         description: "La joya medicinal de Philosopher Seeds. Ratio 1:1 THC:CBD. Ideal para usuarios que buscan alivio físico y claridad mental sin intoxicación.",
         visualColor: "linear-gradient(135deg, #34D399 0%, #3B82F6 100%)",
         bgPattern: "radial-gradient(circle, rgba(52,211,153,0.2) 0%, transparent 70%)"
-      },
-  {
-      id: "philo-sugar-black-rose",
-        image: "img/philo-sugar-black-rose.webp",
-        name: "Sugar Black Rose",
-        aka: "Black Domina x Critical +",
-        bank: "Philosopher Seeds",
-        species: "Índica",
-        thc: 22, cbd: 0.4,
-        yieldIndoor: 550, yieldOutdoor: 700,
-        floweringDays: 55, rating: 4.8, reviewsCount: 540,
-        genetics: "Black Domina x Critical + (Philosopher Selection)",
-        origin: "España",
-        dominantTerpene: "caryophyllene",
-        terpenes: { caryophyllene: 45, myrcene: 35, linalool: 20 },
-        flavors: ["Rosa Oscura Dulce", "Chocolate Negro", "Tierra Floral"],
-        effects: ["Sedación Profunda", "Calma Absoluta", "Alivio Físico"],
-        activities: ["relax_sleep", "meditation"],
-        description: "Una rosa oscura y misteriosa. Black Domina cruzada con Critical +: potente, floración rápida y con un aroma dulce y floral inusual en Índicas.",
-        visualColor: "linear-gradient(135deg, #7C3AED 0%, #1E1B4B 100%)",
-        bgPattern: "radial-gradient(circle, rgba(124,58,237,0.2) 0%, transparent 70%)"
       },
   {
       id: "philo-blues",
@@ -4455,48 +4392,6 @@ export const STRAINS_DATABASE = [
         bgPattern: "radial-gradient(circle, rgba(139,92,246,0.2) 0%, transparent 70%)"
       },
   {
-      id: "bf-lsd",
-        image: "img/bf-lsd.webp",
-        name: "LSD",
-        aka: "Mazar x Skunk #1",
-        bank: "Barney's Farm",
-        species: "Índica",
-        thc: 24, cbd: 1.2,
-        yieldIndoor: 600, yieldOutdoor: 1000,
-        floweringDays: 60, rating: 4.9, reviewsCount: 780,
-        genetics: "Mazar x Skunk #1",
-        origin: "Ámsterdam",
-        dominantTerpene: "myrcene",
-        terpenes: { myrcene: 48, caryophyllene: 32, linalool: 20 },
-        flavors: ["Tierra Psicodélica", "Lavanda Oscura", "Especias Kush"],
-        effects: ["Psicoactividad Intensa", "Relajación Profunda", "Introspección"],
-        activities: ["meditation", "creativity", "relax_sleep"],
-        description: "Una de las Índicas más potentes y premiadas de Barney's Farm. Ganadora de la High Times Cannabis Cup. LSD combina el poder genético de Mazar con el clásico Skunk #1. Efecto psicoactivo único con CBD notable para un equilibrio sorprendente.",
-        visualColor: "linear-gradient(135deg, #6D28D9 0%, #EC4899 100%)",
-        bgPattern: "radial-gradient(circle, rgba(109,40,217,0.2) 0%, transparent 70%)"
-      },
-  {
-      id: "bf-pineapple-chunk",
-        image: "img/bf-pineapple-chunk.webp",
-        name: "Pineapple Chunk",
-        aka: "Pineapple x Cheese x Skunk #1",
-        bank: "Barney's Farm",
-        species: "Índica",
-        thc: 26, cbd: 0.3,
-        yieldIndoor: 700, yieldOutdoor: 1200,
-        floweringDays: 55, rating: 4.8, reviewsCount: 670,
-        genetics: "Pineapple x Cheese x Skunk #1",
-        origin: "Ámsterdam",
-        dominantTerpene: "caryophyllene",
-        terpenes: { caryophyllene: 42, limonene: 38, myrcene: 20 },
-        flavors: ["Piña Tropical", "Queso Suave", "Dulce Exótico"],
-        effects: ["Relajación Placentera", "Euforia Moderada", "Felicidad Frutal"],
-        activities: ["relax_sleep", "social", "nature_walk"],
-        description: "Una mezcla genial de tres clásicos: Pineapple, Cheese y Skunk #1. Alta producción de cogollos repletos de resina con aroma tropical inconfundible. 26% THC en una Índica de floración rápida, muy valorada en toda Europa.",
-        visualColor: "linear-gradient(135deg, #F59E0B 0%, #84CC16 100%)",
-        bgPattern: "radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%)"
-      },
-  {
       id: "bf-acapulco-gold",
         image: "img/bf-acapulco-gold.webp",
         name: "Acapulco Gold",
@@ -4516,27 +4411,6 @@ export const STRAINS_DATABASE = [
         description: "La legendaria landrace mexicana en manos de Barney's Farm. Acapulco Gold fue en los años 60-70 la cepa más buscada del mundo. Esta versión preserva su genética pura con cogollos dorados y un efecto Sativa incomparable, sin paranoia.",
         visualColor: "linear-gradient(135deg, #FBBF24 0%, #D97706 100%)",
         bgPattern: "radial-gradient(circle, rgba(251,191,36,0.2) 0%, transparent 70%)"
-      },
-  {
-      id: "bf-wedding-cake",
-        image: "img/bf-wedding-cake.webp",
-        name: "Wedding Cake",
-        aka: "Triangle Kush x Animal Mints",
-        bank: "Barney's Farm",
-        species: "Índica",
-        thc: 27, cbd: 0.1,
-        yieldIndoor: 700, yieldOutdoor: 1400,
-        floweringDays: 56, rating: 5.0, reviewsCount: 920,
-        genetics: "Triangle Kush x Animal Mints",
-        origin: "Ámsterdam / California",
-        dominantTerpene: "caryophyllene",
-        terpenes: { caryophyllene: 44, limonene: 36, linalool: 20 },
-        flavors: ["Vainilla Cremosa", "Masa Dulce", "Tierra Kush"],
-        effects: ["Potencia Máxima", "Relajación Total", "Bienestar Profundo"],
-        activities: ["relax_sleep", "gaming", "meditation"],
-        description: "Una de las cepas más solicitadas del mundo. Wedding Cake de Barney's Farm alcanza 27% THC con una producción masiva. Aroma a pastel de vainilla con Kush terroso. Cogollos enormes, resinosos y de una calidad visual espectacular.",
-        visualColor: "linear-gradient(135deg, #F9FAFB 0%, #D97706 100%)",
-        bgPattern: "radial-gradient(circle, rgba(249,250,251,0.15) 0%, transparent 70%)"
       },
   {
       id: "rqs-honey-cream",
@@ -4770,27 +4644,6 @@ export const STRAINS_DATABASE = [
         bgPattern: "radial-gradient(circle, rgba(139,92,246,0.2) 0%, transparent 70%)"
       },
   {
-      id: "dp-mazar-afghan",
-        image: "img/dp-mazar.webp",
-        name: "Mazar",
-        aka: "Afghan x Skunk",
-        bank: "Dutch Passion",
-        species: "Índica",
-        thc: 20, cbd: 0.4,
-        yieldIndoor: 450, yieldOutdoor: 700,
-        floweringDays: 60, rating: 4.8, reviewsCount: 610,
-        genetics: "Afghan x Skunk",
-        origin: "Afganistán / Ámsterdam",
-        dominantTerpene: "myrcene",
-        terpenes: { myrcene: 55, caryophyllene: 28, pinene: 17 },
-        flavors: ["Hachís Afgano", "Tierra Húmeda", "Skunk Dulce"],
-        effects: ["Sedación Profunda", "Relajación Muscular Intensa", "Sueño Pesado"],
-        activities: ["relax_sleep", "meditation"],
-        description: "Un auténtico clásico de Dutch Passion desde los años 90. Mazar lleva el nombre del famoso distrito afgano de Mazari Sharif. Purísima genética Indica con un efecto sedante devastador y producción generosa de resina. Base genética de muchísimas cepas modernas.",
-        visualColor: "linear-gradient(135deg, #374151 0%, #10B981 100%)",
-        bgPattern: "radial-gradient(circle, rgba(55,65,81,0.3) 0%, transparent 70%)"
-      },
-  {
       id: "dp-auto-mazar",
         image: "img/dp-auto-mazar.webp",
         name: "Auto Mazar",
@@ -4915,27 +4768,6 @@ export const STRAINS_DATABASE = [
         description: "Snow Storm captura la producción masiva de resina de White Widow combinada con la energía y el vigor de Power Plant. Una tempestad blanca de cristales que cubre los cogollos. Equilibrada entre cabeza y cuerpo, perfecta para cualquier momento del día.",
         visualColor: "linear-gradient(135deg, #E5E7EB 0%, #6D28D9 100%)",
         bgPattern: "radial-gradient(circle, rgba(229,231,235,0.15) 0%, transparent 70%)"
-      },
-  {
-      id: "hso-liberty-haze",
-        image: "img/hso-liberty-haze.webp",
-        name: "Liberty Haze",
-        aka: "G13 x ChemDawg 91",
-        bank: "Humboldt Seed",
-        species: "Híbrida",
-        thc: 25, cbd: 0.2,
-        yieldIndoor: 600, yieldOutdoor: 800,
-        floweringDays: 56, rating: 4.9, reviewsCount: 690,
-        genetics: "G13 x ChemDawg 91",
-        origin: "California / Humboldt County",
-        dominantTerpene: "limonene",
-        terpenes: { limonene: 48, caryophyllene: 32, terpinolene: 20 },
-        flavors: ["Lima Ácida", "Diésel Suave", "Cítrico Luminoso"],
-        effects: ["Subidón Cerebral Potente", "Energía Creativa", "Motivación"],
-        activities: ["creativity", "social", "workout"],
-        description: "Liberty Haze ganó la Cannabis Cup de Ámsterdam en la categoría de Híbridas. 25% THC con un aroma a lima y diésel inconfundible. Cruce de G13 con la mítica ChemDawg 91. Floración rápida para ser Haze y producción muy generosa.",
-        visualColor: "linear-gradient(135deg, #84CC16 0%, #F59E0B 100%)",
-        bgPattern: "radial-gradient(circle, rgba(132,204,22,0.2) 0%, transparent 70%)"
       },
   {
       id: "hso-sapphire-og",
@@ -5762,7 +5594,7 @@ export const STRAINS_DATABASE = [
         visualColor: "linear-gradient(135deg, #64748B 0%, #10B981 100%)",
         bgPattern: "radial-gradient(circle, rgba(100,116,139,0.2) 0%, transparent 70%)"
       },
-      {
+  {
         id: "nirvana-aurora-indica",
         image: "img/nirvana-aurora-indica.webp",
         name: "Aurora Indica",
@@ -5785,7 +5617,7 @@ export const STRAINS_DATABASE = [
         visualColor: "linear-gradient(135deg, #1E1B4B 0%, #4338CA 100%)",
         bgPattern: "radial-gradient(circle, rgba(67,56,202,0.25) 0%, transparent 70%)"
       },
-      {
+  {
         id: "nirvana-bubblelicious",
         image: "img/nirvana-bubblelicious.webp",
         name: "Bubblelicious",
@@ -5808,7 +5640,7 @@ export const STRAINS_DATABASE = [
         visualColor: "linear-gradient(135deg, #F43F5E 0%, #FB7185 100%)",
         bgPattern: "radial-gradient(circle, rgba(244,63,94,0.25) 0%, transparent 70%)"
       },
-      {
+  {
         id: "nirvana-master-kush",
         image: "img/nirvana-master-kush.webp",
         name: "Master Kush",
@@ -5831,7 +5663,7 @@ export const STRAINS_DATABASE = [
         visualColor: "linear-gradient(135deg, #15803D 0%, #166534 100%)",
         bgPattern: "radial-gradient(circle, rgba(21,128,61,0.25) 0%, transparent 70%)"
       },
-      {
+  {
         id: "nirvana-ak-48",
         image: "img/nirvana-ak-48.webp",
         name: "AK-48",
@@ -5854,7 +5686,7 @@ export const STRAINS_DATABASE = [
         visualColor: "linear-gradient(135deg, #D97706 0%, #B45309 100%)",
         bgPattern: "radial-gradient(circle, rgba(217,119,6,0.25) 0%, transparent 70%)"
       },
-      {
+  {
         id: "nirvana-wonder-woman",
         image: "img/nirvana-wonder-woman.webp",
         name: "Wonder Woman",
@@ -5877,7 +5709,7 @@ export const STRAINS_DATABASE = [
         visualColor: "linear-gradient(135deg, #0284C7 0%, #0369A1 100%)",
         bgPattern: "radial-gradient(circle, rgba(2,132,199,0.25) 0%, transparent 70%)"
       },
-      {
+  {
         id: "nirvana-somango-xxl",
         image: "img/nirvana-somango-xxl.webp",
         name: "Somango XXL",
@@ -5900,7 +5732,7 @@ export const STRAINS_DATABASE = [
         visualColor: "linear-gradient(135deg, #EA580C 0%, #C2410C 100%)",
         bgPattern: "radial-gradient(circle, rgba(234,88,12,0.25) 0%, transparent 70%)"
       },
-      {
+  {
         id: "nirvana-papaya",
         image: "img/nirvana-papaya.webp",
         name: "Papaya",
@@ -5923,7 +5755,7 @@ export const STRAINS_DATABASE = [
         visualColor: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
         bgPattern: "radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)"
       },
-      {
+  {
         id: "nirvana-hawaii-maui-waui",
         image: "img/nirvana-hawaii-maui-waui.webp",
         name: "Hawaii Maui Waui",
@@ -5946,7 +5778,7 @@ export const STRAINS_DATABASE = [
         visualColor: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
         bgPattern: "radial-gradient(circle, rgba(16,185,129,0.25) 0%, transparent 70%)"
       },
-      {
+  {
         id: "nirvana-super-skunk",
         image: "img/nirvana-super-skunk.webp",
         name: "Super Skunk",
@@ -5969,7 +5801,7 @@ export const STRAINS_DATABASE = [
         visualColor: "linear-gradient(135deg, #65A30D 0%, #4D7C0F 100%)",
         bgPattern: "radial-gradient(circle, rgba(101,163,13,0.25) 0%, transparent 70%)"
       },
-      {
+  {
         id: "nirvana-blackjack",
         image: "img/nirvana-blackjack.webp",
         name: "Blackjack",
@@ -11801,29 +11633,6 @@ export const STRAINS_DATABASE = [
     bgPattern: "radial-gradient(circle, rgba(236,72,153,0.2) 0%, transparent 70%)"
   },
   {
-    id: "gorilla-girl",
-    image: "img/gorilla-girl.webp",
-    name: "Gorilla Girl",
-    aka: "Gorilla Glue x Girl Scout Cookies",
-    bank: "Sweet Seeds",
-    breeder: "Sweet Seeds",
-    species: "Híbrida",
-    thc: 25, cbd: 0.1,
-    yieldIndoor: 550, yieldOutdoor: 600,
-    floweringDays: 63, rating: 4.9, reviewsCount: 580,
-    genetics: "Gorilla Glue x Girl Scout Cookies",
-    lineage: "Gorilla Glue x Girl Scout Cookies",
-    origin: "España",
-    dominantTerpene: "caryophyllene",
-    terpenes: { caryophyllene: 50, limonene: 30, pinene: 20 },
-    flavors: ["Ciprés Fresco", "Madera Noble", "Cítrico Terroso"],
-    effects: ["Euforia Cerebral", "Potencia Brutal", "Estimulación Creativa"],
-    activities: ["gaming", "creativity", "social"],
-    description: "La célebre creación de Sweet Seeds: cruce demoledor de Gorilla Glue x Girl Scout Cookies con niveles de THC que alcanzan el 25%. Resina exuberante y aroma a ciprés y maderas nobles.",
-    visualColor: "linear-gradient(135deg, #06B6D4 0%, #10B981 100%)",
-    bgPattern: "radial-gradient(circle, rgba(6,182,212,0.2) 0%, transparent 70%)"
-  },
-  {
     id: "san-fernando-lemon-kush",
     image: "images/strains/san-fernando-lemon-kush.jpg",
     name: "San Fernando Lemon Kush",
@@ -11845,29 +11654,6 @@ export const STRAINS_DATABASE = [
     description: "Excepcional híbrido de genética americana que cruza dos de las mejores líneas Kush de California. Exquisito aroma a limón ácido con matices de disolvente y fondo especiado OG.",
     visualColor: "linear-gradient(135deg, #EAB308 0%, #CA8A04 100%)",
     bgPattern: "radial-gradient(circle, rgba(234,179,8,0.2) 0%, transparent 70%)"
-  },
-  {
-    id: "black-jack",
-    image: "img/black-jack.webp",
-    name: "Black Jack",
-    aka: "Black Domina x Jack Herer",
-    bank: "Sweet Seeds",
-    breeder: "Sweet Seeds",
-    species: "Híbrida",
-    thc: 21, cbd: 0.6,
-    yieldIndoor: 550, yieldOutdoor: 650,
-    floweringDays: 63, rating: 4.8, reviewsCount: 620,
-    genetics: "Black Domina x Jack Herer",
-    lineage: "Black Domina x Jack Herer",
-    origin: "España",
-    dominantTerpene: "terpinoleno",
-    terpenes: { terpinolene: 45, limonene: 30, pinene: 25 },
-    flavors: ["Incienso Catedral", "Especias Dulces", "Tierra Boscosa"],
-    effects: ["Equilibrio Perfecto", "Inspiración Creativa", "Alivio Físico"],
-    activities: ["creativity", "nature_walk", "workout"],
-    description: "Un clásico eterno de Sweet Seeds. Fusión perfecta de la resina índica de Black Domina con la euforia y el perfil a incienso dulce catedralicio de Jack Herer.",
-    visualColor: "linear-gradient(135deg, #1E40AF 0%, #06B6D4 100%)",
-    bgPattern: "radial-gradient(circle, rgba(30,64,175,0.2) 0%, transparent 70%)"
   },
   {
     id: "sweet-tai",
@@ -12356,16 +12142,6 @@ export const STRAINS_DATABASE = [
     gradient: "linear-gradient(135deg, #241a10 0%, #59391b 50%, #10B981 100%)",
     activities: ["Días creativos", "Música y baile", "Cocina gourmet", "Socializar en la naturaleza"],
   },
-
-// ═══════════════════════════════════════════════════════════════════════════
-// EXPANSIÓN v156 — ~71 cepas nuevas en 9 bancos
-// Bancos nuevos: Karma Genetics · Canuk Seeds · Samsara Seeds · Elev8 Seeds
-// Ampliaciones: Dutch Passion · Delicious Seeds · Mr. Nice · Philosopher Seeds · Humboldt Seed
-// ═══════════════════════════════════════════════════════════════════════════
-
-  // ──────────────────────────────────────────────────────────────────────────
-  // KARMA GENETICS — 10 cepas
-  // ──────────────────────────────────────────────────────────────────────────
   {
     id: "karma-biker-kush-v2",
     image: "img/karma-biker-kush-v2.webp",
@@ -12576,10 +12352,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #1a1f6b 0%, #3d57e0 100%)",
     bgPattern: "radial-gradient(circle, rgba(61,87,224,0.2) 0%, transparent 70%)"
   },
-
-  // ──────────────────────────────────────────────────────────────────────────
-  // CANUK SEEDS — 10 cepas
-  // ──────────────────────────────────────────────────────────────────────────
   {
     id: "canuk-wedding-cake",
     image: "img/canuk-wedding-cake.webp",
@@ -12790,10 +12562,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #5c2800 0%, #e8691a 50%, #ffd27d 100%)",
     bgPattern: "radial-gradient(circle, rgba(232,105,26,0.22) 0%, transparent 70%)"
   },
-
-  // ──────────────────────────────────────────────────────────────────────────
-  // SAMSARA SEEDS — 8 cepas
-  // ──────────────────────────────────────────────────────────────────────────
   {
     id: "samsara-spiritual-punk",
     image: "img/samsara-spiritual-punk.webp",
@@ -12962,10 +12730,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #002244 0%, #1a5276 50%, #85c1e9 100%)",
     bgPattern: "radial-gradient(circle, rgba(133,193,233,0.2) 0%, transparent 70%)"
   },
-
-  // ──────────────────────────────────────────────────────────────────────────
-  // ELEV8 SEEDS — 8 cepas
-  // ──────────────────────────────────────────────────────────────────────────
   {
     id: "elev8-gas-monkey",
     image: "img/elev8-gas-monkey.webp",
@@ -13134,10 +12898,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #4a0030 0%, #9b1a6e 50%, #ff80b5 100%)",
     bgPattern: "radial-gradient(circle, rgba(155,26,110,0.22) 0%, transparent 70%)"
   },
-
-  // ──────────────────────────────────────────────────────────────────────────
-  // DUTCH PASSION — ampliación (+7 cepas)
-  // ──────────────────────────────────────────────────────────────────────────
   {
     id: "dp-blueberry",
     image: "img/dp-blueberry.webp",
@@ -13223,27 +12983,6 @@ export const STRAINS_DATABASE = [
     bgPattern: "radial-gradient(circle, rgba(170,204,0,0.18) 0%, transparent 70%)"
   },
   {
-    id: "dp-mazar-ii",
-    image: "img/dp-mazar.webp",
-    name: "Mazar",
-    aka: "Afghani x Skunk #1",
-    bank: "Dutch Passion",
-    species: "Índica",
-    thc: 21, cbd: 0.3,
-    yieldIndoor: 500, yieldOutdoor: 650,
-    floweringDays: 60, rating: 4.8, reviewsCount: 620,
-    genetics: "Afghani x Skunk #1",
-    origin: "Países Bajos",
-    dominantTerpene: "myrcene",
-    terpenes: { myrcene: 50, caryophyllene: 30, pinene: 20 },
-    flavors: ["Hachís Afgano", "Pino Amaderado", "Pimienta Especiada"],
-    effects: ["Relajación Corporal Profunda", "Euforia Suave", "Sedación Nocturna"],
-    activities: ["relax_sleep", "gaming"],
-    description: "Mazar es el emblema índica de Dutch Passion: directa descendiente del linaje Afghani más puro cruzado con Skunk #1 para mejorar su productividad. Cogollos densos y resinosos con un aroma intenso a hachís afgano, pino y tierra mojada. El efecto es de una relajación corporal completa, ideal para el descanso nocturno y el manejo del dolor.",
-    visualColor: "linear-gradient(135deg, #1a0a00 0%, #4a2400 50%, #8b5e3c 100%)",
-    bgPattern: "radial-gradient(circle, rgba(74,36,0,0.25) 0%, transparent 70%)"
-  },
-  {
     id: "dp-glueberry-og",
     image: "img/dp-glueberry-og.webp",
     name: "Glueberry OG",
@@ -13285,10 +13024,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #3d1500 0%, #8b3a00 50%, #d4a054 100%)",
     bgPattern: "radial-gradient(circle, rgba(139,58,0,0.22) 0%, transparent 70%)"
   },
-
-  // ──────────────────────────────────────────────────────────────────────────
-  // DELICIOUS SEEDS — ampliación (+7 cepas)
-  // ──────────────────────────────────────────────────────────────────────────
   {
     id: "delicious-la-diva",
     image: "img/delicious-la-diva.webp",
@@ -13436,10 +13171,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #3d1500 0%, #cc5500 50%, #ff9900 100%)",
     bgPattern: "radial-gradient(circle, rgba(204,85,0,0.2) 0%, transparent 70%)"
   },
-
-  // ──────────────────────────────────────────────────────────────────────────
-  // MR. NICE SEEDBANK — ampliación (+7 cepas)
-  // ──────────────────────────────────────────────────────────────────────────
   {
     id: "mrnice-g13-haze",
     image: "img/mrnice-g13-haze.webp",
@@ -13587,10 +13318,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #1a2d00 0%, #3d6600 50%, #99cc33 100%)",
     bgPattern: "radial-gradient(circle, rgba(153,204,51,0.18) 0%, transparent 70%)"
   },
-
-  // ──────────────────────────────────────────────────────────────────────────
-  // PHILOSOPHER SEEDS — ampliación (+7 cepas)
-  // ──────────────────────────────────────────────────────────────────────────
   {
     id: "philo-tropimango-haze",
     image: "img/philo-tropimango-haze.webp",
@@ -13738,52 +13465,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #003333 0%, #009999 50%, #66ffee 100%)",
     bgPattern: "radial-gradient(circle, rgba(0,153,153,0.18) 0%, transparent 70%)"
   },
-
-  // ──────────────────────────────────────────────────────────────────────────
-  // HUMBOLDT SEED — ampliación (+7 cepas)
-  // ──────────────────────────────────────────────────────────────────────────
-  {
-    id: "hso-blue-dream-b",
-    image: "img/hso-blue-dream.webp",
-    name: "Blue Dream",
-    aka: "Blueberry x Haze",
-    bank: "Humboldt Seed",
-    species: "Sativa",
-    thc: 21, cbd: 0.4,
-    yieldIndoor: 600, yieldOutdoor: 1000,
-    floweringDays: 67, rating: 4.8, reviewsCount: 1580,
-    genetics: "Blueberry x Haze",
-    origin: "California, Estados Unidos",
-    dominantTerpene: "terpinolene",
-    terpenes: { terpinolene: 40, myrcene: 35, caryophyllene: 25 },
-    flavors: ["Arándano Californiano", "Haze Vainilla", "Fruta Azul"],
-    effects: ["Euforia Suave", "Creatividad", "Bienestar Activo"],
-    activities: ["creativity", "social", "nature_walk"],
-    description: "Blue Dream de Humboldt Seed Organization es la versión californiana auténtica de la variedad más cultivada de Estados Unidos. HSO seleccionó las mejores madres del condado de Humboldt para crear semillas estables que replican perfectamente la experiencia de la Blue Dream californiana clásica: arándanos, Haze y euforia suave.",
-    visualColor: "linear-gradient(135deg, #1a1a6e 0%, #4444cc 50%, #aaaaff 100%)",
-    bgPattern: "radial-gradient(circle, rgba(68,68,204,0.2) 0%, transparent 70%)"
-  },
-  {
-    id: "hso-trainwreck-b",
-    image: "img/hso-trainwreck.webp",
-    name: "Trainwreck",
-    aka: "Mexican x Thai x Afghani",
-    bank: "Humboldt Seed",
-    species: "Sativa",
-    thc: 22, cbd: 0.3,
-    yieldIndoor: 550, yieldOutdoor: 900,
-    floweringDays: 65, rating: 4.8, reviewsCount: 1020,
-    genetics: "Mexican Sativa x Thai Sativa x Afghani",
-    origin: "California, Estados Unidos",
-    dominantTerpene: "terpinolene",
-    terpenes: { terpinolene: 45, limonene: 35, pinene: 20 },
-    flavors: ["Pino Limonado", "Tierra Sativa", "Madera Fresca"],
-    effects: ["Efecto Tren de Mercancías", "Energía Torrencial", "Euforia Potente"],
-    activities: ["creativity", "social", "nature_walk"],
-    description: "Trainwreck de HSO lleva el nombre perfecto: su efecto llega como un tren de mercancías, rápido y potente. Esta sativa californiana de triple linaje (Mexico, Tailandia, Afganistán) produce cogollos con aroma a pino y limón y un efecto cerebral de alta intensidad que ha marcado generaciones de cultivadores de la costa oeste.",
-    visualColor: "linear-gradient(135deg, #1a3300 0%, #336600 50%, #99cc33 100%)",
-    bgPattern: "radial-gradient(circle, rgba(51,102,0,0.2) 0%, transparent 70%)"
-  },
   {
     id: "hso-pineapple-fields",
     image: "img/hso-pineapple-fields.webp",
@@ -13889,9 +13570,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #1a2e00 0%, #4a8a00 50%, #aaee00 100%)",
     bgPattern: "radial-gradient(circle, rgba(170,238,0,0.15) 0%, transparent 70%)"
   },
-
-
-  // ==================== BARNEY'S FARM — Expansión (+8) ====================
   {
     id: "barneys-liberty-haze",
     image: "img/barneys-liberty-haze.webp",
@@ -14060,8 +13738,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #F9A8D4 0%, #C4B5FD 100%)",
     bgPattern: "radial-gradient(circle, rgba(249,168,212,0.2) 0%, transparent 70%)"
   },
-
-  // ==================== BUDDHA SEEDS — Expansión (+6) ====================
   {
     id: "buddha-syrup",
     image: "img/buddha-syrup.webp",
@@ -14188,8 +13864,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #7C3AED 0%, #EC4899 100%)",
     bgPattern: "radial-gradient(circle, rgba(124,58,237,0.2) 0%, transparent 70%)"
   },
-
-  // ==================== ELEV8 SEEDS — Expansión (+7) ====================
   {
     id: "elev8-grape-gasoline",
     image: "img/elev8-grape-gasoline.webp",
@@ -14337,8 +14011,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)",
     bgPattern: "radial-gradient(circle, rgba(59,130,246,0.2) 0%, transparent 70%)"
   },
-
-  // ==================== SAMSARA SEEDS — Expansión (+7) ====================
   {
     id: "samsara-white-domina",
     image: "img/samsara-white-domina.webp",
@@ -14486,8 +14158,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #F59E0B 0%, #EC4899 100%)",
     bgPattern: "radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%)"
   },
-
-  // ==================== 00 SEEDS BANK — Expansión (+2) ====================
   {
     id: "00seeds-00-cheese",
     image: "img/00seeds-00-cheese.webp",
@@ -14530,8 +14200,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #10B981 0%, #F59E0B 100%)",
     bgPattern: "radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 70%)"
   },
-
-  // ==================== EVA SEEDS — Expansión (+4) ====================
   {
     id: "eva-alien-og",
     image: "img/eva-alien-og.webp",
@@ -14615,12 +14283,7 @@ export const STRAINS_DATABASE = [
     description: "Super Silver Haze de Eva Seeds es la versión española de la triple Cannabis Cup Winner más famosa del mundo. Skunk #1, Northern Lights y Haze se fusionan en una Sativa excepcional con cogollos plateados de resina, aroma clásico Haze y un efecto cerebral de larguísima duración.",
     visualColor: "linear-gradient(135deg, #9CA3AF 0%, #10B981 100%)",
     bgPattern: "radial-gradient(circle, rgba(156,163,175,0.2) 0%, transparent 70%)"
-  }
-
-,
-  // ══════════════════════════════════════════════════════════════════════════
-  // KANNABIA SEEDS — 10 Variedades Fotoperiódicas (Barcelona, España)
-  // ══════════════════════════════════════════════════════════════════════════
+  },
   {
     id: "kannabia-white-domina",
     name: "White Domina",
@@ -14841,10 +14504,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #7F1D1D 0%, #DC2626 100%)",
     bgPattern: "radial-gradient(circle, rgba(220,38,38,0.2) 0%, transparent 70%)"
   },
-
-  // ══════════════════════════════════════════════════════════════════════════
-  // KERA SEEDS — 10 Variedades Fotoperiódicas Premium
-  // ══════════════════════════════════════════════════════════════════════════
   {
     id: "kera-california-orange",
     name: "California Orange Bud",
@@ -15065,10 +14724,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #1E3A5F 0%, #93C5FD 100%)",
     bgPattern: "radial-gradient(circle, rgba(147,197,253,0.2) 0%, transparent 70%)"
   },
-
-  // ══════════════════════════════════════════════════════════════════════════
-  // ROYAL QUEEN SEEDS — Ampliación (+2 nuevas, ajustando IDs únicos)
-  // ══════════════════════════════════════════════════════════════════════════
   {
     id: "rqs-critical",
     name: "Critical RQS",
@@ -15113,10 +14768,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #064E3B 0%, #10B981 100%)",
     bgPattern: "radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 70%)"
   },
-
-  // ══════════════════════════════════════════════════════════════════════════
-  // SENSI SEEDS — Ampliación (+2 nuevas, sin duplicar sensi-super-skunk)
-  // ══════════════════════════════════════════════════════════════════════════
   {
     id: "sensi-shiva-skunk",
     name: "Shiva Skunk",
@@ -15161,10 +14812,6 @@ export const STRAINS_DATABASE = [
     visualColor: "linear-gradient(135deg, #7C2D12 0%, #EA580C 100%)",
     bgPattern: "radial-gradient(circle, rgba(234,88,12,0.2) 0%, transparent 70%)"
   },
-
-  // ══════════════════════════════════════════════════════════════════════════
-  // ACE SEEDS — Ampliación (+2 nuevas, sin duplicar aceseeds-pakistan-chitral-kush)
-  // ══════════════════════════════════════════════════════════════════════════
   {
     id: "aceseeds-morocco-beldia",
     name: "Morocco Beldia Kif",
