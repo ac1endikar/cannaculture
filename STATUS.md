@@ -1,41 +1,30 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-15 14:55  
+> **Ultima actualizacion:** 2026-09-15 17:05  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(catalog): incorporacion de Rare Dankness con 10 cepas de elite y macros botanicos HD v178`  
-> **Version Cache-Busting:** `?v=2026_rare_dankness_v178`
+> **Commit de cierre:** `fix(catalog): sustitucion de fotos de Moonshine Haze, Scotts OG y 501st OG por macros HD individuales y autenticos v179`  
+> **Version Cache-Busting:** `?v=2026_rare_dankness_fix3_v179`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
 - **Estado del Catalogo:** **617 cepas botánicas 100% únicas y originales, sin duplicados ni imágenes clonadas.**
-- **Incorporación Oficial del Banco #49: Rare Dankness (10 cepas de élite - 100% macros botánicos HD):**
-  * Se integró formalmente **Rare Dankness** (el laureado banco de Colorado, USA, ganador de múltiples copas High Times Cannabis Cup y célebre por sus genéticas OG Kush y Haze de extrema potencia) con 10 variedades fotoperiódicas legendarias:
-    1. `rare-ghost-train-haze-1`: **Ghost Train Haze #1** (Ghost OG x Nevil's Wreck) — THC 28%, Sativa ganadora High Times Cup, 800x800 px, WebP: 200.2 KB, cb: 43.8.
-    2. `rare-scotts-og`: **Scott's OG** (Triangle Kush x Rare Dankness #1) — THC 27%, 800x800 px, WebP: 195.2 KB, cb: 131.2.
-    3. `rare-moonshine-haze`: **Moonshine Haze** (Amnesia Haze x Nevil's Wreck) — THC 26%, Mejor Sativa Cannabis Cup 2011, 800x800 px, WebP: 200.5 KB, cb: 125.7.
-    4. `rare-commerce-city-kush`: **Commerce City Kush** (Chem 4 x Rare Dankness #1) — THC 29%, 800x800 px, WebP: 238.6 KB, cb: 31.2.
-    5. `rare-star-killer`: **Star Killer** (Skywalker OG x Rare Dankness #2) — THC 28%, High Times Cup Winner, 800x800 px, WebP: 155.2 KB, cb: 64.9.
-    6. `rare-somali-taxi-ride`: **Somali Taxi Ride** (Malawi Landrace x Nevil's Wreck) — THC 26%, Sativa africana extrema, 800x800 px, WebP: 105.0 KB, cb: 85.2.
-    7. `rare-cornbread`: **Cornbread** (Katsu Bubba Kush x Rare Dankness #2) — THC 25%, 800x800 px, WebP: 226.7 KB, cb: 89.7.
-    8. `rare-darkness`: **Rare Darkness** (Grape Ape x Rare Dankness #1) — THC 26%, Cáliz púrpura-negro, 800x800 px, WebP: 146.6 KB, cb: 16.2.
-    9. `rare-walker-kush`: **Walker Kush** (Albert Walker x Rare Dankness #1) — THC 25%, 800x800 px, WebP: 159.7 KB, cb: 65.3.
-    10. `rare-501st-og`: **501st OG** (Skywalker OG x Rare Dankness #1) — THC 27%, 800x800 px, WebP: 163.5 KB, cb: 124.3.
+- **Corrección y Sustitución de Imágenes de Rare Dankness (Moonshine Haze, Scott's OG y 501st OG):**
+  * Se identificó que SeedFinder había publicado un recorte dividido en tres partes de una misma fotografía panorámica de macro para *Moonshine Haze*, *Scott's OG* y *501st OG*.
+  * Siguiendo la indicación del usuario, se sustituyeron de inmediato por **tres fotografías macro completamente independientes, individuales, auténticas y de máxima resolución botánica**:
+    1. `rare-moonshine-haze`: **Moonshine Haze** — Fotografía macro botánica oficial de floración viva provista por Rare Dankness (`raredankness.com`), cogollo apical resinoso sobre fondo negro natural (800x800 px, WebP: 189.3 KB, JPG: 269.5 KB, cb: 28.7).
+    2. `rare-scotts-og`: **Scott's OG** — Fotografía macro botánica oficial de flor de Scott's OG de Rare Dankness (`raredankness.com`), cáliz escarchado tricolor púrpura-verde con pistilos anaranjados (800x800 px, WebP: 286.2 KB, JPG: 360.8 KB, cb: 114.6).
+    3. `rare-501st-og`: **501st OG** — Macro botánico real de cogollo curado de 501st OG con cálices morados y tricomas cristalinos sobre fondo de pizarra oscura natural (800x800 px, WebP: 252.0 KB, JPG: 333.9 KB, cb: 70.0).
   * **Exportación y Verificación de Assets:**
-    - Todas las 10 fotografías procesadas a 800x800 px nativos en formato WebP (calidad 92) y JPEG (calidad 95) en doble ubicación (`img/` y `images/strains/`).
-    - Verificados 40 archivos de imagen intactos (10 cepas x 4 archivos), con esquinas oscuras y de cultivo natural (`corner_bright < 132`), sin recortes blancos artificiales, 0% logos (sellos de agua de esquina removidos con encuadre quirúrgico) y 0% IA.
-- **Actualización de Interfaz y Filtros (`index.html`):**
-  * Título, descripción y contadores actualizados a **617 cepas y 49 bancos**.
-  * Añadida la opción en el selector de bancos (`#filter-bank`):
-    - `🦨 Rare Dankness (Colorado, USA)` en el grupo norteamericano.
-  * Total de opciones del selector sincronizado exactamente a **49 bancos**.
-- **Recompilación y Cache-Busting:**
-  * Bundle de producción regenerado con `python scripts/build_bundle.py` (`js/bundle.js` 997 KB).
-  * Cache-busting actualizado en `index.html` a `?v=2026_rare_dankness_v178` para CSS (`styles.css`) y JS (`bundle.js`).
+    - Se regeneraron los 12 archivos maestros (3 cepas x 2 formatos [WebP 92 / JPG 95] x 2 carpetas [`img/` y `images/strains/`]).
+    - 0% marcas de agua, 0% logos, 0% IA, encuadres 100% botánicos florales.
+- **Cache-Busting y Bundle:**
+  * Actualizada la query string de versión a `?v=2026_rare_dankness_fix3_v179` en `index.html` para CSS y JS.
+  * Recompilado `js/bundle.js` con `scripts/build_bundle.py`.
 - **Acciones para Iniciar Siguiente Sesion:**
   1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
   2. Servidor local activo en `http://localhost:8080`.
-  3. Visualizar catálogo filtrando por "Rare Dankness" o continuar incorporando nuevos bancos élite (Brothers Grimm, Perfect Tree, Cannarado, etc.).
+  3. Visualizar catálogo filtrando por "Rare Dankness" y confirmar la total independencia visual de las 10 variedades.
 
 ---
 
@@ -45,7 +34,7 @@
 - **Fotoperiodicas:** 100%
 - **Archivos de Imagen Activos:** 1,234+ (617 WebP + 617 JPG en doble ubicacion `img/` y `images/strains/`)
 - **Bancos al 100% Macros Botánicos HD Auditados:**
-  * Rare Dankness (10/10 conformes)
+  * Rare Dankness (10/10 conformes e individuales)
   * Anesia Seeds (10/10 conformes)
   * Silent Seeds (10/10 conformes)
   * Canuk Seeds (10/10 conformes)
