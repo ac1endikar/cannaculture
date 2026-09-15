@@ -68,7 +68,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css?v=2026_rare_dankness_fix3_v179">
+  <link rel="stylesheet" href="css/styles.css?v=2026_zero_token_hybrid_v172">
 </head>
 
 <body>
@@ -497,18 +497,21 @@
 
         <!-- Header Sommelier -->
         <div
-          style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; margin-bottom: 1.2rem;">
+          style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 12px;">
           <div style="display: flex; align-items: center; gap: 12px;">
             <div
               style="font-size: 2.2rem; background: rgba(16,185,129,0.15); border: 1px solid var(--primary-emerald); padding: 8px 14px; border-radius: 16px !important;">
               👨‍🌾</div>
             <div>
               <h3 style="font-size: 1.2rem; font-weight: 900; color: #fff; margin: 0;">Mateo | Master Sumiller & CannaDoctor 2.0</h3>
-              <span style="font-size: 0.8rem; color: #6EE7B7;">🟢 Conectado a 569 cepas — Google Gemini 3.8 Flash Multimodal & Voz</span>
+              <span style="font-size: 0.8rem; color: #6EE7B7;">🟢 Conectado a 617 cepas — Híbrido Universal 0-Tokens</span>
             </div>
           </div>
-          <span
-            style="background: rgba(16,185,129,0.2); color: #10B981; border: 1px solid var(--primary-emerald); padding: 4px 12px; font-size: 0.78rem; font-weight: 800; border-radius: 50px !important;">GEMINI 3.8 ULTRA</span>
+          <div class="zero-token-badge inline-zt-badge" id="ai-zero-token-badge-inline" title="Operando en Modo 100% Gratuito sin consumo de API tokens">
+            <span class="zt-icon">⚡</span>
+            <span class="zt-title">Modo Ilimitado (0 Tokens)</span>
+            <span class="ai-active-tier-label zt-tier">[Motor Autónomo 🍃]</span>
+          </div>
         </div>
 
         <!-- Sugerencias Rápidas Inline con Sabores, Botánica y Charla Dual -->
@@ -716,7 +719,7 @@
             <h4>Propiedad Intelectual & Enlaces</h4>
           </div>
           <p>
-            Todos los nombres comerciales, marcas registradas, logotipos y material gráfico referenciados pertenecen a sus respectivos bancos de semillas y creadores. CannaCatalog enlaza a sitios web externos con fines meramente divulgativos, educativos y de atribución de origen botánico. Si cualquier titular de derechos considera oportuno actualizar, rectificar o retirar algún enlace o referencia, puede solicitarlo directamente a través de nuestro canal de contacto y se atenderá de forma inmediata.
+            Todos los nombres comerciales, marcas registradas, logotipos y material gráfico referenciados pertenecen a sus respectivos bancos de semillas y creadores. CannaCatalog enlaza a sitios web externos con fines meramente divulgativos, educativos y de atribución de origen botánico. Si cualquier titular de derechos considera oportuno actualizar, rectificar o retirar algún enlace o referencia, puede solicitarlo directamente a través de nuestro canal de contacto y se atenderá de forma inmediata: <a href="mailto:contacto.cannacatalog@gmail.com" class="legal-contact-link"><strong>contacto.cannacatalog@gmail.com</strong></a>.
           </p>
         </div>
       </div>
@@ -1099,25 +1102,25 @@
   ">
     <!-- Header del Chat -->
     <div
-      style="background: rgba(16,185,129,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 1.4rem;">👨‍🌾</span>
-        <div>
-          <h4 style="font-size: 0.92rem; font-weight: 800; color: #fff; margin: 0;">Mateo | Sumiller IA Humano</h4>
-          <span style="font-size: 0.74rem; color: #6EE7B7; display: flex; align-items: center; gap: 4px;">
-            <span
-              style="width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block;"></span>
-            Gemini 3.8 Flash & CannaDoctor 2.0
-          </span>
+      style="background: rgba(16,185,129,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+      <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
+        <span style="font-size: 1.3rem;">👨‍🌾</span>
+        <div style="min-width: 0;">
+          <h4 style="font-size: 0.88rem; font-weight: 800; color: #fff; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Mateo | Sumiller IA</h4>
+          <div class="zero-token-badge floating-zt-badge" id="ai-zero-token-badge" title="Operando en Modo 100% Gratuito sin consumo de API tokens">
+            <span class="zt-icon">⚡</span>
+            <span class="zt-title">0 Tokens:</span>
+            <span class="ai-active-tier-label zt-tier">[Motor Autónomo 🍃]</span>
+          </div>
         </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <button id="ai-chat-key-btn" title="Configurar Clave API Gemini (Google AI Studio)" aria-label="Configurar Clave API Gemini"
-          style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6EE7B7; border-radius: 8px !important; padding: 4px 8px; cursor: pointer; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 4px;">
-          🔑 API Key
+      <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+        <button id="ai-chat-key-btn" title="Configurar Clave API Gemini (Opcional)" aria-label="Configurar Clave API Gemini"
+          style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6EE7B7; border-radius: 8px !important; padding: 4px 7px; cursor: pointer; font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; gap: 3px;">
+          🔑 API
         </button>
         <button id="ai-chat-close" aria-label="Cerrar chat de Mateo"
-          style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 28px; height: 28px; border-radius: 50% !important; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center;">✕</button>
+          style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 26px; height: 26px; border-radius: 50% !important; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: center;">✕</button>
       </div>
     </div>
 
@@ -1220,7 +1223,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=2026_rare_dankness_fix3_v179"></script>
+  <script src="js/bundle.js?v=2026_zero_token_hybrid_v172"></script>
 </body>
 
 </html>

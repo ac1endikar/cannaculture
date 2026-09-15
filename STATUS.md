@@ -1,30 +1,33 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-15 17:05  
+> **Ultima actualizacion:** 2026-09-15 18:15  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(catalog): sustitucion de fotos de Moonshine Haze, Scotts OG y 501st OG por macros HD individuales y autenticos v179`  
-> **Version Cache-Busting:** `?v=2026_rare_dankness_fix3_v179`
+> **Commit de cierre:** `feat(ai): motor sommelier hibrido 0 tokens, proxy local y blindaje legal v172`  
+> **Version Cache-Busting:** `?v=2026_zero_token_hybrid_v172`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
 - **Estado del Catalogo:** **617 cepas botánicas 100% únicas y originales, sin duplicados ni imágenes clonadas.**
-- **Corrección y Sustitución de Imágenes de Rare Dankness (Moonshine Haze, Scott's OG y 501st OG):**
-  * Se identificó que SeedFinder había publicado un recorte dividido en tres partes de una misma fotografía panorámica de macro para *Moonshine Haze*, *Scott's OG* y *501st OG*.
-  * Siguiendo la indicación del usuario, se sustituyeron de inmediato por **tres fotografías macro completamente independientes, individuales, auténticas y de máxima resolución botánica**:
-    1. `rare-moonshine-haze`: **Moonshine Haze** — Fotografía macro botánica oficial de floración viva provista por Rare Dankness (`raredankness.com`), cogollo apical resinoso sobre fondo negro natural (800x800 px, WebP: 189.3 KB, JPG: 269.5 KB, cb: 28.7).
-    2. `rare-scotts-og`: **Scott's OG** — Fotografía macro botánica oficial de flor de Scott's OG de Rare Dankness (`raredankness.com`), cáliz escarchado tricolor púrpura-verde con pistilos anaranjados (800x800 px, WebP: 286.2 KB, JPG: 360.8 KB, cb: 114.6).
-    3. `rare-501st-og`: **501st OG** — Macro botánico real de cogollo curado de 501st OG con cálices morados y tricomas cristalinos sobre fondo de pizarra oscura natural (800x800 px, WebP: 252.0 KB, JPG: 333.9 KB, cb: 70.0).
-  * **Exportación y Verificación de Assets:**
-    - Se regeneraron los 12 archivos maestros (3 cepas x 2 formatos [WebP 92 / JPG 95] x 2 carpetas [`img/` y `images/strains/`]).
-    - 0% marcas de agua, 0% logos, 0% IA, encuadres 100% botánicos florales.
-- **Cache-Busting y Bundle:**
-  * Actualizada la query string de versión a `?v=2026_rare_dankness_fix3_v179` en `index.html` para CSS y JS.
-  * Recompilado `js/bundle.js` con `scripts/build_bundle.py`.
+- **Despliegue del Sommelier Híbrido Universal 0-Tokens con Control de Arquitectura (v172):**
+  * **Núcleo Zero-Token Cascade (`js/ai-sommelier.js`):**
+    - **Tier 1 (Gemini Nano On-Device):** Detección automática en Chrome Built-in AI (`window.ai?.languageModel`) con validación de disponibilidad (`capabilities().available === 'readily'`) y System Prompt erudito y reflexivo de Mateo.
+    - **Tier 2 (LLM Local vía Proxy en `server.py`):** Conexión no bloqueante a través de `/api/local-llm` hacia Ollama (`127.0.0.1:11434`) o LM Studio (`127.0.0.1:1234`) con sondeo concurrente multihilo y timeout estricto <= 150 ms para no congelar la UI.
+    - **Tier 3 (Motor Autónomo Temático JS):** Modo offline inmediato para GitHub Pages estructurado por atmósferas sensoriales y estados de ánimo (Foco Creativo, Reflexión Filosófica y Cósmica, Desconexión Vespertina, Gastronomía y Sobremesa, Arte/Cinefilia, y Ciencia Botánica pura). Capacidad de responder elocuentemente sobre cualquier tema de conversación sin errores robóticos ni evasivas.
+    - **Restricción Estricta de Peso Cumplida:** `js/ai-sommelier.js` optimizado a **35.03 KB** (35,868 bytes), cumpliendo holgadamente el límite de <= 45 KB.
+    - **Guardián 0-Tokens:** Llamadas a APIs externas de pago totalmente desactivadas por defecto.
+- **Proxy en `server.py` (`/api/local-llm`):**
+  * Manejador GET/POST integrado con cabeceras CORS y sondeo paralelo con `concurrent.futures` hacia los puertos 11434 y 1234.
+- **UI & Blindaje Legal (`index.html` y `styles.css`):**
+  * **Header del Chat:** Añadido badge interactivo glassmorphic `⚡ Modo Ilimitado (0 Tokens)` que refleja la fuente activa en tiempo real: `[Gemini Nano 🧠]`, `[LLM Local 💻]` o `[Motor Autónomo 🍃]`.
+  * **Aviso Legal (Footer):** Confirmada la 4ª tarjeta del grid de aviso legal con la cláusula de "Propiedad Intelectual & Enlaces" y canal directo de atención: `contacto.cannacatalog@gmail.com`.
+- **Métricas y Recompilación:**
+  * Bundle principal recompilado: `js/bundle.js` (**953.9 KB**, reducción de 43.6 KB).
+  * Cache-busting actualizado en `index.html` a `?v=2026_zero_token_hybrid_v172`.
 - **Acciones para Iniciar Siguiente Sesion:**
   1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
   2. Servidor local activo en `http://localhost:8080`.
-  3. Visualizar catálogo filtrando por "Rare Dankness" y confirmar la total independencia visual de las 10 variedades.
+  3. Interactuar con el Sommelier IA conversando sobre cualquier tema libre o explorando el catálogo.
 
 ---
 
@@ -45,4 +48,4 @@
   * Serious Seeds (10/10 conformes)
   * Positronics Seeds (10/10 conformes)
   * Ripper Seeds (22/22 conformes)
-- **Bundle Principal:** `js/bundle.js` (997 KB)
+- **Bundle Principal:** `js/bundle.js` (953.9 KB)

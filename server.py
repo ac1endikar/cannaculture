@@ -14,6 +14,7 @@ import mimetypes
 import json
 import urllib.request
 import urllib.error
+import concurrent.futures
 
 # Configurar stdout/stderr para UTF-8 en consola de Windows
 if sys.stdout.encoding != 'utf-8':
@@ -71,8 +72,138 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
         self.send_response(200)
         self.end_headers()
 
+    def check_local_llm(self):
+        """Sondeo ultra-rápido en paralelo (<=150ms) a Ollama (11434) y LM Studio (1234)."""
+        def probe_ollama():
+            try:
+                req = urllib.request.Request('http://127.0.0.1:11434/api/tags')
+                with urllib.request.urlopen(req, timeout=0.15) as resp:
+                    if resp.status == 200:
+                        data = json.loads(resp.read().decode('utf-8'))
+                        models = [m.get('name') for m in data.get('models', [])]
+                        return {
+                            'available': True,
+                            'provider': 'ollama',
+                            'models': models,
+                            'model': models[0] if models else 'llama3'
+                        }
+            except Exception:
+                pass
+            return None
+
+        def probe_lmstudio():
+            try:
+                req = urllib.request.Request('http://127.0.0.1:1234/v1/models')
+                with urllib.request.urlopen(req, timeout=0.15) as resp:
+                    if resp.status == 200:
+                        data = json.loads(resp.read().decode('utf-8'))
+                        models = [m.get('id') for m in data.get('data', [])]
+                        return {
+                            'available': True,
+                            'provider': 'lmstudio',
+                            'models': models,
+                            'model': models[0] if models else 'local-model'
+                        }
+            except Exception:
+                pass
+            return None
+
+        try:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+                f_ollama = executor.submit(probe_ollama)
+                f_lm = executor.submit(probe_lmstudio)
+                res_ollama = f_ollama.result()
+                if res_ollama:
+                    return res_ollama
+                res_lm = f_lm.result()
+                if res_lm:
+                    return res_lm
+        except Exception:
+            pass
+
+        return {'available': False}
+
+    def do_GET(self):
+        """Manejar GET con soporte para API de estado LLM local."""
+        clean_path = self.path.split('?')[0]
+        if clean_path == '/api/local-llm':
+            info = self.check_local_llm()
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.end_headers()
+            self.wfile.write(json.dumps(info).encode('utf-8'))
+            return
+        super().do_GET()
+
     def do_POST(self):
-        """Manejar endpoints de API (Proxy local seguro para Gemini)."""
+        """Manejar endpoints de API (LLM Local 0-Tokens y Proxy para Gemini)."""
+        clean_path = self.path.split('?')[0]
+        if clean_path == '/api/local-llm':
+            try:
+                content_len = int(self.headers.get('Content-Length', 0))
+                body = self.rfile.read(content_len) if content_len > 0 else b'{}'
+                client_payload = json.loads(body.decode('utf-8'))
+                
+                info = self.check_local_llm()
+                if not info.get('available'):
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'application/json; charset=utf-8')
+                    self.end_headers()
+                    self.wfile.write(json.dumps({'available': False, 'error': 'No local LLM running'}).encode('utf-8'))
+                    return
+                
+                provider = info['provider']
+                target_model = client_payload.get('model') or info.get('model')
+                prompt = client_payload.get('prompt', '')
+                system = client_payload.get('system', '')
+                messages = client_payload.get('messages', [])
+                if not messages and prompt:
+                    messages = []
+                    if system:
+                        messages.append({'role': 'system', 'content': system})
+                    messages.append({'role': 'user', 'content': prompt})
+                
+                resp_text = ''
+                if provider == 'ollama':
+                    ollama_body = {
+                        'model': target_model,
+                        'messages': messages,
+                        'stream': False
+                    }
+                    req = urllib.request.Request(
+                        'http://127.0.0.1:11434/api/chat',
+                        data=json.dumps(ollama_body).encode('utf-8'),
+                        headers={'Content-Type': 'application/json'}
+                    )
+                    with urllib.request.urlopen(req, timeout=30) as resp:
+                        res_json = json.loads(resp.read().decode('utf-8'))
+                        resp_text = res_json.get('message', {}).get('content', '')
+                elif provider == 'lmstudio':
+                    lm_body = {
+                        'model': target_model,
+                        'messages': messages,
+                        'temperature': 0.7
+                    }
+                    req = urllib.request.Request(
+                        'http://127.0.0.1:1234/v1/chat/completions',
+                        data=json.dumps(lm_body).encode('utf-8'),
+                        headers={'Content-Type': 'application/json'}
+                    )
+                    with urllib.request.urlopen(req, timeout=30) as resp:
+                        res_json = json.loads(resp.read().decode('utf-8'))
+                        resp_text = res_json.get('choices', [{}])[0].get('message', {}).get('content', '')
+
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({'available': True, 'provider': provider, 'text': resp_text}).encode('utf-8'))
+            except Exception as ex:
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({'available': False, 'error': str(ex)}).encode('utf-8'))
+            return
+
         if self.path == '/api/gemini' or self.path.startswith('/api/gemini?'):
             try:
                 content_len = int(self.headers.get('Content-Length', 0))

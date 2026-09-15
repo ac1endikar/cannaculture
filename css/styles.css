@@ -5078,4 +5078,73 @@ dialog.compare-dialog[open] {
 
 .rating-stars-interactive span:hover {
   transform: scale(1.25);
+}
+
+/* ==========================================================================
+   SOMMELIER HÍBRIDO 0-TOKENS (BADGE GLASSMORPHIC & ESTILOS)
+   ========================================================================== */
+.zero-token-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 4px 10px;
+  border-radius: 50px !important;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #E5E7EB;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.zero-token-badge:hover {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: var(--primary-emerald);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+
+.zero-token-badge .zt-icon {
+  font-size: 0.85rem;
+  color: #FCD34D;
+}
+
+.zero-token-badge .zt-title {
+  color: #A7F3D0;
+  font-weight: 800;
+}
+
+.zero-token-badge .zt-tier {
+  color: #F3F4F6;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 2px 8px;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.72rem;
+}
+
+.floating-zt-badge {
+  margin-top: 2px;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+}
+
+.floating-zt-badge .zt-tier {
+  padding: 1px 6px;
+  font-size: 0.68rem;
+}
+
+.legal-contact-link {
+  color: #34D399;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.legal-contact-link:hover {
+  color: #6EE7B7;
+  text-decoration: none;
 }
