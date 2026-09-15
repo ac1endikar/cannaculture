@@ -82,12 +82,12 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
         self.send_response(200)
         self.end_headers()
 
-    def check_local_llm(self):
-        """Sondeo ultra-rápido en paralelo (<=150ms) a Ollama (11434) y LM Studio (1234)."""
+    def check_local_llm(self, timeout=1.0):
+        """Sondeo a Ollama (11434) y LM Studio (1234)."""
         def probe_ollama():
             try:
                 req = urllib.request.Request('http://127.0.0.1:11434/api/tags')
-                with urllib.request.urlopen(req, timeout=0.15) as resp:
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
                     if resp.status == 200:
                         data = json.loads(resp.read().decode('utf-8'))
                         models = [m.get('name') for m in data.get('models', [])]
@@ -114,7 +114,7 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
         def probe_lmstudio():
             try:
                 req = urllib.request.Request('http://127.0.0.1:1234/v1/models')
-                with urllib.request.urlopen(req, timeout=0.15) as resp:
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
                     if resp.status == 200:
                         data = json.loads(resp.read().decode('utf-8'))
                         models = [m.get('id') for m in data.get('data', [])]
@@ -147,7 +147,7 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
         """Manejar GET con soporte para API de estado LLM local."""
         clean_path = self.path.split('?')[0]
         if clean_path == '/api/local-llm':
-            info = self.check_local_llm()
+            info = self.check_local_llm(timeout=1.0)
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
@@ -164,8 +164,9 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                 body = self.rfile.read(content_len) if content_len > 0 else b'{}'
                 client_payload = json.loads(body.decode('utf-8'))
                 
-                info = self.check_local_llm()
+                info = self.check_local_llm(timeout=2.0)
                 if not info.get('available'):
+                    print("[LOCAL-LLM] Sondeo fallido: Ollama/LM Studio no disponible.", flush=True)
                     self.send_response(200)
                     self.send_header('Content-Type', 'application/json; charset=utf-8')
                     self.end_headers()
@@ -174,20 +175,31 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                 
                 provider = info['provider']
                 target_model = client_payload.get('model') or info.get('model')
-                prompt = client_payload.get('prompt', '')
+                prompt = client_payload.get('prompt') or client_payload.get('message') or ''
                 system = client_payload.get('system') or MATEO_SYSTEM_PROMPT
-                messages = client_payload.get('messages', [])
-                if not messages and prompt:
-                    messages = []
-                    if system:
-                        messages.append({'role': 'system', 'content': system})
-                    messages.append({'role': 'user', 'content': prompt})
-                else:
-                    if system and not any(m.get('role') == 'system' for m in messages):
-                        messages.insert(0, {'role': 'system', 'content': system})
-                    if prompt and (not messages or messages[-1].get('content') != prompt):
-                        messages.append({'role': 'user', 'content': prompt})
                 
+                raw_history = client_payload.get('history') or client_payload.get('messages') or []
+                messages = []
+                for item in raw_history:
+                    if isinstance(item, dict):
+                        role = 'assistant' if item.get('role') in ('model', 'assistant') else ('system' if item.get('role') == 'system' else 'user')
+                        text = item.get('content')
+                        if not text and isinstance(item.get('parts'), list) and item['parts']:
+                            text = item['parts'][0].get('text', '')
+                        if text:
+                            messages.append({'role': role, 'content': text})
+                
+                # Inyectar system prompt al inicio si no existe
+                if system and not any(m.get('role') == 'system' for m in messages):
+                    messages.insert(0, {'role': 'system', 'content': system})
+                
+                # Asegurar que el prompt actual está como último mensaje del usuario
+                if prompt:
+                    if not messages or messages[-1].get('role') != 'user' or messages[-1].get('content') != prompt:
+                        messages.append({'role': 'user', 'content': prompt})
+
+                print("[LOCAL-LLM] Petición recibida -> reenviando a Ollama...", flush=True)
+
                 resp_text = ''
                 if provider == 'ollama':
                     ollama_body = {
@@ -206,7 +218,7 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                         data=json.dumps(ollama_body).encode('utf-8'),
                         headers={'Content-Type': 'application/json'}
                     )
-                    with urllib.request.urlopen(req, timeout=45) as resp:
+                    with urllib.request.urlopen(req, timeout=60) as resp:
                         res_json = json.loads(resp.read().decode('utf-8'))
                         resp_text = res_json.get('message', {}).get('content', '')
                 elif provider == 'lmstudio':
@@ -223,15 +235,26 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                         data=json.dumps(lm_body).encode('utf-8'),
                         headers={'Content-Type': 'application/json'}
                     )
-                    with urllib.request.urlopen(req, timeout=45) as resp:
+                    with urllib.request.urlopen(req, timeout=60) as resp:
                         res_json = json.loads(resp.read().decode('utf-8'))
                         resp_text = res_json.get('choices', [{}])[0].get('message', {}).get('content', '')
+
+                print(f"[LOCAL-LLM] Respuesta generada con éxito por ({target_model})", flush=True)
 
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
-                self.wfile.write(json.dumps({'available': True, 'provider': provider, 'text': resp_text}).encode('utf-8'))
+                response_payload = {
+                    'available': True,
+                    'provider': provider,
+                    'model': target_model,
+                    'text': resp_text,
+                    'response': resp_text,
+                    'message': resp_text
+                }
+                self.wfile.write(json.dumps(response_payload).encode('utf-8'))
             except Exception as ex:
+                print(f"[LOCAL-LLM] Error: {ex}", flush=True)
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()

@@ -1,36 +1,34 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-15 20:35  
+> **Ultima actualizacion:** 2026-09-15 20:48  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(ai): calibracion de hiperparametros de muestreo y prosa conversacional de Mateo v173`  
-> **Version Cache-Busting:** `?v=2026_mateo_human_calibration_v173`
+> **Commit de cierre:** `fix(ai): enlazar chat directamente con proxy local de Ollama v174`  
+> **Version Cache-Busting:** `?v=2026_force_ollama_stream_v174`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
 - **Estado del Catalogo:** **617 cepas botánicas 100% únicas y originales, sin duplicados ni imágenes clonadas.**
-- **Calibración Conversacional Humana y Soporte Multimodelo de Mateo (v173):**
-  * **Hiperparámetros de Muestreo Calibrados (`server.py`):**
-    - `temperature`: `0.78` (mayor fluidez, soltura y naturalidad conversacional).
-    - `top_p`: `0.9` (enriquecimiento de vocabulario y profundidad estilística).
-    - `presence_penalty`: `0.6` (prevención activa de bucles y frases predecibles).
-    - `frequency_penalty`: `0.4` (variedad léxica continuada).
-  * **Detección Dinámica de Modelo en Ollama (`server.py`):**
-    - Consulta dinámica a `http://127.0.0.1:11434/api/tags`.
-    - Priorización automática de `qwen2.5:7b` si se encuentra instalado; selección de `llama3.1:latest` en su defecto.
-  * **Reescritura del System Prompt de Mateo (`js/ai-sommelier.js` y `server.py`):**
-    - Sustituido por la directiva de colega culto, botánico y sommelier de criterio propio.
-    - Prohibición estricta de tono de asistente virtual, teleoperador o manual de ayuda.
-    - Eliminadas las listas mecánicas con viñetas interminables en favor de párrafos conversacionales orgánicos.
-    - Registro de turnos de usuario en el historial multi-turno de `AISommelierAgent`.
+- **Enlace Directo con Proxy Local de Ollama y Renderizado Conversacional Fluido (v174):**
+  * **Forzado de Primera Prioridad en `js/ai-sommelier.js`:**
+    - Se prioriza `fetch('/api/local-llm')` como primera vía incondicional de respuesta al consultar a Mateo, enviando `prompt`, `history` y `system`.
+    - Detección de respuesta en `response`, `message` o `text` con `available: true`.
+    - Renderizado directo del texto libre devuelto por el LLM en prosa conversacional fluida sin la caja fija de "Razonamiento del Sommelier" (reservada exclusivamente para modo offline heurístico en GitHub Pages).
+    - Timeout en detección inicial ampliado a 1200 ms y timeout en inferencia a 45 s.
+  * **Comprobación y Trazabilidad en `server.py`:**
+    - Sondeo multihilo hacia Ollama/LM Studio con timeout configurable (1.0s en GET, 2.0s en POST).
+    - Logging visible en consola en cada interacción:
+      `[LOCAL-LLM] Petición recibida -> reenviando a Ollama...`
+      `[LOCAL-LLM] Respuesta generada con éxito por (modelo)`.
+    - Payload devuelto enriquecido con `response`, `message`, `text`, `model` y `provider`.
   * **Métricas y Recompilación:**
-    - `js/ai-sommelier.js` se mantiene optimizado en **35.58 KB** (36,429 bytes, dentro del límite estricto de <= 45 KB).
-    - Recompilación exitosa de `js/bundle.js` y `js/bundle-v151.js` (**954.5 KB**).
-    - Cache-busting sincronizado en `index.html` a `?v=2026_mateo_human_calibration_v173`.
+    - `js/ai-sommelier.js` optimizado en **35.37 KB** (36,220 bytes, cumpliendo el límite estricto de <= 45 KB).
+    - Recompilación exitosa de `js/bundle.js` y `js/bundle-v151.js` (**954.3 KB**).
+    - Cache-busting actualizado en `index.html` a `?v=2026_force_ollama_stream_v174`.
 - **Acciones para Iniciar Siguiente Sesion:**
   1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
   2. Servidor local activo en `http://localhost:8080`.
-  3. Conversar con Mateo probando tanto el modelo local Ollama como el motor autónomo.
+  3. Probar el chat de Mateo y observar los logs `[LOCAL-LLM]` en la consola del servidor.
 
 ---
 

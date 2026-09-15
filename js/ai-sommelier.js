@@ -178,7 +178,24 @@ export class AISommelierAgent {
   }
 
   async detectActiveTier() {
-    // 1. Validar Tier 1: Gemini Nano On-Device (window.ai?.languageModel)
+    // 1. Validar Prioridad: LLM Local via Proxy en server.py (/api/local-llm)
+    try {
+      const ctrl = new AbortController();
+      const tid = setTimeout(() => ctrl.abort(), 1200);
+      const res = await fetch('/api/local-llm', { signal: ctrl.signal });
+      clearTimeout(tid);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.available) {
+          this.activeTier = 'local';
+          this.localProvider = data.provider || 'Ollama';
+          this.updateTierBadges(`[LLM Local 💻 (${data.model || 'Ollama'})]`);
+          return;
+        }
+      }
+    } catch (e) { }
+
+    // 2. Validar Tier Secundario: Gemini Nano On-Device (window.ai?.languageModel)
     try {
       if (typeof window !== 'undefined' && window.ai?.languageModel) {
         const caps = await window.ai.languageModel.capabilities?.();
@@ -190,27 +207,7 @@ export class AISommelierAgent {
       }
     } catch (e) { }
 
-    // 2. Validar Tier 2: LLM Local via Proxy en server.py (/api/local-llm) con timeout estricto de 150ms
-    try {
-      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      if (isLocal) {
-        const ctrl = new AbortController();
-        const tid = setTimeout(() => ctrl.abort(), 150);
-        const res = await fetch('/api/local-llm', { signal: ctrl.signal });
-        clearTimeout(tid);
-        if (res.ok) {
-          const data = await res.json();
-          if (data && data.available) {
-            this.activeTier = 'local';
-            this.localProvider = data.provider || 'Ollama';
-            this.updateTierBadges('[LLM Local 💻]');
-            return;
-          }
-        }
-      }
-    } catch (e) { }
-
-    // 3. Tier 3: Motor Autonomo Tematico JS (Modo Offline / GitHub Pages)
+    // 3. Fallback: Motor Autónomo Temático JS (Modo Offline / GitHub Pages)
     this.activeTier = 'autonomous';
     this.updateTierBadges('[Motor Autónomo 🍃]');
   }
@@ -372,7 +369,41 @@ export class AISommelierAgent {
 
     this.showTyping('Mateo reflexionando respuesta (0-Tokens)...');
 
-    // TIER 1: Gemini Nano On-Device (window.ai)
+    // 1. FORZAR PRIMERA PRIORIDAD: Petición HTTP al proxy local /api/local-llm
+    try {
+      const ctrl = new AbortController();
+      const tid = setTimeout(() => ctrl.abort(), 45000);
+      const postRes = await fetch('/api/local-llm', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prompt: userQuery,
+          history: this.history,
+          system: MATEO_SYSTEM_PROMPT
+        }),
+        signal: ctrl.signal
+      });
+      clearTimeout(tid);
+
+      if (postRes.ok) {
+        const postData = await postRes.json();
+        const llmText = postData.response || postData.message || postData.text || '';
+        if (postData.available && llmText) {
+          this.hideTyping();
+          this.activeTier = 'local';
+          this.localProvider = postData.provider || 'Ollama';
+          this.updateTierBadges(`[LLM Local 💻 (${postData.model || 'Ollama'})]`);
+          this.history.push({ role: 'model', parts: [{ text: llmText }] });
+          // Renderizar directamente el texto libre devuelto por el LLM en formato conversacional fluido
+          this.botSay(this.formatBotMarkdown(llmText), 'local-llm');
+          return;
+        }
+      }
+    } catch (errLocal) {
+      console.warn('[AISommelier] Proxy /api/local-llm no disponible:', errLocal.message);
+    }
+
+    // 2. ALTERNATIVA: Gemini Nano On-Device (window.ai) si está disponible
     if (window.ai?.languageModel) {
       try {
         const caps = await window.ai.languageModel.capabilities?.();
@@ -389,47 +420,11 @@ export class AISommelierAgent {
           }
         }
       } catch (errNano) {
-        console.log('Tier 1 Nano no disponible o falló:', errNano.message);
+        console.log('Tier Nano falló:', errNano.message);
       }
     }
 
-    // TIER 2: LLM Local via Proxy server.py (/api/local-llm con timeout estricto de 150ms en handshake)
-    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    if (isLocal) {
-      try {
-        const ctrl = new AbortController();
-        const tid = setTimeout(() => ctrl.abort(), 35000);
-        const postRes = await fetch('/api/local-llm', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            prompt: userQuery,
-            system: MATEO_SYSTEM_PROMPT,
-            messages: this.history.slice(-8).map(h => ({
-              role: h.role === 'model' ? 'assistant' : 'user',
-              content: h.parts?.[0]?.text || ''
-            }))
-          }),
-          signal: ctrl.signal
-        });
-        clearTimeout(tid);
-        if (postRes.ok) {
-          const postData = await postRes.json();
-          if (postData.available && postData.text) {
-            this.hideTyping();
-            this.activeTier = 'local';
-            this.updateTierBadges('[LLM Local 💻]');
-            this.history.push({ role: 'model', parts: [{ text: postData.text }] });
-            this.botSay(this.formatBotMarkdown(postData.text), 'local-llm');
-            return;
-          }
-        }
-      } catch (errLocal) {
-        // Fallthrough inmediato a Tier 3 sin demoras
-      }
-    }
-
-    // TIER 3: Motor Autonomo Tematico JS (Modo Offline / GitHub Pages - Peso optimizado <= 45 KB)
+    // 3. SOLO SI EL FETCH FALLA O available: false: Recurrir al fallback heurístico
     this.hideTyping();
     this.activeTier = 'autonomous';
     this.updateTierBadges('[Motor Autónomo 🍃]');
@@ -439,8 +434,8 @@ export class AISommelierAgent {
       this.history.push({ role: 'model', parts: [{ text: responseHtml.replace(/<[^>]*>/g, ' ') }] });
       this.botSay(responseHtml, 'eco');
     } catch (e) {
-      console.error('Error en Tier 3:', e);
-      this.botSay('🌿 <strong>Mateo:</strong> Te escucho con atención. Como anfitrión y sommelier, podemos conversar sobre ciencia, arte, cocina o maridajes botánicos. ¿Qué tema te apetece explorar hoy?', 'eco');
+      console.error('Error en fallback heurístico:', e);
+      this.botSay('🌿 <strong>Mateo:</strong> Te escucho con atención. Como anfitrión y sommelier, podemos conversar sobre cualquier aspecto botánico o cultural. ¿Qué te gustaría explorar?', 'eco');
     }
   }
 
