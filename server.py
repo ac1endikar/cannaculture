@@ -67,10 +67,14 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
         return super().translate_path(clean_path)
 
     def end_headers(self):
-        # CORS - permitir acceso desde cualquier origen (móvil en LAN, Live Server, etc.)
-        self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
+        # CORS - asegurar cabeceras sin duplicación
+        headers_buffer = getattr(self, '_headers_buffer', [])
+        has_cors = any(b'Access-Control-Allow-Origin' in h for h in headers_buffer)
+        if not has_cors:
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+            self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
+            self.send_header("Access-Control-Max-Age", "86400")
         # No-cache para desarrollo local inmediato
         self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
         self.send_header("Pragma", "no-cache")
@@ -78,9 +82,12 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
 
     def do_OPTIONS(self):
-        """Responder a preflight CORS para cualquier método (GET, POST, OPTIONS)."""
         self.send_response(200)
-        self.send_header("Content-Length", "0")
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With')
+        self.send_header('Access-Control-Max-Age', '86400')
+        self.send_header('Content-Length', '0')
         self.end_headers()
 
     def check_local_llm(self, timeout=1.0):
@@ -150,6 +157,9 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
         if clean_path == '/api/local-llm' or self.path.startswith('/api/local-llm'):
             info = self.check_local_llm(timeout=1.0)
             self.send_response(200)
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+            self.send_header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With')
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
             self.wfile.write(json.dumps(info).encode('utf-8'))
@@ -169,6 +179,7 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                 if not info.get('available'):
                     print("[LOCAL-LLM] Sondeo fallido: Ollama/LM Studio no disponible.", flush=True)
                     self.send_response(200)
+                    self.send_header('Access-Control-Allow-Origin', '*')
                     self.send_header('Content-Type', 'application/json; charset=utf-8')
                     self.end_headers()
                     self.wfile.write(json.dumps({'available': False, 'error': 'No local LLM running'}).encode('utf-8'))
@@ -243,6 +254,7 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                 print(f"[LOCAL-LLM] Respuesta generada con éxito por ({target_model})", flush=True)
 
                 self.send_response(200)
+                self.send_header('Access-Control-Allow-Origin', '*')
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
                 response_payload = {
@@ -257,6 +269,7 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
             except Exception as ex:
                 print(f"[LOCAL-LLM] Error: {ex}", flush=True)
                 self.send_response(200)
+                self.send_header('Access-Control-Allow-Origin', '*')
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
                 self.wfile.write(json.dumps({'available': False, 'error': str(ex)}).encode('utf-8'))

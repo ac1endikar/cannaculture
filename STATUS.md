@@ -1,8 +1,8 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-15 20:58  
+> **Ultima actualizacion:** 2026-09-15 21:10  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(server): resolver error 405 admitiendo GET y OPTIONS en /api/local-llm v175`  
+> **Commit de cierre:** `fix(server): resolver preflight CORS implementando do_OPTIONS v175`  
 > **Version Cache-Busting:** `?v=2026_fix_405_endpoint_v175`
 
 ---
