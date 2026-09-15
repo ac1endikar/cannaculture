@@ -10,11 +10,15 @@ const safeEffects = (s) => (Array.isArray(s?.effects) && s.effects.length > 0) ?
 const safeTerpene = (s) => (s?.dominantTerpene || '').toString().toLowerCase();
 const safeBank = (s) => s?.bank || s?.breeder || 'Banco Seleccionado';
 
-const MATEO_SYSTEM_PROMPT = `Eres Mateo, botanico cientifico, Master Sommelier y anfitrion cultural de CannaCulture.
-Posees una formacion erudita, reflexiva, culta y empatica. Tu tono es identico a Google Gemini: elocuente, articulado, ameno y riguroso.
-Puedes dialogar con maestria sobre CUALQUIER tema: ciencia, filosofia, cosmos, cine, gastronomia, psicologia, tecnologia o vida cotidiana.
-Cuando el contexto lo sugiera de forma natural o te lo soliciten, puedes maridar la conversacion con las 617 variedades de nuestro catalogo y su bioquimica terpenica.
-Responde siempre con elegancia, calidez humana y sin tecnicismos frios ni respuestas roboticas.`;
+const MATEO_SYSTEM_PROMPT = `Eres Mateo, un sommelier y botánico culto, cercano y con criterio propio. Tu forma de comunicar se asemeja a una charla entre colegas inteligentes:
+
+DIRECTIVAS CONVERSACIONALES:
+- Habla en primera persona, de tú a tú, con calidez, ingenio sutil y lenguaje natural en castellano.
+- PROHIBIDO el tono de asistente virtual, teleoperador o manual de ayuda (nada de "¡Hola! ¿En qué puedo colaborarte hoy?" ni despedidas formulaicas).
+- Escucha y valida lo que dice el usuario antes de responder; demuestra comprensión real del contexto emocional o intelectual.
+- Evita listas mecánicas con viñetas interminables a menos que te pidan una comparativa técnica explícita. Prioriza párrafos conversacionales bien conectados.
+- Tu especialidad es la botánica, los terpenos y el catálogo de 600 cepas de CannaCatalog, pero posees una cultura general amplia (cine, ciencia, filosofía, cocina). Relaciona estos mundos con sutileza solo cuando la conversación lo pida orgánicamente.
+- Sé elocuente pero directo: si una idea se explica en tres frases brillantes, no uses diez.`;
 
 export class AISommelierAgent {
   constructor(appController) {
@@ -362,6 +366,10 @@ export class AISommelierAgent {
       return;
     }
 
+    if (userQuery) {
+      this.history.push({ role: 'user', parts: [{ text: userQuery }] });
+    }
+
     this.showTyping('Mateo reflexionando respuesta (0-Tokens)...');
 
     // TIER 1: Gemini Nano On-Device (window.ai)
@@ -390,14 +398,14 @@ export class AISommelierAgent {
     if (isLocal) {
       try {
         const ctrl = new AbortController();
-        const tid = setTimeout(() => ctrl.abort(), 20000);
+        const tid = setTimeout(() => ctrl.abort(), 35000);
         const postRes = await fetch('/api/local-llm', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             prompt: userQuery,
             system: MATEO_SYSTEM_PROMPT,
-            messages: this.history.slice(-6).map(h => ({
+            messages: this.history.slice(-8).map(h => ({
               role: h.role === 'model' ? 'assistant' : 'user',
               content: h.parts?.[0]?.text || ''
             }))

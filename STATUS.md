@@ -1,33 +1,36 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-15 18:15  
+> **Ultima actualizacion:** 2026-09-15 20:35  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(ai): motor sommelier hibrido 0 tokens, proxy local y blindaje legal v172`  
-> **Version Cache-Busting:** `?v=2026_zero_token_hybrid_v172`
+> **Commit de cierre:** `feat(ai): calibracion de hiperparametros de muestreo y prosa conversacional de Mateo v173`  
+> **Version Cache-Busting:** `?v=2026_mateo_human_calibration_v173`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
 - **Estado del Catalogo:** **617 cepas botánicas 100% únicas y originales, sin duplicados ni imágenes clonadas.**
-- **Despliegue del Sommelier Híbrido Universal 0-Tokens con Control de Arquitectura (v172):**
-  * **Núcleo Zero-Token Cascade (`js/ai-sommelier.js`):**
-    - **Tier 1 (Gemini Nano On-Device):** Detección automática en Chrome Built-in AI (`window.ai?.languageModel`) con validación de disponibilidad (`capabilities().available === 'readily'`) y System Prompt erudito y reflexivo de Mateo.
-    - **Tier 2 (LLM Local vía Proxy en `server.py`):** Conexión no bloqueante a través de `/api/local-llm` hacia Ollama (`127.0.0.1:11434`) o LM Studio (`127.0.0.1:1234`) con sondeo concurrente multihilo y timeout estricto <= 150 ms para no congelar la UI.
-    - **Tier 3 (Motor Autónomo Temático JS):** Modo offline inmediato para GitHub Pages estructurado por atmósferas sensoriales y estados de ánimo (Foco Creativo, Reflexión Filosófica y Cósmica, Desconexión Vespertina, Gastronomía y Sobremesa, Arte/Cinefilia, y Ciencia Botánica pura). Capacidad de responder elocuentemente sobre cualquier tema de conversación sin errores robóticos ni evasivas.
-    - **Restricción Estricta de Peso Cumplida:** `js/ai-sommelier.js` optimizado a **35.03 KB** (35,868 bytes), cumpliendo holgadamente el límite de <= 45 KB.
-    - **Guardián 0-Tokens:** Llamadas a APIs externas de pago totalmente desactivadas por defecto.
-- **Proxy en `server.py` (`/api/local-llm`):**
-  * Manejador GET/POST integrado con cabeceras CORS y sondeo paralelo con `concurrent.futures` hacia los puertos 11434 y 1234.
-- **UI & Blindaje Legal (`index.html` y `styles.css`):**
-  * **Header del Chat:** Añadido badge interactivo glassmorphic `⚡ Modo Ilimitado (0 Tokens)` que refleja la fuente activa en tiempo real: `[Gemini Nano 🧠]`, `[LLM Local 💻]` o `[Motor Autónomo 🍃]`.
-  * **Aviso Legal (Footer):** Confirmada la 4ª tarjeta del grid de aviso legal con la cláusula de "Propiedad Intelectual & Enlaces" y canal directo de atención: `contacto.cannacatalog@gmail.com`.
-- **Métricas y Recompilación:**
-  * Bundle principal recompilado: `js/bundle.js` (**953.9 KB**, reducción de 43.6 KB).
-  * Cache-busting actualizado en `index.html` a `?v=2026_zero_token_hybrid_v172`.
+- **Calibración Conversacional Humana y Soporte Multimodelo de Mateo (v173):**
+  * **Hiperparámetros de Muestreo Calibrados (`server.py`):**
+    - `temperature`: `0.78` (mayor fluidez, soltura y naturalidad conversacional).
+    - `top_p`: `0.9` (enriquecimiento de vocabulario y profundidad estilística).
+    - `presence_penalty`: `0.6` (prevención activa de bucles y frases predecibles).
+    - `frequency_penalty`: `0.4` (variedad léxica continuada).
+  * **Detección Dinámica de Modelo en Ollama (`server.py`):**
+    - Consulta dinámica a `http://127.0.0.1:11434/api/tags`.
+    - Priorización automática de `qwen2.5:7b` si se encuentra instalado; selección de `llama3.1:latest` en su defecto.
+  * **Reescritura del System Prompt de Mateo (`js/ai-sommelier.js` y `server.py`):**
+    - Sustituido por la directiva de colega culto, botánico y sommelier de criterio propio.
+    - Prohibición estricta de tono de asistente virtual, teleoperador o manual de ayuda.
+    - Eliminadas las listas mecánicas con viñetas interminables en favor de párrafos conversacionales orgánicos.
+    - Registro de turnos de usuario en el historial multi-turno de `AISommelierAgent`.
+  * **Métricas y Recompilación:**
+    - `js/ai-sommelier.js` se mantiene optimizado en **35.58 KB** (36,429 bytes, dentro del límite estricto de <= 45 KB).
+    - Recompilación exitosa de `js/bundle.js` y `js/bundle-v151.js` (**954.5 KB**).
+    - Cache-busting sincronizado en `index.html` a `?v=2026_mateo_human_calibration_v173`.
 - **Acciones para Iniciar Siguiente Sesion:**
   1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
   2. Servidor local activo en `http://localhost:8080`.
-  3. Interactuar con el Sommelier IA conversando sobre cualquier tema libre o explorando el catálogo.
+  3. Conversar con Mateo probando tanto el modelo local Ollama como el motor autónomo.
 
 ---
 

@@ -38,6 +38,16 @@ mimetypes.add_type("image/webp", ".webp")
 mimetypes.add_type("image/avif", ".avif")
 mimetypes.add_type("font/woff2", ".woff2")
 
+MATEO_SYSTEM_PROMPT = """Eres Mateo, un sommelier y botánico culto, cercano y con criterio propio. Tu forma de comunicar se asemeja a una charla entre colegas inteligentes:
+
+DIRECTIVAS CONVERSACIONALES:
+- Habla en primera persona, de tú a tú, con calidez, ingenio sutil y lenguaje natural en castellano.
+- PROHIBIDO el tono de asistente virtual, teleoperador o manual de ayuda (nada de "¡Hola! ¿En qué puedo colaborarte hoy?" ni despedidas formulaicas).
+- Escucha y valida lo que dice el usuario antes de responder; demuestra comprensión real del contexto emocional o intelectual.
+- Evita listas mecánicas con viñetas interminables a menos que te pidan una comparativa técnica explícita. Prioriza párrafos conversacionales bien conectados.
+- Tu especialidad es la botánica, los terpenos y el catálogo de 600 cepas de CannaCatalog, pero posees una cultura general amplia (cine, ciencia, filosofía, cocina). Relaciona estos mundos con sutileza solo cuando la conversación lo pida orgánicamente.
+- Sé elocuente pero directo: si una idea se explica en tres frases brillantes, no uses diez."""
+
 
 class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
     """Handler con CORS habilitado y logging mejorado."""
@@ -81,11 +91,21 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                     if resp.status == 200:
                         data = json.loads(resp.read().decode('utf-8'))
                         models = [m.get('name') for m in data.get('models', [])]
+                        
+                        # Prioridad dinámica: qwen2.5:7b > llama3.1:latest
+                        selected_model = 'llama3.1:latest'
+                        if any('qwen2.5:7b' in m for m in models):
+                            selected_model = next((m for m in models if m == 'qwen2.5:7b'), None) or next((m for m in models if 'qwen2.5:7b' in m), 'qwen2.5:7b')
+                        elif any('llama3.1' in m for m in models):
+                            selected_model = next((m for m in models if m == 'llama3.1:latest'), None) or next((m for m in models if 'llama3.1' in m), 'llama3.1:latest')
+                        elif models:
+                            selected_model = models[0]
+
                         return {
                             'available': True,
                             'provider': 'ollama',
                             'models': models,
-                            'model': models[0] if models else 'llama3'
+                            'model': selected_model
                         }
             except Exception:
                 pass
@@ -155,41 +175,55 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                 provider = info['provider']
                 target_model = client_payload.get('model') or info.get('model')
                 prompt = client_payload.get('prompt', '')
-                system = client_payload.get('system', '')
+                system = client_payload.get('system') or MATEO_SYSTEM_PROMPT
                 messages = client_payload.get('messages', [])
                 if not messages and prompt:
                     messages = []
                     if system:
                         messages.append({'role': 'system', 'content': system})
                     messages.append({'role': 'user', 'content': prompt})
+                else:
+                    if system and not any(m.get('role') == 'system' for m in messages):
+                        messages.insert(0, {'role': 'system', 'content': system})
+                    if prompt and (not messages or messages[-1].get('content') != prompt):
+                        messages.append({'role': 'user', 'content': prompt})
                 
                 resp_text = ''
                 if provider == 'ollama':
                     ollama_body = {
                         'model': target_model,
                         'messages': messages,
-                        'stream': False
+                        'stream': False,
+                        'options': {
+                            'temperature': 0.78,
+                            'top_p': 0.9,
+                            'presence_penalty': 0.6,
+                            'frequency_penalty': 0.4
+                        }
                     }
                     req = urllib.request.Request(
                         'http://127.0.0.1:11434/api/chat',
                         data=json.dumps(ollama_body).encode('utf-8'),
                         headers={'Content-Type': 'application/json'}
                     )
-                    with urllib.request.urlopen(req, timeout=30) as resp:
+                    with urllib.request.urlopen(req, timeout=45) as resp:
                         res_json = json.loads(resp.read().decode('utf-8'))
                         resp_text = res_json.get('message', {}).get('content', '')
                 elif provider == 'lmstudio':
                     lm_body = {
                         'model': target_model,
                         'messages': messages,
-                        'temperature': 0.7
+                        'temperature': 0.78,
+                        'top_p': 0.9,
+                        'presence_penalty': 0.6,
+                        'frequency_penalty': 0.4
                     }
                     req = urllib.request.Request(
                         'http://127.0.0.1:1234/v1/chat/completions',
                         data=json.dumps(lm_body).encode('utf-8'),
                         headers={'Content-Type': 'application/json'}
                     )
-                    with urllib.request.urlopen(req, timeout=30) as resp:
+                    with urllib.request.urlopen(req, timeout=45) as resp:
                         res_json = json.loads(resp.read().decode('utf-8'))
                         resp_text = res_json.get('choices', [{}])[0].get('message', {}).get('content', '')
 
