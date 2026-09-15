@@ -67,10 +67,10 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
         return super().translate_path(clean_path)
 
     def end_headers(self):
-        # CORS - permitir acceso desde cualquier origen (móvil en LAN)
+        # CORS - permitir acceso desde cualquier origen (móvil en LAN, Live Server, etc.)
         self.send_header("Access-Control-Allow-Origin", "*")
         self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
         # No-cache para desarrollo local inmediato
         self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
         self.send_header("Pragma", "no-cache")
@@ -78,8 +78,9 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
 
     def do_OPTIONS(self):
-        """Responder a preflight CORS."""
+        """Responder a preflight CORS para cualquier método (GET, POST, OPTIONS)."""
         self.send_response(200)
+        self.send_header("Content-Length", "0")
         self.end_headers()
 
     def check_local_llm(self, timeout=1.0):
@@ -145,8 +146,8 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
 
     def do_GET(self):
         """Manejar GET con soporte para API de estado LLM local."""
-        clean_path = self.path.split('?')[0]
-        if clean_path == '/api/local-llm':
+        clean_path = self.path.split('?')[0].rstrip('/')
+        if clean_path == '/api/local-llm' or self.path.startswith('/api/local-llm'):
             info = self.check_local_llm(timeout=1.0)
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
@@ -157,8 +158,8 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
 
     def do_POST(self):
         """Manejar endpoints de API (LLM Local 0-Tokens y Proxy para Gemini)."""
-        clean_path = self.path.split('?')[0]
-        if clean_path == '/api/local-llm':
+        clean_path = self.path.split('?')[0].rstrip('/')
+        if clean_path == '/api/local-llm' or self.path.startswith('/api/local-llm'):
             try:
                 content_len = int(self.headers.get('Content-Length', 0))
                 body = self.rfile.read(content_len) if content_len > 0 else b'{}'

@@ -1,34 +1,31 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-15 20:48  
+> **Ultima actualizacion:** 2026-09-15 20:58  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(ai): enlazar chat directamente con proxy local de Ollama v174`  
-> **Version Cache-Busting:** `?v=2026_force_ollama_stream_v174`
+> **Commit de cierre:** `fix(server): resolver error 405 admitiendo GET y OPTIONS en /api/local-llm v175`  
+> **Version Cache-Busting:** `?v=2026_fix_405_endpoint_v175`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
 - **Estado del Catalogo:** **617 cepas botánicas 100% únicas y originales, sin duplicados ni imágenes clonadas.**
-- **Enlace Directo con Proxy Local de Ollama y Renderizado Conversacional Fluido (v174):**
-  * **Forzado de Primera Prioridad en `js/ai-sommelier.js`:**
-    - Se prioriza `fetch('/api/local-llm')` como primera vía incondicional de respuesta al consultar a Mateo, enviando `prompt`, `history` y `system`.
-    - Detección de respuesta en `response`, `message` o `text` con `available: true`.
-    - Renderizado directo del texto libre devuelto por el LLM en prosa conversacional fluida sin la caja fija de "Razonamiento del Sommelier" (reservada exclusivamente para modo offline heurístico en GitHub Pages).
-    - Timeout en detección inicial ampliado a 1200 ms y timeout en inferencia a 45 s.
-  * **Comprobación y Trazabilidad en `server.py`:**
-    - Sondeo multihilo hacia Ollama/LM Studio con timeout configurable (1.0s en GET, 2.0s en POST).
-    - Logging visible en consola en cada interacción:
-      `[LOCAL-LLM] Petición recibida -> reenviando a Ollama...`
-      `[LOCAL-LLM] Respuesta generada con éxito por (modelo)`.
-    - Payload devuelto enriquecido con `response`, `message`, `text`, `model` y `provider`.
+- **Soporte Completo a GET, POST y OPTIONS con CORS en `/api/local-llm` (v175):**
+  * **Corrección de Error 405 en `server.py`:**
+    - Soporte explícito en `do_GET` para `/api/local-llm` ejecutando `check_local_llm()` y respondiendo `200 OK` con JSON de disponibilidad.
+    - Soporte explícito en `do_OPTIONS` para preflight CORS con `Content-Length: 0` y código `200 OK`.
+    - Cabeceras CORS completas en `end_headers`: `Access-Control-Allow-Origin: *`, `Access-Control-Allow-Methods: GET, POST, OPTIONS`, `Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With`.
+    - Coincidencia flexible de rutas (soporte para sub-rutas y query params).
+  * **Blindaje en `js/ai-sommelier.js`:**
+    - Incorporado `getLocalApiUrl()` que detecta si la página se sirve desde Live Server (ej. puerto 5500) o puerto 8080, reencaminando peticiones a `http://localhost:8080/api/local-llm` si recibe un 405.
+  * **Verificación Automatizada:**
+    - Pruebas en Python de peticiones GET, OPTIONS y POST a `/api/local-llm`: las 3 devuelven 200 OK sin excepciones.
   * **Métricas y Recompilación:**
-    - `js/ai-sommelier.js` optimizado en **35.37 KB** (36,220 bytes, cumpliendo el límite estricto de <= 45 KB).
-    - Recompilación exitosa de `js/bundle.js` y `js/bundle-v151.js` (**954.3 KB**).
-    - Cache-busting actualizado en `index.html` a `?v=2026_force_ollama_stream_v174`.
+    - Recompilación exitosa de `js/bundle.js` y `js/bundle-v151.js` (**955.3 KB**).
+    - Cache-busting actualizado en `index.html` a `?v=2026_fix_405_endpoint_v175`.
 - **Acciones para Iniciar Siguiente Sesion:**
   1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
   2. Servidor local activo en `http://localhost:8080`.
-  3. Probar el chat de Mateo y observar los logs `[LOCAL-LLM]` en la consola del servidor.
+  3. Probar el chat de Mateo tanto en `http://localhost:8080` como en cualquier otro puerto local.
 
 ---
 

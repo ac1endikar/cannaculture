@@ -177,12 +177,22 @@ export class AISommelierAgent {
     });
   }
 
+  getLocalApiUrl() {
+    if (typeof window === 'undefined') return '/api/local-llm';
+    if (window.location.port === '8080') return '/api/local-llm';
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      return 'http://localhost:8080/api/local-llm';
+    }
+    return '/api/local-llm';
+  }
+
   async detectActiveTier() {
     // 1. Validar Prioridad: LLM Local via Proxy en server.py (/api/local-llm)
     try {
       const ctrl = new AbortController();
       const tid = setTimeout(() => ctrl.abort(), 1200);
-      const res = await fetch('/api/local-llm', { signal: ctrl.signal });
+      const url = this.getLocalApiUrl();
+      const res = await fetch(url, { signal: ctrl.signal });
       clearTimeout(tid);
       if (res.ok) {
         const data = await res.json();
@@ -371,9 +381,10 @@ export class AISommelierAgent {
 
     // 1. FORZAR PRIMERA PRIORIDAD: Petición HTTP al proxy local /api/local-llm
     try {
+      let targetUrl = this.getLocalApiUrl();
       const ctrl = new AbortController();
       const tid = setTimeout(() => ctrl.abort(), 45000);
-      const postRes = await fetch('/api/local-llm', {
+      let postRes = await fetch(targetUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -383,6 +394,21 @@ export class AISommelierAgent {
         }),
         signal: ctrl.signal
       });
+
+      // Si por alguna razón el servidor que sirve la página devuelve 405 (ej. Live Server en otro puerto)
+      if (postRes.status === 405 && targetUrl === '/api/local-llm') {
+        targetUrl = 'http://localhost:8080/api/local-llm';
+        postRes = await fetch(targetUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            prompt: userQuery,
+            history: this.history,
+            system: MATEO_SYSTEM_PROMPT
+          }),
+          signal: ctrl.signal
+        });
+      }
       clearTimeout(tid);
 
       if (postRes.ok) {
