@@ -69,11 +69,13 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
         # CORS - asegurar cabeceras sin duplicación
         headers_buffer = getattr(self, '_headers_buffer', [])
-        has_cors = any(b'Access-Control-Allow-Origin' in h for h in headers_buffer)
-        if not has_cors:
+        if not any(b'Access-Control-Allow-Origin' in h for h in headers_buffer):
             self.send_header("Access-Control-Allow-Origin", "*")
+        if not any(b'Access-Control-Allow-Methods' in h for h in headers_buffer):
             self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        if not any(b'Access-Control-Allow-Headers' in h for h in headers_buffer):
             self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
+        if not any(b'Access-Control-Max-Age' in h for h in headers_buffer):
             self.send_header("Access-Control-Max-Age", "86400")
         # No-cache para desarrollo local inmediato
         self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
@@ -87,7 +89,6 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With')
         self.send_header('Access-Control-Max-Age', '86400')
-        self.send_header('Content-Length', '0')
         self.end_headers()
 
     def check_local_llm(self, timeout=1.0):
@@ -153,16 +154,13 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
 
     def do_GET(self):
         """Manejar GET con soporte para API de estado LLM local."""
-        clean_path = self.path.split('?')[0].rstrip('/')
-        if clean_path == '/api/local-llm' or self.path.startswith('/api/local-llm'):
-            info = self.check_local_llm(timeout=1.0)
+        if self.path.startswith('/api/local-llm'):
             self.send_response(200)
+            self.send_header('Content-Type', 'application/json')
             self.send_header('Access-Control-Allow-Origin', '*')
-            self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
-            self.send_header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With')
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
-            self.wfile.write(json.dumps(info).encode('utf-8'))
+            status = self.check_local_llm()
+            self.wfile.write(json.dumps(status).encode('utf-8'))
             return
         super().do_GET()
 
@@ -294,6 +292,7 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
 
                 if not api_key:
                     self.send_response(400)
+                    self.send_header('Access-Control-Allow-Origin', '*')
                     self.send_header('Content-Type', 'application/json; charset=utf-8')
                     self.end_headers()
                     self.wfile.write(json.dumps({'error': 'No se encontró GEMINI_API_KEY en .env'}).encode('utf-8'))
@@ -343,23 +342,27 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                         raise last_error
 
                 self.send_response(status_code)
+                self.send_header('Access-Control-Allow-Origin', '*')
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
                 self.wfile.write(resp_data)
             except urllib.error.HTTPError as he:
                 err_data = he.read()
                 self.send_response(he.code)
+                self.send_header('Access-Control-Allow-Origin', '*')
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
                 self.wfile.write(err_data)
             except Exception as ex:
                 self.send_response(500)
+                self.send_header('Access-Control-Allow-Origin', '*')
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
                 self.end_headers()
                 self.wfile.write(json.dumps({'error': str(ex)}).encode('utf-8'))
             return
 
         self.send_response(404)
+        self.send_header('Access-Control-Allow-Origin', '*')
         self.end_headers()
 
     def log_message(self, format, *args):

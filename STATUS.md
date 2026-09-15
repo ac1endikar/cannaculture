@@ -1,31 +1,30 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-15 21:10  
+> **Ultima actualizacion:** 2026-09-15 21:20  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(server): resolver preflight CORS implementando do_OPTIONS v175`  
-> **Version Cache-Busting:** `?v=2026_fix_405_endpoint_v175`
+> **Commit de cierre:** `fix(server): resolver 405 y preflight con soporte OPTIONS v175`  
+> **Version Cache-Busting:** `?v=2026_cors_options_get_post_v175`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
 - **Estado del Catalogo:** **617 cepas botánicas 100% únicas y originales, sin duplicados ni imágenes clonadas.**
-- **Soporte Completo a GET, POST y OPTIONS con CORS en `/api/local-llm` (v175):**
-  * **Corrección de Error 405 en `server.py`:**
-    - Soporte explícito en `do_GET` para `/api/local-llm` ejecutando `check_local_llm()` y respondiendo `200 OK` con JSON de disponibilidad.
-    - Soporte explícito en `do_OPTIONS` para preflight CORS con `Content-Length: 0` y código `200 OK`.
-    - Cabeceras CORS completas en `end_headers`: `Access-Control-Allow-Origin: *`, `Access-Control-Allow-Methods: GET, POST, OPTIONS`, `Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With`.
-    - Coincidencia flexible de rutas (soporte para sub-rutas y query params).
-  * **Blindaje en `js/ai-sommelier.js`:**
-    - Incorporado `getLocalApiUrl()` que detecta si la página se sirve desde Live Server (ej. puerto 5500) o puerto 8080, reencaminando peticiones a `http://localhost:8080/api/local-llm` si recibe un 405.
-  * **Verificación Automatizada:**
-    - Pruebas en Python de peticiones GET, OPTIONS y POST a `/api/local-llm`: las 3 devuelven 200 OK sin excepciones.
+- **Soporte Integral de CORS (OPTIONS, GET, POST) en `server.py` (v175):**
+  * **Método `do_OPTIONS` Implementado:**
+    - Devuelve `200 OK` para solicitudes preflight del navegador con `Access-Control-Allow-Origin: *`, `Access-Control-Allow-Methods: GET, POST, OPTIONS`, `Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With`, y `Access-Control-Max-Age: 86400`.
+  * **Método `do_GET` Actualizado:**
+    - Detecta `self.path.startswith('/api/local-llm')` y responde de inmediato con `200 OK`, `Content-Type: application/json`, `Access-Control-Allow-Origin: *` y la serialización JSON del sondeo `check_local_llm()`.
+  * **Método `do_POST` Blindado:**
+    - Inclusión explícita de `Access-Control-Allow-Origin: *` en todas las respuestas (éxito de inferencia LLM local, fallback sin modelo activo, endpoints proxy Gemini y respuestas 404).
+  * **Refuerzo en `end_headers`:**
+    - Control granular para garantizar presencia de cabeceras CORS en cualquier respuesta HTTP sin duplicación.
   * **Métricas y Recompilación:**
     - Recompilación exitosa de `js/bundle.js` y `js/bundle-v151.js` (**955.3 KB**).
-    - Cache-busting actualizado en `index.html` a `?v=2026_fix_405_endpoint_v175`.
+    - Cache-busting actualizado en `index.html` a `?v=2026_cors_options_get_post_v175`.
 - **Acciones para Iniciar Siguiente Sesion:**
   1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
   2. Servidor local activo en `http://localhost:8080`.
-  3. Probar el chat de Mateo tanto en `http://localhost:8080` como en cualquier otro puerto local.
+  3. Probar el chat de Mateo tanto en `http://localhost:8080` como desde orígenes cruzados (ej. Live Server).
 
 ---
 
