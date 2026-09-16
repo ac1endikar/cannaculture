@@ -15,6 +15,7 @@ import json
 import urllib.request
 import urllib.error
 import concurrent.futures
+import time
 
 # Configurar stdout/stderr para UTF-8 en consola de Windows
 if sys.stdout.encoding != 'utf-8':
@@ -91,8 +92,15 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Access-Control-Max-Age', '86400')
         self.end_headers()
 
-    def check_local_llm(self, timeout=1.0):
-        """Sondeo a Ollama (11434) y LM Studio (1234)."""
+    _llm_cache = None
+    _llm_cache_time = 0
+
+    def check_local_llm(self, timeout=0.5):
+        """Sondeo ultrarrápido a Ollama (11434) y LM Studio (1234) con caché."""
+        now = time.time()
+        if CannaCultureHandler._llm_cache and (now - CannaCultureHandler._llm_cache_time < 5.0):
+            return CannaCultureHandler._llm_cache
+
         def probe_ollama():
             try:
                 req = urllib.request.Request('http://127.0.0.1:11434/api/tags')
@@ -137,20 +145,23 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                 pass
             return None
 
-        try:
-            with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-                f_ollama = executor.submit(probe_ollama)
-                f_lm = executor.submit(probe_lmstudio)
-                res_ollama = f_ollama.result()
-                if res_ollama:
-                    return res_ollama
-                res_lm = f_lm.result()
-                if res_lm:
-                    return res_lm
-        except Exception:
-            pass
+        # Sondeo rápido secuencial: Ollama es el motor principal y responde en <25ms
+        res_ollama = probe_ollama()
+        if res_ollama:
+            CannaCultureHandler._llm_cache = res_ollama
+            CannaCultureHandler._llm_cache_time = now
+            return res_ollama
 
-        return {'available': False}
+        res_lm = probe_lmstudio()
+        if res_lm:
+            CannaCultureHandler._llm_cache = res_lm
+            CannaCultureHandler._llm_cache_time = now
+            return res_lm
+
+        fallback = {'available': False}
+        CannaCultureHandler._llm_cache = fallback
+        CannaCultureHandler._llm_cache_time = now
+        return fallback
 
     def do_GET(self):
         """Manejar GET con soporte para API de estado LLM local."""
@@ -228,7 +239,7 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                         data=json.dumps(ollama_body).encode('utf-8'),
                         headers={'Content-Type': 'application/json'}
                     )
-                    with urllib.request.urlopen(req, timeout=60) as resp:
+                    with urllib.request.urlopen(req, timeout=90) as resp:
                         res_json = json.loads(resp.read().decode('utf-8'))
                         resp_text = res_json.get('message', {}).get('content', '')
                 elif provider == 'lmstudio':
@@ -245,7 +256,7 @@ class CannaCultureHandler(http.server.SimpleHTTPRequestHandler):
                         data=json.dumps(lm_body).encode('utf-8'),
                         headers={'Content-Type': 'application/json'}
                     )
-                    with urllib.request.urlopen(req, timeout=60) as resp:
+                    with urllib.request.urlopen(req, timeout=90) as resp:
                         res_json = json.loads(resp.read().decode('utf-8'))
                         resp_text = res_json.get('choices', [{}])[0].get('message', {}).get('content', '')
 

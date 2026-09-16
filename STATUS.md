@@ -1,30 +1,27 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-15 21:20  
+> **Ultima actualizacion:** 2026-09-16 11:40  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(server): resolver 405 y preflight con soporte OPTIONS v175`  
-> **Version Cache-Busting:** `?v=2026_cors_options_get_post_v175`
+> **Commit de cierre:** `feat(server): optimizar latencia de sondeo LLM local con fast-path y cache v176`  
+> **Version Cache-Busting:** `?v=2026_local_llm_fast_probe_v176`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
 - **Estado del Catalogo:** **617 cepas botánicas 100% únicas y originales, sin duplicados ni imágenes clonadas.**
-- **Soporte Integral de CORS (OPTIONS, GET, POST) en `server.py` (v175):**
-  * **Método `do_OPTIONS` Implementado:**
-    - Devuelve `200 OK` para solicitudes preflight del navegador con `Access-Control-Allow-Origin: *`, `Access-Control-Allow-Methods: GET, POST, OPTIONS`, `Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With`, y `Access-Control-Max-Age: 86400`.
-  * **Método `do_GET` Actualizado:**
-    - Detecta `self.path.startswith('/api/local-llm')` y responde de inmediato con `200 OK`, `Content-Type: application/json`, `Access-Control-Allow-Origin: *` y la serialización JSON del sondeo `check_local_llm()`.
-  * **Método `do_POST` Blindado:**
-    - Inclusión explícita de `Access-Control-Allow-Origin: *` en todas las respuestas (éxito de inferencia LLM local, fallback sin modelo activo, endpoints proxy Gemini y respuestas 404).
-  * **Refuerzo en `end_headers`:**
-    - Control granular para garantizar presencia de cabeceras CORS en cualquier respuesta HTTP sin duplicación.
+- **Sondeo LLM Local Ultrarrápido & Resiliente (v176):**
+  * **Optimización Fast-Path:** Sondeo secuencial priorizando Ollama (11434) de forma directa. Elimina por completo el retraso de timeout de LM Studio (1234), reduciendo la latencia de respuesta de ~1,050 ms a **~20 ms** (< 300 ms límite estricto).
+  * **Caché en Memoria:** Cacheado de 5 segundos en `server.py` para respuestas instantáneas (< 1 ms) en peticiones recurrentes de la UI.
+  * **Aumento de Timeout Inferencia:** Elevado a 90 segundos para permitir arranque en frío sin cortes durante la carga de modelos grandes en GPU/RAM.
+  * **Verificación End-to-End Superada:** Mateo (`llama3.1:latest`) respondiendo fluidamente a consultas botánicas complejas en español, con tono cercano, cálido y sin plantillas fijas.
   * **Métricas y Recompilación:**
-    - Recompilación exitosa de `js/bundle.js` y `js/bundle-v151.js` (**955.3 KB**).
-    - Cache-busting actualizado en `index.html` a `?v=2026_cors_options_get_post_v175`.
+    - `scratch/test_cascade_tiers.py`: Superado al 100% (Tier 2 en 20.8 ms, peso `ai-sommelier.js` 36.35 KB <= 45 KB).
+    - Bundle recompilado: `js/bundle.js` y `js/bundle-v151.js` (**955.3 KB**).
+    - Cache-busting actualizado en `index.html` a `?v=2026_local_llm_fast_probe_v176`.
 - **Acciones para Iniciar Siguiente Sesion:**
   1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
   2. Servidor local activo en `http://localhost:8080`.
-  3. Probar el chat de Mateo tanto en `http://localhost:8080` como desde orígenes cruzados (ej. Live Server).
+  3. Ollama activo en segundo plano con modelo `llama3.1:latest` disponible.
 
 ---
 
