@@ -1,36 +1,37 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-16 18:15  
+> **Ultima actualizacion:** 2026-09-16 19:15  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(catalog): incorporacion de Mandala Seeds con 10 cepas de elite y macros botanicos HD v179`  
-> **Version Cache-Busting:** `?v=2026_mandala_seeds_v179`
+> **Commit de cierre:** `fix(catalog): restaurar e integrar al 100% las geneticas parentales en todas las cepas y recompilar bundle v180`  
+> **Version Cache-Busting:** `?v=2026_genetics_fixed_v180`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
 - **Estado del Catalogo:** **637 cepas botánicas 100% únicas y originales, sin duplicados ni imágenes clonadas.**
+- **Cobertura Genética Completa (100%):** **637 de 637 cepas disponen de campos explícitos de linaje parental (`genetics:` y `lineage:`)**, garantizando visualización de ADN 🧬 en tarjetas, modales y búsqueda completa por parentales.
 - **51º Banco Oficial Incorporado: Mandala Seeds (España / Alemania)**
   * Fundado en 2004 por Mike & Jasmin (biólogos y genetistas botánicos pioneros en cultivo orgánico y selección de landraces puras).
   * 10 cepas fotoperiódicas de élite mundial añadidas a `js/data.js`:
-    1. `mandala-satori` (Satori) - Sativa (THC 25%, High Times Strain of the Year)
-    2. `mandala-hashberry` (Hashberry) - Índica (THC 20%, High Times Top 10)
-    3. `mandala-mandala-1` (Mandala #1) - Híbrida (THC 21%)
-    4. `mandala-krystalica` (Krystalica) - Sativa (THC 23%)
-    5. `mandala-8-miles-high` (8 Miles High) - Sativa (THC 22%)
-    6. `mandala-kalichakra` (Kalichakra) - Sativa (THC 20%)
-    7. `mandala-beyond-the-brain` (Beyond the Brain) - Sativa (THC 24%)
-    8. `mandala-california-dream` (California Dream) - Híbrida (THC 21%)
-    9. `mandala-speed-queen` (Speed Queen) - Índica (THC 19%)
-    10. `mandala-purple-paro-valley` (Purple Paro Valley) - Sativa (THC 18%)
+    1. `mandala-satori` (Satori) - Sativa (THC 25%, High Times Strain of the Year) · Genética: Nepal Landrace Sativa
+    2. `mandala-hashberry` (Hashberry) - Índica (THC 20%, High Times Top 10) · Genética: North Indian Kashmir x Fruity Indica
+    3. `mandala-mandala-1` (Mandala #1) - Híbrida (THC 21%) · Genética: South African Highland Sativa x NZ Purple Indica
+    4. `mandala-krystalica` (Krystalica) - Sativa (THC 23%) · Genética: Satori x Kali China x South Indian Landrace
+    5. `mandala-8-miles-high` (8 Miles High) - Sativa (THC 22%) · Genética: North Indian Landrace (Almora) x African Landrace
+    6. `mandala-kalichakra` (Kalichakra) - Sativa (THC 20%) · Genética: South Indian Landrace (Kerala) x Southeast Asian Sativa
+    7. `mandala-beyond-the-brain` (Beyond the Brain) - Sativa (THC 24%) · Genética: Colombian Sativa / Haze x Satori Elite
+    8. `mandala-california-dream` (California Dream) - Híbrida (THC 21%) · Genética: Mexican Sativa x Afghan Indica
+    9. `mandala-speed-queen` (Speed Queen) - Índica (THC 19%) · Genética: Himachal Pradesh Hashplant x Early Skunk
+    10. `mandala-purple-paro-valley` (Purple Paro Valley) - Sativa (THC 18%) · Genética: Wild Bhutan Landrace (Paro Valley)
   * 40 nuevos archivos de imagen (10 WebP y 10 JPG en `img/` + 10 WebP y 10 JPG en `images/strains/`), todos macros botánicos HD de cálices y flores reales procesados sobre fondo de estudio oscuro con viñeta profesional y cero empaques.
-- **Arquitectura Dual del Sommelier (Local Ollama & Web Gemini Cloud 24/7) (v179):**
+- **Arquitectura Dual del Sommelier (Local Ollama & Web Gemini Cloud 24/7) (v180):**
   * **Entorno Local:** Prioridad absoluta a Ollama en `localhost:8080` (`llama3.1:latest`) a través de `/api/local-llm` en `server.py` (0 tokens, latencia ~20-50 ms).
   * **Entorno Web Público:** Activación automática de Google Gemini Cloud API (`gemini-3.6-flash`) con clave en base64 para acceso 24/7 sin servidor backend local.
   * **Degradación Elegante:** Si la red se corta o satura, conmuta al Motor Autónomo Heurístico (Tier 3).
   * **Métricas y Recompilación:**
     - `scratch/test_cascade_tiers.py`: Superado al 100% (peso `ai-sommelier.js` 39.61 KB <= 45 KB).
-    - Bundle recompilado: `js/bundle.js` y `js/bundle-v151.js` (**983,225 bytes / 960.2 KB**).
-    - Cache-busting actualizado en `index.html` a `?v=2026_mandala_seeds_v179`.
+    - Bundle recompilado: `js/bundle.js` y `js/bundle-v151.js` (**990,455 bytes / 967.2 KB**).
+    - Cache-busting actualizado en `index.html` a `?v=2026_genetics_fixed_v180`.
 - **Acciones para Iniciar Siguiente Sesion:**
   1. Ejecutar `git pull origin main` (Protocolo AGENTS.md).
   2. Servidor local activo en `http://localhost:8080`.
@@ -42,6 +43,7 @@
 - **Variedades Totales:** 637 (100% únicas y originales)
 - **Bancos Activos:** 51
 - **Fotoperiodicas:** 100%
+- **Cobertura de Linaje/Genética:** 100% (637/637 cepas con `genetics:` y `lineage:`)
 - **Archivos de Imagen Activos:** 1,294+ (637 WebP + 637 JPG en doble ubicacion `img/` y `images/strains/`)
 - **Bancos al 100% Macros Botánicos HD Auditados:**
   * Mandala Seeds (10/10 conformes e individuales)
@@ -57,4 +59,4 @@
   * Serious Seeds (10/10 conformes)
   * Positronics Seeds (10/10 conformes)
   * Ripper Seeds (22/22 conformes)
-- **Bundle Principal:** `js/bundle.js` (983,225 bytes)
+- **Bundle Principal:** `js/bundle.js` (990,455 bytes)
