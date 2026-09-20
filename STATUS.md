@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-20 16:30  
+> **Ultima actualizacion:** 2026-09-20 16:45  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(catalog): incorporacion de World of Seeds con 10 cepas legendarias y macros botanicos HD v186`  
-> **Version Cache-Busting:** `?v=2026_worldofseeds_v186`
+> **Commit de cierre:** `fix(images): actualizacion de fotos de World of Seeds a maxima resolucion oficial HD v187`  
+> **Version Cache-Busting:** `?v=2026_wos_hd_v187`
 
 ---
 
@@ -20,7 +20,7 @@
   8. `wos-kilimanjaro`: **Kilimanjaro** (100% Sativa pura, Mount Kilimanjaro Kenyan Landrace, Kenia/Tanzania).
   9. `wos-northern-light-x-bigbud`: **Northern Light x Big Bud** (100% Índica, Northern Light x Big Bud).
   10. `wos-strawberry-blue`: **Strawberry Blue** (75% Sativa / 25% Índica, Pure Strawberry x New Blue Line).
-- **Fotografias Botanicas HD:** 10/10 cepas con fotografia real de floracion optimizada con el pipeline oscuro radial CannaCulture (800x800 WebP + JPG).
+- **Fotografias Botanicas Oficiales HD (v187):** Reemplazo de las 10 imagenes por las tomas oficiales del banco en resolucion nativa 600x600 a 800x800, procesadas a 800x800 con el pipeline oscuro radial CannaCulture (WebP + JPG). Nitidez cristalina, sin pixelado ni artefactos.
 - **Auditoria Exhaustiva de Todo el Catalogo (657 imagenes):**
   * Metodo: pHash 256 bits (16x16) con umbral Hamming <= 4.
   * **Resultado: 0 duplicados en todo el catalogo.**
