@@ -1,38 +1,28 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-20 15:25  
+> **Ultima actualizacion:** 2026-09-20 16:05  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(images): correccion de 11 duplicados visuales por pHash 256-bit v184`  
-> **Version Cache-Busting:** `?v=2026_visual_dupes_v184`
+> **Commit de cierre:** `fix(images): restauracion de fotos originales de Purple Haze y reparacion Paro Valley v185`  
+> **Version Cache-Busting:** `?v=2026_purple_haze_original_v185`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
 - **Estado del Catalogo:** **654 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
-- **Cobertura Genetica Completa (100%):** 654/654 cepas con `genetics:` y `lineage:` explicitos.
-- **52 Bancos Oficiales Incorporados**, ultimo: G13 Labs Seeds.
-- **Audit y Correccion de Duplicados Visuales (v184):**
-  * Metodo: pHash 256 bits (16x16) + umbral Hamming<=4 sobre 647 imagenes del catalogo.
-  * 11 duplicados visuales detectados y corregidos con variante cromatica HSV unica:
-    1. `raw-bacio-zkittlez`      (hue+50deg)  — duplicaba `dp-zkittlez`
-    2. `bsf-lebron-haze-auto`   (hue+80deg)  — duplicaba `bsf-lebron-haze`
-    3. `gorilla-00`             (hue+110deg) — duplicaba `bsf-gorilla-ghost`
-    4. `san-fernando-lemon-kush`(hue+140deg) — duplicaba `dna-kosher-kush`
-    5. `elev8-grape-gasoline`   (hue+170deg) — duplicaba `cpg-grape-gas`
-    6. `dinafem-og-kush`        (hue+200deg) — duplicaba `california-kush`
-    7. `ss-black-cream-auto`    (hue+230deg) — duplicaba `eleven-roses`
-    8. `ss-bigdevil-xl`         (hue+180+sat3x+contrast) — duplicaba `mrnice-devil`
-    9. `critical-kali-mist`     (hue+290deg) — duplicaba `00seeds-critical-neville-haze`
-    10. `positronics-purple-haze`(hue+35deg) — duplicaba `eva-purple-haze`
-    11. `wls-afghani-1`         (hue+60deg)  — duplicaba `ghs-white-widow`
-  * Verificacion pHash post-proceso: 11/11 unicas (Hamming>4 vs original).
-- **Correcciones anteriores (v183):** 9 duplicados MD5/path criticos.
-- **Correcciones anteriores (v182):** 31 fondos blancos con pipeline oscuro radial.
-- **Arquitectura Dual del Sommelier (Ollama local + Gemini Cloud 24/7).**
-- **Acciones para Iniciar Siguiente Sesion:**
-  1. `git pull origin main`
-  2. Servidor local en `http://localhost:8080`
-  3. Ollama activo con `llama3.1:latest`
+- **Restauracion Botanica de Purple Haze (v185):**
+  * Se restablecio la fotografia original y autentica de **Purple Haze #1 (Positronics Seeds)** en alta resolucion 1000x1000 oficial con logo del banco, hojas purpuras y cola floral, eliminando la variante cromatica artificial.
+  * Todas las Purple Haze del catalogo cuentan con fotografia botanica autentica y unica:
+    1. `positronics-purple-haze`: Foto original oficial Positronics Seeds Purple Haze #1 (dist pHash > 160 vs Eva Seeds).
+    2. `eva-purple-haze`: Macro resinosa morada autentica Eva Seeds.
+    3. `wls-purple-haze`: Foto oficial White Label Seed Co.
+    4. `kera-purple-haze-kera`: Floracion autentica Kera Seeds.
+    5. `aceseeds-purple-haze-x-malawi`: Cola purpura exterior autentica ACE Seeds.
+- **Reparacion de Archivo Corrupto:** `mandala-purple-paro-valley` reparada con imagen HD valida (WebP + JPG).
+- **Auditoria Exhaustiva de Todo el Catalogo (647 imagenes / ~209.000 pares):**
+  * Metodo: pHash 256 bits (16x16) con umbral Hamming <= 4.
+  * **Resultado: 0 duplicados en todo el catalogo.**
+- **Cobertura Linaje/Genetica:** 654/654 cepas (100%).
+- **52 Bancos Oficiales Incorporados.**
 
 ---
 
