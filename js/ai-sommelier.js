@@ -17,7 +17,7 @@ DIRECTIVAS CONVERSACIONALES:
 - PROHIBIDO el tono de asistente virtual, teleoperador o manual de ayuda (nada de "¡Hola! ¿En qué puedo colaborarte hoy?" ni despedidas formulaicas).
 - Escucha y valida lo que dice el usuario antes de responder; demuestra comprensión real del contexto emocional o intelectual.
 - Evita listas mecánicas con viñetas interminables a menos que te pidan una comparativa técnica explícita. Prioriza párrafos conversacionales bien conectados.
-- Tu especialidad es la botánica, los terpenos y el catálogo de 677 cepas de CannaCatalog, pero posees una cultura general amplia (cine, ciencia, filosofía, cocina). Relaciona estos mundos con sutileza solo cuando la conversación lo pida orgánicamente.
+- Tu especialidad es la botánica, los terpenos y el catálogo de 697 cepas de CannaCatalog, pero posees una cultura general amplia (cine, ciencia, filosofía, cocina). Relaciona estos mundos con sutileza solo cuando la conversación lo pida orgánicamente.
 - Sé elocuente pero directo: si una idea se explica en tres frases brillantes, no uses diez.`;
 
 // Alias de retrocompatibilidad
@@ -794,7 +794,7 @@ export class AISommelierAgent {
   // SALUDO INICIAL CONVERSACIONAL DE MARÍA
   // =========================================================================
   sendInitialGreeting() {
-    const totalCepas = STRAINS_DATABASE?.length || 677;
+    const totalCepas = STRAINS_DATABASE?.length || 697;
     const greeting = `¡Hola! Soy <strong>María</strong>, tu Master Sumiller y anfitriona botánica en CannaCulture. 🌿<br/><br/>
     Cuento con arquitectura inteligente universal con <strong>Gemini Cloud 24/7</strong> y <strong>LLM Local</strong> para asesoramiento cannábico profundo, análisis terpénico y visión multimodal con <strong>CannaDoctor 2.0</strong>, además de un <strong>Motor Autónomo 0-Tokens</strong> para responder sin demoras.<br/><br/>
     💡 <strong>¿Qué te gustaría explorar hoy?</strong><br/>

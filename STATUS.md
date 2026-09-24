@@ -1,15 +1,46 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-24 15:10  
+> **Ultima actualizacion:** 2026-09-24 15:45  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(sommelier): cambio del sommelier a femenino con el nombre Maria v190`  
-> **Version Cache-Busting:** `?v=2026_maria_sommelier_v190`
+> **Commit de cierre:** `feat(catalog): incorporacion de The Cali Connection y Cannarado Genetics con 20 cepas HD v191`  
+> **Version Cache-Busting:** `?v=2026_cali_cannarado_v191`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
-- **Estado del Catalogo:** **677 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
-- **55 Bancos Oficiales Incorporados** (ultima adicion en v188: Dr. Underground + Crockett Family Farms)
+- **Estado del Catalogo:** **697 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
+- **57 Bancos Oficiales Incorporados** (ultima adicion en v191: The Cali Connection + Cannarado Genetics)
+
+### v191 — The Cali Connection & Cannarado Genetics (20 cepas HD)
+- **The Cali Connection (10 cepas de culto californianas):**
+  1. `cali-sfv-og-kush`: **SFV OG Kush** (90% Índica / 10% Sativa, San Fernando Valley OG x Afghani #1).
+  2. `cali-tahoe-og-kush`: **Tahoe OG Kush** (80% Índica / 20% Sativa, Tahoe OG Clone x SFV OG Kush IBL).
+  3. `cali-deadhead-og`: **Deadhead OG** (60% Sativa / 40% Índica, Chemdawg 91 Skunk VA x SFV OG Kush F4).
+  4. `cali-alien-og`: **Alien OG** (50% Híbrida, Alien Kush x Tahoe OG Kush).
+  5. `cali-blackwater`: **Blackwater** (85% Índica / 15% Sativa, Mendo Purps x SFV OG Kush F3).
+  6. `cali-corleone-kush`: **Corleone Kush** (80% Índica / 20% Sativa, Pre-98 Bubba Kush x SFV OG Kush F4).
+  7. `cali-jedi-kush`: **Jedi Kush** (70% Índica / 30% Sativa, Death Star x SFV OG Kush F5).
+  8. `cali-larry-og-kush`: **Larry OG Kush** (70% Índica / 30% Sativa, Larry OG x SFV OG Kush IBL).
+  9. `cali-grape-og`: **Grape OG** (60% Índica / 40% Sativa, Tahoe OG Kush x Grape Romulan).
+  10. `cali-girl-scout-cookies`: **Girl Scout Cookies (Cali Connection)** (60% Índica / 40% Sativa, Forum Cut GSC x SFV OG Kush).
+
+- **Cannarado Genetics (10 leyendas modernas de Colorado):**
+  1. `cannarado-sundae-driver`: **Sundae Driver** (50% Híbrida, Fruity Pebbles OG x Grape Pie).
+  2. `cannarado-wedding-pie`: **Wedding Pie** (70% Índica / 30% Sativa, Wedding Cake x Grape Pie).
+  3. `cannarado-apple-sundae`: **Apple Sundae** (60% Sativa / 40% Índica, Sour Apple x Sundae Driver).
+  4. `cannarado-birthday-cake`: **Birthday Cake** (65% Índica / 35% Sativa, Girl Scout Cookies x Cherry Pie).
+  5. `cannarado-banana-sundae`: **Banana Sundae** (60% Índica / 40% Sativa, Banana OG x Sundae Driver).
+  6. `cannarado-biscotti-sundae`: **Biscotti Sundae** (70% Índica / 30% Sativa, Biscotti x Sundae Driver).
+  7. `cannarado-kitchen-sink`: **Kitchen Sink** (75% Índica / 25% Sativa, GMO Cookies x Sundae Driver).
+  8. `cannarado-pie-hoe`: **Pie Hoe** (70% Índica / 30% Sativa, Grape Pie x Tahoe OG).
+  9. `cannarado-5-alive`: **5 Alive** (70% Sativa / 30% Índica, Bubblegum x Orange Juice x Grape Pie).
+  10. `cannarado-birthday-funk`: **Birthday Funk** (70% Índica / 30% Sativa, Birthday Cake x Dosidos).
+
+- **Fotografias Botanicas Oficiales HD (v191):** 20 imagenes reales de cogollos de alta resolucion (hasta 4032x3024), procesadas a 800x800 con el pipeline radial oscuro CannaCulture (WebP + JPG).
+- **Auditoria Exhaustiva de Todo el Catalogo (697 cepas, 1418 imagenes):**
+  * Metodo: pHash 256 bits (16x16) con umbral Hamming <= 8.
+  * **Resultado: 0 duplicados en todo el catalogo.**
+- **Cobertura Linaje/Genetica:** 697/697 cepas (100%).
 
 ### v190 — María Master Sumiller & CannaDoctor 2.0 (Femenino)
 - **Identidad de María**: La anfitriona experta y sommelier oficial es ahora María, una sumiller y botánica culta, cercana y con criterio propio.
@@ -30,8 +61,8 @@
 ---
 
 ## Metricas del Catalogo
-- **Variedades Totales:** 677 (100% unicas)
-- **Bancos Activos:** 55
+- **Variedades Totales:** 697 (100% unicas)
+- **Bancos Activos:** 57
 - **Duplicados Visuales (pHash 256-bit):** 0
 - **Fondos Blancos:** 0 (todos corregidos)
 - **Fotoperiodicas:** 100%
