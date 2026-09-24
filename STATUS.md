@@ -1,14 +1,42 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-20 21:40  
+> **Ultima actualizacion:** 2026-09-24 14:25  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(catalog): incorporacion de Dr. Underground y Crockett Family Farms con 20 cepas HD v188`  
-> **Version Cache-Busting:** `?v=2026_drug_cff_v188`
+> **Commit de cierre:** `fix(mobile): optimizacion completa del chat de Mateo para movil v189`  
+> **Version Cache-Busting:** `?v=2026_mobile_mateo_v189`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
 - **Estado del Catalogo:** **677 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
+- **55 Bancos Oficiales Incorporados** (ultima adicion en v188: Dr. Underground + Crockett Family Farms)
+
+### v189 — Mobile Mateo Optimization
+- **Ventana flotante**: Ahora ocupa pantalla casi completa en mobile (88dvh/92dvh) y se expande desde abajo como un sheet nativo iOS/Android.
+- **Swipe-down para cerrar**: Deslizar el header del chat hacia abajo cierra el panel.
+- **Sin zoom iOS**: Inputs con `font-size: 16px` minimo — ya no hace zoom automatico al hacer tap en el campo de texto.
+- **Targets tactiles 44x44px**: Todos los botones del chat (send, photo, close, TTS) tienen minimo 44x44px de area tocable.
+- **Pills responsive**: En mobile (<=480px) hacen scroll horizontal en lugar de desbordarse.
+- **FAB compacto**: En <=480px el boton flotante muestra solo el emoji, sin texto.
+- **Body scroll bloqueado**: Mientras el chat esta abierto en mobile, el body no se desplaza.
+- **dvh units**: Usa `100dvh` (dynamic viewport height) para ajustarse al teclado virtual en iOS/Android.
+- **Reasoning box adaptado**: Se ajusta al ancho del movil sin desbordamiento.
+- **Sin auto-focus en mobile**: El input no recibe focus al abrir el chat (evita que el teclado virtual suba de forma inesperada).
+
+---
+
+## Metricas del Catalogo
+- **Variedades Totales:** 677 (100% unicas)
+- **Bancos Activos:** 55
+- **Duplicados Visuales (pHash 256-bit):** 0
+- **Fondos Blancos:** 0 (todos corregidos)
+- **Fotoperiodicas:** 100%
+- **Cobertura Linaje/Genetica:** 100%
+
+---
+
+## Historial de Versiones Recientes
+### v188 — Dr. Underground + Crockett Family Farms (20 cepas HD)
 - **55 Bancos Oficiales Incorporados**, ultimos agregados en v188:
   * **Dr. Underground (10 cepas de élite):**
     1. `drug-king-kong`: **King Kong** (75% Índica / 25% Sativa, Ed Rosenthal Super Bud x Chronic).
@@ -41,12 +69,4 @@
 - **Cobertura Linaje/Genetica:** 677/677 cepas (100%).
 - **Arquitectura Dual del Sommelier (Ollama local + Gemini Cloud 24/7).**
 
----
 
-## Metricas del Catalogo
-- **Variedades Totales:** 677 (100% unicas)
-- **Bancos Activos:** 55
-- **Duplicados Visuales (pHash 256-bit):** 0
-- **Fondos Blancos:** 0 (todos corregidos)
-- **Fotoperiodicas:** 100%
-- **Cobertura Linaje/Genetica:** 100%

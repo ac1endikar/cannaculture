@@ -77,12 +77,28 @@ export class AISommelierAgent {
     this.triggerBtn?.addEventListener('click', () => {
       const isVisible = this.chatWindow.style.display === 'flex';
       this.chatWindow.style.display = isVisible ? 'none' : 'flex';
-      if (!isVisible && this.inputFloating) this.inputFloating.focus();
+      if (!isVisible) {
+        // En desktop: focus inmediato. En mobile: NO hacer focus para evitar
+        // que el teclado virtual suba antes de que el usuario quiera escribir.
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (!isMobile && this.inputFloating) {
+          this.inputFloating.focus();
+        }
+        // Bloquear scroll del body mientras el chat está abierto en mobile
+        if (isMobile) document.body.style.overflow = 'hidden';
+        this.scrollToBottom();
+      } else {
+        document.body.style.overflow = '';
+      }
     });
 
     this.closeBtn?.addEventListener('click', () => {
       if (this.chatWindow) this.chatWindow.style.display = 'none';
+      document.body.style.overflow = '';
     });
+
+    // Swipe-down para cerrar el chat en mobile
+    this._initSwipeClose();
 
     this.keyBtn = document.getElementById('ai-chat-key-btn');
     this.keyBtn?.addEventListener('click', () => {
@@ -753,5 +769,51 @@ export class AISommelierAgent {
       🌿 Si buscas crear una atmósfera perfecta para acompañar este momento, podrías explorar notas aromáticas equilibradas de nuestro catálogo como ${recText}.<br/><br/>
       💬 <em>¿Hacia dónde te gustaría orientar nuestra conversación ahora?</em>
     `;
+  }
+
+  // =========================================================================
+  // SWIPE-DOWN TO CLOSE — UX NATIVA MOBILE
+  // =========================================================================
+  _initSwipeClose() {
+    if (!this.chatWindow) return;
+
+    let touchStartY = 0;
+    let touchCurrentY = 0;
+    let isDragging = false;
+
+    const header = this.chatWindow.querySelector('div:first-child');
+    const swipeTarget = header || this.chatWindow;
+
+    swipeTarget.addEventListener('touchstart', (e) => {
+      touchStartY = e.touches[0].clientY;
+      isDragging = true;
+      this.chatWindow.style.transition = 'none';
+    }, { passive: true });
+
+    swipeTarget.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      touchCurrentY = e.touches[0].clientY;
+      const delta = touchCurrentY - touchStartY;
+      if (delta > 0) {
+        // Solo permite arrastrar hacia abajo
+        this.chatWindow.style.transform = `translateY(${delta}px)`;
+      }
+    }, { passive: true });
+
+    swipeTarget.addEventListener('touchend', () => {
+      if (!isDragging) return;
+      isDragging = false;
+      const delta = touchCurrentY - touchStartY;
+      this.chatWindow.style.transition = '';
+      this.chatWindow.style.transform = '';
+
+      // Si el swipe fue > 100px hacia abajo, cerrar el chat
+      if (delta > 100) {
+        this.chatWindow.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      touchStartY = 0;
+      touchCurrentY = 0;
+    }, { passive: true });
   }
 }
