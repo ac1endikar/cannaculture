@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-24 14:25  
+> **Ultima actualizacion:** 2026-09-24 15:10  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(mobile): optimizacion completa del chat de Mateo para movil v189`  
-> **Version Cache-Busting:** `?v=2026_mobile_mateo_v189`
+> **Commit de cierre:** `feat(sommelier): cambio del sommelier a femenino con el nombre Maria v190`  
+> **Version Cache-Busting:** `?v=2026_maria_sommelier_v190`
 
 ---
 
@@ -11,17 +11,21 @@
 - **Estado del Catalogo:** **677 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
 - **55 Bancos Oficiales Incorporados** (ultima adicion en v188: Dr. Underground + Crockett Family Farms)
 
-### v189 — Mobile Mateo Optimization
-- **Ventana flotante**: Ahora ocupa pantalla casi completa en mobile (88dvh/92dvh) y se expande desde abajo como un sheet nativo iOS/Android.
-- **Swipe-down para cerrar**: Deslizar el header del chat hacia abajo cierra el panel.
-- **Sin zoom iOS**: Inputs con `font-size: 16px` minimo — ya no hace zoom automatico al hacer tap en el campo de texto.
-- **Targets tactiles 44x44px**: Todos los botones del chat (send, photo, close, TTS) tienen minimo 44x44px de area tocable.
-- **Pills responsive**: En mobile (<=480px) hacen scroll horizontal en lugar de desbordarse.
-- **FAB compacto**: En <=480px el boton flotante muestra solo el emoji, sin texto.
-- **Body scroll bloqueado**: Mientras el chat esta abierto en mobile, el body no se desplaza.
-- **dvh units**: Usa `100dvh` (dynamic viewport height) para ajustarse al teclado virtual en iOS/Android.
-- **Reasoning box adaptado**: Se ajusta al ancho del movil sin desbordamiento.
-- **Sin auto-focus en mobile**: El input no recibe focus al abrir el chat (evita que el teclado virtual suba de forma inesperada).
+### v190 — María Master Sumiller & CannaDoctor 2.0 (Femenino)
+- **Identidad de María**: La anfitriona experta y sommelier oficial es ahora María, una sumiller y botánica culta, cercana y con criterio propio.
+- **Concordancia en femenino**: Adaptación de todos los prompts de sistema (Gemini Cloud, LLM Local Ollama, Gemini Nano y Motor Autónomo), títulos de interfaz ("María | Master Sumiller & CannaDoctor 2.0", "María | Sumiller IA"), placeholders, badges y mensajes de razonamiento ("RAZONAMIENTO DE LA SOMMELIER").
+- **Avatar Femenino**: Incorporación del avatar `👩‍🌾` tanto en el header inline de la sección como en el widget flotante.
+- **Saludo Inicial Proactivo**: Al cargar el chat, María saluda y presenta de forma acogedora las capacidades de maridaje, CannaDoctor 2.0, charla abierta y locución interactiva.
+- **Voz TTS Femenina**: Selector de síntesis de voz que prioriza voces naturales femeninas en español si están instaladas en el sistema/navegador.
+- **Compatibilidad Retrospectiva**: Alias `MATEO_SYSTEM_PROMPT = MARIA_SYSTEM_PROMPT` preservado en cliente y servidor para evitar incompatibilidades.
+
+### v189 — Mobile Optimization
+- **Ventana flotante**: Sheet nativo a pantalla casi completa en móvil (88dvh/92dvh).
+- **Swipe-down para cerrar**: Gesto táctil nativo para descartar la ventana flotante.
+- **Sin zoom iOS**: Inputs con `font-size: 16px` mínimo.
+- **Targets táctiles 44x44px**: Todos los botones con área táctil cómoda para dedos.
+- **Pills scroll horizontal**: Desplazamiento fluido sin desbordar la pantalla.
+- **FAB compacto**: Icono optimizado en pantallas estrechas (<=480px).
 
 ---
 

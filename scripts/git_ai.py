@@ -7,7 +7,7 @@ Comandos disponibles:
   python scripts/git_ai.py commit        -> Redacta commit semántico a partir de git diff
   python scripts/git_ai.py doctor <img > -> Diagnóstico botánico de hoja o flor con Gemini Vision
   python scripts/git_ai.py enrich <name> -> Genera bloque JSON de una nueva cepa para data.js
-  python scripts/git_ai.py ask "<duda>"  -> Pregunta botánica directa a Mateo (Gemini 3.8 Flash)
+  python scripts/git_ai.py ask "<duda>"  -> Pregunta botánica directa a María (Gemini 3.8 Flash)
 """
 
 import os, sys, json, base64, subprocess, urllib.request, urllib.error
@@ -176,15 +176,15 @@ Devuelve ÚNICAMENTE el bloque JSON válido sin markdown adicional."""
     print("💡 Puedes copiar este bloque directamente en js/data.js o js/medical_seeds.js")
 
 def cmd_ask(question):
-    """Consulta botánica directa a Mateo (Gemini 3.8 Ultra)."""
-    print(f"🌿 Consultando a Mateo (Gemini 3.8 Ultra): \"{question}\"...\n")
-    system_prompt = """Eres Mateo, master sumiller y botánico experto de CannaCulture.
+    """Consulta botánica directa a María (Gemini 3.8 Ultra)."""
+    print(f"🌿 Consultando a María (Gemini 3.8 Ultra): \"{question}\"...\n")
+    system_prompt = """Eres María, master sumiller y botánica experta de CannaCulture.
 Responde con cercanía, elocuencia natural y rigor botánico/químico a la consulta del usuario.
 Si es una pregunta científica o de cultivo, explica los procesos biológicos (degradación de THCA a CBN, asimilación por pH, movilidad de nutrientes, efecto séquito, etc.)."""
     full_prompt = f"{system_prompt}\n\nPregunta: {question}"
     ans = call_gemini(full_prompt, model="gemini-3.8-ultra")
     print("="*60)
-    print("🌿 RESPUESTA DE MATEO (CANNACULTURE):")
+    print("🌿 RESPUESTA DE MARÍA (CANNACULTURE):")
     print("="*60)
     print(ans)
     print("="*60)

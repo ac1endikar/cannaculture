@@ -5150,7 +5150,7 @@ dialog.compare-dialog[open] {
 }
 
 /* ==========================================================================
-   MATEO SOMMELIER — MOBILE OPTIMIZATIONS (max-width: 768px / 480px)
+   MARÍA SOMMELIER — MOBILE OPTIMIZATIONS (max-width: 768px / 480px)
    ========================================================================== */
 
 /* ── Ventana flotante: pantalla casi completa en móvil ── */
@@ -5220,7 +5220,7 @@ dialog.compare-dialog[open] {
     display: none;
   }
 
-  /* Sección inline de Mateo */
+  /* Sección inline de María */
   #section-ai-agent .glass-panel {
     padding: 1.2rem 1rem !important;
     border-radius: 18px !important;
@@ -5315,7 +5315,7 @@ dialog.compare-dialog[open] {
     min-height: 36px !important;
   }
 
-  /* Sección Mateo inline header */
+  /* Sección María inline header */
   #section-ai-agent .glass-panel > div:first-child {
     flex-direction: column;
     align-items: flex-start !important;

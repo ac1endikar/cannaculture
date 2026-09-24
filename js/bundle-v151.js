@@ -18059,15 +18059,18 @@ const safeEffects = (s) => (Array.isArray(s?.effects) && s.effects.length > 0) ?
 const safeTerpene = (s) => (s?.dominantTerpene || '').toString().toLowerCase();
 const safeBank = (s) => s?.bank || s?.breeder || 'Banco Seleccionado';
 
-const MATEO_SYSTEM_PROMPT = `Eres Mateo, un sommelier y botánico culto, cercano y con criterio propio. Tu forma de comunicar se asemeja a una charla entre colegas inteligentes:
+const MARIA_SYSTEM_PROMPT = `Eres María, una sumiller y botánica culta, cercana y con criterio propio. Tu forma de comunicar se asemeja a una charla entre colegas inteligentes:
 
 DIRECTIVAS CONVERSACIONALES:
 - Habla en primera persona, de tú a tú, con calidez, ingenio sutil y lenguaje natural en castellano.
 - PROHIBIDO el tono de asistente virtual, teleoperador o manual de ayuda (nada de "¡Hola! ¿En qué puedo colaborarte hoy?" ni despedidas formulaicas).
 - Escucha y valida lo que dice el usuario antes de responder; demuestra comprensión real del contexto emocional o intelectual.
 - Evita listas mecánicas con viñetas interminables a menos que te pidan una comparativa técnica explícita. Prioriza párrafos conversacionales bien conectados.
-- Tu especialidad es la botánica, los terpenos y el catálogo de 600 cepas de CannaCatalog, pero posees una cultura general amplia (cine, ciencia, filosofía, cocina). Relaciona estos mundos con sutileza solo cuando la conversación lo pida orgánicamente.
+- Tu especialidad es la botánica, los terpenos y el catálogo de 677 cepas de CannaCatalog, pero posees una cultura general amplia (cine, ciencia, filosofía, cocina). Relaciona estos mundos con sutileza solo cuando la conversación lo pida orgánicamente.
 - Sé elocuente pero directo: si una idea se explica en tres frases brillantes, no uses diez.`;
+
+// Alias de retrocompatibilidad
+const MATEO_SYSTEM_PROMPT = MARIA_SYSTEM_PROMPT;
 
 const _decodeKey = (enc) => {
   try {
@@ -18091,6 +18094,7 @@ class AISommelierAgent {
     this.initUI();
     this.initDragAndDrop();
     this.detectActiveTier();
+    this.sendInitialGreeting();
   }
 
   initUI() {
@@ -18152,7 +18156,7 @@ class AISommelierAgent {
     this.keyBtn = document.getElementById('ai-chat-key-btn');
     this.keyBtn?.addEventListener('click', () => {
       const current = localStorage.getItem('gemini_api_key') || '';
-      const entered = prompt('Configuración de Clave API Google Gemini (Opcional):\n(El Sommelier opera de forma predeterminada con Gemini Cloud 24/7 y Ollama local. Solo introduce tu propia clave si deseas usar una cuenta personalizada):', current);
+      const entered = prompt('Configuración de Clave API Google Gemini (Opcional):\n(La Sommelier opera de forma predeterminada con Gemini Cloud 24/7 y Ollama local. Solo introduce tu propia clave si deseas usar una cuenta personalizada):', current);
       if (entered !== null) {
         const clean = entered.trim();
         if (clean) {
@@ -18354,7 +18358,7 @@ class AISommelierAgent {
       <div class="ai-msg bot-msg">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px;">
           <div style="display:flex; align-items:center;">
-            <strong style="color: #6EE7B7;">Mateo</strong> ${badgeHtml}
+            <strong style="color: #6EE7B7;">María</strong> ${badgeHtml}
           </div>
           <button id="${ttsBtnId}" class="ai-tts-btn" title="Escuchar respuesta" style="background:none; border:none; cursor:pointer; font-size:0.9rem; color:#A7F3D0; padding:2px 6px;">🔊</button>
         </div>
@@ -18392,6 +18396,21 @@ class AISommelierAgent {
     const utterance = new SpeechSynthesisUtterance(cleanText);
     utterance.lang = 'es-ES';
     utterance.rate = 1.05;
+
+    // Preferir voz femenina en español si está disponible en el navegador/SO
+    const voices = window.speechSynthesis.getVoices();
+    const femaleVoice = voices.find(v => v.lang.startsWith('es') && (
+      v.name.includes('Monica') || v.name.includes('Helena') || v.name.includes('Lucia') ||
+      v.name.includes('Laura') || v.name.includes('Sofia') || v.name.includes('Female') ||
+      v.name.includes('female') || v.name.includes('Mujer') || v.name.includes('Elvira') ||
+      v.name.includes('Carmen') || v.name.includes('Conchita')
+    ));
+    if (femaleVoice) {
+      utterance.voice = femaleVoice;
+    } else {
+      const anyEs = voices.find(v => v.lang.startsWith('es'));
+      if (anyEs) utterance.voice = anyEs;
+    }
     btn.textContent = '⏹️';
     this.currentSpeakingBtn = btn;
     utterance.onend = () => { btn.textContent = '🔊'; this.currentSpeakingBtn = null; };
@@ -18405,7 +18424,7 @@ class AISommelierAgent {
       if (!container) return;
       const typing = document.createElement('div');
       typing.className = 'ai-msg bot-msg typing-msg ai-typing-indicator-node';
-      typing.innerHTML = `<span>🧠 ${customMessage || 'Mateo reflexionando respuesta (0-Tokens)...'}</span>`;
+      typing.innerHTML = `<span>🧠 ${customMessage || 'María reflexionando respuesta (0-Tokens)...'}</span>`;
       container.appendChild(typing);
     });
     this.scrollToBottom();
@@ -18424,7 +18443,7 @@ class AISommelierAgent {
       <div class="sommelier-reasoning-box">
         <div class="reasoning-header">
           <span class="reasoning-brain-icon">🧠</span>
-          <span class="reasoning-title">RAZONAMIENTO DEL SOMMELIER</span>
+          <span class="reasoning-title">RAZONAMIENTO DE LA SOMMELIER</span>
           <span class="reasoning-badge">Análisis Neuro-Terpénico</span>
         </div>
         <div class="reasoning-steps">
@@ -18482,7 +18501,7 @@ class AISommelierAgent {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             system_instruction: {
-              parts: [{ text: MATEO_SYSTEM_PROMPT }]
+              parts: [{ text: MARIA_SYSTEM_PROMPT }]
             },
             contents: contents
           }),
@@ -18519,7 +18538,7 @@ class AISommelierAgent {
       }
     }
 
-    this.showTyping('Mateo reflexionando respuesta...');
+    this.showTyping('María reflexionando respuesta...');
 
     const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
@@ -18535,7 +18554,7 @@ class AISommelierAgent {
           body: JSON.stringify({
             prompt: userQuery,
             history: this.history,
-            system: MATEO_SYSTEM_PROMPT
+            system: MARIA_SYSTEM_PROMPT
           }),
           signal: ctrl.signal
         });
@@ -18548,7 +18567,7 @@ class AISommelierAgent {
             body: JSON.stringify({
               prompt: userQuery,
               history: this.history,
-              system: MATEO_SYSTEM_PROMPT
+              system: MARIA_SYSTEM_PROMPT
             }),
             signal: ctrl.signal
           });
@@ -18593,8 +18612,8 @@ class AISommelierAgent {
       try {
         const caps = await window.ai.languageModel.capabilities?.();
         if (caps?.available === 'readily') {
-          const session = await window.ai.languageModel.create({ systemPrompt: MATEO_SYSTEM_PROMPT });
-          const nanoText = await session.prompt(userQuery || 'Hola Mateo');
+          const session = await window.ai.languageModel.create({ systemPrompt: MARIA_SYSTEM_PROMPT });
+          const nanoText = await session.prompt(userQuery || 'Hola María');
           if (nanoText) {
             this.hideTyping();
             this.activeTier = 'nano';
@@ -18620,7 +18639,7 @@ class AISommelierAgent {
       this.botSay(responseHtml, 'eco');
     } catch (e) {
       console.error('Error en fallback heurístico:', e);
-      this.botSay('🌿 <strong>Mateo:</strong> Te escucho con atención. Como anfitrión y sommelier, podemos conversar sobre cualquier aspecto botánico o cultural. ¿Qué te gustaría explorar?', 'eco');
+      this.botSay('🌿 <strong>María:</strong> Te escucho con atención. Como anfitriona y sommelier, podemos conversar sobre cualquier aspecto botánico o cultural. ¿Qué te gustaría explorar?', 'eco');
     }
   }
 
@@ -18644,7 +18663,7 @@ class AISommelierAgent {
     // 1. Saludos y bienvenida conversacional
     if (/^(hola|buenas|hey|buenos días|buenas tardes|buenas noches|qué tal|que tal|saludos)/i.test(q)) {
       return `
-        🌿 <strong>¡Hola! Un placer saludarte. Soy Mateo</strong>, Master Sommelier y anfitrión cultural de CannaCulture.<br/><br/>
+        🌿 <strong>¡Hola! Un placer saludarte. Soy María</strong>, Master Sommelier y anfitriona cultural de CannaCulture.<br/><br/>
         Hablo con total naturalidad de <strong>cualquier tema</strong>: reflexiones de vida, ciencia universal, gastronomía, cine o sobremesa. Y si lo deseas, podemos maridar cualquier estado de ánimo con las <strong>${STRAINS_DATABASE.length} cepas botánicas de nuestro catálogo</strong>.<br/><br/>
         💬 <em>¿De qué te apetece charlar o qué experiencia buscas disfrutar hoy?</em>
       `;
@@ -18812,12 +18831,27 @@ class AISommelierAgent {
     const recText = randomSuggestions.map(s => this.buildStrainLink(s)).join(' o ');
 
     return `
-      💬 <strong>Mateo:</strong> Te escucho con agrado y reflexión.<br/><br/>
+      💬 <strong>María:</strong> Te escucho con agrado y reflexión.<br/><br/>
       Sobre lo que mencionas (<em>"${query.slice(0, 80)}"</em>), me parece fascinante cómo la conversación humana siempre encuentra puntos de conexión entre la ciencia, el día a día y nuestra percepción del bienestar.<br/><br/>
-      Como anfitrión botánico, creo firmemente que cualquier momento de reflexión o distensión se enriquece prestando atención a los detalles sutiles: los aromas, el ritmo con el que respiramos y el entorno que nos rodea.<br/><br/>
+      Como anfitriona botánica, creo firmemente que cualquier momento de reflexión o distensión se enriquece prestando atención a los detalles sutiles: los aromas, el ritmo con el que respiramos y el entorno que nos rodea.<br/><br/>
       🌿 Si buscas crear una atmósfera perfecta para acompañar este momento, podrías explorar notas aromáticas equilibradas de nuestro catálogo como ${recText}.<br/><br/>
       💬 <em>¿Hacia dónde te gustaría orientar nuestra conversación ahora?</em>
     `;
+  }
+
+  // =========================================================================
+  // SALUDO INICIAL CONVERSACIONAL DE MARÍA
+  // =========================================================================
+  sendInitialGreeting() {
+    const totalCepas = STRAINS_DATABASE?.length || 677;
+    const greeting = `¡Hola! Soy <strong>María</strong>, tu Master Sumiller y anfitriona botánica en CannaCulture. 🌿<br/><br/>
+    Cuento con arquitectura inteligente universal con <strong>Gemini Cloud 24/7</strong> y <strong>LLM Local</strong> para asesoramiento cannábico profundo, análisis terpénico y visión multimodal con <strong>CannaDoctor 2.0</strong>, además de un <strong>Motor Autónomo 0-Tokens</strong> para responder sin demoras.<br/><br/>
+    💡 <strong>¿Qué te gustaría explorar hoy?</strong><br/>
+    • 🌿 <em>Maridajes y Efectos:</em> Recomiendo variedades según tu estado de ánimo, momento del día o notas de sabor entre las <strong>${totalCepas} cepas</strong> del catálogo.<br/>
+    • 🔬 <strong>CannaDoctor 2.0:</strong> Pulsa 📷 para diagnosticar plagas, carencias o madurez de tricomas mediante foto.<br/>
+    • 💬 <em>Charla Abierta:</em> Conversemos sobre botánica, ciencia, cine, filosofía o sobremesa con total naturalidad.<br/>
+    • 🔊 <strong>Voz Interactiva:</strong> Pulsa 🔊 en cualquiera de mis respuestas para escuchar la narración.`;
+    this.botSay(greeting, 'eco');
   }
 
   // =========================================================================
