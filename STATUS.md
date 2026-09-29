@@ -1,15 +1,34 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-29 21:35  
+> **Ultima actualizacion:** 2026-09-29 22:45  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(catalog): incorporacion de Black Farm Genetix con 10 cepas HD v193`  
-> **Version Cache-Busting:** `?v=2026_bfg_v193`
+> **Commit de cierre:** `feat(catalog): incorporacion de Purple City Genetics con 10 cepas HD v194`  
+> **Version Cache-Busting:** `?v=2026_pcg_v194`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
-- **Estado del Catalogo:** **727 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
-- **60 Bancos Oficiales Incorporados** (ultima adicion en v193: Black Farm Genetix)
+- **Estado del Catalogo:** **737 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
+- **61 Bancos Oficiales Incorporados** (ultima adicion en v194: Purple City Genetics)
+
+### v194 — Purple City Genetics (10 cepas HD)
+- **Purple City Genetics (10 leyendas maestras de resina de Oakland, CA & Barcelona):**
+  1. `pcg-gush-mints`: **Gush Mints** (70% Índica / 30% Sativa, Kush Mints x F1 Durb x Gushers).
+  2. `pcg-honey-runtz`: **Honey Runtz** (50% Híbrida, Runtz x Honey Boo Boo).
+  3. `pcg-benzina`: **Benzina** (65% Índica / 35% Sativa, Fuel OG x Gelato 33).
+  4. `pcg-acid-wash`: **Acid Wash** (70% Índica / 30% Sativa, Biscotti x Gush Mints).
+  5. `pcg-bishop`: **Bishop** (60% Índica / 40% Sativa, Vietnam Gold x Gush Mints).
+  6. `pcg-orange-76`: **Orange 76** (65% Sativa / 35% Índica, Orange Cookies x Moroccan Peaches).
+  7. `pcg-daily-operation`: **Daily Operation** (65% Índica / 35% Sativa, Batshit x Gush Mints).
+  8. `pcg-fillmore-slim`: **Fillmore Slim** (60% Índica / 40% Sativa, Mac 1 x Forum Cut GSC).
+  9. `pcg-hooch`: **Hooch** (70% Índica / 30% Sativa, Slurricane x Gush Mints).
+  10. `pcg-space-station`: **Space Station** (75% Índica / 25% Sativa, Alien Kush x Gush Mints).
+
+- **Fotografias Botanicas Oficiales HD (v194):** 10 imagenes reales de cogollos de alta resolucion procesadas a 800x800 con el pipeline radial oscuro CannaCulture (WebP calidad 90 + JPG calidad 88).
+- **Auditoria Exhaustiva de Todo el Catalogo (737 cepas, 1458 imagenes indexadas):**
+  * Metodo: dHash / pHash 256 bits (16x16) con umbral Hamming <= 8.
+  * **Resultado: 0 duplicados en todo el catalogo.**
+- **Cobertura Linaje/Genetica:** 737/737 cepas (100%).
 
 ### v193 — Black Farm Genetix (10 cepas HD)
 - **Black Farm Genetix (10 leyendas modernas de Sitges/Barcelona):**
