@@ -1,15 +1,34 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-29 20:45  
+> **Ultima actualizacion:** 2026-09-29 21:35  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(catalog): incorporacion de Reserva Privada y Oni Seed Co con 20 cepas HD v192`  
-> **Version Cache-Busting:** `?v=2026_reserva_oni_v192`
+> **Commit de cierre:** `feat(catalog): incorporacion de Black Farm Genetix con 10 cepas HD v193`  
+> **Version Cache-Busting:** `?v=2026_bfg_v193`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
-- **Estado del Catalogo:** **717 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
-- **59 Bancos Oficiales Incorporados** (ultima adicion en v192: Reserva Privada + Oni Seed Co.)
+- **Estado del Catalogo:** **727 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
+- **60 Bancos Oficiales Incorporados** (ultima adicion en v193: Black Farm Genetix)
+
+### v193 — Black Farm Genetix (10 cepas HD)
+- **Black Farm Genetix (10 leyendas modernas de Sitges/Barcelona):**
+  1. `bfg-glukies`: **Glukies** (70% Índica / 30% Sativa, Gorilla Glue #4 x Original Thin Mint Girl Scout Cookies).
+  2. `bfg-wasabi`: **Wasabi** (75% Índica / 25% Sativa, Orange Punch x Do-Si-Dos).
+  3. `bfg-tiramisu`: **Tiramisu** (70% Índica / 30% Sativa, Wedding Cake x Gelato 45).
+  4. `bfg-acai-bananas`: **Acai & Bananas** (55% Índica / 45% Sativa, Acai Berry Cake x Banana Punch).
+  5. `bfg-banana-slammer`: **Banana Slammer** (75% Índica / 25% Sativa, Slurricane x Banana Punch).
+  6. `bfg-banana-glukies`: **Banana Glukies** (60% Índica / 40% Sativa, Glukies x Banana Punch).
+  7. `bfg-limosa`: **Limosa** (65% Sativa / 35% Índica, Limoncello x Panna Cotta).
+  8. `bfg-ipanema`: **Ipanema** (55% Índica / 45% Sativa, Tropicanna Glue x Banana Punch).
+  9. `bfg-high-octane`: **High Octane** (75% Índica / 25% Sativa, Sunset Octane x Orange Punch).
+  10. `bfg-peach-tsunami`: **Peach Tsunami** (50% Híbrida, Peach Ozz x Orange Punch).
+
+- **Fotografias Botanicas Oficiales HD (v193):** 10 imagenes reales de cogollos de alta resolucion procesadas a 800x800 con el pipeline radial oscuro CannaCulture (WebP calidad 90 + JPG calidad 88).
+- **Auditoria Exhaustiva de Todo el Catalogo (727 cepas, 1448 imagenes indexadas):**
+  * Metodo: dHash / pHash 256 bits (16x16) con umbral Hamming <= 8.
+  * **Resultado: 0 duplicados en todo el catalogo.**
+- **Cobertura Linaje/Genetica:** 727/727 cepas (100%).
 
 ### v192 — Reserva Privada & Oni Seed Co. (20 cepas HD)
 - **Reserva Privada (10 iconos legendarios de California y DNA Genetics):**
