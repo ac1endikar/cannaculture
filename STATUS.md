@@ -1,15 +1,46 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-24 15:45  
+> **Ultima actualizacion:** 2026-09-29 20:45  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(catalog): incorporacion de The Cali Connection y Cannarado Genetics con 20 cepas HD v191`  
-> **Version Cache-Busting:** `?v=2026_cali_cannarado_v191`
+> **Commit de cierre:** `feat(catalog): incorporacion de Reserva Privada y Oni Seed Co con 20 cepas HD v192`  
+> **Version Cache-Busting:** `?v=2026_reserva_oni_v192`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
-- **Estado del Catalogo:** **697 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
-- **57 Bancos Oficiales Incorporados** (ultima adicion en v191: The Cali Connection + Cannarado Genetics)
+- **Estado del Catalogo:** **717 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
+- **59 Bancos Oficiales Incorporados** (ultima adicion en v192: Reserva Privada + Oni Seed Co.)
+
+### v192 — Reserva Privada & Oni Seed Co. (20 cepas HD)
+- **Reserva Privada (10 iconos legendarios de California y DNA Genetics):**
+  1. `rp-og-18`: **The OG #18** (75% Índica / 25% Sativa, OG Kush Phenotype #18).
+  2. `rp-kosher-kush`: **Kosher Kush** (100% Índica, Unknown LA Pure Indica Clone / Jewish Gold).
+  3. `rp-kandy-kush`: **Kandy Kush** (55% Índica / 45% Sativa, OG Kush x Trainwreck T4).
+  4. `rp-purple-og-18`: **Purple OG #18** (85% Índica / 15% Sativa, The OG #18 x Purple Wreck).
+  5. `rp-purple-wreck`: **Purple Wreck** (80% Sativa / 20% Índica, Purple Urkle x Trainwreck T4).
+  6. `rp-cole-train`: **Cole Train** (75% Sativa / 25% Índica, Trainwreck x Hashplant).
+  7. `rp-strawberry-banana`: **Strawberry Banana** (70% Índica / 30% Sativa, Strawberry Bubblegum x Banana Kush).
+  8. `rp-lemon-larry-og`: **Lemon Larry OG** (70% Índica / 30% Sativa, Larry OG Phenotype).
+  9. `rp-3-bears-og`: **3 Bears OG** (80% Índica / 20% Sativa, SFV OG IBL).
+  10. `rp-sour-kush`: **Sour Kush** (50% Híbrida, Sour Diesel x OG Kush).
+
+- **Oni Seed Co. (10 joyas modernas de Harry Palms & Oni Noodles):**
+  1. `oni-tropicanna-cookies`: **Tropicanna Cookies** (65% Sativa / 35% Índica, Forum Cut GSC x Tangie).
+  2. `oni-strawberry-guava`: **Strawberry Guava** (60% Índica / 40% Sativa, Strawberry Banana #14 x Papaya).
+  3. `oni-papaya`: **Papaya** (75% Índica / 25% Sativa, Citral #13 x Ice #2 / KC Brains Mango x Afghani #1).
+  4. `oni-tropicana-punch`: **Tropicana Punch** (70% Sativa / 30% Índica, Tropicanna Cookies x Purple Punch).
+  5. `oni-papaya-punch`: **Papaya Punch** (55% Índica / 45% Sativa, Papaya x Purple Punch).
+  6. `oni-black-garlic`: **Black Garlic** (70% Índica / 30% Sativa, GMO Cookies x Tropicanna Cookies).
+  7. `oni-honey-bunny`: **Honey Bunny** (55% Sativa / 45% Índica, Tropicanna Cookies x Honey Boo Boo).
+  8. `oni-mango-lemonade`: **Mango Lemonade** (70% Sativa / 30% Índica, Papaya x Tropicanna Cookies).
+  9. `oni-tropicanna-banana`: **Tropicanna Banana** (50% Híbrida, Tropicanna Cookies x Banana OG).
+  10. `oni-papaya-sorbet`: **Papaya Sorbet** (55% Índica / 45% Sativa, Papaya x Sherbert).
+
+- **Fotografias Botanicas Oficiales HD (v192):** 20 imagenes reales de flores de cogollo de alta resolucion procesadas a 800x800 con el pipeline radial oscuro CannaCulture (WebP calidad 90 + JPG calidad 88).
+- **Auditoria Exhaustiva de Todo el Catalogo (717 cepas, 1445 imagenes indexadas):**
+  * Metodo: dHash / pHash 256 bits (16x16) con umbral Hamming <= 8.
+  * **Resultado: 0 duplicados en todo el catalogo.**
+- **Cobertura Linaje/Genetica:** 717/717 cepas (100%).
 
 ### v191 — The Cali Connection & Cannarado Genetics (20 cepas HD)
 - **The Cali Connection (10 cepas de culto californianas):**
