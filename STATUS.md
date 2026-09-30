@@ -1,15 +1,21 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-29 22:45  
+> **Ultima actualizacion:** 2026-09-30 13:20  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(catalog): incorporacion de Purple City Genetics con 10 cepas HD v194`  
-> **Version Cache-Busting:** `?v=2026_pcg_v194`
+> **Commit de cierre:** `fix(catalog): correccion integral de 30 fotografias botanicas en Oni Seed Co, Black Farm Genetix y Purple City Genetics v195`  
+> **Version Cache-Busting:** `?v=2026_fix30_v195`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
 - **Estado del Catalogo:** **737 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
-- **61 Bancos Oficiales Incorporados** (ultima adicion en v194: Purple City Genetics)
+- **61 Bancos Oficiales Incorporados**
+- **Corrección Integral de Fotografías v195:** 30 fotos botánicas corregidas y perfeccionadas al 100%:
+  1. **Solución del viñeteado invertido**: Eliminado el círculo oscuro que cubría el centro de los cogollos; ahora el centro permanece 100% nítido e iluminado (alpha=0) con degradado cosmético suave solo en esquinas exteriores.
+  2. **Oni Seed Co. (10 cepas)**: Sustituidas fotos erróneas (flores de ajo de stock en Black Garlic, frutas/semillas de guayaba en Strawberry Guava, vídeo de plántula de papaya en Papaya, bolsa/empaque con texto en Mango Lemonade, hojas lejanas en Tropicanna Cookies) por macrofotografías auténticas de flores de cannabis en alta resolución.
+  3. **Black Farm Genetix (10 cepas)**: Sustituidas ilustraciones 3D no botánicas (mango con bandera en Ipanema, manzana en llamas en High Octane, melocotón en espiral en Peach Tsunami, iluminación morada irreal en Glukies) por cogollos reales y tricomas vivos con luz natural y fondos de estudio.
+  4. **Purple City Genetics (10 cepas)**: Reemplazadas todas las imágenes de carteles promocionales con textos, latas comerciales, botellas y logos de Alchimia por fotografías botánicas puras de cogollos reales en floración y curado.
+  5. **Auditoría Anti-Colisión dHash / pHash**: Verificación contra las 1,458 imágenes del catálogo (`0 COLLISIONS FOUND`, 100% de unicidad).
 
 ### v194 — Purple City Genetics (10 cepas HD)
 - **Purple City Genetics (10 leyendas maestras de resina de Oakland, CA & Barcelona):**
