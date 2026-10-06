@@ -1,17 +1,48 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-06 13:35  
+> **Ultima actualizacion:** 2026-10-06 14:42  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(catalog): incorporacion de Seed Junky Genetics y Bodhi Seeds con 20 cepas HD v196`  
-> **Version Cache-Busting:** `?v=2026_sj_bodhi_v196`
+> **Commit de cierre:** `feat(catalog): incorporacion de Greenpoint Seeds y Big Buddha Seeds con 20 cepas HD v197`  
+> **Version Cache-Busting:** `?v=2026_gp_bbs_v197`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
-- **Estado del Catalogo:** **757 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
-- **63 Bancos Oficiales Incorporados**
-- **Cobertura Linaje/Genetica:** 757/757 cepas (100%).
+- **Estado del Catalogo:** **777 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
+- **65 Bancos Oficiales Incorporados**
+- **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales.
+
+### v197 — Greenpoint Seeds & Big Buddha Seeds (20 cepas HD)
+- **Greenpoint Seeds (10 iconos del breeding de Colorado con cruces Stardawg / Chem):**
+  1. `gp-gunslinger`: **Gunslinger** (60% Índica / 40% Sativa, Star Fighter x Stardawg).
+  2. `gp-cookies-and-chem`: **Cookies and Chem** (60% Índica / 40% Sativa, Girl Scout Cookies x Stardawg).
+  3. `gp-jelly-pie`: **Jelly Pie** (60% Índica / 40% Sativa, Grape Pie x Stardawg).
+  4. `gp-city-slicker`: **City Slicker** (65% Índica / 35% Sativa, Gelato 33 x Stardawg).
+  5. `gp-copper-chem`: **Copper Chem** (50% Híbrida, Chem 4 x Stardawg).
+  6. `gp-tomahawk`: **Tomahawk** (55% Índica / 45% Sativa, Gorilla Glue #4 x Stardawg).
+  7. `gp-purple-mountain-majesty`: **Purple Mountain Majesty** (70% Índica / 30% Sativa, Purple Urkle x Stardawg).
+  8. `gp-texas-butter`: **Texas Butter** (70% Índica / 30% Sativa, Casey Jones x Stardawg).
+  9. `gp-blizzard-bush`: **Blizzard Bush** (65% Índica / 35% Sativa, The White x Stardawg).
+  10. `gp-night-terror-og`: **Night Terror OG** (70% Índica / 30% Sativa, Blue Dream x Rare Dankness #1).
+
+- **Big Buddha Seeds (10 leyendas británicas del queso y skunk artesanal):**
+  1. `bbs-big-buddha-cheese`: **Big Buddha Cheese** (60% Índica / 40% Sativa, UK Cheese clone x Afghan Indica). La campeona Cheese original de la High Times Cannabis Cup 2006.
+  2. `bbs-blue-cheese`: **Blue Cheese** (75% Índica / 25% Sativa, Big Buddha Cheese x Blueberry).
+  3. `bbs-chiesel`: **Chiesel** (60% Sativa / 40% Índica, Big Buddha Cheese x NYC Diesel).
+  4. `bbs-buddha-tahoe`: **Buddha Tahoe** (80% Índica / 20% Sativa, Tahoe OG Kush clone x Big Buddha Cheese (Reversed)).
+  5. `bbs-cheesy-dick`: **Cheesy Dick** (70% Índica / 30% Sativa, Big Buddha Cheese x Moby Dick).
+  6. `bbs-cheese-dawg`: **Cheese Dawg** (75% Índica / 25% Sativa, Chemdawg 91 x Big Buddha Cheese (Reversed)).
+  7. `bbs-silver-buddha-haze`: **Silver Buddha Haze** (75% Sativa / 25% Índica, Super Silver Haze x Big Buddha Cheese (Reversed)).
+  8. `bbs-freeze-cheese-89`: **Freeze Cheese '89** (80% Índica / 20% Sativa, Friesland Indica 1989 x Big Buddha Cheese).
+  9. `bbs-black-cheese`: **Black Cheese** (85% Índica / 15% Sativa, Black Spanish Indica x Big Buddha Cheese).
+  10. `bbs-bubble-squeak`: **Bubble Squeak** (70% Índica / 30% Sativa, Bubblegum Indiana Cut x Big Buddha Cheese).
+
+- **Fotografias Botanicas Oficiales HD (v197):** 20 imagenes macro reales de flores con procesado radial oscuro CannaCulture (WebP q90 + JPG q88). 0 fondos blancos, 0 halos, 0 marcas de agua.
+- **Auditoria Exhaustiva Anti-Colision dHash / pHash (777 cepas, 1498 imagenes indexadas):**
+  * Metodo: dHash / pHash 256 bits (16x16) con umbral Hamming <= 8.
+  * **Resultado: 0 duplicados en todo el catalogo.**
+- **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
 
 ### v196 — Seed Junky Genetics & Bodhi Seeds (20 cepas HD)
 - **Seed Junky Genetics (10 iconos modernos de JBeezy, Los Ángeles):**
