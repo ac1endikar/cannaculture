@@ -1,21 +1,50 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-09-30 13:20  
+> **Ultima actualizacion:** 2026-10-06 13:35  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(catalog): correccion integral de 30 fotografias botanicas en Oni Seed Co, Black Farm Genetix y Purple City Genetics v195`  
-> **Version Cache-Busting:** `?v=2026_fix30_v195`
+> **Commit de cierre:** `feat(catalog): incorporacion de Seed Junky Genetics y Bodhi Seeds con 20 cepas HD v196`  
+> **Version Cache-Busting:** `?v=2026_sj_bodhi_v196`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
-- **Estado del Catalogo:** **737 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
-- **61 Bancos Oficiales Incorporados**
-- **Corrección Integral de Fotografías v195:** 30 fotos botánicas corregidas y perfeccionadas al 100%:
-  1. **Solución del viñeteado invertido**: Eliminado el círculo oscuro que cubría el centro de los cogollos; ahora el centro permanece 100% nítido e iluminado (alpha=0) con degradado cosmético suave solo en esquinas exteriores.
-  2. **Oni Seed Co. (10 cepas)**: Sustituidas fotos erróneas (flores de ajo de stock en Black Garlic, frutas/semillas de guayaba en Strawberry Guava, vídeo de plántula de papaya en Papaya, bolsa/empaque con texto en Mango Lemonade, hojas lejanas en Tropicanna Cookies) por macrofotografías auténticas de flores de cannabis en alta resolución.
-  3. **Black Farm Genetix (10 cepas)**: Sustituidas ilustraciones 3D no botánicas (mango con bandera en Ipanema, manzana en llamas en High Octane, melocotón en espiral en Peach Tsunami, iluminación morada irreal en Glukies) por cogollos reales y tricomas vivos con luz natural y fondos de estudio.
-  4. **Purple City Genetics (10 cepas)**: Reemplazadas todas las imágenes de carteles promocionales con textos, latas comerciales, botellas y logos de Alchimia por fotografías botánicas puras de cogollos reales en floración y curado.
-  5. **Auditoría Anti-Colisión dHash / pHash**: Verificación contra las 1,458 imágenes del catálogo (`0 COLLISIONS FOUND`, 100% de unicidad).
+- **Estado del Catalogo:** **757 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
+- **63 Bancos Oficiales Incorporados**
+- **Cobertura Linaje/Genetica:** 757/757 cepas (100%).
+- **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales.
+
+### v196 — Seed Junky Genetics & Bodhi Seeds (20 cepas HD)
+- **Seed Junky Genetics (10 iconos modernos de JBeezy, Los Ángeles):**
+  1. `sj-kush-mints`: **Kush Mints** (55% Índica / 45% Sativa, Bubba Kush x Animal Mints).
+  2. `sj-animal-mints`: **Animal Mints** (60% Índica / 40% Sativa, Animal Cookies x SinMint Cookies).
+  3. `sj-jealousy`: **Jealousy** (50% Híbrida, Gelato 41 x Sherbert Bx1). Cepa del Año Leafly 2022.
+  4. `sj-ice-cream-cake`: **Ice Cream Cake** (75% Índica / 25% Sativa, Wedding Cake x Gelato 33).
+  5. `sj-gas-face`: **Gas Face** (70% Índica / 30% Sativa, Face Mints x [Biscotti x Sherbert]).
+  6. `sj-animal-face`: **Animal Face** (70% Sativa / 30% Índica, Face Off OG x Animal Mints).
+  7. `sj-permanent-marker`: **Permanent Marker** (60% Índica / 40% Sativa, [Biscotti x Jealousy] x Sherb Bx). Cepa del Año Leafly 2023.
+  8. `sj-jungle-cake`: **Jungle Cake** (60% Índica / 40% Sativa, White Fire #43 x Wedding Cake).
+  9. `sj-la-kush-cake`: **LA Kush Cake** (70% Índica / 30% Sativa, Wedding Cake x Kush Mints #11).
+  10. `sj-the-soap`: **The Soap** (50% Híbrida, Animal Mints x Kush Mints).
+
+- **Bodhi Seeds (10 iconos de cultivo orgánico y landraces de California):**
+  1. `bodhi-goji-og`: **Goji OG** (60% Sativa / 40% Índica, Nepali OG x Snow Lotus).
+  2. `bodhi-space-monkey`: **Space Monkey** (70% Índica / 30% Sativa, Gorilla Glue #4 x Wookie #15).
+  3. `bodhi-dream-lotus`: **Dream Lotus** (60% Sativa / 40% Índica, Blue Dream x Snow Lotus).
+  4. `bodhi-snow-lotus`: **Snow Lotus** (70% Índica / 30% Sativa, Afgooey x Blockhead).
+  5. `bodhi-mothers-milk`: **Mother's Milk** (50% Híbrida, Nepali OG x Appalachia).
+  6. `bodhi-sunshine-daydream`: **Sunshine Daydream** (60% Índica / 40% Sativa, Bubbashine x Appalachia).
+  7. `bodhi-blue-tara`: **Blue Tara** (65% Índica / 35% Sativa, Bubbashine x Snow Lotus).
+  8. `bodhi-good-medicine`: **Good Medicine** (50% Híbrida CBD, Harlequin x Appalachia).
+  9. `bodhi-ancient-og`: **Ancient OG** (75% Índica / 25% Sativa, Iranian Landrace x Snow Lotus).
+  10. `bodhi-prayer-tower`: **Prayer Tower** (70% Sativa / 30% Índica, Lemon Thai x Appalachia).
+
+- **Fotografias Botanicas Oficiales HD (v196):** 20 imagenes reales de flores de cogollo de alta resolucion (hasta 3872x2592), procesadas a 800x800 con el pipeline radial oscuro CannaCulture (WebP calidad 90 + JPG calidad 88). Cero fondos blancos, cero logos o graficos 3D.
+- **Auditoria Exhaustiva Anti-Colision dHash / pHash (757 cepas, 1478 imagenes indexadas):**
+  * Metodo: dHash / pHash 256 bits (16x16) con umbral Hamming <= 8.
+  * **Resultado: 0 duplicados en todo el catalogo.**
+- **Cobertura Linaje/Genetica:** 757/757 cepas (100%).
+
+### v195 — Corrección Integral de Fotografías (30 cepas HD)
 
 ### v194 — Purple City Genetics (10 cepas HD)
 - **Purple City Genetics (10 leyendas maestras de resina de Oakland, CA & Barcelona):**
