@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-06 14:42  
+> **Ultima actualizacion:** 2026-10-07 13:30  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(catalog): incorporacion de Greenpoint Seeds y Big Buddha Seeds con 20 cepas HD v197`  
-> **Version Cache-Busting:** `?v=2026_gp_bbs_v197`
+> **Commit de cierre:** `refactor(catalog): estandarizacion visual de fotografias botanicas HD (cogollos curados y colas) v197`  
+> **Version Cache-Busting:** `?v=2026_gp_bbs_v197_std`
 
 ---
 
