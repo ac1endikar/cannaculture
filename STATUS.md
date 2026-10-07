@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-07 16:05  
+> **Ultima actualizacion:** 2026-10-07 16:30  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(kiosco): fix legibilidad tarjetas e integracion de modal de ficha tecnica completa`  
-> **Version Cache-Busting:** `?v=2026_kiosk_spec_v200`
+> **Commit de cierre:** `fix(kiosco): resolver cache-busting v201, forzar white-space normal en notas/linaje y asegurar evento click de modal`  
+> **Version Cache-Busting:** `?v=201`
 
 ---
 
@@ -13,6 +13,23 @@
 - **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
 - **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, legibilidad fluida en tarjetas y persistencia híbrida Firebase / Demo.
+
+### v201 — Cache-Busting v201, Salto de Línea Forzado y Evento Click Infalible (`admin-dispensario.html`)
+- **Cache-Busting Unificado v201:** Actualizados los enlaces en `admin-dispensario.html` a `css/admin-dispensario.css?v=201`, `js/admin-dispensario.js?v=201` y `js/strains-data.js?v=201` para invalidar inmediatamente la caché de navegador en clientes y tablets de mostrador.
+- **Salto de Línea en Linaje y Notas de Lote (`css/admin-dispensario.css`):** Sobrescritura estricta con `!important` para `.card-lineage`, `.card-lot-note`, `.lot-note`, `.lineage-text` tanto en modo estándar como en modo Kiosco:
+  * `white-space: normal !important;`
+  * `overflow: visible !important;`
+  * `text-overflow: clip !important;`
+  * `word-break: break-word !important;`
+  * `line-height: 1.4 !important;`
+  * `display: block !important;`
+  * `max-height: none !important; height: auto !important; -webkit-line-clamp: unset !important;`
+- **Evento Click y Apertura Infalible de Modal en Modo Kiosco (`js/admin-dispensario.js`):**
+  * `cursor: pointer !important` aplicado en CSS a todas las tarjetas y elementos descendientes en modo Kiosco.
+  * Inyección de `onclick="window.handleCardClick && window.handleCardClick(event, '${item.id}')"` directo en la etiqueta `<article class="strain-menu-card">`.
+  * Apertura segura del elemento nativo `<dialog id="kiosk-strain-modal">` con control de `modal.open`, envoltorio try/catch y fallback a `modal.setAttribute('open', '')` con centrado CSS absoluto (`top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 99999`).
+  * Cálculo seguro del rating botánico sin riesgos de `RangeError` y fallback de fotografías botánicas.
+  * Delegación doble reforzada en `strains-menu-grid` y exportación de funciones al entorno global `window`.
 
 ### v200 — Vista Kiosco Mostrador & Ficha Técnica Botánica Completa (`admin-dispensario.html`)
 - **Corrección de Legibilidad en Tarjetas de Mostrador:** Eliminado el recorte agresivo `ellipsis`/`nowrap` en `.card-lineage` y `.card-lot-note`. Se implementó un clamp fluido de 2 líneas (`-webkit-line-clamp: 2; line-height: 1.35; white-space: normal;`) preservando la cuadrícula y añadiendo el atributo `title` nativo con el texto completo en linajes y notas agronómicas.

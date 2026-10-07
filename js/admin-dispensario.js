@@ -466,7 +466,8 @@
 
       return `
         <article class="strain-menu-card ${isSelected ? 'selected' : ''} ${!item.available ? 'out-of-stock' : ''}" 
-                 data-strain-id="${item.id}">
+                 data-strain-id="${item.id}"
+                 onclick="window.handleCardClick && window.handleCardClick(event, '${item.id}')">
           <div class="card-top">
             <div class="card-photo-wrapper" data-spec-id="${item.id}" title="Ver ficha botánica y fotografía HD de ${safeName}">
               <img src="${strain.image || 'img/' + item.id + '.webp'}" 
@@ -928,6 +929,7 @@
 
     const item = state.menu.find(m => m.id === strainId);
     const strain = getStrainData(strainId) || {
+      id: strainId,
       name: strainId.replace(/-/g, ' ').toUpperCase(),
       bank: 'CannaCulture Selection',
       species: 'Híbrida',
@@ -948,10 +950,11 @@
     };
 
     const speciesLower = (strain.species || 'hibrida').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    const stars = '★'.repeat(Math.round(strain.rating || 5)) + '☆'.repeat(5 - Math.round(strain.rating || 5));
-    const photoUrl = strain.image || `img/${strain.id}.webp`;
+    const starCount = Math.min(5, Math.max(1, Math.round(Number(strain.rating) || 5)));
+    const stars = '★'.repeat(starCount) + '☆'.repeat(5 - starCount);
+    const photoUrl = strain.image || `img/${strain.id || strainId}.webp`;
     const safeName = (strain.name || 'Variedad').replace(/"/g, '&quot;');
-    const safeBank = (strain.bank || 'Banco').replace(/"/g, '&quot;');
+    const safeBank = (strain.bank || 'Banco Criador').replace(/"/g, '&quot;');
 
     modalBody.innerHTML = `
       <!-- HERO PRINCIPAL DE LA VARIEDAD -->
@@ -1006,17 +1009,17 @@
         <div class="spec-tiers-grid">
           <div class="spec-tier-card std">
             <div class="spec-tier-name">Nivel Estándar</div>
-            <div class="spec-tier-val">${itemData.tierStd.toFixed(2)}€/g</div>
+            <div class="spec-tier-val">${(Number(itemData.tierStd) || 0).toFixed(2)}€/g</div>
             <div class="spec-tier-desc">Socio General</div>
           </div>
           <div class="spec-tier-card colab">
             <div class="spec-tier-name">Nivel Colaborador</div>
-            <div class="spec-tier-val">${itemData.tierColab.toFixed(2)}€/g</div>
+            <div class="spec-tier-val">${(Number(itemData.tierColab) || 0).toFixed(2)}€/g</div>
             <div class="spec-tier-desc">Socio Activo (-10%)</div>
           </div>
           <div class="spec-tier-card terap">
             <div class="spec-tier-name">Nivel Terapéutico</div>
-            <div class="spec-tier-val">${itemData.tierTerap.toFixed(2)}€/g</div>
+            <div class="spec-tier-val">${(Number(itemData.tierTerap) || 0).toFixed(2)}€/g</div>
             <div class="spec-tier-desc">Socio Médico (-25%)</div>
           </div>
         </div>
@@ -1055,7 +1058,29 @@
       });
     }
 
-    modal.showModal();
+    // Apertura infalible del diálogo con soporte y fallback
+    try {
+      if (typeof modal.showModal === 'function') {
+        if (!modal.open) {
+          modal.showModal();
+        }
+      } else {
+        modal.setAttribute('open', '');
+      }
+    } catch (dialogErr) {
+      console.warn("showModal fallback activo:", dialogErr);
+      modal.setAttribute('open', '');
+    }
+  }
+
+  function closeKioskModal() {
+    const modal = document.getElementById('kiosk-strain-modal');
+    if (modal) {
+      if (typeof modal.close === 'function') {
+        try { modal.close(); } catch (err) {}
+      }
+      modal.removeAttribute('open');
+    }
   }
 
   function openKioskLightbox(imgSrc, title, subtitle) {
@@ -1069,7 +1094,17 @@
     if (titleEl) titleEl.textContent = title || 'Fotografía Botánica HD';
     if (subEl) subEl.textContent = subtitle || 'ALTA RESOLUCIÓN • MACRO 800×800';
 
-    dialog.showModal();
+    try {
+      if (typeof dialog.showModal === 'function') {
+        if (!dialog.open) {
+          dialog.showModal();
+        }
+      } else {
+        dialog.setAttribute('open', '');
+      }
+    } catch (e) {
+      dialog.setAttribute('open', '');
+    }
   }
 
   function setupKioskModalListeners() {
@@ -1077,7 +1112,10 @@
     const closeBtn = document.getElementById('btn-close-kiosk-modal');
 
     if (closeBtn && modal) {
-      closeBtn.addEventListener('click', () => modal.close());
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeKioskModal();
+      });
     }
 
     if (modal) {
@@ -1089,7 +1127,7 @@
           e.clientY < rect.top ||
           e.clientY > rect.bottom
         ) {
-          modal.close();
+          closeKioskModal();
         }
       });
     }
@@ -1098,7 +1136,13 @@
     const closeLightboxBtn = document.getElementById('btn-close-kiosk-lightbox');
 
     if (closeLightboxBtn && lightbox) {
-      closeLightboxBtn.addEventListener('click', () => lightbox.close());
+      closeLightboxBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (typeof lightbox.close === 'function') {
+          try { lightbox.close(); } catch (err) {}
+        }
+        lightbox.removeAttribute('open');
+      });
     }
 
     if (lightbox) {
@@ -1110,18 +1154,68 @@
           e.clientY < rect.top ||
           e.clientY > rect.bottom
         ) {
-          lightbox.close();
+          if (typeof lightbox.close === 'function') {
+            try { lightbox.close(); } catch (err) {}
+          }
+          lightbox.removeAttribute('open');
         }
       });
     }
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        if (lightbox && lightbox.open) lightbox.close();
-        else if (modal && modal.open) modal.close();
+        if (lightbox && lightbox.open) {
+          if (typeof lightbox.close === 'function') {
+            try { lightbox.close(); } catch (err) {}
+          }
+          lightbox.removeAttribute('open');
+        } else if (modal && modal.open) {
+          closeKioskModal();
+        }
       }
     });
   }
+
+  // Manejador centralizado de click/tap en tarjetas (Modo Kiosco y Modo Encargado)
+  function handleCardClick(e, sid) {
+    if (!sid) return;
+
+    // 1. Ignorar clicks dentro del interruptor de disponibilidad en modo normal
+    if (e.target.closest('.availability-control') || e.target.closest('.toggle-switch')) {
+      return;
+    }
+
+    // 2. Ignorar clicks en botones de acción específicos del modo encargado
+    if (e.target.closest('.btn-card-edit') || e.target.closest('.btn-card-delete')) {
+      return;
+    }
+
+    // 3. Click explícito en Ficha Técnica
+    if (e.target.closest('[data-spec-id]') || e.target.closest('.btn-card-spec') || e.target.closest('.kiosk-tap-pill') || e.target.closest('.card-photo-wrapper')) {
+      e.preventDefault();
+      e.stopPropagation();
+      openKioskStrainModal(sid);
+      return;
+    }
+
+    // 4. Modo Kiosco: cualquier punto de la tarjeta abre la Ficha Técnica Botánica
+    if (state.isKioskMode || document.body.classList.contains('kiosk-mode')) {
+      e.preventDefault();
+      e.stopPropagation();
+      openKioskStrainModal(sid);
+      return;
+    }
+
+    // 5. Modo Encargado: selección para el panel de configuración de cuotas
+    state.selectedStrainId = sid;
+    renderMenuGrid();
+    renderEditorPanel();
+  }
+
+  // Exportar al objeto global window para disponibilidad absoluta en eventos inline
+  window.openKioskStrainModal = openKioskStrainModal;
+  window.closeKioskModal = closeKioskModal;
+  window.handleCardClick = handleCardClick;
 
   // ==========================================================================
   // Manejo de Eventos en Grid (Toggles, Edición, Eliminación, Ficha Técnica)
@@ -1132,19 +1226,23 @@
 
     grid.addEventListener('click', (e) => {
       // 1. Click en botón o foto de Ficha Técnica
-      const specBtn = e.target.closest('[data-spec-id]');
+      const specBtn = e.target.closest('[data-spec-id], .btn-card-spec, .kiosk-tap-pill, .card-photo-wrapper');
       if (specBtn) {
-        const sid = specBtn.getAttribute('data-spec-id');
-        openKioskStrainModal(sid);
-        return;
+        const sid = specBtn.getAttribute('data-spec-id') || specBtn.closest('.strain-menu-card')?.getAttribute('data-strain-id');
+        if (sid) {
+          e.preventDefault();
+          openKioskStrainModal(sid);
+          return;
+        }
       }
 
       // 2. Si está en Modo Kiosco, hacer click sobre cualquier parte de la tarjeta abre la Ficha Técnica
       if (state.isKioskMode || document.body.classList.contains('kiosk-mode')) {
-        const card = e.target.closest('.strain-menu-card');
-        if (card && !e.target.closest('.availability-control')) {
+        const card = e.target.closest('.strain-menu-card, .dispensario-card, .kiosk-card');
+        if (card && !e.target.closest('.availability-control') && !e.target.closest('.toggle-switch')) {
           const sid = card.getAttribute('data-strain-id');
           if (sid) {
+            e.preventDefault();
             openKioskStrainModal(sid);
             return;
           }
@@ -1159,7 +1257,8 @@
         renderMenuGrid();
         renderEditorPanel();
         if (window.innerWidth <= 992) {
-          document.getElementById('editor-panel-card').scrollIntoView({ behavior: 'smooth' });
+          const ep = document.getElementById('editor-panel-card');
+          if (ep) ep.scrollIntoView({ behavior: 'smooth' });
         }
         return;
       }
