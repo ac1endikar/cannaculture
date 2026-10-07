@@ -22,7 +22,7 @@
     rel="stylesheet">
 
   <!-- Hoja de Estilos del Dispensario CSC -->
-  <link rel="stylesheet" href="css/admin-dispensario.css?v=2026_dispensario_csc_v199">
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=2026_kiosk_spec_v200">
 </head>
 
 <body>
@@ -183,6 +183,32 @@
   </div>
 
   <!-- ======================================================================
+       Modal de Ficha Técnica Botánica & Aportaciones (Modo Kiosco / Mostrador)
+       ====================================================================== -->
+  <dialog id="kiosk-strain-modal" class="kiosk-modal-dialog">
+    <div class="kiosk-modal-container">
+      <button id="btn-close-kiosk-modal" class="kiosk-modal-close-btn" title="Cerrar Ficha Técnica (Esc)" aria-label="Cerrar Ficha">✕</button>
+      <div id="kiosk-modal-body" class="kiosk-modal-body">
+        <!-- Renderizado dinámico desde admin-dispensario.js -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Lightbox para Fotografía Macro HD en Máxima Resolución -->
+  <dialog id="kiosk-lightbox-dialog" class="kiosk-lightbox-dialog">
+    <div class="kiosk-lightbox-container">
+      <button id="btn-close-kiosk-lightbox" class="kiosk-lightbox-close-btn" title="Cerrar Fotografía (Esc)" aria-label="Cerrar Fotografía">✕</button>
+      <div class="kiosk-lightbox-header">
+        <h3 id="kiosk-lightbox-title">Fotografía Botánica HD</h3>
+        <span id="kiosk-lightbox-subtitle">ALTA RESOLUCIÓN • MACRO 800×800</span>
+      </div>
+      <div class="kiosk-lightbox-view">
+        <img id="kiosk-lightbox-img" src="" alt="Macro HD" class="kiosk-lightbox-img" draggable="false" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ======================================================================
        Carga de Scripts: Datos Maestros (777 Cepas) y Lógica Modular
        ====================================================================== -->
   <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
@@ -195,7 +221,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- 3. Lógica del Panel de Dispensario CSC -->
-  <script src="js/admin-dispensario.js?v=2026_dispensario_csc_v199"></script>
+  <script src="js/admin-dispensario.js?v=2026_kiosk_spec_v200"></script>
 </body>
 
 </html>

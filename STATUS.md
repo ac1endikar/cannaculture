@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-07 15:40  
+> **Ultima actualizacion:** 2026-10-07 16:05  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat: modulo panel de gestion de dispensario y aportaciones para CSC (admin-dispensario)`  
-> **Version Cache-Busting:** `?v=2026_dispensario_csc_v199`
+> **Commit de cierre:** `feat(kiosco): fix legibilidad tarjetas e integracion de modal de ficha tecnica completa`  
+> **Version Cache-Busting:** `?v=2026_kiosk_spec_v200`
 
 ---
 
@@ -12,7 +12,19 @@
 - **65 Bancos Oficiales Incorporados**
 - **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
-- **Nuevo Módulo CSC:** Panel de Dispensario y Mostrador (`admin-dispensario.html`) operativo con sincronización Firebase y fallback demo.
+- **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, legibilidad fluida en tarjetas y persistencia híbrida Firebase / Demo.
+
+### v200 — Vista Kiosco Mostrador & Ficha Técnica Botánica Completa (`admin-dispensario.html`)
+- **Corrección de Legibilidad en Tarjetas de Mostrador:** Eliminado el recorte agresivo `ellipsis`/`nowrap` en `.card-lineage` y `.card-lot-note`. Se implementó un clamp fluido de 2 líneas (`-webkit-line-clamp: 2; line-height: 1.35; white-space: normal;`) preservando la cuadrícula y añadiendo el atributo `title` nativo con el texto completo en linajes y notas agronómicas.
+- **Ficha Técnica Botánica Interactiva (Modo Kiosco & Mostrador):** Modal popup reactivo (`#kiosk-strain-modal`) abierto al pulsar cualquier tarjeta en Vista Kiosco o el botón `🔬 Ficha`:
+  * Fotografía macro en alta resolución 800×800 con badge `🔍 Toca para Zoom HD` y visor Lightbox a pantalla completa (`#kiosk-lightbox-dialog`).
+  * Título de cepa, breeder/banco, badge botánico (Índica/Sativa/Híbrida), linaje parental completo y métricas THC/CBD/Floración.
+  * Cuadro de aportaciones (€/g) por Tiers de socio (Nivel Estándar, Nivel Colaborador, Nivel Terapéutico) asignadas por el club.
+  * Notas agronómicas y curado del lote local asignado en mostrador.
+  * Desglose completo de terpenos dominantes con barras porcentuales coloreadas según `window.TERPENES_INFO`.
+  * Etiquetas de efectos botánicos y perfil aromático/cata.
+  * Descripción botánica oficial extraída dinámicamente de `strains-data.js`.
+- **Navegación y Ergonomía Táctil:** Botón de cierre visible (✕), cierre por clic en backdrop exterior o pulsando la tecla `Escape`.
 
 ### v199 — Módulo Panel de Gestión del Dispensario para Encargados de CSC (`admin-dispensario.html`)
 - **Panel Modular e Independiente:** Construido en `admin-dispensario.html` con lógica desacoplada en `js/admin-dispensario.js` y estilos dedicados en `css/admin-dispensario.css`, sin alterar la operatividad de `index.html`.

@@ -460,14 +460,17 @@
 
       const isSelected = item.id === state.selectedStrainId;
       const speciesLower = (strain.species || 'hibrida').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const safeLineage = (strain.lineage || strain.genetics || 'Linaje botánico de alta pureza').replace(/"/g, '&quot;');
+      const safeLotNotes = (item.lotNotes || 'Lote estándar del dispensario').replace(/"/g, '&quot;');
+      const safeName = (strain.name || item.id).replace(/"/g, '&quot;');
 
       return `
         <article class="strain-menu-card ${isSelected ? 'selected' : ''} ${!item.available ? 'out-of-stock' : ''}" 
                  data-strain-id="${item.id}">
           <div class="card-top">
-            <div class="card-photo-wrapper">
+            <div class="card-photo-wrapper" data-spec-id="${item.id}" title="Ver ficha botánica y fotografía HD de ${safeName}">
               <img src="${strain.image || 'img/' + item.id + '.webp'}" 
-                   alt="${strain.name}" 
+                   alt="${safeName}" 
                    class="card-photo"
                    loading="lazy"
                    onerror="this.src='img/ths-darkstar-official.webp';" />
@@ -475,9 +478,9 @@
             </div>
             
             <div class="card-headline">
-              <h3>${strain.name}</h3>
+              <h3 title="${safeName}">${strain.name}</h3>
               <p class="card-bank">🏛️ ${strain.bank || 'Banco Criador'}</p>
-              <p class="card-lineage" title="${strain.lineage || strain.genetics || ''}">🧬 ${strain.lineage || strain.genetics || 'Linaje botánico de alta pureza'}</p>
+              <p class="card-lineage" title="${safeLineage}">🧬 ${strain.lineage || strain.genetics || 'Linaje botánico de alta pureza'}</p>
             </div>
           </div>
 
@@ -493,7 +496,7 @@
           </div>
 
           <!-- Cuadro de cuotas de previsión / aportaciones -->
-          <div class="card-tiers-row">
+          <div class="card-tiers-row" title="Cuadro de aportaciones del club por niveles de socio">
             <div class="tier-mini-box tier-std">
               <div class="tier-mini-title">Estándar</div>
               <div class="tier-mini-val">${item.tierStd.toFixed(2)}€/g</div>
@@ -508,13 +511,22 @@
             </div>
           </div>
 
-          <!-- Nota de lote botánico / cata local -->
-          <p class="card-lot-note" title="${item.lotNotes || ''}">📋 ${item.lotNotes || 'Lote estándar del dispensario'}</p>
+          <!-- Nota de lote botánico / cata local (legibilidad fluida en 2 líneas) -->
+          <p class="card-lot-note" title="${safeLotNotes}">📋 ${item.lotNotes || 'Lote estándar del dispensario'}</p>
 
-          <!-- Acciones de tarjeta -->
+          <!-- Píldora de interacción táctil visible en Modo Kiosco -->
+          <div class="kiosk-tap-pill" data-spec-id="${item.id}">
+            <span>🔬</span>
+            <span>Toca para ver Ficha Botánica & Terpenos</span>
+          </div>
+
+          <!-- Acciones de tarjeta en Modo Encargado -->
           <div class="card-actions">
+            <button class="btn-card-spec" data-spec-id="${item.id}" title="Ver Ficha Técnica Botánica Completa">
+              🔬 Ficha
+            </button>
             <button class="btn-card-edit" data-edit-id="${item.id}" title="Editar aportaciones y notas de lote">
-              ✏️ Modificar Aportaciones & Lote
+              ✏️ Modificar
             </button>
             <button class="btn-card-delete" data-delete-id="${item.id}" title="Retirar de la carta">
               🗑️
@@ -848,14 +860,298 @@
   }
 
   // ==========================================================================
-  // Manejo de Eventos en Grid (Toggles, Edición, Eliminación)
+  // Ficha Técnica Botánica & Modal Interactivo de Mostrador (Modo Kiosco)
+  // ==========================================================================
+  function renderTerpenesSection(strain) {
+    const terpeneInfo = window.TERPENES_INFO || {};
+    let terpenesObj = strain.terpenes;
+    
+    if (!terpenesObj || typeof terpenesObj !== 'object' || Object.keys(terpenesObj).length === 0) {
+      const dom = (strain.dominantTerpene || 'myrcene').toLowerCase();
+      terpenesObj = {};
+      terpenesObj[dom] = 45;
+      if (dom !== 'limonene') terpenesObj['limonene'] = 30;
+      else terpenesObj['caryophyllene'] = 30;
+      terpenesObj['pinene'] = 25;
+    }
+
+    const entries = Object.entries(terpenesObj).sort((a, b) => b[1] - a[1]);
+
+    return entries.map(([key, pct]) => {
+      const keyLower = key.toLowerCase();
+      const info = terpeneInfo[keyLower] || Object.values(terpeneInfo).find(t => t.name.toLowerCase() === keyLower) || {
+        name: key.charAt(0).toUpperCase() + key.slice(1),
+        color: '#10B981',
+        effects: 'Perfil aromático vegetal'
+      };
+      const col = info.color || '#10B981';
+
+      return `
+        <div class="terpene-row">
+          <div class="terpene-row-info">
+            <span class="terpene-name" style="color: ${col};">
+              🧬 ${info.name || key}
+            </span>
+            <span class="terpene-pct">${pct}%</span>
+          </div>
+          <div class="terpene-bar-track">
+            <div class="terpene-bar-fill" style="width: ${Math.min(100, pct)}%; background: linear-gradient(90deg, ${col}99, ${col});"></div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderEffectsAndFlavors(strain) {
+    const effects = Array.isArray(strain.effects) && strain.effects.length > 0 ? strain.effects : ['Relajación Corporal', 'Calma Profunda', 'Bienestar'];
+    const flavors = Array.isArray(strain.flavors) && strain.flavors.length > 0 ? strain.flavors : ['Terroso Floral', 'Cítrico Fresco', 'Matices Herbales'];
+
+    const effectsHtml = effects.map(eff => `<span class="spec-tag effect">✨ ${eff}</span>`).join('');
+    const flavorsHtml = flavors.map(flv => `<span class="spec-tag flavor">🍋 ${flv}</span>`).join('');
+
+    return `
+      <div style="margin-bottom: 14px;">
+        <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">Efectos & Sensaciones Botánicas</div>
+        <div class="spec-tags-grid">${effectsHtml}</div>
+      </div>
+      <div>
+        <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">Perfil de Cata & Notas Aromáticas</div>
+        <div class="spec-tags-grid">${flavorsHtml}</div>
+      </div>
+    `;
+  }
+
+  function openKioskStrainModal(strainId) {
+    const modal = document.getElementById('kiosk-strain-modal');
+    const modalBody = document.getElementById('kiosk-modal-body');
+    if (!modal || !modalBody) return;
+
+    const item = state.menu.find(m => m.id === strainId);
+    const strain = getStrainData(strainId) || {
+      name: strainId.replace(/-/g, ' ').toUpperCase(),
+      bank: 'CannaCulture Selection',
+      species: 'Híbrida',
+      image: `img/${strainId}.webp`,
+      lineage: 'Linaje seleccionado para socios',
+      thc: 22,
+      cbd: 0.1,
+      rating: 4.9,
+      description: 'Variedad seleccionada para el dispensario de consumo compartido del club social.'
+    };
+
+    const itemData = item || {
+      tierStd: 9.00,
+      tierColab: 8.00,
+      tierTerap: 6.50,
+      available: true,
+      lotNotes: 'Lote estándar del dispensario'
+    };
+
+    const speciesLower = (strain.species || 'hibrida').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const stars = '★'.repeat(Math.round(strain.rating || 5)) + '☆'.repeat(5 - Math.round(strain.rating || 5));
+    const photoUrl = strain.image || `img/${strain.id}.webp`;
+    const safeName = (strain.name || 'Variedad').replace(/"/g, '&quot;');
+    const safeBank = (strain.bank || 'Banco').replace(/"/g, '&quot;');
+
+    modalBody.innerHTML = `
+      <!-- HERO PRINCIPAL DE LA VARIEDAD -->
+      <section class="spec-hero">
+        <div class="spec-photo-wrap" id="spec-photo-click" title="Toca para ampliar en fotografía macro HD">
+          <img src="${photoUrl}" 
+               alt="${safeName}" 
+               class="spec-photo-img" 
+               onerror="this.src='img/ths-darkstar-official.webp';" />
+          <div class="spec-zoom-badge">🔍 Toca para Zoom HD</div>
+        </div>
+
+        <div class="spec-hero-meta">
+          <div class="spec-badges-row">
+            <span class="species-chip ${speciesLower}" style="position:static; padding:4px 10px; font-size:0.75rem;">
+              ${strain.species || 'Híbrida'}
+            </span>
+            <span class="spec-bank-pill">🏛️ ${strain.bank || 'Banco Criador'}</span>
+            <span style="color: #FBBF24; font-size: 0.85rem; font-weight: 700;">${stars}</span>
+          </div>
+
+          <h2 class="spec-title">${strain.name}</h2>
+          <div class="spec-lineage">🧬 Linaje Parental: ${strain.lineage || strain.genetics || 'Selección botánica de alta pureza'}</div>
+
+          <div class="spec-cannabinoids">
+            <div class="cannabinoid-chip" style="color:#34D399;">
+              🌿 THC: <strong>${strain.thc || 22}%</strong>
+            </div>
+            <div class="cannabinoid-chip" style="color:#06B6D4;">
+              🧪 CBD: <strong>${strain.cbd || 0.1}%</strong>
+            </div>
+            ${strain.floweringDays ? `
+            <div class="cannabinoid-chip" style="color:#FBBF24;">
+              ⏱️ Floración: <strong>${strain.floweringDays}d</strong>
+            </div>` : ''}
+          </div>
+        </div>
+      </section>
+
+      <!-- CUADRO DE APORTACIONES DEL CLUB (CONSUMO COMPARTIDO) -->
+      <section class="spec-tiers-box">
+        <div class="spec-tiers-header">
+          <h3>
+            <span>⚖️</span>
+            <span>Previsión de Aportaciones del Club (Consumo Compartido)</span>
+          </h3>
+          <span class="spec-avail-pill ${itemData.available ? 'is-avail' : 'is-out'}">
+            ${itemData.available ? '🟢 Disponible en Mostrador' : '⚪ Agotado / En reserva'}
+          </span>
+        </div>
+
+        <div class="spec-tiers-grid">
+          <div class="spec-tier-card std">
+            <div class="spec-tier-name">Nivel Estándar</div>
+            <div class="spec-tier-val">${itemData.tierStd.toFixed(2)}€/g</div>
+            <div class="spec-tier-desc">Socio General</div>
+          </div>
+          <div class="spec-tier-card colab">
+            <div class="spec-tier-name">Nivel Colaborador</div>
+            <div class="spec-tier-val">${itemData.tierColab.toFixed(2)}€/g</div>
+            <div class="spec-tier-desc">Socio Activo (-10%)</div>
+          </div>
+          <div class="spec-tier-card terap">
+            <div class="spec-tier-name">Nivel Terapéutico</div>
+            <div class="spec-tier-val">${itemData.tierTerap.toFixed(2)}€/g</div>
+            <div class="spec-tier-desc">Socio Médico (-25%)</div>
+          </div>
+        </div>
+
+        <!-- NOTAS DEL LOTE AGRONÓMICO Y CURADO -->
+        <div class="spec-lot-card" style="margin-top: 14px;">
+          <div class="spec-lot-title">📋 Notas Agronómicas & Curado del Lote Local</div>
+          <div class="spec-lot-text">${itemData.lotNotes || 'Lote seleccionado y curado en condiciones óptimas de conservación.'}</div>
+        </div>
+      </section>
+
+      <!-- TERPENOS, AROMAS Y PERFIL BOTÁNICO -->
+      <section class="spec-terpenes-card">
+        <div class="spec-section-heading">
+          <span>🧬</span>
+          <span>Perfil Terpénico & Aromas Dominantes</span>
+        </div>
+
+        <div class="terpene-bars-container">
+          ${renderTerpenesSection(strain)}
+        </div>
+
+        ${renderEffectsAndFlavors(strain)}
+
+        ${strain.description ? `
+        <div class="spec-desc-text">
+          <strong>Ficha Botánica Oficial:</strong> ${strain.description}
+        </div>` : ''}
+      </section>
+    `;
+
+    const photoBox = document.getElementById('spec-photo-click');
+    if (photoBox) {
+      photoBox.addEventListener('click', () => {
+        openKioskLightbox(photoUrl, strain.name, `🏛️ ${strain.bank} • ${strain.species}`);
+      });
+    }
+
+    modal.showModal();
+  }
+
+  function openKioskLightbox(imgSrc, title, subtitle) {
+    const dialog = document.getElementById('kiosk-lightbox-dialog');
+    const imgEl = document.getElementById('kiosk-lightbox-img');
+    const titleEl = document.getElementById('kiosk-lightbox-title');
+    const subEl = document.getElementById('kiosk-lightbox-subtitle');
+
+    if (!dialog || !imgEl) return;
+    imgEl.src = imgSrc;
+    if (titleEl) titleEl.textContent = title || 'Fotografía Botánica HD';
+    if (subEl) subEl.textContent = subtitle || 'ALTA RESOLUCIÓN • MACRO 800×800';
+
+    dialog.showModal();
+  }
+
+  function setupKioskModalListeners() {
+    const modal = document.getElementById('kiosk-strain-modal');
+    const closeBtn = document.getElementById('btn-close-kiosk-modal');
+
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', () => modal.close());
+    }
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        const rect = modal.getBoundingClientRect();
+        if (
+          e.clientX < rect.left ||
+          e.clientX > rect.right ||
+          e.clientY < rect.top ||
+          e.clientY > rect.bottom
+        ) {
+          modal.close();
+        }
+      });
+    }
+
+    const lightbox = document.getElementById('kiosk-lightbox-dialog');
+    const closeLightboxBtn = document.getElementById('btn-close-kiosk-lightbox');
+
+    if (closeLightboxBtn && lightbox) {
+      closeLightboxBtn.addEventListener('click', () => lightbox.close());
+    }
+
+    if (lightbox) {
+      lightbox.addEventListener('click', (e) => {
+        const rect = lightbox.getBoundingClientRect();
+        if (
+          e.clientX < rect.left ||
+          e.clientX > rect.right ||
+          e.clientY < rect.top ||
+          e.clientY > rect.bottom
+        ) {
+          lightbox.close();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (lightbox && lightbox.open) lightbox.close();
+        else if (modal && modal.open) modal.close();
+      }
+    });
+  }
+
+  // ==========================================================================
+  // Manejo de Eventos en Grid (Toggles, Edición, Eliminación, Ficha Técnica)
   // ==========================================================================
   function setupGridEvents() {
     const grid = document.getElementById('strains-menu-grid');
     if (!grid) return;
 
     grid.addEventListener('click', (e) => {
-      // Click en botón Editar
+      // 1. Click en botón o foto de Ficha Técnica
+      const specBtn = e.target.closest('[data-spec-id]');
+      if (specBtn) {
+        const sid = specBtn.getAttribute('data-spec-id');
+        openKioskStrainModal(sid);
+        return;
+      }
+
+      // 2. Si está en Modo Kiosco, hacer click sobre cualquier parte de la tarjeta abre la Ficha Técnica
+      if (state.isKioskMode || document.body.classList.contains('kiosk-mode')) {
+        const card = e.target.closest('.strain-menu-card');
+        if (card && !e.target.closest('.availability-control')) {
+          const sid = card.getAttribute('data-strain-id');
+          if (sid) {
+            openKioskStrainModal(sid);
+            return;
+          }
+        }
+      }
+
+      // 3. Click en botón Editar
       const editBtn = e.target.closest('[data-edit-id]');
       if (editBtn) {
         const sid = editBtn.getAttribute('data-edit-id');
@@ -868,7 +1164,7 @@
         return;
       }
 
-      // Click en botón Eliminar
+      // 4. Click en botón Eliminar
       const delBtn = e.target.closest('[data-delete-id]');
       if (delBtn) {
         const sid = delBtn.getAttribute('data-delete-id');
@@ -883,6 +1179,17 @@
           showToast("Variedad retirada del menú.");
         }
         return;
+      }
+
+      // 5. Click en tarjeta (modo encargado) selecciona para el panel derecho
+      const card = e.target.closest('.strain-menu-card');
+      if (card && !e.target.closest('.availability-control') && !e.target.closest('.card-actions')) {
+        const sid = card.getAttribute('data-strain-id');
+        if (sid && sid !== state.selectedStrainId) {
+          state.selectedStrainId = sid;
+          renderMenuGrid();
+          renderEditorPanel();
+        }
       }
     });
 
@@ -1003,6 +1310,7 @@
     setupCategoryTabs();
     setupGridEvents();
     setupKioskMode();
+    setupKioskModalListeners();
     setupClubSettings();
     renderMenuGrid();
     renderEditorPanel();

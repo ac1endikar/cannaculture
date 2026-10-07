@@ -586,12 +586,16 @@ h1, h2, h3, h4, .brand-title {
 }
 
 .card-lineage {
-  font-size: 0.74rem;
-  color: var(--text-dim);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
   margin-top: 4px;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.35;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Interruptor Toggle Switch para Disponibilidad */
@@ -696,19 +700,71 @@ input:checked + .toggle-slider:before {
 .tier-mini-box.tier-terap .tier-mini-val { color: var(--accent-cyan); }
 
 .card-lot-note {
-  font-size: 0.74rem;
-  color: var(--text-muted);
-  font-style: italic;
-  white-space: nowrap;
+  font-size: 0.78rem;
+  color: #A7F3D0;
+  background: rgba(16, 185, 129, 0.08);
+  border-left: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-style: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
-  padding-left: 2px;
+  line-height: 1.35;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.kiosk-tap-pill {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #6EE7B7;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 4px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+body.kiosk-mode .kiosk-tap-pill {
+  display: flex;
 }
 
 .card-actions {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.btn-card-spec {
+  flex: 1;
+  min-height: 40px;
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: var(--radius-md);
+  color: #67E8F9;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.btn-card-spec:hover {
+  background: rgba(6, 182, 212, 0.25);
+  border-color: var(--accent-cyan);
+  color: #FFF;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
 }
 
 .btn-card-edit {
@@ -1015,4 +1071,489 @@ body.kiosk-mode .kiosk-top-notice {
 .admin-toast.show {
   transform: translateY(0);
   opacity: 1;
+}
+
+/* ==========================================================================
+   Ficha Técnica Botánica & Modal Interactivo en Modo Kiosco
+   ========================================================================== */
+.kiosk-modal-dialog {
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  background: rgba(11, 15, 14, 0.94);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  color: var(--text-primary);
+  width: 90vw;
+  max-width: 860px;
+  max-height: 92vh;
+  padding: 0;
+  margin: auto;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85), var(--shadow-glow);
+  outline: none;
+  overflow: hidden;
+}
+
+.kiosk-modal-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.kiosk-modal-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 92vh;
+  position: relative;
+}
+
+.kiosk-modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 30;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #F3F4F6;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.kiosk-modal-close-btn:hover {
+  background: var(--accent-rose);
+  border-color: var(--accent-rose);
+  color: #FFF;
+  transform: rotate(90deg);
+}
+
+.kiosk-modal-body {
+  overflow-y: auto;
+  padding: 24px 28px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Custom Scrollbar for Modal */
+.kiosk-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.kiosk-modal-body::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 10px;
+}
+
+/* Cabecera Hero de la Ficha */
+.spec-hero {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background: rgba(18, 26, 23, 0.7);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 680px) {
+  .spec-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.spec-photo-wrap {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--border-primary);
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: var(--transition);
+}
+
+.spec-photo-wrap:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.35);
+}
+
+.spec-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spec-zoom-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  color: #6EE7B7;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.spec-hero-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.spec-badges-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.spec-bank-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.spec-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #FFF;
+  line-height: 1.2;
+}
+
+.spec-lineage {
+  font-size: 0.88rem;
+  color: var(--primary-light);
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.spec-cannabinoids {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.cannabinoid-chip {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+/* Sección de Cuadro de Aportaciones del Club */
+.spec-tiers-box {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(6, 182, 212, 0.08));
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+}
+
+.spec-tiers-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.spec-tiers-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #A7F3D0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spec-avail-pill {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.spec-avail-pill.is-avail {
+  background: rgba(16, 185, 129, 0.25);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.5);
+}
+
+.spec-avail-pill.is-out {
+  background: rgba(107, 114, 128, 0.2);
+  color: #9CA3AF;
+  border: 1px solid rgba(107, 114, 128, 0.4);
+}
+
+.spec-tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .spec-tiers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.spec-tier-card {
+  background: rgba(11, 15, 14, 0.7);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.spec-tier-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.spec-tier-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #FFF;
+  margin: 4px 0 2px;
+}
+
+.spec-tier-card.std .spec-tier-val { color: #F9FAFB; }
+.spec-tier-card.colab .spec-tier-val { color: var(--primary-light); }
+.spec-tier-card.terap .spec-tier-val { color: var(--accent-cyan); }
+
+.spec-tier-desc {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+/* Lote Agronómico & Curado */
+.spec-lot-card {
+  background: rgba(0, 0, 0, 0.35);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 12px 18px;
+}
+
+.spec-lot-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.spec-lot-text {
+  font-size: 0.88rem;
+  color: #D1D5DB;
+  line-height: 1.45;
+}
+
+/* Sección Terpenos y Aromas */
+.spec-terpenes-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.spec-section-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terpene-bars-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.terpene-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.terpene-row-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+}
+
+.terpene-name {
+  font-weight: 700;
+}
+
+.terpene-pct {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.terpene-bar-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.terpene-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.6s ease;
+}
+
+/* Efectos y Aromas Tags */
+.spec-tags-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.spec-tag {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.spec-tag.effect {
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #A7F3D0;
+}
+
+.spec-tag.flavor {
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #FCD34D;
+}
+
+.spec-desc-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ==========================================================================
+   Lightbox Macro HD Modal
+   ========================================================================== */
+.kiosk-lightbox-dialog {
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  background: rgba(5, 8, 7, 0.96);
+  backdrop-filter: blur(30px);
+  padding: 0;
+  margin: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.95), var(--shadow-glow);
+  outline: none;
+  overflow: hidden;
+}
+
+.kiosk-lightbox-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.kiosk-lightbox-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 24px;
+  max-height: 90vh;
+}
+
+.kiosk-lightbox-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFF;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.kiosk-lightbox-close-btn:hover {
+  background: var(--accent-rose);
+  border-color: var(--accent-rose);
+  transform: rotate(90deg);
+}
+
+.kiosk-lightbox-header {
+  margin-bottom: 16px;
+}
+
+.kiosk-lightbox-header h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFF;
+}
+
+.kiosk-lightbox-header span {
+  font-size: 0.75rem;
+  color: var(--primary-light);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.kiosk-lightbox-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-height: calc(90vh - 120px);
+}
+
+.kiosk-lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
 }
