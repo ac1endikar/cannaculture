@@ -59,6 +59,7 @@
         specLotDefault: "Lote seleccionado y curado en condiciones óptimas de conservación.",
         zoomHd: "Toca para Zoom HD",
         close: "Cerrar",
+        specBtn: "🔬 Ficha",
         tapToViewSpec: "Toca para ver Ficha Botánica & Terpenos",
         officialDesc: "Ficha Botánica Oficial:",
         flowering: "Floración",
@@ -155,6 +156,7 @@
         specLotDefault: "Selected batch cured under optimal preservation conditions.",
         zoomHd: "Tap for HD Zoom",
         close: "Close",
+        specBtn: "🔬 Spec Sheet",
         tapToViewSpec: "Tap to view Botanical Spec & Terpenes",
         officialDesc: "Official Botanical Record:",
         flowering: "Flowering",
@@ -251,6 +253,7 @@
         specLotDefault: "Ausgewählte Charge, unter optimalen Bedingungen gereift.",
         zoomHd: "Tippen für HD-Zoom",
         close: "Schließen",
+        specBtn: "🔬 Datenblatt",
         tapToViewSpec: "Tippen für botanisches Datenblatt & Terpene",
         officialDesc: "Offizielles botanisches Datenblatt:",
         flowering: "Blütezeit",
@@ -347,6 +350,7 @@
         specLotDefault: "Lotto selezionato e conciato in condizioni ottimali di conservazione.",
         zoomHd: "Tocca per Zoom HD",
         close: "Chiudi",
+        specBtn: "🔬 Scheda",
         tapToViewSpec: "Tocca per Scheda Botanica & Terpeni",
         officialDesc: "Scheda Botanica Ufficiale:",
         flowering: "Fioritura",
@@ -1025,10 +1029,11 @@
             <span>${t.labels.tapToViewSpec}</span>
           </div>
 
+          ${!state.isKioskMode ? `
           <!-- Acciones de tarjeta en Modo Encargado -->
           <div class="card-actions">
-            <button class="btn-card-spec" data-spec-id="${item.id}" title="Ver Ficha Técnica Botánica Completa">
-              🔬 Ficha
+            <button class="btn-card-spec btn-card-ficha" data-spec-id="${item.id}" title="${t.labels.tapToViewSpec}">
+              ${t.labels.specBtn}
             </button>
             <button class="btn-card-edit" data-edit-id="${item.id}" title="Editar aportaciones y notas de lote">
               ✏️ Modificar
@@ -1037,6 +1042,7 @@
               🗑️
             </button>
           </div>
+          ` : ''}
         </article>
       `;
     }).join('');

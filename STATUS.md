@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-07 17:05  
+> **Ultima actualizacion:** 2026-10-07 17:15  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(i18n): selector multi-idioma reactivo ES/EN/DE/IT en kiosco y ficha tecnica`  
-> **Version Cache-Busting:** `?v=202`
+> **Commit de cierre:** `fix(kiosco): eliminar boton duplicado de ficha y asegurar traduccion dinamica i18n v203`  
+> **Version Cache-Busting:** `?v=203`
 
 ---
 
@@ -13,6 +13,15 @@
 - **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
 - **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, legibilidad fluida en tarjetas, persistencia híbrida Firebase / Demo y selector multi-idioma reactivo (ES/EN/DE/IT).
+
+### v203 — Eliminación de Redundancia en Modo Kiosco & Traducción Dinámica de Ficha (`admin-dispensario.html`)
+- **Eliminación de Botón Redundante:** Ocultado el contenedor `.card-actions` y los selectores `.btn-card-spec` y `.btn-card-ficha` en `body.kiosk-mode` vía CSS (`display: none !important;`) y condicionado el template en `js/admin-dispensario.js` para que solo se renderice en Modo Encargado, manteniendo exclusivamente la barra táctil superior (`.kiosk-tap-pill`) en la vista mostrador.
+- **Mapeo I18N Dinámico para Botón de Ficha (`specBtn`):** Incorporada la clave `specBtn` en `I18N[lang].labels` en los 4 idiomas:
+  * es: `"🔬 Ficha"`
+  * en: `"🔬 Spec Sheet"`
+  * de: `"🔬 Datenblatt"`
+  * it: `"🔬 Scheda"`
+- **Cache-Busting Actualizado a v203:** Queries de versionado actualizadas en `admin-dispensario.html` a `?v=203` para CSS y JS.
 
 ### v202 — Sistema Multi-Idioma Reactivo ES/EN/DE/IT en Modo Kiosco & Ficha Técnica (`admin-dispensario.html`)
 - **Arquitectura I18N Reactiva y Ligera:** Implementada la constante global `I18N` con soporte completo para 4 idiomas clave: Español 🇪🇸 (`es`), Inglés 🇬🇧 (`en`), Alemán 🇩🇪 (`de`) e Italiano 🇮🇹 (`it`), sin librerías ni dependencias externas.

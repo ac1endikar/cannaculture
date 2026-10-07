@@ -1000,6 +1000,9 @@ textarea.form-control {
 body.kiosk-mode .admin-navbar .nav-controls .btn-secondary,
 body.kiosk-mode .editor-panel-card,
 body.kiosk-mode .catalog-search-card,
+body.kiosk-mode .card-actions,
+body.kiosk-mode .btn-card-spec,
+body.kiosk-mode .btn-card-ficha,
 body.kiosk-mode .btn-card-edit,
 body.kiosk-mode .btn-card-delete,
 body.kiosk-mode .availability-control {
