@@ -20,6 +20,398 @@
     kioskTitle: "Carta del Dispensario • Consumo Compartido"
   };
 
+  // ==========================================================================
+  // Diccionario Internacional Multi-Idioma Reactivo (ES / EN / DE / IT)
+  // Especializado para Modo Kiosco Mostrador y Ficha Técnica Botánica
+  // ==========================================================================
+  const I18N = {
+    es: {
+      tiers: {
+        std: "Estándar",
+        colab: "Colaborador",
+        terap: "Terapéutico",
+        stdDesc: "Socio General",
+        colabDesc: "Socio Activo (-10%)",
+        terapDesc: "Socio Médico (-25%)"
+      },
+      species: {
+        hibrida: "Híbrida",
+        indica: "Índica",
+        sativa: "Sativa"
+      },
+      status: {
+        available: "Disponible",
+        reserved: "En reserva",
+        badgeAvailable: "🟢 En Barra / Disponible",
+        badgeReserved: "⚪ Agotado / En reserva",
+        modalAvailable: "🟢 Disponible en Mostrador",
+        modalReserved: "⚪ Agotado / En reserva"
+      },
+      labels: {
+        lineage: "Linaje",
+        parentLineage: "Linaje Parental",
+        dominantTerpenes: "Terpenos Dominantes",
+        sensationsEffects: "Sensaciones & Efectos",
+        effectsTitle: "Efectos & Sensaciones Botánicas",
+        tastingProfile: "Perfil de Cata & Notas Aromáticas",
+        lotNotes: "Notas agronómicas del lote",
+        specLotTitle: "Notas Agronómicas & Curado del Lote Local",
+        specLotDefault: "Lote seleccionado y curado en condiciones óptimas de conservación.",
+        zoomHd: "Toca para Zoom HD",
+        close: "Cerrar",
+        tapToViewSpec: "Toca para ver Ficha Botánica & Terpenos",
+        officialDesc: "Ficha Botánica Oficial:",
+        flowering: "Floración",
+        contributionsTitle: "Previsión de Aportaciones del Club (Consumo Compartido)",
+        kioskTitle: "🌿 Carta del Dispensario • Menú de Variedades en Barra",
+        kioskSubtitle: "Previsiones botánicas disponibles para socios registrados de la asociación en mostrador.",
+        exitKiosk: "⚙️ Salir de Vista Kiosco",
+        lightboxSubtitle: "ALTA RESOLUCIÓN • MACRO 800×800",
+        lightboxTitle: "Fotografía Botánica HD",
+        defaultLineage: "Linaje botánico de alta pureza"
+      },
+      effects: {
+        "Creativo": "Creativo",
+        "Relajante": "Relajante",
+        "Euforia": "Euforia",
+        "Concentración": "Concentración",
+        "Sedante": "Sedante",
+        "Social": "Social",
+        "Corporal": "Corporal",
+        "Relajación Corporal": "Relajación Corporal",
+        "Calma Profunda": "Calma Profunda",
+        "Bienestar": "Bienestar",
+        "Enérgico": "Enérgico",
+        "Alivio del Estrés": "Alivio del Estrés",
+        "Sociable": "Sociable",
+        "Apetito": "Apetito",
+        "Felicidad": "Felicidad",
+        "Meditativo": "Meditativo",
+        "Risa": "Risa",
+        "Estimulante": "Estimulante"
+      },
+      flavors: {
+        "Terroso": "Terroso",
+        "Cítrico": "Cítrico",
+        "Frutal": "Frutal",
+        "Dulce": "Dulce",
+        "Pino": "Pino",
+        "Diesel": "Diesel / Gas",
+        "Combustible": "Combustible",
+        "Picante": "Picante",
+        "Baya": "Baya",
+        "Vainilla": "Vainilla",
+        "Queso": "Queso",
+        "Cremoso": "Cremoso",
+        "Menta": "Menta",
+        "Floral": "Floral",
+        "Herbal": "Herbal",
+        "Terroso Floral": "Terroso Floral",
+        "Cítrico Fresco": "Cítrico Fresco",
+        "Matices Herbales": "Matices Herbales"
+      },
+      terpenes: {
+        myrcene: "Mirceno",
+        limonene: "Limoneno",
+        caryophyllene: "Cariofileno",
+        pinene: "Pineno",
+        terpinolene: "Terpinoleno",
+        linalool: "Linalol",
+        humulene: "Humuleno",
+        ocimene: "Ocimeno"
+      }
+    },
+    en: {
+      tiers: {
+        std: "Standard",
+        colab: "Collaborator",
+        terap: "Therapeutic",
+        stdDesc: "General Member",
+        colabDesc: "Active Member (-10%)",
+        terapDesc: "Medical Member (-25%)"
+      },
+      species: {
+        hibrida: "Hybrid",
+        indica: "Indica",
+        sativa: "Sativa"
+      },
+      status: {
+        available: "Available",
+        reserved: "Reserved",
+        badgeAvailable: "🟢 Available on Bar",
+        badgeReserved: "⚪ Reserved / Out of Stock",
+        modalAvailable: "🟢 Available at Counter",
+        modalReserved: "⚪ Out of Stock / Reserved"
+      },
+      labels: {
+        lineage: "Lineage",
+        parentLineage: "Parental Lineage",
+        dominantTerpenes: "Dominant Terpenes",
+        sensationsEffects: "Sensations & Effects",
+        effectsTitle: "Botanical Sensations & Effects",
+        tastingProfile: "Tasting Profile & Aromatic Notes",
+        lotNotes: "Batch agronomic notes",
+        specLotTitle: "Agronomic & Curing Notes for Local Batch",
+        specLotDefault: "Selected batch cured under optimal preservation conditions.",
+        zoomHd: "Tap for HD Zoom",
+        close: "Close",
+        tapToViewSpec: "Tap to view Botanical Spec & Terpenes",
+        officialDesc: "Official Botanical Record:",
+        flowering: "Flowering",
+        contributionsTitle: "Club Contribution Estimates (Shared Consumption)",
+        kioskTitle: "🌿 Dispensary Menu • Strains Available on Bar",
+        kioskSubtitle: "Botanical provisions available for registered association members at the counter.",
+        exitKiosk: "⚙️ Exit Kiosk View",
+        lightboxSubtitle: "HIGH RESOLUTION • MACRO 800×800",
+        lightboxTitle: "HD Botanical Photography",
+        defaultLineage: "High-purity botanical lineage"
+      },
+      effects: {
+        "Creativo": "Creative",
+        "Relajante": "Relaxing",
+        "Euforia": "Euphoric",
+        "Concentración": "Focus",
+        "Sedante": "Sedative",
+        "Social": "Social",
+        "Corporal": "Body buzz",
+        "Relajación Corporal": "Body Relaxation",
+        "Calma Profunda": "Deep Calm",
+        "Bienestar": "Wellness",
+        "Enérgico": "Energetic",
+        "Alivio del Estrés": "Stress Relief",
+        "Sociable": "Sociable",
+        "Apetito": "Appetite",
+        "Felicidad": "Happiness",
+        "Meditativo": "Meditative",
+        "Risa": "Giggles",
+        "Estimulante": "Uplifting"
+      },
+      flavors: {
+        "Terroso": "Earthy",
+        "Cítrico": "Citrus",
+        "Frutal": "Fruity",
+        "Dulce": "Sweet",
+        "Pino": "Pine",
+        "Diesel": "Diesel / Gas",
+        "Combustible": "Gas / Fuel",
+        "Picante": "Spicy",
+        "Baya": "Berry",
+        "Vainilla": "Vanilla",
+        "Queso": "Cheese",
+        "Cremoso": "Creamy",
+        "Menta": "Mint",
+        "Floral": "Floral",
+        "Herbal": "Herbal",
+        "Terroso Floral": "Earthy Floral",
+        "Cítrico Fresco": "Fresh Citrus",
+        "Matices Herbales": "Herbal Undertones"
+      },
+      terpenes: {
+        myrcene: "Myrcene",
+        limonene: "Limonene",
+        caryophyllene: "Caryophyllene",
+        pinene: "Pinene",
+        terpinolene: "Terpinolene",
+        linalool: "Linalool",
+        humulene: "Humulene",
+        ocimene: "Ocimene"
+      }
+    },
+    de: {
+      tiers: {
+        std: "Standard",
+        colab: "Förderer",
+        terap: "Therapeutisch",
+        stdDesc: "Allgemeines Mitglied",
+        colabDesc: "Aktives Mitglied (-10%)",
+        terapDesc: "Medizinisches Mitglied (-25%)"
+      },
+      species: {
+        hibrida: "Hybrid",
+        indica: "Indica",
+        sativa: "Sativa"
+      },
+      status: {
+        available: "Verfügbar",
+        reserved: "Reserviert",
+        badgeAvailable: "🟢 An der Bar verfügbar",
+        badgeReserved: "⚪ Reserviert / Vergriffen",
+        modalAvailable: "🟢 An der Theke verfügbar",
+        modalReserved: "⚪ Vergriffen / Reserviert"
+      },
+      labels: {
+        lineage: "Abstammung",
+        parentLineage: "Abstammungslinie",
+        dominantTerpenes: "Dominante Terpene",
+        sensationsEffects: "Wirkung & Empfindungen",
+        effectsTitle: "Botanische Wirkung & Empfindungen",
+        tastingProfile: "Verkostungsprofil & Aromatische Noten",
+        lotNotes: "Anmerkungen zur Charge",
+        specLotTitle: "Agronomische & Reifungsnotizen der lokalen Charge",
+        specLotDefault: "Ausgewählte Charge, unter optimalen Bedingungen gereift.",
+        zoomHd: "Tippen für HD-Zoom",
+        close: "Schließen",
+        tapToViewSpec: "Tippen für botanisches Datenblatt & Terpene",
+        officialDesc: "Offizielles botanisches Datenblatt:",
+        flowering: "Blütezeit",
+        contributionsTitle: "Vereins-Beitragsschätzung (Gemeinschaftlicher Konsum)",
+        kioskTitle: "🌿 Ausgabekarte • Verfügbare Sorten an der Bar",
+        kioskSubtitle: "Botanische Bereitstellungen für registrierte Vereinsmitglieder an der Theke.",
+        exitKiosk: "⚙️ Kiosk-Ansicht verlassen",
+        lightboxSubtitle: "HOHE AUFLÖSUNG • MAKRO 800×800",
+        lightboxTitle: "HD Botanische Fotografie",
+        defaultLineage: "Reinrassige botanische Abstammung"
+      },
+      effects: {
+        "Creativo": "Kreativ",
+        "Relajante": "Entspannend",
+        "Euforia": "Euphorisch",
+        "Concentración": "Fokus",
+        "Sedante": "Beruhigend",
+        "Social": "Gesellig",
+        "Corporal": "Körperlich",
+        "Relajación Corporal": "Körperentspannung",
+        "Calma Profunda": "Tiefe Ruhe",
+        "Bienestar": "Wohlbefinden",
+        "Enérgico": "Energetisierend",
+        "Alivio del Estrés": "Stressabbau",
+        "Sociable": "Gesellig",
+        "Apetito": "Appetitanregend",
+        "Felicidad": "Glücksgefühl",
+        "Meditativo": "Meditativ",
+        "Risa": "Heiterkeit",
+        "Estimulante": "Belebend"
+      },
+      flavors: {
+        "Terroso": "Erdig",
+        "Cítrico": "Zitrus",
+        "Frutal": "Fruchtig",
+        "Dulce": "Süß",
+        "Pino": "Kiefer",
+        "Diesel": "Diesel / Gas",
+        "Combustible": "Treibstoff",
+        "Picante": "Würzig",
+        "Baya": "Beere",
+        "Vainilla": "Vanille",
+        "Queso": "Käse",
+        "Cremoso": "Cremig",
+        "Menta": "Minze",
+        "Floral": "Blumig",
+        "Herbal": "Kräuterig",
+        "Terroso Floral": "Erdig-Blumig",
+        "Cítrico Fresco": "Frische Zitrone",
+        "Matices Herbales": "Kräuternuancen"
+      },
+      terpenes: {
+        myrcene: "Myrcen",
+        limonene: "Limonen",
+        caryophyllene: "Caryophyllen",
+        pinene: "Pinen",
+        terpinolene: "Terpinolen",
+        linalool: "Linalool",
+        humulene: "Humulen",
+        ocimene: "Ocimen"
+      }
+    },
+    it: {
+      tiers: {
+        std: "Standard",
+        colab: "Collaboratore",
+        terap: "Terapeutico",
+        stdDesc: "Socio Generale",
+        colabDesc: "Socio Attivo (-10%)",
+        terapDesc: "Socio Medico (-25%)"
+      },
+      species: {
+        hibrida: "Ibrida",
+        indica: "Indica",
+        sativa: "Sativa"
+      },
+      status: {
+        available: "Disponibile",
+        reserved: "In riserva",
+        badgeAvailable: "🟢 Disponibile al bancone",
+        badgeReserved: "⚪ In riserva / Esaurito",
+        modalAvailable: "🟢 Disponibile al Bancone",
+        modalReserved: "⚪ Esaurito / In riserva"
+      },
+      labels: {
+        lineage: "Lignaggio",
+        parentLineage: "Lignaggio Parentale",
+        dominantTerpenes: "Terpeni Dominanti",
+        sensationsEffects: "Sensazioni ed Effetti",
+        effectsTitle: "Effetti & Sensazioni Botaniche",
+        tastingProfile: "Profilo di Degustazione & Note Aromatiche",
+        lotNotes: "Note agronomiche del lotto",
+        specLotTitle: "Note Agronomiche & Concia del Lotto Locale",
+        specLotDefault: "Lotto selezionato e conciato in condizioni ottimali di conservazione.",
+        zoomHd: "Tocca per Zoom HD",
+        close: "Chiudi",
+        tapToViewSpec: "Tocca per Scheda Botanica & Terpeni",
+        officialDesc: "Scheda Botanica Ufficiale:",
+        flowering: "Fioritura",
+        contributionsTitle: "Stima dei Contributi del Club (Consumo Condiviso)",
+        kioskTitle: "🌿 Menu del Dispensario • Varietà al Bancone",
+        kioskSubtitle: "Disponibilità botanica per i soci registrati dell'associazione al bancone.",
+        exitKiosk: "⚙️ Esci dalla Vista Kiosk",
+        lightboxSubtitle: "ALTA RISOLUZIONE • MACRO 800×800",
+        lightboxTitle: "Fotografia Botanica HD",
+        defaultLineage: "Lignaggio botanico di elevata purezza"
+      },
+      effects: {
+        "Creativo": "Creativo",
+        "Relajante": "Rilassante",
+        "Euforia": "Euforia",
+        "Concentración": "Concentrazione",
+        "Sedante": "Sedativo",
+        "Social": "Sociale",
+        "Corporal": "Corporeo",
+        "Relajación Corporal": "Rilassamento Corporeo",
+        "Calma Profunda": "Calma Profonda",
+        "Bienestar": "Benessere",
+        "Enérgico": "Energico",
+        "Alivio del Estrés": "Sollievo dallo Stress",
+        "Sociable": "Socievole",
+        "Apetito": "Appetito",
+        "Felicidad": "Felicità",
+        "Meditativo": "Meditativo",
+        "Risa": "Risate",
+        "Estimulante": "Stimolante"
+      },
+      flavors: {
+        "Terroso": "Terroso",
+        "Cítrico": "Agrumato",
+        "Frutal": "Fruttato",
+        "Dulce": "Dolce",
+        "Pino": "Pino",
+        "Diesel": "Diesel / Gas",
+        "Combustible": "Carburante",
+        "Picante": "Speziato",
+        "Baya": "Frutti di Bosco",
+        "Vainilla": "Vaniglia",
+        "Queso": "Formaggio",
+        "Cremoso": "Cremoso",
+        "Menta": "Menta",
+        "Floral": "Floreale",
+        "Herbal": "Erbaceo",
+        "Terroso Floral": "Terroso Floreale",
+        "Cítrico Fresco": "Agrumi Freschi",
+        "Matices Herbales": "Note Erbacee"
+      },
+      terpenes: {
+        myrcene: "Mircene",
+        limonene: "Limonene",
+        caryophyllene: "Cariofillene",
+        pinene: "Pinene",
+        terpinolene: "Terpinolene",
+        linalool: "Linalolo",
+        humulene: "Umulene",
+        ocimene: "Ocimene"
+      }
+    }
+  };
+
+
   // Catálogo inicial demostrativo para mostrador (con cepas icónicas como Gelato, Amnesia Haze, Kmintz, Jealousy...)
   const DEFAULT_MENU_ITEMS = [
     {
@@ -174,7 +566,9 @@
     currentFilter: 'all',
     selectedStrainId: null,
     isKioskMode: false,
-    strainsDb: []
+    strainsDb: [],
+    kioskLang: localStorage.getItem('kiosk_lang') || 'es',
+    currentModalStrainId: null
   };
 
   let currentUser = null;
@@ -418,6 +812,113 @@
   }
 
   // ==========================================================================
+  // Métodos de Soporte Multi-idioma (I18N Helpers)
+  // ==========================================================================
+  function getCurrentI18n() {
+    const lang = state.kioskLang || 'es';
+    return I18N[lang] || I18N.es;
+  }
+
+  function translateSpecies(species, lang = state.kioskLang) {
+    const t = I18N[lang] || I18N.es;
+    const s = (species || 'hibrida').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    if (s.includes('indica')) return t.species.indica;
+    if (s.includes('sativa')) return t.species.sativa;
+    return t.species.hibrida;
+  }
+
+  function translateEffect(eff, lang = state.kioskLang) {
+    if (!eff) return '';
+    const t = I18N[lang] || I18N.es;
+    if (t.effects[eff]) return t.effects[eff];
+    const key = Object.keys(t.effects).find(k => k.toLowerCase() === eff.toLowerCase().trim());
+    return key ? t.effects[key] : eff;
+  }
+
+  function translateFlavor(flv, lang = state.kioskLang) {
+    if (!flv) return '';
+    const t = I18N[lang] || I18N.es;
+    if (t.flavors[flv]) return t.flavors[flv];
+    const key = Object.keys(t.flavors).find(k => k.toLowerCase() === flv.toLowerCase().trim());
+    return key ? t.flavors[key] : flv;
+  }
+
+  function translateTerpeneName(key, lang = state.kioskLang) {
+    const t = I18N[lang] || I18N.es;
+    const k = (key || '').toLowerCase().trim();
+    if (t.terpenes[k]) return t.terpenes[k];
+    return key.charAt(0).toUpperCase() + key.slice(1);
+  }
+
+  function setKioskLanguage(lang) {
+    if (!I18N[lang]) lang = 'es';
+    state.kioskLang = lang;
+    try {
+      localStorage.setItem('kiosk_lang', lang);
+    } catch (e) {
+      console.warn("No se pudo persistir kiosk_lang:", e);
+    }
+
+    // 1. Actualizar pills de banderas táctiles en todo el DOM
+    document.querySelectorAll('.lang-pill-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+
+    // 2. Actualizar textos estáticos en Modo Kiosco
+    updateKioskStaticTexts();
+
+    // 3. Re-renderizar reactivamente la carta activa del menú
+    renderMenuGrid();
+
+    // 4. Si la ficha técnica botánica está abierta en este momento, actualizar al instante sin cerrar el modal
+    const modal = document.getElementById('kiosk-strain-modal');
+    if (modal && (modal.open || modal.hasAttribute('open'))) {
+      if (state.currentModalStrainId) {
+        renderKioskModalContent(state.currentModalStrainId);
+      }
+    }
+  }
+
+  function updateKioskStaticTexts() {
+    const t = getCurrentI18n();
+    const bannerTitle = document.getElementById('kiosk-banner-title');
+    const bannerSubtitle = document.getElementById('kiosk-banner-subtitle');
+    const exitBtn = document.getElementById('btn-exit-kiosk');
+
+    if (bannerTitle) bannerTitle.textContent = t.labels.kioskTitle;
+    if (bannerSubtitle) bannerSubtitle.textContent = t.labels.kioskSubtitle;
+    if (exitBtn) exitBtn.textContent = t.labels.exitKiosk;
+
+    const lightboxSubtitle = document.getElementById('kiosk-lightbox-subtitle');
+    if (lightboxSubtitle) lightboxSubtitle.textContent = t.labels.lightboxSubtitle;
+  }
+
+  function setupI18n() {
+    const savedLang = localStorage.getItem('kiosk_lang') || 'es';
+    state.kioskLang = I18N[savedLang] ? savedLang : 'es';
+
+    // Delegación de eventos para clicks en botones de idioma
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.lang-pill-btn');
+      if (btn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const selectedLang = btn.getAttribute('data-lang');
+        if (selectedLang) {
+          setKioskLanguage(selectedLang);
+        }
+      }
+    });
+
+    // Marcar estados activos iniciales
+    document.querySelectorAll('.lang-pill-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === state.kioskLang);
+    });
+
+    updateKioskStaticTexts();
+  }
+
+  // ==========================================================================
   // Renderizado del Menú de Barra
   // ==========================================================================
   function renderMenuGrid() {
@@ -449,19 +950,22 @@
       return;
     }
 
+    const t = getCurrentI18n();
+
     grid.innerHTML = items.map(item => {
       const strain = getStrainData(item.id) || {
         name: item.id.replace(/-/g, ' ').toUpperCase(),
         bank: 'CannaCulture Selection',
         species: 'Híbrida',
         image: `img/${item.id}.webp`,
-        lineage: 'Linaje seleccionado para socios'
+        lineage: t.labels.defaultLineage
       };
 
       const isSelected = item.id === state.selectedStrainId;
       const speciesLower = (strain.species || 'hibrida').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-      const safeLineage = (strain.lineage || strain.genetics || 'Linaje botánico de alta pureza').replace(/"/g, '&quot;');
-      const safeLotNotes = (item.lotNotes || 'Lote estándar del dispensario').replace(/"/g, '&quot;');
+      const speciesTranslated = translateSpecies(strain.species, state.kioskLang);
+      const safeLineage = (strain.lineage || strain.genetics || t.labels.defaultLineage).replace(/"/g, '&quot;');
+      const safeLotNotes = (item.lotNotes || t.labels.specLotDefault).replace(/"/g, '&quot;');
       const safeName = (strain.name || item.id).replace(/"/g, '&quot;');
 
       return `
@@ -469,26 +973,26 @@
                  data-strain-id="${item.id}"
                  onclick="window.handleCardClick && window.handleCardClick(event, '${item.id}')">
           <div class="card-top">
-            <div class="card-photo-wrapper" data-spec-id="${item.id}" title="Ver ficha botánica y fotografía HD de ${safeName}">
+            <div class="card-photo-wrapper" data-spec-id="${item.id}" title="${t.labels.tapToViewSpec}">
               <img src="${strain.image || 'img/' + item.id + '.webp'}" 
                    alt="${safeName}" 
                    class="card-photo"
                    loading="lazy"
                    onerror="this.src='img/ths-darkstar-official.webp';" />
-              <span class="species-chip ${speciesLower}">${strain.species || 'Híbrida'}</span>
+              <span class="species-chip ${speciesLower}">${speciesTranslated}</span>
             </div>
             
             <div class="card-headline">
               <h3 title="${safeName}">${strain.name}</h3>
               <p class="card-bank">🏛️ ${strain.bank || 'Banco Criador'}</p>
-              <p class="card-lineage" title="${safeLineage}">🧬 ${strain.lineage || strain.genetics || 'Linaje botánico de alta pureza'}</p>
+              <p class="card-lineage" title="${safeLineage}">🧬 ${strain.lineage || strain.genetics || t.labels.defaultLineage}</p>
             </div>
           </div>
 
           <!-- Interruptor de disponibilidad en mostrador -->
           <div class="availability-control">
             <span class="availability-label ${item.available ? 'is-available' : 'is-out'}">
-              ${item.available ? '🟢 En Barra / Disponible' : '⚪ Agotado / En reserva'}
+              ${item.available ? t.status.badgeAvailable : t.status.badgeReserved}
             </span>
             <label class="toggle-switch" title="Alternar disponibilidad">
               <input type="checkbox" class="toggle-avail-input" data-strain-id="${item.id}" ${item.available ? 'checked' : ''}>
@@ -499,26 +1003,26 @@
           <!-- Cuadro de cuotas de previsión / aportaciones -->
           <div class="card-tiers-row" title="Cuadro de aportaciones del club por niveles de socio">
             <div class="tier-mini-box tier-std">
-              <div class="tier-mini-title">Estándar</div>
-              <div class="tier-mini-val">${item.tierStd.toFixed(2)}€/g</div>
+              <div class="tier-mini-title">${t.tiers.std}</div>
+              <div class="tier-mini-val">${(Number(item.tierStd) || 0).toFixed(2)}€/g</div>
             </div>
             <div class="tier-mini-box tier-colab">
-              <div class="tier-mini-title">Colaborador</div>
-              <div class="tier-mini-val">${item.tierColab.toFixed(2)}€/g</div>
+              <div class="tier-mini-title">${t.tiers.colab}</div>
+              <div class="tier-mini-val">${(Number(item.tierColab) || 0).toFixed(2)}€/g</div>
             </div>
             <div class="tier-mini-box tier-terap">
-              <div class="tier-mini-title">Terapéutico</div>
-              <div class="tier-mini-val">${item.tierTerap.toFixed(2)}€/g</div>
+              <div class="tier-mini-title">${t.tiers.terap}</div>
+              <div class="tier-mini-val">${(Number(item.tierTerap) || 0).toFixed(2)}€/g</div>
             </div>
           </div>
 
           <!-- Nota de lote botánico / cata local (legibilidad fluida en 2 líneas) -->
-          <p class="card-lot-note" title="${safeLotNotes}">📋 ${item.lotNotes || 'Lote estándar del dispensario'}</p>
+          <p class="card-lot-note" title="${safeLotNotes}">📋 ${item.lotNotes || t.labels.specLotDefault}</p>
 
           <!-- Píldora de interacción táctil visible en Modo Kiosco -->
           <div class="kiosk-tap-pill" data-spec-id="${item.id}">
             <span>🔬</span>
-            <span>Toca para ver Ficha Botánica & Terpenos</span>
+            <span>${t.labels.tapToViewSpec}</span>
           </div>
 
           <!-- Acciones de tarjeta en Modo Encargado -->
@@ -886,12 +1390,13 @@
         effects: 'Perfil aromático vegetal'
       };
       const col = info.color || '#10B981';
+      const translatedName = translateTerpeneName(keyLower, state.kioskLang);
 
       return `
         <div class="terpene-row">
           <div class="terpene-row-info">
             <span class="terpene-name" style="color: ${col};">
-              🧬 ${info.name || key}
+              🧬 ${translatedName}
             </span>
             <span class="terpene-pct">${pct}%</span>
           </div>
@@ -904,29 +1409,31 @@
   }
 
   function renderEffectsAndFlavors(strain) {
+    const t = getCurrentI18n();
     const effects = Array.isArray(strain.effects) && strain.effects.length > 0 ? strain.effects : ['Relajación Corporal', 'Calma Profunda', 'Bienestar'];
     const flavors = Array.isArray(strain.flavors) && strain.flavors.length > 0 ? strain.flavors : ['Terroso Floral', 'Cítrico Fresco', 'Matices Herbales'];
 
-    const effectsHtml = effects.map(eff => `<span class="spec-tag effect">✨ ${eff}</span>`).join('');
-    const flavorsHtml = flavors.map(flv => `<span class="spec-tag flavor">🍋 ${flv}</span>`).join('');
+    const effectsHtml = effects.map(eff => `<span class="spec-tag effect">✨ ${translateEffect(eff, state.kioskLang)}</span>`).join('');
+    const flavorsHtml = flavors.map(flv => `<span class="spec-tag flavor">🍋 ${translateFlavor(flv, state.kioskLang)}</span>`).join('');
 
     return `
       <div style="margin-bottom: 14px;">
-        <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">Efectos & Sensaciones Botánicas</div>
+        <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">${t.labels.effectsTitle}</div>
         <div class="spec-tags-grid">${effectsHtml}</div>
       </div>
       <div>
-        <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">Perfil de Cata & Notas Aromáticas</div>
+        <div style="font-size: 0.76rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">${t.labels.tastingProfile}</div>
         <div class="spec-tags-grid">${flavorsHtml}</div>
       </div>
     `;
   }
 
-  function openKioskStrainModal(strainId) {
-    const modal = document.getElementById('kiosk-strain-modal');
+  function renderKioskModalContent(strainId) {
+    state.currentModalStrainId = strainId;
     const modalBody = document.getElementById('kiosk-modal-body');
-    if (!modal || !modalBody) return;
+    if (!modalBody) return;
 
+    const t = getCurrentI18n();
     const item = state.menu.find(m => m.id === strainId);
     const strain = getStrainData(strainId) || {
       id: strainId,
@@ -934,7 +1441,7 @@
       bank: 'CannaCulture Selection',
       species: 'Híbrida',
       image: `img/${strainId}.webp`,
-      lineage: 'Linaje seleccionado para socios',
+      lineage: t.labels.defaultLineage,
       thc: 22,
       cbd: 0.1,
       rating: 4.9,
@@ -950,34 +1457,53 @@
     };
 
     const speciesLower = (strain.species || 'hibrida').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const speciesTranslated = translateSpecies(strain.species, state.kioskLang);
     const starCount = Math.min(5, Math.max(1, Math.round(Number(strain.rating) || 5)));
     const stars = '★'.repeat(starCount) + '☆'.repeat(5 - starCount);
     const photoUrl = strain.image || `img/${strain.id || strainId}.webp`;
     const safeName = (strain.name || 'Variedad').replace(/"/g, '&quot;');
     const safeBank = (strain.bank || 'Banco Criador').replace(/"/g, '&quot;');
+    const currentLang = state.kioskLang || 'es';
+
+    const closeBtn = document.getElementById('btn-close-kiosk-modal');
+    if (closeBtn) {
+      closeBtn.title = `${t.labels.close} (Esc)`;
+      closeBtn.setAttribute('aria-label', t.labels.close);
+    }
 
     modalBody.innerHTML = `
+      <!-- BARRA DE IDIOMA EN LA CABECERA DE LA FICHA TÉCNICA -->
+      <div class="spec-lang-bar">
+        <span class="spec-lang-label">🌐 Idioma / Language:</span>
+        <div class="kiosk-lang-selector" aria-label="Cambiar idioma en ficha técnica">
+          <button type="button" class="lang-pill-btn ${currentLang === 'es' ? 'active' : ''}" data-lang="es" title="Español">🇪🇸 ES</button>
+          <button type="button" class="lang-pill-btn ${currentLang === 'en' ? 'active' : ''}" data-lang="en" title="English">🇬🇧 EN</button>
+          <button type="button" class="lang-pill-btn ${currentLang === 'de' ? 'active' : ''}" data-lang="de" title="Deutsch">🇩🇪 DE</button>
+          <button type="button" class="lang-pill-btn ${currentLang === 'it' ? 'active' : ''}" data-lang="it" title="Italiano">🇮🇹 IT</button>
+        </div>
+      </div>
+
       <!-- HERO PRINCIPAL DE LA VARIEDAD -->
       <section class="spec-hero">
-        <div class="spec-photo-wrap" id="spec-photo-click" title="Toca para ampliar en fotografía macro HD">
+        <div class="spec-photo-wrap" id="spec-photo-click" title="${t.labels.zoomHd}">
           <img src="${photoUrl}" 
                alt="${safeName}" 
                class="spec-photo-img" 
                onerror="this.src='img/ths-darkstar-official.webp';" />
-          <div class="spec-zoom-badge">🔍 Toca para Zoom HD</div>
+          <div class="spec-zoom-badge">🔍 ${t.labels.zoomHd}</div>
         </div>
 
         <div class="spec-hero-meta">
           <div class="spec-badges-row">
             <span class="species-chip ${speciesLower}" style="position:static; padding:4px 10px; font-size:0.75rem;">
-              ${strain.species || 'Híbrida'}
+              ${speciesTranslated}
             </span>
             <span class="spec-bank-pill">🏛️ ${strain.bank || 'Banco Criador'}</span>
             <span style="color: #FBBF24; font-size: 0.85rem; font-weight: 700;">${stars}</span>
           </div>
 
           <h2 class="spec-title">${strain.name}</h2>
-          <div class="spec-lineage">🧬 Linaje Parental: ${strain.lineage || strain.genetics || 'Selección botánica de alta pureza'}</div>
+          <div class="spec-lineage">🧬 ${t.labels.parentLineage}: ${strain.lineage || strain.genetics || t.labels.defaultLineage}</div>
 
           <div class="spec-cannabinoids">
             <div class="cannabinoid-chip" style="color:#34D399;">
@@ -988,7 +1514,7 @@
             </div>
             ${strain.floweringDays ? `
             <div class="cannabinoid-chip" style="color:#FBBF24;">
-              ⏱️ Floración: <strong>${strain.floweringDays}d</strong>
+              ⏱️ ${t.labels.flowering}: <strong>${strain.floweringDays}d</strong>
             </div>` : ''}
           </div>
         </div>
@@ -999,35 +1525,35 @@
         <div class="spec-tiers-header">
           <h3>
             <span>⚖️</span>
-            <span>Previsión de Aportaciones del Club (Consumo Compartido)</span>
+            <span>${t.labels.contributionsTitle}</span>
           </h3>
           <span class="spec-avail-pill ${itemData.available ? 'is-avail' : 'is-out'}">
-            ${itemData.available ? '🟢 Disponible en Mostrador' : '⚪ Agotado / En reserva'}
+            ${itemData.available ? t.status.modalAvailable : t.status.modalReserved}
           </span>
         </div>
 
         <div class="spec-tiers-grid">
           <div class="spec-tier-card std">
-            <div class="spec-tier-name">Nivel Estándar</div>
+            <div class="spec-tier-name">${t.tiers.std}</div>
             <div class="spec-tier-val">${(Number(itemData.tierStd) || 0).toFixed(2)}€/g</div>
-            <div class="spec-tier-desc">Socio General</div>
+            <div class="spec-tier-desc">${t.tiers.stdDesc}</div>
           </div>
           <div class="spec-tier-card colab">
-            <div class="spec-tier-name">Nivel Colaborador</div>
+            <div class="spec-tier-name">${t.tiers.colab}</div>
             <div class="spec-tier-val">${(Number(itemData.tierColab) || 0).toFixed(2)}€/g</div>
-            <div class="spec-tier-desc">Socio Activo (-10%)</div>
+            <div class="spec-tier-desc">${t.tiers.colabDesc}</div>
           </div>
           <div class="spec-tier-card terap">
-            <div class="spec-tier-name">Nivel Terapéutico</div>
+            <div class="spec-tier-name">${t.tiers.terap}</div>
             <div class="spec-tier-val">${(Number(itemData.tierTerap) || 0).toFixed(2)}€/g</div>
-            <div class="spec-tier-desc">Socio Médico (-25%)</div>
+            <div class="spec-tier-desc">${t.tiers.terapDesc}</div>
           </div>
         </div>
 
         <!-- NOTAS DEL LOTE AGRONÓMICO Y CURADO -->
         <div class="spec-lot-card" style="margin-top: 14px;">
-          <div class="spec-lot-title">📋 Notas Agronómicas & Curado del Lote Local</div>
-          <div class="spec-lot-text">${itemData.lotNotes || 'Lote seleccionado y curado en condiciones óptimas de conservación.'}</div>
+          <div class="spec-lot-title">📋 ${t.labels.specLotTitle}</div>
+          <div class="spec-lot-text">${itemData.lotNotes || t.labels.specLotDefault}</div>
         </div>
       </section>
 
@@ -1035,7 +1561,7 @@
       <section class="spec-terpenes-card">
         <div class="spec-section-heading">
           <span>🧬</span>
-          <span>Perfil Terpénico & Aromas Dominantes</span>
+          <span>${t.labels.dominantTerpenes}</span>
         </div>
 
         <div class="terpene-bars-container">
@@ -1046,7 +1572,7 @@
 
         ${strain.description ? `
         <div class="spec-desc-text">
-          <strong>Ficha Botánica Oficial:</strong> ${strain.description}
+          <strong>${t.labels.officialDesc}</strong> ${strain.description}
         </div>` : ''}
       </section>
     `;
@@ -1054,9 +1580,16 @@
     const photoBox = document.getElementById('spec-photo-click');
     if (photoBox) {
       photoBox.addEventListener('click', () => {
-        openKioskLightbox(photoUrl, strain.name, `🏛️ ${strain.bank} • ${strain.species}`);
+        openKioskLightbox(photoUrl, strain.name, `🏛️ ${strain.bank} • ${speciesTranslated}`);
       });
     }
+  }
+
+  function openKioskStrainModal(strainId) {
+    const modal = document.getElementById('kiosk-strain-modal');
+    if (!modal) return;
+
+    renderKioskModalContent(strainId);
 
     // Apertura infalible del diálogo con soporte y fallback
     try {
@@ -1088,11 +1621,12 @@
     const imgEl = document.getElementById('kiosk-lightbox-img');
     const titleEl = document.getElementById('kiosk-lightbox-title');
     const subEl = document.getElementById('kiosk-lightbox-subtitle');
+    const t = getCurrentI18n();
 
     if (!dialog || !imgEl) return;
     imgEl.src = imgSrc;
-    if (titleEl) titleEl.textContent = title || 'Fotografía Botánica HD';
-    if (subEl) subEl.textContent = subtitle || 'ALTA RESOLUCIÓN • MACRO 800×800';
+    if (titleEl) titleEl.textContent = title || t.labels.lightboxTitle;
+    if (subEl) subEl.textContent = subtitle || t.labels.lightboxSubtitle;
 
     try {
       if (typeof dialog.showModal === 'function') {
@@ -1216,6 +1750,8 @@
   window.openKioskStrainModal = openKioskStrainModal;
   window.closeKioskModal = closeKioskModal;
   window.handleCardClick = handleCardClick;
+  window.setKioskLanguage = setKioskLanguage;
+  window.I18N = I18N;
 
   // ==========================================================================
   // Manejo de Eventos en Grid (Toggles, Edición, Eliminación, Ficha Técnica)
@@ -1411,6 +1947,7 @@
     setupKioskMode();
     setupKioskModalListeners();
     setupClubSettings();
+    setupI18n();
     renderMenuGrid();
     renderEditorPanel();
 

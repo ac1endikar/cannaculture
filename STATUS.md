@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-07 16:30  
+> **Ultima actualizacion:** 2026-10-07 17:05  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(kiosco): resolver cache-busting v201, forzar white-space normal en notas/linaje y asegurar evento click de modal`  
-> **Version Cache-Busting:** `?v=201`
+> **Commit de cierre:** `feat(i18n): selector multi-idioma reactivo ES/EN/DE/IT en kiosco y ficha tecnica`  
+> **Version Cache-Busting:** `?v=202`
 
 ---
 
@@ -12,7 +12,18 @@
 - **65 Bancos Oficiales Incorporados**
 - **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
-- **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, legibilidad fluida en tarjetas y persistencia híbrida Firebase / Demo.
+- **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, legibilidad fluida en tarjetas, persistencia híbrida Firebase / Demo y selector multi-idioma reactivo (ES/EN/DE/IT).
+
+### v202 — Sistema Multi-Idioma Reactivo ES/EN/DE/IT en Modo Kiosco & Ficha Técnica (`admin-dispensario.html`)
+- **Arquitectura I18N Reactiva y Ligera:** Implementada la constante global `I18N` con soporte completo para 4 idiomas clave: Español 🇪🇸 (`es`), Inglés 🇬🇧 (`en`), Alemán 🇩🇪 (`de`) e Italiano 🇮🇹 (`it`), sin librerías ni dependencias externas.
+  * Tiers de aportación traducidos: Estándar/Colaborador/Terapéutico, Standard/Collaborator/Therapeutic, Standard/Förderer/Therapeutisch, Standard/Collaboratore/Terapeutico.
+  * Especies botánicas: Híbrida/Índica/Sativa, Hybrid/Indica/Sativa, Hybrid/Indica/Sativa, Ibrida/Indica/Sativa.
+  * Estado de barra: Disponible/En reserva, Available/Reserved, Verfügbar/Reserviert, Disponibile/In riserva.
+  * Diccionario de efectos botánicos y perfil terpénico aromático dinámico.
+  * Persistencia en `localStorage.getItem('kiosk_lang') || 'es'`.
+- **Selector Visual Táctil de Banderas en Kiosco:** Píldoras táctiles ergonómicas `[ 🇪🇸 ES | 🇬🇧 EN | 🇩🇪 DE | 🇮🇹 IT ]` integradas en el banner superior `#kiosk-top-notice`, en la barra de navegación y en la cabecera del modal botánico, con realce visual esmeralda tenue activo (`border: 1px solid var(--accent-emerald)`).
+- **Actualización Instantánea en Modal Abierto:** Al cambiar de idioma mientras el modal de ficha técnica botánica (`#kiosk-strain-modal`) está abierto, sus textos, terpenos, notas y tiers se actualizan en tiempo real sin cerrar el diálogo (`renderKioskModalContent`).
+- **Cache-Busting Actualizado a v202:** Queries de cache-busting actualizadas en `admin-dispensario.html` a `?v=202` en CSS y JS.
 
 ### v201 — Cache-Busting v201, Salto de Línea Forzado y Evento Click Infalible (`admin-dispensario.html`)
 - **Cache-Busting Unificado v201:** Actualizados los enlaces en `admin-dispensario.html` a `css/admin-dispensario.css?v=201`, `js/admin-dispensario.js?v=201` y `js/strains-data.js?v=201` para invalidar inmediatamente la caché de navegador en clientes y tablets de mostrador.

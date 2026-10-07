@@ -22,7 +22,7 @@
     rel="stylesheet">
 
   <!-- Hoja de Estilos del Dispensario CSC -->
-  <link rel="stylesheet" href="css/admin-dispensario.css?v=201">
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=202">
 </head>
 
 <body>
@@ -51,6 +51,14 @@
           <span>En vivo / Sincronizado</span>
         </div>
 
+        <!-- Selector Multi-idioma Rápido -->
+        <div class="kiosk-lang-selector nav-lang-selector" aria-label="Idioma">
+          <button type="button" class="lang-pill-btn active" data-lang="es" title="Español">🇪🇸 ES</button>
+          <button type="button" class="lang-pill-btn" data-lang="en" title="English">🇬🇧 EN</button>
+          <button type="button" class="lang-pill-btn" data-lang="de" title="Deutsch">🇩🇪 DE</button>
+          <button type="button" class="lang-pill-btn" data-lang="it" title="Italiano">🇮🇹 IT</button>
+        </div>
+
         <!-- Botón Vista Kiosco Mostrador -->
         <button id="btn-toggle-kiosk" class="btn-touch btn-kiosk" title="Modo pantalla completa para tablet de mostrador">
           <span>🖥️</span>
@@ -77,9 +85,18 @@
   <main class="admin-container">
     <div id="kiosk-top-notice" class="kiosk-top-notice">
       <div class="kiosk-notice-text">
-        <h2>🌿 Carta del Dispensario • Menú de Variedades en Barra</h2>
-        <p>Previsiones botánicas disponibles para socios registrados de la asociación en mostrador.</p>
+        <h2 id="kiosk-banner-title">🌿 Carta del Dispensario • Menú de Variedades en Barra</h2>
+        <p id="kiosk-banner-subtitle">Previsiones botánicas disponibles para socios registrados de la asociación en mostrador.</p>
       </div>
+
+      <!-- Selector de Idiomas Táctil Kiosco [ 🇪🇸 ES | 🇬🇧 EN | 🇩🇪 DE | 🇮🇹 IT ] -->
+      <div id="kiosk-lang-selector" class="kiosk-lang-selector" aria-label="Selector de idioma">
+        <button type="button" class="lang-pill-btn active" data-lang="es" title="Español">🇪🇸 ES</button>
+        <button type="button" class="lang-pill-btn" data-lang="en" title="English">🇬🇧 EN</button>
+        <button type="button" class="lang-pill-btn" data-lang="de" title="Deutsch">🇩🇪 DE</button>
+        <button type="button" class="lang-pill-btn" data-lang="it" title="Italiano">🇮🇹 IT</button>
+      </div>
+
       <button id="btn-exit-kiosk" class="btn-exit-kiosk">
         ⚙️ Salir de Vista Kiosco
       </button>
@@ -212,7 +229,7 @@
        Carga de Scripts: Datos Maestros (777 Cepas) y Lógica Modular
        ====================================================================== -->
   <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
-  <script src="js/strains-data.js?v=201"></script>
+  <script src="js/strains-data.js?v=202"></script>
 
   <!-- 2. Firebase SDK & Configuración (Modo CDN Compatibilidad) -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -221,7 +238,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- 3. Lógica del Panel de Dispensario CSC -->
-  <script src="js/admin-dispensario.js?v=201"></script>
+  <script src="js/admin-dispensario.js?v=202"></script>
 </body>
 
 </html>
