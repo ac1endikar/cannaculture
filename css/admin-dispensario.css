@@ -752,14 +752,15 @@ body.kiosk-mode .kiosk-tap-pill {
   gap: 8px;
 }
 
-.btn-card-spec {
+.btn-card-spec,
+.btn-card-ficha {
   flex: 1;
-  min-height: 40px;
-  background: rgba(6, 182, 212, 0.12);
-  border: 1px solid rgba(6, 182, 212, 0.3);
+  min-height: 38px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-md);
-  color: #67E8F9;
-  font-weight: 700;
+  color: #E2E8F0;
+  font-weight: 600;
   font-size: 0.82rem;
   cursor: pointer;
   display: flex;
@@ -769,11 +770,12 @@ body.kiosk-mode .kiosk-tap-pill {
   transition: var(--transition);
 }
 
-.btn-card-spec:hover {
-  background: rgba(6, 182, 212, 0.25);
-  border-color: var(--accent-cyan);
-  color: #FFF;
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+.btn-card-spec:hover,
+.btn-card-ficha:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.06);
 }
 
 .btn-card-edit {
@@ -1004,14 +1006,7 @@ body.kiosk-mode .availability-control {
   display: none !important;
 }
 
-/* Regla CSS de respaldo universal para ocultar cualquier botón secundario en tarjeta en modo Kiosco */
-body.kiosk-mode .strain-menu-card button:not(.kiosk-tap-pill),
-body.kiosk-mode .strain-menu-card .card-actions,
-body.kiosk-mode .strain-menu-card footer,
-body.kiosk-mode .dispensario-card .card-actions,
-body.kiosk-mode .card-actions,
-body.kiosk-mode .btn-card-spec,
-body.kiosk-mode .btn-card-ficha,
+/* Botones de administración ocultos en modo Kiosco */
 body.kiosk-mode .btn-card-edit,
 body.kiosk-mode .btn-card-delete {
   display: none !important;
@@ -1020,6 +1015,49 @@ body.kiosk-mode .btn-card-delete {
   margin: 0 !important;
   padding: 0 !important;
   pointer-events: none !important;
+}
+
+/* En Modo Kiosco: Mantener el contenedor de acciones para la cápsula secundaria inferior */
+body.kiosk-mode .card-actions {
+  display: flex !important;
+  width: 100% !important;
+  margin-top: 6px !important;
+}
+
+/* Botón principal ancho: Verde esmeralda distintivo */
+body.kiosk-mode .kiosk-tap-pill {
+  display: flex !important;
+  background: rgba(16, 185, 129, 0.15) !important;
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+  color: #6EE7B7 !important;
+}
+
+body.kiosk-mode .kiosk-tap-pill:hover {
+  background: rgba(16, 185, 129, 0.25) !important;
+  border-color: rgba(16, 185, 129, 0.55) !important;
+  color: #A7F3D0 !important;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.25) !important;
+}
+
+/* Botón secundario inferior: Superficie oscura translúcida y neutra */
+body.kiosk-mode .btn-card-spec,
+body.kiosk-mode .btn-card-ficha {
+  display: flex !important;
+  visibility: visible !important;
+  width: 100% !important;
+  min-height: 38px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #E2E8F0 !important;
+  pointer-events: auto !important;
+}
+
+body.kiosk-mode .btn-card-spec:hover,
+body.kiosk-mode .btn-card-ficha:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.06) !important;
 }
 
 body.kiosk-mode .strain-menu-card,

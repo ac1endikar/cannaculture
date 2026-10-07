@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-07 17:35  
+> **Ultima actualizacion:** 2026-10-07 18:35  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(kiosco): eliminar definitivamente boton duplicado Ficha en JS y CSS v204`  
-> **Version Cache-Busting:** `?v=204`
+> **Commit de cierre:** `style(kiosco): diferenciar jerarquia visual y colores de botones en tarjeta v205`  
+> **Version Cache-Busting:** `?v=205`
 
 ---
 
@@ -13,6 +13,12 @@
 - **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
 - **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, legibilidad fluida en tarjetas, persistencia híbrida Firebase / Demo y selector multi-idioma reactivo (ES/EN/DE/IT).
+
+### v205 — Diferenciación de Jerarquía Visual y Colores de Botones en Tarjeta (`admin-dispensario.html`)
+- **Botón Principal / Barra Ancha (`.kiosk-tap-pill`):** Preservado el acabado esmeralda distintivo (`background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); color: #6EE7B7;`) con texto dinámico traducido (`${t.labels.tapToViewSpec}`).
+- **Botón Secundario Inferior (`.btn-card-spec`, `.btn-card-ficha`):** Rediseñado con superficie oscura translúcida (`background: rgba(255, 255, 255, 0.04);`), borde sutil y neutro (`border: 1px solid rgba(255, 255, 255, 0.12);`), tipografía en blanco hueso suave (`color: #E2E8F0;`) y hover discreto (`background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.25); color: #FFFFFF;`).
+- **Adaptación I18N Reactiva (`I18N[lang].labels.specBtn`):** El botón secundario se sincroniza en vivo con el idioma activo (ES: `🔬 Ficha`, EN: `🔬 Spec Sheet`, DE: `🔬 Datenblatt`, IT: `🔬 Scheda`).
+- **Cache-Busting Actualizado a v205:** Enlaces en `admin-dispensario.html` actualizados a `?v=205` para CSS y JS (`admin-dispensario.css?v=205`, `strains-data.js?v=205`, `admin-dispensario.js?v=205`).
 
 ### v204 — Eliminación Definitiva en JS & CSS del Botón Duplicado de Ficha en Modo Kiosco (`admin-dispensario.html`)
 - **Condicionamiento Estricto en Plantilla JS (`js/admin-dispensario.js`):** La constante `isKioskModeActive = Boolean(state.isKioskMode || document.body.classList.contains('kiosk-mode'))` previene de raíz la generación de la sección `.card-actions` en el DOM de las tarjetas, garantizando que solo exista la barra táctil ergonómica superior (`.kiosk-tap-pill`).

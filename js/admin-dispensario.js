@@ -1028,26 +1028,26 @@
           <!-- Nota de lote botánico / cata local (legibilidad fluida en 2 líneas) -->
           <p class="card-lot-note" title="${safeLotNotes}">📋 ${item.lotNotes || t.labels.specLotDefault}</p>
 
-          <!-- Píldora de interacción táctil visible en Modo Kiosco -->
+          <!-- Píldora de interacción táctil visible en Modo Kiosco (Botón Principal / Barra Ancha) -->
           <div class="kiosk-tap-pill" data-spec-id="${item.id}">
             <span>🔬</span>
             <span>${t.labels.tapToViewSpec}</span>
           </div>
 
-          ${!isKioskModeActive ? `
-          <!-- Acciones de tarjeta en Modo Encargado (No se renderiza en Modo Kiosco) -->
+          <!-- Acciones de tarjeta / Botón secundario inferior de ficha técnica -->
           <div class="card-actions">
             <button class="btn-card-spec btn-card-ficha" data-spec-id="${item.id}" title="${t.labels.tapToViewSpec}">
               ${t.labels.specBtn}
             </button>
+            ${!isKioskModeActive ? `
             <button class="btn-card-edit" data-edit-id="${item.id}" title="Editar aportaciones y notas de lote">
               ✏️ Modificar
             </button>
             <button class="btn-card-delete" data-delete-id="${item.id}" title="Retirar de la carta">
               🗑️
             </button>
+            ` : ''}
           </div>
-          ` : ''}
         </article>
       `;
     }).join('');
