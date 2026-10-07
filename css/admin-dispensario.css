@@ -1000,13 +1000,26 @@ textarea.form-control {
 body.kiosk-mode .admin-navbar .nav-controls .btn-secondary,
 body.kiosk-mode .editor-panel-card,
 body.kiosk-mode .catalog-search-card,
+body.kiosk-mode .availability-control {
+  display: none !important;
+}
+
+/* Regla CSS de respaldo universal para ocultar cualquier botón secundario en tarjeta en modo Kiosco */
+body.kiosk-mode .strain-menu-card button:not(.kiosk-tap-pill),
+body.kiosk-mode .strain-menu-card .card-actions,
+body.kiosk-mode .strain-menu-card footer,
+body.kiosk-mode .dispensario-card .card-actions,
 body.kiosk-mode .card-actions,
 body.kiosk-mode .btn-card-spec,
 body.kiosk-mode .btn-card-ficha,
 body.kiosk-mode .btn-card-edit,
-body.kiosk-mode .btn-card-delete,
-body.kiosk-mode .availability-control {
+body.kiosk-mode .btn-card-delete {
   display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: none !important;
 }
 
 body.kiosk-mode .strain-menu-card,

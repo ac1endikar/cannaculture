@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-07 17:15  
+> **Ultima actualizacion:** 2026-10-07 17:35  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(kiosco): eliminar boton duplicado de ficha y asegurar traduccion dinamica i18n v203`  
-> **Version Cache-Busting:** `?v=203`
+> **Commit de cierre:** `fix(kiosco): eliminar definitivamente boton duplicado Ficha en JS y CSS v204`  
+> **Version Cache-Busting:** `?v=204`
 
 ---
 
@@ -13,6 +13,11 @@
 - **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
 - **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, legibilidad fluida en tarjetas, persistencia híbrida Firebase / Demo y selector multi-idioma reactivo (ES/EN/DE/IT).
+
+### v204 — Eliminación Definitiva en JS & CSS del Botón Duplicado de Ficha en Modo Kiosco (`admin-dispensario.html`)
+- **Condicionamiento Estricto en Plantilla JS (`js/admin-dispensario.js`):** La constante `isKioskModeActive = Boolean(state.isKioskMode || document.body.classList.contains('kiosk-mode'))` previene de raíz la generación de la sección `.card-actions` en el DOM de las tarjetas, garantizando que solo exista la barra táctil ergonómica superior (`.kiosk-tap-pill`).
+- **Regla CSS de Respaldo Universal (`css/admin-dispensario.css`):** Añadido selector de respaldo exhaustivo (`body.kiosk-mode .strain-menu-card button:not(.kiosk-tap-pill), body.kiosk-mode .strain-menu-card .card-actions, body.kiosk-mode .strain-menu-card footer, body.kiosk-mode .dispensario-card .card-actions, body.kiosk-mode .btn-card-spec, body.kiosk-mode .btn-card-ficha, ...`) con `display: none !important; visibility: hidden !important; height: 0 !important; margin: 0 !important; padding: 0 !important; pointer-events: none !important;`.
+- **Cache-Busting Actualizado a v204:** Queries de versionado actualizadas en `admin-dispensario.html` a `?v=204` para CSS y JS (`admin-dispensario.css?v=204`, `strains-data.js?v=204`, `admin-dispensario.js?v=204`).
 
 ### v203 — Eliminación de Redundancia en Modo Kiosco & Traducción Dinámica de Ficha (`admin-dispensario.html`)
 - **Eliminación de Botón Redundante:** Ocultado el contenedor `.card-actions` y los selectores `.btn-card-spec` y `.btn-card-ficha` en `body.kiosk-mode` vía CSS (`display: none !important;`) y condicionado el template en `js/admin-dispensario.js` para que solo se renderice en Modo Encargado, manteniendo exclusivamente la barra táctil superior (`.kiosk-tap-pill`) en la vista mostrador.

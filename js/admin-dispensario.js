@@ -937,8 +937,13 @@
       return true;
     });
 
+    const isKioskModeActive = Boolean(
+      state.isKioskMode || 
+      (typeof document !== 'undefined' && document.body && document.body.classList.contains('kiosk-mode'))
+    );
+
     // En modo Kiosco mostramos las disponibles primero
-    if (state.isKioskMode) {
+    if (isKioskModeActive) {
       items.sort((a, b) => (b.available === a.available ? 0 : b.available ? 1 : -1));
     }
 
@@ -1029,8 +1034,8 @@
             <span>${t.labels.tapToViewSpec}</span>
           </div>
 
-          ${!state.isKioskMode ? `
-          <!-- Acciones de tarjeta en Modo Encargado -->
+          ${!isKioskModeActive ? `
+          <!-- Acciones de tarjeta en Modo Encargado (No se renderiza en Modo Kiosco) -->
           <div class="card-actions">
             <button class="btn-card-spec btn-card-ficha" data-spec-id="${item.id}" title="${t.labels.tapToViewSpec}">
               ${t.labels.specBtn}
