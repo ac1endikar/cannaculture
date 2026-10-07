@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-07 13:30  
+> **Ultima actualizacion:** 2026-10-07 14:30  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `refactor(catalog): estandarizacion visual de fotografias botanicas HD (cogollos curados y colas) v197`  
-> **Version Cache-Busting:** `?v=2026_gp_bbs_v197_std`
+> **Commit de cierre:** `fix(catalog): eliminacion de viñetas artificiales y restauracion de iluminacion natural uniforme en 70 fotos recientes v198`  
+> **Version Cache-Busting:** `?v=2026_natural_lighting_v198`
 
 ---
 
@@ -11,7 +11,14 @@
 - **Estado del Catalogo:** **777 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
 - **65 Bancos Oficiales Incorporados**
 - **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
-- **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales.
+- **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
+
+### v198 — Restauracion de Iluminacion Natural Uniforme (70 Cepas Recientes)
+- **Diagnostico y Correccion de Viñeta:** Eliminacion completa del filtro de viñeta radial artificial (`make_correct_vignette`), causante del oscurecimiento perimetral y foco de linterna central reportado por el usuario.
+- **Alcance del Reprocesamiento:** 70 variedades de las incorporaciones recientes (Greenpoint Seeds, Big Buddha Seeds, Seed Junky Genetics, Bodhi Seeds, Oni Seed Co., Black Farm Genetix y Purple City Genetics).
+- **Fidelidad Fotografica:** Encuadre centrado 1:1, preservacion integra de hojas de azucar y calices perimetrales, iluminacion balanceada y organica que coincide con el estandar historico del catalogo.
+- **Unicidad dHash 256-bit:** Resolucion de candidatos para `bodhi-blue-tara`, `bodhi-dream-lotus`, `pcg-benzina` y `pcg-honey-runtz`. Auditoria global con 0 colisiones en las 1.498 imagenes de la base de datos.
+- **Bundle & Cache-Busting:** Recompilado `bundle.js` y version actualizada en `index.html` (`?v=2026_natural_lighting_v198`).
 
 ### v197 — Greenpoint Seeds & Big Buddha Seeds (20 cepas HD)
 - **Greenpoint Seeds (10 iconos del breeding de Colorado con cruces Stardawg / Chem):**
