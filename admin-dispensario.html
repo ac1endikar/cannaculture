@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Panel de Gestión del Dispensario CSC • CannaCulture 2.0 ULTRA</title>
+  <meta name="description"
+    content="Panel de administración y control de mostrador para Clubes Sociales de Cannabis (CSC). Gestión de carta activa, disponibilidad en barra y cuotas de aportación por niveles de socio (€/g).">
+  <meta name="theme-color" content="#0B0F0E">
+
+  <!-- Prevención de caché en panel de administración -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Hoja de Estilos del Dispensario CSC -->
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=2026_dispensario_csc_v199">
+</head>
+
+<body>
+  <!-- ======================================================================
+       Barra Superior de Navegación & Control del Club
+       ====================================================================== -->
+  <header class="admin-navbar">
+    <div class="nav-container">
+      <div class="brand-section">
+        <div class="club-avatar-badge" title="Asociación Cannábica Registrada">
+          🌿
+        </div>
+        <div class="club-info">
+          <h1 id="club-display-name">
+            CSC Verde Esperanza
+            <span style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.2); color: #34D399; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.4);">CSC OFICIAL</span>
+          </h1>
+          <div class="club-tagline">Panel de Dispensario & Mostrador • Consumo Compartido</div>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Indicador de Sincronización en Tiempo Real -->
+        <div id="sync-status-badge" class="sync-status-badge" title="Estado de la base de datos">
+          <span class="pulse-dot"></span>
+          <span>En vivo / Sincronizado</span>
+        </div>
+
+        <!-- Botón Vista Kiosco Mostrador -->
+        <button id="btn-toggle-kiosk" class="btn-touch btn-kiosk" title="Modo pantalla completa para tablet de mostrador">
+          <span>🖥️</span>
+          <span>Vista Kiosco Mostrador</span>
+        </button>
+
+        <!-- Botón Acceso Firebase Club / Modo Demo -->
+        <button id="btn-club-auth" class="btn-touch btn-secondary" title="Acceso Club Firebase">
+          <span>👤</span>
+          <span>Modo Demo (Acceso Club)</span>
+        </button>
+
+        <!-- Enlace al catálogo maestro -->
+        <a href="index.html" class="btn-touch btn-secondary" title="Volver al Catálogo Público">
+          <span>← Catálogo General</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       Aviso de Modo Kiosco (Visible solo cuando se activa dicho modo)
+       ====================================================================== -->
+  <main class="admin-container">
+    <div id="kiosk-top-notice" class="kiosk-top-notice">
+      <div class="kiosk-notice-text">
+        <h2>🌿 Carta del Dispensario • Menú de Variedades en Barra</h2>
+        <p>Previsiones botánicas disponibles para socios registrados de la asociación en mostrador.</p>
+      </div>
+      <button id="btn-exit-kiosk" class="btn-exit-kiosk">
+        ⚙️ Salir de Vista Kiosco
+      </button>
+    </div>
+
+    <!-- ======================================================================
+         Layout Principal Dividido: Menú Activo (Izq) + Editor de Cuotas (Der)
+         ====================================================================== -->
+    <div class="dashboard-layout">
+      <!-- COLUMNA IZQUIERDA: Buscador y Carta Activa -->
+      <section class="menu-master-column">
+        
+        <!-- Tarjeta de Búsqueda del Catálogo Maestro (777 Cepas) -->
+        <div class="catalog-search-card">
+          <div class="search-card-header">
+            <div class="search-title-group">
+              <span>🔎</span>
+              <h2>Incorporar Variedades del Catálogo Maestro</h2>
+              <span class="badge-count">777 Cepas HD</span>
+            </div>
+          </div>
+          
+          <div class="search-input-wrapper">
+            <span class="search-icon-inside">🔍</span>
+            <input type="text" 
+                   id="catalog-search-input" 
+                   class="catalog-search-input" 
+                   placeholder="Escribe el nombre de la cepa, banco o linaje (ej. Gelato, Amnesia, Kmintz, Jealousy)..." 
+                   autocomplete="off" />
+            
+            <!-- Resultados flotantes de autocompletado -->
+            <div id="search-results-dropdown" class="search-results-dropdown"></div>
+          </div>
+        </div>
+
+        <!-- Barra de Herramientas y Filtros del Menú Activo -->
+        <div class="menu-toolbar">
+          <div class="category-tabs">
+            <button class="cat-tab-btn active" data-filter="all">🌿 Todas</button>
+            <button class="cat-tab-btn" data-filter="flores">🌸 Flores / Cogollos</button>
+            <button class="cat-tab-btn" data-filter="extracciones">🍯 Extracciones & Rosin</button>
+            <button class="cat-tab-btn" data-filter="comestibles">🍪 Comestibles</button>
+          </div>
+
+          <div class="toolbar-stats">
+            <div class="stat-pill">
+              <span>En Carta:</span>
+              <strong id="stat-total-menu">0</strong>
+            </div>
+            <div class="stat-pill" style="color: var(--primary-light);">
+              <span>Disponibles:</span>
+              <strong id="stat-avail-menu">0</strong>
+            </div>
+            <div class="stat-pill" style="color: var(--text-dim);">
+              <span>Agotadas:</span>
+              <strong id="stat-out-menu">0</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid de Tarjetas del Menú en Mostrador -->
+        <div id="strains-menu-grid" class="strains-menu-grid">
+          <!-- Renderizado dinámico desde admin-dispensario.js -->
+        </div>
+
+      </section>
+
+      <!-- COLUMNA DERECHA: Editor de Aportaciones & Lotes -->
+      <aside id="editor-panel-card" class="editor-panel-card">
+        <div class="editor-header">
+          <h2>
+            <span>⚖️</span>
+            <span>Aportaciones & Lote</span>
+          </h2>
+          <span style="font-size: 0.72rem; color: var(--primary-light); font-weight: 700; background: rgba(16,185,129,0.1); padding: 4px 8px; border-radius: 6px;">
+            CONFIGURACIÓN CSC
+          </span>
+        </div>
+
+        <div id="editor-panel-body">
+          <!-- Formulario inyectado dinámicamente -->
+        </div>
+
+        <!-- Botones de Utilidad Rápida -->
+        <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; gap: 8px;">
+          <button id="btn-export-json" class="btn-touch btn-secondary" style="flex: 1; font-size: 0.78rem; min-height: 38px;">
+            📥 Exportar Carta (JSON)
+          </button>
+          <button id="btn-reset-demo" class="btn-touch btn-secondary" style="font-size: 0.78rem; min-height: 38px; color: var(--text-dim);" title="Restablecer variedades sugeridas">
+            🔄 Demo
+          </button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Notificación Toast Flotante -->
+  <div id="admin-toast" class="admin-toast">
+    <span>✅</span>
+    <span>Cambios sincronizados en el dispensario.</span>
+  </div>
+
+  <!-- ======================================================================
+       Carga de Scripts: Datos Maestros (777 Cepas) y Lógica Modular
+       ====================================================================== -->
+  <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
+  <script src="js/strains-data.js"></script>
+
+  <!-- 2. Firebase SDK & Configuración (Modo CDN Compatibilidad) -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+
+  <!-- 3. Lógica del Panel de Dispensario CSC -->
+  <script src="js/admin-dispensario.js?v=2026_dispensario_csc_v199"></script>
+</body>
+
+</html>

@@ -42,8 +42,16 @@ with open(bundle_path, 'w', encoding='utf-8') as f:
     f.write(full_content)
 
 bundle_v151_path = os.path.join(js_dir, 'bundle-v151.js')
-with open(bundle_v151_path, 'w', encoding='utf-8') as f:
-    f.write(full_content)
+# Also generate standalone strains-data.js for modules/admin
+with open(os.path.join(js_dir, 'data.js'), 'r', encoding='utf-8') as f:
+    data_code = f.read()
+data_code = re.sub(r'import\s+[^;]+;\n?', '', data_code)
+data_code = re.sub(r'\bexport\s+const\s+', 'const ', data_code)
+data_code += '\nwindow.STRAINS_DATABASE = STRAINS_DATABASE;\nwindow.TERPENES_INFO = TERPENES_INFO;\n'
+strains_data_path = os.path.join(js_dir, 'strains-data.js')
+with open(strains_data_path, 'w', encoding='utf-8') as f:
+    f.write(data_code)
 
 print(f"✅ Created {bundle_path} ({os.path.getsize(bundle_path):,} bytes)")
 print(f"✅ Created {bundle_v151_path} ({os.path.getsize(bundle_v151_path):,} bytes)")
+print(f"✅ Created {strains_data_path} ({os.path.getsize(strains_data_path):,} bytes)")

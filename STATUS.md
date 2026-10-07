@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-07 14:30  
+> **Ultima actualizacion:** 2026-10-07 15:40  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(catalog): eliminacion de viñetas artificiales y restauracion de iluminacion natural uniforme en 70 fotos recientes v198`  
-> **Version Cache-Busting:** `?v=2026_natural_lighting_v198`
+> **Commit de cierre:** `feat: modulo panel de gestion de dispensario y aportaciones para CSC (admin-dispensario)`  
+> **Version Cache-Busting:** `?v=2026_dispensario_csc_v199`
 
 ---
 
@@ -12,6 +12,18 @@
 - **65 Bancos Oficiales Incorporados**
 - **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
+- **Nuevo Módulo CSC:** Panel de Dispensario y Mostrador (`admin-dispensario.html`) operativo con sincronización Firebase y fallback demo.
+
+### v199 — Módulo Panel de Gestión del Dispensario para Encargados de CSC (`admin-dispensario.html`)
+- **Panel Modular e Independiente:** Construido en `admin-dispensario.html` con lógica desacoplada en `js/admin-dispensario.js` y estilos dedicados en `css/admin-dispensario.css`, sin alterar la operatividad de `index.html`.
+- **Estricta Terminología Legal CSC (España):** 0 ocurrencias de términos comerciales ("precio", "venta", "comprar"). Uso exclusivo de "Aportación/g", "Contribución", "Disponibilidad en mostrador", "Menú de previsión" y "Consumo Compartido".
+- **Buscador en Tiempo Real del Catálogo Maestro:** Conectado a las 777 cepas maestras de `strains-data.js` con autocompletado en vivo, miniaturas HD 800x800 y adición instantánea en un solo toque táctil.
+- **Menú Activo en Barra:** Tarjetas con miniaturas fotográficas HD, tags genéticos, switch deslizante táctil (En Barra / Disponible vs Agotado / Oculto), filtros rápidos de categorías (Todas, Flores, Extracciones, Comestibles) y contadores de stock y carta en tiempo real.
+- **Editor de Cuotas y Previsiones por Niveles de Socio:** Configuración de cuotas de aportación (€/g) por categorías de socio (Nivel Estándar, Nivel Colaborador, Nivel Terapéutico), previsión en gramos de mostrador y notas de lote / cata local. Botón táctil con animación de guardado exitoso.
+- **Vista Kiosco Mostrador (Tablet):** Modo interactivo a pantalla completa optimizado para tablets de mostrador para visualización de variedades disponibles por socios registrados.
+- **Sincronización Híbrida Firebase Cloud / Demo Local:** Integración con Firebase Authentication y Firestore con persistencia reactiva en `localStorage`. Inicialización automática en Modo Demo precargado con Gelato #33, Amnesia Haze, Super Boof, Kmintz, Jealousy, etc. para interacción inmediata sin necesidad de login previo.
+- **Acceso Directo desde Catálogo Principal:** Botón de acceso directo integrado en la barra de control de `index.html` (`⚖️ Dispensario CSC`).
+- **Bundle & Cache-Busting:** Generado `js/strains-data.js` y recompilado `js/bundle.js`. Versionado unificado en `?v=2026_dispensario_csc_v199`.
 
 ### v198 — Restauracion de Iluminacion Natural Uniforme (70 Cepas Recientes)
 - **Diagnostico y Correccion de Viñeta:** Eliminacion completa del filtro de viñeta radial artificial (`make_correct_vignette`), causante del oscurecimiento perimetral y foco de linterna central reportado por el usuario.
