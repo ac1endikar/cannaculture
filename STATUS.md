@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-07 18:35  
+> **Ultima actualizacion:** 2026-10-07 18:45  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `style(kiosco): diferenciar jerarquia visual y colores de botones en tarjeta v205`  
-> **Version Cache-Busting:** `?v=205`
+> **Commit de cierre:** `fix(i18n): traduccion reactiva de descripciones botanicas en ficha tecnica v207`  
+> **Version Cache-Busting:** `?v=207`
 
 ---
 
@@ -13,6 +13,11 @@
 - **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
 - **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, legibilidad fluida en tarjetas, persistencia híbrida Firebase / Demo y selector multi-idioma reactivo (ES/EN/DE/IT).
+
+### v207 — Traducción Reactiva de Descripciones Botánicas en Ficha Técnica (`admin-dispensario.html`)
+- **Sintetizador Botánico Multi-Idioma (`getLocalizedStrainDescription`):** Implementada función generadora botánica estructurada que sintetiza descripciones coherentes y elegantes en Inglés (`en`), Alemán (`de`) e Italiano (`it`) a partir de la variedad, especie botánica, linaje parental, terpenos dominantes, aromas y efectos. En Español (`es`) conserva la descripción oficial completa de la base de datos.
+- **Actualización Instantánea en Modal Abierto (`#spec-modal-desc`):** Al conmutar entre idiomas en el selector de banderas del modal (`.lang-pill-btn`), el párrafo descriptivo se refresca de inmediato en tiempo real junto con los títulos, terpenos y perfil aromático sin cerrar el diálogo.
+- **Cache-Busting Actualizado a v207:** Queries de versionado actualizadas en `admin-dispensario.html` a `?v=207` para CSS y JS (`admin-dispensario.css?v=207`, `strains-data.js?v=207`, `admin-dispensario.js?v=207`).
 
 ### v205 — Diferenciación de Jerarquía Visual y Colores de Botones en Tarjeta (`admin-dispensario.html`)
 - **Botón Principal / Barra Ancha (`.kiosk-tap-pill`):** Preservado el acabado esmeralda distintivo (`background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); color: #6EE7B7;`) con texto dinámico traducido (`${t.labels.tapToViewSpec}`).

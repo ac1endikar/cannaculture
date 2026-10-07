@@ -854,6 +854,90 @@
     return key.charAt(0).toUpperCase() + key.slice(1);
   }
 
+  function formatLocalizedList(items, lang) {
+    if (!items || items.length === 0) return '';
+    if (items.length === 1) return items[0];
+    const andWord = lang === 'de' ? 'und' : (lang === 'it' ? 'e' : (lang === 'en' ? 'and' : 'y'));
+    return items.slice(0, -1).join(', ') + ' ' + andWord + ' ' + items[items.length - 1];
+  }
+
+  function getDominantTerpenesList(strain, lang) {
+    let list = [];
+    if (strain.terpenes && typeof strain.terpenes === 'object' && !Array.isArray(strain.terpenes)) {
+      list = Object.entries(strain.terpenes)
+        .sort((a, b) => b[1] - a[1])
+        .map(([k]) => translateTerpeneName(k, lang));
+    } else if (Array.isArray(strain.terpenes) && strain.terpenes.length > 0) {
+      list = strain.terpenes.map(k => translateTerpeneName(k, lang));
+    } else if (strain.dominantTerpene) {
+      list = [translateTerpeneName(strain.dominantTerpene, lang)];
+    }
+
+    if (list.length === 0) {
+      list = [
+        translateTerpeneName('myrcene', lang),
+        translateTerpeneName('limonene', lang),
+        translateTerpeneName('caryophyllene', lang)
+      ];
+    }
+    return list.slice(0, 3);
+  }
+
+  function getLocalizedStrainDescription(strain, lang = state.kioskLang) {
+    if (!strain) return '';
+
+    // 1. En Español (es): conserva la descripción oficial completa de la base de datos
+    if (lang === 'es') {
+      return strain.description || 'Variedad botánica seleccionada para el dispensario de consumo compartido del club social.';
+    }
+
+    // 2. Si la variedad ya cuenta con campos específicos traducidos en la base de datos
+    if (lang === 'en' && strain.description_en) return strain.description_en;
+    if (lang === 'de' && strain.description_de) return strain.description_de;
+    if (lang === 'it' && strain.description_it) return strain.description_it;
+
+    // 3. Sintetizador botánico estructurado multi-idioma
+    const name = strain.name || 'Esta variedad';
+    const species = translateSpecies(strain.species, lang);
+    const lineage = strain.lineage || strain.genetics || '';
+
+    // Terpenos dominantes
+    const terpenesList = getDominantTerpenesList(strain, lang);
+    const terpenesStr = formatLocalizedList(terpenesList, lang);
+
+    // Aromas y perfil de cata
+    const rawFlavors = Array.isArray(strain.flavors) && strain.flavors.length > 0
+      ? strain.flavors
+      : ['Cítrico', 'Pino', 'Dulce'];
+    const translatedFlavors = rawFlavors.slice(0, 3).map(f => translateFlavor(f, lang).toLowerCase());
+    const aromasStr = formatLocalizedList(translatedFlavors, lang);
+
+    // Efectos y sensaciones
+    const rawEffects = Array.isArray(strain.effects) && strain.effects.length > 0
+      ? strain.effects
+      : ['Relajación Corporal', 'Calma Profunda', 'Bienestar'];
+    const translatedEffects = rawEffects.slice(0, 3).map(e => translateEffect(e, lang).toLowerCase());
+    const effectsStr = formatLocalizedList(translatedEffects, lang);
+
+    // Síntesis botánica coherente por idioma
+    if (lang === 'en') {
+      const lineageClause = lineage ? `derived from ${lineage}` : 'of select botanical heritage';
+      return `${name} is a ${species} botanical variety ${lineageClause}. Highlighted by dominant terpenes such as ${terpenesStr}, offering ${aromasStr} tasting notes and ${effectsStr} effects.`;
+    }
+
+    if (lang === 'de') {
+      const lineageClause = lineage ? `mit der Abstammungslinie ${lineage}` : 'mit erlesener botanischer Abstammung';
+      return `${name} ist eine ${species}-Sorte ${lineageClause}. Geprägt durch Terpene wie ${terpenesStr}, mit aromatischen Noten von ${aromasStr} und ${effectsStr} Empfindungen.`;
+    }
+
+    if (lang === 'it') {
+      const lineageClause = lineage ? `discendente da ${lineage}` : 'di pregiata discendenza botanica';
+      return `${name} è una varietà ${species} ${lineageClause}. Contraddistinta da terpeni dominanti come ${terpenesStr}, note di ${aromasStr} ed effetti ${effectsStr}.`;
+    }
+
+    return strain.description || 'Variedad botánica seleccionada para el dispensario de consumo compartido del club social.';
+  }
+
   function setKioskLanguage(lang) {
     if (!I18N[lang]) lang = 'es';
     state.kioskLang = lang;
@@ -876,10 +960,9 @@
 
     // 4. Si la ficha técnica botánica está abierta en este momento, actualizar al instante sin cerrar el modal
     const modal = document.getElementById('kiosk-strain-modal');
-    if (modal && (modal.open || modal.hasAttribute('open'))) {
-      if (state.currentModalStrainId) {
-        renderKioskModalContent(state.currentModalStrainId);
-      }
+    const isModalVisible = modal && (modal.open || modal.hasAttribute('open') || modal.style.display === 'block' || document.getElementById('spec-modal-desc'));
+    if (isModalVisible && state.currentModalStrainId) {
+      renderKioskModalContent(state.currentModalStrainId);
     }
   }
 
@@ -1475,6 +1558,7 @@
     const safeName = (strain.name || 'Variedad').replace(/"/g, '&quot;');
     const safeBank = (strain.bank || 'Banco Criador').replace(/"/g, '&quot;');
     const currentLang = state.kioskLang || 'es';
+    const localizedDesc = getLocalizedStrainDescription(strain, currentLang);
 
     const closeBtn = document.getElementById('btn-close-kiosk-modal');
     if (closeBtn) {
@@ -1581,9 +1665,9 @@
 
         ${renderEffectsAndFlavors(strain)}
 
-        ${strain.description ? `
-        <div class="spec-desc-text">
-          <strong>${t.labels.officialDesc}</strong> ${strain.description}
+        ${localizedDesc ? `
+        <div id="spec-modal-desc" class="spec-desc-text">
+          <strong>${t.labels.officialDesc}</strong> ${localizedDesc}
         </div>` : ''}
       </section>
     `;
@@ -1762,6 +1846,7 @@
   window.closeKioskModal = closeKioskModal;
   window.handleCardClick = handleCardClick;
   window.setKioskLanguage = setKioskLanguage;
+  window.getLocalizedStrainDescription = getLocalizedStrainDescription;
   window.I18N = I18N;
 
   // ==========================================================================
