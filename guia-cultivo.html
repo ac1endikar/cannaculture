@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Cultivo en 5 Etapas • CannaCulture</title>
+  <meta name="description"
+    content="Guía de cultivo interactiva de CannaCulture: germinación, crecimiento vegetativo, floración, punto óptimo de cosecha por tricomas, secado y curado. Disponible en ES, EN, DE e IT.">
+  <meta name="theme-color" content="#0B0F0E">
+  <meta name="rating" content="adult">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans (tipografía CannaCulture) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/guia-cultivo.css?v=208">
+</head>
+
+<body>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  <!-- ======================= NAVEGACIÓN ======================= -->
+  <header class="gc-header" role="banner">
+    <div class="gc-container gc-header-inner">
+      <a href="index.html" class="gc-brand" aria-label="CannaCulture - Inicio">
+        <span class="gc-brand-icon">🌿</span>
+        <span class="gc-brand-text">CANNA<span class="highlight">CULTURE</span></span>
+      </a>
+
+      <nav class="gc-nav" aria-label="Navegación principal">
+        <a href="index.html" class="gc-nav-link" id="nav-link-catalog">
+          <span aria-hidden="true">📚</span> <span data-i18n="nav.catalog">Catálogo</span>
+        </a>
+        <a href="guia-cultivo.html" class="gc-nav-link active" id="nav-link-guide" aria-current="page">
+          <span aria-hidden="true">🌱</span> <span data-i18n="nav.guide">Guía de Cultivo</span>
+        </a>
+        <a href="admin-dispensario.html" class="gc-nav-link" id="nav-link-dispensary">
+          <span aria-hidden="true">⚖️</span> <span data-i18n="nav.dispensary">Dispensario CSC</span>
+        </a>
+      </nav>
+
+      <div class="gc-lang-selector" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-pill-btn active" data-lang="es" id="lang-btn-es" title="Español">🇪🇸 ES</button>
+        <button type="button" class="lang-pill-btn" data-lang="en" id="lang-btn-en" title="English">🇬🇧 EN</button>
+        <button type="button" class="lang-pill-btn" data-lang="de" id="lang-btn-de" title="Deutsch">🇩🇪 DE</button>
+        <button type="button" class="lang-pill-btn" data-lang="it" id="lang-btn-it" title="Italiano">🇮🇹 IT</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ======================= HERO ======================= -->
+    <section class="gc-hero gc-container" aria-labelledby="gc-title">
+      <span class="gc-eyebrow" data-i18n="hero.eyebrow">Guía práctica · 5 etapas</span>
+      <h1 id="gc-title" class="gc-title">
+        <span aria-hidden="true">🌱</span> <span class="gradient-text" data-i18n="hero.title">Guía de Cultivo</span>
+      </h1>
+      <p class="gc-subtitle" data-i18n="hero.subtitle">De la semilla al bote: todo el ciclo explicado paso a paso, con los parámetros que de verdad importan.</p>
+    </section>
+
+    <!-- ======================= ETAPAS ======================= -->
+    <section class="gc-container gc-stages" aria-label="Etapas del cultivo">
+      <div class="gc-stepper-wrap">
+        <div class="gc-stepper-track" aria-hidden="true"><div class="gc-stepper-fill" id="stepper-fill"></div></div>
+        <div class="gc-stepper" role="tablist" id="stage-tabs" aria-label="Etapas">
+          <!-- Renderizado por js/guia-cultivo.js -->
+        </div>
+      </div>
+
+      <article class="gc-panel" id="stage-panel" role="tabpanel" aria-live="polite">
+        <!-- Renderizado por js/guia-cultivo.js -->
+        <noscript><p>Activa JavaScript para ver la guía interactiva.</p></noscript>
+      </article>
+
+      <div class="gc-pager">
+        <button type="button" class="gc-pager-btn" id="btn-stage-prev">← <span data-i18n="ui.prev">Anterior</span></button>
+        <span class="gc-pager-count" id="stage-counter"></span>
+        <button type="button" class="gc-pager-btn gc-pager-btn-primary" id="btn-stage-next"><span data-i18n="ui.next">Siguiente</span> →</button>
+      </div>
+    </section>
+
+    <!-- ======================= ERRORES CLÁSICOS ======================= -->
+    <section class="gc-container gc-errors" aria-labelledby="errors-title">
+      <div class="gc-errors-box">
+        <h2 id="errors-title" class="gc-errors-title" data-i18n="errors.title">⚠️ 3 Errores Clásicos de Principiante a Evitar</h2>
+        <div class="gc-errors-grid" id="errors-grid">
+          <!-- Renderizado por js/guia-cultivo.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gc-footer">
+    <div class="gc-container">
+      <p class="gc-disclaimer" data-i18n="footer.disclaimer">Contenido divulgativo para personas adultas (18+). Infórmate y cumple la legislación vigente en tu país sobre el autocultivo.</p>
+      <a href="index.html" class="gc-footer-link" id="footer-link-catalog">← <span data-i18n="footer.back">Volver al Catálogo</span></a>
+    </div>
+  </footer>
+
+  <script src="js/guia-cultivo.js?v=208"></script>
+</body>
+
+</html>

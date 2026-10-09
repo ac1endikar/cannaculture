@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-07 18:45  
+> **Ultima actualizacion:** 2026-10-09 14:10  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `fix(i18n): traduccion reactiva de descripciones botanicas en ficha tecnica v207`  
-> **Version Cache-Busting:** `?v=207`
+> **Commit de cierre:** `feat: crear pagina independiente guia de cultivo interactiva guia-cultivo.html v208`  
+> **Version Cache-Busting:** `?v=208`
 
 ---
 
@@ -13,6 +13,16 @@
 - **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
 - **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, legibilidad fluida en tarjetas, persistencia híbrida Firebase / Demo y selector multi-idioma reactivo (ES/EN/DE/IT).
+- **Guía de Cultivo (`guia-cultivo.html`):** Página independiente operativa con 5 etapas interactivas y selector ES/EN/DE/IT.
+
+### v208 — Página Independiente "🌱 Guía de Cultivo" (`guia-cultivo.html`)
+- **Nueva página autónoma:** `guia-cultivo.html` + `css/guia-cultivo.css` + `js/guia-cultivo.js` (fuera del bundle; no requiere `build_bundle.py`). Tema oscuro/esmeralda con los mismos tokens de diseño que `admin-dispensario.css`, tipografías Outfit + Plus Jakarta Sans.
+- **Cabecera:** logo CannaCulture, enlaces Catálogo / Guía de Cultivo / Dispensario CSC y selector de idioma `[ 🇪🇸 ES | 🇬🇧 EN | 🇩🇪 DE | 🇮🇹 IT ]`.
+- **Stepper de 5 etapas (tablist accesible, teclado ←/→/Home/End, deep-link `#etapa-N`):** Germinación & Plántula · Crecimiento Vegetativo · Floración · Punto Óptimo de Cosecha (tarjetas de tricomas transparentes/lechosos/ámbar) · Secado & Curado. Cada etapa: duración, parámetros clave, paso a paso y consejo clave.
+- **Bloque "⚠️ 3 Errores Clásicos de Principiante a Evitar":** encharcamiento, sobrefertilización temprana y cosecha con prisas, cada uno con su solución.
+- **I18N reactivo sin recarga:** objeto `I18N` (es/en/de/it) que traduce títulos, etapas, consejos, `<title>`, meta description y `lang` del documento. Idioma compartido con el kiosco vía `localStorage('kiosk_lang')`.
+- **Navegación global:** enlace `🌱 Guía de Cultivo` añadido en `index.html` (`<a class="nav-btn">` sin `data-target`, ignorado por el router SPA de `app.js`) y en la barra de `admin-dispensario.html`.
+- **Cache-Busting v208:** `guia-cultivo.css/js?v=208`, `admin-dispensario.css/js?v=208`, `strains-data.js?v=208`, y en `index.html` `styles.css?v=208` / `bundle.js?v=208`.
 
 ### v207 — Traducción Reactiva de Descripciones Botánicas en Ficha Técnica (`admin-dispensario.html`)
 - **Sintetizador Botánico Multi-Idioma (`getLocalizedStrainDescription`):** Implementada función generadora botánica estructurada que sintetiza descripciones coherentes y elegantes en Inglés (`en`), Alemán (`de`) e Italiano (`it`) a partir de la variedad, especie botánica, linaje parental, terpenos dominantes, aromas y efectos. En Español (`es`) conserva la descripción oficial completa de la base de datos.
