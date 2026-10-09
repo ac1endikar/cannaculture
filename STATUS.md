@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-09 17:30  
+> **Ultima actualizacion:** 2026-10-09 18:50  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat(contact): actualizar correo corporativo oficial a contacto@cannacultureapp.com v209`  
-> **Version Cache-Busting:** `?v=209`
+> **Commit de cierre:** `style(ui): desaturar y organizar armonicamente cabecera, navegacion, hero y filtros v210`  
+> **Version Cache-Busting:** `?v=210`
 
 ---
 
@@ -14,7 +14,14 @@
 - **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
 - **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, legibilidad fluida en tarjetas, persistencia híbrida Firebase / Demo y selector multi-idioma reactivo (ES/EN/DE/IT).
 - **Guía de Cultivo (`guia-cultivo.html`):** Página independiente operativa con 5 etapas interactivas y selector ES/EN/DE/IT.
-- **Canal de Contacto Oficial:** Actualizado unificadamente a `contacto@cannacultureapp.com` en toda la plataforma.
+- **Diseño & Organización Visual (`index.html` v210):** Cabecera despejada en 2 niveles compactos, rail de navegación horizontal táctil en píldoras, Hero desaturado con métricas clave y cajón colapsable para los 65 bancos oficiales, controles de filtro y búsqueda con alineación vertical perfecta en desktop y móvil.
+
+### v210 — Organización Visual Integral, Desaturación y Pulido Estético (`index.html` & `css/styles.css`)
+- **Cabecera Principal Bipolarizada (`.header-main-bar`):** Reestructurada en un nivel superior con logo a la izquierda y utilidades ordenadas en píldoras esmeralda a la derecha (`+18`, Google Auth, Selector de Tema, Modo Sobrio, Dispensario CSC). En pantallas móviles, los textos secundarios se ocultan manteniendo los iconos accesibles y compactos sin desbordamiento.
+- **Navegación en Rail Horizontal Continuo (`.nav-links`):** Eliminada la cuadrícula 2x4 que saturaba la pantalla verticalmente. Sustituida por un rail fluido de píldoras con scroll táctil horizontal suave en móvil y fila armónica en escritorio para las 8 secciones (`Catálogo`, `Favoritos`, `Activity Matcher`, `Sommelier IA`, `Mezclador & Vapo`, `Vivencias`, `Terpenos`, `Guía de Cultivo`).
+- **Hero Desaturado y Elegante (`.hero-section`):** Sustituido el bloque de texto denso de 40 líneas por un badge botánico, tipografía nítida con gradiente esmeralda, 4 chips de estadísticas clave (`777 Cepas`, `65 Bancos`, `8 Terpenos`, `100% Macro HD`) y un cajón colapsable discreto (`<details class="hero-banks-accordion">`) para consultar los 65 bancos oficiales sin saturar visualmente el lienzo inicial.
+- **Filtros y Búsqueda Nítidos (`.search-filter-bar`):** Normalizado el espaciado vertical y padding interno de los selectores (`.custom-select`) eliminando recortes de texto. Disposición responsive apilada en móvil y cuadrícula limpia en escritorio.
+- **Verificación Visual:** Capturas automatizadas generadas y validadas en resolución nativa de escritorio (1280x800) y móvil (390x844).
 
 ### v209 — Actualización Integral de Correo Corporativo Oficial (`contacto@cannacultureapp.com`)
 - **Aviso Legal & Canal de Contacto (`index.html`):** Enlace `mailto:` y texto visible actualizados en la sección de Propiedad Intelectual & Enlaces a `<a href="mailto:contacto@cannacultureapp.com" class="legal-contact-link"><strong>contacto@cannacultureapp.com</strong></a>`.

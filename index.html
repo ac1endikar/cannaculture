@@ -68,7 +68,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css?v=209">
+  <link rel="stylesheet" href="css/styles.css?v=210">
 </head>
 
 <body>
@@ -162,20 +162,53 @@
   <!-- NAVEGACIÓN PRINCIPAL -->
   <header class="main-header glass-nav" role="banner">
     <div class="container header-container">
-      <a href="#" class="brand-logo" id="logo-btn" aria-label="CannaCatalog 2.0 MAX Inicio">
-        <span class="logo-icon">🌿</span>
-        <span class="logo-text">CANNA<span class="highlight">CATALOG</span> <small class="version-tag">2.0
-            MAX</small></span>
-      </a>
+      <div class="header-main-bar">
+        <a href="#" class="brand-logo" id="logo-btn" aria-label="CannaCatalog 2.0 MAX Inicio">
+          <span class="logo-icon">🌿</span>
+          <span class="logo-text">CANNA<span class="highlight">CULTURE</span> <small class="version-tag">2.0 MAX</small></span>
+        </a>
+
+        <!-- Controles Secundarios agrupados y ordenados -->
+        <div class="header-extra-controls">
+          <!-- Indicador Estado +18 -->
+          <button id="btn-age-status" class="btn btn-age-status-pill" title="Estado de Verificación +18" aria-label="Estado de Verificación de Mayoría de Edad +18">
+            🛡️ <span id="age-status-text">+18</span>
+          </button>
+
+          <!-- Contenedor Sesión / Google Auth -->
+          <div id="auth-container" class="auth-header-controls" style="display: inline-flex; align-items: center;">
+            <button id="btn-user-auth" class="btn btn-auth-pill" title="Iniciar con Google" aria-label="Iniciar sesión con Google" onclick="window.communityManager && window.communityManager.loginWithGoogle()">
+              <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align: middle; flex-shrink: 0;"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+              <span id="auth-btn-text">Google</span>
+            </button>
+          </div>
+
+          <select id="theme-selector" class="custom-select-sm" aria-label="Seleccionar tema visual de interfaz">
+            <option value="emerald">🟢 Esmeralda</option>
+            <option value="cyberpurple">🟣 Purple</option>
+            <option value="sunsetgold">🟠 Gold</option>
+            <option value="obsidian">🔵 Obsidian</option>
+          </select>
+
+          <button id="btn-sobrio-mode" class="btn btn-sobrio-pulse" aria-label="Activar Modo Sobrio y Calma S.O.S." title="Modo Sobrio & Calma">
+            🛡️ <span class="header-btn-text">Modo Sobrio</span>
+          </button>
+
+          <!-- Acceso Panel Dispensario CSC -->
+          <a href="admin-dispensario.html" class="btn btn-age-status-pill dispensary-nav-link" title="Panel de Gestión del Dispensario CSC" aria-label="Ir al Panel de Dispensario CSC" style="text-decoration: none; border-color: rgba(16, 185, 129, 0.4); color: #34D399; font-weight: 600;">
+            ⚖️ <span class="header-btn-text">Dispensario</span>
+          </a>
+        </div>
+      </div>
 
       <nav class="nav-links" role="navigation" aria-label="Navegación Principal">
         <button class="nav-btn active" data-target="section-catalog" aria-label="Ir a sección Catálogo Ampliado">
           <span class="nav-btn-icon">📚</span>
-          <span class="nav-btn-text">Catálogo Ampliado</span>
+          <span class="nav-btn-text">Catálogo</span>
         </button>
         <button class="nav-btn" id="nav-btn-favorites" data-target="section-catalog" aria-label="Ver mis cepas favoritas">
           <span class="nav-btn-icon">❤️</span>
-          <span class="nav-btn-text">Mis Favoritos</span>
+          <span class="nav-btn-text">Favoritos</span>
           <span class="nav-fav-badge" id="nav-fav-badge">0</span>
         </button>
         <button class="nav-btn" data-target="section-matcher" aria-label="Ir a sección Ruleta y Activity Matcher">
@@ -188,7 +221,7 @@
         </button>
         <button class="nav-btn" data-target="section-blender" aria-label="Ir a sección Mezclador y Comparador">
           <span class="nav-btn-icon">🧪</span>
-          <span class="nav-btn-text">Mezclador &amp; Comparador</span>
+          <span class="nav-btn-text">Mezclador &amp; Vapo</span>
         </button>
         <button class="nav-btn" data-target="section-bitacora" aria-label="Ir a sección Bitácora de Vivencias">
           <span class="nav-btn-icon">📖</span>
@@ -196,45 +229,13 @@
         </button>
         <button class="nav-btn" data-target="section-terpenes" aria-label="Ir a sección Terpenos y Vaporización">
           <span class="nav-btn-icon">🧬</span>
-          <span class="nav-btn-text">Terpenos &amp; Vapo</span>
+          <span class="nav-btn-text">Terpenos</span>
         </button>
         <a href="guia-cultivo.html" class="nav-btn" id="nav-link-guia-cultivo" aria-label="Ir a la Guía de Cultivo" style="text-decoration: none;">
           <span class="nav-btn-icon">🌱</span>
           <span class="nav-btn-text">Guía de Cultivo</span>
         </a>
       </nav>
-
-      <!-- Selector de Tema Visual & Botón MODO SOBRIO -->
-      <div class="header-extra-controls">
-        <!-- Indicador Estado +18 -->
-        <button id="btn-age-status" class="btn btn-age-status-pill" title="Estado de Verificación +18" aria-label="Estado de Verificación de Mayoría de Edad +18">
-          🛡️ <span id="age-status-text">+18 Verificado</span>
-        </button>
-
-        <!-- Contenedor Sesión / Google Auth -->
-        <div id="auth-container" class="auth-header-controls" style="display: inline-flex; align-items: center;">
-          <button id="btn-user-auth" class="btn btn-auth-pill" title="Iniciar con Google" aria-label="Iniciar sesión con Google" onclick="window.communityManager && window.communityManager.loginWithGoogle()">
-            <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align: middle; flex-shrink: 0;"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
-            <span id="auth-btn-text">Iniciar con Google</span>
-          </button>
-        </div>
-
-        <select id="theme-selector" class="custom-select-sm" aria-label="Seleccionar tema visual de interfaz">
-          <option value="emerald">🟢 Esmeralda</option>
-          <option value="cyberpurple">🟣 Cyber Purple</option>
-          <option value="sunsetgold">🟠 Sunset Gold</option>
-          <option value="obsidian">🔵 Obsidian Cyan</option>
-        </select>
-
-        <button id="btn-sobrio-mode" class="btn btn-sobrio-pulse" aria-label="Activar Modo Sobrio y Calma S.O.S.">
-          🛡️ Modo Sobrio
-        </button>
-
-        <!-- Acceso Panel Dispensario CSC -->
-        <a href="admin-dispensario.html" class="btn btn-age-status-pill" title="Panel de Gestión del Dispensario CSC" aria-label="Ir al Panel de Dispensario CSC" style="text-decoration: none; border-color: rgba(16, 185, 129, 0.4); color: #34D399; font-weight: 600;">
-          ⚖️ Dispensario CSC
-        </a>
-      </div>
     </div>
   </header>
 
@@ -251,16 +252,42 @@
     <!-- HERO BANNER -->
     <section class="hero-section glass-panel">
       <div class="hero-content">
-        <span class="hero-subtitle">+777 CEPAS DE 65 BANCOS PREMIUM · 8 TERPENOS · 7 ACTIVIDADES</span>
-        <h1 class="hero-title">El Catálogo Más Completo: Greenpoint Seeds, Big Buddha Seeds, Seed Junky Genetics & Más</h1>
+        <span class="hero-subtitle">🌿 Enciclopedia Botánica · 777 Cepas · 65 Bancos</span>
+        <h1 class="hero-title">Catálogo Botánico & Genéticas Premium</h1>
         <p class="hero-desc">
-          Explora la colección completa de <strong>777 genéticas de 65 grandes bancos</strong>: Greenpoint Seeds (10 cepas) • Big Buddha Seeds (10 cepas) • Seed Junky Genetics (10 cepas) • Bodhi Seeds (10 cepas) • Purple City Genetics (10 cepas) • Black Farm Genetix (10 cepas) • Reserva Privada (10 cepas) • Oni Seed Co. (10 cepas) • The Cali Connection (10 cepas) • Cannarado Genetics (10 cepas) • Dr. Underground (10 cepas) • Crockett Family Farms (10 cepas) • World of Seeds (10 cepas) • G13 Labs Seeds (10 cepas) • Mandala Seeds (10 cepas) • Brothers Grimm Seeds (10 cepas) • Rare Dankness (10 cepas) · Anesia Seeds (10 cepas) · Silent Seeds (10 cepas) · Eva Seeds (11 cepas) · Medical Seeds (16 cepas) · Nirvana Seeds (15 cepas) · Dinafem Seeds · Ripper Seeds · BSF
-          Seeds · Barney's Farm · Sweet Seeds · Royal Queen Seeds · Dutch Passion · Philosopher Seeds · Humboldt Seed ·
-          00 Seeds Bank · Buddha Seeds · R-Kiem Seeds · Positronics Seeds · ACE Seeds · Pyramid Seeds · Blimburn Seeds ·
-          Genehtik Seeds · Heavyweight Seeds · Cannabiogen · Sensi Seeds · Green House Seed Co. · Serious Seeds · TH
-          Seeds · Paradise Seeds · DNA Genetics · White Label Seed Co. · Soma Seeds · The Flying Dutchmen · Seedsman · Exotic Genetix · Compound Genetics · In-House Genetics · Ethos Genetics · Archive Seed Bank · Raw Genetics · Kannabia Seeds · Canuk Seeds · Kera Seeds. Con perfiles de <strong>8 terpenos</strong> y <strong>7 actividades</strong> para
-          encontrar tu cepa perfecta.
+          Explora la colección más completa de variedades de cannabis. Clasificación rigurosa por especie, perfiles terpénicos, analítica de cannabinoides y recomendaciones por actividad en tiempo real.
         </p>
+
+        <!-- Barra de Métricas y Píldoras de Valor Destacado -->
+        <div class="hero-badges-strip">
+          <div class="hero-stat-chip">
+            <span class="chip-icon">🌱</span>
+            <span class="chip-text"><strong>777</strong> Cepas Catalogadas</span>
+          </div>
+          <div class="hero-stat-chip">
+            <span class="chip-icon">🏛️</span>
+            <span class="chip-text"><strong>65</strong> Bancos Oficiales</span>
+          </div>
+          <div class="hero-stat-chip">
+            <span class="chip-icon">🧬</span>
+            <span class="chip-text"><strong>8</strong> Terpenos Clave</span>
+          </div>
+          <div class="hero-stat-chip">
+            <span class="chip-icon">🔬</span>
+            <span class="chip-text"><strong>100%</strong> Macro HD</span>
+          </div>
+        </div>
+
+        <!-- Selector desplegable sutil de bancos (Conserva SEO y evita saturar la vista) -->
+        <details class="hero-banks-accordion">
+          <summary class="hero-banks-summary">
+            <span>🏛️ Ver listado de los 65 bancos oficiales catalogados</span>
+            <span class="summary-caret">▾</span>
+          </summary>
+          <div class="hero-banks-list">
+            Greenpoint Seeds • Big Buddha Seeds • Seed Junky Genetics • Bodhi Seeds • Purple City Genetics • Black Farm Genetix • Reserva Privada • Oni Seed Co. • The Cali Connection • Cannarado Genetics • Dr. Underground • Crockett Family Farms • World of Seeds • G13 Labs Seeds • Mandala Seeds • Brothers Grimm Seeds • Rare Dankness • Anesia Seeds • Silent Seeds • Eva Seeds • Medical Seeds • Nirvana Seeds • Dinafem Seeds • Ripper Seeds • BSF Seeds • Barney's Farm • Sweet Seeds • Royal Queen Seeds • Dutch Passion • Philosopher Seeds • Humboldt Seed • 00 Seeds Bank • Buddha Seeds • R-Kiem Seeds • Positronics Seeds • ACE Seeds • Pyramid Seeds • Blimburn Seeds • Genehtik Seeds • Heavyweight Seeds • Cannabiogen • Sensi Seeds • Green House Seed Co. • Serious Seeds • TH Seeds • Paradise Seeds • DNA Genetics • White Label Seed Co. • Soma Seeds • The Flying Dutchmen • Seedsman • Exotic Genetix • Compound Genetics • In-House Genetics • Ethos Genetics • Archive Seed Bank • Raw Genetics • Kannabia Seeds • Canuk Seeds • Kera Seeds.
+          </div>
+        </details>
 
         <!-- Barra de Búsqueda y Filtros de Ordenación -->
         <div class="search-filter-bar">
