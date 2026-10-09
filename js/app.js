@@ -482,7 +482,17 @@ class CannaAppMAX {
       "Ethos Genetics": "⚡",
       "Archive Seed Bank": "📦",
       "Raw Genetics": "🥩",
-      "Medical Seeds": "⚕️"
+      "Medical Seeds": "⚕️",
+      "Bloom Seed Co.": "🌸",
+      "Clearwater Genetics": "🌊",
+      "CSI Humboldt": "🌲",
+      "Jungle Boys": "🌴",
+      "Khalifa Genetics": "🏺",
+      "LIT Farms": "🔥",
+      "Reggae Seeds": "🦁",
+      "Super Sativa Seed Club": "🚀",
+      "Tiki Madman": "🗿",
+      "Top Dawg Seeds": "🐕"
     };
 
     const currentVal = this.filterBank.value || 'all';

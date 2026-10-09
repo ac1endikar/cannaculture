@@ -1,20 +1,45 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-09 18:50  
-> **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `style(ui): desaturar y organizar armonicamente cabecera, navegacion, hero y filtros v210`  
-> **Version Cache-Busting:** `?v=210`
+> **Ultima actualizacion:** 2026-10-09 21:30  
+> **Servidor local:** Activo en `http://localhost:8080`  
+> **Commit de cierre:** `feat(catalog): incorporar 10 nuevos bancos de elite y 100 variedades fotoperiodicas v211`  
+> **Version Cache-Busting:** `?v=211`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
-- **Estado del Catalogo:** **777 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
-- **65 Bancos Oficiales Incorporados**
-- **Cobertura Linaje/Genetica:** 777/777 cepas (100%).
-- **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
-- **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, legibilidad fluida en tarjetas, persistencia híbrida Firebase / Demo y selector multi-idioma reactivo (ES/EN/DE/IT).
+- **Estado del Catalogo:** **877 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
+- **75 Bancos Oficiales Incorporados (ampliación de 65 a 75 bancos de élite mundial).**
+- **100 Nuevas Variedades Fotoperiódicas/Feminizadas/Regulares (estrictamente 0 autoflorecientes).**
+- **Cobertura Linaje/Genetica:** 877/877 cepas (100%).
+- **Fotografias Botanicas HD:** 100% macro flores reales descargadas localmente en `img/` como `.webp` y `.jpg`, resolución mínima >= 400x400 (hasta 2500px), 0 colisiones visuales, 0 fondos blancos, 0 ilustraciones.
+- **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, catálogo de 877 cepas y selector multi-idioma reactivo (ES/EN/DE/IT).
 - **Guía de Cultivo (`guia-cultivo.html`):** Página independiente operativa con 5 etapas interactivas y selector ES/EN/DE/IT.
-- **Diseño & Organización Visual (`index.html` v210):** Cabecera despejada en 2 niveles compactos, rail de navegación horizontal táctil en píldoras, Hero desaturado con métricas clave y cajón colapsable para los 65 bancos oficiales, controles de filtro y búsqueda con alineación vertical perfecta en desktop y móvil.
+
+### v211 — Expansión Botánica Mayor: 10 Nuevos Bancos de Élite & 100 Cepas Fotoperiódicas (`877 Cepas · 75 Bancos`)
+- **Incorporación de 10 Bancos de Culto Mundial (10 cepas de élite por banco):**
+  1. **Jungle Boys (EE. UU.):** Wedding Cake, Strawberry Shortcake, Florida Wedding, Jungle Cake, Mimosa, Motorbreath, Topanga Canyon OG, Sunset Sherbet, Perfect Triangle, Frosted Kush.
+  2. **Super Sativa Seed Club (Holanda):** Karel's Haze, Frosty Friday, Lava Freeze, Pineapple Poison, Kees' Old School Haze, Fat Pete's Cookies, TNT Trichome, Kosher Haze, Super Mad Sky Floater, Durban Dew.
+  3. **Reggae Seeds (España):** Juanita la Lagrimosa, Dancehall, Guayaka, Session, Kalijah, Respect, O SDK, Roots, Blackdance, Revolution.
+  4. **Clearwater Genetics (EE. UU.):** Dante's Inferno, Maitai #4, Apple Tarts, Zero Gravity, Creamsicle #4, Warheads, Spec #4, Dosi-Orange, Blue Razz, Head Doctor.
+  5. **LIT Farms (EE. UU.):** Grandpas Cookies, Red Velvet, Watermelon Mimosa, Bangkok Purple, Apple Banana Gelato, Road Tripper, Formula 1, Gas Station Sushi, Lemon Cherry Garlic, Blizzard.
+  6. **CSI Humboldt (EE. UU.):** Bubba Kush S1, Chem '91 S1, Triangle Kush S1, Mendocino Purple, Big Bad Wolf, Irene Kush S1, Urkle S1, Fallen Angel, Chem D S1, Old Family Purple.
+  7. **Tiki Madman (EE. UU.):** Devil Driver, Space Mints, Tiki Rain, Ice Cream Cake x Sunset Sherb, Pirate Milk, Dante's Wrath, Tropical Runtz, Gelato 41 BX, Gary Satan, Cherry Cosmo.
+  8. **Top Dawg Seeds (EE. UU.):** Star Dawg, Tres Dawg, JJ's Nigerian Silk, Guava Chem, City Slicker, Corey Haim, Hazy Kush, Sour Chem, White Dawg, Onion Ring.
+  9. **Bloom Seed Co. (EE. UU.):** Strawberry Guava, Dulce de Uva, Melted Strawberries, Grape Cream Cake, Sherbanger, Black Maple, Funk MTN, Rainbow Belts 2.0, Papaya Power, Strawberry Bubbles.
+  10. **Khalifa Genetics (Francia / Internacional):** Aladdin's Skunk, Balkh Hashplant, Sheberghan Hashplant, Limon Blanco V3, Persian Prince, Moroccan Beldia, South African Kwazulu, Siberian Ruderalis IBL, Desert Skunk, Sinai Landrace.
+- **Descarga e Integración de 100 Fotografías Macro Reales:**
+  - 100/100 imágenes botánicas de flor real descargadas, optimizadas y procesadas en WebP (`quality=88`, `method=6`) y JPG en la carpeta `img/`.
+  - Dimensiones verificadas: 100% de las imágenes con resolución >= 400x400 y peso >= 15KB.
+- **Ficha Botánica y Linaje Completo:**
+  - 100% de variedades con `id`, `image`, `name`, `aka`, `bank`, `species` ("Índica", "Sativa", "Híbrida"), `thc`, `cbd`, `indicaPct`, `sativaPct` (suma exacta 100%), `floweringDays`, `rating`, `reviewsCount`, `yieldIndoor`, `yieldOutdoor`, `genetics`, `lineage`, `origin`, `dominantTerpene`, `terpenes`, `aroma`, `flavors`, `effects`, `activities`, `description` en español botánico, `visualColor` y `bgPattern`.
+- **Actualización de la Interfaz (`index.html` & `js/app.js`):**
+  - `<title>`, `<meta name="description">`, subtítulo y badges de métricas actualizados a **877 Cepas Catalogadas** y **75 Bancos Oficiales**.
+  - Cajón colapsable (`.hero-banks-list`) actualizado con los 75 bancos en orden alfabético estricto A-Z.
+  - Diccionario de emojis temáticos de bancos ampliado en `js/app.js` (`🌴 Jungle Boys`, `🚀 Super Sativa Seed Club`, `🦁 Reggae Seeds`, `🌊 Clearwater Genetics`, `🔥 LIT Farms`, `🌲 CSI Humboldt`, `🗿 Tiki Madman`, `🐕 Top Dawg Seeds`, `🌸 Bloom Seed Co.`, `🏺 Khalifa Genetics`).
+- **Recompilación de Bundles & Cache-Busting (`?v=211`):**
+  - Ejecutado `python scripts/build_bundle.py` sincronizando `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`.
+  - Cache-busting actualizado a `?v=211` en `index.html`, `admin-dispensario.html` y `guia-cultivo.html`.
 
 ### v210 — Organización Visual Integral, Desaturación y Pulido Estético (`index.html` & `css/styles.css`)
 - **Cabecera Principal Bipolarizada (`.header-main-bar`):** Reestructurada en un nivel superior con logo a la izquierda y utilidades ordenadas en píldoras esmeralda a la derecha (`+18`, Google Auth, Selector de Tema, Modo Sobrio, Dispensario CSC). En pantallas móviles, los textos secundarios se ocultan manteniendo los iconos accesibles y compactos sin desbordamiento.
