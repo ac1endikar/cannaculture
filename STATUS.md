@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-09 14:10  
+> **Ultima actualizacion:** 2026-10-09 17:30  
 > **Servidor local:** Activo en `http://localhost:8080` (ejecutado via `server.py`)  
-> **Commit de cierre:** `feat: crear pagina independiente guia de cultivo interactiva guia-cultivo.html v208`  
-> **Version Cache-Busting:** `?v=208`
+> **Commit de cierre:** `feat(contact): actualizar correo corporativo oficial a contacto@cannacultureapp.com v209`  
+> **Version Cache-Busting:** `?v=209`
 
 ---
 
@@ -14,6 +14,14 @@
 - **Fotografias Botanicas HD:** 100% macro flores reales en fondo oscuro, 0 fondos blancos, 0 colisiones visuales, 0 viñetas artificiales.
 - **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, legibilidad fluida en tarjetas, persistencia híbrida Firebase / Demo y selector multi-idioma reactivo (ES/EN/DE/IT).
 - **Guía de Cultivo (`guia-cultivo.html`):** Página independiente operativa con 5 etapas interactivas y selector ES/EN/DE/IT.
+- **Canal de Contacto Oficial:** Actualizado unificadamente a `contacto@cannacultureapp.com` en toda la plataforma.
+
+### v209 — Actualización Integral de Correo Corporativo Oficial (`contacto@cannacultureapp.com`)
+- **Aviso Legal & Canal de Contacto (`index.html`):** Enlace `mailto:` y texto visible actualizados en la sección de Propiedad Intelectual & Enlaces a `<a href="mailto:contacto@cannacultureapp.com" class="legal-contact-link"><strong>contacto@cannacultureapp.com</strong></a>`.
+- **Ecosistema de Autenticación & Fallbacks (`index.html` & `js/app.js`):** Placeholders de entrada (`login-email`, `reg-email`) y fallbacks de sesión actualizados a `@cannacultureapp.com` para total consistencia de marca.
+- **User-Agent de Scripts de Botánica (`scripts/check_wikimedia.py`):** Correo de contacto del bot botánico actualizado a `contacto@cannacultureapp.com`.
+- **Recompilación de Bundle (`scripts/build_bundle.py`):** Corregido script generador para sincronizar también `bundle-v151.js` y regenerados con éxito `bundle.js`, `bundle-v151.js` y `strains-data.js`.
+- **Cache-Busting Actualizado a v209:** Enlaces y queries en `index.html`, `admin-dispensario.html` y `guia-cultivo.html` actualizados a `?v=209`.
 
 ### v208 — Página Independiente "🌱 Guía de Cultivo" (`guia-cultivo.html`)
 - **Nueva página autónoma:** `guia-cultivo.html` + `css/guia-cultivo.css` + `js/guia-cultivo.js` (fuera del bundle; no requiere `build_bundle.py`). Tema oscuro/esmeralda con los mismos tokens de diseño que `admin-dispensario.css`, tipografías Outfit + Plus Jakarta Sans.

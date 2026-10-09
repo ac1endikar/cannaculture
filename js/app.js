@@ -314,7 +314,7 @@ class CannaAppMAX {
         const profileStatsLogs = document.getElementById('profile-stats-logs');
         
         if (profileName) profileName.textContent = session.name || 'Usuario VIP';
-        if (profileEmail) profileEmail.textContent = session.email || 'usuario@cannacatalog.com';
+        if (profileEmail) profileEmail.textContent = session.email || 'usuario@cannacultureapp.com';
         if (profileStatsLogs) profileStatsLogs.textContent = this.bitacora?.logs?.length || 0;
       } else {
         // Mostrar login/registro
@@ -340,7 +340,7 @@ class CannaAppMAX {
       const userName = email.split('@')[0];
       const sessionData = {
         name: userName.charAt(0).toUpperCase() + userName.slice(1),
-        email: email.includes('@') ? email : `${email}@cannacatalog.com`,
+        email: email.includes('@') ? email : `${email}@cannacultureapp.com`,
         joinedDate: new Date().toLocaleDateString()
       };
 

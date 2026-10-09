@@ -8,7 +8,7 @@ ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
 HEADERS = {
-    'User-Agent': 'CannaCatalogBot/2.0 (botanical educational catalog; contact@cannaculture.local)',
+    'User-Agent': 'CannaCatalogBot/2.0 (botanical educational catalog; contacto@cannacultureapp.com)',
     'Accept': 'application/json',
 }
 

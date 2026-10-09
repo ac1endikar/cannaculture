@@ -42,6 +42,8 @@ with open(bundle_path, 'w', encoding='utf-8') as f:
     f.write(full_content)
 
 bundle_v151_path = os.path.join(js_dir, 'bundle-v151.js')
+with open(bundle_v151_path, 'w', encoding='utf-8') as f:
+    f.write(full_content)
 # Also generate standalone strains-data.js for modules/admin
 with open(os.path.join(js_dir, 'data.js'), 'r', encoding='utf-8') as f:
     data_code = f.read()
