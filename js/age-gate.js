@@ -94,13 +94,17 @@
         });
       }
 
-      // 3. Acciones de los badges de cabecera
-      this.statusBadges.forEach((badge) => {
-        badge.addEventListener('click', (e) => {
-          e.preventDefault();
-          this.promptRevokeConsent();
+      // 3. Acciones de los badges de cabecera (opcionales)
+      if (Array.isArray(this.statusBadges) && this.statusBadges.length > 0) {
+        this.statusBadges.forEach((badge) => {
+          if (badge && typeof badge.addEventListener === 'function') {
+            badge.addEventListener('click', (e) => {
+              e.preventDefault();
+              this.promptRevokeConsent();
+            });
+          }
         });
-      });
+      }
 
       // 4. Botones del diálogo de revocación
       const btnCancelRevoke = document.getElementById('btn-revoke-cancel');
@@ -210,7 +214,9 @@
     }
 
     updateBadges(verified) {
+      if (!Array.isArray(this.statusBadges) || !this.statusBadges.length) return;
       this.statusBadges.forEach((badge) => {
+        if (!badge) return;
         if (verified) {
           badge.style.display = 'inline-flex';
           badge.setAttribute('title', 'Acceso verificado para mayores de 18 años. Clic para revocar consentimiento.');

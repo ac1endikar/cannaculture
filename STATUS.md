@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 18:35  
+> **Ultima actualizacion:** 2026-10-10 18:55  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `refactor(brand): logotipo limpio sin version-tag en cabecera`  
-> **Version Cache-Busting:** `?v=219`
+> **Commit de cierre:** `refactor(ui): eliminación del micro-badge de edad en cabecera y actualización v220`  
+> **Version Cache-Busting:** `?v=220`
 
 ---
 
@@ -11,6 +11,12 @@
 - **Estado del Catalogo:** **877 cepas botanicas 100% unicas y originales, 0 duplicados visuales, plenamente renderizadas.**
 - **75 Bancos Oficiales Incorporados (ampliación de 65 a 75 bancos de élite mundial).**
 - **100 Nuevas Variedades Fotoperiódicas/Feminizadas/Regulares (estrictamente 0 autoflorecientes).**
+- **Optimización Minimalista de Cabecera (v220):**
+  - **Eliminación de Badge Redundante:** Supresión definitiva del micro-badge `#age-status-badge` (`🛡️ 18+`) en la cabecera de `index.html`, `guia-cultivo.html` y `admin-dispensario.html`.
+  - **Limpieza de Estilos:** Eliminadas las reglas CSS asociadas a `.age-status-badge` en `css/age-gate.css` y `#age-status-text` en `css/styles.css`.
+  - **Blindaje en JavaScript:** Inclusión de comprobaciones defensivas en `js/age-gate.js` (`bindUI` y `updateBadges`) garantizando ejecución limpia sin excepciones.
+  - **Modal +18 Fail-Secure Intacto:** El diálogo `<dialog id="age-gate-modal">` y la verificación estricta en memoria volátil de JS permanecen 100% intactos.
+  - **Service Worker & Cachés Sincronizadas (`v220`):** Cachés elevadas a `cannaculture-core-v220`, `cannaculture-images-v220`, `cannaculture-pages-v220`. Queries actualizadas a `?v=220`. Recompilados bundles JS.
 - **Rediseño UI/UX Cabecera Superior Glassmorphism Dark Emerald (v219):**
   - **Identidad de Marca Limpia:** Eliminación total de la etiqueta/badge de versión (`2.0 MAX` / `.version-tag`) y depuración completa de sus reglas CSS; el logo muestra exclusivamente el icono botánico y el texto `CannaCulture`.
   - **Fondo & Acabado:** `rgba(11, 15, 14, 0.85)` con `backdrop-filter: blur(20px) saturate(160%)` y sutil línea perimetral esmeralda.
@@ -27,10 +33,12 @@
 - **Age Verification Gate (+18) en Memoria Volátil Estricta (v218):**
   - **Cero Persistencia en Almacenamiento:** Eliminado por completo `sessionStorage` y `localStorage` para el estado de verificación +18.
   - **Salto Obligatorio en F5 / Recarga:** El consentimiento reside exclusivamente en memoria volátil JS (`window._cannacultureAgeVerified = true`). Al recargar (F5) o abrir nueva pestaña, la memoria se vacía y el modal de +18 salta obligatoriamente sin excepción.
-- **Service Worker & Cache-Busting (`v219`):**
-  - Cachés actualizadas a `cannaculture-core-v219`, `cannaculture-images-v219` y `cannaculture-pages-v219`.
-  - Cache-busting sincronizado a `?v=219` en `index.html`, `guia-cultivo.html`, `admin-dispensario.html` y `sw.js`.
-  - Recompilados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`.
+
+### v220 — Optimización Minimalista de Cabecera: Supresión de Badge Redundante de Mayoría de Edad
+- **Cabecera Despejada:** Eliminación de `#age-status-badge` en las 3 páginas públicas y privadas (`index.html`, `guia-cultivo.html`, `admin-dispensario.html`).
+- **Limpieza de Estilos CSS:** Eliminación de clases no utilizadas en `css/age-gate.css` y `css/styles.css`.
+- **Compatibilidad Defensiva JS:** Null-checks en `js/age-gate.js` previenen excepciones en tiempo de ejecución.
+- **Cache-Busting Sincronizado:** Subida a `?v=220` y actualización del Service Worker. Recompilados bundles con `scripts/build_bundle.py`.
 
 ### v219 — Rediseño Premium de Cabecera Superior Glassmorphism Dark Emerald
 - **Cluster de Controles Unificado:** Eliminación de pastillas multicolores discordantes en favor de una paleta botánica AMOLED armonizada.
