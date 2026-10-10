@@ -4,10 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Panel de Gestión del Dispensario CSC • CannaCulture 2.0 ULTRA</title>
+  <title>Panel de Gestión de Dispensario CSC • CannaCulture</title>
   <meta name="description"
-    content="Panel de administración y control de mostrador para Clubes Sociales de Cannabis (CSC). Gestión de carta activa, disponibilidad en barra y cuotas de aportación por niveles de socio (€/g).">
+    content="Sistema de gestión de mostrador, carta activa botánica y cuotas de aportación (€/g) para Clubes Sociales de Cannabis (CSC).">
+  <link rel="canonical" href="https://cannacultureapp.com/admin-dispensario.html">
+  <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#0B0F0E">
+
+  <!-- ======================= OPEN GRAPH (COMPARTICIÓN PRIVADA) ======================= -->
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CannaCulture">
+  <meta property="og:title" content="Panel de Dispensario CSC • CannaCulture">
+  <meta property="og:description"
+    content="Gestión de carta activa, mostrador y cuotas de aportación de socio (€/g).">
+  <meta property="og:url" content="https://cannacultureapp.com/admin-dispensario.html">
+  <meta property="og:image" content="https://cannacultureapp.com/assets/img/og-cannaculture-1200x630.jpg">
+  <meta property="og:image:secure_url" content="https://cannacultureapp.com/assets/img/og-cannaculture-1200x630.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- ======================= TWITTER CARDS ======================= -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Panel de Dispensario CSC • CannaCulture">
+  <meta name="twitter:description"
+    content="Gestión de carta activa botánica y mostrador para clubes registrados.">
+  <meta name="twitter:image" content="https://cannacultureapp.com/assets/img/og-cannaculture-1200x630.jpg">
 
   <!-- Prevención de caché en panel de administración -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -22,7 +45,7 @@
     rel="stylesheet">
 
   <!-- Hoja de Estilos del Dispensario CSC -->
-  <link rel="stylesheet" href="css/admin-dispensario.css?v=211">
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=212">
 </head>
 
 <body>
@@ -234,7 +257,7 @@
        Carga de Scripts: Datos Maestros (877 Cepas) y Lógica Modular
        ====================================================================== -->
   <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
-  <script src="js/strains-data.js?v=211"></script>
+  <script src="js/strains-data.js?v=212"></script>
 
   <!-- 2. Firebase SDK & Configuración (Modo CDN Compatibilidad) -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -243,7 +266,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- 3. Lógica del Panel de Dispensario CSC -->
-  <script src="js/admin-dispensario.js?v=211"></script>
+  <script src="js/admin-dispensario.js?v=212"></script>
 </body>
 
 </html>

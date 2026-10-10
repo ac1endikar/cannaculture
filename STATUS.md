@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-09 21:30  
+> **Ultima actualizacion:** 2026-10-10 11:30  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(catalog): incorporar 10 nuevos bancos de elite y 100 variedades fotoperiodicas v211`  
-> **Version Cache-Busting:** `?v=211`
+> **Commit de cierre:** `feat(seo): infraestructura seo, open graph, twitter cards, robots.txt y sitemap v212`  
+> **Version Cache-Busting:** `?v=212`
 
 ---
 
@@ -15,6 +15,24 @@
 - **Fotografias Botanicas HD:** 100% macro flores reales descargadas localmente en `img/` como `.webp` y `.jpg`, resolución mínima >= 400x400 (hasta 2500px), 0 colisiones visuales, 0 fondos blancos, 0 ilustraciones.
 - **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, catálogo de 877 cepas y selector multi-idioma reactivo (ES/EN/DE/IT).
 - **Guía de Cultivo (`guia-cultivo.html`):** Página independiente operativa con 5 etapas interactivas y selector ES/EN/DE/IT.
+- **Infraestructura SEO & Redes Sociales (v212):** Desplegada con `robots.txt`, `sitemap.xml` multilingüe, metadatos Open Graph, Twitter Cards, Schemas JSON-LD y banner oficial 1200x630px.
+
+### v212 — Infraestructura Completa de SEO Técnico, Social Meta (Open Graph & Twitter) y Sitemap Canónico (`cannacultureapp.com`)
+- **Metadatos Técnicos SEO & Canónicos (`index.html`, `guia-cultivo.html`, `admin-dispensario.html`):**
+  - **`index.html`:** Título y descripción optimizados reflejando las 877 cepas y 75 bancos de semillas mundiales, `<link rel="canonical" href="https://cannacultureapp.com/">`, directivas robots `index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1`, Open Graph y Twitter Cards completos con imagen 1200x630, y Schema JSON-LD estructurado (`WebSite` y `Organization`).
+  - **`guia-cultivo.html`:** Canonical `https://cannacultureapp.com/guia-cultivo.html`, meta description de las 5 etapas de cultivo, Open Graph de tipo `article`, Twitter Card `summary_large_image`, y Schema JSON-LD (`HowTo`) estructurado con los 5 pasos para Rich Snippets en Google.
+  - **`admin-dispensario.html`:** Configurado como panel privado con directiva de seguridad y SEO `<meta name="robots" content="noindex, nofollow">`, canonical a su URL y metadata Open Graph/Twitter para visualización estética al compartirse de forma privada.
+- **Banner Oficial Open Graph de 1200x630px (`assets/img/og-cannaculture-1200x630.jpg` e `img/og-cannaculture-1200x630.jpg`):**
+  - Creado script determinista `scripts/generate_og_banner.py` usando Pillow.
+  - Diseño dark botánico ultra-premium (`#0B0F0E`) con resplandores esmeralda (`#10B981`), composición de fotografía macro HD (KMintz / Blue Dream), píldora `2.0 ULTRA`, 4 tarjetas de estadísticas con iconos vectoriales nítidos (`877 Variedades`, `75 Bancos Élite`, `8 Terpenos Clave`, `Sommelier IA María`) y footer de marca.
+  - Exportado en JPEG optimizado de 147.6 KB con ratio 1.91:1 exacto (1200×630 px).
+- **Archivos de Indexación en la Raíz:**
+  - **`robots.txt`:** Directivas RFC 9309 permitiendo páginas y recursos públicos (`/`, `/css/`, `/js/`, `/img/`, `/assets/`, `/guia-cultivo.html`), bloqueando el panel interno `/admin-dispensario.html` y carpetas de desarrollo (`/scripts/`, `/scratch/`, `/docs/`), y declarando `Sitemap: https://cannacultureapp.com/sitemap.xml` y `Host: https://cannacultureapp.com`.
+  - **`sitemap.xml`:** XML estándar sitemaps.org 0.9 con namespace XHTML para internacionalización (`hreflang` para ES, EN, DE, IT y x-default), prioridades (1.0 para Home, 0.8 para Guía de Cultivo) y fechas actualizadas ISO 8601.
+- **Recompilación de Bundle & Cache-Busting (`?v=212`):**
+  - Sincronizados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js` mediante `python scripts/build_bundle.py`.
+  - Cache-busting actualizado a `?v=212` en `index.html`, `guia-cultivo.html` y `admin-dispensario.html`.
+
 
 ### v211 — Expansión Botánica Mayor: 10 Nuevos Bancos de Élite & 100 Cepas Fotoperiódicas (`877 Cepas · 75 Bancos`)
 - **Incorporación de 10 Bancos de Culto Mundial (10 cepas de élite por banco):**

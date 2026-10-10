@@ -1,0 +1,19 @@
+# robots.txt para https://cannacultureapp.com
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /img/
+Allow: /assets/
+Allow: /guia-cultivo.html
+
+# Exclusión de herramientas administrativas y recursos internos
+Disallow: /admin-dispensario.html
+Disallow: /scripts/
+Disallow: /scratch/
+Disallow: /docs/
+Disallow: /*.json$
+
+# Declaración canónica del Sitemap y Host
+Sitemap: https://cannacultureapp.com/sitemap.xml
+Host: https://cannacultureapp.com
