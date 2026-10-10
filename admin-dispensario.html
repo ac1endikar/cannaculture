@@ -49,7 +49,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
 
   <!-- Hoja de Estilos del Dispensario CSC -->
-  <link rel="stylesheet" href="css/admin-dispensario.css?v=215">
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=216">
 </head>
 
 <body>
@@ -135,93 +135,313 @@
     </div>
 
     <!-- ======================================================================
-         Layout Principal Dividido: Menú Activo (Izq) + Editor de Cuotas (Der)
+         Navegación por Pestañas Principales del Dispensario CSC (v216)
          ====================================================================== -->
-    <div class="dashboard-layout">
-      <!-- COLUMNA IZQUIERDA: Buscador y Carta Activa -->
-      <section class="menu-master-column">
-        
-        <!-- Tarjeta de Búsqueda del Catálogo Maestro (777 Cepas) -->
-        <div class="catalog-search-card">
-          <div class="search-card-header">
-            <div class="search-title-group">
-              <span>🔎</span>
-              <h2>Incorporar Variedades del Catálogo Maestro</h2>
-              <span class="badge-count">777 Cepas HD</span>
+    <nav class="dispensary-main-tabs" aria-label="Secciones del Dispensario">
+      <button type="button" class="main-tab-btn active" data-tab="tab-menu" id="tab-btn-menu">
+        <span>🌿</span>
+        <span>Carta & Menú en Barra</span>
+      </button>
+      <button type="button" class="main-tab-btn" data-tab="tab-pos" id="tab-btn-pos">
+        <span>⚖️</span>
+        <span>Terminal Mostrador (POS)</span>
+        <span class="tab-badge-pulse" id="pos-active-badge">EN VIVO</span>
+      </button>
+      <button type="button" class="main-tab-btn" data-tab="tab-arqueo" id="tab-btn-arqueo">
+        <span>📊</span>
+        <span>Arqueo & Movimientos</span>
+        <span class="tab-badge-pill" id="badge-total-moves">0 hoy</span>
+      </button>
+    </nav>
+
+    <!-- ======================================================================
+         PESTAÑA 1: CARTA & MENÚ ACTIVO EN BARRA
+         ====================================================================== -->
+    <div id="view-tab-menu" class="dispensary-tab-view active">
+      <div class="dashboard-layout">
+        <!-- COLUMNA IZQUIERDA: Buscador y Carta Activa -->
+        <section class="menu-master-column">
+          
+          <!-- Tarjeta de Búsqueda del Catálogo Maestro (877 Cepas & 75 Bancos) -->
+          <div class="catalog-search-card">
+            <div class="search-card-header">
+              <div class="search-title-group">
+                <span>🔎</span>
+                <h2>Incorporar Variedades del Catálogo Maestro</h2>
+                <span class="badge-count">877 Cepas HD · 75 Bancos</span>
+              </div>
             </div>
+            
+            <div class="search-input-wrapper">
+              <span class="search-icon-inside">🔍</span>
+              <input type="text" 
+                     id="catalog-search-input" 
+                     class="catalog-search-input" 
+                     placeholder="Buscar entre 877 cepas por nombre, linaje o terpeno (ej. Gelato, Amnesia, Kmintz)..." 
+                     autocomplete="off" />
+
+              <select id="catalog-bank-filter" class="catalog-bank-filter" title="Filtrar por Banco Criador">
+                <option value="all">🏛️ Todos los Bancos (75)</option>
+              </select>
+              
+              <!-- Resultados flotantes de autocompletado -->
+              <div id="search-results-dropdown" class="search-results-dropdown"></div>
+            </div>
+          </div>
+
+          <!-- Barra de Herramientas y Filtros del Menú Activo -->
+          <div class="menu-toolbar">
+            <div class="category-tabs">
+              <button class="cat-tab-btn active" data-filter="all">🌿 Todas</button>
+              <button class="cat-tab-btn" data-filter="flores">🌸 Flores / Cogollos</button>
+              <button class="cat-tab-btn" data-filter="extracciones">🍯 Extracciones & Rosin</button>
+              <button class="cat-tab-btn" data-filter="comestibles">🍪 Comestibles</button>
+            </div>
+
+            <div class="toolbar-stats">
+              <div class="stat-pill">
+                <span>En Carta:</span>
+                <strong id="stat-total-menu">0</strong>
+              </div>
+              <div class="stat-pill" style="color: var(--primary-light);">
+                <span>Disponibles:</span>
+                <strong id="stat-avail-menu">0</strong>
+              </div>
+              <div class="stat-pill" style="color: var(--text-dim);">
+                <span>Agotadas:</span>
+                <strong id="stat-out-menu">0</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid de Tarjetas del Menú en Mostrador -->
+          <div id="strains-menu-grid" class="strains-menu-grid">
+            <!-- Renderizado dinámico desde admin-dispensario.js -->
+          </div>
+
+        </section>
+
+        <!-- COLUMNA DERECHA: Editor de Aportaciones & Lotes -->
+        <aside id="editor-panel-card" class="editor-panel-card">
+          <div class="editor-header">
+            <h2>
+              <span>⚖️</span>
+              <span>Aportaciones & Lote</span>
+            </h2>
+            <span style="font-size: 0.72rem; color: var(--primary-light); font-weight: 700; background: rgba(16,185,129,0.1); padding: 4px 8px; border-radius: 6px;">
+              CONFIGURACIÓN CSC
+            </span>
+          </div>
+
+          <div id="editor-panel-body">
+            <!-- Formulario inyectado dinámicamente -->
+          </div>
+
+          <!-- Botones de Utilidad Rápida -->
+          <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; gap: 8px;">
+            <button id="btn-export-json" class="btn-touch btn-secondary" style="flex: 1; font-size: 0.78rem; min-height: 38px;">
+              📥 Exportar Carta (JSON)
+            </button>
+            <button id="btn-reset-demo" class="btn-touch btn-secondary" style="font-size: 0.78rem; min-height: 38px; color: var(--text-dim);" title="Restablecer variedades sugeridas">
+              🔄 Demo
+            </button>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         PESTAÑA 2: TERMINAL MOSTRADOR DE DISPENSACIÓN (POS CSC)
+         ====================================================================== -->
+    <div id="view-tab-pos" class="dispensary-tab-view">
+      <div class="pos-layout">
+        <!-- Columna Izquierda: Identificación de Socio & Variedad en Barra -->
+        <section class="pos-panel-card pos-selection-panel">
+          <div class="pos-panel-header">
+            <h3><span>👤</span> <span>1. Identificación del Socio</span></h3>
+            <button type="button" class="btn-touch btn-secondary btn-sm" id="btn-quick-new-member" title="Registrar nuevo socio en el club">
+              ➕ Nuevo Socio
+            </button>
           </div>
           
-          <div class="search-input-wrapper">
-            <span class="search-icon-inside">🔍</span>
-            <input type="text" 
-                   id="catalog-search-input" 
-                   class="catalog-search-input" 
-                   placeholder="Escribe el nombre de la cepa, banco o linaje (ej. Gelato, Amnesia, Kmintz, Jealousy)..." 
-                   autocomplete="off" />
-            
-            <!-- Resultados flotantes de autocompletado -->
-            <div id="search-results-dropdown" class="search-results-dropdown"></div>
-          </div>
-        </div>
-
-        <!-- Barra de Herramientas y Filtros del Menú Activo -->
-        <div class="menu-toolbar">
-          <div class="category-tabs">
-            <button class="cat-tab-btn active" data-filter="all">🌿 Todas</button>
-            <button class="cat-tab-btn" data-filter="flores">🌸 Flores / Cogollos</button>
-            <button class="cat-tab-btn" data-filter="extracciones">🍯 Extracciones & Rosin</button>
-            <button class="cat-tab-btn" data-filter="comestibles">🍪 Comestibles</button>
+          <div class="pos-member-select-wrapper">
+            <label for="pos-member-select" class="form-label">Seleccionar Socio Registrado</label>
+            <select id="pos-member-select" class="form-control pos-select">
+              <!-- Opciones dinámicas de socios -->
+            </select>
           </div>
 
-          <div class="toolbar-stats">
-            <div class="stat-pill">
-              <span>En Carta:</span>
-              <strong id="stat-total-menu">0</strong>
+          <div id="pos-member-card" class="pos-member-info-card">
+            <!-- Ficha del socio: Número, Alias, Nivel estatutario, Límite mensual restante -->
+          </div>
+
+          <div class="pos-panel-header" style="margin-top: 26px;">
+            <h3><span>🌿</span> <span>2. Variedad de la Carta Activa</span></h3>
+            <span class="badge-count" id="pos-avail-strains-count">0 disponibles</span>
+          </div>
+
+          <div class="pos-strain-select-wrapper">
+            <label for="pos-strain-select" class="form-label">Variedad en Mostrador</label>
+            <select id="pos-strain-select" class="form-control pos-select">
+              <!-- Cepas activas en la carta -->
+            </select>
+          </div>
+
+          <div id="pos-strain-preview-card" class="pos-strain-preview-card">
+            <!-- Resumen de cepa seleccionada: Foto, THC, Terpeno, Stock en Bote -->
+          </div>
+        </section>
+
+        <!-- Columna Derecha: Báscula Digital & Ticket de Dispensación -->
+        <section class="pos-panel-card pos-weighing-panel">
+          <div class="pos-panel-header">
+            <h3><span>⚖️</span> <span>3. Pesaje & Cálculo de Aportación</span></h3>
+            <span class="pos-live-clock" id="pos-live-clock">--:--:--</span>
+          </div>
+
+          <!-- Pantalla Digital de Báscula -->
+          <div class="pos-scale-display">
+            <div class="scale-label">PESO REGISTRADO EN BÁSCULA</div>
+            <div class="scale-readout">
+              <span id="pos-scale-weight">0.00</span>
+              <span class="scale-unit">g</span>
             </div>
-            <div class="stat-pill" style="color: var(--primary-light);">
-              <span>Disponibles:</span>
-              <strong id="stat-avail-menu">0</strong>
-            </div>
-            <div class="stat-pill" style="color: var(--text-dim);">
-              <span>Agotadas:</span>
-              <strong id="stat-out-menu">0</strong>
+            <div class="scale-subline">
+              <span id="pos-applied-rate-text">Cuota aplicada: 0.00 €/g</span>
+              <span id="pos-tier-name-badge" class="pos-tier-badge">ESTÁNDAR</span>
             </div>
           </div>
-        </div>
 
-        <!-- Grid de Tarjetas del Menú en Mostrador -->
-        <div id="strains-menu-grid" class="strains-menu-grid">
-          <!-- Renderizado dinámico desde admin-dispensario.js -->
-        </div>
+          <!-- Botonera de Pesaje Rápido -->
+          <div class="pos-weight-buttons-grid">
+            <button type="button" class="btn-weight-preset" data-weight="0.5">+0.5g</button>
+            <button type="button" class="btn-weight-preset" data-weight="1.0">+1.0g</button>
+            <button type="button" class="btn-weight-preset" data-weight="2.0">+2.0g</button>
+            <button type="button" class="btn-weight-preset" data-weight="5.0">+5.0g</button>
+            <button type="button" class="btn-weight-preset" data-weight="10.0">+10.0g</button>
+            <button type="button" class="btn-weight-preset btn-weight-clear" id="btn-pos-clear-weight">🧹 Borrar</button>
+          </div>
 
-      </section>
+          <!-- Entrada Numérica Manual / Báscula -->
+          <div class="form-group" style="margin-top: 16px;">
+            <label for="pos-manual-weight-input" class="form-label">Ajuste Decimal Exacto (g)</label>
+            <div class="form-input-currency">
+              <input type="number" step="0.05" min="0" max="100" id="pos-manual-weight-input" class="form-control" placeholder="0.00" value="0.00" />
+              <span class="unit-symbol">g</span>
+            </div>
+          </div>
 
-      <!-- COLUMNA DERECHA: Editor de Aportaciones & Lotes -->
-      <aside id="editor-panel-card" class="editor-panel-card">
-        <div class="editor-header">
-          <h2>
-            <span>⚖️</span>
-            <span>Aportaciones & Lote</span>
-          </h2>
-          <span style="font-size: 0.72rem; color: var(--primary-light); font-weight: 700; background: rgba(16,185,129,0.1); padding: 4px 8px; border-radius: 6px;">
-            CONFIGURACIÓN CSC
-          </span>
-        </div>
+          <!-- Caja de Aportación Total -->
+          <div class="pos-total-box">
+            <div class="pos-total-label">APORTACIÓN TOTAL ESTIMADA</div>
+            <div class="pos-total-amount">
+              <span id="pos-total-euros">0.00</span>
+              <span class="currency-symbol">€</span>
+            </div>
+            <div class="pos-total-formula" id="pos-total-formula">
+              0.00 g × 0.00 €/g = 0.00 €
+            </div>
+          </div>
 
-        <div id="editor-panel-body">
-          <!-- Formulario inyectado dinámicamente -->
-        </div>
+          <!-- Mensaje de Validación / Alerta -->
+          <div id="pos-validation-alert" class="pos-validation-alert" style="display: none;"></div>
 
-        <!-- Botones de Utilidad Rápida -->
-        <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; gap: 8px;">
-          <button id="btn-export-json" class="btn-touch btn-secondary" style="flex: 1; font-size: 0.78rem; min-height: 38px;">
-            📥 Exportar Carta (JSON)
+          <!-- Botón de Confirmación -->
+          <button type="button" id="btn-pos-dispense" class="pos-dispense-btn" disabled>
+            <span>✅</span>
+            <span>Dispensar & Registrar Ticket</span>
           </button>
-          <button id="btn-reset-demo" class="btn-touch btn-secondary" style="font-size: 0.78rem; min-height: 38px; color: var(--text-dim);" title="Restablecer variedades sugeridas">
-            🔄 Demo
-          </button>
+        </section>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         PESTAÑA 3: ARQUEO DE CAJA & MOVIMIENTOS DEL DISPENSARIO
+         ====================================================================== -->
+    <div id="view-tab-arqueo" class="dispensary-tab-view">
+      <div class="arqueo-layout">
+        <!-- Fila Superior de Métricas de Jornada -->
+        <div class="arqueo-stats-grid">
+          <div class="stat-summary-card">
+            <div class="stat-summary-icon" style="background: rgba(16,185,129,0.15); color: #34D399;">⚖️</div>
+            <div class="stat-summary-info">
+              <div class="stat-summary-title">Gramos Dispensados Hoy</div>
+              <div class="stat-summary-value" id="arqueo-total-grams">0.00 g</div>
+            </div>
+          </div>
+          <div class="stat-summary-card">
+            <div class="stat-summary-icon" style="background: rgba(245,158,11,0.15); color: #FCD34D;">💶</div>
+            <div class="stat-summary-info">
+              <div class="stat-summary-title">Aportaciones en Caja Hoy</div>
+              <div class="stat-summary-value" id="arqueo-total-euros">0.00 €</div>
+            </div>
+          </div>
+          <div class="stat-summary-card">
+            <div class="stat-summary-icon" style="background: rgba(59,130,246,0.15); color: #93C5FD;">👥</div>
+            <div class="stat-summary-info">
+              <div class="stat-summary-title">Intervenciones Registradas</div>
+              <div class="stat-summary-value" id="arqueo-total-tickets">0 tickets</div>
+            </div>
+          </div>
+          <div class="stat-summary-card">
+            <div class="stat-summary-icon" style="background: rgba(239,68,68,0.15); color: #F87171;">⚠️</div>
+            <div class="stat-summary-info">
+              <div class="stat-summary-title">Alertas de Stock Bajo (&lt;10g)</div>
+              <div class="stat-summary-value" id="arqueo-low-stock-count">0 variedades</div>
+            </div>
+          </div>
         </div>
-      </aside>
+
+        <!-- Panel de Alertas de Stock Bajo -->
+        <div id="arqueo-low-stock-box" class="arqueo-low-stock-box" style="display: none;">
+          <div class="low-stock-header">
+            <h4>⚠️ Alerta de Reposición Urgente en Mostrador</h4>
+            <span>Variedades con menos de 10 gramos disponibles en barra:</span>
+          </div>
+          <div id="arqueo-low-stock-list" class="low-stock-items-row"></div>
+        </div>
+
+        <!-- Tabla del Libro Diario de Dispensación -->
+        <div class="arqueo-table-panel">
+          <div class="table-panel-header">
+            <div class="table-title-group">
+              <h3><span>📋</span> <span>Libro Cronológico de Movimientos de Dispensario</span></h3>
+              <span class="table-subtitle">Registro legal de previsiones y aportaciones estatutarias</span>
+            </div>
+            <div class="table-actions-group">
+              <button type="button" class="btn-touch btn-secondary" id="btn-export-csv" title="Descargar registro en CSV">
+                📥 Exportar CSV
+              </button>
+              <button type="button" class="btn-touch btn-secondary" id="btn-print-arqueo" title="Imprimir informe de arqueo">
+                🖨️ Imprimir Acta
+              </button>
+              <button type="button" class="btn-touch btn-danger-soft" id="btn-clear-log" title="Reiniciar libro de movimientos">
+                🧹 Limpiar
+              </button>
+            </div>
+          </div>
+
+          <div class="movements-table-wrapper">
+            <table class="movements-table" id="movements-table">
+              <thead>
+                <tr>
+                  <th>Hora</th>
+                  <th>Socio</th>
+                  <th>Nivel</th>
+                  <th>Variedad</th>
+                  <th>Categoría</th>
+                  <th>Pesaje</th>
+                  <th>Cuota €/g</th>
+                  <th>Aportación €</th>
+                </tr>
+              </thead>
+              <tbody id="movements-table-body">
+                <!-- Filas dinámicas -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -230,6 +450,41 @@
     <span>✅</span>
     <span>Cambios sincronizados en el dispensario.</span>
   </div>
+
+  <!-- Modal Rápido de Alta de Socio CSC -->
+  <dialog id="modal-new-member" class="kiosk-modal-dialog">
+    <div class="kiosk-modal-container" style="max-width: 500px;">
+      <button id="btn-close-new-member" class="kiosk-modal-close-btn" title="Cerrar">✕</button>
+      <div class="modal-member-body" style="padding: 24px;">
+        <h3 style="font-family:'Outfit'; font-size:1.3rem; margin-bottom:16px; color:#fff;">👤 Alta Rápida de Socio</h3>
+        <form id="form-new-member" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="nm-id">Número de Socio</label>
+            <input type="text" id="nm-id" class="form-control" placeholder="Ej. 1450" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="nm-alias">Nombre / Alias</label>
+            <input type="text" id="nm-alias" class="form-control" placeholder="Ej. David R." required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="nm-tier">Nivel Estatutario</label>
+            <select id="nm-tier" class="form-control">
+              <option value="std">Estándar (Socio General)</option>
+              <option value="colab">Colaborador (Socio Activo -10%)</option>
+              <option value="terap">Terapéutico (Socio Médico -25%)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="nm-limit">Límite Mensual Estatutario (Gramos)</label>
+            <input type="number" step="5" min="10" max="150" id="nm-limit" class="form-control" value="60" required />
+          </div>
+          <button type="button" id="btn-save-new-member" class="editor-save-btn" style="margin-top:16px;">
+            💾 Registrar Socio en Club
+          </button>
+        </form>
+      </div>
+    </div>
+  </dialog>
 
   <!-- ======================================================================
        Modal de Ficha Técnica Botánica & Aportaciones (Modo Kiosco / Mostrador)
@@ -261,7 +516,7 @@
        Carga de Scripts: Datos Maestros (877 Cepas) y Lógica Modular
        ====================================================================== -->
   <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
-  <script src="js/strains-data.js?v=215"></script>
+  <script src="js/strains-data.js?v=216"></script>
 
   <!-- 2. Firebase SDK & Configuración (Modo CDN Compatibilidad) -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -270,7 +525,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- 3. Lógica del Panel de Dispensario CSC -->
-  <script src="js/admin-dispensario.js?v=215"></script>
+  <script src="js/admin-dispensario.js?v=216"></script>
 </body>
 
 </html>

@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 12:50  
+> **Ultima actualizacion:** 2026-10-10 13:15  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(ai): motor sommelier maria 2.0 triad recommendations y scoring 877 cepas v215`  
-> **Version Cache-Busting:** `?v=215`
+> **Commit de cierre:** `feat(dispensary): terminal pos csc pesaje automatico socios arqueo y catalogo 877 cepas v216`  
+> **Version Cache-Busting:** `?v=216`
 
 ---
 
@@ -11,7 +11,44 @@
 - **Estado del Catalogo:** **877 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
 - **75 Bancos Oficiales Incorporados (ampliación de 65 a 75 bancos de élite mundial).**
 - **100 Nuevas Variedades Fotoperiódicas/Feminizadas/Regulares (estrictamente 0 autoflorecientes).**
+- **CannaDispensario POS 2.0 (v216):** Terminal táctil de barra para Clubes Sociales de Cannabis (CSC) plenamente operativo en `admin-dispensario.html`:
+  - 3 Pestañas de trabajo: `🌿 Carta & Menú en Barra`, `⚖️ Terminal Mostrador (POS)` y `📊 Arqueo & Movimientos`.
+  - Integración con el catálogo de 877 cepas y selector de los 75 bancos con pre-indexación en memoria `_searchIndex`.
+  - Terminal de mostrador con selector ágil de socio, control de límite mensual estatutario, báscula digital con pesaje rápido (+0.5g a +10g), cálculo en tiempo real de aportación (€) según cuota del socio, descuento de stock en bote y guardado de tickets.
+  - Arqueo diario con métricas (g totales, € recaudados, tickets), alertas de reposición de stock bajo (<10g) y exportación a CSV / Acta imprimible.
 - **Sommelier IA María 2.0 (v215):** Motor de puntuación multidimensional (`SommelierScoringEngine`) evaluando el catálogo íntegro de 877 cepas y 75 bancos en tiempo real. Tríada de recomendaciones enriquecidas (`🥇 Top Match`, `🧬 Alternativa Terpénica`, `⚖️ Opción Equilibrada`) con mini-fichas interactivas, macro fotos, THC, terpenos y navegación contextual cruzada al catálogo y fichas botánicas.
+- **Cobertura Linaje/Genetica:** 877/877 cepas (100%).
+- **Fotografias Botanicas HD:** 100% macro flores reales descargadas localmente en `img/` como `.webp` y `.jpg`, resolución mínima >= 400x400 (hasta 2500px), 0 colisiones visuales, 0 fondos blancos, 0 ilustraciones.
+- **Optimización de Rendimiento & Core Web Vitals (v214):** Filtrado y renderizado instantáneo (<8ms) con renderizado por lotes de 24 tarjetas mediante IntersectionObserver, pre-indexación en memoria `_searchIndex`, debounce adaptativo de 110ms sincronizado con `requestAnimationFrame`, priorización LCP (`fetchpriority="high"`, `loading="eager"`), CLS = 0.000 y skeleton shimmer placeholder.
+- **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, catálogo de 877 cepas y selector multi-idioma reactivo (ES/EN/DE/IT).
+- **Guía de Cultivo (`guia-cultivo.html`):** Página independiente operativa con 5 etapas interactivas y selector ES/EN/DE/IT.
+- **Infraestructura SEO & Redes Sociales (v212):** Desplegada con `robots.txt`, `sitemap.xml` multilingüe, metadatos Open Graph, Twitter Cards, Schemas JSON-LD y banner oficial 1200x630px.
+- **Infraestructura PWA & Soporte Offline (v213):** Aplicación instalable con `manifest.webmanifest`, `sw.js` (3 capas de caché + LRU de imágenes), `offline.html`, iconos de alta resolución estándar y maskables, botón de instalación en cabecera y soporte iOS/Safari.
+
+### v216 — CannaDispensario POS 2.0, Terminal de Barra CSC, Arqueo Diario y Sincronización 877 Cepas (`cannacultureapp.com`)
+- **Arquitectura de 3 Pestañas Principales en Dispensario (`admin-dispensario.html`):**
+  - `🌿 Carta & Menú en Barra`: Vista de administración de variedades activas, stock en bote, notas de cata y cuotas por nivel de socio (`tierStd`, `tierColab`, `tierTerap`).
+  - `⚖️ Terminal Mostrador (POS)`: Mostrador táctil de barra para dispensación en directo frente al socio.
+  - `📊 Arqueo & Movimientos`: Panel de control contable, estadísticas del día, alertas de botes casi vacíos y libro cronológico de dispensación.
+- **Sincronización con 877 Cepas y 75 Bancos Criadores:**
+  - Pre-indexación en memoria `_searchIndex` O(1) con normalización de diacríticos para búsqueda en tiempo real (<2ms).
+  - Selector desplegable con los 75 bancos oficiales de élite para explorar el catálogo y añadir variedades con 1 clic heredando foto macro, THC, terpenos y linaje.
+  - Fórmulas proporcionales para el cálculo sugerido de cuotas de socio (-10% Colaborador, -25% Terapéutico).
+- **Terminal Mostrador (POS CSC):**
+  - **Identificación de Socio:** Base de socios estatutarios en `localStorage` (`cannaculture_csc_members`) con visualización de avatar, número de socio, alias, nivel estatutario y barra de progreso de consumo mensual vs límite estatutario. Modal interactivo para alta rápida de nuevos socios.
+  - **Báscula Digital Integrada:** Botonera rápida táctil (+0.5g, +1g, +2g, +5g, +10g, Borrar) y campo decimal exacto para sincronización con báscula física de precisión.
+  - **Cálculo en Tiempo Real:** Aplicación automática de la cuota según el nivel del socio y cálculo instantáneo del total en euros (`g × €/g = Total €`).
+  - **Validaciones de Seguridad:** Bloqueo automático ante excesos del límite mensual estatutario restante del socio o ante falta de stock disponible en el bote.
+  - **Descuento y Registro:** Descuento instantáneo de gramos del bote, actualización del consumo del socio y guardado del ticket en el libro de movimientos.
+- **Arqueo de Caja & Exportación de Datos:**
+  - Cuadros de mando: Total gramos dispensados hoy, total aportaciones recibidas en caja (€), recuento de tickets y alerta de stock bajo (< 10g).
+  - Libro cronológico de dispensaciones con filtrado diario y tabla detallada.
+  - **Exportación CSV:** Descarga directa de archivo `.csv` formateado con UTF-8 BOM para apertura perfecta en Excel.
+  - **Acta Imprimible:** Optimización para `@media print` para imprimir actas oficiales de cierre de dispensario para asambleas y libros de actas del club.
+- **Service Worker & Cache-Busting (`v216`):**
+  - Cachés de Service Worker actualizadas a `cannaculture-core-v216`, `cannaculture-images-v216` y `cannaculture-pages-v216`.
+  - Cache-busting sincronizado a `?v=216` en `index.html`, `guia-cultivo.html` y `admin-dispensario.html`.
+  - Recompilados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`.
 - **Cobertura Linaje/Genetica:** 877/877 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales descargadas localmente en `img/` como `.webp` y `.jpg`, resolución mínima >= 400x400 (hasta 2500px), 0 colisiones visuales, 0 fondos blancos, 0 ilustraciones.
 - **Optimización de Rendimiento & Core Web Vitals (v214):** Filtrado y renderizado instantáneo (<8ms) con renderizado por lotes de 24 tarjetas mediante IntersectionObserver, pre-indexación en memoria `_searchIndex`, debounce adaptativo de 110ms sincronizado con `requestAnimationFrame`, priorización LCP (`fetchpriority="high"`, `loading="eager"`), CLS = 0.000 y skeleton shimmer placeholder.

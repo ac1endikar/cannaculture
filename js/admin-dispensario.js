@@ -10,6 +10,8 @@
   // Claves de almacenamiento local y caché
   const STORAGE_KEY = 'cannaculture_csc_menu';
   const CLUB_CONFIG_KEY = 'cannaculture_csc_club_config';
+  const MEMBERS_STORAGE_KEY = 'cannaculture_csc_members';
+  const DISPENSE_LOG_KEY = 'cannaculture_csc_dispense_log';
 
   // Configuración por defecto del club
   const DEFAULT_CLUB_CONFIG = {
@@ -19,6 +21,14 @@
     currency: "€",
     kioskTitle: "Carta del Dispensario • Consumo Compartido"
   };
+
+  // Socios estatutarios iniciales de demostración
+  const DEFAULT_MEMBERS = [
+    { id: "1042", alias: "Alex M.", tier: "colab", limitGrams: 60, consumedGrams: 14.50 },
+    { id: "0831", alias: "Laura G.", tier: "std", limitGrams: 40, consumedGrams: 8.00 },
+    { id: "0512", alias: "Carlos R. (Dr.)", tier: "terap", limitGrams: 90, consumedGrams: 22.00 },
+    { id: "1205", alias: "Marc V.", tier: "std", limitGrams: 60, consumedGrams: 0.00 }
+  ];
 
   // ==========================================================================
   // Diccionario Internacional Multi-Idioma Reactivo (ES / EN / DE / IT)
@@ -563,7 +573,7 @@
     }
   ];
 
-  // Estado reactivo de la aplicación
+  // Estado reactivo de la aplicación (v216)
   let state = {
     menu: [],
     clubConfig: { ...DEFAULT_CLUB_CONFIG },
@@ -572,13 +582,44 @@
     isKioskMode: false,
     strainsDb: [],
     kioskLang: localStorage.getItem('kiosk_lang') || 'es',
-    currentModalStrainId: null
+    currentModalStrainId: null,
+    activeTab: 'tab-menu',
+    members: [],
+    selectedMemberId: null,
+    posSelectedStrainId: null,
+    posCurrentWeight: 0.00,
+    dispenseLog: []
   };
 
   let currentUser = null;
   let unsubscribeFirestore = null;
 
-  // Helper para buscar en la base de datos de 777 cepas
+  // Normalizador de texto para búsquedas insensibles a mayúsculas y diacríticos
+  function normalizeStr(s) {
+    return (s || '').toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+  }
+
+  // Pre-indexación en memoria de las 877 cepas para búsqueda instantánea O(1)
+  function buildSearchIndex() {
+    if (!state.strainsDb || !state.strainsDb.length) return;
+    state.strainsDb.forEach(s => {
+      const flavors = Array.isArray(s.flavors) ? s.flavors.map(normalizeStr).join(' ') : (s.aroma || '');
+      const effects = Array.isArray(s.effects) ? s.effects.map(normalizeStr).join(' ') : '';
+      s._searchIndex = `${normalizeStr(s.name)} ${normalizeStr(s.bank || s.breeder)} ${normalizeStr(s.species)} ${normalizeStr(s.lineage)} ${normalizeStr(s.genetics)} ${normalizeStr(s.dominantTerpene)} ${normalizeStr(flavors)} ${normalizeStr(effects)}`;
+    });
+  }
+
+  // Poblado del desplegable de los 75 bancos criadores oficiales
+  function populateBankFilter() {
+    const select = document.getElementById('catalog-bank-filter');
+    if (!select || !state.strainsDb || !state.strainsDb.length) return;
+    const rawBanks = state.strainsDb.map(s => s.bank || s.breeder).filter(Boolean);
+    const uniqueBanks = Array.from(new Set(rawBanks)).sort((a, b) => a.localeCompare(b));
+    select.innerHTML = `<option value="all">🏛️ Todos los Bancos (${uniqueBanks.length || 75})</option>` +
+      uniqueBanks.map(b => `<option value="${b}">${b}</option>`).join('');
+  }
+
+  // Helper para buscar en la base de datos maestra de 877 cepas
   function getStrainData(strainId) {
     if (strainId === 'super-boof') {
       return {
@@ -621,6 +662,9 @@
       });
     }
 
+    buildSearchIndex();
+    populateBankFilter();
+
     // 2. Cargar Menú del Club desde LocalStorage o Fallback de Demostración
     try {
       const storedMenu = localStorage.getItem(STORAGE_KEY);
@@ -640,15 +684,61 @@
       state.menu = [...DEFAULT_MENU_ITEMS];
     }
 
+    // 3. Cargar Socios Estatutarios
+    try {
+      const storedMembers = localStorage.getItem(MEMBERS_STORAGE_KEY);
+      if (storedMembers) {
+        state.members = JSON.parse(storedMembers);
+      } else {
+        state.members = [...DEFAULT_MEMBERS];
+        persistMembers();
+      }
+    } catch (e) {
+      state.members = [...DEFAULT_MEMBERS];
+    }
+    if (state.members.length > 0) {
+      state.selectedMemberId = state.members[0].id;
+    }
+
+    // 4. Cargar Libro de Dispensación
+    try {
+      const storedLog = localStorage.getItem(DISPENSE_LOG_KEY);
+      if (storedLog) {
+        state.dispenseLog = JSON.parse(storedLog);
+      } else {
+        state.dispenseLog = [];
+      }
+    } catch (e) {
+      state.dispenseLog = [];
+    }
+
     // Comprobar parámetro URL para modo kiosco automático (?kiosk=1)
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('kiosk') === '1') {
       state.isKioskMode = true;
     }
 
-    // Si hay elementos, seleccionar el primero por defecto en el editor
-    if (state.menu.length > 0 && !state.selectedStrainId) {
-      state.selectedStrainId = state.menu[0].id;
+    // Si hay elementos, seleccionar el primero por defecto en el editor y en el POS
+    if (state.menu.length > 0) {
+      if (!state.selectedStrainId) state.selectedStrainId = state.menu[0].id;
+      const firstAvail = state.menu.find(m => m.available);
+      state.posSelectedStrainId = firstAvail ? firstAvail.id : state.menu[0].id;
+    }
+  }
+
+  function persistMembers() {
+    try {
+      localStorage.setItem(MEMBERS_STORAGE_KEY, JSON.stringify(state.members));
+    } catch (e) {
+      console.error("Error persistiendo socios:", e);
+    }
+  }
+
+  function persistDispenseLog() {
+    try {
+      localStorage.setItem(DISPENSE_LOG_KEY, JSON.stringify(state.dispenseLog));
+    } catch (e) {
+      console.error("Error persistiendo libro de dispensación:", e);
     }
   }
 
@@ -1326,55 +1416,65 @@
   }
 
   // ==========================================================================
-  // Buscador del Catálogo Maestro (777 cepas)
+  // Buscador del Catálogo Maestro (877 cepas y 75 bancos con _searchIndex)
   // ==========================================================================
   function setupCatalogSearch() {
     const searchInput = document.getElementById('catalog-search-input');
+    const bankFilter = document.getElementById('catalog-bank-filter');
     const dropdown = document.getElementById('search-results-dropdown');
     if (!searchInput || !dropdown) return;
 
     let debounceTimer;
 
-    searchInput.addEventListener('input', (e) => {
+    const triggerSearch = () => {
       clearTimeout(debounceTimer);
-      const query = e.target.value.trim().toLowerCase();
+      const query = searchInput.value.trim();
+      const selectedBank = bankFilter ? bankFilter.value : 'all';
 
-      if (query.length < 2) {
+      if (query.length < 2 && selectedBank === 'all') {
         dropdown.classList.remove('active');
         dropdown.innerHTML = '';
         return;
       }
 
       debounceTimer = setTimeout(() => {
-        executeSearch(query);
-      }, 150);
-    });
+        executeSearch(query, selectedBank);
+      }, 120);
+    };
+
+    searchInput.addEventListener('input', triggerSearch);
+    if (bankFilter) {
+      bankFilter.addEventListener('change', triggerSearch);
+    }
 
     document.addEventListener('click', (e) => {
-      if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
+      if (!searchInput.contains(e.target) && !dropdown.contains(e.target) && (!bankFilter || !bankFilter.contains(e.target))) {
         dropdown.classList.remove('active');
       }
     });
 
-    function executeSearch(query) {
+    function executeSearch(query, bank = 'all') {
       if (!state.strainsDb || !state.strainsDb.length) {
         dropdown.innerHTML = `<div style="padding: 16px; text-align: center; color: var(--text-muted);">Cargando catálogo maestro...</div>`;
         dropdown.classList.add('active');
         return;
       }
 
+      const normQuery = normalizeStr(query);
+
       const matches = state.strainsDb.filter(s => {
-        const nameMatch = s.name && s.name.toLowerCase().includes(query);
-        const bankMatch = s.bank && s.bank.toLowerCase().includes(query);
-        const genMatch = s.genetics && s.genetics.toLowerCase().includes(query);
-        const lineageMatch = s.lineage && s.lineage.toLowerCase().includes(query);
-        return nameMatch || bankMatch || genMatch || lineageMatch;
-      }).slice(0, 10);
+        const bankMatches = (bank === 'all' || (s.bank || s.breeder) === bank);
+        if (!bankMatches) return false;
+        if (!normQuery || normQuery.length < 2) return true;
+        return s._searchIndex ? s._searchIndex.includes(normQuery) : (
+          normalizeStr(s.name).includes(normQuery) || normalizeStr(s.bank).includes(normQuery)
+        );
+      }).slice(0, 15);
 
       if (matches.length === 0) {
         dropdown.innerHTML = `
           <div style="padding: 16px; text-align: center; color: var(--text-dim); font-size: 0.88rem;">
-            No se encontraron variedades para "<strong>${query}</strong>"
+            No se encontraron variedades para "<strong>${query || bank}</strong>"
           </div>
         `;
         dropdown.classList.add('active');
@@ -1383,6 +1483,7 @@
 
       dropdown.innerHTML = matches.map(s => {
         const isAlreadyInMenu = state.menu.some(m => m.id === s.id);
+        const speciesName = translateSpecies(s.species, state.kioskLang);
         return `
           <div class="search-result-item" data-add-id="${s.id}">
             <div class="result-left">
@@ -1393,9 +1494,9 @@
               <div class="result-meta">
                 <h4>${s.name}</h4>
                 <div class="result-subline">
-                  <span>🏛️ ${s.bank}</span>
+                  <span>🏛️ ${s.bank || 'Banco Criador'}</span>
                   <span>•</span>
-                  <span>🧬 ${s.species || 'Híbrida'} (THC: ${s.thc || 20}%)</span>
+                  <span>🧬 ${speciesName} (THC: ${s.thc || 20}%)</span>
                 </div>
               </div>
             </div>
@@ -2032,6 +2133,544 @@
   }
 
   // ==========================================================================
+  // NAVEGACIÓN POR PESTAÑAS PRINCIPALES DEL DISPENSARIO (v216)
+  // ==========================================================================
+  function setupMainTabs() {
+    const tabButtons = document.querySelectorAll('.main-tab-btn');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetTab = btn.getAttribute('data-tab');
+        if (!targetTab) return;
+        state.activeTab = targetTab;
+
+        // Activar botón
+        tabButtons.forEach(b => b.classList.toggle('active', b === btn));
+
+        // Conmutar vista
+        document.querySelectorAll('.dispensary-tab-view').forEach(view => {
+          view.classList.toggle('active', view.id === `view-${targetTab}`);
+        });
+
+        if (targetTab === 'tab-pos') {
+          renderPosUI();
+        } else if (targetTab === 'tab-arqueo') {
+          renderArqueoUI();
+        } else if (targetTab === 'tab-menu') {
+          renderMenuGrid();
+          renderEditorPanel();
+        }
+      });
+    });
+  }
+
+  function updateTabBadges() {
+    const badgeMoves = document.getElementById('badge-total-moves');
+    if (badgeMoves) {
+      const today = new Date().toDateString();
+      const todayMoves = state.dispenseLog.filter(t => new Date(t.timestamp).toDateString() === today);
+      badgeMoves.textContent = `${todayMoves.length} hoy`;
+    }
+  }
+
+  // ==========================================================================
+  // TERMINAL MOSTRADOR DE DISPENSACIÓN (POS CSC)
+  // ==========================================================================
+  let posClockTimer = null;
+
+  function setupPosTerminal() {
+    // Reloj en tiempo real en la báscula
+    const clockEl = document.getElementById('pos-live-clock');
+    if (clockEl && !posClockTimer) {
+      const updateClock = () => {
+        const now = new Date();
+        clockEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      };
+      updateClock();
+      posClockTimer = setInterval(updateClock, 1000);
+    }
+
+    // Selector de Socio
+    const memberSelect = document.getElementById('pos-member-select');
+    if (memberSelect) {
+      memberSelect.addEventListener('change', (e) => {
+        state.selectedMemberId = e.target.value;
+        renderPosUI();
+      });
+    }
+
+    // Selector de Variedad en Barra
+    const strainSelect = document.getElementById('pos-strain-select');
+    if (strainSelect) {
+      strainSelect.addEventListener('change', (e) => {
+        state.posSelectedStrainId = e.target.value;
+        renderPosUI();
+      });
+    }
+
+    // Botonera de pesaje rápido
+    document.querySelectorAll('.btn-weight-preset[data-weight]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const increment = parseFloat(btn.getAttribute('data-weight')) || 0;
+        state.posCurrentWeight = Number((state.posCurrentWeight + increment).toFixed(2));
+        syncWeightInputs();
+        validateAndCalculatePos();
+      });
+    });
+
+    const clearWeightBtn = document.getElementById('btn-pos-clear-weight');
+    if (clearWeightBtn) {
+      clearWeightBtn.addEventListener('click', () => {
+        state.posCurrentWeight = 0.00;
+        syncWeightInputs();
+        validateAndCalculatePos();
+      });
+    }
+
+    const manualInput = document.getElementById('pos-manual-weight-input');
+    if (manualInput) {
+      manualInput.addEventListener('input', (e) => {
+        const val = parseFloat(e.target.value);
+        state.posCurrentWeight = isNaN(val) || val < 0 ? 0.00 : Number(val.toFixed(2));
+        const scaleWeight = document.getElementById('pos-scale-weight');
+        if (scaleWeight) scaleWeight.textContent = state.posCurrentWeight.toFixed(2);
+        validateAndCalculatePos();
+      });
+    }
+
+    // Botón de Dispensar & Registrar Ticket
+    const dispenseBtn = document.getElementById('btn-pos-dispense');
+    if (dispenseBtn) {
+      dispenseBtn.addEventListener('click', executeDispenseTicket);
+    }
+
+    setupNewMemberModal();
+  }
+
+  function syncWeightInputs() {
+    const manualInput = document.getElementById('pos-manual-weight-input');
+    const scaleWeight = document.getElementById('pos-scale-weight');
+    if (manualInput) manualInput.value = state.posCurrentWeight.toFixed(2);
+    if (scaleWeight) scaleWeight.textContent = state.posCurrentWeight.toFixed(2);
+  }
+
+  function renderPosUI() {
+    // 1. Selector de Socios
+    const memberSelect = document.getElementById('pos-member-select');
+    if (memberSelect) {
+      memberSelect.innerHTML = state.members.map(m => {
+        const tierLabel = m.tier === 'colab' ? 'Colaborador' : (m.tier === 'terap' ? 'Terapéutico' : 'Estándar');
+        return `<option value="${m.id}" ${m.id === state.selectedMemberId ? 'selected' : ''}>[#${m.id}] ${m.alias} (${tierLabel} - Límite: ${m.limitGrams}g)</option>`;
+      }).join('');
+    }
+
+    // 2. Ficha del Socio Seleccionado
+    const member = state.members.find(m => m.id === state.selectedMemberId) || state.members[0];
+    const memberCard = document.getElementById('pos-member-card');
+    if (memberCard && member) {
+      const remainingQuota = Math.max(0, (member.limitGrams - (member.consumedGrams || 0))).toFixed(2);
+      const pctConsumed = Math.min(100, Math.round(((member.consumedGrams || 0) / member.limitGrams) * 100));
+      const tierClass = member.tier === 'colab' ? 'tier-colab' : (member.tier === 'terap' ? 'tier-terap' : 'tier-std');
+      const tierText = member.tier === 'colab' ? 'Socio Colaborador (-10%)' : (member.tier === 'terap' ? 'Socio Médico (-25%)' : 'Socio General Estándar');
+
+      memberCard.innerHTML = `
+        <div class="member-card-header">
+          <div class="member-avatar-info">
+            <div class="member-avatar-circle">${member.alias ? member.alias.charAt(0).toUpperCase() : '#'}</div>
+            <div>
+              <div class="member-name-title">${member.alias} <span style="font-size:0.78rem; color:var(--text-dim); font-weight:600;">(#${member.id})</span></div>
+              <span class="member-tier-pill ${tierClass}">${tierText}</span>
+            </div>
+          </div>
+        </div>
+        <div class="member-quota-section">
+          <div class="member-quota-text">
+            <span>Retirada Mensual: <strong>${(member.consumedGrams || 0).toFixed(2)}g / ${member.limitGrams}g</strong></span>
+            <span>Disponible: <strong style="color: ${remainingQuota < 5 ? '#F87171' : '#34D399'};">${remainingQuota}g</strong></span>
+          </div>
+          <div class="member-quota-bar-track">
+            <div class="member-quota-bar-fill ${pctConsumed >= 85 ? 'warning' : ''}" style="width: ${pctConsumed}%;"></div>
+          </div>
+        </div>
+      `;
+    }
+
+    // 3. Selector de Variedad en Barra
+    const availStrains = state.menu.filter(m => m.available);
+    const countBadge = document.getElementById('pos-avail-strains-count');
+    if (countBadge) countBadge.textContent = `${availStrains.length} disponibles`;
+
+    const strainSelect = document.getElementById('pos-strain-select');
+    if (strainSelect) {
+      if (availStrains.length === 0) {
+        strainSelect.innerHTML = `<option value="">⚠️ No hay variedades marcadas como disponibles en la carta</option>`;
+      } else {
+        strainSelect.innerHTML = availStrains.map(m => {
+          const s = getStrainData(m.id);
+          const name = s ? s.name : m.id;
+          const stock = m.stockGrams || 0;
+          return `<option value="${m.id}" ${m.id === state.posSelectedStrainId ? 'selected' : ''}>🌿 ${name} (${m.category}) - Stock: ${stock}g</option>`;
+        }).join('');
+      }
+    }
+
+    // 4. Preview de la Variedad en Barra
+    const selectedMenuItem = state.menu.find(m => m.id === state.posSelectedStrainId) || availStrains[0];
+    const previewCard = document.getElementById('pos-strain-preview-card');
+    if (previewCard) {
+      if (!selectedMenuItem) {
+        previewCard.innerHTML = `<div style="color: var(--text-muted); font-size: 0.85rem;">Selecciona una variedad disponible de la carta para dispensar.</div>`;
+      } else {
+        const s = getStrainData(selectedMenuItem.id) || {
+          name: selectedMenuItem.id,
+          bank: 'CannaCulture Selection',
+          species: 'Híbrida',
+          image: `img/${selectedMenuItem.id}.webp`,
+          thc: 20
+        };
+        const stock = selectedMenuItem.stockGrams || 0;
+        const stockClass = stock > 50 ? 'stock-high' : (stock >= 10 ? 'stock-mid' : 'stock-low');
+
+        previewCard.innerHTML = `
+          <img src="${s.image || 'img/' + selectedMenuItem.id + '.webp'}" 
+               alt="${s.name}" 
+               class="pos-strain-thumb" 
+               onerror="this.src='img/ths-darkstar-official.webp';" />
+          <div class="pos-strain-details">
+            <h4>${s.name}</h4>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">
+              🏛️ ${s.bank || 'Banco Criador'} · 🧬 ${s.species || 'Híbrida'} (THC: ${s.thc || 20}%)
+            </div>
+            <div class="pos-strain-stock-pill ${stockClass}">
+              <span>📦 Stock en bote: <strong>${stock} g</strong></span>
+              ${stock < 10 ? '<span style="color:#EF4444; font-weight:800;">(¡Stock Bajo!)</span>' : ''}
+            </div>
+            <div style="font-size: 0.74rem; color: #9CA3AF; margin-top: 4px;">
+              Cuotas: Std: ${selectedMenuItem.tierStd.toFixed(2)}€/g · Colab: ${selectedMenuItem.tierColab.toFixed(2)}€/g · Terap: ${selectedMenuItem.tierTerap.toFixed(2)}€/g
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    syncWeightInputs();
+    validateAndCalculatePos();
+  }
+
+  function validateAndCalculatePos() {
+    const member = state.members.find(m => m.id === state.selectedMemberId) || state.members[0];
+    const menuItem = state.menu.find(m => m.id === state.posSelectedStrainId);
+    const dispenseBtn = document.getElementById('btn-pos-dispense');
+    const alertBox = document.getElementById('pos-validation-alert');
+    const rateText = document.getElementById('pos-applied-rate-text');
+    const tierBadge = document.getElementById('pos-tier-name-badge');
+    const totalEurosEl = document.getElementById('pos-total-euros');
+    const formulaEl = document.getElementById('pos-total-formula');
+
+    if (!member || !menuItem) {
+      if (dispenseBtn) dispenseBtn.disabled = true;
+      return;
+    }
+
+    // Determinar tarifa aplicable según nivel estatutario del socio
+    let rate = menuItem.tierStd || 8.50;
+    let tierName = 'ESTÁNDAR';
+    if (member.tier === 'colab') {
+      rate = menuItem.tierColab || (rate * 0.90);
+      tierName = 'COLABORADOR (-10%)';
+    } else if (member.tier === 'terap') {
+      rate = menuItem.tierTerap || (rate * 0.75);
+      tierName = 'TERAPÉUTICO (-25%)';
+    }
+
+    if (rateText) rateText.textContent = `Cuota aplicada: ${rate.toFixed(2)} €/g`;
+    if (tierBadge) tierBadge.textContent = tierName;
+
+    const weight = state.posCurrentWeight || 0;
+    const totalEuros = (weight * rate).toFixed(2);
+
+    if (totalEurosEl) totalEurosEl.textContent = totalEuros;
+    if (formulaEl) formulaEl.textContent = `${weight.toFixed(2)} g × ${rate.toFixed(2)} €/g = ${totalEuros} €`;
+
+    const remainingQuota = Math.max(0, member.limitGrams - (member.consumedGrams || 0));
+    const currentStock = menuItem.stockGrams || 0;
+
+    let hasError = false;
+    let alertMsg = '';
+
+    if (weight <= 0) {
+      if (alertBox) alertBox.style.display = 'none';
+      if (dispenseBtn) dispenseBtn.disabled = true;
+      return;
+    }
+
+    if (weight > remainingQuota) {
+      hasError = true;
+      alertMsg = `⚠️ <strong>Exceso de Límite Estatutario:</strong> El socio solo dispone de ${remainingQuota.toFixed(2)} g restantes este mes (solicitados: ${weight.toFixed(2)} g).`;
+    } else if (weight > currentStock) {
+      hasError = true;
+      alertMsg = `⚠️ <strong>Stock Insuficiente en Bote:</strong> Solo hay ${currentStock} g registrados en barra para esta variedad.`;
+    }
+
+    if (alertBox) {
+      if (hasError) {
+        alertBox.className = 'pos-validation-alert error';
+        alertBox.innerHTML = alertMsg;
+        alertBox.style.display = 'flex';
+      } else {
+        alertBox.style.display = 'none';
+      }
+    }
+
+    if (dispenseBtn) {
+      dispenseBtn.disabled = hasError || weight <= 0;
+    }
+  }
+
+  function executeDispenseTicket() {
+    const member = state.members.find(m => m.id === state.selectedMemberId);
+    const menuItem = state.menu.find(m => m.id === state.posSelectedStrainId);
+    const weight = state.posCurrentWeight;
+
+    if (!member || !menuItem || weight <= 0) return;
+
+    let rate = menuItem.tierStd;
+    if (member.tier === 'colab') rate = menuItem.tierColab;
+    else if (member.tier === 'terap') rate = menuItem.tierTerap;
+
+    const totalEuros = Number((weight * rate).toFixed(2));
+    const strain = getStrainData(menuItem.id);
+    const strainName = strain ? strain.name : menuItem.id;
+
+    // Descontar stock del menú y sumar consumo al socio
+    menuItem.stockGrams = Math.max(0, Number((menuItem.stockGrams - weight).toFixed(2)));
+    menuItem.lastUpdated = new Date().toISOString();
+
+    member.consumedGrams = Number(((member.consumedGrams || 0) + weight).toFixed(2));
+
+    // Registrar ticket en el libro cronológico
+    const now = new Date();
+    const ticket = {
+      id: `disp-${Date.now()}`,
+      timestamp: now.toISOString(),
+      timeStr: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      dateStr: now.toLocaleDateString(),
+      memberId: member.id,
+      memberAlias: member.alias,
+      memberTier: member.tier,
+      strainId: menuItem.id,
+      strainName: strainName,
+      category: menuItem.category,
+      weight: weight,
+      rate: Number(rate.toFixed(2)),
+      totalEuros: totalEuros
+    };
+
+    state.dispenseLog.unshift(ticket);
+
+    // Persistir todo
+    persistMenu();
+    persistMembers();
+    persistDispenseLog();
+
+    // Resetear peso
+    state.posCurrentWeight = 0.00;
+
+    // Feedback al usuario
+    showToast(`✅ Dispensados ${weight.toFixed(2)}g de ${strainName} a socio #${member.id} (${totalEuros.toFixed(2)} €)`);
+
+    // Actualizar interfaces
+    renderPosUI();
+    renderMenuGrid();
+    updateTabBadges();
+  }
+
+  function setupNewMemberModal() {
+    const openBtn = document.getElementById('btn-quick-new-member');
+    const closeBtn = document.getElementById('btn-close-new-member');
+    const modal = document.getElementById('modal-new-member');
+    const saveBtn = document.getElementById('btn-save-new-member');
+
+    if (openBtn && modal) {
+      openBtn.addEventListener('click', () => {
+        if (typeof modal.showModal === 'function') modal.showModal();
+        else modal.setAttribute('open', '');
+      });
+    }
+
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', () => {
+        if (typeof modal.close === 'function') modal.close();
+        modal.removeAttribute('open');
+      });
+    }
+
+    if (saveBtn) {
+      saveBtn.addEventListener('click', () => {
+        const id = document.getElementById('nm-id').value.trim();
+        const alias = document.getElementById('nm-alias').value.trim();
+        const tier = document.getElementById('nm-tier').value;
+        const limit = parseFloat(document.getElementById('nm-limit').value) || 60;
+
+        if (!id || !alias) {
+          alert("Por favor completa el número de socio y su nombre/alias.");
+          return;
+        }
+
+        if (state.members.some(m => m.id === id)) {
+          alert(`El número de socio #${id} ya existe en el club.`);
+          return;
+        }
+
+        const newMem = {
+          id: id,
+          alias: alias,
+          tier: tier,
+          limitGrams: limit,
+          consumedGrams: 0.00
+        };
+
+        state.members.push(newMem);
+        state.selectedMemberId = id;
+        persistMembers();
+
+        if (modal) {
+          if (typeof modal.close === 'function') modal.close();
+          modal.removeAttribute('open');
+        }
+
+        document.getElementById('form-new-member').reset();
+        showToast(`Socio #${id} (${alias}) registrado correctamente.`);
+        renderPosUI();
+      });
+    }
+  }
+
+  // ==========================================================================
+  // ARQUEO DE CAJA, LIBRO DE MOVIMIENTOS Y EXPORTACIÓN
+  // ==========================================================================
+  function renderArqueoUI() {
+    const today = new Date().toDateString();
+    const todayTickets = state.dispenseLog.filter(t => new Date(t.timestamp).toDateString() === today);
+
+    const totalGrams = todayTickets.reduce((acc, t) => acc + (t.weight || 0), 0);
+    const totalEuros = todayTickets.reduce((acc, t) => acc + (t.totalEuros || 0), 0);
+
+    const elGrams = document.getElementById('arqueo-total-grams');
+    const elEuros = document.getElementById('arqueo-total-euros');
+    const elTickets = document.getElementById('arqueo-total-tickets');
+    const elLowCount = document.getElementById('arqueo-low-stock-count');
+
+    if (elGrams) elGrams.textContent = `${totalGrams.toFixed(2)} g`;
+    if (elEuros) elEuros.textContent = `${totalEuros.toFixed(2)} €`;
+    if (elTickets) elTickets.textContent = `${todayTickets.length} tickets`;
+
+    // Alertas de Stock Bajo (< 10g)
+    const lowStockItems = state.menu.filter(m => m.available && (m.stockGrams || 0) < 10);
+    if (elLowCount) elLowCount.textContent = `${lowStockItems.length} variedades`;
+
+    const lowStockBox = document.getElementById('arqueo-low-stock-box');
+    const lowStockList = document.getElementById('arqueo-low-stock-list');
+    if (lowStockBox && lowStockList) {
+      if (lowStockItems.length > 0) {
+        lowStockBox.style.display = 'block';
+        lowStockList.innerHTML = lowStockItems.map(m => {
+          const s = getStrainData(m.id);
+          const name = s ? s.name : m.id;
+          return `<div class="low-stock-chip">⚠️ ${name}: <strong>${m.stockGrams || 0}g</strong></div>`;
+        }).join('');
+      } else {
+        lowStockBox.style.display = 'none';
+      }
+    }
+
+    // Tabla de Movimientos
+    const tableBody = document.getElementById('movements-table-body');
+    if (tableBody) {
+      if (state.dispenseLog.length === 0) {
+        tableBody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:30px; color:var(--text-muted);">No hay dispensaciones registradas en la jornada.</td></tr>`;
+      } else {
+        tableBody.innerHTML = state.dispenseLog.slice(0, 50).map(t => {
+          const tierClass = t.memberTier === 'colab' ? 'tier-colab' : (t.memberTier === 'terap' ? 'tier-terap' : 'tier-std');
+          const tierLabel = t.memberTier === 'colab' ? 'Colab' : (t.memberTier === 'terap' ? 'Médico' : 'Estándar');
+          return `
+            <tr>
+              <td><strong>${t.timeStr || '--:--'}</strong></td>
+              <td>${t.memberAlias} <span style="font-size:0.75rem; color:var(--text-dim);">(#${t.memberId})</span></td>
+              <td><span class="member-tier-pill ${tierClass}">${tierLabel}</span></td>
+              <td><strong>${t.strainName}</strong></td>
+              <td><span style="font-size:0.78rem; text-transform:capitalize;">${t.category}</span></td>
+              <td><strong style="color:#6EE7B7;">${(t.weight || 0).toFixed(2)} g</strong></td>
+              <td>${(t.rate || 0).toFixed(2)} €/g</td>
+              <td><strong style="color:#FCD34D;">${(t.totalEuros || 0).toFixed(2)} €</strong></td>
+            </tr>
+          `;
+        }).join('');
+      }
+    }
+  }
+
+  function setupArqueoEvents() {
+    // Exportar CSV
+    const exportCsvBtn = document.getElementById('btn-export-csv');
+    if (exportCsvBtn) {
+      exportCsvBtn.addEventListener('click', () => {
+        if (state.dispenseLog.length === 0) {
+          alert("No hay movimientos registrados para exportar.");
+          return;
+        }
+
+        const headers = ["Fecha", "Hora", "ID Socio", "Alias", "Nivel", "Variedad", "Categoria", "Gramos", "Cuota €/g", "Aportacion Total €"];
+        const rows = state.dispenseLog.map(t => [
+          t.dateStr || '',
+          t.timeStr || '',
+          `"${t.memberId}"`,
+          `"${(t.memberAlias || '').replace(/"/g, '""')}"`,
+          t.memberTier || '',
+          `"${(t.strainName || '').replace(/"/g, '""')}"`,
+          t.category || '',
+          (t.weight || 0).toFixed(2),
+          (t.rate || 0).toFixed(2),
+          (t.totalEuros || 0).toFixed(2)
+        ]);
+
+        const csvContent = "\uFEFF" + [headers.join(","), ...rows.map(r => r.join(","))].join("\r\n");
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `libro_dispensario_csc_${new Date().toISOString().slice(0, 10)}.csv`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+        showToast("Libro de dispensación exportado a CSV para actas del club.", "📥");
+      });
+    }
+
+    // Imprimir Acta
+    const printBtn = document.getElementById('btn-print-arqueo');
+    if (printBtn) {
+      printBtn.addEventListener('click', () => {
+        window.print();
+      });
+    }
+
+    // Limpiar Registro
+    const clearLogBtn = document.getElementById('btn-clear-log');
+    if (clearLogBtn) {
+      clearLogBtn.addEventListener('click', () => {
+        if (confirm("¿Deseas reiniciar el libro de movimientos? (Se recomienda exportar primero a CSV).")) {
+          state.dispenseLog = [];
+          persistDispenseLog();
+          renderArqueoUI();
+          updateTabBadges();
+          showToast("Registro de movimientos reiniciado.", "🧹");
+        }
+      });
+    }
+  }
+
+  // ==========================================================================
   // Inicialización del DOM
   // ==========================================================================
   document.addEventListener('DOMContentLoaded', () => {
@@ -2044,15 +2683,22 @@
     setupKioskModalListeners();
     setupClubSettings();
     setupI18n();
+    setupMainTabs();
+    setupPosTerminal();
+    setupArqueoEvents();
     renderMenuGrid();
     renderEditorPanel();
+    updateTabBadges();
 
     if (!state.strainsDb || state.strainsDb.length === 0) {
       setTimeout(() => {
         if (window.STRAINS_DATABASE) {
           state.strainsDb = window.STRAINS_DATABASE;
+          buildSearchIndex();
+          populateBankFilter();
           renderMenuGrid();
           renderEditorPanel();
+          renderPosUI();
         }
       }, 350);
     }
