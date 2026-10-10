@@ -1,8 +1,8 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 17:40  
+> **Ultima actualizacion:** 2026-10-10 17:50  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `fix(catalog): restauracion inmediata de main-app, eliminacion de age-lock-style y reactivacion reactiva de cepas v217.1`  
+> **Commit de cierre:** `feat(security): verificacion de edad +18 obligatoria por sesion volatil en sessionStorage v217.2`  
 > **Version Cache-Busting:** `?v=217`
 
 ---
@@ -11,19 +11,16 @@
 - **Estado del Catalogo:** **877 cepas botanicas 100% unicas y originales, 0 duplicados visuales, plenamente renderizadas.**
 - **75 Bancos Oficiales Incorporados (ampliación de 65 a 75 bancos de élite mundial).**
 - **100 Nuevas Variedades Fotoperiódicas/Feminizadas/Regulares (estrictamente 0 autoflorecientes).**
+- **Sistema Age Verification Gate (+18) por Sesión Volátil (v217.2):**
+  - **Cero Memoria de Dispositivos (Sin localStorage 30 días):** Eliminada la persistencia en `localStorage`. La validación reside exclusivamente en `sessionStorage` (`cannaculture_age_session`).
+  - **Verificación Obligatoria en Cada Visita:** Al cerrar la pestaña o el navegador, la verificación caduca inmediatamente y vuelve a solicitar confirmación +18 en el siguiente acceso.
+  - **Navegación Fluida Intra-Sesión:** En la misma pestaña/sesión, la verificación se preserva entre `index.html`, `guia-cultivo.html` y `admin-dispensario.html` sin interrupciones repetitivas.
+  - **Purga Activa de Tokens Previos:** Se limpian automáticamente del navegador los tokens heredados `cannaculture_age_consent`, `cannacatalog_age_verified` y `canna_age_verified`.
+  - **Arquitectura Fail-Secure:** Regla anti-FOUC en `<head>`, diálogo accesible `<dialog id="age-gate-modal">` con bloqueo de scroll, teclado y FOUC, y micro-badge discreto `🛡️ 18+` para revocación voluntaria.
 - **Restauración y Reactivación del Catálogo en Pantalla Principal (v217.1):**
   - **Eliminación de Bloqueos Ocultos:** Suprimido el bloque `<style id="age-lock-style">` residual y el atributo inline `style="display:none;"` en `<main id="main-app">` de `index.html`.
   - **Corrección de Directiva `<noscript>`:** Desacoplada la regla CSS de superposición para evitar falsos positivos de pantalla completa en navegadores con JS habilitado.
   - **Sincronización Reactiva de Eventos:** Vinculado el evento global `cannaAgeVerified` entre `js/age-gate.js` y `js/app.js` para asegurar que `applyFiltersAndSort()` repinte inmediatamente las tarjetas de variedades al aceptar la verificación.
-- **Sistema Integral Age Verification Gate (+18) Blindado (v217):**
-  - **Arquitectura Fail-Secure (Cero Fugas):** Inyección de bloqueo inmediato en `<head>` de `index.html`, `guia-cultivo.html` y `admin-dispensario.html` para erradicar el FOUC.
-  - **Protección `<noscript>` Activa:** Bloqueo absoluto y pantalla de aviso legal si JavaScript se encuentra deshabilitado.
-  - **Modal Glassmorphism Dark Emerald (`#0B0F0E`):** Diálogo nativo `<dialog id="age-gate-modal">` con captura y anulación del evento `cancel` (bloqueo total de tecla `Escape`) y bloqueo de scroll e interacciones (`overflow: hidden !important; touch-action: none;`).
-  - **Descargo Jurídico Botánico Explícito:** Mayoría de edad (+18), finalidad estrictamente botánica, enciclopédica y de reducción de riesgos, y ámbito de consumo privado y Clubes Sociales de Cannabis (CSC).
-  - **Trazabilidad Legal de 30 Días:** Token estructurado en `localStorage` (`cannaculture_age_consent`) con timestamp, política de versión `v217` y caducidad automática `expiresAt`.
-  - **Redirección Segura Irreversible:** Salida para menores mediante `window.location.replace('https://www.google.com')` sin dejar rastro en el historial del navegador.
-  - **Limpieza de Bypasses:** Eliminado definitivamente `autoUnlockCannaCatalog()` y overrides manuales en `js/app.js`.
-  - **Micro-Badge Discreto en Cabecera (`🛡️ 18+`):** Sustitución de la píldora aparatosa por un indicador sutil e idéntico en las 3 páginas, con diálogo de revocación voluntaria y re-bloqueo del terminal.
 - **CannaDispensario POS 2.0 (v216):** Terminal táctil de barra para Clubes Sociales de Cannabis (CSC) plenamente operativo en `admin-dispensario.html` con 3 pestañas, pesaje digital, cuotas de socio y arqueo diario.
 - **Sommelier IA María 2.0 (v215):** Motor de puntuación multidimensional (`SommelierScoringEngine`) evaluando el catálogo íntegro de 877 cepas y 75 bancos en tiempo real con tríada de recomendaciones y mini-fichas interactivas.
 - **Cobertura Linaje/Genetica:** 877/877 cepas (100%).

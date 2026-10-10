@@ -1,34 +1,38 @@
 /**
- * CannaCulture - Age Verification Gate Controller (v217)
- * Arquitectura Fail-Secure, Trazabilidad Legal de 30 días y Bloqueo Infranqueable
+ * CannaCulture - Age Verification Gate Controller (v217 - Sesión Volátil)
+ * Arquitectura Fail-Secure: Verificación estricta por sesión en sessionStorage.
+ * NO persiste en localStorage (se solicita en cada nueva sesión/visita tras cerrar pestaña/navegador).
  */
 
 (function () {
   'use strict';
 
-  const STORAGE_KEY = 'cannaculture_age_consent';
+  const SESSION_KEY = 'cannaculture_age_session';
   const CURRENT_POLICY_VERSION = 'v217';
-  const TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 días de persistencia
 
   /* ==========================================================================
      1. CHEQUEO TEMPRANO FAIL-SECURE (ANTI-FOUC)
      ========================================================================== */
   function isConsentValid() {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
+      // Purgar obligatoriamente cualquier persistencia en localStorage para no recordar dispositivos
+      localStorage.removeItem('cannaculture_age_consent');
+      localStorage.removeItem('cannacatalog_age_verified');
+      localStorage.removeItem('canna_age_verified');
+
+      const raw = sessionStorage.getItem(SESSION_KEY);
       if (!raw) return false;
       const data = JSON.parse(raw);
       if (!data || data.verified !== true) return false;
       if (data.policyVersion !== CURRENT_POLICY_VERSION) return false;
-      if (typeof data.expiresAt !== 'number' || Date.now() >= data.expiresAt) return false;
       return true;
     } catch (_) {
-      // Fallback seguro en memoria para navegadores con almacenamiento restringido
+      // Fallback seguro en memoria para entornos con almacenamiento estricto
       return window._cannaAgeSessionVerified === true;
     }
   }
 
-  // Si no está verificado, bloquear inmediatamente el elemento raíz antes de pintar
+  // Si no está verificado en la sesión actual, bloquear inmediatamente el elemento raíz antes de pintar
   if (!isConsentValid()) {
     document.documentElement.classList.add('age-locked');
     if (document.body) {
@@ -123,7 +127,7 @@
         });
       }
 
-      // 5. Evaluar estado de visualización
+      // 5. Evaluar estado de visualización en la sesión
       if (!isConsentValid()) {
         this.lockAndShowModal();
       } else {
@@ -193,13 +197,14 @@
       const consentPayload = {
         verified: true,
         timestamp: now,
-        policyVersion: CURRENT_POLICY_VERSION,
-        expiresAt: now + TTL_MS
+        policyVersion: CURRENT_POLICY_VERSION
       };
 
       try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(consentPayload));
-        // Limpiar claves legadas obsoletas
+        // Almacenar exclusivamente en sessionStorage (expira al cerrar pestaña/navegador)
+        sessionStorage.setItem(SESSION_KEY, JSON.stringify(consentPayload));
+        // Garantizar purga definitiva de cualquier token previo en localStorage
+        localStorage.removeItem('cannaculture_age_consent');
         localStorage.removeItem('cannacatalog_age_verified');
         localStorage.removeItem('canna_age_verified');
       } catch (_) {
@@ -210,7 +215,7 @@
 
       // Notificación discreta de confirmación
       if (window.catalogApp && typeof window.catalogApp.showToast === 'function') {
-        window.catalogApp.showToast('🛡️ Mayoría de edad (+18) verificada correctamente.');
+        window.catalogApp.showToast('🛡️ Mayoría de edad (+18) verificada para esta sesión.');
       }
     }
 
@@ -223,8 +228,8 @@
       this.statusBadges.forEach((badge) => {
         if (verified) {
           badge.style.display = 'inline-flex';
-          badge.setAttribute('title', 'Acceso verificado para mayores de 18 años. Clic para consultar o revocar consentimiento.');
-          badge.setAttribute('aria-label', 'Mayoría de edad +18 verificada');
+          badge.setAttribute('title', 'Acceso verificado para mayores de 18 años (sesión activa). Clic para revocar consentimiento.');
+          badge.setAttribute('aria-label', 'Mayoría de edad +18 verificada en sesión activa');
         } else {
           badge.setAttribute('title', 'Acceso restringido +18 sin verificar');
           badge.setAttribute('aria-label', 'Sin verificar mayoría de edad');
@@ -245,7 +250,7 @@
         }
       } else {
         // Fallback en caso de que el elemento revokeDialog no esté en el DOM
-        if (window.confirm('🛡️ Consentimiento de Mayoría de Edad (+18) activo.\n\n¿Deseas revocar tu consentimiento y bloquear el acceso en este dispositivo?')) {
+        if (window.confirm('🛡️ Consentimiento de Mayoría de Edad (+18) activo para esta sesión.\n\n¿Deseas revocar tu consentimiento y bloquear el acceso en esta pestaña?')) {
           this.confirmRevocation();
         }
       }
@@ -264,7 +269,8 @@
 
     confirmRevocation() {
       try {
-        localStorage.removeItem(STORAGE_KEY);
+        sessionStorage.removeItem(SESSION_KEY);
+        localStorage.removeItem('cannaculture_age_consent');
         localStorage.removeItem('cannacatalog_age_verified');
         localStorage.removeItem('canna_age_verified');
       } catch (_) {}

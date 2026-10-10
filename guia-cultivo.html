@@ -71,14 +71,17 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- Regla de Bloqueo Inmediata Fail-Secure Anti-FOUC (+18 - v217) -->
+  <!-- Regla de Bloqueo Inmediata Fail-Secure Anti-FOUC (+18 - Sesión Volátil) -->
   <script>
     (function () {
       try {
-        var raw = localStorage.getItem('cannaculture_age_consent');
+        localStorage.removeItem('cannaculture_age_consent');
+        localStorage.removeItem('cannacatalog_age_verified');
+        localStorage.removeItem('canna_age_verified');
+        var raw = sessionStorage.getItem('cannaculture_age_session');
         if (!raw) { document.documentElement.classList.add('age-locked'); return; }
         var data = JSON.parse(raw);
-        if (!data || data.verified !== true || data.policyVersion !== 'v217' || (typeof data.expiresAt === 'number' && Date.now() >= data.expiresAt)) {
+        if (!data || data.verified !== true || data.policyVersion !== 'v217') {
           document.documentElement.classList.add('age-locked');
         }
       } catch (_) {
@@ -148,7 +151,7 @@
         </button>
       </div>
 
-      <p class="age-gate-footer-hint">🔒 Tu consentimiento se registrará localmente con una validez legal de 30 días renovable. Puedes revocar tu elección en cualquier momento desde el indicador de cabecera.</p>
+      <p class="age-gate-footer-hint">🔒 Verificación obligatoria por sesión. El consentimiento no se almacena en el dispositivo y expira al cerrar la pestaña o el navegador conforme al protocolo de protección de menores.</p>
     </div>
   </dialog>
 
@@ -156,8 +159,8 @@
   <dialog id="age-revoke-dialog" class="age-revoke-dialog">
     <div class="age-revoke-card">
       <span style="font-size: 2rem;">🛡️</span>
-      <h3 class="age-revoke-title">Consentimiento +18 Activo</h3>
-      <p class="age-revoke-desc">Has verificado tu mayoría de edad en este navegador. ¿Deseas revocar tu consentimiento y bloquear el acceso en este dispositivo?</p>
+      <h3 class="age-revoke-title">Consentimiento +18 de Sesión</h3>
+      <p class="age-revoke-desc">Has verificado tu mayoría de edad en esta sesión activa. ¿Deseas revocar tu consentimiento y bloquear el acceso inmediatamente?</p>
       <div class="age-revoke-actions">
         <button id="btn-revoke-cancel" class="btn-revoke-cancel" type="button">Mantener Acceso</button>
         <button id="btn-revoke-confirm" class="btn-revoke-confirm" type="button">Revocar y Bloquear</button>
@@ -189,7 +192,7 @@
       </nav>
 
       <!-- Micro-Badge Discreto Estatus Legal +18 -->
-      <button id="age-status-badge" class="age-status-badge" type="button" title="Acceso verificado para mayores de 18 años. Clic para consultar o revocar consentimiento." aria-label="Mayoría de edad +18 verificada">
+      <button id="age-status-badge" class="age-status-badge" type="button" title="Acceso verificado para mayores de 18 años (sesión activa). Clic para consultar o revocar consentimiento." aria-label="Mayoría de edad +18 verificada en sesión activa">
         <span class="badge-icon">🛡️</span>
         <span>18+</span>
       </button>
