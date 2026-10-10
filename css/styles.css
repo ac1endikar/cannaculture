@@ -999,11 +999,34 @@ body::before {
 
 .card-visual-banner {
   height: 185px;
+  aspect-ratio: 16 / 10;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
   background: #080C0B;
   contain: paint;
+}
+
+/* Skeleton shimmer animado para carga progresiva sin CLS */
+.card-visual-banner.is-loading::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(16, 185, 129, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: cardSkeletonShimmer 1.5s infinite ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes cardSkeletonShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
 .card-visual-img {
@@ -1015,8 +1038,12 @@ body::before {
   object-fit: cover;
   object-position: center;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out, transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
+}
+
+.card-visual-img.is-loaded {
   opacity: 1 !important;
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
 }
 
 .strain-card:hover .card-visual-img {

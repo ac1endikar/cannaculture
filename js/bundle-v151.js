@@ -25392,6 +25392,16 @@ class CannaAppMAX {
     this.populateBankDropdown();
     this.filterFavoritesOnly = false;
 
+    // 1. Pre-indexación en memoria para búsqueda instantánea O(1)
+    if (!this._searchIndexInitialized) {
+      (STRAINS_DATABASE || []).forEach(strain => {
+        if (!strain || typeof strain !== 'object') return;
+        const flavorsStr = Array.isArray(strain.flavors) ? strain.flavors.join(' ') : '';
+        strain._searchIndex = `${strain.name || ''} ${strain.genetics || ''} ${strain.bank || strain.breeder || ''} ${strain.aka || ''} ${flavorsStr}`.toLowerCase();
+      });
+      this._searchIndexInitialized = true;
+    }
+
     const applyFiltersAndSort = () => {
       const query = (this.searchInput?.value || '').toLowerCase().trim();
       const bank = this.filterBank?.value || 'all';
@@ -25413,19 +25423,10 @@ class CannaAppMAX {
         if (species !== 'all' && strain.species !== species) return false;
         if (terpene !== 'all' && strain.dominantTerpene !== terpene) return false;
 
-        // Si no hay término de búsqueda, pasa de inmediato sin asignar cadenas
-        if (!query) return true;
+        // Búsqueda ultra-rápida utilizando el índice precomputado
+        if (query && strain._searchIndex && !strain._searchIndex.includes(query)) return false;
 
-        const sName = (strain.name || '').toLowerCase();
-        if (sName.includes(query)) return true;
-        const sGenetics = (strain.genetics || '').toLowerCase();
-        if (sGenetics.includes(query)) return true;
-        const sBank = (strain.bank || '').toLowerCase();
-        if (sBank.includes(query)) return true;
-        const sAka = (strain.aka || '').toLowerCase();
-        if (sAka.includes(query)) return true;
-        const sFlavors = Array.isArray(strain.flavors) ? strain.flavors : [];
-        return sFlavors.some(f => (f || '').toLowerCase().includes(query));
+        return true;
       });
 
       if (sortCriterion === 'indoor') {
@@ -25446,11 +25447,17 @@ class CannaAppMAX {
 
     this.applyFiltersAndSort = applyFiltersAndSort;
 
-    // Debounce reactivo de 160ms para evitar re-renderizados continuos al teclear
+    // Debounce reactivo adaptativo (110ms) con requestAnimationFrame para sincronizar con el refresco de pantalla
     let searchDebounceTimer = null;
+    let searchRafId = null;
     this.searchInput?.addEventListener('input', () => {
       clearTimeout(searchDebounceTimer);
-      searchDebounceTimer = setTimeout(applyFiltersAndSort, 160);
+      searchDebounceTimer = setTimeout(() => {
+        if (searchRafId) cancelAnimationFrame(searchRafId);
+        searchRafId = requestAnimationFrame(() => {
+          applyFiltersAndSort();
+        });
+      }, 110);
     });
 
     this.filterBank?.addEventListener('change', applyFiltersAndSort);
@@ -25465,46 +25472,7 @@ class CannaAppMAX {
     applyFiltersAndSort();
   }
 
-  renderStrainsGrid(strains) {
-    if (!this.strainsGrid) return;
-    if (this.catalogCount) {
-      if (this.filterFavoritesOnly) {
-        this.catalogCount.textContent = `Mostrando ${strains.length} favorita(s) ❤️`;
-      } else {
-        this.catalogCount.textContent = `Mostrando ${strains.length} cepa(s)`;
-      }
-    }
-
-    if (strains.length === 0) {
-      if (this.filterFavoritesOnly) {
-        this.strainsGrid.innerHTML = `
-          <div class="empty-state empty-favorites-state" style="grid-column: 1 / -1; padding: 3rem 1.5rem; text-align: center;">
-            <div class="empty-icon" style="font-size: 3.5rem; margin-bottom: 0.8rem; filter: drop-shadow(0 0 16px rgba(239, 68, 68, 0.4));">❤️</div>
-            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; color: #fff; font-weight: 800;">Aún no tienes cepas en Favoritos</h3>
-            <p style="color: var(--text-muted); max-width: 480px; margin: 0 auto 1.4rem; line-height: 1.55; font-size: 0.95rem;">
-              Haz clic en el corazón en cualquier variedad del catálogo para guardarla aquí y tenerla siempre a mano.
-            </p>
-            <button class="btn-primary" id="btn-empty-clear-fav-filter" style="margin: 0 auto; display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; border-radius: 50px; font-weight: 700; cursor: pointer;">
-              <span>🌐</span> Ver todo el catálogo
-            </button>
-          </div>
-        `;
-        document.getElementById('btn-empty-clear-fav-filter')?.addEventListener('click', () => {
-          this.setFavoritesFilter(false);
-        });
-        return;
-      }
-
-      this.strainsGrid.innerHTML = `
-        <div class="empty-state" style="grid-column: 1 / -1;">
-          <div class="empty-icon">🔍</div>
-          <h3>No se encontraron cepas</h3>
-          <p>Ajusta el filtro de banco, especie o término de búsqueda.</p>
-        </div>
-      `;
-      return;
-    }
-
+  generateStrainCardHTML(strain, index = 0) {
     const bankIcons = {
       'Dinafem Seeds': '🌱',
       'BSF Seeds': '🔥',
@@ -25552,92 +25520,236 @@ class CannaAppMAX {
       'Elev8 Seeds': '⬆️'
     };
 
+    const terpeneData = TERPENES_INFO[strain.dominantTerpene] || 
+      Object.values(TERPENES_INFO).find(t => t.name.toLowerCase() === (strain.dominantTerpene || '').toLowerCase());
+    const bankName = strain.bank || strain.breeder || 'Banco Seleccionado';
+    const icon = bankIcons[bankName] || '🌿';
+    const stars = '★'.repeat(Math.round(strain.rating || 4)) + '☆'.repeat(5 - Math.round(strain.rating || 4));
+    let strainImg = strain.image || '';
+    if (strainImg && strainImg.startsWith('images/strains/')) {
+      strainImg = strainImg.replace('images/strains/', 'img/');
+    }
+    const safeName = (strain.name || 'Variedad').replace(/'/g, "\\'");
+    const safeBank = bankName.replace(/'/g, "\\'");
 
+    // Priorización inteligente de carga de imágenes botánicas y cero CLS
+    const isPriority = index < 8;
+    const imgLoadingAttr = isPriority ? 'fetchpriority="high" loading="eager"' : 'fetchpriority="low" loading="lazy"';
+    const imgTag = strainImg ? `<img src="${strainImg}" alt="${strain.name}" class="card-visual-img" width="300" height="185" ${imgLoadingAttr} decoding="async" onload="this.classList.add('is-loaded'); this.parentElement.classList.remove('is-loading');" onerror="this.style.display='none'; this.parentElement.classList.remove('is-loading'); if(this.nextElementSibling) this.nextElementSibling.style.opacity='1';" />` : '';
+    
+    const isCompared = (this.comparedStrains || []).includes(strain.id);
+    const isFav = window.communityManager ? window.communityManager.isFavorite(strain.id) : false;
+    const displayGenetics = strain.genetics || strain.lineage || strain.aka || 'Genética Exclusiva';
 
-    this.strainsGrid.innerHTML = strains.map(strain => {
-      const terpeneData = TERPENES_INFO[strain.dominantTerpene] || 
-        Object.values(TERPENES_INFO).find(t => t.name.toLowerCase() === (strain.dominantTerpene || '').toLowerCase());
-      const bankName = strain.bank || strain.breeder || 'Banco Seleccionado';
-      const icon = bankIcons[bankName] || '🌿';
-      const stars = '★'.repeat(Math.round(strain.rating || 4)) + '☆'.repeat(5 - Math.round(strain.rating || 4));
-      let strainImg = strain.image || '';
-      if (strainImg && strainImg.startsWith('images/strains/')) {
-        strainImg = strainImg.replace('images/strains/', 'img/');
-      }
-      const safeName = (strain.name || 'Variedad').replace(/'/g, "\\'");
-      const safeBank = bankName.replace(/'/g, "\\'");
-      const imgTag = strainImg ? `<img src="${strainImg}" alt="${strain.name}" class="card-visual-img" loading="lazy" decoding="async" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.opacity='1';" />` : '';
-      const isCompared = (this.comparedStrains || []).includes(strain.id);
-      const isFav = window.communityManager ? window.communityManager.isFavorite(strain.id) : false;
-      const displayGenetics = strain.genetics || strain.lineage || strain.aka || 'Genética Exclusiva';
+    return `
+      <div class="strain-card" role="article" aria-label="${safeName} (${strain.species} - ${safeBank})" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))}" style="--card-accent: ${strain.visualColor}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
+        <div class="card-visual-banner ${strainImg ? 'is-loading' : ''}" onclick="event.stopPropagation(); window.app && window.app.openImageLightbox('${strainImg}', '${safeName}', '${safeBank}')" title="🔍 Haz clic para ver foto en alta resolución con Zoom HD" role="button" aria-label="Ver imagen ampliada de ${safeName}">
+          ${imgTag}
+          <div class="card-visual-banner-inner" style="background: ${strain.visualColor}; ${strain.bgPattern}; opacity: ${strainImg ? '0' : '1'};"></div>
+          <div class="card-banner-overlay"></div>
+          
+          <!-- BOTÓN FAVORITO CORAZÓN EN BANNER -->
+          <button class="card-fav-btn ${isFav ? 'active' : ''}" data-strain-id="${strain.id}" onclick="event.stopPropagation(); window.communityManager && window.communityManager.toggleFavorite('${strain.id}')" title="${isFav ? 'Quitar de Favoritos' : 'Guardar en Favoritos'}" aria-label="Favorito">
+            <span class="fav-icon">${isFav ? '❤️' : '🤍'}</span>
+          </button>
 
-      return `
-        <div class="strain-card" role="article" aria-label="${safeName} (${strain.species} - ${safeBank})" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))}" style="--card-accent: ${strain.visualColor}; cursor: pointer;" onclick="document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
-          <div class="card-visual-banner" onclick="event.stopPropagation(); window.app && window.app.openImageLightbox('${strainImg}', '${safeName}', '${safeBank}')" title="🔍 Haz clic para ver foto en alta resolución con Zoom HD" role="button" aria-label="Ver imagen ampliada de ${safeName}">
-            ${imgTag}
-            <div class="card-visual-banner-inner" style="background: ${strain.visualColor}; ${strain.bgPattern}; opacity: ${strainImg ? '0' : '1'};"></div>
-            <div class="card-banner-overlay"></div>
-            
-            <!-- BOTÓN FAVORITO CORAZÓN EN BANNER -->
-            <button class="card-fav-btn ${isFav ? 'active' : ''}" data-strain-id="${strain.id}" onclick="event.stopPropagation(); window.communityManager && window.communityManager.toggleFavorite('${strain.id}')" title="${isFav ? 'Quitar de Favoritos' : 'Guardar en Favoritos'}" aria-label="Favorito">
-              <span class="fav-icon">${isFav ? '❤️' : '🤍'}</span>
-            </button>
-
-            ${strainImg ? `<div style="position: absolute; top: 8px; right: 8px; z-index: 10; background: rgba(0,0,0,0.75); backdrop-filter: blur(6px); border: 1px solid rgba(16,185,129,0.5); border-radius: 50px !important; padding: 3px 10px; font-size: 0.7rem; color: #6EE7B7; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">🔍 Zoom HD</div>` : ''}
-            <div style="position: absolute; bottom: 8px; left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: center; color: #fff; z-index: 2;">
-              <span style="font-size: 0.72rem; font-weight: 800; background: rgba(0,0,0,0.7); padding: 3px 10px; border-radius: 0 !important; backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.15);">
-                ${icon} ${bankName}
-              </span>
-              <span style="font-size: 0.78rem; color: #FFD700; font-weight: 700; text-shadow: 0 1px 4px rgba(0,0,0,0.9); background: rgba(0,0,0,0.6); padding: 3px 10px; border-radius: 0 !important; backdrop-filter: blur(4px);">
-                ${stars}
-              </span>
-            </div>
-          </div>
-
-          <div class="card-body">
-            <div class="strain-header">
-              <div>
-                <h3 class="strain-title">${strain.name}</h3>
-                <div class="strain-bank-label">${displayGenetics}</div>
-              </div>
-              <span class="badge-species ${(strain.species || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g,'-')}">${strain.species}</span>
-            </div>
-
-            <div class="strain-stats">
-              <span class="stat-pill">🔥 THC ${strain.thc}%</span>
-              <span class="stat-pill" style="background: rgba(16,185,129,0.12); color: #10B981; border: 1px solid rgba(16,185,129,0.25);">
-                🏠 ${strain.yieldIndoor} g/m²
-              </span>
-              <span class="stat-pill" style="background: rgba(139,92,246,0.12); color: #C4B5FD; border: 1px solid rgba(139,92,246,0.25);">
-                🌳 ${strain.yieldOutdoor} g/planta
-              </span>
-            </div>
-
-            <div class="terpene-indicator" style="background: ${terpeneData?.color || '#10B981'}15; border: 1px solid ${terpeneData?.color || '#10B981'}35; color: ${terpeneData?.color || '#10B981'};">
-              <span>🌿 Terpeno: <strong>${terpeneData?.name || strain.dominantTerpene}</strong></span>
-            </div>
-
-            <div class="strain-tags">
-              ${(strain.flavors || []).map(f => `<span class="tag-item">👅 ${f}</span>`).join('')}
-            </div>
-
-            <div class="card-actions" onclick="event.stopPropagation()" style="display: flex; gap: 8px; align-items: center;">
-              <button class="btn btn-primary" aria-label="Ver ficha botánica detallada de ${safeName}" style="flex: 1; border-radius: 8px !important;" onclick="event.stopPropagation(); document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
-                📋 Ficha
-              </button>
-              <button class="btn-compare-toggle ${isCompared ? 'active' : ''}" data-strain-id="${strain.id}" aria-label="${isCompared ? 'Quitar ' + safeName + ' del comparador' : 'Añadir ' + safeName + ' al comparador'}" onclick="event.stopPropagation(); window.app && window.app.toggleCompareStrain('${strain.id}')" title="${isCompared ? 'Quitar del comparador' : 'Comparar (hasta 3 cepas)'}">
-                ⚖️ ${isCompared ? 'Comparando' : 'Comparar'}
-              </button>
-              <button class="btn-fav-toggle ${isFav ? 'active' : ''}" data-strain-id="${strain.id}" onclick="event.stopPropagation(); window.communityManager && window.communityManager.toggleFavorite('${strain.id}')" title="${isFav ? 'Quitar de Favoritos' : 'Guardar en Favoritos'}" aria-label="Favorito">
-                ${isFav ? '❤️' : '🤍'}
-              </button>
-            </div>
+          ${strainImg ? `<div style="position: absolute; top: 8px; right: 8px; z-index: 10; background: rgba(0,0,0,0.75); backdrop-filter: blur(6px); border: 1px solid rgba(16,185,129,0.5); border-radius: 50px !important; padding: 3px 10px; font-size: 0.7rem; color: #6EE7B7; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">🔍 Zoom HD</div>` : ''}
+          <div style="position: absolute; bottom: 8px; left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: center; color: #fff; z-index: 2;">
+            <span style="font-size: 0.72rem; font-weight: 800; background: rgba(0,0,0,0.7); padding: 3px 10px; border-radius: 0 !important; backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.15);">
+              ${icon} ${bankName}
+            </span>
+            <span style="font-size: 0.78rem; color: #FFD700; font-weight: 700; text-shadow: 0 1px 4px rgba(0,0,0,0.9); background: rgba(0,0,0,0.6); padding: 3px 10px; border-radius: 0 !important; backdrop-filter: blur(4px);">
+              ${stars}
+            </span>
           </div>
         </div>
+
+        <div class="card-body">
+          <div class="strain-header">
+            <div>
+              <h3 class="strain-title">${strain.name}</h3>
+              <div class="strain-bank-label">${displayGenetics}</div>
+            </div>
+            <span class="badge-species ${(strain.species || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g,'-')}">${strain.species}</span>
+          </div>
+
+          <div class="strain-stats">
+            <span class="stat-pill">🔥 THC ${strain.thc}%</span>
+            <span class="stat-pill" style="background: rgba(16,185,129,0.12); color: #10B981; border: 1px solid rgba(16,185,129,0.25);">
+              🏠 ${strain.yieldIndoor} g/m²
+            </span>
+            <span class="stat-pill" style="background: rgba(139,92,246,0.12); color: #C4B5FD; border: 1px solid rgba(139,92,246,0.25);">
+              🌳 ${strain.yieldOutdoor} g/planta
+            </span>
+          </div>
+
+          <div class="terpene-indicator" style="background: ${terpeneData?.color || '#10B981'}15; border: 1px solid ${terpeneData?.color || '#10B981'}35; color: ${terpeneData?.color || '#10B981'};">
+            <span>🌿 Terpeno: <strong>${terpeneData?.name || strain.dominantTerpene}</strong></span>
+          </div>
+
+          <div class="strain-tags">
+            ${(strain.flavors || []).map(f => `<span class="tag-item">👅 ${f}</span>`).join('')}
+          </div>
+
+          <div class="card-actions" onclick="event.stopPropagation()" style="display: flex; gap: 8px; align-items: center;">
+            <button class="btn btn-primary" aria-label="Ver ficha botánica detallada de ${safeName}" style="flex: 1; border-radius: 8px !important;" onclick="event.stopPropagation(); document.dispatchEvent(new CustomEvent('openStrainDetail', { detail: '${strain.id}' }))">
+              📋 Ficha
+            </button>
+            <button class="btn-compare-toggle ${isCompared ? 'active' : ''}" data-strain-id="${strain.id}" aria-label="${isCompared ? 'Quitar ' + safeName + ' del comparador' : 'Añadir ' + safeName + ' al comparador'}" onclick="event.stopPropagation(); window.app && window.app.toggleCompareStrain('${strain.id}')" title="${isCompared ? 'Quitar del comparador' : 'Comparar (hasta 3 cepas)'}">
+              ⚖️ ${isCompared ? 'Comparando' : 'Comparar'}
+            </button>
+            <button class="btn-fav-toggle ${isFav ? 'active' : ''}" data-strain-id="${strain.id}" onclick="event.stopPropagation(); window.communityManager && window.communityManager.toggleFavorite('${strain.id}')" title="${isFav ? 'Quitar de Favoritos' : 'Guardar en Favoritos'}" aria-label="Favorito">
+              ${isFav ? '❤️' : '🤍'}
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  renderStrainsGrid(strains) {
+    if (!this.strainsGrid) return;
+
+    // Desconectar observer previo si existía
+    if (this._catalogObserver) {
+      this._catalogObserver.disconnect();
+      this._catalogObserver = null;
+    }
+
+    if (this.catalogCount) {
+      if (this.filterFavoritesOnly) {
+        this.catalogCount.textContent = `Mostrando ${strains.length} favorita(s) ❤️`;
+      } else {
+        this.catalogCount.textContent = `Mostrando ${strains.length} cepa(s)`;
+      }
+    }
+
+    if (strains.length === 0) {
+      if (this.filterFavoritesOnly) {
+        this.strainsGrid.innerHTML = `
+          <div class="empty-state empty-favorites-state" style="grid-column: 1 / -1; padding: 3rem 1.5rem; text-align: center;">
+            <div class="empty-icon" style="font-size: 3.5rem; margin-bottom: 0.8rem; filter: drop-shadow(0 0 16px rgba(239, 68, 68, 0.4));">❤️</div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; color: #fff; font-weight: 800;">Aún no tienes cepas en Favoritos</h3>
+            <p style="color: var(--text-muted); max-width: 480px; margin: 0 auto 1.4rem; line-height: 1.55; font-size: 0.95rem;">
+              Haz clic en el corazón en cualquier variedad del catálogo para guardarla aquí y tenerla siempre a mano.
+            </p>
+            <button class="btn-primary" id="btn-empty-clear-fav-filter" style="margin: 0 auto; display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; border-radius: 50px; font-weight: 700; cursor: pointer;">
+              <span>🌐</span> Ver todo el catálogo
+            </button>
+          </div>
+        `;
+        document.getElementById('btn-empty-clear-fav-filter')?.addEventListener('click', () => {
+          this.setFavoritesFilter(false);
+        });
+        return;
+      }
+
+      this.strainsGrid.innerHTML = `
+        <div class="empty-state" style="grid-column: 1 / -1;">
+          <div class="empty-icon">🔍</div>
+          <h3>No se encontraron cepas</h3>
+          <p>Ajusta el filtro de banco, especie o término de búsqueda.</p>
+        </div>
       `;
-    }).join('');
+      return;
+    }
+
+    this._catalogBatchSize = 24;
+    this._renderedCatalogCount = 0;
+    this._activeCatalogList = strains;
+
+    const initialBatch = strains.slice(0, this._catalogBatchSize);
+    const initialHTML = initialBatch.map((strain, idx) => this.generateStrainCardHTML(strain, idx)).join('');
+    
+    const hasMore = strains.length > this._catalogBatchSize;
+    const sentinelHTML = `
+      <div id="catalog-scroll-sentinel" style="grid-column: 1 / -1; height: 50px; margin: 20px 0; display: ${hasMore ? 'flex' : 'none'}; align-items: center; justify-content: center;">
+        <div class="catalog-sentinel-spinner" style="font-size: 0.88rem; color: var(--text-muted); display: inline-flex; align-items: center; gap: 8px; background: rgba(16,185,129,0.06); padding: 8px 18px; border-radius: 50px; border: 1px solid rgba(16,185,129,0.2);">
+          <span>🌱</span> <span>Cargando más variedades botánicas...</span>
+        </div>
+      </div>
+    `;
+
+    this.strainsGrid.innerHTML = initialHTML + sentinelHTML;
+    this._renderedCatalogCount = initialBatch.length;
+
+    // Activar inmediatamente imágenes cacheadas que ya hayan cargado
+    this._checkLoadedCachedImages();
+
+    if (hasMore && 'IntersectionObserver' in window) {
+      const sentinelEl = document.getElementById('catalog-scroll-sentinel');
+      if (sentinelEl) {
+        this._catalogObserver = new IntersectionObserver((entries) => {
+          const entry = entries[0];
+          if (entry && entry.isIntersecting) {
+            this.renderNextCatalogBatch();
+          }
+        }, {
+          root: null,
+          rootMargin: '450px 0px',
+          threshold: 0.01
+        });
+        this._catalogObserver.observe(sentinelEl);
+      }
+    }
 
     this.updateCompareUI();
+  }
+
+  renderNextCatalogBatch() {
+    if (!this.strainsGrid || !this._activeCatalogList) return;
+    if (this._renderedCatalogCount >= this._activeCatalogList.length) {
+      const sentinel = document.getElementById('catalog-scroll-sentinel');
+      if (sentinel) sentinel.style.display = 'none';
+      if (this._catalogObserver) {
+        this._catalogObserver.disconnect();
+        this._catalogObserver = null;
+      }
+      return;
+    }
+
+    const nextBatch = this._activeCatalogList.slice(
+      this._renderedCatalogCount,
+      this._renderedCatalogCount + this._catalogBatchSize
+    );
+
+    if (nextBatch.length === 0) return;
+
+    const cardsHTML = nextBatch.map((strain, idx) => 
+      this.generateStrainCardHTML(strain, this._renderedCatalogCount + idx)
+    ).join('');
+
+    const fragment = document.createRange().createContextualFragment(cardsHTML);
+    const sentinel = document.getElementById('catalog-scroll-sentinel');
+
+    if (sentinel && sentinel.parentNode === this.strainsGrid) {
+      this.strainsGrid.insertBefore(fragment, sentinel);
+    } else {
+      this.strainsGrid.appendChild(fragment);
+    }
+
+    this._renderedCatalogCount += nextBatch.length;
+    this._checkLoadedCachedImages();
+    this.updateCompareUI();
+
+    if (this._renderedCatalogCount >= this._activeCatalogList.length) {
+      if (sentinel) sentinel.style.display = 'none';
+      if (this._catalogObserver) {
+        this._catalogObserver.disconnect();
+        this._catalogObserver = null;
+      }
+    }
+  }
+
+  _checkLoadedCachedImages() {
+    if (!this.strainsGrid) return;
+    const pendingImages = this.strainsGrid.querySelectorAll('.card-visual-img:not(.is-loaded)');
+    pendingImages.forEach(img => {
+      if (img.complete && img.naturalWidth > 0) {
+        img.classList.add('is-loaded');
+        img.parentElement?.classList.remove('is-loading');
+      }
+    });
   }
 
   filterByStash() {
