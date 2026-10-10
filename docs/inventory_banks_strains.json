@@ -1,0 +1,6603 @@
+{
+  "metadata": {
+    "generated_at": "2026-10-10",
+    "total_strains": 877,
+    "total_banks": 75,
+    "species_distribution": {
+      "Índica": 387,
+      "Sativa": 223,
+      "Híbrida": 267
+    }
+  },
+  "banks_summary": [
+    {
+      "bank": "00 Seeds Bank",
+      "count": 15,
+      "strains": [
+        {
+          "id": "oo-chemdawg",
+          "name": "Chemdawg",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 65
+        },
+        {
+          "id": "oo-caramel-cream",
+          "name": "Caramel Cream",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 55
+        },
+        {
+          "id": "oo-white-widow",
+          "name": "White Widow",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "oo-super-skunk",
+          "name": "Super Skunk",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 50
+        },
+        {
+          "id": "00s-cheese-xl",
+          "name": "Cheese XL Auto",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 65
+        },
+        {
+          "id": "00s-critical-mass",
+          "name": "Critical Mass CBD",
+          "species": "Índica",
+          "thc": 9,
+          "floweringDays": 55
+        },
+        {
+          "id": "00s-white-smurf",
+          "name": "White Smurf Auto",
+          "species": "Híbrida",
+          "thc": 17,
+          "floweringDays": 65
+        },
+        {
+          "id": "00s-afghan-mass",
+          "name": "Afghan Mass",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 50
+        },
+        {
+          "id": "00-kush",
+          "name": "00 Kush",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 55
+        },
+        {
+          "id": "chocolate-skunk",
+          "name": "Chocolate Skunk",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 52
+        },
+        {
+          "id": "gorilla-00",
+          "name": "Gorilla",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 60
+        },
+        {
+          "id": "california-kush",
+          "name": "California Kush",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 58
+        },
+        {
+          "id": "sweet-soma",
+          "name": "Sweet Soma",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "00seeds-00-cheese",
+          "name": "00 Cheese",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "00seeds-critical-neville-haze",
+          "name": "Critical Neville Haze",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 70
+        }
+      ]
+    },
+    {
+      "bank": "ACE Seeds",
+      "count": 12,
+      "strains": [
+        {
+          "id": "aceseeds-panama",
+          "name": "Panama",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 77
+        },
+        {
+          "id": "aceseeds-malawi",
+          "name": "Malawi",
+          "species": "Sativa",
+          "thc": 27,
+          "floweringDays": 85
+        },
+        {
+          "id": "aceseeds-golden-tiger",
+          "name": "Golden Tiger",
+          "species": "Sativa",
+          "thc": 28,
+          "floweringDays": 84
+        },
+        {
+          "id": "aceseeds-zamaldelica",
+          "name": "Zamaldelica",
+          "species": "Sativa",
+          "thc": 27,
+          "floweringDays": 80
+        },
+        {
+          "id": "aceseeds-pakistan-chitral-kush",
+          "name": "Pakistan Chitral Kush",
+          "species": "Índica",
+          "thc": 16,
+          "floweringDays": 56
+        },
+        {
+          "id": "aceseeds-violeta",
+          "name": "Violeta",
+          "species": "Índica",
+          "thc": 17,
+          "floweringDays": 60
+        },
+        {
+          "id": "aceseeds-purple-haze-x-malawi",
+          "name": "Purple Haze x Malawi",
+          "species": "Sativa",
+          "thc": 25,
+          "floweringDays": 90
+        },
+        {
+          "id": "aceseeds-super-malawi-haze",
+          "name": "Super Malawi Haze",
+          "species": "Sativa",
+          "thc": 26,
+          "floweringDays": 80
+        },
+        {
+          "id": "aceseeds-congo",
+          "name": "Congo",
+          "species": "Sativa",
+          "thc": 19,
+          "floweringDays": 70
+        },
+        {
+          "id": "aceseeds-guawi",
+          "name": "Guawi",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 80
+        },
+        {
+          "id": "aceseeds-morocco-beldia",
+          "name": "Morocco Beldia Kif",
+          "species": "Sativa",
+          "thc": 18,
+          "floweringDays": 84
+        },
+        {
+          "id": "aceseeds-zamal",
+          "name": "Zamal A5 Haze",
+          "species": "Sativa",
+          "thc": 19,
+          "floweringDays": 100
+        }
+      ]
+    },
+    {
+      "bank": "Anesia Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "anesia-future-1",
+          "name": "Future #1",
+          "species": "Híbrida",
+          "thc": 37,
+          "floweringDays": 67
+        },
+        {
+          "id": "anesia-blackberry-moonrocks",
+          "name": "Blackberry Moonrocks",
+          "species": "Índica",
+          "thc": 33,
+          "floweringDays": 60
+        },
+        {
+          "id": "anesia-frozen-black-cherry",
+          "name": "Frozen Black Cherry",
+          "species": "Índica",
+          "thc": 35,
+          "floweringDays": 62
+        },
+        {
+          "id": "anesia-captain-future",
+          "name": "Captain Future",
+          "species": "Sativa",
+          "thc": 36,
+          "floweringDays": 72
+        },
+        {
+          "id": "anesia-banana-mac",
+          "name": "Banana MAC",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 62
+        },
+        {
+          "id": "anesia-nova-og",
+          "name": "Nova OG",
+          "species": "Índica",
+          "thc": 32,
+          "floweringDays": 62
+        },
+        {
+          "id": "anesia-big-bazooka",
+          "name": "Big Bazooka",
+          "species": "Índica",
+          "thc": 29,
+          "floweringDays": 58
+        },
+        {
+          "id": "anesia-slurricane",
+          "name": "Slurricane",
+          "species": "Índica",
+          "thc": 30,
+          "floweringDays": 64
+        },
+        {
+          "id": "anesia-apricot-oreoz",
+          "name": "Apricot Oreoz",
+          "species": "Híbrida",
+          "thc": 33,
+          "floweringDays": 63
+        },
+        {
+          "id": "anesia-imperium-x",
+          "name": "Imperium X",
+          "species": "Híbrida",
+          "thc": 36,
+          "floweringDays": 68
+        }
+      ]
+    },
+    {
+      "bank": "Archive Seed Bank",
+      "count": 10,
+      "strains": [
+        {
+          "id": "arc-dosidos",
+          "name": "Dosidos",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "arc-rainbow-belts",
+          "name": "Rainbow Belts",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "arc-moonbow",
+          "name": "Moonbow",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 65
+        },
+        {
+          "id": "arc-face-off-og",
+          "name": "Face Off OG",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "arc-rudeboi-og",
+          "name": "RudeBoi OG",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 65
+        },
+        {
+          "id": "arc-valley-girl",
+          "name": "Valley Girl",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "arc-dank-dough",
+          "name": "Dank Dough",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "arc-double-cross",
+          "name": "Double Cross",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "arc-memory-loss",
+          "name": "Memory Loss",
+          "species": "Sativa",
+          "thc": 26,
+          "floweringDays": 70
+        },
+        {
+          "id": "arc-z-mints",
+          "name": "Z-Mints",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "BSF Seeds",
+      "count": 15,
+      "strains": [
+        {
+          "id": "bsf-gorilla-glue-4",
+          "name": "Gorilla Glue #4",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "bsf-lebron-haze",
+          "name": "Lebron Haze",
+          "species": "Sativa",
+          "thc": 28,
+          "floweringDays": 56
+        },
+        {
+          "id": "bsf-moby-d",
+          "name": "Moby-D",
+          "species": "Sativa",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "bsf-gorilla-ghost",
+          "name": "Gorilla Ghost",
+          "species": "Híbrida",
+          "thc": 29,
+          "floweringDays": 60
+        },
+        {
+          "id": "bsf-double-cookies",
+          "name": "Double Cookies",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 58
+        },
+        {
+          "id": "bsf-green-tiger-fast",
+          "name": "Green Tiger (Faster)",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 42
+        },
+        {
+          "id": "bsf-obg-kush-fast",
+          "name": "OBG Kush (Faster)",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 42
+        },
+        {
+          "id": "bsf-el-gaucho-fast",
+          "name": "El Gaucho (Faster)",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 45
+        },
+        {
+          "id": "bsf-rainbows",
+          "name": "Rainbows",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "bsf-gorilla-rainbows",
+          "name": "Gorilla Rainbows",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 60
+        },
+        {
+          "id": "bsf-orange-blossom",
+          "name": "Orange Blossom",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 65
+        },
+        {
+          "id": "bsf-red-critical-auto",
+          "name": "Red Critical XXL Auto",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 55
+        },
+        {
+          "id": "bsf-lebron-haze-auto",
+          "name": "Lebron Haze XXL Auto",
+          "species": "Sativa",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "bsf-gorilla-glue-auto",
+          "name": "Gorilla Glue XXL Auto",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 65
+        },
+        {
+          "id": "bsf-ice-cream-cake-fast",
+          "name": "Ice Cream Cake (Faster)",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 45
+        }
+      ]
+    },
+    {
+      "bank": "Barney's Farm",
+      "count": 16,
+      "strains": [
+        {
+          "id": "bf-mimosa-orange-punch",
+          "name": "Mimosa x Orange Punch",
+          "species": "Índica",
+          "thc": 30,
+          "floweringDays": 58
+        },
+        {
+          "id": "bf-dos-si-dos-33",
+          "name": "Dos Si Dos 33",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 60
+        },
+        {
+          "id": "bf-pineapple-express",
+          "name": "Pineapple Express",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "bf-laughing-buddha",
+          "name": "Laughing Buddha",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 77
+        },
+        {
+          "id": "bf-sherbet-queen",
+          "name": "Sherbet Queen",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "bf-zkittlez-og",
+          "name": "Zkittlez OG",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 56
+        },
+        {
+          "id": "bf-acapulco-gold",
+          "name": "Acapulco Gold",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 75
+        },
+        {
+          "id": "barneys-liberty-haze",
+          "name": "Liberty Haze",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "barneys-pineapple-chunk",
+          "name": "Pineapple Chunk",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 56
+        },
+        {
+          "id": "barneys-lsd",
+          "name": "LSD",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "barneys-critical-kush",
+          "name": "Critical Kush",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 55
+        },
+        {
+          "id": "barneys-cookies-kush",
+          "name": "Cookies Kush",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 63
+        },
+        {
+          "id": "barneys-strawberry-lemonade",
+          "name": "Strawberry Lemonade",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 70
+        },
+        {
+          "id": "barneys-runtz-muffin",
+          "name": "Runtz Muffin",
+          "species": "Índica",
+          "thc": 29,
+          "floweringDays": 65
+        },
+        {
+          "id": "barneys-wedding-cake",
+          "name": "Wedding Cake",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "barneys-biscotti-mintz",
+          "name": "Biscotti Mintz",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Big Buddha Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "bbs-big-buddha-cheese",
+          "name": "Big Buddha Cheese",
+          "species": "Índica",
+          "thc": 20.0,
+          "floweringDays": 56
+        },
+        {
+          "id": "bbs-blue-cheese",
+          "name": "Blue Cheese (Big Buddha)",
+          "species": "Índica",
+          "thc": 21.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "bbs-chiesel",
+          "name": "Chiesel",
+          "species": "Sativa",
+          "thc": 22.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "bbs-buddha-tahoe",
+          "name": "Buddha Tahoe",
+          "species": "Índica",
+          "thc": 24.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "bbs-cheesy-dick",
+          "name": "Cheesy Dick",
+          "species": "Índica",
+          "thc": 22.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "bbs-cheese-dawg",
+          "name": "Cheese Dawg",
+          "species": "Índica",
+          "thc": 23.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "bbs-silver-buddha-haze",
+          "name": "Silver Buddha Haze",
+          "species": "Sativa",
+          "thc": 21.0,
+          "floweringDays": 70
+        },
+        {
+          "id": "bbs-freeze-cheese-89",
+          "name": "Freeze Cheese '89",
+          "species": "Índica",
+          "thc": 20.0,
+          "floweringDays": 56
+        },
+        {
+          "id": "bbs-black-cheese",
+          "name": "Black Cheese",
+          "species": "Índica",
+          "thc": 21.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "bbs-bubble-squeak",
+          "name": "Bubble Squeak",
+          "species": "Índica",
+          "thc": 20.0,
+          "floweringDays": 58
+        }
+      ]
+    },
+    {
+      "bank": "Black Farm Genetix",
+      "count": 10,
+      "strains": [
+        {
+          "id": "bfg-glukies",
+          "name": "Glukies",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "bfg-wasabi",
+          "name": "Wasabi",
+          "species": "Índica",
+          "thc": 28.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "bfg-tiramisu",
+          "name": "Tiramisu",
+          "species": "Índica",
+          "thc": 25.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "bfg-acai-bananas",
+          "name": "Acai & Bananas",
+          "species": "Híbrida",
+          "thc": 26.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "bfg-banana-slammer",
+          "name": "Banana Slammer",
+          "species": "Índica",
+          "thc": 26.0,
+          "floweringDays": 62
+        },
+        {
+          "id": "bfg-banana-glukies",
+          "name": "Banana Glukies",
+          "species": "Híbrida",
+          "thc": 27.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "bfg-limosa",
+          "name": "Limosa",
+          "species": "Sativa",
+          "thc": 25.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "bfg-ipanema",
+          "name": "Ipanema",
+          "species": "Híbrida",
+          "thc": 26.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "bfg-high-octane",
+          "name": "High Octane",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "bfg-peach-tsunami",
+          "name": "Peach Tsunami",
+          "species": "Híbrida",
+          "thc": 25.0,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Blimburn Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "blimburn-mamba-negra",
+          "name": "Mamba Negra",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "blimburn-granddaddy-purple",
+          "name": "Granddaddy Purple",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "blimburn-bruce-banner-3",
+          "name": "Bruce Banner #3",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 65
+        },
+        {
+          "id": "blimburn-gorilla-glue-4",
+          "name": "Gorilla Glue #4",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "blimburn-girl-scout-cookies",
+          "name": "Girl Scout Cookies",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 65
+        },
+        {
+          "id": "blimburn-green-crack",
+          "name": "Green Crack",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 55
+        },
+        {
+          "id": "blimburn-santa-muerte",
+          "name": "Santa Muerte",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 75
+        },
+        {
+          "id": "blimburn-guanabana",
+          "name": "Guanabana",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "blimburn-chocolopez",
+          "name": "Chocolopez",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 70
+        },
+        {
+          "id": "blimburn-bcn-diesel",
+          "name": "Bcn Diesel",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 65
+        }
+      ]
+    },
+    {
+      "bank": "Bloom Seed Co.",
+      "count": 10,
+      "strains": [
+        {
+          "id": "bloom-strawberry-guava",
+          "name": "Strawberry Guava",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "bloom-dulce-de-uva",
+          "name": "Dulce de Uva",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "bloom-melted-strawberries",
+          "name": "Melted Strawberries",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 68
+        },
+        {
+          "id": "bloom-grape-cream-cake",
+          "name": "Grape Cream Cake",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "bloom-sherbanger",
+          "name": "Sherbanger",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 65
+        },
+        {
+          "id": "bloom-black-maple",
+          "name": "Black Maple",
+          "species": "Híbrida",
+          "thc": 29,
+          "floweringDays": 63
+        },
+        {
+          "id": "bloom-funk-mtn",
+          "name": "Funk MTN",
+          "species": "Sativa",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "bloom-rainbow-belts-2-0",
+          "name": "Rainbow Belts 2.0",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "bloom-papaya-power",
+          "name": "Papaya Power",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 60
+        },
+        {
+          "id": "bloom-strawberry-bubbles",
+          "name": "Strawberry Bubbles",
+          "species": "Sativa",
+          "thc": 26,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Bodhi Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "bodhi-goji-og",
+          "name": "Goji OG",
+          "species": "Sativa",
+          "thc": 21.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "bodhi-space-monkey",
+          "name": "Space Monkey",
+          "species": "Índica",
+          "thc": 24.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "bodhi-dream-lotus",
+          "name": "Dream Lotus",
+          "species": "Sativa",
+          "thc": 21.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "bodhi-snow-lotus",
+          "name": "Snow Lotus",
+          "species": "Índica",
+          "thc": 22.0,
+          "floweringDays": 56
+        },
+        {
+          "id": "bodhi-mothers-milk",
+          "name": "Mother's Milk",
+          "species": "Híbrida",
+          "thc": 22.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "bodhi-sunshine-daydream",
+          "name": "Sunshine Daydream",
+          "species": "Índica",
+          "thc": 20.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "bodhi-blue-tara",
+          "name": "Blue Tara",
+          "species": "Índica",
+          "thc": 21.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "bodhi-good-medicine",
+          "name": "Good Medicine",
+          "species": "Híbrida",
+          "thc": 7.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "bodhi-ancient-og",
+          "name": "Ancient OG",
+          "species": "Índica",
+          "thc": 22.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "bodhi-prayer-tower",
+          "name": "Prayer Tower",
+          "species": "Sativa",
+          "thc": 20.0,
+          "floweringDays": 70
+        }
+      ]
+    },
+    {
+      "bank": "Brothers Grimm Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "bg-cinderella-99",
+          "name": "Cinderella 99",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 56
+        },
+        {
+          "id": "bg-rosetta-stone",
+          "name": "Rosetta Stone",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 58
+        },
+        {
+          "id": "bg-apollo-11",
+          "name": "Apollo 11",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 56
+        },
+        {
+          "id": "bg-killer-queen",
+          "name": "Killer Queen",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "bg-princess-haze",
+          "name": "Princess Haze",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 63
+        },
+        {
+          "id": "bg-queen-of-soul",
+          "name": "Queen of Soul",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "bg-grimm-glue",
+          "name": "Grimm Glue",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 60
+        },
+        {
+          "id": "bg-durban-thai-c99",
+          "name": "Durban Thai x C99",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 65
+        },
+        {
+          "id": "bg-ocifer",
+          "name": "Ocifer",
+          "species": "Híbrida",
+          "thc": 29,
+          "floweringDays": 63
+        },
+        {
+          "id": "bg-genius-juice",
+          "name": "Genius Juice",
+          "species": "Sativa",
+          "thc": 25,
+          "floweringDays": 58
+        }
+      ]
+    },
+    {
+      "bank": "Buddha Seeds",
+      "count": 15,
+      "strains": [
+        {
+          "id": "buddha-magnum",
+          "name": "Magnum",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 85
+        },
+        {
+          "id": "buddha-deimos",
+          "name": "Deimos",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 80
+        },
+        {
+          "id": "buddha-white-dwarf",
+          "name": "White Dwarf",
+          "species": "Índica",
+          "thc": 17,
+          "floweringDays": 63
+        },
+        {
+          "id": "buddha-purple-kush",
+          "name": "Buddha Purple Kush",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "buddha-gorila",
+          "name": "Gorila",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "buddha-gelato",
+          "name": "Buddha Gelato",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 62
+        },
+        {
+          "id": "buddha-cookie",
+          "name": "Buddha Cookie",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 60
+        },
+        {
+          "id": "buddha-dosi2",
+          "name": "Buddha DoSi2",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 65
+        },
+        {
+          "id": "buddha-wedding-cheesecake",
+          "name": "Wedding Cheesecake",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 58
+        },
+        {
+          "id": "buddha-syrup",
+          "name": "Syrup",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 65
+        },
+        {
+          "id": "buddha-med-gom",
+          "name": "Med Gom 1.0",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 55
+        },
+        {
+          "id": "buddha-big-buddha-cheese",
+          "name": "Big Buddha Cheese",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "buddha-medikit",
+          "name": "Medikit",
+          "species": "Índica",
+          "thc": 9,
+          "floweringDays": 60
+        },
+        {
+          "id": "buddha-kabrales",
+          "name": "Kabrales",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 58
+        },
+        {
+          "id": "buddha-tokay-haze",
+          "name": "Tokay Haze",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 72
+        }
+      ]
+    },
+    {
+      "bank": "CSI Humboldt",
+      "count": 10,
+      "strains": [
+        {
+          "id": "csi-bubba-kush-s1",
+          "name": "Bubba Kush S1",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "csi-chem-91-s1",
+          "name": "Chem '91 S1",
+          "species": "Sativa",
+          "thc": 26,
+          "floweringDays": 68
+        },
+        {
+          "id": "csi-triangle-kush-s1",
+          "name": "Triangle Kush S1",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 67
+        },
+        {
+          "id": "csi-mendocino-purple",
+          "name": "Mendocino Purple",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "csi-big-bad-wolf",
+          "name": "Big Bad Wolf",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 67
+        },
+        {
+          "id": "csi-irene-kush-s1",
+          "name": "Irene Kush S1",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 65
+        },
+        {
+          "id": "csi-urkle-s1",
+          "name": "Urkle S1",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 63
+        },
+        {
+          "id": "csi-fallen-angel",
+          "name": "Fallen Angel",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 65
+        },
+        {
+          "id": "csi-chem-d-s1",
+          "name": "Chem D S1",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 68
+        },
+        {
+          "id": "csi-old-family-purple",
+          "name": "Old Family Purple",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Cannabiogen",
+      "count": 10,
+      "strains": [
+        {
+          "id": "cannabiogen-taskenti",
+          "name": "Taskenti",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 56
+        },
+        {
+          "id": "cannabiogen-peyote-purple",
+          "name": "Peyote Purple",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "cannabiogen-sandstorm",
+          "name": "Sandstorm",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 56
+        },
+        {
+          "id": "cannabiogen-nepal-jam",
+          "name": "Nepal Jam",
+          "species": "Sativa",
+          "thc": 18,
+          "floweringDays": 60
+        },
+        {
+          "id": "cannabiogen-caribe",
+          "name": "Caribe",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 70
+        },
+        {
+          "id": "cannabiogen-jamaica-blue-mountain",
+          "name": "Jamaica Blue Mountain",
+          "species": "Sativa",
+          "thc": 19,
+          "floweringDays": 77
+        },
+        {
+          "id": "cannabiogen-leshaze",
+          "name": "Leshaze",
+          "species": "Sativa",
+          "thc": 19,
+          "floweringDays": 65
+        },
+        {
+          "id": "cannabiogen-panama-dc",
+          "name": "Panama DC",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "cannabiogen-mangobiche-kush",
+          "name": "Mangobiche Kush",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 70
+        },
+        {
+          "id": "cannabiogen-hash-fruit",
+          "name": "Hash Fruit",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 55
+        }
+      ]
+    },
+    {
+      "bank": "Cannarado Genetics",
+      "count": 10,
+      "strains": [
+        {
+          "id": "cannarado-sundae-driver",
+          "name": "Sundae Driver",
+          "species": "Híbrida",
+          "thc": 24.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "cannarado-wedding-pie",
+          "name": "Wedding Pie",
+          "species": "Índica",
+          "thc": 25.5,
+          "floweringDays": 63
+        },
+        {
+          "id": "cannarado-apple-sundae",
+          "name": "Apple Sundae",
+          "species": "Híbrida",
+          "thc": 23.5,
+          "floweringDays": 63
+        },
+        {
+          "id": "cannarado-birthday-cake",
+          "name": "Birthday Cake",
+          "species": "Índica",
+          "thc": 25.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "cannarado-banana-sundae",
+          "name": "Banana Sundae",
+          "species": "Híbrida",
+          "thc": 24.5,
+          "floweringDays": 65
+        },
+        {
+          "id": "cannarado-biscotti-sundae",
+          "name": "Biscotti Sundae",
+          "species": "Índica",
+          "thc": 26.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "cannarado-kitchen-sink",
+          "name": "Kitchen Sink",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 68
+        },
+        {
+          "id": "cannarado-pie-hoe",
+          "name": "Pie Hoe",
+          "species": "Índica",
+          "thc": 25.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "cannarado-5-alive",
+          "name": "5 Alive",
+          "species": "Sativa",
+          "thc": 23.0,
+          "floweringDays": 67
+        },
+        {
+          "id": "cannarado-birthday-funk",
+          "name": "Birthday Funk",
+          "species": "Índica",
+          "thc": 26.0,
+          "floweringDays": 65
+        }
+      ]
+    },
+    {
+      "bank": "Canuk Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "canuk-wedding-cake",
+          "name": "Wedding Cake",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "canuk-runtz",
+          "name": "Runtz",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "canuk-banana-cream",
+          "name": "Banana Cream",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "canuk-blueberry-muffin",
+          "name": "Blueberry Muffin",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "canuk-rainbow-sherbet",
+          "name": "Rainbow Sherbet",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 63
+        },
+        {
+          "id": "canuk-peanut-butter-breath",
+          "name": "Peanut Butter Breath",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "canuk-biscotti",
+          "name": "Biscotti",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 60
+        },
+        {
+          "id": "canuk-mac1",
+          "name": "MAC 1",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 70
+        },
+        {
+          "id": "canuk-purple-punch",
+          "name": "Purple Punch",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "canuk-tropicana-cookies",
+          "name": "Tropicana Cookies",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Clearwater Genetics",
+      "count": 10,
+      "strains": [
+        {
+          "id": "cwg-dantes-inferno",
+          "name": "Dante's Inferno",
+          "species": "Híbrida",
+          "thc": 29,
+          "floweringDays": 65
+        },
+        {
+          "id": "cwg-maitai-4",
+          "name": "Maitai #4",
+          "species": "Sativa",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "cwg-apple-tarts",
+          "name": "Apple Tarts",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "cwg-zero-gravity",
+          "name": "Zero Gravity",
+          "species": "Índica",
+          "thc": 30,
+          "floweringDays": 68
+        },
+        {
+          "id": "cwg-creamsicle-4",
+          "name": "Creamsicle #4",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 60
+        },
+        {
+          "id": "cwg-warheads",
+          "name": "Warheads",
+          "species": "Sativa",
+          "thc": 28,
+          "floweringDays": 67
+        },
+        {
+          "id": "cwg-spec-4",
+          "name": "Spec #4",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "cwg-dosi-orange",
+          "name": "Dosi-Orange",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "cwg-blue-razz",
+          "name": "Blue Razz",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "cwg-head-doctor",
+          "name": "Head Doctor",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Compound Genetics",
+      "count": 10,
+      "strains": [
+        {
+          "id": "cpg-apples-and-bananas",
+          "name": "Apples and Bananas",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "cpg-pave",
+          "name": "Pavé",
+          "species": "Híbrida",
+          "thc": 29,
+          "floweringDays": 60
+        },
+        {
+          "id": "cpg-la-bomba",
+          "name": "La Bomba",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "cpg-jokerz",
+          "name": "Jokerz",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 58
+        },
+        {
+          "id": "cpg-gastro-pop",
+          "name": "Gastro Pop",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "cpg-grape-gas",
+          "name": "Grape Gas",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "cpg-marshmallow-og",
+          "name": "Marshmallow OG",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "cpg-red-bullz",
+          "name": "Red Bullz",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "cpg-high-society",
+          "name": "High Society",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "cpg-grandmaster-sexy",
+          "name": "Grandmaster Sexy",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Crockett Family Farms",
+      "count": 10,
+      "strains": [
+        {
+          "id": "cff-sour-tangie",
+          "name": "Sour Tangie",
+          "species": "Sativa",
+          "thc": 23.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "cff-clementine",
+          "name": "Clementine",
+          "species": "Sativa",
+          "thc": 22.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "cff-banana-split",
+          "name": "Banana Split",
+          "species": "Híbrida",
+          "thc": 22.5,
+          "floweringDays": 60
+        },
+        {
+          "id": "cff-citrus-sap",
+          "name": "Citrus Sap",
+          "species": "Híbrida",
+          "thc": 24.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "cff-crocketts-dawg",
+          "name": "Crockett's Dawg",
+          "species": "Híbrida",
+          "thc": 23.5,
+          "floweringDays": 60
+        },
+        {
+          "id": "cff-strawberry-clem",
+          "name": "Strawberry Clem",
+          "species": "Híbrida",
+          "thc": 22.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "cff-strawberry-lemon-banana",
+          "name": "Strawberry Lemon Banana",
+          "species": "Híbrida",
+          "thc": 23.0,
+          "floweringDays": 62
+        },
+        {
+          "id": "cff-tangie-jack",
+          "name": "Tangie Jack",
+          "species": "Sativa",
+          "thc": 22.5,
+          "floweringDays": 68
+        },
+        {
+          "id": "cff-banana-spritz",
+          "name": "Banana Spritz",
+          "species": "Híbrida",
+          "thc": 24.5,
+          "floweringDays": 60
+        },
+        {
+          "id": "cff-malawi-moonshine",
+          "name": "Malawi Moonshine",
+          "species": "Sativa",
+          "thc": 23.5,
+          "floweringDays": 70
+        }
+      ]
+    },
+    {
+      "bank": "DNA Genetics",
+      "count": 25,
+      "strains": [
+        {
+          "id": "dna-kosher-kush",
+          "name": "Kosher Kush",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "dna-tangie",
+          "name": "Tangie",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 70
+        },
+        {
+          "id": "dna-chocolope",
+          "name": "Chocolope",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 65
+        },
+        {
+          "id": "dna-la-confidential",
+          "name": "LA Confidential",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 56
+        },
+        {
+          "id": "dna-holy-grail-kush",
+          "name": "Holy Grail Kush",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "dna-strawberry-banana",
+          "name": "Strawberry Banana",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "dna-24k-gold",
+          "name": "24K Gold",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "dna-lemon-skunk",
+          "name": "Lemon Skunk",
+          "species": "Híbrida",
+          "thc": 19,
+          "floweringDays": 58
+        },
+        {
+          "id": "dna-the-og-18",
+          "name": "The OG #18",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "dna-cataract-kush",
+          "name": "Cataract Kush",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 60
+        },
+        {
+          "id": "dna-purple-wreck",
+          "name": "Purple Wreck",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 58
+        },
+        {
+          "id": "dna-sour-tangie",
+          "name": "Sour Tangie",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 68
+        },
+        {
+          "id": "dna-sorbet",
+          "name": "Sorbet",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "dna-sleestack",
+          "name": "Sleestack",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 70
+        },
+        {
+          "id": "dna-cannalope-haze",
+          "name": "Cannalope Haze",
+          "species": "Sativa",
+          "thc": 19,
+          "floweringDays": 65
+        },
+        {
+          "id": "dna-rp43",
+          "name": "RP43 (Richard Petty)",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 60
+        },
+        {
+          "id": "dna-gmo-kosher",
+          "name": "GMO Kosher",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 65
+        },
+        {
+          "id": "dna-3peat",
+          "name": "3peat",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "dna-purple-kosher",
+          "name": "Purple Kosher",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "dna-honey-beez",
+          "name": "Honey Beez",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 60
+        },
+        {
+          "id": "dna-guavanade",
+          "name": "Guavanade",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 65
+        },
+        {
+          "id": "dna-gaz-money",
+          "name": "Gaz Money",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 60
+        },
+        {
+          "id": "dna-choco-mintz",
+          "name": "Choco Mintz",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 62
+        },
+        {
+          "id": "dna-blue-dream",
+          "name": "Blue Dream",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 65
+        },
+        {
+          "id": "dna-kandy-kush",
+          "name": "Kandy Kush",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Delicious Seeds",
+      "count": 15,
+      "strains": [
+        {
+          "id": "sugar-black-rose",
+          "name": "Sugar Black Rose",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 53
+        },
+        {
+          "id": "eleven-roses",
+          "name": "Eleven Roses",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 55
+        },
+        {
+          "id": "golosa",
+          "name": "Golosa",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "marmalate",
+          "name": "Marmalate",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 53
+        },
+        {
+          "id": "cotton-candy-kush",
+          "name": "Cotton Candy Kush",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 65
+        },
+        {
+          "id": "caramelo",
+          "name": "Caramelo",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "critical-kali-mist",
+          "name": "Critical Kali Mist",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 65
+        },
+        {
+          "id": "unknown-kush",
+          "name": "Unknown Kush",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 60
+        },
+        {
+          "id": "delicious-la-diva",
+          "name": "La Diva",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 65
+        },
+        {
+          "id": "delicious-blue-kush",
+          "name": "Blue Kush Berry",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "delicious-strawberry-sorbet",
+          "name": "Strawberry Sorbet",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 65
+        },
+        {
+          "id": "delicious-lord-kush",
+          "name": "Lord Kush",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 55
+        },
+        {
+          "id": "delicious-ultra-haze",
+          "name": "Ultra Haze",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 80
+        },
+        {
+          "id": "delicious-lemon-haze",
+          "name": "Lemon Haze",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 67
+        },
+        {
+          "id": "delicious-dark-orange-bud",
+          "name": "Dark Orange Bud",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Dinafem Seeds",
+      "count": 15,
+      "strains": [
+        {
+          "id": "dinafem-moby-dick",
+          "name": "Moby Dick",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 65
+        },
+        {
+          "id": "dinafem-critical-plus",
+          "name": "Critical +",
+          "species": "Híbrida",
+          "thc": 18,
+          "floweringDays": 50
+        },
+        {
+          "id": "dinafem-og-kush",
+          "name": "OG Kush",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 55
+        },
+        {
+          "id": "dinafem-cheese",
+          "name": "Cheese",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 55
+        },
+        {
+          "id": "dinafem-industrial-plant",
+          "name": "Industrial Plant",
+          "species": "Híbrida",
+          "thc": 18,
+          "floweringDays": 48
+        },
+        {
+          "id": "dinafem-amnesia-kush",
+          "name": "Amnesia Kush",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 65
+        },
+        {
+          "id": "dinafem-blue-widow",
+          "name": "Blue Widow",
+          "species": "Híbrida",
+          "thc": 19,
+          "floweringDays": 52
+        },
+        {
+          "id": "dinafem-dinamex",
+          "name": "Dinamex",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "dinafem-critical-jack",
+          "name": "Critical Jack",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "dinafem-critical-auto-2",
+          "name": "Critical + 2.0 Auto",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 70
+        },
+        {
+          "id": "dinafem-moby-dick-auto",
+          "name": "Moby Dick XXL Auto",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 75
+        },
+        {
+          "id": "dinafem-gorilla-auto",
+          "name": "Gorilla Auto",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 75
+        },
+        {
+          "id": "dinafem-remedy-cbd",
+          "name": "Dinamed CBD",
+          "species": "Híbrida",
+          "thc": 0.9,
+          "floweringDays": 60
+        },
+        {
+          "id": "dinafem-diesel",
+          "name": "Diesel",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "dinafem-sweet-grapefruit",
+          "name": "Sweet Deep Grapefruit",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 55
+        }
+      ]
+    },
+    {
+      "bank": "Dr. Underground",
+      "count": 10,
+      "strains": [
+        {
+          "id": "drug-king-kong",
+          "name": "King Kong",
+          "species": "Índica",
+          "thc": 21.0,
+          "floweringDays": 52
+        },
+        {
+          "id": "drug-melon-gum",
+          "name": "Melon Gum",
+          "species": "Híbrida",
+          "thc": 20.0,
+          "floweringDays": 53
+        },
+        {
+          "id": "drug-crystal-meth",
+          "name": "Crystal M.E.T.H.",
+          "species": "Sativa",
+          "thc": 22.5,
+          "floweringDays": 65
+        },
+        {
+          "id": "drug-painkiller",
+          "name": "Painkiller",
+          "species": "Índica",
+          "thc": 18.5,
+          "floweringDays": 56
+        },
+        {
+          "id": "drug-brooklyn-mango",
+          "name": "Brooklyn Mango",
+          "species": "Híbrida",
+          "thc": 21.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "drug-kong-47",
+          "name": "Kong 47",
+          "species": "Híbrida",
+          "thc": 22.0,
+          "floweringDays": 54
+        },
+        {
+          "id": "drug-black-jesus-og",
+          "name": "Black Jesus OG",
+          "species": "Índica",
+          "thc": 23.0,
+          "floweringDays": 58
+        },
+        {
+          "id": "drug-u-pink-kush",
+          "name": "U-Pink Kush",
+          "species": "Índica",
+          "thc": 22.0,
+          "floweringDays": 57
+        },
+        {
+          "id": "drug-soul-star",
+          "name": "Soul Star",
+          "species": "Índica",
+          "thc": 21.5,
+          "floweringDays": 56
+        },
+        {
+          "id": "drug-american-beauty",
+          "name": "American Beauty",
+          "species": "Híbrida",
+          "thc": 20.5,
+          "floweringDays": 58
+        }
+      ]
+    },
+    {
+      "bank": "Dutch Passion",
+      "count": 13,
+      "strains": [
+        {
+          "id": "dp-auto-blueberry",
+          "name": "Auto Blueberry",
+          "species": "Índica",
+          "thc": 17,
+          "floweringDays": 63
+        },
+        {
+          "id": "dp-mazar",
+          "name": "Mazar",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "dp-zkittlez",
+          "name": "Zkittlez",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 60
+        },
+        {
+          "id": "dp-passion-fruit",
+          "name": "Passion Fruit",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 65
+        },
+        {
+          "id": "dp-frisian-dew",
+          "name": "Frisian Dew",
+          "species": "Híbrida",
+          "thc": 16,
+          "floweringDays": 45
+        },
+        {
+          "id": "dp-auto-mazar",
+          "name": "Auto Mazar",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 70
+        },
+        {
+          "id": "dp-skywalker-og",
+          "name": "Skywalker OG",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 60
+        },
+        {
+          "id": "dp-blueberry",
+          "name": "Blueberry",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 56
+        },
+        {
+          "id": "dp-white-widow",
+          "name": "White Widow",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "dp-orange-bud",
+          "name": "Orange Bud",
+          "species": "Híbrida",
+          "thc": 18,
+          "floweringDays": 56
+        },
+        {
+          "id": "dp-powerplant",
+          "name": "Power Plant",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "dp-glueberry-og",
+          "name": "Glueberry OG",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 60
+        },
+        {
+          "id": "dp-colorado-cookies",
+          "name": "Colorado Cookies",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Elev8 Seeds",
+      "count": 15,
+      "strains": [
+        {
+          "id": "elev8-gas-monkey",
+          "name": "Gas Monkey",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "elev8-diesel-haze",
+          "name": "Diesel Haze",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 72
+        },
+        {
+          "id": "elev8-chem-dog-91",
+          "name": "Chemdawg 91",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 65
+        },
+        {
+          "id": "elev8-fuel-face",
+          "name": "Fuel Face",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "elev8-jet-fuel",
+          "name": "Jet Fuel",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 65
+        },
+        {
+          "id": "elev8-gorilla-glue-4",
+          "name": "Gorilla Glue #4",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "elev8-sour-bubble",
+          "name": "Sour Bubble",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "elev8-sherb-bx1",
+          "name": "Sherblato BX1",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "elev8-grape-gasoline",
+          "name": "Grape Gasoline",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "elev8-lemon-slushie",
+          "name": "Lemon Slushie",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "elev8-wedding-pie",
+          "name": "Wedding Pie",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "elev8-purple-punch",
+          "name": "Purple Punch",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 58
+        },
+        {
+          "id": "elev8-biscotti",
+          "name": "Biscotti",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "elev8-strawberry-cough",
+          "name": "Strawberry Cough",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 70
+        },
+        {
+          "id": "elev8-blue-dream",
+          "name": "Blue Dream",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 65
+        }
+      ]
+    },
+    {
+      "bank": "Ethos Genetics",
+      "count": 10,
+      "strains": [
+        {
+          "id": "eth-mandarin-cookies",
+          "name": "Mandarin Cookies",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "eth-grandpas-cookies",
+          "name": "Grandpa's Cookies",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "eth-lilac-diesel",
+          "name": "Lilac Diesel",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "eth-cherry-gar-see-ya",
+          "name": "Cherry Gar-See-Ya",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 58
+        },
+        {
+          "id": "eth-planet-of-the-grapes",
+          "name": "Planet of the Grapes",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 60
+        },
+        {
+          "id": "eth-apex",
+          "name": "Apex",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "eth-candy-store",
+          "name": "Candy Store",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "eth-member-berry",
+          "name": "Member Berry",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 58
+        },
+        {
+          "id": "eth-ethos-cookies",
+          "name": "Ethos Cookies",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "eth-colin-og",
+          "name": "Colin OG",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Eva Seeds",
+      "count": 15,
+      "strains": [
+        {
+          "id": "jamaican-dream",
+          "name": "Jamaican Dream",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 44
+        },
+        {
+          "id": "monster",
+          "name": "Monster",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 58
+        },
+        {
+          "id": "veneno",
+          "name": "Veneno",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 58
+        },
+        {
+          "id": "papas-candy",
+          "name": "Papa's Candy",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 50
+        },
+        {
+          "id": "high-level",
+          "name": "High Level",
+          "species": "Sativa",
+          "thc": 19,
+          "floweringDays": 58
+        },
+        {
+          "id": "black-dream",
+          "name": "Black Dream",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 48
+        },
+        {
+          "id": "furious-candy",
+          "name": "Furious Candy",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 48
+        },
+        {
+          "id": "missing-in-barcelona",
+          "name": "Missing In Barcelona",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 58
+        },
+        {
+          "id": "tnt-kush",
+          "name": "TNT Kush",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 58
+        },
+        {
+          "id": "gipsy-haze",
+          "name": "Gipsy Haze",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 63
+        },
+        {
+          "id": "lemon-king",
+          "name": "Lemon King",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 52
+        },
+        {
+          "id": "eva-alien-og",
+          "name": "Alien OG",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "eva-purple-haze",
+          "name": "Purple Haze",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 72
+        },
+        {
+          "id": "eva-tangerine-dream",
+          "name": "Tangerine Dream",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 65
+        },
+        {
+          "id": "eva-super-silver-haze",
+          "name": "Super Silver Haze Eva",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 72
+        }
+      ]
+    },
+    {
+      "bank": "Exotic Genetix",
+      "count": 10,
+      "strains": [
+        {
+          "id": "exg-grease-monkey",
+          "name": "Grease Monkey",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "exg-cookies-and-cream",
+          "name": "Cookies and Cream",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "exg-strawberries-and-cream",
+          "name": "Strawberries & Cream",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 58
+        },
+        {
+          "id": "exg-mint-chocolate-chip",
+          "name": "Mint Chocolate Chip",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 58
+        },
+        {
+          "id": "exg-red-runtz",
+          "name": "Red Runtz",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 60
+        },
+        {
+          "id": "exg-scotty-2-hotty",
+          "name": "Scotty 2 Hotty",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "exg-runtz-buttonz",
+          "name": "Runtz Buttonz",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "exg-power-sherb",
+          "name": "Power Sherb",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 58
+        },
+        {
+          "id": "exg-gary-poppins",
+          "name": "Gary Poppins",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "exg-tina",
+          "name": "Tina",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "G13 Labs Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "g13-labs-pineapple-express",
+          "name": "Pineapple Express",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 58
+        },
+        {
+          "id": "g13-labs-blue-og",
+          "name": "Blue OG",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 55
+        },
+        {
+          "id": "g13-labs-c99",
+          "name": "C99",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 52
+        },
+        {
+          "id": "g13-labs-gigabud",
+          "name": "Gigabud",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 53
+        },
+        {
+          "id": "g13-labs-raw-diesel",
+          "name": "Raw Diesel",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 62
+        },
+        {
+          "id": "g13-labs-double-black",
+          "name": "Double Black",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 55
+        },
+        {
+          "id": "g13-labs-white-lavender",
+          "name": "White Lavender",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 62
+        },
+        {
+          "id": "g13-labs-midnight-kush",
+          "name": "Midnight Kush",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 53
+        },
+        {
+          "id": "g13-labs-blueberry-gum",
+          "name": "Blueberry Gum",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 55
+        },
+        {
+          "id": "g13-labs-chocolate-heaven",
+          "name": "Chocolate Heaven",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 65
+        }
+      ]
+    },
+    {
+      "bank": "Genehtik Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "genehtik-kritikal-bilbo",
+          "name": "Kritikal Bilbo",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 48
+        },
+        {
+          "id": "genehtik-txomango",
+          "name": "Txomango",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 63
+        },
+        {
+          "id": "genehtik-super-silver-bilbo",
+          "name": "Super Silver Bilbo",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 70
+        },
+        {
+          "id": "genehtik-zuri-widow",
+          "name": "Zuri Widow",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 56
+        },
+        {
+          "id": "genehtik-txees-bilbo",
+          "name": "Txees Bilbo",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 55
+        },
+        {
+          "id": "genehtik-amnesia-bilbo",
+          "name": "Amnesia Bilbo",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 70
+        },
+        {
+          "id": "genehtik-northern-lights-x",
+          "name": "Northern Lights X",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 52
+        },
+        {
+          "id": "genehtik-blubonik",
+          "name": "Blubonik",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "genehtik-og-lemon-bilbo",
+          "name": "OG Lemon Bilbo",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 62
+        },
+        {
+          "id": "genehtik-santa-bilbo",
+          "name": "Santa Bilbo",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Green House Seed Co.",
+      "count": 10,
+      "strains": [
+        {
+          "id": "ghs-super-lemon-haze",
+          "name": "Super Lemon Haze",
+          "species": "Sativa",
+          "thc": 25,
+          "floweringDays": 70
+        },
+        {
+          "id": "ghs-super-silver-haze",
+          "name": "Super Silver Haze",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 70
+        },
+        {
+          "id": "ghs-white-widow",
+          "name": "White Widow",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 56
+        },
+        {
+          "id": "ghs-great-white-shark",
+          "name": "Great White Shark",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "ghs-hawaiian-snow",
+          "name": "Hawaiian Snow",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 84
+        },
+        {
+          "id": "ghs-francos-lemon-cheese",
+          "name": "Franco's Lemon Cheese",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 65
+        },
+        {
+          "id": "ghs-exodus-cheese",
+          "name": "Exodus Cheese",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 56
+        },
+        {
+          "id": "ghs-bubba-kush",
+          "name": "Bubba Kush",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "ghs-kalashnikova",
+          "name": "Kalashnikova",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 56
+        },
+        {
+          "id": "ghs-kings-juice",
+          "name": "King's Juice",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Greenpoint Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "gp-gunslinger",
+          "name": "Gunslinger",
+          "species": "Índica",
+          "thc": 26.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "gp-cookies-and-chem",
+          "name": "Cookies and Chem",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "gp-jelly-pie",
+          "name": "Jelly Pie",
+          "species": "Híbrida",
+          "thc": 25.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "gp-city-slicker",
+          "name": "City Slicker",
+          "species": "Índica",
+          "thc": 26.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "gp-copper-chem",
+          "name": "Copper Chem",
+          "species": "Sativa",
+          "thc": 26.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "gp-tomahawk",
+          "name": "Tomahawk",
+          "species": "Índica",
+          "thc": 28.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "gp-purple-mountain-majesty",
+          "name": "Purple Mountain Majesty",
+          "species": "Índica",
+          "thc": 24.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "gp-texas-butter",
+          "name": "Texas Butter",
+          "species": "Índica",
+          "thc": 25.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "gp-blizzard-bush",
+          "name": "Blizzard Bush",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "gp-night-terror-og",
+          "name": "Night Terror OG",
+          "species": "Índica",
+          "thc": 25.0,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Heavyweight Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "heavyweight-fruit-punch",
+          "name": "Fruit Punch",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 55
+        },
+        {
+          "id": "heavyweight-green-ninja",
+          "name": "Green Ninja",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 50
+        },
+        {
+          "id": "heavyweight-budzilla",
+          "name": "Budzilla",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 56
+        },
+        {
+          "id": "heavyweight-money-bush",
+          "name": "Money Bush",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 52
+        },
+        {
+          "id": "heavyweight-goldmine",
+          "name": "Goldmine",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "heavyweight-monster-profit",
+          "name": "Monster Profit",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "heavyweight-superb-og",
+          "name": "Superb OG",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 56
+        },
+        {
+          "id": "heavyweight-lemon-cake",
+          "name": "Lemon Cake",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 65
+        },
+        {
+          "id": "heavyweight-dream-machine",
+          "name": "Dream Machine",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 60
+        },
+        {
+          "id": "heavyweight-strawberry-cake",
+          "name": "Strawberry Cake",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 55
+        }
+      ]
+    },
+    {
+      "bank": "Humboldt Seed",
+      "count": 12,
+      "strains": [
+        {
+          "id": "hso-trainwreck",
+          "name": "Trainwreck",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "hso-og-eddy-lepp",
+          "name": "OG Eddy Lepp",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "hso-blue-dream",
+          "name": "Blue Dream",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 65
+        },
+        {
+          "id": "hso-girl-scout-cookies",
+          "name": "Girl Scout Cookies",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "hso-sapphire-og",
+          "name": "Sapphire OG",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "hso-707-headband",
+          "name": "707 Headband",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "hso-blue-fire",
+          "name": "Blue Fire",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 60
+        },
+        {
+          "id": "hso-pineapple-fields",
+          "name": "Pineapple Fields",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 70
+        },
+        {
+          "id": "hso-amherst-super-skunk",
+          "name": "Amherst Super Skunk",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 56
+        },
+        {
+          "id": "hso-grease-monkey",
+          "name": "Grease Monkey",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 60
+        },
+        {
+          "id": "hso-chemdawg",
+          "name": "Chemdawg HSO",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 65
+        },
+        {
+          "id": "hso-sour-diesel",
+          "name": "Sour Diesel HSO",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 70
+        }
+      ]
+    },
+    {
+      "bank": "In-House Genetics",
+      "count": 10,
+      "strains": [
+        {
+          "id": "ihg-slurricane",
+          "name": "Slurricane",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 60
+        },
+        {
+          "id": "ihg-jelly-breath",
+          "name": "Jelly Breath",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "ihg-platinum-kush-breath",
+          "name": "Platinum Kush Breath",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "ihg-sugar-cane",
+          "name": "Sugar Cane",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "ihg-tart-pops",
+          "name": "Tart Pops",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 58
+        },
+        {
+          "id": "ihg-terple",
+          "name": "Terple",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "ihg-black-cherry-pie",
+          "name": "Black Cherry Pie",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 58
+        },
+        {
+          "id": "ihg-dolato",
+          "name": "Dolato",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "ihg-trichome-storm",
+          "name": "Trichome Storm",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 60
+        },
+        {
+          "id": "ihg-smackz",
+          "name": "Smackz",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Jungle Boys",
+      "count": 10,
+      "strains": [
+        {
+          "id": "jb-wedding-cake",
+          "name": "Wedding Cake",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "jb-strawberry-shortcake",
+          "name": "Strawberry Shortcake",
+          "species": "Sativa",
+          "thc": 26,
+          "floweringDays": 65
+        },
+        {
+          "id": "jb-florida-wedding",
+          "name": "Florida Wedding",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "jb-jungle-cake",
+          "name": "Jungle Cake",
+          "species": "Híbrida",
+          "thc": 30,
+          "floweringDays": 65
+        },
+        {
+          "id": "jb-mimosa",
+          "name": "Mimosa",
+          "species": "Sativa",
+          "thc": 25,
+          "floweringDays": 60
+        },
+        {
+          "id": "jb-motorbreath",
+          "name": "Motorbreath",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 67
+        },
+        {
+          "id": "jb-topanga-canyon-og",
+          "name": "Topanga Canyon OG",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 65
+        },
+        {
+          "id": "jb-sunset-sherbet",
+          "name": "Sunset Sherbet",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "jb-perfect-triangle",
+          "name": "Perfect Triangle",
+          "species": "Índica",
+          "thc": 29,
+          "floweringDays": 65
+        },
+        {
+          "id": "jb-frosted-kush",
+          "name": "Frosted Kush",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Kannabia Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "kannabia-white-domina",
+          "name": "White Domina",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 56
+        },
+        {
+          "id": "kannabia-uk-cheese",
+          "name": "UK Cheese",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "kannabia-karibbean-mango",
+          "name": "Karibbean Mango",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 70
+        },
+        {
+          "id": "kannabia-amnesia",
+          "name": "Amnesia Kannabia",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 70
+        },
+        {
+          "id": "kannabia-referral-kush",
+          "name": "Referral Kush",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "kannabia-mimosa-dream",
+          "name": "Mimosa Dream",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 63
+        },
+        {
+          "id": "kannabia-purple-kush",
+          "name": "Purple Kush Kannabia",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 56
+        },
+        {
+          "id": "kannabia-stonewall",
+          "name": "Stonewall",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 65
+        },
+        {
+          "id": "kannabia-baby-boom",
+          "name": "Baby Boom Foto",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "kannabia-russian-doll",
+          "name": "Russian Doll",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 58
+        }
+      ]
+    },
+    {
+      "bank": "Karma Genetics",
+      "count": 10,
+      "strains": [
+        {
+          "id": "karma-biker-kush-v2",
+          "name": "Biker Kush V2",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "karma-headband-og",
+          "name": "Headband OG",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 65
+        },
+        {
+          "id": "karma-sour-kush",
+          "name": "Sour Kush",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 67
+        },
+        {
+          "id": "karma-do-si-dos-33",
+          "name": "Do-Si-Dos #33",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "karma-biker-kush-v1",
+          "name": "Biker Kush V1",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 60
+        },
+        {
+          "id": "karma-lemon-og-haze",
+          "name": "Lemon OG Haze",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 70
+        },
+        {
+          "id": "karma-strawberry-cheesecake",
+          "name": "Strawberry Cheesecake",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 65
+        },
+        {
+          "id": "karma-the-cube",
+          "name": "The Cube",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 63
+        },
+        {
+          "id": "karma-headband-x-sour-d",
+          "name": "Headband x Sour D",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 68
+        },
+        {
+          "id": "karma-blue-dream",
+          "name": "Blue Dream Karma",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 67
+        }
+      ]
+    },
+    {
+      "bank": "Kera Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "kera-california-orange",
+          "name": "California Orange Bud",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 65
+        },
+        {
+          "id": "kera-crystal-meth",
+          "name": "Crystal Meth Kera",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 70
+        },
+        {
+          "id": "kera-cherry-pie-kera",
+          "name": "Cherry Pie Kera",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "kera-gorilla-glue-kera",
+          "name": "Gorilla Glue Kera",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "kera-strawberry-cough-kera",
+          "name": "Strawberry Cough Kera",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 70
+        },
+        {
+          "id": "kera-lemon-haze-kera",
+          "name": "Lemon Haze Kera",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 67
+        },
+        {
+          "id": "kera-critical-kush-kera",
+          "name": "Critical Kush Kera",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 56
+        },
+        {
+          "id": "kera-pineapple-chunk-kera",
+          "name": "Pineapple Chunk Kera",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "kera-purple-haze-kera",
+          "name": "Purple Haze Kera",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 72
+        },
+        {
+          "id": "kera-white-widow-kera",
+          "name": "White Widow Kera",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Khalifa Genetics",
+      "count": 10,
+      "strains": [
+        {
+          "id": "khalifa-aladdins-skunk",
+          "name": "Aladdin's Skunk",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "khalifa-balkh-hashplant",
+          "name": "Balkh Hashplant",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 63
+        },
+        {
+          "id": "khalifa-sheberghan-hashplant",
+          "name": "Sheberghan Hashplant",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 60
+        },
+        {
+          "id": "khalifa-limon-blanco-v3",
+          "name": "Limon Blanco V3",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 63
+        },
+        {
+          "id": "khalifa-persian-prince",
+          "name": "Persian Prince",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "khalifa-moroccan-beldia",
+          "name": "Moroccan Beldia",
+          "species": "Sativa",
+          "thc": 12,
+          "floweringDays": 50
+        },
+        {
+          "id": "khalifa-south-african-kwazulu",
+          "name": "South African Kwazulu",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 65
+        },
+        {
+          "id": "khalifa-siberian-ruderalis-ibl",
+          "name": "Siberian Ruderalis IBL",
+          "species": "Sativa",
+          "thc": 10,
+          "floweringDays": 50
+        },
+        {
+          "id": "khalifa-desert-skunk",
+          "name": "Desert Skunk",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 55
+        },
+        {
+          "id": "khalifa-sinai-landrace",
+          "name": "Sinai Landrace",
+          "species": "Índica",
+          "thc": 17,
+          "floweringDays": 55
+        }
+      ]
+    },
+    {
+      "bank": "LIT Farms",
+      "count": 10,
+      "strains": [
+        {
+          "id": "lit-grandpas-cookies",
+          "name": "Grandpas Cookies",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "lit-red-velvet",
+          "name": "Red Velvet",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "lit-watermelon-mimosa",
+          "name": "Watermelon Mimosa",
+          "species": "Sativa",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "lit-bangkok-purple",
+          "name": "Bangkok Purple",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 70
+        },
+        {
+          "id": "lit-apple-banana-gelato",
+          "name": "Apple Banana Gelato",
+          "species": "Híbrida",
+          "thc": 29,
+          "floweringDays": 63
+        },
+        {
+          "id": "lit-road-tripper",
+          "name": "Road Tripper",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 65
+        },
+        {
+          "id": "lit-formula-1",
+          "name": "Formula 1",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "lit-gas-station-sushi",
+          "name": "Gas Station Sushi",
+          "species": "Híbrida",
+          "thc": 29,
+          "floweringDays": 63
+        },
+        {
+          "id": "lit-lemon-cherry-garlic",
+          "name": "Lemon Cherry Garlic",
+          "species": "Índica",
+          "thc": 30,
+          "floweringDays": 68
+        },
+        {
+          "id": "lit-blizzard",
+          "name": "Blizzard",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Mandala Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "mandala-satori",
+          "name": "Satori",
+          "species": "Sativa",
+          "thc": 25,
+          "floweringDays": 68
+        },
+        {
+          "id": "mandala-hashberry",
+          "name": "Hashberry",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 62
+        },
+        {
+          "id": "mandala-mandala-1",
+          "name": "Mandala #1",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 58
+        },
+        {
+          "id": "mandala-krystalica",
+          "name": "Krystalica",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 70
+        },
+        {
+          "id": "mandala-8-miles-high",
+          "name": "8 Miles High",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 63
+        },
+        {
+          "id": "mandala-kalichakra",
+          "name": "Kalichakra",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 68
+        },
+        {
+          "id": "mandala-beyond-the-brain",
+          "name": "Beyond the Brain",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 72
+        },
+        {
+          "id": "mandala-california-dream",
+          "name": "California Dream",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "mandala-speed-queen",
+          "name": "Speed Queen",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 55
+        },
+        {
+          "id": "mandala-purple-paro-valley",
+          "name": "Purple Paro Valley",
+          "species": "Sativa",
+          "thc": 18,
+          "floweringDays": 68
+        }
+      ]
+    },
+    {
+      "bank": "Medical Seeds",
+      "count": 16,
+      "strains": [
+        {
+          "id": "channel-plus",
+          "name": "Channel+",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 50
+        },
+        {
+          "id": "1024",
+          "name": "1024",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 77
+        },
+        {
+          "id": "2046",
+          "name": "2046",
+          "species": "Sativa",
+          "thc": 25,
+          "floweringDays": 100
+        },
+        {
+          "id": "y-griega",
+          "name": "Y Griega",
+          "species": "Sativa",
+          "thc": 27,
+          "floweringDays": 85
+        },
+        {
+          "id": "no-name",
+          "name": "No Name",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "malakoff",
+          "name": "Malakoff",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 77
+        },
+        {
+          "id": "sour-diesel-medical",
+          "name": "Sour Diesel",
+          "species": "Sativa",
+          "thc": 25,
+          "floweringDays": 70
+        },
+        {
+          "id": "prozack",
+          "name": "Prozack",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 63
+        },
+        {
+          "id": "devil-fruit",
+          "name": "Devil Fruit",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 65
+        },
+        {
+          "id": "jack-la-mota",
+          "name": "Jack La Mota",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 70
+        },
+        {
+          "id": "mendocino-purple-kush",
+          "name": "Mendocino Purple Kush",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "white-widow-medical",
+          "name": "White Widow",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 58
+        },
+        {
+          "id": "canadian-kush-2",
+          "name": "Canadian Kush 2.0",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 63
+        },
+        {
+          "id": "overdosis",
+          "name": "Overdosis",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "banana-z",
+          "name": "Banana Z",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 63
+        },
+        {
+          "id": "sundae-float",
+          "name": "Sundae Float",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Mr. Nice Seedbank",
+      "count": 15,
+      "strains": [
+        {
+          "id": "super-silver-haze-mrnice",
+          "name": "Super Silver Haze",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 70
+        },
+        {
+          "id": "black-widow",
+          "name": "Black Widow",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "critical-mass-mrnice",
+          "name": "Critical Mass",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 50
+        },
+        {
+          "id": "medicine-man",
+          "name": "Medicine Man",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 58
+        },
+        {
+          "id": "nevilles-haze-mrnice",
+          "name": "Neville's Haze",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 95
+        },
+        {
+          "id": "early-skunk-mrnice",
+          "name": "Early Skunk",
+          "species": "Híbrida",
+          "thc": 18,
+          "floweringDays": 50
+        },
+        {
+          "id": "shark-shock",
+          "name": "Shark Shock",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 55
+        },
+        {
+          "id": "mango-haze",
+          "name": "Mango Haze",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 68
+        },
+        {
+          "id": "mrnice-g13-haze",
+          "name": "G13 Haze",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 75
+        },
+        {
+          "id": "mrnice-angel-heart",
+          "name": "Angel Heart",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "mrnice-eight-ball-kush",
+          "name": "Eight Ball Kush",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 55
+        },
+        {
+          "id": "mrnice-new-world",
+          "name": "New World",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 65
+        },
+        {
+          "id": "mrnice-ash",
+          "name": "Ash",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 65
+        },
+        {
+          "id": "mrnice-devil",
+          "name": "Devil",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 55
+        },
+        {
+          "id": "mrnice-st-pauli-girl",
+          "name": "St. Pauli Girl",
+          "species": "Híbrida",
+          "thc": 19,
+          "floweringDays": 56
+        }
+      ]
+    },
+    {
+      "bank": "Nirvana Seeds",
+      "count": 15,
+      "strains": [
+        {
+          "id": "nirvana-northern-light",
+          "name": "Northern Light",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 56
+        },
+        {
+          "id": "nirvana-gsc",
+          "name": "Girl Scout Cookies",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 63
+        },
+        {
+          "id": "nirvana-og-kush",
+          "name": "OG Kush",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "nirvana-gelato",
+          "name": "Gelato",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "nirvana-white-widow",
+          "name": "White Widow",
+          "species": "Híbrida",
+          "thc": 18,
+          "floweringDays": 56
+        },
+        {
+          "id": "nirvana-aurora-indica",
+          "name": "Aurora Indica",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "nirvana-bubblelicious",
+          "name": "Bubblelicious",
+          "species": "Híbrida",
+          "thc": 18,
+          "floweringDays": 63
+        },
+        {
+          "id": "nirvana-master-kush",
+          "name": "Master Kush",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 58
+        },
+        {
+          "id": "nirvana-ak-48",
+          "name": "AK-48",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 50
+        },
+        {
+          "id": "nirvana-wonder-woman",
+          "name": "Wonder Woman",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 63
+        },
+        {
+          "id": "nirvana-somango-xxl",
+          "name": "Somango XXL",
+          "species": "Híbrida",
+          "thc": 19,
+          "floweringDays": 65
+        },
+        {
+          "id": "nirvana-papaya",
+          "name": "Papaya",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "nirvana-hawaii-maui-waui",
+          "name": "Hawaii Maui Waui",
+          "species": "Sativa",
+          "thc": 19,
+          "floweringDays": 70
+        },
+        {
+          "id": "nirvana-super-skunk",
+          "name": "Super Skunk",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "nirvana-blackjack",
+          "name": "Blackjack",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 65
+        }
+      ]
+    },
+    {
+      "bank": "Oni Seed Co.",
+      "count": 10,
+      "strains": [
+        {
+          "id": "oni-tropicanna-cookies",
+          "name": "Tropicanna Cookies",
+          "species": "Sativa",
+          "thc": 25.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "oni-strawberry-guava",
+          "name": "Strawberry Guava",
+          "species": "Híbrida",
+          "thc": 26.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "oni-papaya",
+          "name": "Papaya",
+          "species": "Índica",
+          "thc": 22.0,
+          "floweringDays": 58
+        },
+        {
+          "id": "oni-tropicana-punch",
+          "name": "Tropicana Punch",
+          "species": "Sativa",
+          "thc": 24.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "oni-papaya-punch",
+          "name": "Papaya Punch",
+          "species": "Híbrida",
+          "thc": 24.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "oni-black-garlic",
+          "name": "Black Garlic",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "oni-honey-bunny",
+          "name": "Honey Bunny",
+          "species": "Híbrida",
+          "thc": 23.0,
+          "floweringDays": 62
+        },
+        {
+          "id": "oni-mango-lemonade",
+          "name": "Mango Lemonade",
+          "species": "Sativa",
+          "thc": 23.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "oni-tropicanna-banana",
+          "name": "Tropicanna Banana",
+          "species": "Híbrida",
+          "thc": 25.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "oni-papaya-sorbet",
+          "name": "Papaya Sorbet",
+          "species": "Híbrida",
+          "thc": 24.0,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Paradise Seeds",
+      "count": 15,
+      "strains": [
+        {
+          "id": "paradise-wappa",
+          "name": "Wappa",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 56
+        },
+        {
+          "id": "paradise-sensi-star",
+          "name": "Sensi Star",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "paradise-atomical-haze",
+          "name": "Atomical Haze",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 63
+        },
+        {
+          "id": "paradise-durga-mata",
+          "name": "Durga Mata",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 56
+        },
+        {
+          "id": "paradise-space-cookies",
+          "name": "Space Cookies",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 63
+        },
+        {
+          "id": "paradise-slipstream",
+          "name": "Slipstream",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 63
+        },
+        {
+          "id": "paradise-sunset-paradise",
+          "name": "Sunset Paradise",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 63
+        },
+        {
+          "id": "paradise-rainbow-road",
+          "name": "Rainbow Road",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 63
+        },
+        {
+          "id": "paradise-mendocino-skunk",
+          "name": "Mendocino Skunk",
+          "species": "Híbrida",
+          "thc": 18,
+          "floweringDays": 56
+        },
+        {
+          "id": "paradise-stromboli-auto",
+          "name": "Stromboli Auto",
+          "species": "Índica",
+          "thc": 16,
+          "floweringDays": 63
+        },
+        {
+          "id": "paradise-red-velvet-auto",
+          "name": "Red Velvet Auto",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 63
+        },
+        {
+          "id": "paradise-dutch-dragon",
+          "name": "Dutch Dragon",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 63
+        },
+        {
+          "id": "paradise-californian-gold",
+          "name": "Californian Gold",
+          "species": "Sativa",
+          "thc": 19,
+          "floweringDays": 70
+        },
+        {
+          "id": "paradise-opium",
+          "name": "Opium",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "paradise-glowstarz",
+          "name": "Glowstarz",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Philosopher Seeds",
+      "count": 14,
+      "strains": [
+        {
+          "id": "philo-cali-orange-bud",
+          "name": "Cali Orange Bud",
+          "species": "Híbrida",
+          "thc": 19,
+          "floweringDays": 58
+        },
+        {
+          "id": "philo-singha-valley",
+          "name": "Singha Valley",
+          "species": "Sativa",
+          "thc": 10,
+          "floweringDays": 60
+        },
+        {
+          "id": "philo-blues",
+          "name": "The Blues",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "phil-lemon-og-candy",
+          "name": "Lemon OG Candy",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "phil-critical-sensi-star",
+          "name": "Critical Sensi Star",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 55
+        },
+        {
+          "id": "phil-bubbas-gift",
+          "name": "Bubba's Gift",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "phil-snow-storm",
+          "name": "Snow Storm",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 58
+        },
+        {
+          "id": "philo-tropimango-haze",
+          "name": "Tropimango Haze",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 75
+        },
+        {
+          "id": "philo-sugar-candy",
+          "name": "Sugar Candy",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "philo-twisted-kush",
+          "name": "Twisted Kush",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 60
+        },
+        {
+          "id": "philo-black-bomb",
+          "name": "Black Bomb",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 58
+        },
+        {
+          "id": "philo-cobalt-blue",
+          "name": "Cobalt Blue",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 63
+        },
+        {
+          "id": "philo-heavens-fruit",
+          "name": "Heaven's Fruit",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "philo-kali-snapple",
+          "name": "Kali Snapple",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 70
+        }
+      ]
+    },
+    {
+      "bank": "Positronics Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "positronics-critical-47",
+          "name": "Critical 47",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 52
+        },
+        {
+          "id": "positronics-somango-47",
+          "name": "Somango 47",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 68
+        },
+        {
+          "id": "positronics-purple-haze",
+          "name": "Purple Haze #1",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 70
+        },
+        {
+          "id": "positronics-claustrum",
+          "name": "Claustrum",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 80
+        },
+        {
+          "id": "positronics-cum-laude",
+          "name": "Cum Laude",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 77
+        },
+        {
+          "id": "positronics-caramelice",
+          "name": "Caramelice",
+          "species": "Híbrida",
+          "thc": 19,
+          "floweringDays": 60
+        },
+        {
+          "id": "positronics-blue-rhino",
+          "name": "Blue Rhino",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "positronics-amnesia-mystery",
+          "name": "Amnesia Mystery",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 75
+        },
+        {
+          "id": "positronics-black-widow",
+          "name": "Black Widow",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 58
+        },
+        {
+          "id": "positronics-supercheese",
+          "name": "Supercheese",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 58
+        }
+      ]
+    },
+    {
+      "bank": "Purple City Genetics",
+      "count": 10,
+      "strains": [
+        {
+          "id": "pcg-gush-mints",
+          "name": "Gush Mints",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "pcg-honey-runtz",
+          "name": "Honey Runtz",
+          "species": "Híbrida",
+          "thc": 28.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "pcg-benzina",
+          "name": "Benzina",
+          "species": "Índica",
+          "thc": 26.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "pcg-acid-wash",
+          "name": "Acid Wash",
+          "species": "Índica",
+          "thc": 26.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "pcg-bishop",
+          "name": "Bishop",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "pcg-orange-76",
+          "name": "Orange 76",
+          "species": "Sativa",
+          "thc": 24.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "pcg-daily-operation",
+          "name": "Daily Operation",
+          "species": "Índica",
+          "thc": 26.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "pcg-fillmore-slim",
+          "name": "Fillmore Slim",
+          "species": "Híbrida",
+          "thc": 25.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "pcg-hooch",
+          "name": "Hooch",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "pcg-space-station",
+          "name": "Space Station",
+          "species": "Índica",
+          "thc": 26.0,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Pyramid Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "pyramid-tutankhamon",
+          "name": "Tutankhamon",
+          "species": "Sativa",
+          "thc": 25,
+          "floweringDays": 60
+        },
+        {
+          "id": "pyramid-anesthesia",
+          "name": "Anesthesia",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 55
+        },
+        {
+          "id": "pyramid-nefertiti",
+          "name": "Nefertiti",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 75
+        },
+        {
+          "id": "pyramid-kryptonite",
+          "name": "Kryptonite",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 62
+        },
+        {
+          "id": "pyramid-anubis",
+          "name": "Anubis",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 56
+        },
+        {
+          "id": "pyramid-blue-pyramid",
+          "name": "Blue Pyramid",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 55
+        },
+        {
+          "id": "pyramid-ramses",
+          "name": "Ramses",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 75
+        },
+        {
+          "id": "pyramid-galaxy",
+          "name": "Galaxy",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 55
+        },
+        {
+          "id": "pyramid-wembley",
+          "name": "Wembley",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 58
+        },
+        {
+          "id": "pyramid-shark",
+          "name": "Shark",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 55
+        }
+      ]
+    },
+    {
+      "bank": "R-Kiem Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "rkiem-negra-44",
+          "name": "Negra 44",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 58
+        },
+        {
+          "id": "rkiem-sublimator",
+          "name": "Sublimator",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "rkiem-icer",
+          "name": "Icer",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 56
+        },
+        {
+          "id": "rkiem-muse",
+          "name": "Muse",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "rkiem-portela",
+          "name": "Portela",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 63
+        },
+        {
+          "id": "rkiem-eli",
+          "name": "Eli",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "rkiem-zkiem",
+          "name": "ZKiem",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 56
+        },
+        {
+          "id": "rkiem-2y2",
+          "name": "2y2",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 56
+        },
+        {
+          "id": "rkiem-el-xupet-negre",
+          "name": "El Xupet Negre",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "rkiem-klementine",
+          "name": "Klementine",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 58
+        }
+      ]
+    },
+    {
+      "bank": "Rare Dankness",
+      "count": 10,
+      "strains": [
+        {
+          "id": "rare-ghost-train-haze-1",
+          "name": "Ghost Train Haze #1",
+          "species": "Sativa",
+          "thc": 28,
+          "floweringDays": 70
+        },
+        {
+          "id": "rare-scotts-og",
+          "name": "Scott's OG",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 65
+        },
+        {
+          "id": "rare-moonshine-haze",
+          "name": "Moonshine Haze",
+          "species": "Sativa",
+          "thc": 26,
+          "floweringDays": 70
+        },
+        {
+          "id": "rare-commerce-city-kush",
+          "name": "Commerce City Kush",
+          "species": "Índica",
+          "thc": 29,
+          "floweringDays": 65
+        },
+        {
+          "id": "rare-star-killer",
+          "name": "Star Killer",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 65
+        },
+        {
+          "id": "rare-somali-taxi-ride",
+          "name": "Somali Taxi Ride",
+          "species": "Sativa",
+          "thc": 26,
+          "floweringDays": 75
+        },
+        {
+          "id": "rare-cornbread",
+          "name": "Cornbread",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 62
+        },
+        {
+          "id": "rare-darkness",
+          "name": "Rare Darkness",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 65
+        },
+        {
+          "id": "rare-walker-kush",
+          "name": "Walker Kush",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 65
+        },
+        {
+          "id": "rare-501st-og",
+          "name": "501st OG",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Raw Genetics",
+      "count": 10,
+      "strains": [
+        {
+          "id": "raw-stuffed-french-toast",
+          "name": "Stuffed French Toast",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "raw-georgia-pie",
+          "name": "Georgia Pie",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "raw-cherry-paloma",
+          "name": "Cherry Paloma",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "raw-apples-and-french-toast",
+          "name": "Apples & French Toast",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "raw-marshmallow",
+          "name": "Raw Marshmallow",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "raw-rainbow-studz",
+          "name": "Rainbow Studz",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 58
+        },
+        {
+          "id": "raw-peeled-banana",
+          "name": "Peeled Banana",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "raw-runtz-pop",
+          "name": "Runtz Pop",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "raw-bacio-zkittlez",
+          "name": "Bacio Zkittlez",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "raw-zweet-inzanity",
+          "name": "Zweet Inzanity",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Reggae Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "reggae-juanita-la-lagrimosa",
+          "name": "Juanita la Lagrimosa",
+          "species": "Sativa",
+          "thc": 10,
+          "floweringDays": 60
+        },
+        {
+          "id": "reggae-dancehall",
+          "name": "Dancehall",
+          "species": "Sativa",
+          "thc": 12,
+          "floweringDays": 63
+        },
+        {
+          "id": "reggae-guayaka",
+          "name": "Guayaka",
+          "species": "Híbrida",
+          "thc": 18,
+          "floweringDays": 60
+        },
+        {
+          "id": "reggae-session",
+          "name": "Session",
+          "species": "Sativa",
+          "thc": 16,
+          "floweringDays": 68
+        },
+        {
+          "id": "reggae-kalijah",
+          "name": "Kalijah",
+          "species": "Índica",
+          "thc": 17,
+          "floweringDays": 55
+        },
+        {
+          "id": "reggae-respect",
+          "name": "Respect",
+          "species": "Sativa",
+          "thc": 14,
+          "floweringDays": 63
+        },
+        {
+          "id": "reggae-o-sdk",
+          "name": "O SDK",
+          "species": "Híbrida",
+          "thc": 19,
+          "floweringDays": 63
+        },
+        {
+          "id": "reggae-roots",
+          "name": "Roots",
+          "species": "Sativa",
+          "thc": 18,
+          "floweringDays": 60
+        },
+        {
+          "id": "reggae-blackdance",
+          "name": "Blackdance",
+          "species": "Índica",
+          "thc": 17,
+          "floweringDays": 58
+        },
+        {
+          "id": "reggae-revolution",
+          "name": "Revolution",
+          "species": "Híbrida",
+          "thc": 15,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Reserva Privada",
+      "count": 10,
+      "strains": [
+        {
+          "id": "rp-og-18",
+          "name": "The OG #18",
+          "species": "Índica",
+          "thc": 26.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "rp-kosher-kush",
+          "name": "Kosher Kush",
+          "species": "Índica",
+          "thc": 25.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "rp-kandy-kush",
+          "name": "Kandy Kush",
+          "species": "Híbrida",
+          "thc": 22.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "rp-purple-og-18",
+          "name": "Purple OG #18",
+          "species": "Índica",
+          "thc": 23.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "rp-purple-wreck",
+          "name": "Purple Wreck",
+          "species": "Sativa",
+          "thc": 20.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "rp-cole-train",
+          "name": "Cole Train",
+          "species": "Sativa",
+          "thc": 21.0,
+          "floweringDays": 67
+        },
+        {
+          "id": "rp-strawberry-banana",
+          "name": "Strawberry Banana",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "rp-lemon-larry-og",
+          "name": "Lemon Larry OG",
+          "species": "Índica",
+          "thc": 24.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "rp-3-bears-og",
+          "name": "3 Bears OG",
+          "species": "Índica",
+          "thc": 25.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "rp-sour-kush",
+          "name": "Sour Kush",
+          "species": "Híbrida",
+          "thc": 22.0,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Ripper Seeds",
+      "count": 22,
+      "strains": [
+        {
+          "id": "ripper-kmintz",
+          "name": "Kmintz",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "ripper-zombie-kush",
+          "name": "Zombie Kush",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 55
+        },
+        {
+          "id": "ripper-radical-juice",
+          "name": "Radical Juice",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 65
+        },
+        {
+          "id": "ripper-washing-machine",
+          "name": "Washing Machine",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "ripper-sour-ripper",
+          "name": "Sour Ripper",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 65
+        },
+        {
+          "id": "ripper-ripper-haze",
+          "name": "Ripper Haze",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 65
+        },
+        {
+          "id": "ripper-hawaiian-wave",
+          "name": "Hawaiian Wave",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 75
+        },
+        {
+          "id": "ripper-double-glock",
+          "name": "Double Glock",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "ripper-criminal-plus",
+          "name": "Criminal +",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 50
+        },
+        {
+          "id": "ripper-toxic",
+          "name": "Toxic",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "ripper-brain-cake",
+          "name": "Brain Cake",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 65
+        },
+        {
+          "id": "ripper-kroma",
+          "name": "Kroma",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "ripper-sideral",
+          "name": "Sideral",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 65
+        },
+        {
+          "id": "ripper-candygaz",
+          "name": "CandyGaz",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "ripper-omg",
+          "name": "OMG",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 62
+        },
+        {
+          "id": "ripper-jungle-punch",
+          "name": "Jungle Punch",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 70
+        },
+        {
+          "id": "ripper-pink-rozay",
+          "name": "Pink Rozay",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 62
+        },
+        {
+          "id": "ripper-fuel-og",
+          "name": "Ripper Fuel",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "ripper-zombie-wash",
+          "name": "Zombiewash",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 58
+        },
+        {
+          "id": "ripper-candy-crack",
+          "name": "Candy Crack",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 65
+        },
+        {
+          "id": "ripper-juicy-zkittlez",
+          "name": "Juicy Zkittlez",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "ripper-chempie",
+          "name": "Chempie",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Royal Queen Seeds",
+      "count": 13,
+      "strains": [
+        {
+          "id": "rqs-royal-gorilla",
+          "name": "Royal Gorilla",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "rqs-northern-light",
+          "name": "Northern Light",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 56
+        },
+        {
+          "id": "rqs-amnesia-haze",
+          "name": "Amnesia Haze",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 77
+        },
+        {
+          "id": "rqs-wedding-glue",
+          "name": "Wedding Glue",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "rqs-fat-banana",
+          "name": "Fat Banana",
+          "species": "Índica",
+          "thc": 25,
+          "floweringDays": 56
+        },
+        {
+          "id": "rqs-lemon-shining-silver",
+          "name": "Lemon Shining Silver Haze",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 70
+        },
+        {
+          "id": "rqs-honey-cream",
+          "name": "Honey Cream",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 50
+        },
+        {
+          "id": "rqs-og-kush-auto",
+          "name": "OG Kush Auto",
+          "species": "Índica",
+          "thc": 17,
+          "floweringDays": 49
+        },
+        {
+          "id": "rqs-purple-queen",
+          "name": "Purple Queen",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 55
+        },
+        {
+          "id": "rqs-blue-mystic",
+          "name": "Blue Mystic",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 56
+        },
+        {
+          "id": "rqs-watermelon",
+          "name": "Watermelon",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 56
+        },
+        {
+          "id": "rqs-critical",
+          "name": "Critical RQS",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 50
+        },
+        {
+          "id": "rqs-special-kush-1",
+          "name": "Special Kush #1",
+          "species": "Índica",
+          "thc": 17,
+          "floweringDays": 48
+        }
+      ]
+    },
+    {
+      "bank": "Samsara Seeds",
+      "count": 15,
+      "strains": [
+        {
+          "id": "samsara-spiritual-punk",
+          "name": "Spiritual Punk",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 53
+        },
+        {
+          "id": "samsara-tropimango",
+          "name": "TropiMango",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 80
+        },
+        {
+          "id": "samsara-thai-stick",
+          "name": "Thai Stick",
+          "species": "Sativa",
+          "thc": 19,
+          "floweringDays": 95
+        },
+        {
+          "id": "samsara-romulan-grapefruit",
+          "name": "Romulan Grapefruit",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 65
+        },
+        {
+          "id": "samsara-killing-fields",
+          "name": "Killing Fields",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 80
+        },
+        {
+          "id": "samsara-shark-bite",
+          "name": "Shark Bite",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 63
+        },
+        {
+          "id": "samsara-sunrise-kush",
+          "name": "Sunrise Kush",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 65
+        },
+        {
+          "id": "samsara-timewarp",
+          "name": "Timewarp",
+          "species": "Sativa",
+          "thc": 18,
+          "floweringDays": 55
+        },
+        {
+          "id": "samsara-white-domina",
+          "name": "White Domina",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 55
+        },
+        {
+          "id": "samsara-purple-maroc",
+          "name": "Purple Maroc",
+          "species": "Híbrida",
+          "thc": 18,
+          "floweringDays": 60
+        },
+        {
+          "id": "samsara-himalayan-gold",
+          "name": "Himalayan Gold",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 63
+        },
+        {
+          "id": "samsara-shaman",
+          "name": "Shaman",
+          "species": "Híbrida",
+          "thc": 19,
+          "floweringDays": 60
+        },
+        {
+          "id": "samsara-jock-horror",
+          "name": "Jock Horror",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 70
+        },
+        {
+          "id": "samsara-stardust",
+          "name": "Stardust",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 63
+        },
+        {
+          "id": "samsara-tropicana-banana",
+          "name": "Tropicana Banana",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Seed Junky Genetics",
+      "count": 10,
+      "strains": [
+        {
+          "id": "sj-kush-mints",
+          "name": "Kush Mints",
+          "species": "Híbrida",
+          "thc": 26.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "sj-animal-mints",
+          "name": "Animal Mints",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "sj-jealousy",
+          "name": "Jealousy",
+          "species": "Híbrida",
+          "thc": 28.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "sj-ice-cream-cake",
+          "name": "Ice Cream Cake",
+          "species": "Índica",
+          "thc": 25.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "sj-gas-face",
+          "name": "Gas Face",
+          "species": "Índica",
+          "thc": 29.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "sj-animal-face",
+          "name": "Animal Face",
+          "species": "Sativa",
+          "thc": 27.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "sj-permanent-marker",
+          "name": "Permanent Marker",
+          "species": "Índica",
+          "thc": 30.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "sj-jungle-cake",
+          "name": "Jungle Cake",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "sj-la-kush-cake",
+          "name": "LA Kush Cake",
+          "species": "Índica",
+          "thc": 27.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "sj-the-soap",
+          "name": "The Soap",
+          "species": "Híbrida",
+          "thc": 27.0,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Seedsman",
+      "count": 10,
+      "strains": [
+        {
+          "id": "sdm-peyote-zkittlez",
+          "name": "Peyote Zkittlez",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "sdm-gelato-og",
+          "name": "Gelato OG",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 58
+        },
+        {
+          "id": "sdm-peyote-cookies",
+          "name": "Peyote Cookies",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 55
+        },
+        {
+          "id": "sdm-mama-thai",
+          "name": "Mama Thai",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 77
+        },
+        {
+          "id": "sdm-alaskan-purple",
+          "name": "Alaskan Purple",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 63
+        },
+        {
+          "id": "sdm-bad-azz-cheese",
+          "name": "Bad Azz Cheese",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 58
+        },
+        {
+          "id": "sdm-white-widow",
+          "name": "White Widow",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 56
+        },
+        {
+          "id": "sdm-jack-herer",
+          "name": "Jack Herer",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 65
+        },
+        {
+          "id": "sdm-amnesia-fast",
+          "name": "Amnesia Fast",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 50
+        },
+        {
+          "id": "sdm-blue-blueberry",
+          "name": "Blue Blueberry",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Sensi Seeds",
+      "count": 13,
+      "strains": [
+        {
+          "id": "sensi-jack-herer",
+          "name": "Jack Herer",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 70
+        },
+        {
+          "id": "sensi-super-skunk",
+          "name": "Super Skunk",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 50
+        },
+        {
+          "id": "sensi-black-domina",
+          "name": "Black Domina",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 50
+        },
+        {
+          "id": "sensi-northern-lights",
+          "name": "Northern Lights",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 50
+        },
+        {
+          "id": "sensi-hindu-kush",
+          "name": "Hindu Kush",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 48
+        },
+        {
+          "id": "sensi-skunk-1",
+          "name": "Skunk #1",
+          "species": "Híbrida",
+          "thc": 19,
+          "floweringDays": 50
+        },
+        {
+          "id": "sensi-sensi-amnesia",
+          "name": "Sensi Amnesia",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 70
+        },
+        {
+          "id": "sensi-hash-plant",
+          "name": "Hash Plant",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 45
+        },
+        {
+          "id": "sensi-early-skunk",
+          "name": "Early Skunk",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 50
+        },
+        {
+          "id": "sensi-sensi-skunk",
+          "name": "Sensi Skunk",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 48
+        },
+        {
+          "id": "sensi-shiva-skunk",
+          "name": "Shiva Skunk",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 50
+        },
+        {
+          "id": "sensi-big-bud",
+          "name": "Big Bud",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 56
+        },
+        {
+          "id": "sensi-silver-haze",
+          "name": "Silver Haze",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 70
+        }
+      ]
+    },
+    {
+      "bank": "Serious Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "serious-ak-47",
+          "name": "AK-47",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 56
+        },
+        {
+          "id": "serious-white-russian",
+          "name": "White Russian",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "serious-chronic",
+          "name": "Chronic",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "serious-bubble-gum",
+          "name": "Bubble Gum",
+          "species": "Híbrida",
+          "thc": 19,
+          "floweringDays": 60
+        },
+        {
+          "id": "serious-kali-mist",
+          "name": "Kali Mist",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 80
+        },
+        {
+          "id": "serious-serious-6",
+          "name": "Serious 6",
+          "species": "Sativa",
+          "thc": 18,
+          "floweringDays": 55
+        },
+        {
+          "id": "serious-warlock",
+          "name": "Warlock",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 58
+        },
+        {
+          "id": "serious-biddy-early",
+          "name": "Biddy Early",
+          "species": "Sativa",
+          "thc": 18,
+          "floweringDays": 55
+        },
+        {
+          "id": "serious-serious-happiness",
+          "name": "Serious Happiness",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "serious-kali-bubba",
+          "name": "Kali Bubba",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 65
+        }
+      ]
+    },
+    {
+      "bank": "Silent Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "silent-polar-gelato",
+          "name": "Polar Gelato",
+          "species": "Híbrida",
+          "thc": 30,
+          "floweringDays": 60
+        },
+        {
+          "id": "silent-pink-sunset",
+          "name": "Pink Sunset",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "silent-b-45",
+          "name": "B-45",
+          "species": "Híbrida",
+          "thc": 32,
+          "floweringDays": 65
+        },
+        {
+          "id": "silent-acai-jelly",
+          "name": "Acai Jelly",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 60
+        },
+        {
+          "id": "silent-watermelon-runtz",
+          "name": "Watermelon Runtz",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 60
+        },
+        {
+          "id": "silent-cookielato",
+          "name": "Cookielato",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "silent-la-vanilla-cake",
+          "name": "L.A. Vanilla Cake",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 63
+        },
+        {
+          "id": "silent-critical-plus-2",
+          "name": "Critical + 2.0",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 50
+        },
+        {
+          "id": "silent-critical-jack",
+          "name": "Critical Jack",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "silent-starfire-og",
+          "name": "Starfire OG",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 58
+        }
+      ]
+    },
+    {
+      "bank": "Soma Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "soma-nyc-diesel",
+          "name": "NYC Diesel",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 70
+        },
+        {
+          "id": "soma-amnesia-haze",
+          "name": "Amnesia Haze",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 80
+        },
+        {
+          "id": "soma-somango",
+          "name": "Somango",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 63
+        },
+        {
+          "id": "soma-lavender",
+          "name": "Lavender",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 63
+        },
+        {
+          "id": "soma-buddhas-sister",
+          "name": "Buddha's Sister",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 63
+        },
+        {
+          "id": "soma-soma-rockbud",
+          "name": "Soma Rockbud",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 60
+        },
+        {
+          "id": "soma-g13-haze",
+          "name": "G13 Haze",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 75
+        },
+        {
+          "id": "soma-so-g-kush",
+          "name": "So G Kush",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 65
+        },
+        {
+          "id": "soma-free-white",
+          "name": "Free White",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 63
+        },
+        {
+          "id": "soma-somaui",
+          "name": "Somaui",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 70
+        }
+      ]
+    },
+    {
+      "bank": "Super Sativa Seed Club",
+      "count": 10,
+      "strains": [
+        {
+          "id": "sssc-karels-haze",
+          "name": "Karel's Haze",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 65
+        },
+        {
+          "id": "sssc-frosty-friday",
+          "name": "Frosty Friday",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 70
+        },
+        {
+          "id": "sssc-lava-freeze",
+          "name": "Lava Freeze",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 58
+        },
+        {
+          "id": "sssc-pineapple-poison",
+          "name": "Pineapple Poison",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "sssc-kees-old-school-haze",
+          "name": "Kees' Old School Haze",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 85
+        },
+        {
+          "id": "sssc-fat-petes-cookies",
+          "name": "Fat Pete's Cookies",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 63
+        },
+        {
+          "id": "sssc-tnt-trichome",
+          "name": "TNT Trichome",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "sssc-kosher-haze",
+          "name": "Kosher Haze",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 67
+        },
+        {
+          "id": "sssc-super-mad-sky-floater",
+          "name": "Super Mad Sky Floater",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 65
+        },
+        {
+          "id": "sssc-durban-dew",
+          "name": "Durban Dew",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "Sweet Seeds",
+      "count": 14,
+      "strains": [
+        {
+          "id": "sweet-green-poison",
+          "name": "Green Poison",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 42
+        },
+        {
+          "id": "sweet-cream-caramel",
+          "name": "Cream Caramel",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 56
+        },
+        {
+          "id": "sweet-gorilla-girl",
+          "name": "Gorilla Girl",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 63
+        },
+        {
+          "id": "sweet-black-jack",
+          "name": "Black Jack",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "sweet-tropicanna-poison",
+          "name": "Tropicanna Poison",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 62
+        },
+        {
+          "id": "sweet-s5-haze",
+          "name": "S5 Haze",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 70
+        },
+        {
+          "id": "ss-sweet-amnesia-haze",
+          "name": "Sweet Amnesia Haze",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 65
+        },
+        {
+          "id": "ss-crystal-candy",
+          "name": "Crystal Candy",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 55
+        },
+        {
+          "id": "ss-red-hot-cookies",
+          "name": "Red Hot Cookies",
+          "species": "Índica",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "ss-black-cream-auto",
+          "name": "Black Cream Auto",
+          "species": "Índica",
+          "thc": 18,
+          "floweringDays": 63
+        },
+        {
+          "id": "ss-bigdevil-xl",
+          "name": "Big Devil XL Auto",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 75
+        },
+        {
+          "id": "san-fernando-lemon-kush",
+          "name": "San Fernando Lemon Kush",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 63
+        },
+        {
+          "id": "sweet-tai",
+          "name": "Sweet Tai",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 70
+        },
+        {
+          "id": "sweet-green-poison-f1",
+          "name": "Green Poison F1 Fast",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 42
+        }
+      ]
+    },
+    {
+      "bank": "TH Seeds",
+      "count": 17,
+      "strains": [
+        {
+          "id": "ths-sage-n-sour",
+          "name": "S.A.G.E.",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 70
+        },
+        {
+          "id": "ths-mk-ultra",
+          "name": "MK Ultra",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 56
+        },
+        {
+          "id": "ths-darkstar",
+          "name": "Darkstar",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 55
+        },
+        {
+          "id": "ths-heavy-d",
+          "name": "Heavy D Indica",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 58
+        },
+        {
+          "id": "ths-kushage",
+          "name": "Kushage",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 62
+        },
+        {
+          "id": "ths-mendocino-madness",
+          "name": "Mendocino Madness",
+          "species": "Sativa",
+          "thc": 19,
+          "floweringDays": 68
+        },
+        {
+          "id": "ths-burmese-kush",
+          "name": "Burmese Kush",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 63
+        },
+        {
+          "id": "ths-sage-n-sour-hybrid",
+          "name": "Sage N Sour",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 70
+        },
+        {
+          "id": "ths-bubblegum",
+          "name": "Bubblegum",
+          "species": "Híbrida",
+          "thc": 19,
+          "floweringDays": 56
+        },
+        {
+          "id": "ths-french-cookies",
+          "name": "French Cookies",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 63
+        },
+        {
+          "id": "ths-chocolate-chunk",
+          "name": "Chocolate Chunk",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 55
+        },
+        {
+          "id": "ths-french-macaron",
+          "name": "French Macaron",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "ths-banana-candy-krush",
+          "name": "Banana Candy Krush",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 60
+        },
+        {
+          "id": "ths-mont-blanc",
+          "name": "Mont Blanc",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "ths-pisthash",
+          "name": "Pisthash",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 60
+        },
+        {
+          "id": "ths-melonsicle",
+          "name": "Melonsicle",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "ths-blumosa",
+          "name": "Blumosa",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "The Cali Connection",
+      "count": 10,
+      "strains": [
+        {
+          "id": "cali-sfv-og-kush",
+          "name": "SFV OG Kush",
+          "species": "Índica",
+          "thc": 25.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "cali-tahoe-og-kush",
+          "name": "Tahoe OG Kush",
+          "species": "Índica",
+          "thc": 24.5,
+          "floweringDays": 65
+        },
+        {
+          "id": "cali-deadhead-og",
+          "name": "Deadhead OG",
+          "species": "Híbrida",
+          "thc": 25.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "cali-alien-og",
+          "name": "Alien OG",
+          "species": "Híbrida",
+          "thc": 26.0,
+          "floweringDays": 62
+        },
+        {
+          "id": "cali-blackwater",
+          "name": "Blackwater",
+          "species": "Índica",
+          "thc": 22.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "cali-corleone-kush",
+          "name": "Corleone Kush",
+          "species": "Índica",
+          "thc": 23.5,
+          "floweringDays": 68
+        },
+        {
+          "id": "cali-jedi-kush",
+          "name": "Jedi Kush",
+          "species": "Índica",
+          "thc": 24.0,
+          "floweringDays": 63
+        },
+        {
+          "id": "cali-larry-og-kush",
+          "name": "Larry OG Kush",
+          "species": "Índica",
+          "thc": 24.0,
+          "floweringDays": 65
+        },
+        {
+          "id": "cali-grape-og",
+          "name": "Grape OG",
+          "species": "Híbrida",
+          "thc": 23.0,
+          "floweringDays": 60
+        },
+        {
+          "id": "cali-girl-scout-cookies",
+          "name": "Girl Scout Cookies (Cali Connection)",
+          "species": "Híbrida",
+          "thc": 26.0,
+          "floweringDays": 65
+        }
+      ]
+    },
+    {
+      "bank": "The Flying Dutchmen",
+      "count": 10,
+      "strains": [
+        {
+          "id": "tfd-pot-of-gold",
+          "name": "Pot of Gold",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 55
+        },
+        {
+          "id": "tfd-g-force",
+          "name": "G-Force",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 56
+        },
+        {
+          "id": "tfd-pineapple-punch",
+          "name": "Pineapple Punch",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 63
+        },
+        {
+          "id": "tfd-the-real-mccoy",
+          "name": "The Real McCoy",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 65
+        },
+        {
+          "id": "tfd-voyager",
+          "name": "Voyager",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 60
+        },
+        {
+          "id": "tfd-dame-blanche",
+          "name": "Dame Blanche",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 55
+        },
+        {
+          "id": "tfd-titan",
+          "name": "Titan",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 50
+        },
+        {
+          "id": "tfd-nepal-baba",
+          "name": "Nepal Baba",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 55
+        },
+        {
+          "id": "tfd-swazi-safari",
+          "name": "Swazi Safari",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 70
+        },
+        {
+          "id": "tfd-dutchmens-royal-orange",
+          "name": "Dutchmen's Royal Orange",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 55
+        }
+      ]
+    },
+    {
+      "bank": "Tiki Madman",
+      "count": 10,
+      "strains": [
+        {
+          "id": "tiki-devil-driver",
+          "name": "Devil Driver",
+          "species": "Sativa",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "tiki-space-mints",
+          "name": "Space Mints",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 65
+        },
+        {
+          "id": "tiki-tiki-rain",
+          "name": "Tiki Rain",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "tiki-ice-cream-cake-sunset-sherb",
+          "name": "Ice Cream Cake x Sunset Sherb",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 60
+        },
+        {
+          "id": "tiki-pirate-milk",
+          "name": "Pirate Milk",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "tiki-dantes-wrath",
+          "name": "Dante's Wrath",
+          "species": "Híbrida",
+          "thc": 29,
+          "floweringDays": 63
+        },
+        {
+          "id": "tiki-tropical-runtz",
+          "name": "Tropical Runtz",
+          "species": "Sativa",
+          "thc": 26,
+          "floweringDays": 63
+        },
+        {
+          "id": "tiki-gelato-41-bx",
+          "name": "Gelato 41 BX",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 60
+        },
+        {
+          "id": "tiki-gary-satan",
+          "name": "Gary Satan",
+          "species": "Híbrida",
+          "thc": 30,
+          "floweringDays": 63
+        },
+        {
+          "id": "tiki-cherry-cosmo",
+          "name": "Cherry Cosmo",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Top Dawg Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "tds-star-dawg",
+          "name": "Star Dawg",
+          "species": "Sativa",
+          "thc": 26,
+          "floweringDays": 67
+        },
+        {
+          "id": "tds-tres-dawg",
+          "name": "Tres Dawg",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 65
+        },
+        {
+          "id": "tds-jjs-nigerian-silk",
+          "name": "JJ's Nigerian Silk",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 75
+        },
+        {
+          "id": "tds-guava-chem",
+          "name": "Guava Chem",
+          "species": "Sativa",
+          "thc": 25,
+          "floweringDays": 65
+        },
+        {
+          "id": "tds-city-slicker",
+          "name": "City Slicker",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "tds-corey-haim",
+          "name": "Corey Haim",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 67
+        },
+        {
+          "id": "tds-hazy-kush",
+          "name": "Hazy Kush",
+          "species": "Sativa",
+          "thc": 25,
+          "floweringDays": 70
+        },
+        {
+          "id": "tds-sour-chem",
+          "name": "Sour Chem",
+          "species": "Sativa",
+          "thc": 28,
+          "floweringDays": 70
+        },
+        {
+          "id": "tds-white-dawg",
+          "name": "White Dawg",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 63
+        },
+        {
+          "id": "tds-onion-ring",
+          "name": "Onion Ring",
+          "species": "Índica",
+          "thc": 30,
+          "floweringDays": 70
+        }
+      ]
+    },
+    {
+      "bank": "White Label Seed Co.",
+      "count": 15,
+      "strains": [
+        {
+          "id": "wls-white-widow",
+          "name": "White Widow",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 55
+        },
+        {
+          "id": "wls-snow-white",
+          "name": "Snow White",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 56
+        },
+        {
+          "id": "wls-white-skunk",
+          "name": "White Skunk",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 50
+        },
+        {
+          "id": "wls-white-ice",
+          "name": "White Ice",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 50
+        },
+        {
+          "id": "wls-white-diesel",
+          "name": "White Diesel",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "wls-double-gum",
+          "name": "Double Gum",
+          "species": "Índica",
+          "thc": 19,
+          "floweringDays": 48
+        },
+        {
+          "id": "wls-pure-power-plant",
+          "name": "Pure Power Plant (PPP)",
+          "species": "Híbrida",
+          "thc": 22,
+          "floweringDays": 55
+        },
+        {
+          "id": "wls-master-kush",
+          "name": "Master Kush",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 50
+        },
+        {
+          "id": "wls-orange-bud",
+          "name": "Orange Bud",
+          "species": "Sativa",
+          "thc": 19,
+          "floweringDays": 55
+        },
+        {
+          "id": "wls-afghani-1",
+          "name": "Afghani #1",
+          "species": "Índica",
+          "thc": 20,
+          "floweringDays": 45
+        },
+        {
+          "id": "wls-super-skunk",
+          "name": "Super Skunk",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 50
+        },
+        {
+          "id": "wls-northern-lights",
+          "name": "Northern Lights",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 50
+        },
+        {
+          "id": "wls-shiva-skunk",
+          "name": "Shiva Skunk",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 55
+        },
+        {
+          "id": "wls-purple-haze",
+          "name": "Purple Haze",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 65
+        },
+        {
+          "id": "wls-durban",
+          "name": "Durban",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 60
+        }
+      ]
+    },
+    {
+      "bank": "World of Seeds",
+      "count": 10,
+      "strains": [
+        {
+          "id": "wos-afghan-kush",
+          "name": "Afghan Kush",
+          "species": "Índica",
+          "thc": 21.6,
+          "floweringDays": 55
+        },
+        {
+          "id": "wos-pakistan-valley",
+          "name": "Pakistan Valley",
+          "species": "Índica",
+          "thc": 21.2,
+          "floweringDays": 50
+        },
+        {
+          "id": "wos-ketama",
+          "name": "Ketama",
+          "species": "Índica",
+          "thc": 18.5,
+          "floweringDays": 55
+        },
+        {
+          "id": "wos-colombian-gold",
+          "name": "Colombian Gold",
+          "species": "Sativa",
+          "thc": 19.3,
+          "floweringDays": 75
+        },
+        {
+          "id": "wos-wild-thailand",
+          "name": "Wild Thailand",
+          "species": "Sativa",
+          "thc": 22.3,
+          "floweringDays": 80
+        },
+        {
+          "id": "wos-south-african-kwazulu",
+          "name": "South African Kwazulu",
+          "species": "Sativa",
+          "thc": 19.8,
+          "floweringDays": 60
+        },
+        {
+          "id": "wos-brazil-amazonia",
+          "name": "Brazil Amazonia",
+          "species": "Sativa",
+          "thc": 19.5,
+          "floweringDays": 65
+        },
+        {
+          "id": "wos-kilimanjaro",
+          "name": "Kilimanjaro",
+          "species": "Sativa",
+          "thc": 20.1,
+          "floweringDays": 68
+        },
+        {
+          "id": "wos-northern-light-x-bigbud",
+          "name": "Northern Light x Big Bud",
+          "species": "Índica",
+          "thc": 22.0,
+          "floweringDays": 55
+        },
+        {
+          "id": "wos-strawberry-blue",
+          "name": "Strawberry Blue",
+          "species": "Híbrida",
+          "thc": 21.0,
+          "floweringDays": 63
+        }
+      ]
+    }
+  ]
+}
