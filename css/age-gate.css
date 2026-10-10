@@ -18,14 +18,14 @@ html.age-locked body > :not(#age-gate-modal):not(#age-gate-noscript):not(#age-re
   transition: filter 0.4s ease, brightness 0.4s ease;
 }
 
-/* 2. PROTECCIÓN NOSCRIPT (SIN JAVASCRIPT NO HAY ACCESO) */
-noscript#age-gate-noscript {
+/* 2. PROTECCIÓN NOSCRIPT (ESTILOS VISUALES PARA ENTORNO SIN JS) */
+.noscript-card-wrapper {
   position: fixed;
   inset: 0;
   z-index: 99999999;
   background: #0B0F0E;
   color: #F3F4F6;
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;

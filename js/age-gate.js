@@ -151,6 +151,26 @@
     }
 
     unlockContent() {
+      // 1. Eliminar cualquier barrera residual de visualización
+      const lockStyle = document.getElementById('age-lock-style');
+      if (lockStyle) lockStyle.remove();
+      const mainApp = document.getElementById('main-app');
+      if (mainApp) mainApp.style.display = '';
+      const mainHeader = document.querySelector('.main-header');
+      if (mainHeader) mainHeader.style.display = '';
+
+      const finalizeUnlock = () => {
+        document.documentElement.classList.remove('age-locked');
+        document.body.classList.remove('age-locked');
+        this.updateBadges(true);
+
+        // Despachar evento global de verificación para reactivar el renderizado del catálogo
+        document.dispatchEvent(new CustomEvent('cannaAgeVerified', { detail: { verified: true } }));
+        if (window.app && typeof window.app.applyFiltersAndSort === 'function') {
+          window.app.applyFiltersAndSort();
+        }
+      };
+
       if (this.modal) {
         this.modal.classList.add('closing');
         setTimeout(() => {
@@ -161,15 +181,11 @@
           } catch (_) {}
           this.modal.removeAttribute('open');
           this.modal.classList.remove('closing');
-          document.documentElement.classList.remove('age-locked');
-          document.body.classList.remove('age-locked');
+          finalizeUnlock();
         }, 280);
       } else {
-        document.documentElement.classList.remove('age-locked');
-        document.body.classList.remove('age-locked');
+        finalizeUnlock();
       }
-
-      this.updateBadges(true);
     }
 
     grantConsent() {

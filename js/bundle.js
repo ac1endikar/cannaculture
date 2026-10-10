@@ -25377,8 +25377,21 @@ class CannaAppMAX {
 
   /* 1. VERIFICACIÓN DE EDAD CENTRALIZADA (+18 - v217) */
   initAgeGate() {
-    // La gestión legal, persistencia de 30 días y directiva Fail-Secure
-    // se administran centralizadamente a través de CannaAgeGate (js/age-gate.js).
+    // Asegurar visibilidad de mainApp y remoción de estilos residuales
+    const mainApp = document.getElementById('main-app');
+    if (mainApp) mainApp.style.display = '';
+    const lockStyle = document.getElementById('age-lock-style');
+    if (lockStyle) lockStyle.remove();
+
+    // Escuchar el evento de desbloqueo para reactivar el renderizado de cepas
+    document.addEventListener('cannaAgeVerified', () => {
+      const mApp = document.getElementById('main-app');
+      if (mApp) mApp.style.display = '';
+      if (typeof this.applyFiltersAndSort === 'function') {
+        this.applyFiltersAndSort();
+      }
+    });
+
     if (window.CannaAgeGate && typeof window.CannaAgeGate.init === 'function') {
       window.CannaAgeGate.init();
     }

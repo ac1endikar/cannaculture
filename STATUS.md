@@ -1,16 +1,20 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 14:30  
+> **Ultima actualizacion:** 2026-10-10 17:40  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(security): blindaje integral age verification gate +18 fail-secure y micro-badge v217`  
+> **Commit de cierre:** `fix(catalog): restauracion inmediata de main-app, eliminacion de age-lock-style y reactivacion reactiva de cepas v217.1`  
 > **Version Cache-Busting:** `?v=217`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
-- **Estado del Catalogo:** **877 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
+- **Estado del Catalogo:** **877 cepas botanicas 100% unicas y originales, 0 duplicados visuales, plenamente renderizadas.**
 - **75 Bancos Oficiales Incorporados (ampliación de 65 a 75 bancos de élite mundial).**
 - **100 Nuevas Variedades Fotoperiódicas/Feminizadas/Regulares (estrictamente 0 autoflorecientes).**
+- **Restauración y Reactivación del Catálogo en Pantalla Principal (v217.1):**
+  - **Eliminación de Bloqueos Ocultos:** Suprimido el bloque `<style id="age-lock-style">` residual y el atributo inline `style="display:none;"` en `<main id="main-app">` de `index.html`.
+  - **Corrección de Directiva `<noscript>`:** Desacoplada la regla CSS de superposición para evitar falsos positivos de pantalla completa en navegadores con JS habilitado.
+  - **Sincronización Reactiva de Eventos:** Vinculado el evento global `cannaAgeVerified` entre `js/age-gate.js` y `js/app.js` para asegurar que `applyFiltersAndSort()` repinte inmediatamente las tarjetas de variedades al aceptar la verificación.
 - **Sistema Integral Age Verification Gate (+18) Blindado (v217):**
   - **Arquitectura Fail-Secure (Cero Fugas):** Inyección de bloqueo inmediato en `<head>` de `index.html`, `guia-cultivo.html` y `admin-dispensario.html` para erradicar el FOUC.
   - **Protección `<noscript>` Activa:** Bloqueo absoluto y pantalla de aviso legal si JavaScript se encuentra deshabilitado.
