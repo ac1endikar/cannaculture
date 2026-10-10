@@ -1,12 +1,12 @@
 {
   "metadata": {
     "generated_at": "2026-10-10",
-    "total_strains": 877,
+    "total_strains": 868,
     "total_banks": 75,
     "species_distribution": {
-      "Índica": 387,
-      "Sativa": 223,
-      "Híbrida": 267
+      "Índica": 381,
+      "Sativa": 221,
+      "Híbrida": 266
     }
   },
   "banks_summary": [
@@ -43,11 +43,11 @@
           "floweringDays": 50
         },
         {
-          "id": "00s-cheese-xl",
-          "name": "Cheese XL Auto",
-          "species": "Índica",
-          "thc": 19,
-          "floweringDays": 65
+          "id": "00s-00-skunk",
+          "name": "00 Skunk",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 55
         },
         {
           "id": "00s-critical-mass",
@@ -57,11 +57,11 @@
           "floweringDays": 55
         },
         {
-          "id": "00s-white-smurf",
-          "name": "White Smurf Auto",
-          "species": "Híbrida",
-          "thc": 17,
-          "floweringDays": 65
+          "id": "00s-northern-lights",
+          "name": "Northern Lights (00 Seeds)",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 50
         },
         {
           "id": "00s-afghan-mass",
@@ -365,7 +365,7 @@
     },
     {
       "bank": "BSF Seeds",
-      "count": 15,
+      "count": 12,
       "strains": [
         {
           "id": "bsf-gorilla-glue-4",
@@ -442,27 +442,6 @@
           "name": "Orange Blossom",
           "species": "Sativa",
           "thc": 20,
-          "floweringDays": 65
-        },
-        {
-          "id": "bsf-red-critical-auto",
-          "name": "Red Critical XXL Auto",
-          "species": "Índica",
-          "thc": 20,
-          "floweringDays": 55
-        },
-        {
-          "id": "bsf-lebron-haze-auto",
-          "name": "Lebron Haze XXL Auto",
-          "species": "Sativa",
-          "thc": 26,
-          "floweringDays": 63
-        },
-        {
-          "id": "bsf-gorilla-glue-auto",
-          "name": "Gorilla Glue XXL Auto",
-          "species": "Híbrida",
-          "thc": 24,
           "floweringDays": 65
         },
         {
@@ -1985,7 +1964,7 @@
     },
     {
       "bank": "Dinafem Seeds",
-      "count": 15,
+      "count": 12,
       "strains": [
         {
           "id": "dinafem-moby-dick",
@@ -2049,27 +2028,6 @@
           "species": "Sativa",
           "thc": 21,
           "floweringDays": 60
-        },
-        {
-          "id": "dinafem-critical-auto-2",
-          "name": "Critical + 2.0 Auto",
-          "species": "Índica",
-          "thc": 20,
-          "floweringDays": 70
-        },
-        {
-          "id": "dinafem-moby-dick-auto",
-          "name": "Moby Dick XXL Auto",
-          "species": "Sativa",
-          "thc": 20,
-          "floweringDays": 75
-        },
-        {
-          "id": "dinafem-gorilla-auto",
-          "name": "Gorilla Auto",
-          "species": "Híbrida",
-          "thc": 22,
-          "floweringDays": 75
         },
         {
           "id": "dinafem-remedy-cbd",
@@ -2172,15 +2130,8 @@
     },
     {
       "bank": "Dutch Passion",
-      "count": 13,
+      "count": 11,
       "strains": [
-        {
-          "id": "dp-auto-blueberry",
-          "name": "Auto Blueberry",
-          "species": "Índica",
-          "thc": 17,
-          "floweringDays": 63
-        },
         {
           "id": "dp-mazar",
           "name": "Mazar",
@@ -2208,13 +2159,6 @@
           "species": "Híbrida",
           "thc": 16,
           "floweringDays": 45
-        },
-        {
-          "id": "dp-auto-mazar",
-          "name": "Auto Mazar",
-          "species": "Índica",
-          "thc": 20,
-          "floweringDays": 70
         },
         {
           "id": "dp-skywalker-og",
@@ -4203,18 +4147,18 @@
           "floweringDays": 56
         },
         {
-          "id": "paradise-stromboli-auto",
-          "name": "Stromboli Auto",
-          "species": "Índica",
-          "thc": 16,
+          "id": "paradise-nebula",
+          "name": "Nebula",
+          "species": "Híbrida",
+          "thc": 23,
           "floweringDays": 63
         },
         {
-          "id": "paradise-red-velvet-auto",
-          "name": "Red Velvet Auto",
+          "id": "paradise-all-kush",
+          "name": "All-Kush",
           "species": "Índica",
-          "thc": 18,
-          "floweringDays": 63
+          "thc": 22,
+          "floweringDays": 60
         },
         {
           "id": "paradise-dutch-dragon",
@@ -5120,7 +5064,7 @@
     },
     {
       "bank": "Royal Queen Seeds",
-      "count": 13,
+      "count": 12,
       "strains": [
         {
           "id": "rqs-royal-gorilla",
@@ -5170,13 +5114,6 @@
           "species": "Índica",
           "thc": 18,
           "floweringDays": 50
-        },
-        {
-          "id": "rqs-og-kush-auto",
-          "name": "OG Kush Auto",
-          "species": "Índica",
-          "thc": 17,
-          "floweringDays": 49
         },
         {
           "id": "rqs-purple-queen",
@@ -5947,18 +5884,18 @@
           "floweringDays": 60
         },
         {
-          "id": "ss-black-cream-auto",
-          "name": "Black Cream Auto",
+          "id": "ss-mohan-ram",
+          "name": "Mohan Ram",
           "species": "Índica",
-          "thc": 18,
-          "floweringDays": 63
+          "thc": 22,
+          "floweringDays": 56
         },
         {
-          "id": "ss-bigdevil-xl",
-          "name": "Big Devil XL Auto",
+          "id": "ss-sweet-cheese",
+          "name": "Sweet Cheese",
           "species": "Sativa",
-          "thc": 20,
-          "floweringDays": 75
+          "thc": 22,
+          "floweringDays": 63
         },
         {
           "id": "san-fernando-lemon-kush",

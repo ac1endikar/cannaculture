@@ -1,22 +1,34 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 18:55  
+> **Ultima actualizacion:** 2026-10-10 19:15  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `refactor(ui): eliminación del micro-badge de edad en cabecera y actualización v220`  
-> **Version Cache-Busting:** `?v=220`
+> **Commit de cierre:** `refactor(catalog): purga de variedades autoflorecientes y reemplazo fotoperiódico v221`  
+> **Version Cache-Busting:** `?v=221`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
-- **Estado del Catalogo:** **877 cepas botanicas 100% unicas y originales, 0 duplicados visuales, plenamente renderizadas.**
-- **75 Bancos Oficiales Incorporados (ampliación de 65 a 75 bancos de élite mundial).**
-- **100 Nuevas Variedades Fotoperiódicas/Feminizadas/Regulares (estrictamente 0 autoflorecientes).**
-- **Optimización Minimalista de Cabecera (v220):**
-  - **Eliminación de Badge Redundante:** Supresión definitiva del micro-badge `#age-status-badge` (`🛡️ 18+`) en la cabecera de `index.html`, `guia-cultivo.html` y `admin-dispensario.html`.
-  - **Limpieza de Estilos:** Eliminadas las reglas CSS asociadas a `.age-status-badge` en `css/age-gate.css` y `#age-status-text` en `css/styles.css`.
-  - **Blindaje en JavaScript:** Inclusión de comprobaciones defensivas en `js/age-gate.js` (`bindUI` y `updateBadges`) garantizando ejecución limpia sin excepciones.
-  - **Modal +18 Fail-Secure Intacto:** El diálogo `<dialog id="age-gate-modal">` y la verificación estricta en memoria volátil de JS permanecen 100% intactos.
-  - **Service Worker & Cachés Sincronizadas (`v220`):** Cachés elevadas a `cannaculture-core-v220`, `cannaculture-images-v220`, `cannaculture-pages-v220`. Queries actualizadas a `?v=220`. Recompilados bundles JS.
+- **Estado del Catalogo:** **868 cepas botanicas 100% fotoperiodicas y clones de elite (0 autoflorecientes comerciales).**
+- **75 Bancos Oficiales Incorporados (élite mundial de la crianza cannábica).**
+- **FASE 1 — Purga y Sustitución de Autoflorecientes (v221):**
+  - **Sustituciones Fotoperiódicas Clásicas (6 cepas):**
+    - `00s-cheese-xl` -> `00 Skunk` (`00s-00-skunk`, 00 Seeds Bank).
+    - `00s-white-smurf` -> `Northern Lights (00 Seeds)` (`00s-northern-lights`, 00 Seeds Bank).
+    - `paradise-red-velvet-auto` -> `All-Kush` (`paradise-all-kush`, Paradise Seeds).
+    - `paradise-stromboli-auto` -> `Nebula` (`paradise-nebula`, Paradise Seeds).
+    - `ss-bigdevil-xl` -> `Sweet Cheese` (`ss-sweet-cheese`, Sweet Seeds).
+    - `ss-black-cream-auto` -> `Mohan Ram` (`ss-mohan-ram`, Sweet Seeds).
+  - **Purga de Versiones Auto Duplicadas (9 cepas):**
+    - BSF Seeds: `Gorilla Glue XXL Auto`, `Lebron Haze XXL Auto`, `Red Critical XXL Auto`.
+    - Dinafem Seeds: `Critical + 2.0 Auto`, `Moby Dick XXL Auto`, `Gorilla Auto`.
+    - Dutch Passion: `Auto Blueberry`, `Auto Mazar`.
+    - Royal Queen Seeds: `OG Kush Auto`.
+  - **Recompilación & Sincronización:** Recompilados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`. Sincronizado cache-busting a `?v=221` en Service Worker y todas las plantillas HTML.
+
+### v221 — Purga de Variedades Autoflorecientes y Reemplazo Fotoperiódico Oficial
+- **Catálogo 100% Fotoperiódico:** Purga de 9 autoflorecientes redundantes y sustitución de 6 cepas por leyendas fotoperiódicas de 00 Seeds, Paradise Seeds y Sweet Seeds.
+- **Inventario Actualizado:** 868 variedades fotoperiódicas únicas en 75 bancos criadores.
+- **Cache-Busting Sincronizado:** Subida a `?v=221` en `index.html`, `guia-cultivo.html`, `admin-dispensario.html` y `sw.js`. Recompilados bundles JS.
 - **Rediseño UI/UX Cabecera Superior Glassmorphism Dark Emerald (v219):**
   - **Identidad de Marca Limpia:** Eliminación total de la etiqueta/badge de versión (`2.0 MAX` / `.version-tag`) y depuración completa de sus reglas CSS; el logo muestra exclusivamente el icono botánico y el texto `CannaCulture`.
   - **Fondo & Acabado:** `rgba(11, 15, 14, 0.85)` con `backdrop-filter: blur(20px) saturate(160%)` y sutil línea perimetral esmeralda.
