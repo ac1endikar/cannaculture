@@ -1,12 +1,12 @@
 {
   "metadata": {
     "generated_at": "2026-10-10",
-    "total_strains": 888,
-    "total_banks": 75,
+    "total_strains": 900,
+    "total_banks": 80,
     "species_distribution": {
-      "Índica": 385,
-      "Sativa": 227,
-      "Híbrida": 276
+      "Índica": 389,
+      "Sativa": 231,
+      "Híbrida": 280
     }
   },
   "banks_summary": [
@@ -215,6 +215,26 @@
           "species": "Sativa",
           "thc": 20,
           "floweringDays": 115
+        }
+      ]
+    },
+    {
+      "bank": "Aficionado French Connection",
+      "count": 2,
+      "strains": [
+        {
+          "id": "afc-pianono",
+          "name": "Pianono",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 62
+        },
+        {
+          "id": "afc-rosso-corsa",
+          "name": "Rosso Corsa",
+          "species": "Índica",
+          "thc": 28,
+          "floweringDays": 63
         }
       ]
     },
@@ -1464,6 +1484,26 @@
       ]
     },
     {
+      "bank": "Chimera Seeds",
+      "count": 2,
+      "strains": [
+        {
+          "id": "chimera-fighting-buddha",
+          "name": "Fighting Buddha",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 68
+        },
+        {
+          "id": "chimera-frost-bite",
+          "name": "Frost Bite",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 58
+        }
+      ]
+    },
+    {
       "bank": "Clearwater Genetics",
       "count": 10,
       "strains": [
@@ -2631,6 +2671,40 @@
           "species": "Índica",
           "thc": 28,
           "floweringDays": 63
+        }
+      ]
+    },
+    {
+      "bank": "Exotic Seed",
+      "count": 4,
+      "strains": [
+        {
+          "id": "exotic-spicy-bitch",
+          "name": "Spicy Bitch",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 66
+        },
+        {
+          "id": "exotic-malasana-gelato",
+          "name": "Malasaña Gelato",
+          "species": "Híbrida",
+          "thc": 26,
+          "floweringDays": 62
+        },
+        {
+          "id": "exotic-gypsy-widow",
+          "name": "Gypsy Widow",
+          "species": "Híbrida",
+          "thc": 23,
+          "floweringDays": 58
+        },
+        {
+          "id": "exotic-herz-og",
+          "name": "Herz OG",
+          "species": "Índica",
+          "thc": 26,
+          "floweringDays": 62
         }
       ]
     },
@@ -5251,6 +5325,26 @@
       ]
     },
     {
+      "bank": "Sagarmatha Seeds",
+      "count": 2,
+      "strains": [
+        {
+          "id": "sagarmatha-yumboldt",
+          "name": "Yumboldt",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 58
+        },
+        {
+          "id": "sagarmatha-slyder",
+          "name": "Slyder",
+          "species": "Índica",
+          "thc": 21,
+          "floweringDays": 53
+        }
+      ]
+    },
+    {
       "bank": "Samsara Seeds",
       "count": 15,
       "strains": [
@@ -6057,6 +6151,26 @@
           "species": "Sativa",
           "thc": 24,
           "floweringDays": 68
+        }
+      ]
+    },
+    {
+      "bank": "TGA Subcool Seeds",
+      "count": 2,
+      "strains": [
+        {
+          "id": "tga-jack-the-ripper",
+          "name": "Jack the Ripper",
+          "species": "Sativa",
+          "thc": 22,
+          "floweringDays": 58
+        },
+        {
+          "id": "tga-vortex",
+          "name": "Vortex",
+          "species": "Sativa",
+          "thc": 23,
+          "floweringDays": 58
         }
       ]
     },

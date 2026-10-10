@@ -1,36 +1,33 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 20:05  
+> **Ultima actualizacion:** 2026-10-11 00:50  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(catalog): inyección de 20 genéticas fotoperiódicas legendarias - 888 cepas v222`  
-> **Version Cache-Busting:** `?v=222`
+> **Commit de cierre:** `feat(catalog): 5 nuevos bancos criadores icónicos y 12 variedades legendarias - 900 cepas v223`  
+> **Version Cache-Busting:** `?v=223`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
-- **Estado del Catalogo:** **888 cepas botanicas 100% fotoperiodicas y clones de elite (0 autoflorecientes comerciales).**
-- **75 Bancos Criadores Oficiales (élite mundial de la crianza cannábica).**
+- **Estado del Catalogo:** **900 cepas botanicas 100% fotoperiodicas y clones de elite (0 autoflorecientes comerciales).**
+- **80 Bancos Criadores Oficiales (cobertura global de la élite de crianza cannábica).**
 - **Distribución Taxonómica Oficial:**
-  - **Índica:** 385 variedades (43.35%)
-  - **Híbrida:** 276 variedades (31.08%)
-  - **Sativa:** 227 variedades (25.56%)
-- **FASE 2 — Inyección de 20 Variedades Fotoperiódicas Legendarias (v222):**
-  - **Sensi Seeds:** *Northern Lights #5 x Haze* (`sensi-nl5-haze`).
-  - **Barney's Farm:** *Mimosa EVO* (`bf-mimosa-evo`), *Glookies* (`bf-glookies`).
-  - **Sweet Seeds:** *Cream 47* (`ss-cream-47`), *Jack 47* (`ss-jack-47`).
-  - **Serious Seeds:** *Seriosa* (`serious-seriosa`), *Motavation* (`serious-motavation`).
-  - **Ripper Seeds:** *Fuel OG* (`ripper-fuel-og-official`), *Badazz* (`ripper-badazz`).
-  - **Green House Seed Co.:** *Chemical Bride* (`ghs-chemical-bride`), *Arjan's Strawberry Haze* (`ghs-arjans-strawberry-haze`).
-  - **ACE Seeds:** *Old Timer's Haze* (`ace-old-timers-haze`).
-  - **Dutch Passion:** *Euforia* (`dp-euforia`), *Jorge's Diamonds #1* (`dp-jorges-diamonds-1`).
-  - **Compound Genetics:** *Jet Fuel Gelato* (`cg-jet-fuel-gelato`).
-  - **Humboldt Seed Company:** *Blueberry Cupcake* (`hsc-blueberry-cupcake`), *Poddy Mouth* (`hsc-poddy-mouth`).
-  - **In-House Genetics:** *Flavors* (`ihg-flavors`).
-  - **Seed Junky Genetics:** *Biscotti* (`sjg-biscotti`).
-  - **DNA Genetics:** *Skywalker Kush* (`dna-skywalker-kush`).
-  - **Imágenes Asignadas:** 20 imágenes WebP de flor real optimizadas en `img/` vinculadas a cada ficha.
+  - **Índica:** 389 variedades (43.22%)
+  - **Híbrida:** 280 variedades (31.11%)
+  - **Sativa:** 231 variedades (25.67%)
+- **INCORPORACIÓN DE 5 NUEVOS BANCOS CRIADORES Y 12 VARIEDADES (v223):**
+  - **TGA Subcool Seeds (USA):** *Jack the Ripper* (`tga-jack-the-ripper`), *Vortex* (`tga-vortex`).
+  - **Sagarmatha Seeds (Holanda):** *Yumboldt* (`sagarmatha-yumboldt`), *Slyder* (`sagarmatha-slyder`).
+  - **Chimera Seeds (Canadá):** *Fighting Buddha* (`chimera-fighting-buddha`), *Frost Bite* (`chimera-frost-bite`).
+  - **Aficionado French Connection (USA/Francia):** *Pianono* (`afc-pianono`), *Rosso Corsa* (`afc-rosso-corsa`).
+  - **Exotic Seed (España/Holanda):** *Spicy Bitch* (`exotic-spicy-bitch`), *Malasaña Gelato* (`exotic-malasana-gelato`), *Gypsy Widow* (`exotic-gypsy-widow`), *Herz OG* (`exotic-herz-og`).
+  - **Imágenes Asignadas:** 12 imágenes WebP de flores de cannabis auténticas y optimizadas en `img/` vinculadas a cada ficha botánica.
   - **Compilación de Bundles:** Regenerados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`.
   - **Inventarios y Reportes:** Actualizados `docs/inventory_banks_strains.json` y `docs/strains_inventory.txt`.
+
+### v223 — Hito Histórico: 900 Cepas Botánicas y 80 Bancos Criadores Oficiales
+- **Cifra Redonda de Élite:** El catálogo alcanza las 900 genéticas botánicas estrictamente fotoperiódicas con rigor taxonómico y 0 autoflorecientes comerciales.
+- **5 Nuevos Bancos Criadores de Prestigio:** Expansión de 75 a 80 bancos integrando firmas legendarias: TGA Subcool Seeds, Sagarmatha Seeds, Chimera Seeds, Aficionado French Connection y Exotic Seed.
+- **Sincronización PWA & Cache-Busting:** Versión `?v=223` desplegada en Service Worker (`cannaculture-core-v223`) y todas las plantillas HTML.
 
 ### v222 — Inyección de 20 Genéticas Fotoperiódicas Legendarias (888 Cepas Oficiales)
 - **Censo Botánico Final:** Alcanzada la cifra emblemática de 888 genéticas 100% fotoperiódicas y clones élite, con 0 cepas autoflorecientes comerciales.
