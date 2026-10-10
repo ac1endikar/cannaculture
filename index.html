@@ -86,120 +86,104 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- Global Error Handler & Auto-Unlock Defensivo -->
+  <!-- Global Error Handler -->
   <script>
     window.addEventListener('error', function (e) {
       console.error('CannaCatalog Error:', e.message, e.filename, e.lineno);
     });
-
-
-    function autoUnlockCannaCatalog() {
-      try {
-        var lockStyle = document.getElementById('age-lock-style');
-        if (lockStyle) lockStyle.remove();
-        document.body.classList.remove('age-locked');
-        var mainApp = document.getElementById('main-app');
-        var mainHeader = document.querySelector('.main-header');
-        if (mainApp) mainApp.style.display = '';
-        if (mainHeader) mainHeader.style.display = '';
-      } catch (err) { }
-    }
-
-    if (document.readyState === 'complete' || document.readyState === 'interactive') {
-      autoUnlockCannaCatalog();
-    } else {
-      document.addEventListener('DOMContentLoaded', autoUnlockCannaCatalog);
-    }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css?v=216">
+  <!-- Regla de Bloqueo Inmediata Fail-Secure Anti-FOUC (+18 - v217) -->
+  <script>
+    (function () {
+      try {
+        var raw = localStorage.getItem('cannaculture_age_consent');
+        if (!raw) { document.documentElement.classList.add('age-locked'); return; }
+        var data = JSON.parse(raw);
+        if (!data || data.verified !== true || data.policyVersion !== 'v217' || (typeof data.expiresAt === 'number' && Date.now() >= data.expiresAt)) {
+          document.documentElement.classList.add('age-locked');
+        }
+      } catch (_) {
+        document.documentElement.classList.add('age-locked');
+      }
+    })();
+  </script>
+
+  <!-- Hojas de Estilo del Sistema y Age-Gate (+18) -->
+  <link rel="stylesheet" href="css/age-gate.css?v=217">
+  <link rel="stylesheet" href="css/styles.css?v=217">
+
+  <!-- Controlador Inmediato de Age Gate (+18) -->
+  <script src="js/age-gate.js?v=217"></script>
 </head>
 
 <body>
 
-  <!-- VERIFICACIÓN DE EDAD MODAL (AGE-GATE 18+) -->
-  <dialog id="age-modal" class="age-gate-dialog">
-    <div class="age-gate-card glow-emerald">
+  <!-- DIRECTIVA NOSCRIPT FAIL-SECURE (BLOQUEO SIN JAVASCRIPT) -->
+  <noscript id="age-gate-noscript">
+    <div class="noscript-card">
+      <span style="font-size: 3rem;">🛡️</span>
+      <h2>Acceso Restringido (+18)</h2>
+      <p>JavaScript es estrictamente necesario para validar el cumplimiento legal de mayoría de edad (+18) y acceder a la plataforma CannaCulture.</p>
+      <p style="margin-top: 1rem; font-size: 0.8rem; color: #6B7280;">Por favor, habilita JavaScript en la configuración de tu navegador para continuar.</p>
+    </div>
+  </noscript>
 
-      <!-- ESCENA 1: PREGUNTA Y VERIFICACIÓN -->
-      <div id="age-step-verify" class="age-step active">
-        <div class="age-badge-icon">
-          <span class="shield-emerald">🛡️</span>
-          <span class="age-number-pill">+18</span>
-        </div>
+  <!-- ======================================================================
+       VERIFICACIÓN DE EDAD MODAL (+18 AGE GATE - FAIL-SECURE v217)
+       ====================================================================== -->
+  <dialog id="age-gate-modal" class="age-gate-dialog" aria-labelledby="age-gate-title" aria-describedby="age-gate-desc">
+    <div class="age-gate-card">
+      <div class="age-gate-badge">
+        <span class="badge-icon">🛡️</span>
+        <span class="badge-tag">+18 VERIFICACIÓN</span>
+      </div>
 
-        <h2 class="age-title">Control de Acceso (Mayoría de Edad)</h2>
-        <p class="age-subtitle">CannaCatalog 2.0 ULTRA contiene información enciclopédica, botánica y profiláctica sobre
-          genética cannábica exclusiva para mayores de edad (+18).</p>
+      <h2 id="age-gate-title" class="age-gate-title">Control de Acceso (Mayoría de Edad)</h2>
+      <p id="age-gate-desc" class="age-gate-subtitle">Esta plataforma contiene información especializada sobre botánica y variedades cannábicas reservada exclusivamente a personas adultas (+18 años).</p>
 
-        <div class="age-legal-box">
-          <div class="legal-item">
-            <span>📚</span>
-            <div>
-              <strong>Contenido Educativo y Botánico</strong>
-              <p>Clasificación técnica de +267 genéticas de 24 bancos mundiales.</p>
-            </div>
-          </div>
-          <div class="legal-item">
-            <span>⚖️</span>
-            <div>
-              <strong>Cumplimiento Legal y Reducción de Riesgos</strong>
-              <p>Acceso restringido conforme a la normativa vigente de protección de menores.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="age-prompt-container">
-          <p class="age-prompt-text">¿Confirmas que tienes <strong>18 años o más</strong> para acceder a la plataforma?
-          </p>
-          <div class="age-actions-grid">
-            <button id="btn-age-confirm" class="btn btn-age-yes" aria-label="Confirmar que tengo 18 años o más">
-              <span class="btn-icon">✅</span>
-              <span class="btn-text-main">Sí, tengo 18 años o más</span>
-              <span class="btn-text-sub">Entrar a la plataforma</span>
-            </button>
-            <button id="btn-age-reject" class="btn btn-age-no" aria-label="Rechazar acceso por ser menor de 18 años">
-              <span class="btn-icon">❌</span>
-              <span class="btn-text-main">No, soy menor de 18 años</span>
-              <span class="btn-text-sub">Salir o ver información</span>
-            </button>
+      <div class="age-gate-legal-box">
+        <div class="legal-box-row">
+          <span class="legal-box-icon">🌿</span>
+          <div class="legal-box-content">
+            <strong>Finalidad Botánica, Enciclopédica y Reducción de Daños</strong>
+            <p>Catálogo botánico de 877 variedades, perfiles de terpenos y guías informativas orientadas a la divulgación científica y la prevención de riesgos.</p>
           </div>
         </div>
-
-        <div class="age-footer-legal">
-          <p>🔒 Tu preferencia se guardará localmente. El consumo o cultivo debe cumplir estrictamente la legislación
-            local de tu jurisdicción.</p>
+        <div class="legal-box-row">
+          <span class="legal-box-icon">⚖️</span>
+          <div class="legal-box-content">
+            <strong>Marco Legal, Ámbito Privado y Clubes Sociales (CSC)</strong>
+            <p>Acceso restringido conforme a la legislación de protección de menores. Uso estrictamente circunscrito al consumo privado no punible, autocultivo y socios registrados de asociaciones CSC.</p>
+          </div>
         </div>
       </div>
 
-      <!-- ESCENA 2: ACCESO DENEGADO (MENORES DE 18) -->
-      <div id="age-step-denied" class="age-step" style="display: none;">
-        <div class="age-badge-icon danger-shield">
-          <span>🚫</span>
-        </div>
-
-        <h2 class="age-title text-danger">Acceso Restringido (+18)</h2>
-        <p class="age-subtitle">Lo sentimos, esta plataforma está reservada exclusivamente para personas mayores de 18
-          años.</p>
-
-        <div class="denied-info-card">
-          <p>De acuerdo con la regulación vigente y nuestras políticas de responsabilidad social, no está permitido el
-            acceso a menores de edad a contenidos sobre variedades o cultivo de cannabis.</p>
-        </div>
-
-        <div class="age-actions-stacked" style="margin-top: 1.5rem;">
-          <a href="https://www.google.com" class="btn btn-emerald-lg"
-            style="width: 100%; text-decoration: none; justify-content: center;">
-            🚪 Salida Segura (Ir a Google)
-          </a>
-          <button id="btn-age-retry" class="btn btn-outline"
-            style="width: 100%; margin-top: 0.6rem; justify-content: center;"
-            aria-label="Reintentar verificación de edad">
-            🔄 He cometido un error (Volver a verificar)
-          </button>
-        </div>
+      <div class="age-gate-actions-grid">
+        <button id="btn-age-permit" class="btn-age-permit" type="button" aria-label="Confirmar que soy mayor de 18 años y acceder">
+          <span class="btn-age-main">✅ Soy mayor de 18 años</span>
+          <span class="btn-age-sub">Entrar a la plataforma</span>
+        </button>
+        <button id="btn-age-deny" class="btn-age-deny" type="button" aria-label="Indicar que soy menor de 18 años y salir">
+          <span class="btn-age-main">🚪 Soy menor de edad</span>
+          <span class="btn-age-sub">Salir inmediatamente</span>
+        </button>
       </div>
 
+      <p class="age-gate-footer-hint">🔒 Tu consentimiento se registrará localmente con una validez legal de 30 días renovable. Puedes revocar tu elección en cualquier momento desde el indicador de cabecera.</p>
+    </div>
+  </dialog>
+
+  <!-- DIÁLOGO DE REVOCACIÓN VOLUNTARIA DE CONSENTIMIENTO (+18) -->
+  <dialog id="age-revoke-dialog" class="age-revoke-dialog">
+    <div class="age-revoke-card">
+      <span style="font-size: 2rem;">🛡️</span>
+      <h3 class="age-revoke-title">Consentimiento +18 Activo</h3>
+      <p class="age-revoke-desc">Has verificado tu mayoría de edad en este navegador. ¿Deseas revocar tu consentimiento y bloquear el acceso en este dispositivo?</p>
+      <div class="age-revoke-actions">
+        <button id="btn-revoke-cancel" class="btn-revoke-cancel" type="button">Mantener Acceso</button>
+        <button id="btn-revoke-confirm" class="btn-revoke-confirm" type="button">Revocar y Bloquear</button>
+      </div>
     </div>
   </dialog>
 
@@ -214,9 +198,10 @@
 
         <!-- Controles Secundarios agrupados y ordenados -->
         <div class="header-extra-controls">
-          <!-- Indicador Estado +18 -->
-          <button id="btn-age-status" class="btn btn-age-status-pill" title="Estado de Verificación +18" aria-label="Estado de Verificación de Mayoría de Edad +18">
-            🛡️ <span id="age-status-text">+18</span>
+          <!-- Micro-Badge Discreto Estatus Legal +18 -->
+          <button id="age-status-badge" class="age-status-badge" type="button" title="Acceso verificado para mayores de 18 años. Clic para consultar o revocar consentimiento." aria-label="Mayoría de edad +18 verificada">
+            <span class="badge-icon">🛡️</span>
+            <span>18+</span>
           </button>
 
           <!-- Contenedor Sesión / Google Auth -->
@@ -1286,10 +1271,10 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=216"></script>
+  <script src="js/bundle.js?v=217"></script>
 
   <!-- Gestor de Ciclo de Vida PWA & Registro de Service Worker -->
-  <script src="js/pwa-manager.js?v=216"></script>
+  <script src="js/pwa-manager.js?v=217"></script>
 </body>
 
 </html>

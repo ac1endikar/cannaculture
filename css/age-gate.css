@@ -1,0 +1,421 @@
+/**
+ * CannaCulture - Age Verification Gate Styles (v217)
+ * Arquitectura Fail-Secure, Glassmorphism Dark Emerald (#0B0F0E) y Micro-Badge de Cabecera
+ */
+
+/* 1. DIRECTIVAS FAIL-SECURE (BLOQUEO TOTAL ANTE FALTA DE VERIFICACIÓN) */
+html.age-locked,
+body.age-locked {
+  overflow: hidden !important;
+  touch-action: none !important;
+  height: 100% !important;
+}
+
+html.age-locked body > :not(#age-gate-modal):not(#age-gate-noscript):not(#age-revoke-dialog) {
+  filter: blur(24px) brightness(0.35) !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  transition: filter 0.4s ease, brightness 0.4s ease;
+}
+
+/* 2. PROTECCIÓN NOSCRIPT (SIN JAVASCRIPT NO HAY ACCESO) */
+noscript#age-gate-noscript {
+  position: fixed;
+  inset: 0;
+  z-index: 99999999;
+  background: #0B0F0E;
+  color: #F3F4F6;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-align: center;
+}
+
+.noscript-card {
+  max-width: 480px;
+  background: rgba(16, 24, 21, 0.95);
+  border: 1.5px solid rgba(239, 68, 68, 0.4);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 30px rgba(239, 68, 68, 0.2);
+}
+
+.noscript-card h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 1rem 0 0.5rem;
+}
+
+.noscript-card p {
+  color: #9CA3AF;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 3. MODAL NATIVO AGE-GATE (GLASSMORPHISM DARK EMERALD) */
+.age-gate-dialog {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: auto;
+  max-width: 580px;
+  width: 92%;
+  overflow: visible;
+  outline: none;
+  z-index: 9999999;
+}
+
+.age-gate-dialog::backdrop {
+  background: rgba(4, 8, 7, 0.92);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  animation: ageBackdropFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes ageBackdropFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.age-gate-card {
+  background: radial-gradient(120% 120% at 50% 0%, rgba(16, 185, 129, 0.08) 0%, rgba(11, 15, 14, 0.98) 100%);
+  border: 1.5px solid rgba(16, 185, 129, 0.32);
+  border-radius: 24px;
+  padding: 2.2rem 2rem;
+  box-shadow: 
+    0 30px 90px rgba(0, 0, 0, 0.95),
+    0 0 45px rgba(16, 185, 129, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  color: #E5E7EB;
+  text-align: center;
+  position: relative;
+  transform: scale(0.96);
+  opacity: 0;
+  animation: ageCardSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@keyframes ageCardSlideUp {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Transición suave de salida */
+.age-gate-dialog.closing .age-gate-card {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.age-gate-dialog.closing::backdrop {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* 4. ELEMENTOS INTERNOS DEL MODAL */
+.age-gate-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1.5px solid rgba(16, 185, 129, 0.4);
+  padding: 6px 18px;
+  border-radius: 99px;
+  margin-bottom: 1.1rem;
+}
+
+.age-gate-badge .badge-icon {
+  font-size: 1.3rem;
+}
+
+.age-gate-badge .badge-tag {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #10B981;
+  letter-spacing: 0.5px;
+}
+
+.age-gate-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.25;
+}
+
+.age-gate-subtitle {
+  font-size: 0.92rem;
+  color: #9CA3AF;
+  line-height: 1.55;
+  margin: 0 0 1.3rem 0;
+}
+
+/* Caja de descargo legal botánico y regulatorio */
+.age-gate-legal-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.1rem 1.2rem;
+  text-align: left;
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.legal-box-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.legal-box-icon {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.legal-box-content strong {
+  display: block;
+  font-size: 0.84rem;
+  color: #FFFFFF;
+  margin-bottom: 2px;
+}
+
+.legal-box-content p {
+  font-size: 0.76rem;
+  color: #9CA3AF;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Botonera de decisión binaria */
+.age-gate-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+.btn-age-permit {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 14px;
+  padding: 0.95rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.btn-age-permit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.55);
+  background: linear-gradient(135deg, #34D399 0%, #059669 100%);
+}
+
+.btn-age-deny {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1.5px solid rgba(239, 68, 68, 0.32);
+  color: #FCA5A5;
+  border-radius: 14px;
+  padding: 0.95rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.btn-age-deny:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.6);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-age-main {
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.btn-age-sub {
+  font-size: 0.72rem;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.age-gate-footer-hint {
+  font-size: 0.72rem;
+  color: #6B7280;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* 5. MICRO-BADGE DE CABECERA (REEMPLAZO DISCRETO DE PÍLDORA) */
+.age-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.24);
+  color: #34D399;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.age-status-badge:hover {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.25);
+  transform: translateY(-1px);
+}
+
+.age-status-badge .badge-icon {
+  font-size: 0.85rem;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* 6. MODAL DIÁLOGO DE REVOCACIÓN VOLUNTARIA */
+.age-revoke-dialog {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: auto;
+  max-width: 440px;
+  width: 90%;
+  overflow: visible;
+  outline: none;
+  z-index: 9999999;
+}
+
+.age-revoke-dialog::backdrop {
+  background: rgba(4, 8, 7, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.age-revoke-card {
+  background: rgba(11, 15, 14, 0.98);
+  border: 1.5px solid rgba(16, 185, 129, 0.3);
+  border-radius: 20px;
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+  color: #E5E7EB;
+  text-align: center;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.age-revoke-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0.5rem 0 0.4rem 0;
+}
+
+.age-revoke-desc {
+  font-size: 0.84rem;
+  color: #9CA3AF;
+  line-height: 1.5;
+  margin: 0 0 1.3rem 0;
+}
+
+.age-revoke-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.btn-revoke-cancel {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-revoke-cancel:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-revoke-confirm {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1.5px solid rgba(239, 68, 68, 0.4);
+  color: #FCA5A5;
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-revoke-confirm:hover {
+  background: rgba(239, 68, 68, 0.3);
+  color: #FFFFFF;
+}
+
+/* 7. ADAPTACIÓN RESPONSIVE */
+@media (max-width: 600px) {
+  .age-gate-dialog {
+    width: 95%;
+  }
+
+  .age-gate-card {
+    padding: 1.6rem 1.2rem;
+    border-radius: 20px;
+  }
+
+  .age-gate-title {
+    font-size: 1.35rem;
+  }
+
+  .age-gate-subtitle {
+    font-size: 0.84rem;
+  }
+
+  .age-gate-actions-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .legal-box-row {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .age-revoke-actions {
+    grid-template-columns: 1fr;
+  }
+}

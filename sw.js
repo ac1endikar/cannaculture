@@ -1,23 +1,29 @@
 /**
- * CannaCulture Service Worker (v216)
+ * CannaCulture Service Worker (v217)
  * Progressive Web App con soporte offline multinivel, estrategia LRU para imágenes
  * y bypass defensivo para Firebase & Firestore.
  */
 
-const CACHE_CORE = 'cannaculture-core-v216';
-const CACHE_IMAGES = 'cannaculture-images-v216';
-const CACHE_PAGES = 'cannaculture-pages-v216';
+const CACHE_CORE = 'cannaculture-core-v217';
+const CACHE_IMAGES = 'cannaculture-images-v217';
+const CACHE_PAGES = 'cannaculture-pages-v217';
 const MAX_CACHED_IMAGES = 120;
 
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/offline.html',
-  '/css/styles.css?v=216',
-  '/js/bundle.js?v=216',
+  '/css/age-gate.css?v=217',
+  '/js/age-gate.js?v=217',
+  '/css/styles.css?v=217',
+  '/js/bundle.js?v=217',
   '/guia-cultivo.html',
-  '/css/guia-cultivo.css?v=216',
-  '/js/guia-cultivo.js?v=216',
+  '/css/guia-cultivo.css?v=217',
+  '/js/guia-cultivo.js?v=217',
+  '/admin-dispensario.html',
+  '/css/admin-dispensario.css?v=217',
+  '/js/admin-dispensario.js?v=217',
+  '/js/strains-data.js?v=217',
   '/manifest.webmanifest',
   '/assets/icons/icon-192x192.png',
   '/assets/icons/icon-512x512.png',
@@ -51,7 +57,7 @@ self.addEventListener('install', event => {
       .then(cache => {
         return Promise.allSettled(
           CORE_ASSETS.map(url => cache.add(url).catch(err => {
-            console.warn('[SW v216] Precache advertencia en:', url, err);
+            console.warn('[SW v217] Precache advertencia en:', url, err);
           }))
         );
       })
@@ -66,7 +72,7 @@ self.addEventListener('activate', event => {
     caches.keys().then(keys => {
       return Promise.all(
         keys.filter(k => !currentCaches.includes(k)).map(oldKey => {
-          console.log('[SW v216] Purgando caché obsoleta:', oldKey);
+          console.log('[SW v217] Purgando caché obsoleta:', oldKey);
           return caches.delete(oldKey);
         })
       );

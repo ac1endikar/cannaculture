@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 13:15  
+> **Ultima actualizacion:** 2026-10-10 14:30  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(dispensary): terminal pos csc pesaje automatico socios arqueo y catalogo 877 cepas v216`  
-> **Version Cache-Busting:** `?v=216`
+> **Commit de cierre:** `feat(security): blindaje integral age verification gate +18 fail-secure y micro-badge v217`  
+> **Version Cache-Busting:** `?v=217`
 
 ---
 
@@ -11,21 +11,44 @@
 - **Estado del Catalogo:** **877 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
 - **75 Bancos Oficiales Incorporados (ampliación de 65 a 75 bancos de élite mundial).**
 - **100 Nuevas Variedades Fotoperiódicas/Feminizadas/Regulares (estrictamente 0 autoflorecientes).**
-- **CannaDispensario POS 2.0 (v216):** Terminal táctil de barra para Clubes Sociales de Cannabis (CSC) plenamente operativo en `admin-dispensario.html`:
-  - 3 Pestañas de trabajo: `🌿 Carta & Menú en Barra`, `⚖️ Terminal Mostrador (POS)` y `📊 Arqueo & Movimientos`.
-  - Integración con el catálogo de 877 cepas y selector de los 75 bancos con pre-indexación en memoria `_searchIndex`.
-  - Terminal de mostrador con selector ágil de socio, control de límite mensual estatutario, báscula digital con pesaje rápido (+0.5g a +10g), cálculo en tiempo real de aportación (€) según cuota del socio, descuento de stock en bote y guardado de tickets.
-  - Arqueo diario con métricas (g totales, € recaudados, tickets), alertas de reposición de stock bajo (<10g) y exportación a CSV / Acta imprimible.
-- **Sommelier IA María 2.0 (v215):** Motor de puntuación multidimensional (`SommelierScoringEngine`) evaluando el catálogo íntegro de 877 cepas y 75 bancos en tiempo real. Tríada de recomendaciones enriquecidas (`🥇 Top Match`, `🧬 Alternativa Terpénica`, `⚖️ Opción Equilibrada`) con mini-fichas interactivas, macro fotos, THC, terpenos y navegación contextual cruzada al catálogo y fichas botánicas.
+- **Sistema Integral Age Verification Gate (+18) Blindado (v217):**
+  - **Arquitectura Fail-Secure (Cero Fugas):** Inyección de bloqueo inmediato en `<head>` de `index.html`, `guia-cultivo.html` y `admin-dispensario.html` para erradicar el FOUC.
+  - **Protección `<noscript>` Activa:** Bloqueo absoluto y pantalla de aviso legal si JavaScript se encuentra deshabilitado.
+  - **Modal Glassmorphism Dark Emerald (`#0B0F0E`):** Diálogo nativo `<dialog id="age-gate-modal">` con captura y anulación del evento `cancel` (bloqueo total de tecla `Escape`) y bloqueo de scroll e interacciones (`overflow: hidden !important; touch-action: none;`).
+  - **Descargo Jurídico Botánico Explícito:** Mayoría de edad (+18), finalidad estrictamente botánica, enciclopédica y de reducción de riesgos, y ámbito de consumo privado y Clubes Sociales de Cannabis (CSC).
+  - **Trazabilidad Legal de 30 Días:** Token estructurado en `localStorage` (`cannaculture_age_consent`) con timestamp, política de versión `v217` y caducidad automática `expiresAt`.
+  - **Redirección Segura Irreversible:** Salida para menores mediante `window.location.replace('https://www.google.com')` sin dejar rastro en el historial del navegador.
+  - **Limpieza de Bypasses:** Eliminado definitivamente `autoUnlockCannaCatalog()` y overrides manuales en `js/app.js`.
+  - **Micro-Badge Discreto en Cabecera (`🛡️ 18+`):** Sustitución de la píldora aparatosa por un indicador sutil e idéntico en las 3 páginas, con diálogo de revocación voluntaria y re-bloqueo del terminal.
+- **CannaDispensario POS 2.0 (v216):** Terminal táctil de barra para Clubes Sociales de Cannabis (CSC) plenamente operativo en `admin-dispensario.html` con 3 pestañas, pesaje digital, cuotas de socio y arqueo diario.
+- **Sommelier IA María 2.0 (v215):** Motor de puntuación multidimensional (`SommelierScoringEngine`) evaluando el catálogo íntegro de 877 cepas y 75 bancos en tiempo real con tríada de recomendaciones y mini-fichas interactivas.
 - **Cobertura Linaje/Genetica:** 877/877 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales descargadas localmente en `img/` como `.webp` y `.jpg`, resolución mínima >= 400x400 (hasta 2500px), 0 colisiones visuales, 0 fondos blancos, 0 ilustraciones.
 - **Optimización de Rendimiento & Core Web Vitals (v214):** Filtrado y renderizado instantáneo (<8ms) con renderizado por lotes de 24 tarjetas mediante IntersectionObserver, pre-indexación en memoria `_searchIndex`, debounce adaptativo de 110ms sincronizado con `requestAnimationFrame`, priorización LCP (`fetchpriority="high"`, `loading="eager"`), CLS = 0.000 y skeleton shimmer placeholder.
-- **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, catálogo de 877 cepas y selector multi-idioma reactivo (ES/EN/DE/IT).
-- **Guía de Cultivo (`guia-cultivo.html`):** Página independiente operativa con 5 etapas interactivas y selector ES/EN/DE/IT.
 - **Infraestructura SEO & Redes Sociales (v212):** Desplegada con `robots.txt`, `sitemap.xml` multilingüe, metadatos Open Graph, Twitter Cards, Schemas JSON-LD y banner oficial 1200x630px.
-- **Infraestructura PWA & Soporte Offline (v213):** Aplicación instalable con `manifest.webmanifest`, `sw.js` (3 capas de caché + LRU de imágenes), `offline.html`, iconos de alta resolución estándar y maskables, botón de instalación en cabecera y soporte iOS/Safari.
+- **Infraestructura PWA & Soporte Offline (v213/v217):** Aplicación instalable con `manifest.webmanifest`, `sw.js` (3 capas de caché + LRU de imágenes), `offline.html`, iconos de alta resolución estándar y maskables, botón de instalación en cabecera y soporte iOS/Safari.
 
-### v216 — CannaDispensario POS 2.0, Terminal de Barra CSC, Arqueo Diario y Sincronización 877 Cepas (`cannacultureapp.com`)
+### v217 — Blindaje Integral Age Verification Gate (+18), Arquitectura Fail-Secure, Trazabilidad Legal de 30 Días y Micro-Badge Universal (`cannacultureapp.com`)
+- **Arquitectura Universal y Desacoplada (`css/age-gate.css` & `js/age-gate.js`):**
+  - Módulo independiente sin dependencias externas, integrado homogéneamente en los 3 puntos de acceso: `index.html`, `guia-cultivo.html` y `admin-dispensario.html`.
+  - Detección ultra-temprana en `<head>` que previene el FOUC (Flash of Unverified Content) inyectando la regla `html.age-locked` antes del pintado del DOM.
+  - Bloqueo visual profundo del fondo con desenfoque extremo (`backdrop-filter: blur(28px) saturate(180%)`) y bloqueo de eventos táctiles/puntero.
+- **Directiva `<noscript>` Fail-Secure:**
+  - Bloqueo absoluto de la aplicación si JavaScript está desactivado, mostrando una pantalla con el descargo legal obligatorio y prohibición de acceso.
+- **Inmovilización del Modal `<dialog id="age-gate-modal">`:**
+  - Bloqueo estricto del evento `cancel` (invalida la tecla `Escape`).
+  - Bloqueo de scroll global en `<html>` y `<body>` (`overflow: hidden !important; touch-action: none;`).
+- **Trazabilidad y Validez Jurídica de Consentimiento:**
+  - Estructuración JSON en `localStorage` bajo `cannaculture_age_consent` con caducidad exacta a 30 días (`expiresAt: now + 30 días`) y validación de versión normativa (`policyVersion: 'v217'`).
+  - Redirección segura para menores con `window.location.replace('https://www.google.com')` impidiendo el retorno mediante el botón atrás del historial.
+- **Micro-Badge de Cabecera & Revocación Voluntaria:**
+  - Sustitución de la píldora aparatosa por un micro-badge elegante `🛡️ 18+` (`.age-status-badge`) con tooltip accesible e integrado de forma uniforme en la cabecera de las 3 páginas.
+  - Diálogo modal de revocación voluntaria (`#age-revoke-dialog`): Permite al usuario revocar su consentimiento legal en cualquier momento, purgando el token y re-bloqueando inmediatamente el terminal.
+- **Service Worker & Cache-Busting (`v217`):**
+  - Cachés actualizadas a `cannaculture-core-v217`, `cannaculture-images-v217` y `cannaculture-pages-v217`.
+  - Precacheo de `css/age-gate.css?v=217` y `js/age-gate.js?v=217` en `CORE_ASSETS`.
+  - Cache-busting sincronizado a `?v=217` en `index.html`, `guia-cultivo.html` y `admin-dispensario.html`.
+  - Recompilados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`.
 - **Arquitectura de 3 Pestañas Principales en Dispensario (`admin-dispensario.html`):**
   - `🌿 Carta & Menú en Barra`: Vista de administración de variedades activas, stock en bote, notas de cata y cuotas por nivel de socio (`tierStd`, `tierColab`, `tierTerap`).
   - `⚖️ Terminal Mostrador (POS)`: Mostrador táctil de barra para dispensación en directo frente al socio.

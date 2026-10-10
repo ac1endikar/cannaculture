@@ -48,11 +48,99 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
 
+  <!-- Regla de Bloqueo Inmediata Fail-Secure Anti-FOUC (+18 - v217) -->
+  <script>
+    (function () {
+      try {
+        var raw = localStorage.getItem('cannaculture_age_consent');
+        if (!raw) { document.documentElement.classList.add('age-locked'); return; }
+        var data = JSON.parse(raw);
+        if (!data || data.verified !== true || data.policyVersion !== 'v217' || (typeof data.expiresAt === 'number' && Date.now() >= data.expiresAt)) {
+          document.documentElement.classList.add('age-locked');
+        }
+      } catch (_) {
+        document.documentElement.classList.add('age-locked');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/age-gate.css?v=217">
   <!-- Hoja de Estilos del Dispensario CSC -->
-  <link rel="stylesheet" href="css/admin-dispensario.css?v=216">
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=217">
+
+  <!-- Controlador Inmediato de Age Gate (+18) -->
+  <script src="js/age-gate.js?v=217"></script>
 </head>
 
 <body>
+  <!-- DIRECTIVA NOSCRIPT FAIL-SECURE (BLOQUEO SIN JAVASCRIPT) -->
+  <noscript id="age-gate-noscript">
+    <div class="noscript-card">
+      <span style="font-size: 3rem;">🛡️</span>
+      <h2>Acceso Restringido (+18)</h2>
+      <p>JavaScript es estrictamente necesario para validar el cumplimiento legal de mayoría de edad (+18) y acceder a la plataforma CannaCulture.</p>
+      <p style="margin-top: 1rem; font-size: 0.8rem; color: #6B7280;">Por favor, habilita JavaScript en la configuración de tu navegador para continuar.</p>
+    </div>
+  </noscript>
+
+  <!-- ======================================================================
+       VERIFICACIÓN DE EDAD MODAL (+18 AGE GATE - FAIL-SECURE v217)
+       ====================================================================== -->
+  <dialog id="age-gate-modal" class="age-gate-dialog" aria-labelledby="age-gate-title" aria-describedby="age-gate-desc">
+    <div class="age-gate-card">
+      <div class="age-gate-badge">
+        <span class="badge-icon">🛡️</span>
+        <span class="badge-tag">+18 VERIFICACIÓN</span>
+      </div>
+
+      <h2 id="age-gate-title" class="age-gate-title">Control de Acceso (Mayoría de Edad)</h2>
+      <p id="age-gate-desc" class="age-gate-subtitle">Esta plataforma contiene información especializada sobre botánica y variedades cannábicas reservada exclusivamente a personas adultas (+18 años).</p>
+
+      <div class="age-gate-legal-box">
+        <div class="legal-box-row">
+          <span class="legal-box-icon">🌿</span>
+          <div class="legal-box-content">
+            <strong>Finalidad Botánica, Enciclopédica y Reducción de Daños</strong>
+            <p>Catálogo botánico de 877 variedades, perfiles de terpenos y guías informativas orientadas a la divulgación científica y la prevención de riesgos.</p>
+          </div>
+        </div>
+        <div class="legal-box-row">
+          <span class="legal-box-icon">⚖️</span>
+          <div class="legal-box-content">
+            <strong>Marco Legal, Ámbito Privado y Clubes Sociales (CSC)</strong>
+            <p>Acceso restringido conforme a la legislación de protección de menores. Uso estrictamente circunscrito al consumo privado no punible, autocultivo y socios registrados de asociaciones CSC.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="age-gate-actions-grid">
+        <button id="btn-age-permit" class="btn-age-permit" type="button" aria-label="Confirmar que soy mayor de 18 años y acceder">
+          <span class="btn-age-main">✅ Soy mayor de 18 años</span>
+          <span class="btn-age-sub">Entrar a la plataforma</span>
+        </button>
+        <button id="btn-age-deny" class="btn-age-deny" type="button" aria-label="Indicar que soy menor de 18 años y salir">
+          <span class="btn-age-main">🚪 Soy menor de edad</span>
+          <span class="btn-age-sub">Salir inmediatamente</span>
+        </button>
+      </div>
+
+      <p class="age-gate-footer-hint">🔒 Tu consentimiento se registrará localmente con una validez legal de 30 días renovable. Puedes revocar tu elección en cualquier momento desde el indicador de cabecera.</p>
+    </div>
+  </dialog>
+
+  <!-- DIÁLOGO DE REVOCACIÓN VOLUNTARIA DE CONSENTIMIENTO (+18) -->
+  <dialog id="age-revoke-dialog" class="age-revoke-dialog">
+    <div class="age-revoke-card">
+      <span style="font-size: 2rem;">🛡️</span>
+      <h3 class="age-revoke-title">Consentimiento +18 Activo</h3>
+      <p class="age-revoke-desc">Has verificado tu mayoría de edad en este navegador. ¿Deseas revocar tu consentimiento y bloquear el acceso en este dispositivo?</p>
+      <div class="age-revoke-actions">
+        <button id="btn-revoke-cancel" class="btn-revoke-cancel" type="button">Mantener Acceso</button>
+        <button id="btn-revoke-confirm" class="btn-revoke-confirm" type="button">Revocar y Bloquear</button>
+      </div>
+    </div>
+  </dialog>
+
   <!-- ======================================================================
        Barra Superior de Navegación & Control del Club
        ====================================================================== -->
@@ -72,6 +160,12 @@
       </div>
 
       <div class="nav-controls">
+        <!-- Micro-Badge Discreto Estatus Legal +18 -->
+        <button id="age-status-badge" class="age-status-badge" type="button" title="Acceso verificado para mayores de 18 años. Clic para consultar o revocar consentimiento." aria-label="Mayoría de edad +18 verificada">
+          <span class="badge-icon">🛡️</span>
+          <span>18+</span>
+        </button>
+
         <!-- Indicador de Sincronización en Tiempo Real -->
         <div id="sync-status-badge" class="sync-status-badge" title="Estado de la base de datos">
           <span class="pulse-dot"></span>
@@ -516,7 +610,7 @@
        Carga de Scripts: Datos Maestros (877 Cepas) y Lógica Modular
        ====================================================================== -->
   <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
-  <script src="js/strains-data.js?v=216"></script>
+  <script src="js/strains-data.js?v=217"></script>
 
   <!-- 2. Firebase SDK & Configuración (Modo CDN Compatibilidad) -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -525,7 +619,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- 3. Lógica del Panel de Dispensario CSC -->
-  <script src="js/admin-dispensario.js?v=216"></script>
+  <script src="js/admin-dispensario.js?v=217"></script>
 </body>
 
 </html>

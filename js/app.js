@@ -84,111 +84,13 @@ class CannaAppMAX {
     this.compareModalContent = document.getElementById('compare-modal-content');
   }
 
-  /* 1. VERIFICACIÓN DE EDAD DEFENSIVA (+18) */
+  /* 1. VERIFICACIÓN DE EDAD CENTRALIZADA (+18 - v217) */
   initAgeGate() {
-    const ageModal    = document.getElementById('age-modal');
-    const stepVerify  = document.getElementById('age-step-verify');
-    const stepDenied  = document.getElementById('age-step-denied');
-    const btnConfirm  = document.getElementById('btn-age-confirm');
-    const btnReject   = document.getElementById('btn-age-reject');
-    const btnRetry    = document.getElementById('btn-age-retry');
-    const btnStatus   = document.getElementById('btn-age-status');
-    const statusText  = document.getElementById('age-status-text');
-    const lockStyle   = document.getElementById('age-lock-style');
-    const mainApp     = document.getElementById('main-app');
-    const mainHeader  = document.querySelector('.main-header');
-
-    /* ── Helpers de estado ─────────────────────────────────── */
-    const setPill = (verified) => {
-      if (!statusText || !btnStatus) return;
-      if (verified) {
-        statusText.textContent = '+18 Verificado';
-        btnStatus.style.borderColor = 'rgba(16,185,129,0.4)';
-        btnStatus.style.color = 'var(--primary-emerald)';
-      } else {
-        statusText.textContent = '🔞 Sin Verificar';
-        btnStatus.style.borderColor = 'rgba(239,68,68,0.5)';
-        btnStatus.style.color = '#FCA5A5';
-      }
-    };
-
-    /* ── Desbloquear contenido ─────────────────────────────── */
-    const unlockContent = () => {
-      // Eliminar la barrera CSS que oculta header + main
-      if (lockStyle) lockStyle.remove();
-      // Revelar explícitamente los elementos
-      if (mainApp)    mainApp.style.display    = '';
-      if (mainHeader) mainHeader.style.display = '';
-      document.body.classList.remove('age-locked');
-      if (ageModal && ageModal.open) ageModal.close();
-      setPill(true);
-    };
-
-    /* ── Bloquear contenido (Mantener visible el catálogo) ─── */
-    const lockContent = () => {
-      document.body.classList.add('age-locked');
-      if (stepVerify) stepVerify.style.display = 'block';
-      if (stepDenied) stepDenied.style.display = 'none';
-      if (ageModal && typeof ageModal.showModal === 'function') {
-        try {
-          if (!ageModal.open) ageModal.showModal();
-        } catch (_) {}
-      }
-      setPill(false);
-    };
-
-    /* ── Verificar estado (Por defecto auto-verificado para acceso directo) ─── */
-    let isVerified = true;
-    try {
-      localStorage.setItem('cannacatalog_age_verified', 'true');
-      localStorage.setItem('canna_age_verified', 'true');
-    } catch (_) {}
-
-    unlockContent();
-
-    /* ── Confirmar edad (+18) ──────────────────────────────── */
-    btnConfirm?.addEventListener('click', () => {
-      try {
-        localStorage.setItem('cannacatalog_age_verified', 'true');
-        localStorage.setItem('canna_age_verified', 'true');
-      } catch (_) {}
-      unlockContent();
-      this.showToast('✅ Acceso concedido (+18). ¡Bienvenido a CannaCatalog 2.0 MAX!');
-    });
-
-    /* ── Rechazar (<18) → redirigir a Google ───────────────── */
-    btnReject?.addEventListener('click', () => {
-      if (stepVerify) stepVerify.style.display = 'none';
-      if (stepDenied) stepDenied.style.display = 'block';
-      // Redirigir a Google tras la pantalla de denegación
-      this._denyTimer = setTimeout(() => {
-        window.location.href = 'https://www.google.com';
-      }, 1500);
-    });
-
-    /* ── Volver a intentar verificación ───────────────────── */
-    btnRetry?.addEventListener('click', () => {
-      clearTimeout(this._denyTimer);
-      if (stepDenied) stepDenied.style.display = 'none';
-      if (stepVerify) stepVerify.style.display = 'block';
-    });
-
-    /* ── Botón de estado en cabecera ───────────────────────── */
-    btnStatus?.addEventListener('click', () => {
-      const v = localStorage.getItem('cannacatalog_age_verified') === 'true' ||
-                localStorage.getItem('canna_age_verified') === 'true';
-      if (v) {
-        if (confirm('🛡️ Estado: Verificado (+18).\n¿Deseas reiniciar tu verificación de edad?')) {
-          try {
-            localStorage.removeItem('cannacatalog_age_verified');
-            localStorage.removeItem('canna_age_verified');
-          } catch (_) {}
-          lockContent();
-        }
-      } else {
-        lockContent();
-      }
-    });
+    // La gestión legal, persistencia de 30 días y directiva Fail-Secure
+    // se administran centralizadamente a través de CannaAgeGate (js/age-gate.js).
+    if (window.CannaAgeGate && typeof window.CannaAgeGate.init === 'function') {
+      window.CannaAgeGate.init();
+    }
   }
 
 
