@@ -71,30 +71,26 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- Regla de Bloqueo Inmediata Fail-Secure Anti-FOUC (+18 - Sesión Volátil) -->
+  <!-- Regla de Bloqueo Inmediata Fail-Secure Anti-FOUC (+18 - Memoria Volátil Estricta) -->
   <script>
     (function () {
       try {
         localStorage.removeItem('cannaculture_age_consent');
         localStorage.removeItem('cannacatalog_age_verified');
         localStorage.removeItem('canna_age_verified');
-        var raw = sessionStorage.getItem('cannaculture_age_session');
-        if (!raw) { document.documentElement.classList.add('age-locked'); return; }
-        var data = JSON.parse(raw);
-        if (!data || data.verified !== true || data.policyVersion !== 'v217') {
-          document.documentElement.classList.add('age-locked');
-        }
-      } catch (_) {
+        sessionStorage.removeItem('cannaculture_age_session');
+      } catch (_) {}
+      if (!window._cannacultureAgeVerified) {
         document.documentElement.classList.add('age-locked');
       }
     })();
   </script>
 
-  <link rel="stylesheet" href="css/age-gate.css?v=217">
-  <link rel="stylesheet" href="css/guia-cultivo.css?v=217">
+  <link rel="stylesheet" href="css/age-gate.css?v=218">
+  <link rel="stylesheet" href="css/guia-cultivo.css?v=218">
 
   <!-- Controlador Inmediato de Age Gate (+18) -->
-  <script src="js/age-gate.js?v=217"></script>
+  <script src="js/age-gate.js?v=218"></script>
 </head>
 
 <body>
@@ -151,7 +147,7 @@
         </button>
       </div>
 
-      <p class="age-gate-footer-hint">🔒 Verificación obligatoria por sesión. El consentimiento no se almacena en el dispositivo y expira al cerrar la pestaña o el navegador conforme al protocolo de protección de menores.</p>
+      <p class="age-gate-footer-hint">🔒 Verificación obligatoria en cada visita. El consentimiento se mantiene exclusivamente en memoria volátil y expira al recargar la página (F5) o cerrar el navegador conforme al protocolo de protección de menores.</p>
     </div>
   </dialog>
 
@@ -159,8 +155,8 @@
   <dialog id="age-revoke-dialog" class="age-revoke-dialog">
     <div class="age-revoke-card">
       <span style="font-size: 2rem;">🛡️</span>
-      <h3 class="age-revoke-title">Consentimiento +18 de Sesión</h3>
-      <p class="age-revoke-desc">Has verificado tu mayoría de edad en esta sesión activa. ¿Deseas revocar tu consentimiento y bloquear el acceso inmediatamente?</p>
+      <h3 class="age-revoke-title">Consentimiento +18 Activo</h3>
+      <p class="age-revoke-desc">Has verificado tu mayoría de edad en esta carga de página. ¿Deseas revocar tu consentimiento y bloquear el acceso inmediatamente?</p>
       <div class="age-revoke-actions">
         <button id="btn-revoke-cancel" class="btn-revoke-cancel" type="button">Mantener Acceso</button>
         <button id="btn-revoke-confirm" class="btn-revoke-confirm" type="button">Revocar y Bloquear</button>
@@ -185,9 +181,6 @@
         </a>
         <a href="guia-cultivo.html" class="gc-nav-link active" id="nav-link-guide" aria-current="page">
           <span aria-hidden="true">🌱</span> <span data-i18n="nav.guide">Guía de Cultivo</span>
-        </a>
-        <a href="admin-dispensario.html" class="gc-nav-link" id="nav-link-dispensary">
-          <span aria-hidden="true">⚖️</span> <span data-i18n="nav.dispensary">Dispensario CSC</span>
         </a>
       </nav>
 
@@ -255,8 +248,8 @@
     </div>
   </footer>
 
-  <script src="js/guia-cultivo.js?v=217"></script>
-  <script src="js/pwa-manager.js?v=217"></script>
+  <script src="js/guia-cultivo.js?v=218"></script>
+  <script src="js/pwa-manager.js?v=218"></script>
 </body>
 
 </html>

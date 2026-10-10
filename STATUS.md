@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 17:50  
+> **Ultima actualizacion:** 2026-10-10 18:15  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(security): verificacion de edad +18 obligatoria por sesion volatil en sessionStorage v217.2`  
-> **Version Cache-Busting:** `?v=217`
+> **Commit de cierre:** `feat(security): muro de autenticacion privado en dispensario y age-gate estrictamente volatil en memoria v218`  
+> **Version Cache-Busting:** `?v=218`
 
 ---
 
@@ -11,23 +11,28 @@
 - **Estado del Catalogo:** **877 cepas botanicas 100% unicas y originales, 0 duplicados visuales, plenamente renderizadas.**
 - **75 Bancos Oficiales Incorporados (ampliación de 65 a 75 bancos de élite mundial).**
 - **100 Nuevas Variedades Fotoperiódicas/Feminizadas/Regulares (estrictamente 0 autoflorecientes).**
-- **Sistema Age Verification Gate (+18) por Sesión Volátil (v217.2):**
-  - **Cero Memoria de Dispositivos (Sin localStorage 30 días):** Eliminada la persistencia en `localStorage`. La validación reside exclusivamente en `sessionStorage` (`cannaculture_age_session`).
-  - **Verificación Obligatoria en Cada Visita:** Al cerrar la pestaña o el navegador, la verificación caduca inmediatamente y vuelve a solicitar confirmación +18 en el siguiente acceso.
-  - **Navegación Fluida Intra-Sesión:** En la misma pestaña/sesión, la verificación se preserva entre `index.html`, `guia-cultivo.html` y `admin-dispensario.html` sin interrupciones repetitivas.
-  - **Purga Activa de Tokens Previos:** Se limpian automáticamente del navegador los tokens heredados `cannaculture_age_consent`, `cannacatalog_age_verified` y `canna_age_verified`.
-  - **Arquitectura Fail-Secure:** Regla anti-FOUC en `<head>`, diálogo accesible `<dialog id="age-gate-modal">` con bloqueo de scroll, teclado y FOUC, y micro-badge discreto `🛡️ 18+` para revocación voluntaria.
-- **Restauración y Reactivación del Catálogo en Pantalla Principal (v217.1):**
-  - **Eliminación de Bloqueos Ocultos:** Suprimido el bloque `<style id="age-lock-style">` residual y el atributo inline `style="display:none;"` en `<main id="main-app">` de `index.html`.
-  - **Corrección de Directiva `<noscript>`:** Desacoplada la regla CSS de superposición para evitar falsos positivos de pantalla completa en navegadores con JS habilitado.
-  - **Sincronización Reactiva de Eventos:** Vinculado el evento global `cannaAgeVerified` entre `js/age-gate.js` y `js/app.js` para asegurar que `applyFiltersAndSort()` repinte inmediatamente las tarjetas de variedades al aceptar la verificación.
-- **CannaDispensario POS 2.0 (v216):** Terminal táctil de barra para Clubes Sociales de Cannabis (CSC) plenamente operativo en `admin-dispensario.html` con 3 pestañas, pesaje digital, cuotas de socio y arqueo diario.
-- **Sommelier IA María 2.0 (v215):** Motor de puntuación multidimensional (`SommelierScoringEngine`) evaluando el catálogo íntegro de 877 cepas y 75 bancos en tiempo real con tríada de recomendaciones y mini-fichas interactivas.
-- **Cobertura Linaje/Genetica:** 877/877 cepas (100%).
-- **Fotografias Botanicas HD:** 100% macro flores reales descargadas localmente en `img/` como `.webp` y `.jpg`, resolución mínima >= 400x400 (hasta 2500px), 0 colisiones visuales, 0 fondos blancos, 0 ilustraciones.
-- **Optimización de Rendimiento & Core Web Vitals (v214):** Filtrado y renderizado instantáneo (<8ms) con renderizado por lotes de 24 tarjetas mediante IntersectionObserver, pre-indexación en memoria `_searchIndex`, debounce adaptativo de 110ms sincronizado con `requestAnimationFrame`, priorización LCP (`fetchpriority="high"`, `loading="eager"`), CLS = 0.000 y skeleton shimmer placeholder.
-- **Infraestructura SEO & Redes Sociales (v212):** Desplegada con `robots.txt`, `sitemap.xml` multilingüe, metadatos Open Graph, Twitter Cards, Schemas JSON-LD y banner oficial 1200x630px.
-- **Infraestructura PWA & Soporte Offline (v213/v217):** Aplicación instalable con `manifest.webmanifest`, `sw.js` (3 capas de caché + LRU de imágenes), `offline.html`, iconos de alta resolución estándar y maskables, botón de instalación en cabecera y soporte iOS/Safari.
+- **Dispensario CSC Privado & Muro de Autenticación (v218):**
+  - **Cero Rastro Público:** Retirado definitivamente el botón "Dispensario" de la cabecera en `index.html` y de la navegación en `guia-cultivo.html`.
+  - **Aislamiento de Indexación:** Añadida la directiva `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">` y `<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">` en `admin-dispensario.html`.
+  - **Muro de Acceso Privado (`#dispensary-auth-gate`):** Pantalla de bloqueo inicial Dark Emerald AMOLED (`#0B0F0E`) con tarjeta Glassmorphism que exige Club ID y Clave Maestra / PIN de turno.
+  - **Bloqueo en Profundidad del DOM:** La carta activa, terminal mostrador POS, pesaje y lista de socios se mantienen completamente ocultos y no se inyectan ni renderizan hasta validar con éxito las credenciales autorizadas.
+  - **Validación Criptográfica SHA-256 & Rate Limiting:** Verificación criptográfica con Web Crypto API, prevención de fuerza bruta (bloqueo por 30s tras 3 fallos) y persistencia de turno de 12 horas en `sessionStorage` (`cannaculture_dispensary_session`).
+  - **Botón "Cerrar Turno":** En la barra superior para re-bloquear inmediatamente el terminal.
+- **Age Verification Gate (+18) en Memoria Volátil Estricta (v218):**
+  - **Cero Persistencia en Almacenamiento:** Eliminado por completo `sessionStorage` y `localStorage` para el estado de verificación +18.
+  - **Salto Obligatorio en F5 / Recarga:** El consentimiento reside exclusivamente en memoria volátil JS (`window._cannacultureAgeVerified = true`). Al recargar (F5) o abrir nueva pestaña, la memoria se vacía y el modal de +18 salta obligatoriamente sin excepción.
+- **Service Worker & Cache-Busting (`v218`):**
+  - Cachés actualizadas a `cannaculture-core-v218`, `cannaculture-images-v218` y `cannaculture-pages-v218`.
+  - Cache-busting sincronizado a `?v=218` en `index.html`, `guia-cultivo.html`, `admin-dispensario.html` y `sw.js`.
+  - Recompilados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`.
+
+### v218 — Muro de Autenticación Privado del Dispensario CSC y Age Gate Estrictamente en Memoria Volátil
+- **Privacidad Total del Módulo Dispensario:**
+  - Ocultado 100% de la vista pública. Eliminados todos los enlaces y botones en `index.html` y `guia-cultivo.html`.
+  - Bloqueo a motores de búsqueda mediante metadatos `noindex, nofollow, noarchive, nosnippet`.
+  - Muro de acceso corporativo con autenticación por credenciales de operador (SHA-256) y sesión de turno de 12 horas.
+- **Age Gate Ultra-Estricto:**
+  - Verificación en memoria pura de ejecución; imposible evadir con recargas o sesiones heredadas de pestañas.
 
 ### v217 — Blindaje Integral Age Verification Gate (+18), Arquitectura Fail-Secure, Trazabilidad Legal de 30 Días y Micro-Badge Universal (`cannacultureapp.com`)
 - **Arquitectura Universal y Desacoplada (`css/age-gate.css` & `js/age-gate.js`):**

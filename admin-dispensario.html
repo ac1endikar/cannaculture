@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Panel de Gestión de Dispensario CSC • CannaCulture</title>
   <meta name="description"
-    content="Sistema de gestión de mostrador, carta activa botánica y cuotas de aportación (€/g) para Clubes Sociales de Cannabis (CSC).">
-  <link rel="canonical" href="https://cannacultureapp.com/admin-dispensario.html">
-  <meta name="robots" content="noindex, nofollow">
+    content="Portal privado de acceso restringido para personal autorizado de Clubes Sociales de Cannabis (CSC).">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
   <meta name="theme-color" content="#0B0F0E">
 
   <!-- ======================= OPEN GRAPH (COMPARTICIÓN PRIVADA) ======================= -->
@@ -48,31 +48,27 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
 
-  <!-- Regla de Bloqueo Inmediata Fail-Secure Anti-FOUC (+18 - Sesión Volátil) -->
+  <!-- Regla de Bloqueo Inmediata Fail-Secure Anti-FOUC (+18 - Memoria Volátil Estricta) -->
   <script>
     (function () {
       try {
         localStorage.removeItem('cannaculture_age_consent');
         localStorage.removeItem('cannacatalog_age_verified');
         localStorage.removeItem('canna_age_verified');
-        var raw = sessionStorage.getItem('cannaculture_age_session');
-        if (!raw) { document.documentElement.classList.add('age-locked'); return; }
-        var data = JSON.parse(raw);
-        if (!data || data.verified !== true || data.policyVersion !== 'v217') {
-          document.documentElement.classList.add('age-locked');
-        }
-      } catch (_) {
+        sessionStorage.removeItem('cannaculture_age_session');
+      } catch (_) {}
+      if (!window._cannacultureAgeVerified) {
         document.documentElement.classList.add('age-locked');
       }
     })();
   </script>
 
-  <link rel="stylesheet" href="css/age-gate.css?v=217">
+  <link rel="stylesheet" href="css/age-gate.css?v=218">
   <!-- Hoja de Estilos del Dispensario CSC -->
-  <link rel="stylesheet" href="css/admin-dispensario.css?v=217">
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=218">
 
   <!-- Controlador Inmediato de Age Gate (+18) -->
-  <script src="js/age-gate.js?v=217"></script>
+  <script src="js/age-gate.js?v=218"></script>
 </head>
 
 <body>
@@ -129,7 +125,7 @@
         </button>
       </div>
 
-      <p class="age-gate-footer-hint">🔒 Verificación obligatoria por sesión. El consentimiento no se almacena en el dispositivo y expira al cerrar la pestaña o el navegador conforme al protocolo de protección de menores.</p>
+      <p class="age-gate-footer-hint">🔒 Verificación obligatoria en cada visita. El consentimiento se mantiene exclusivamente en memoria volátil y expira al recargar la página (F5) o cerrar el navegador conforme al protocolo de protección de menores.</p>
     </div>
   </dialog>
 
@@ -137,14 +133,69 @@
   <dialog id="age-revoke-dialog" class="age-revoke-dialog">
     <div class="age-revoke-card">
       <span style="font-size: 2rem;">🛡️</span>
-      <h3 class="age-revoke-title">Consentimiento +18 de Sesión</h3>
-      <p class="age-revoke-desc">Has verificado tu mayoría de edad en esta sesión activa. ¿Deseas revocar tu consentimiento y bloquear el acceso inmediatamente?</p>
+      <h3 class="age-revoke-title">Consentimiento +18 Activo</h3>
+      <p class="age-revoke-desc">Has verificado tu mayoría de edad en esta carga de página. ¿Deseas revocar tu consentimiento y bloquear el acceso inmediatamente?</p>
       <div class="age-revoke-actions">
         <button id="btn-revoke-cancel" class="btn-revoke-cancel" type="button">Mantener Acceso</button>
         <button id="btn-revoke-confirm" class="btn-revoke-confirm" type="button">Revocar y Bloquear</button>
       </div>
     </div>
   </dialog>
+
+  <!-- ======================================================================
+       MURO DE AUTENTICACIÓN PRIVADO DEL DISPENSARIO (ACCESS GATE v218)
+       ====================================================================== -->
+  <section id="dispensary-auth-gate" class="dispensary-auth-gate" aria-label="Control de Acceso al Dispensario CSC">
+    <div class="auth-gate-card">
+      <div class="auth-gate-header">
+        <div class="auth-shield-avatar">🛡️</div>
+        <span class="auth-gate-badge">PORTAL PRIVADO • ACCESO RESTRINGIDO</span>
+        <h2 class="auth-gate-title">Terminal Dispensario CSC</h2>
+        <p class="auth-gate-subtitle">Panel reservado a encargados y personal autorizado del club. Introduce las credenciales maestras o PIN de turno para operar.</p>
+      </div>
+
+      <form id="dispensary-auth-form" class="auth-gate-form" autocomplete="off">
+        <div class="auth-field-group">
+          <label for="auth-club-id" class="auth-label">Identificador del Club (Club ID / Licencia)</label>
+          <div class="auth-input-wrapper">
+            <span class="auth-input-icon">🏢</span>
+            <input type="text" id="auth-club-id" class="auth-input" placeholder="Ej: CSC-VERDE-01" required autofocus spellcheck="false" autocomplete="username">
+          </div>
+        </div>
+
+        <div class="auth-field-group">
+          <label for="auth-club-pass" class="auth-label">Clave Maestra o PIN de Turno</label>
+          <div class="auth-input-wrapper">
+            <span class="auth-input-icon">🔑</span>
+            <input type="password" id="auth-club-pass" class="auth-input" placeholder="••••••••" required autocomplete="current-password">
+            <button type="button" id="btn-toggle-pass-visibility" class="btn-toggle-eye" title="Mostrar/Ocultar contraseña" aria-label="Mostrar/Ocultar contraseña">👁️</button>
+          </div>
+        </div>
+
+        <div id="auth-error-banner" class="auth-error-banner" style="display: none;" role="alert">
+          <span class="error-icon">⚠️</span>
+          <span id="auth-error-text">Credenciales no autorizadas.</span>
+        </div>
+
+        <button type="submit" id="btn-submit-auth" class="btn-auth-submit">
+          <span>🔓</span>
+          <span>Desbloquear Terminal POS</span>
+        </button>
+      </form>
+
+      <div class="auth-gate-footer">
+        <div class="auth-security-notice">
+          <span>🔒 Cifrado de turno SHA-256 • Sesión expira al finalizar jornada</span>
+        </div>
+        <a href="index.html" class="auth-back-link">← Volver al Catálogo Público</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       CONTENIDO PROTEGIDO DEL DISPENSARIO (VISIBLE SOLO TRAS AUTENTICACIÓN)
+       ====================================================================== -->
+  <div id="dispensary-app-content" class="dispensary-app-content" style="display: none;">
 
   <!-- ======================================================================
        Barra Superior de Navegación & Control del Club
@@ -189,6 +240,12 @@
         <button id="btn-toggle-kiosk" class="btn-touch btn-kiosk" title="Modo pantalla completa para tablet de mostrador">
           <span>🖥️</span>
           <span>Vista Kiosco Mostrador</span>
+        </button>
+
+        <!-- Botón Bloquear Terminal / Cerrar Turno -->
+        <button id="btn-lock-terminal" class="btn-touch btn-secondary" title="Bloquear Terminal / Cerrar Turno de Trabajo">
+          <span>🔒</span>
+          <span>Cerrar Turno</span>
         </button>
 
         <!-- Botón Acceso Firebase Club / Modo Demo -->
@@ -611,11 +668,13 @@
     </div>
   </dialog>
 
+  </div><!-- /dispensary-app-content -->
+
   <!-- ======================================================================
        Carga de Scripts: Datos Maestros (877 Cepas) y Lógica Modular
        ====================================================================== -->
   <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
-  <script src="js/strains-data.js?v=217"></script>
+  <script src="js/strains-data.js?v=218"></script>
 
   <!-- 2. Firebase SDK & Configuración (Modo CDN Compatibilidad) -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -624,7 +683,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- 3. Lógica del Panel de Dispensario CSC -->
-  <script src="js/admin-dispensario.js?v=217"></script>
+  <script src="js/admin-dispensario.js?v=218"></script>
 </body>
 
 </html>

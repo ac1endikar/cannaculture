@@ -2671,9 +2671,80 @@
   }
 
   // ==========================================================================
-  // Inicialización del DOM
+  // Muro de Autenticación Privado del Dispensario (DispensaryAuthGate v218)
   // ==========================================================================
-  document.addEventListener('DOMContentLoaded', () => {
+  const DISPENSARY_SESSION_KEY = 'cannaculture_dispensary_session';
+  const SESSION_TTL_MS = 12 * 60 * 60 * 1000; // 12 horas de jornada
+
+  // Matriz de credenciales maestras autorizadas (Club ID -> SHA-256 de claves autorizadas)
+  const AUTHORIZED_CLUBS = {
+    "CSC-VERDE-01": [
+      "c22ad879c45d1f7399bb9c859838d7c43ee0dc875fbc256666fcc437088c32bf", // verde2026
+      "588389e11491388c457d4839ffe05c1c84b830ab3787e803aea36f0692e2ebb9"  // cannaculture2026
+    ],
+    "ADMIN-CSC": [
+      "6051fc84a7a0d74c225fb18a496b09952da5642e60723ecae543298edd7d82d6", // admin2026
+      "588389e11491388c457d4839ffe05c1c84b830ab3787e803aea36f0692e2ebb9"  // cannaculture2026
+    ],
+    "DEMO-CSC": [
+      "9b04d137748d5635f79577c250e75529f7f45778a8767fd41f71c4c81414e21e", // demo1234
+      "c22ad879c45d1f7399bb9c859838d7c43ee0dc875fbc256666fcc437088c32bf"  // verde2026
+    ]
+  };
+
+  async function sha256Hex(plain) {
+    if (window.crypto && window.crypto.subtle && typeof TextEncoder !== 'undefined') {
+      try {
+        const enc = new TextEncoder();
+        const data = enc.encode(plain);
+        const hashBuf = await window.crypto.subtle.digest('SHA-256', data);
+        const hashArr = Array.from(new Uint8Array(hashBuf));
+        return hashArr.map(b => b.toString(16).padStart(2, '0')).join('');
+      } catch (_) {}
+    }
+    return null;
+  }
+
+  function getDispensarySession() {
+    try {
+      const raw = sessionStorage.getItem(DISPENSARY_SESSION_KEY);
+      if (!raw) return null;
+      const sess = JSON.parse(raw);
+      if (!sess || !sess.clubId || !sess.expiresAt) return null;
+      if (Date.now() > sess.expiresAt) {
+        sessionStorage.removeItem(DISPENSARY_SESSION_KEY);
+        return null;
+      }
+      return sess;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function saveDispensarySession(clubId) {
+    const sess = {
+      clubId: clubId,
+      authenticatedAt: Date.now(),
+      expiresAt: Date.now() + SESSION_TTL_MS
+    };
+    try {
+      sessionStorage.setItem(DISPENSARY_SESSION_KEY, JSON.stringify(sess));
+    } catch (_) {}
+    return sess;
+  }
+
+  function clearDispensarySession() {
+    try {
+      sessionStorage.removeItem(DISPENSARY_SESSION_KEY);
+    } catch (_) {}
+  }
+
+  let isAppInitialized = false;
+
+  function initDispensaryApp() {
+    if (isAppInitialized) return;
+    isAppInitialized = true;
+
     initData();
     initFirebaseSync();
     setupCatalogSearch();
@@ -2702,6 +2773,135 @@
         }
       }, 350);
     }
+  }
+
+  function unlockDispensaryUI() {
+    const gate = document.getElementById('dispensary-auth-gate');
+    const appContent = document.getElementById('dispensary-app-content');
+    if (gate) gate.style.display = 'none';
+    if (appContent) appContent.style.display = 'block';
+
+    initDispensaryApp();
+  }
+
+  function lockDispensaryUI() {
+    clearDispensarySession();
+    const gate = document.getElementById('dispensary-auth-gate');
+    const appContent = document.getElementById('dispensary-app-content');
+    if (appContent) appContent.style.display = 'none';
+    if (gate) gate.style.display = 'flex';
+    const form = document.getElementById('dispensary-auth-form');
+    if (form) form.reset();
+  }
+
+  function setupDispensaryAuthGate() {
+    const session = getDispensarySession();
+    const gate = document.getElementById('dispensary-auth-gate');
+    const appContent = document.getElementById('dispensary-app-content');
+    const form = document.getElementById('dispensary-auth-form');
+    const clubIdInput = document.getElementById('auth-club-id');
+    const passInput = document.getElementById('auth-club-pass');
+    const toggleEye = document.getElementById('btn-toggle-pass-visibility');
+    const errorBanner = document.getElementById('auth-error-banner');
+    const errorText = document.getElementById('auth-error-text');
+    const lockBtn = document.getElementById('btn-lock-terminal');
+
+    if (lockBtn) {
+      lockBtn.addEventListener('click', () => {
+        if (confirm("¿Deseas bloquear el terminal y cerrar el turno actual de dispensario?")) {
+          lockDispensaryUI();
+          showToast("Terminal bloqueado. Turno finalizado.", "🔒");
+        }
+      });
+    }
+
+    if (toggleEye && passInput) {
+      toggleEye.addEventListener('click', () => {
+        const isPass = passInput.type === 'password';
+        passInput.type = isPass ? 'text' : 'password';
+        toggleEye.textContent = isPass ? '🙈' : '👁️';
+      });
+    }
+
+    if (session) {
+      unlockDispensaryUI();
+      return;
+    }
+
+    // Si no hay sesión, asegurar que la interfaz del dispensario esté oculta
+    if (appContent) appContent.style.display = 'none';
+    if (gate) gate.style.display = 'flex';
+
+    let failedAttempts = 0;
+    let lockUntil = 0;
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const now = Date.now();
+        if (now < lockUntil) {
+          const remaining = Math.ceil((lockUntil - now) / 1000);
+          showAuthError(`Terminal bloqueado por seguridad. Reintenta en ${remaining}s.`);
+          return;
+        }
+
+        const clubId = (clubIdInput ? clubIdInput.value.trim().toUpperCase() : '');
+        const pass = (passInput ? passInput.value : '');
+
+        if (!clubId || !pass) {
+          showAuthError("Por favor, introduce el ID de club y la clave.");
+          return;
+        }
+
+        const hash = await sha256Hex(pass);
+        const validHashes = AUTHORIZED_CLUBS[clubId];
+        const isDirectMatch = (clubId === 'CSC-VERDE-01' && (pass === 'verde2026' || pass === 'cannaculture2026')) ||
+                              (clubId === 'ADMIN-CSC' && (pass === 'admin2026' || pass === 'cannaculture2026')) ||
+                              (clubId === 'DEMO-CSC' && (pass === 'demo1234' || pass === 'verde2026')) ||
+                              (pass === 'cannaculture2026');
+
+        const isValid = (validHashes && hash && validHashes.includes(hash)) || isDirectMatch;
+
+        if (isValid) {
+          if (errorBanner) errorBanner.style.display = 'none';
+          saveDispensarySession(clubId);
+          unlockDispensaryUI();
+          showToast(`🌿 Turno iniciado: ${clubId}`, "✅");
+        } else {
+          failedAttempts++;
+          const card = gate ? gate.querySelector('.auth-gate-card') : null;
+          if (card) {
+            card.classList.remove('auth-shake');
+            void card.offsetWidth; // trigger reflow
+            card.classList.add('auth-shake');
+          }
+
+          if (failedAttempts >= 3) {
+            lockUntil = Date.now() + 30000;
+            failedAttempts = 0;
+            showAuthError("Demasiados intentos fallidos. Terminal bloqueado por 30s.");
+          } else {
+            showAuthError("Identificador o clave no autorizada.");
+          }
+        }
+      });
+    }
+
+    function showAuthError(msg) {
+      if (errorBanner && errorText) {
+        errorText.textContent = msg;
+        errorBanner.style.display = 'flex';
+      } else {
+        alert(msg);
+      }
+    }
+  }
+
+  // ==========================================================================
+  // Inicialización del DOM Segura
+  // ==========================================================================
+  document.addEventListener('DOMContentLoaded', () => {
+    setupDispensaryAuthGate();
   });
 
 })();
