@@ -6,6 +6,10 @@ Allow: /js/
 Allow: /img/
 Allow: /assets/
 Allow: /guia-cultivo.html
+Allow: /manifest.webmanifest
+Allow: /manifest.json
+Allow: /sw.js
+Allow: /offline.html
 
 # Exclusión de herramientas administrativas y recursos internos
 Disallow: /admin-dispensario.html

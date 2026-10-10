@@ -68,6 +68,17 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
+  <!-- ======================= PWA & MOBILE WEB APP META ======================= -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CannaCulture">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,21 +92,6 @@
       console.error('CannaCatalog Error:', e.message, e.filename, e.lineno);
     });
 
-    // Desregistrar de inmediato cualquier Service Worker previo que pueda interceptar bundle.js o styles.css
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function (registrations) {
-        for (var reg of registrations) {
-          reg.unregister();
-          console.log('🧹 ServiceWorker legacy desregistrado con éxito:', reg);
-        }
-      }).catch(function () { });
-    }
-
-    if ('caches' in window) {
-      caches.keys().then(function (names) {
-        for (var name of names) caches.delete(name);
-      }).catch(function () { });
-    }
 
     function autoUnlockCannaCatalog() {
       try {
@@ -116,7 +112,7 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css?v=212">
+  <link rel="stylesheet" href="css/styles.css?v=213">
 </head>
 
 <body>
@@ -240,6 +236,11 @@
 
           <button id="btn-sobrio-mode" class="btn btn-sobrio-pulse" aria-label="Activar Modo Sobrio y Calma S.O.S." title="Modo Sobrio & Calma">
             🛡️ <span class="header-btn-text">Modo Sobrio</span>
+          </button>
+
+          <!-- Botón PWA Instalable -->
+          <button id="btn-pwa-install" class="btn btn-pwa-install-pill" style="display: none;" title="Instalar aplicación CannaCulture" aria-label="Instalar aplicación CannaCulture">
+            📲 <span class="header-btn-text">Instalar App</span>
           </button>
 
           <!-- Acceso Panel Dispensario CSC -->
@@ -1307,7 +1308,10 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=212"></script>
+  <script src="js/bundle.js?v=213"></script>
+
+  <!-- Gestor de Ciclo de Vida PWA & Registro de Service Worker -->
+  <script src="js/pwa-manager.js?v=213"></script>
 </body>
 
 </html>

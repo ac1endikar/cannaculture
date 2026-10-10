@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 11:30  
+> **Ultima actualizacion:** 2026-10-10 12:05  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(seo): infraestructura seo, open graph, twitter cards, robots.txt y sitemap v212`  
-> **Version Cache-Busting:** `?v=212`
+> **Commit de cierre:** `feat(pwa): arquitectura pwa instalable, service worker offline multinivel e iconos v213`  
+> **Version Cache-Busting:** `?v=213`
 
 ---
 
@@ -16,6 +16,32 @@
 - **Módulo CSC Mostrador & Kiosco:** Operativo con Ficha Técnica interactiva, Lightbox macro HD, catálogo de 877 cepas y selector multi-idioma reactivo (ES/EN/DE/IT).
 - **Guía de Cultivo (`guia-cultivo.html`):** Página independiente operativa con 5 etapas interactivas y selector ES/EN/DE/IT.
 - **Infraestructura SEO & Redes Sociales (v212):** Desplegada con `robots.txt`, `sitemap.xml` multilingüe, metadatos Open Graph, Twitter Cards, Schemas JSON-LD y banner oficial 1200x630px.
+- **Infraestructura PWA & Soporte Offline (v213):** Aplicación instalable con `manifest.webmanifest`, `sw.js` (3 capas de caché + LRU de imágenes), `offline.html`, iconos de alta resolución estándar y maskables, botón de instalación en cabecera y soporte iOS/Safari.
+
+### v213 — Arquitectura PWA Instalable, Service Worker Offline Multinivel & Experiencia Nativa (`cannacultureapp.com`)
+- **Web App Manifest (`manifest.webmanifest` & `manifest.json`):**
+  - Declaración completa para instalación nativa (*standalone*) en Android, iOS, Windows y macOS.
+  - Paleta temática `#0B0F0E` (theme-color y background_color), orientación libre y scope canónico `/`.
+  - 3 atajos directos nativos (*shortcuts*): *Catálogo de Cepas*, *Guía de Cultivo* y *Sommelier IA María*.
+- **Iconografía Oficial PWA (`assets/icons/` e `img/icons/`):**
+  - Generador automatizado [`scripts/generate_pwa_icons.py`](file:///d:/cannaculture/scripts/generate_pwa_icons.py) con Pillow.
+  - Iconos estándar de 192×192 y 512×512 px.
+  - Iconos Android adaptables *maskable* (192×192 y 512×512 px) respetando la zona de seguridad central del 80%.
+  - Icono optimizado para iOS Safari (`apple-touch-icon.png` 180×180 px) y favicons de escritorio (32×32 y 16×16 px).
+- **Service Worker Multinivel (`sw.js`):**
+  - **Core App Shell:** Pre-cacheo seguro de HTMLs, CSS, JS bundles, fuentes e iconos con estrategia *Stale-While-Revalidate*.
+  - **Imágenes Botánicas:** Estrategia *Cache First* con poda automática LRU (*Least Recently Used*) limitada a 120 imágenes para proteger el almacenamiento del dispositivo.
+  - **Navegación:** Estrategia *Network First* con almacenamiento dinámico de páginas consultadas y fallback automático a [`offline.html`](file:///d:/cannaculture/offline.html).
+  - **Bypass Defensivo:** Peticiones externas de Firebase, Firestore, Google Auth y APIs no-GET excluidas de interceptación para total integridad de base de datos.
+- **Experiencia de Usuario e Instalación (UX/UI):**
+  - Módulo independiente [`js/pwa-manager.js`](file:///d:/cannaculture/js/pwa-manager.js) para control de registro, captura del evento `beforeinstallprompt` y detección de modo *standalone*.
+  - Botón discreto `#btn-pwa-install` en la cabecera con estilo píldora esmeralda y micro-animación pulsante (`.btn-pwa-install-pill`).
+  - Modal asistido instructivo para usuarios de iOS Safari explicando los pasos de "Añadir a la pantalla de inicio".
+  - Pantalla autónoma y elegante de fallback offline [`offline.html`](file:///d:/cannaculture/offline.html).
+- **Recompilación de Bundle & Cache-Busting (`?v=213`):**
+  - Sincronizados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js` mediante `python scripts/build_bundle.py`.
+  - Cache-busting actualizado a `?v=213` en `index.html`, `guia-cultivo.html` y `admin-dispensario.html`.
+
 
 ### v212 — Infraestructura Completa de SEO Técnico, Social Meta (Open Graph & Twitter) y Sitemap Canónico (`cannacultureapp.com`)
 - **Metadatos Técnicos SEO & Canónicos (`index.html`, `guia-cultivo.html`, `admin-dispensario.html`):**

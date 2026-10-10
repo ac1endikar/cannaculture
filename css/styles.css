@@ -412,6 +412,36 @@ body::before {
   to { box-shadow: 0 0 16px rgba(139, 92, 246, 0.65); }
 }
 
+.btn-pwa-install-pill {
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #34D399;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font-main);
+  transition: var(--transition-smooth);
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-pwa-install-pill:hover {
+  background: rgba(16, 185, 129, 0.32);
+  border-color: rgba(52, 211, 153, 0.8);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.45);
+  color: #FFFFFF;
+}
+.pwa-pulse-glow {
+  animation: pwaPulse 2.5s infinite alternate;
+}
+@keyframes pwaPulse {
+  from { box-shadow: 0 0 4px rgba(16, 185, 129, 0.2); }
+  to { box-shadow: 0 0 14px rgba(16, 185, 129, 0.6); }
+}
+
 /* ========================
    HERO SECTION LIMPIO & DESPEJADO
    ======================== */
@@ -5514,6 +5544,7 @@ dialog.compare-dialog[open] {
     display: none;
   }
   .btn-sobrio-pulse,
+  .btn-pwa-install-pill,
   .dispensary-nav-link {
     padding: 4px 8px !important;
     min-width: 32px !important;

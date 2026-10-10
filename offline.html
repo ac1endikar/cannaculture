@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modo Sin Conexión • CannaCulture</title>
+  <meta name="theme-color" content="#0B0F0E">
+  <style>
+    :root {
+      --bg: #0B0F0E;
+      --card-bg: rgba(15, 23, 21, 0.95);
+      --emerald: #10B981;
+      --emerald-light: #34D399;
+      --text: #F1F5F9;
+      --text-muted: #94A3B8;
+      --border: rgba(16, 185, 129, 0.25);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Outfit", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background-image: radial-gradient(circle at 50% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 60%);
+    }
+    .offline-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px -5px rgba(16, 185, 129, 0.15);
+      backdrop-filter: blur(12px);
+    }
+    .offline-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(6, 78, 59, 0.6);
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      color: var(--emerald-light);
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    .offline-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      display: block;
+      filter: drop-shadow(0 0 16px rgba(16, 185, 129, 0.3));
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+      margin-bottom: 2rem;
+    }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #10B981, #059669);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #059669, #047857);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-secondary:hover {
+      background: rgba(16, 185, 129, 0.1);
+      border-color: var(--emerald-light);
+    }
+    .brand-footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #64748B;
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-card">
+    <div class="offline-badge">
+      <span>📡</span> Modo Fuera de Línea
+    </div>
+    <span class="offline-icon">🌿</span>
+    <h1>CannaCulture 2.0 ULTRA</h1>
+    <p>No se detecta conexión activa a internet. Sin embargo, el catálogo botánico, tus variedades consultadas y la guía de cultivo siguen disponibles en tu dispositivo.</p>
+    
+    <div class="actions">
+      <button class="btn btn-primary" onclick="window.location.reload()">
+        🔄 Reintentar Conexión
+      </button>
+      <a href="/" class="btn btn-secondary">
+        📚 Ir al Catálogo en Caché
+      </a>
+      <a href="/guia-cultivo.html" class="btn btn-secondary">
+        🌱 Ver Guía de Cultivo Offline
+      </a>
+    </div>
+
+    <div class="brand-footer">
+      cannacultureapp.com • PWA Offline Ready
+    </div>
+  </div>
+</body>
+</html>

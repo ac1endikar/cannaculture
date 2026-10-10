@@ -1,0 +1,63 @@
+{
+  "name": "CannaCulture 2.0 ULTRA MAX",
+  "short_name": "CannaCulture",
+  "description": "Enciclopedia botánica interactiva con 877 cepas, 75 bancos de semillas, perfiles de terpenos, Sommelier IA y Guía de Cultivo.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0B0F0E",
+  "theme_color": "#0B0F0E",
+  "lang": "es-ES",
+  "dir": "ltr",
+  "categories": ["lifestyle", "reference", "education", "utilities"],
+  "icons": [
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icons/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Catálogo de Cepas",
+      "short_name": "Catálogo",
+      "description": "Consultar las 877 variedades botánicas",
+      "url": "/#section-catalog",
+      "icons": [{ "src": "assets/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Guía de Cultivo",
+      "short_name": "Cultivo",
+      "description": "Manual práctico en 5 etapas botánicas",
+      "url": "/guia-cultivo.html",
+      "icons": [{ "src": "assets/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Sommelier IA María",
+      "short_name": "Sommelier",
+      "description": "Asistente inteligente de recomendación",
+      "url": "/#section-sommelier",
+      "icons": [{ "src": "assets/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}
