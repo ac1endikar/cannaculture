@@ -1,12 +1,12 @@
 {
   "metadata": {
     "generated_at": "2026-10-10",
-    "total_strains": 868,
+    "total_strains": 888,
     "total_banks": 75,
     "species_distribution": {
-      "Índica": 381,
-      "Sativa": 221,
-      "Híbrida": 266
+      "Índica": 385,
+      "Sativa": 227,
+      "Híbrida": 276
     }
   },
   "banks_summary": [
@@ -123,7 +123,7 @@
     },
     {
       "bank": "ACE Seeds",
-      "count": 12,
+      "count": 13,
       "strains": [
         {
           "id": "aceseeds-panama",
@@ -208,6 +208,13 @@
           "species": "Sativa",
           "thc": 19,
           "floweringDays": 100
+        },
+        {
+          "id": "ace-old-timers-haze",
+          "name": "Old Timer's Haze",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 115
         }
       ]
     },
@@ -455,7 +462,7 @@
     },
     {
       "bank": "Barney's Farm",
-      "count": 16,
+      "count": 18,
       "strains": [
         {
           "id": "bf-mimosa-orange-punch",
@@ -568,6 +575,20 @@
           "species": "Índica",
           "thc": 26,
           "floweringDays": 60
+        },
+        {
+          "id": "bf-mimosa-evo",
+          "name": "Mimosa EVO",
+          "species": "Sativa",
+          "thc": 29,
+          "floweringDays": 68
+        },
+        {
+          "id": "bf-glookies",
+          "name": "Glookies",
+          "species": "Híbrida",
+          "thc": 25,
+          "floweringDays": 63
         }
       ]
     },
@@ -1520,7 +1541,7 @@
     },
     {
       "bank": "Compound Genetics",
-      "count": 10,
+      "count": 11,
       "strains": [
         {
           "id": "cpg-apples-and-bananas",
@@ -1591,6 +1612,13 @@
           "species": "Índica",
           "thc": 28,
           "floweringDays": 63
+        },
+        {
+          "id": "cg-jet-fuel-gelato",
+          "name": "Jet Fuel Gelato",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 62
         }
       ]
     },
@@ -1672,7 +1700,7 @@
     },
     {
       "bank": "DNA Genetics",
-      "count": 25,
+      "count": 26,
       "strains": [
         {
           "id": "dna-kosher-kush",
@@ -1847,6 +1875,13 @@
           "name": "Kandy Kush",
           "species": "Índica",
           "thc": 22,
+          "floweringDays": 63
+        },
+        {
+          "id": "dna-skywalker-kush",
+          "name": "Skywalker Kush",
+          "species": "Índica",
+          "thc": 26,
           "floweringDays": 63
         }
       ]
@@ -2130,7 +2165,7 @@
     },
     {
       "bank": "Dutch Passion",
-      "count": 11,
+      "count": 13,
       "strains": [
         {
           "id": "dp-mazar",
@@ -2208,6 +2243,20 @@
           "species": "Híbrida",
           "thc": 22,
           "floweringDays": 63
+        },
+        {
+          "id": "dp-euforia",
+          "name": "Euforia",
+          "species": "Sativa",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "dp-jorges-diamonds-1",
+          "name": "Jorge's Diamonds #1",
+          "species": "Híbrida",
+          "thc": 20,
+          "floweringDays": 60
         }
       ]
     },
@@ -2739,7 +2788,7 @@
     },
     {
       "bank": "Green House Seed Co.",
-      "count": 10,
+      "count": 12,
       "strains": [
         {
           "id": "ghs-super-lemon-haze",
@@ -2810,6 +2859,20 @@
           "species": "Híbrida",
           "thc": 22,
           "floweringDays": 60
+        },
+        {
+          "id": "ghs-chemical-bride",
+          "name": "Chemical Bride",
+          "species": "Híbrida",
+          "thc": 27,
+          "floweringDays": 63
+        },
+        {
+          "id": "ghs-arjans-strawberry-haze",
+          "name": "Arjan's Strawberry Haze",
+          "species": "Sativa",
+          "thc": 20,
+          "floweringDays": 70
         }
       ]
     },
@@ -2967,7 +3030,7 @@
     },
     {
       "bank": "Humboldt Seed",
-      "count": 12,
+      "count": 14,
       "strains": [
         {
           "id": "hso-trainwreck",
@@ -3052,12 +3115,26 @@
           "species": "Sativa",
           "thc": 22,
           "floweringDays": 70
+        },
+        {
+          "id": "hsc-blueberry-cupcake",
+          "name": "Blueberry Cupcake",
+          "species": "Híbrida",
+          "thc": 30,
+          "floweringDays": 58
+        },
+        {
+          "id": "hsc-poddy-mouth",
+          "name": "Poddy Mouth",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 55
         }
       ]
     },
     {
       "bank": "In-House Genetics",
-      "count": 10,
+      "count": 11,
       "strains": [
         {
           "id": "ihg-slurricane",
@@ -3128,6 +3205,13 @@
           "species": "Híbrida",
           "thc": 27,
           "floweringDays": 63
+        },
+        {
+          "id": "ihg-flavors",
+          "name": "Flavors",
+          "species": "Híbrida",
+          "thc": 28,
+          "floweringDays": 62
         }
       ]
     },
@@ -4904,7 +4988,7 @@
     },
     {
       "bank": "Ripper Seeds",
-      "count": 22,
+      "count": 24,
       "strains": [
         {
           "id": "ripper-kmintz",
@@ -5059,6 +5143,20 @@
           "species": "Híbrida",
           "thc": 26,
           "floweringDays": 60
+        },
+        {
+          "id": "ripper-fuel-og-official",
+          "name": "Fuel OG",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 63
+        },
+        {
+          "id": "ripper-badazz",
+          "name": "Badazz",
+          "species": "Índica",
+          "thc": 23,
+          "floweringDays": 58
         }
       ]
     },
@@ -5265,7 +5363,7 @@
     },
     {
       "bank": "Seed Junky Genetics",
-      "count": 10,
+      "count": 11,
       "strains": [
         {
           "id": "sj-kush-mints",
@@ -5336,6 +5434,13 @@
           "species": "Híbrida",
           "thc": 27.0,
           "floweringDays": 60
+        },
+        {
+          "id": "sjg-biscotti",
+          "name": "Biscotti",
+          "species": "Índica",
+          "thc": 27,
+          "floweringDays": 64
         }
       ]
     },
@@ -5417,7 +5522,7 @@
     },
     {
       "bank": "Sensi Seeds",
-      "count": 13,
+      "count": 14,
       "strains": [
         {
           "id": "sensi-jack-herer",
@@ -5509,12 +5614,19 @@
           "species": "Sativa",
           "thc": 22,
           "floweringDays": 70
+        },
+        {
+          "id": "sensi-nl5-haze",
+          "name": "Northern Lights #5 x Haze",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 70
         }
       ]
     },
     {
       "bank": "Serious Seeds",
-      "count": 10,
+      "count": 12,
       "strains": [
         {
           "id": "serious-ak-47",
@@ -5585,6 +5697,20 @@
           "species": "Sativa",
           "thc": 21,
           "floweringDays": 65
+        },
+        {
+          "id": "serious-seriosa",
+          "name": "Seriosa",
+          "species": "Híbrida",
+          "thc": 24,
+          "floweringDays": 58
+        },
+        {
+          "id": "serious-motavation",
+          "name": "Motavation",
+          "species": "Índica",
+          "thc": 22,
+          "floweringDays": 58
         }
       ]
     },
@@ -5818,7 +5944,7 @@
     },
     {
       "bank": "Sweet Seeds",
-      "count": 14,
+      "count": 16,
       "strains": [
         {
           "id": "sweet-green-poison",
@@ -5917,6 +6043,20 @@
           "species": "Índica",
           "thc": 20,
           "floweringDays": 42
+        },
+        {
+          "id": "ss-cream-47",
+          "name": "Cream 47",
+          "species": "Híbrida",
+          "thc": 21,
+          "floweringDays": 60
+        },
+        {
+          "id": "ss-jack-47",
+          "name": "Jack 47",
+          "species": "Sativa",
+          "thc": 24,
+          "floweringDays": 68
         }
       ]
     },

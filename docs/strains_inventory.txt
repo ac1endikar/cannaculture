@@ -1,7 +1,7 @@
 ================================================================================
 CANNACULTURE - INVENTARIO BOTÁNICO DE GENÉTICAS & BANCOS CRIADORES
-Total Variedades: 868 | Total Bancos Criadores: 75
-Distribución: Índica: 381, Sativa: 221, Híbrida: 266
+Total Variedades: 888 | Total Bancos Criadores: 75
+Distribución: Índica: 385, Sativa: 227, Híbrida: 276
 ================================================================================
 
 [01] 00 SEEDS BANK (15 variedades)
@@ -22,13 +22,14 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Sweet Soma (ID: sweet-soma) | Índica | THC: 22% | Floración: 60d
   • White Widow (ID: oo-white-widow) | Híbrida | THC: 20% | Floración: 60d
 
-[02] ACE SEEDS (12 variedades)
+[02] ACE SEEDS (13 variedades)
 ----------------------------------
   • Congo (ID: aceseeds-congo) | Sativa | THC: 19% | Floración: 70d
   • Golden Tiger (ID: aceseeds-golden-tiger) | Sativa | THC: 28% | Floración: 84d
   • Guawi (ID: aceseeds-guawi) | Sativa | THC: 23% | Floración: 80d
   • Malawi (ID: aceseeds-malawi) | Sativa | THC: 27% | Floración: 85d
   • Morocco Beldia Kif (ID: aceseeds-morocco-beldia) | Sativa | THC: 18% | Floración: 84d
+  • Old Timer's Haze (ID: ace-old-timers-haze) | Sativa | THC: 20% | Floración: 115d
   • Pakistan Chitral Kush (ID: aceseeds-pakistan-chitral-kush) | Índica | THC: 16% | Floración: 56d
   • Panama (ID: aceseeds-panama) | Sativa | THC: 24% | Floración: 77d
   • Purple Haze x Malawi (ID: aceseeds-purple-haze-x-malawi) | Sativa | THC: 25% | Floración: 90d
@@ -78,16 +79,18 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Orange Blossom (ID: bsf-orange-blossom) | Sativa | THC: 20% | Floración: 65d
   • Rainbows (ID: bsf-rainbows) | Índica | THC: 24% | Floración: 60d
 
-[06] BARNEY'S FARM (16 variedades)
+[06] BARNEY'S FARM (18 variedades)
 --------------------------------------
   • Acapulco Gold (ID: bf-acapulco-gold) | Sativa | THC: 21% | Floración: 75d
   • Biscotti Mintz (ID: barneys-biscotti-mintz) | Índica | THC: 26% | Floración: 60d
   • Cookies Kush (ID: barneys-cookies-kush) | Índica | THC: 23% | Floración: 63d
   • Critical Kush (ID: barneys-critical-kush) | Índica | THC: 25% | Floración: 55d
   • Dos Si Dos 33 (ID: bf-dos-si-dos-33) | Índica | THC: 28% | Floración: 60d
+  • Glookies (ID: bf-glookies) | Híbrida | THC: 25% | Floración: 63d
   • LSD (ID: barneys-lsd) | Índica | THC: 24% | Floración: 60d
   • Laughing Buddha (ID: bf-laughing-buddha) | Sativa | THC: 22% | Floración: 77d
   • Liberty Haze (ID: barneys-liberty-haze) | Híbrida | THC: 25% | Floración: 63d
+  • Mimosa EVO (ID: bf-mimosa-evo) | Sativa | THC: 29% | Floración: 68d
   • Mimosa x Orange Punch (ID: bf-mimosa-orange-punch) | Índica | THC: 30% | Floración: 58d
   • Pineapple Chunk (ID: barneys-pineapple-chunk) | Índica | THC: 26% | Floración: 56d
   • Pineapple Express (ID: bf-pineapple-express) | Sativa | THC: 24% | Floración: 60d
@@ -258,13 +261,14 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Warheads (ID: cwg-warheads) | Sativa | THC: 28% | Floración: 67d
   • Zero Gravity (ID: cwg-zero-gravity) | Índica | THC: 30% | Floración: 68d
 
-[19] COMPOUND GENETICS (10 variedades)
+[19] COMPOUND GENETICS (11 variedades)
 ------------------------------------------
   • Apples and Bananas (ID: cpg-apples-and-bananas) | Híbrida | THC: 28% | Floración: 63d
   • Gastro Pop (ID: cpg-gastro-pop) | Híbrida | THC: 28% | Floración: 63d
   • Grandmaster Sexy (ID: cpg-grandmaster-sexy) | Índica | THC: 28% | Floración: 63d
   • Grape Gas (ID: cpg-grape-gas) | Índica | THC: 26% | Floración: 60d
   • High Society (ID: cpg-high-society) | Híbrida | THC: 26% | Floración: 60d
+  • Jet Fuel Gelato (ID: cg-jet-fuel-gelato) | Híbrida | THC: 28% | Floración: 62d
   • Jokerz (ID: cpg-jokerz) | Híbrida | THC: 27% | Floración: 58d
   • La Bomba (ID: cpg-la-bomba) | Índica | THC: 27% | Floración: 60d
   • Marshmallow OG (ID: cpg-marshmallow-og) | Índica | THC: 27% | Floración: 63d
@@ -284,7 +288,7 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Strawberry Lemon Banana (ID: cff-strawberry-lemon-banana) | Híbrida | THC: 23.0% | Floración: 62d
   • Tangie Jack (ID: cff-tangie-jack) | Sativa | THC: 22.5% | Floración: 68d
 
-[21] DNA GENETICS (25 variedades)
+[21] DNA GENETICS (26 variedades)
 -------------------------------------
   • 24K Gold (ID: dna-24k-gold) | Híbrida | THC: 22% | Floración: 60d
   • 3peat (ID: dna-3peat) | Índica | THC: 26% | Floración: 63d
@@ -305,6 +309,7 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Purple Kosher (ID: dna-purple-kosher) | Índica | THC: 24% | Floración: 63d
   • Purple Wreck (ID: dna-purple-wreck) | Híbrida | THC: 20% | Floración: 58d
   • RP43 (Richard Petty) (ID: dna-rp43) | Híbrida | THC: 25% | Floración: 60d
+  • Skywalker Kush (ID: dna-skywalker-kush) | Índica | THC: 26% | Floración: 63d
   • Sleestack (ID: dna-sleestack) | Sativa | THC: 20% | Floración: 70d
   • Sorbet (ID: dna-sorbet) | Índica | THC: 21% | Floración: 60d
   • Sour Tangie (ID: dna-sour-tangie) | Sativa | THC: 22% | Floración: 68d
@@ -358,12 +363,14 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Soul Star (ID: drug-soul-star) | Índica | THC: 21.5% | Floración: 56d
   • U-Pink Kush (ID: drug-u-pink-kush) | Índica | THC: 22.0% | Floración: 57d
 
-[25] DUTCH PASSION (11 variedades)
+[25] DUTCH PASSION (13 variedades)
 --------------------------------------
   • Blueberry (ID: dp-blueberry) | Índica | THC: 19% | Floración: 56d
   • Colorado Cookies (ID: dp-colorado-cookies) | Híbrida | THC: 22% | Floración: 63d
+  • Euforia (ID: dp-euforia) | Sativa | THC: 21% | Floración: 60d
   • Frisian Dew (ID: dp-frisian-dew) | Híbrida | THC: 16% | Floración: 45d
   • Glueberry OG (ID: dp-glueberry-og) | Índica | THC: 23% | Floración: 60d
+  • Jorge's Diamonds #1 (ID: dp-jorges-diamonds-1) | Híbrida | THC: 20% | Floración: 60d
   • Mazar (ID: dp-mazar) | Índica | THC: 21% | Floración: 60d
   • Orange Bud (ID: dp-orange-bud) | Híbrida | THC: 18% | Floración: 56d
   • Passion Fruit (ID: dp-passion-fruit) | Sativa | THC: 20% | Floración: 65d
@@ -460,9 +467,11 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Txomango (ID: genehtik-txomango) | Índica | THC: 19% | Floración: 63d
   • Zuri Widow (ID: genehtik-zuri-widow) | Índica | THC: 19% | Floración: 56d
 
-[32] GREEN HOUSE SEED CO. (10 variedades)
+[32] GREEN HOUSE SEED CO. (12 variedades)
 ---------------------------------------------
+  • Arjan's Strawberry Haze (ID: ghs-arjans-strawberry-haze) | Sativa | THC: 20% | Floración: 70d
   • Bubba Kush (ID: ghs-bubba-kush) | Índica | THC: 20% | Floración: 60d
+  • Chemical Bride (ID: ghs-chemical-bride) | Híbrida | THC: 27% | Floración: 63d
   • Exodus Cheese (ID: ghs-exodus-cheese) | Índica | THC: 19% | Floración: 56d
   • Franco's Lemon Cheese (ID: ghs-francos-lemon-cheese) | Sativa | THC: 23% | Floración: 65d
   • Great White Shark (ID: ghs-great-white-shark) | Índica | THC: 20% | Floración: 60d
@@ -499,25 +508,28 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Strawberry Cake (ID: heavyweight-strawberry-cake) | Índica | THC: 22% | Floración: 55d
   • Superb OG (ID: heavyweight-superb-og) | Índica | THC: 24% | Floración: 56d
 
-[35] HUMBOLDT SEED (12 variedades)
+[35] HUMBOLDT SEED (14 variedades)
 --------------------------------------
   • 707 Headband (ID: hso-707-headband) | Híbrida | THC: 24% | Floración: 63d
   • Amherst Super Skunk (ID: hso-amherst-super-skunk) | Índica | THC: 19% | Floración: 56d
   • Blue Dream (ID: hso-blue-dream) | Sativa | THC: 21% | Floración: 65d
   • Blue Fire (ID: hso-blue-fire) | Índica | THC: 23% | Floración: 60d
+  • Blueberry Cupcake (ID: hsc-blueberry-cupcake) | Híbrida | THC: 30% | Floración: 58d
   • Chemdawg HSO (ID: hso-chemdawg) | Híbrida | THC: 23% | Floración: 65d
   • Girl Scout Cookies (ID: hso-girl-scout-cookies) | Híbrida | THC: 25% | Floración: 63d
   • Grease Monkey (ID: hso-grease-monkey) | Índica | THC: 25% | Floración: 60d
   • OG Eddy Lepp (ID: hso-og-eddy-lepp) | Híbrida | THC: 24% | Floración: 63d
   • Pineapple Fields (ID: hso-pineapple-fields) | Sativa | THC: 21% | Floración: 70d
+  • Poddy Mouth (ID: hsc-poddy-mouth) | Híbrida | THC: 28% | Floración: 55d
   • Sapphire OG (ID: hso-sapphire-og) | Índica | THC: 22% | Floración: 60d
   • Sour Diesel HSO (ID: hso-sour-diesel) | Sativa | THC: 22% | Floración: 70d
   • Trainwreck (ID: hso-trainwreck) | Sativa | THC: 21% | Floración: 60d
 
-[36] IN-HOUSE GENETICS (10 variedades)
+[36] IN-HOUSE GENETICS (11 variedades)
 ------------------------------------------
   • Black Cherry Pie (ID: ihg-black-cherry-pie) | Índica | THC: 25% | Floración: 58d
   • Dolato (ID: ihg-dolato) | Índica | THC: 26% | Floración: 60d
+  • Flavors (ID: ihg-flavors) | Híbrida | THC: 28% | Floración: 62d
   • Jelly Breath (ID: ihg-jelly-breath) | Índica | THC: 26% | Floración: 63d
   • Platinum Kush Breath (ID: ihg-platinum-kush-breath) | Índica | THC: 27% | Floración: 63d
   • Slurricane (ID: ihg-slurricane) | Índica | THC: 28% | Floración: 60d
@@ -825,14 +837,16 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Strawberry Banana (ID: rp-strawberry-banana) | Índica | THC: 27.0% | Floración: 63d
   • The OG #18 (ID: rp-og-18) | Índica | THC: 26.0% | Floración: 65d
 
-[58] RIPPER SEEDS (22 variedades)
+[58] RIPPER SEEDS (24 variedades)
 -------------------------------------
+  • Badazz (ID: ripper-badazz) | Índica | THC: 23% | Floración: 58d
   • Brain Cake (ID: ripper-brain-cake) | Híbrida | THC: 25% | Floración: 65d
   • Candy Crack (ID: ripper-candy-crack) | Sativa | THC: 22% | Floración: 65d
   • CandyGaz (ID: ripper-candygaz) | Índica | THC: 27% | Floración: 63d
   • Chempie (ID: ripper-chempie) | Híbrida | THC: 26% | Floración: 60d
   • Criminal + (ID: ripper-criminal-plus) | Índica | THC: 21% | Floración: 50d
   • Double Glock (ID: ripper-double-glock) | Índica | THC: 20% | Floración: 60d
+  • Fuel OG (ID: ripper-fuel-og-official) | Híbrida | THC: 24% | Floración: 63d
   • Hawaiian Wave (ID: ripper-hawaiian-wave) | Sativa | THC: 20% | Floración: 75d
   • Juicy Zkittlez (ID: ripper-juicy-zkittlez) | Índica | THC: 24% | Floración: 60d
   • Jungle Punch (ID: ripper-jungle-punch) | Sativa | THC: 22% | Floración: 70d
@@ -883,10 +897,11 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Tropicana Banana (ID: samsara-tropicana-banana) | Híbrida | THC: 22% | Floración: 63d
   • White Domina (ID: samsara-white-domina) | Índica | THC: 22% | Floración: 55d
 
-[61] SEED JUNKY GENETICS (10 variedades)
+[61] SEED JUNKY GENETICS (11 variedades)
 --------------------------------------------
   • Animal Face (ID: sj-animal-face) | Sativa | THC: 27.0% | Floración: 63d
   • Animal Mints (ID: sj-animal-mints) | Índica | THC: 27.0% | Floración: 63d
+  • Biscotti (ID: sjg-biscotti) | Índica | THC: 27% | Floración: 64d
   • Gas Face (ID: sj-gas-face) | Índica | THC: 29.0% | Floración: 63d
   • Ice Cream Cake (ID: sj-ice-cream-cake) | Índica | THC: 25.0% | Floración: 60d
   • Jealousy (ID: sj-jealousy) | Híbrida | THC: 28.0% | Floración: 60d
@@ -909,7 +924,7 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Peyote Zkittlez (ID: sdm-peyote-zkittlez) | Índica | THC: 24% | Floración: 60d
   • White Widow (ID: sdm-white-widow) | Híbrida | THC: 20% | Floración: 56d
 
-[63] SENSI SEEDS (13 variedades)
+[63] SENSI SEEDS (14 variedades)
 ------------------------------------
   • Big Bud (ID: sensi-big-bud) | Índica | THC: 20% | Floración: 56d
   • Black Domina (ID: sensi-black-domina) | Índica | THC: 21% | Floración: 50d
@@ -918,6 +933,7 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Hindu Kush (ID: sensi-hindu-kush) | Índica | THC: 19% | Floración: 48d
   • Jack Herer (ID: sensi-jack-herer) | Sativa | THC: 22% | Floración: 70d
   • Northern Lights (ID: sensi-northern-lights) | Índica | THC: 20% | Floración: 50d
+  • Northern Lights #5 x Haze (ID: sensi-nl5-haze) | Sativa | THC: 24% | Floración: 70d
   • Sensi Amnesia (ID: sensi-sensi-amnesia) | Sativa | THC: 24% | Floración: 70d
   • Sensi Skunk (ID: sensi-sensi-skunk) | Índica | THC: 18% | Floración: 48d
   • Shiva Skunk (ID: sensi-shiva-skunk) | Índica | THC: 22% | Floración: 50d
@@ -925,7 +941,7 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Skunk #1 (ID: sensi-skunk-1) | Híbrida | THC: 19% | Floración: 50d
   • Super Skunk (ID: sensi-super-skunk) | Índica | THC: 20% | Floración: 50d
 
-[64] SERIOUS SEEDS (10 variedades)
+[64] SERIOUS SEEDS (12 variedades)
 --------------------------------------
   • AK-47 (ID: serious-ak-47) | Híbrida | THC: 22% | Floración: 56d
   • Biddy Early (ID: serious-biddy-early) | Sativa | THC: 18% | Floración: 55d
@@ -933,6 +949,8 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Chronic (ID: serious-chronic) | Híbrida | THC: 20% | Floración: 60d
   • Kali Bubba (ID: serious-kali-bubba) | Sativa | THC: 21% | Floración: 65d
   • Kali Mist (ID: serious-kali-mist) | Sativa | THC: 22% | Floración: 80d
+  • Motavation (ID: serious-motavation) | Índica | THC: 22% | Floración: 58d
+  • Seriosa (ID: serious-seriosa) | Híbrida | THC: 24% | Floración: 58d
   • Serious 6 (ID: serious-serious-6) | Sativa | THC: 18% | Floración: 55d
   • Serious Happiness (ID: serious-serious-happiness) | Híbrida | THC: 21% | Floración: 60d
   • Warlock (ID: serious-warlock) | Índica | THC: 20% | Floración: 58d
@@ -977,14 +995,16 @@ Distribución: Índica: 381, Sativa: 221, Híbrida: 266
   • Super Mad Sky Floater (ID: sssc-super-mad-sky-floater) | Híbrida | THC: 26% | Floración: 65d
   • TNT Trichome (ID: sssc-tnt-trichome) | Índica | THC: 24% | Floración: 60d
 
-[68] SWEET SEEDS (14 variedades)
+[68] SWEET SEEDS (16 variedades)
 ------------------------------------
   • Black Jack (ID: sweet-black-jack) | Sativa | THC: 21% | Floración: 60d
+  • Cream 47 (ID: ss-cream-47) | Híbrida | THC: 21% | Floración: 60d
   • Cream Caramel (ID: sweet-cream-caramel) | Índica | THC: 20% | Floración: 56d
   • Crystal Candy (ID: ss-crystal-candy) | Índica | THC: 22% | Floración: 55d
   • Gorilla Girl (ID: sweet-gorilla-girl) | Híbrida | THC: 25% | Floración: 63d
   • Green Poison (ID: sweet-green-poison) | Índica | THC: 20% | Floración: 42d
   • Green Poison F1 Fast (ID: sweet-green-poison-f1) | Índica | THC: 20% | Floración: 42d
+  • Jack 47 (ID: ss-jack-47) | Sativa | THC: 24% | Floración: 68d
   • Mohan Ram (ID: ss-mohan-ram) | Índica | THC: 22% | Floración: 56d
   • Red Hot Cookies (ID: ss-red-hot-cookies) | Índica | THC: 24% | Floración: 60d
   • S5 Haze (ID: sweet-s5-haze) | Sativa | THC: 22% | Floración: 70d

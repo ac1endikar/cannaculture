@@ -1,29 +1,41 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 19:15  
+> **Ultima actualizacion:** 2026-10-10 20:05  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `refactor(catalog): purga de variedades autoflorecientes y reemplazo fotoperiódico v221`  
-> **Version Cache-Busting:** `?v=221`
+> **Commit de cierre:** `feat(catalog): inyección de 20 genéticas fotoperiódicas legendarias - 888 cepas v222`  
+> **Version Cache-Busting:** `?v=222`
 
 ---
 
 ## Punto de Reanudacion para la Siguiente Sesion
-- **Estado del Catalogo:** **868 cepas botanicas 100% fotoperiodicas y clones de elite (0 autoflorecientes comerciales).**
-- **75 Bancos Oficiales Incorporados (élite mundial de la crianza cannábica).**
-- **FASE 1 — Purga y Sustitución de Autoflorecientes (v221):**
-  - **Sustituciones Fotoperiódicas Clásicas (6 cepas):**
-    - `00s-cheese-xl` -> `00 Skunk` (`00s-00-skunk`, 00 Seeds Bank).
-    - `00s-white-smurf` -> `Northern Lights (00 Seeds)` (`00s-northern-lights`, 00 Seeds Bank).
-    - `paradise-red-velvet-auto` -> `All-Kush` (`paradise-all-kush`, Paradise Seeds).
-    - `paradise-stromboli-auto` -> `Nebula` (`paradise-nebula`, Paradise Seeds).
-    - `ss-bigdevil-xl` -> `Sweet Cheese` (`ss-sweet-cheese`, Sweet Seeds).
-    - `ss-black-cream-auto` -> `Mohan Ram` (`ss-mohan-ram`, Sweet Seeds).
-  - **Purga de Versiones Auto Duplicadas (9 cepas):**
-    - BSF Seeds: `Gorilla Glue XXL Auto`, `Lebron Haze XXL Auto`, `Red Critical XXL Auto`.
-    - Dinafem Seeds: `Critical + 2.0 Auto`, `Moby Dick XXL Auto`, `Gorilla Auto`.
-    - Dutch Passion: `Auto Blueberry`, `Auto Mazar`.
-    - Royal Queen Seeds: `OG Kush Auto`.
-  - **Recompilación & Sincronización:** Recompilados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`. Sincronizado cache-busting a `?v=221` en Service Worker y todas las plantillas HTML.
+- **Estado del Catalogo:** **888 cepas botanicas 100% fotoperiodicas y clones de elite (0 autoflorecientes comerciales).**
+- **75 Bancos Criadores Oficiales (élite mundial de la crianza cannábica).**
+- **Distribución Taxonómica Oficial:**
+  - **Índica:** 385 variedades (43.35%)
+  - **Híbrida:** 276 variedades (31.08%)
+  - **Sativa:** 227 variedades (25.56%)
+- **FASE 2 — Inyección de 20 Variedades Fotoperiódicas Legendarias (v222):**
+  - **Sensi Seeds:** *Northern Lights #5 x Haze* (`sensi-nl5-haze`).
+  - **Barney's Farm:** *Mimosa EVO* (`bf-mimosa-evo`), *Glookies* (`bf-glookies`).
+  - **Sweet Seeds:** *Cream 47* (`ss-cream-47`), *Jack 47* (`ss-jack-47`).
+  - **Serious Seeds:** *Seriosa* (`serious-seriosa`), *Motavation* (`serious-motavation`).
+  - **Ripper Seeds:** *Fuel OG* (`ripper-fuel-og-official`), *Badazz* (`ripper-badazz`).
+  - **Green House Seed Co.:** *Chemical Bride* (`ghs-chemical-bride`), *Arjan's Strawberry Haze* (`ghs-arjans-strawberry-haze`).
+  - **ACE Seeds:** *Old Timer's Haze* (`ace-old-timers-haze`).
+  - **Dutch Passion:** *Euforia* (`dp-euforia`), *Jorge's Diamonds #1* (`dp-jorges-diamonds-1`).
+  - **Compound Genetics:** *Jet Fuel Gelato* (`cg-jet-fuel-gelato`).
+  - **Humboldt Seed Company:** *Blueberry Cupcake* (`hsc-blueberry-cupcake`), *Poddy Mouth* (`hsc-poddy-mouth`).
+  - **In-House Genetics:** *Flavors* (`ihg-flavors`).
+  - **Seed Junky Genetics:** *Biscotti* (`sjg-biscotti`).
+  - **DNA Genetics:** *Skywalker Kush* (`dna-skywalker-kush`).
+  - **Imágenes Asignadas:** 20 imágenes WebP de flor real optimizadas en `img/` vinculadas a cada ficha.
+  - **Compilación de Bundles:** Regenerados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`.
+  - **Inventarios y Reportes:** Actualizados `docs/inventory_banks_strains.json` y `docs/strains_inventory.txt`.
+
+### v222 — Inyección de 20 Genéticas Fotoperiódicas Legendarias (888 Cepas Oficiales)
+- **Censo Botánico Final:** Alcanzada la cifra emblemática de 888 genéticas 100% fotoperiódicas y clones élite, con 0 cepas autoflorecientes comerciales.
+- **20 Nuevas Entradas Sin Duplicados:** Selección histórica de 12 bancos de élite mundial con fichas botánicas rigurosas (perfiles de terpenos, cannabinoides, linaje, floración y notas aromáticas).
+- **Sincronización PWA & Cache-Busting:** Versión `?v=222` desplegada en Service Worker (`cannaculture-core-v222`) y plantillas HTML.
 
 ### v221 — Purga de Variedades Autoflorecientes y Reemplazo Fotoperiódico Oficial
 - **Catálogo 100% Fotoperiódico:** Purga de 9 autoflorecientes redundantes y sustitución de 6 cepas por leyendas fotoperiódicas de 00 Seeds, Paradise Seeds y Sweet Seeds.
