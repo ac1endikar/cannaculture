@@ -1,23 +1,23 @@
 /**
- * CannaCulture Service Worker (v214)
+ * CannaCulture Service Worker (v215)
  * Progressive Web App con soporte offline multinivel, estrategia LRU para imágenes
  * y bypass defensivo para Firebase & Firestore.
  */
 
-const CACHE_CORE = 'cannaculture-core-v214';
-const CACHE_IMAGES = 'cannaculture-images-v214';
-const CACHE_PAGES = 'cannaculture-pages-v214';
+const CACHE_CORE = 'cannaculture-core-v215';
+const CACHE_IMAGES = 'cannaculture-images-v215';
+const CACHE_PAGES = 'cannaculture-pages-v215';
 const MAX_CACHED_IMAGES = 120;
 
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/offline.html',
-  '/css/styles.css?v=214',
-  '/js/bundle.js?v=214',
+  '/css/styles.css?v=215',
+  '/js/bundle.js?v=215',
   '/guia-cultivo.html',
-  '/css/guia-cultivo.css?v=214',
-  '/js/guia-cultivo.js?v=214',
+  '/css/guia-cultivo.css?v=215',
+  '/js/guia-cultivo.js?v=215',
   '/manifest.webmanifest',
   '/assets/icons/icon-192x192.png',
   '/assets/icons/icon-512x512.png',
@@ -51,7 +51,7 @@ self.addEventListener('install', event => {
       .then(cache => {
         return Promise.allSettled(
           CORE_ASSETS.map(url => cache.add(url).catch(err => {
-            console.warn('[SW v214] Precache advertencia en:', url, err);
+            console.warn('[SW v215] Precache advertencia en:', url, err);
           }))
         );
       })
@@ -66,7 +66,7 @@ self.addEventListener('activate', event => {
     caches.keys().then(keys => {
       return Promise.all(
         keys.filter(k => !currentCaches.includes(k)).map(oldKey => {
-          console.log('[SW v214] Purgando caché obsoleta:', oldKey);
+          console.log('[SW v215] Purgando caché obsoleta:', oldKey);
           return caches.delete(oldKey);
         })
       );

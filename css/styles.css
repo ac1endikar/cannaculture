@@ -5318,6 +5318,97 @@ dialog.compare-dialog[open] {
 }
 
 /* ==========================================================================
+   SOMMELIER IA MARÍA 2.0 — TRÍADA DE RECOMENDACIONES INTERACTIVAS (v215)
+   ========================================================================== */
+.ai-rec-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0 10px;
+  width: 100%;
+}
+
+.ai-rec-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(11, 15, 14, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-rec-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.6), rgba(59, 130, 246, 0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.ai-rec-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 0 12px rgba(16, 185, 129, 0.15);
+}
+
+.ai-rec-card:hover::before {
+  opacity: 1;
+}
+
+.ai-rec-badge {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.02em;
+}
+
+.ai-card-btn-detail,
+.ai-card-btn-catalog,
+.ai-card-btn-terpene {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.ai-card-btn-detail:hover {
+  background: rgba(16, 185, 129, 0.35) !important;
+  border-color: #34D399 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+}
+
+.ai-card-btn-catalog:hover {
+  background: rgba(59, 130, 246, 0.35) !important;
+  border-color: #60A5FA !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(59, 130, 246, 0.3);
+}
+
+.ai-card-btn-terpene:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.15);
+}
+
+.ai-card-btn-detail:active,
+.ai-card-btn-catalog:active,
+.ai-card-btn-terpene:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
    MARÍA SOMMELIER — MOBILE OPTIMIZATIONS (max-width: 768px / 480px)
    ========================================================================== */
 

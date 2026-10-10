@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 12:25  
+> **Ultima actualizacion:** 2026-10-10 12:50  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(perf): optimizacion renderizado por lotes, lazy loading y core web vitals v214`  
-> **Version Cache-Busting:** `?v=214`
+> **Commit de cierre:** `feat(ai): motor sommelier maria 2.0 triad recommendations y scoring 877 cepas v215`  
+> **Version Cache-Busting:** `?v=215`
 
 ---
 
@@ -11,6 +11,7 @@
 - **Estado del Catalogo:** **877 cepas botanicas 100% unicas y originales, 0 duplicados visuales.**
 - **75 Bancos Oficiales Incorporados (ampliación de 65 a 75 bancos de élite mundial).**
 - **100 Nuevas Variedades Fotoperiódicas/Feminizadas/Regulares (estrictamente 0 autoflorecientes).**
+- **Sommelier IA María 2.0 (v215):** Motor de puntuación multidimensional (`SommelierScoringEngine`) evaluando el catálogo íntegro de 877 cepas y 75 bancos en tiempo real. Tríada de recomendaciones enriquecidas (`🥇 Top Match`, `🧬 Alternativa Terpénica`, `⚖️ Opción Equilibrada`) con mini-fichas interactivas, macro fotos, THC, terpenos y navegación contextual cruzada al catálogo y fichas botánicas.
 - **Cobertura Linaje/Genetica:** 877/877 cepas (100%).
 - **Fotografias Botanicas HD:** 100% macro flores reales descargadas localmente en `img/` como `.webp` y `.jpg`, resolución mínima >= 400x400 (hasta 2500px), 0 colisiones visuales, 0 fondos blancos, 0 ilustraciones.
 - **Optimización de Rendimiento & Core Web Vitals (v214):** Filtrado y renderizado instantáneo (<8ms) con renderizado por lotes de 24 tarjetas mediante IntersectionObserver, pre-indexación en memoria `_searchIndex`, debounce adaptativo de 110ms sincronizado con `requestAnimationFrame`, priorización LCP (`fetchpriority="high"`, `loading="eager"`), CLS = 0.000 y skeleton shimmer placeholder.
@@ -18,6 +19,31 @@
 - **Guía de Cultivo (`guia-cultivo.html`):** Página independiente operativa con 5 etapas interactivas y selector ES/EN/DE/IT.
 - **Infraestructura SEO & Redes Sociales (v212):** Desplegada con `robots.txt`, `sitemap.xml` multilingüe, metadatos Open Graph, Twitter Cards, Schemas JSON-LD y banner oficial 1200x630px.
 - **Infraestructura PWA & Soporte Offline (v213):** Aplicación instalable con `manifest.webmanifest`, `sw.js` (3 capas de caché + LRU de imágenes), `offline.html`, iconos de alta resolución estándar y maskables, botón de instalación en cabecera y soporte iOS/Safari.
+
+### v215 — Motor Sommelier IA María 2.0, Scoring Multidimensional & Tríada de Recomendaciones Botánicas (`cannacultureapp.com`)
+- **Motor de Recomendación Multidimensional (`SommelierScoringEngine`):**
+  - Matriz de puntuación botánica algorítmica de 6 dimensiones que evalúa las 877 cepas del catálogo en tiempo real con latencia <5ms.
+  - Ponderación de pesos: Efecto/Ánimo (+30 pts), Momento del día/Actividad (+25 pts), Perfil terpénico diana (+20 pts), Potencia y tolerancia al THC (+15 pts), Notas aromáticas y de sabor (+10 pts) y Factor de diversidad anti-repetición (-15 pts a cepas recomendadas recientemente).
+- **Tríada de Recomendaciones Estructuradas (`generateRecommendationCardsHTML`):**
+  - Sustitución de listas planas de texto por tríadas botánicas jerarquizadas:
+    1. `🥇 Top Match`: Máxima afinidad matemática con la necesidad, atmósfera y perfil solicitado.
+    2. `🧬 Alternativa Terpénica`: Cepa con el mismo terpeno dominante pero genética o banco diferente para enriquecer la cata.
+    3. `⚖️ Opción Equilibrada`: Variedad con ratio balanceado, THC moderado o linaje clásico contrastado.
+- **Mini-Fichas Botánicas Interactivas en el Chat:**
+  - Tarjetas visuales glassmorphic (`.ai-rec-card`) con fotografía macro floral real, micro-badge del banco oficial, indicador de especie, píldora de THC, terpeno dominante con su color característico y perfil organoléptico.
+  - Botones de acción directos:
+    - `📋 Ficha`: Despacho del evento global `openStrainDetail` para abrir el modal técnico completo de la variedad.
+    - `🔍 En Catálogo`: Conmutación reactiva a la sección `#section-catalog`, reseteo de filtros, inyección del término de búsqueda y scroll suave a la tarjeta.
+    - `🌿 Terpeno`: Filtrado instantáneo del catálogo por la familia terpénica seleccionada.
+- **Chips de Sugerencia Contextuales Actualizados:**
+  - Renovación de los botones de acción rápida en `index.html` (tanto en la sección in-page como en la ventana flotante) cubriendo: desconexión post-trabajo, concentración y arte, notas cítricas, tertulia social, relax muscular para cine, baja tolerancia / CBD, diagnóstico botánico de tricomas (CannaDoctor) y efecto séquito.
+  - Badges informativos actualizados a `877 cepas · 75 bancos` en toda la interfaz.
+- **Estilos CSS y Experiencia Visual Premium (`css/styles.css`):**
+  - Contenedor `.ai-rec-cards-container`, tarjetas `.ai-rec-card` con borde glow esmeralda interactivo, micro-badges y botones con estados hover/active pulidos y optimizaciones móviles.
+- **Service Worker & Cache-Busting (`v215`):**
+  - Cachés de Service Worker actualizadas a `cannaculture-core-v215`, `cannaculture-images-v215` y `cannaculture-pages-v215`.
+  - Cache-busting sincronizado a `?v=215` en `index.html`, `guia-cultivo.html` y `admin-dispensario.html`.
+  - Recompilados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`.
 
 ### v214 — Optimización Extrema de Rendimiento, Chunk Batching y Core Web Vitals (`cannacultureapp.com`)
 - **Renderizado Progresivo por Lotes (24 tarjetas iniciales + Infinite Chunking):**
