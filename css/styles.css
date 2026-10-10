@@ -191,20 +191,6 @@ body::before {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.brand-logo .version-tag {
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  color: #34D399;
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  padding: 2px 7px;
-  border-radius: 6px;
-  vertical-align: middle;
-  text-transform: uppercase;
-  display: inline-block;
-  margin-left: 4px;
-}
 
 .header-extra-controls {
   display: flex;
@@ -3921,7 +3907,6 @@ dialog.lightbox-dialog[open] {
     font-size: clamp(0.9rem, 3.5vw, 1.1rem);
     gap: 0.4rem;
   }
-  .brand-logo .version-tag { display: none; }
   .header-btn-text { display: none; }
   #age-status-text { display: none; }
   #auth-btn-text { display: none; }

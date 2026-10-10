@@ -1,8 +1,8 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 18:30  
+> **Ultima actualizacion:** 2026-10-10 18:35  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(ui): rediseño de cabecera superior glassmorphism dark emerald y cluster de controles v219`  
+> **Commit de cierre:** `refactor(brand): logotipo limpio sin version-tag en cabecera`  
 > **Version Cache-Busting:** `?v=219`
 
 ---
@@ -12,8 +12,8 @@
 - **75 Bancos Oficiales Incorporados (ampliación de 65 a 75 bancos de élite mundial).**
 - **100 Nuevas Variedades Fotoperiódicas/Feminizadas/Regulares (estrictamente 0 autoflorecientes).**
 - **Rediseño UI/UX Cabecera Superior Glassmorphism Dark Emerald (v219):**
+  - **Identidad de Marca Limpia:** Eliminación total de la etiqueta/badge de versión (`2.0 MAX` / `.version-tag`) y depuración completa de sus reglas CSS; el logo muestra exclusivamente el icono botánico y el texto `CannaCulture`.
   - **Fondo & Acabado:** `rgba(11, 15, 14, 0.85)` con `backdrop-filter: blur(20px) saturate(160%)` y sutil línea perimetral esmeralda.
-  - **Identidad de Marca:** Micro-badge relojero sobrio para `2.0 MAX` en tono esmeralda/grafito translúcido.
   - **Cápsula de Usuario Unificada (`.user-profile-capsule`):** Fusión de avatar, nombre de socio y botón sutil de desconexión en una sola tarjeta de perfil compacta sin contrastes rojos agresivos.
   - **Estandarización Ergonómica (32px):** Altura uniforme de 32px para todo el cluster de controles secundarios con micro-interacciones suaves.
   - **Iconos Vectoriales SVG Monocromáticos:** Integración de SVG limpios en el selector de temas, modo calma zen y botón de instalación PWA (ghost pill).
