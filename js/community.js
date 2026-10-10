@@ -95,25 +95,25 @@ export class CommunityManager {
     if (!container) return;
 
     if (user) {
-      const firstName = (user.displayName || 'Usuario').split(' ')[0];
+      const firstName = (user.displayName || 'Socio').split(' ')[0];
       const photo = user.photoURL || '';
 
       container.innerHTML = `
-        <div class="auth-user-session" style="display: inline-flex; align-items: center; gap: 6px;">
-          <div class="auth-pill-user" title="${user.displayName || ''} (${user.email || ''})" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(16,185,129,0.18); border: 1px solid rgba(16,185,129,0.45); padding: 3px 10px 3px 4px; border-radius: 50px; cursor: pointer;" onclick="window.communityManager.openUserProfileModal()">
-            ${photo ? `<img src="${photo}" alt="${user.displayName}" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; border: 1.5px solid #10B981;" onerror="this.style.display='none'" />` : `<span style="font-size: 0.9rem;">👤</span>`}
-            <span style="font-size: 0.72rem; font-weight: 800; color: #6EE7B7; max-width: 85px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${firstName}</span>
+        <div class="user-profile-capsule" title="${user.displayName || ''} (${user.email || ''})">
+          <div class="user-capsule-info" onclick="window.communityManager.openUserProfileModal()">
+            ${photo ? `<img src="${photo}" alt="${user.displayName}" class="user-capsule-avatar" onerror="this.style.display='none'" />` : `<span class="user-capsule-icon">👤</span>`}
+            <span class="user-capsule-name">${firstName}</span>
           </div>
-          <button id="btn-header-logout" class="btn-logout-pill" onclick="window.communityManager.logout()" title="Cerrar Sesión" style="background: rgba(239,68,68,0.2); border: 1px solid rgba(239,68,68,0.45); color: #FCA5A5; padding: 3px 8px; border-radius: 50px; font-size: 0.68rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 3px; transition: all 0.2s ease;">
-            🚪 Salir
+          <button id="btn-header-logout" class="btn-capsule-logout" onclick="window.communityManager.logout()" title="Cerrar Sesión" aria-label="Cerrar sesión de socio">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
           </button>
         </div>
       `;
     } else {
       container.innerHTML = `
-        <button id="btn-user-auth" class="btn btn-auth-pill" onclick="window.communityManager.loginWithGoogle()" title="Iniciar sesión con Google" aria-label="Iniciar sesión con Google">
-          <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align: middle; flex-shrink: 0;"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
-          <span id="auth-btn-text">Iniciar con Google</span>
+        <button id="btn-user-auth" class="btn btn-auth-pill" onclick="window.communityManager.loginWithGoogle()" title="Acceso de Socio con Google" aria-label="Iniciar sesión con Google">
+          <svg width="14" height="14" viewBox="0 0 24 24" style="vertical-align: middle; flex-shrink: 0;"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+          <span id="auth-btn-text" class="header-btn-text">Acceso Socio</span>
         </button>
       `;
     }

@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-10 18:15  
+> **Ultima actualizacion:** 2026-10-10 18:30  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(security): muro de autenticacion privado en dispensario y age-gate estrictamente volatil en memoria v218`  
-> **Version Cache-Busting:** `?v=218`
+> **Commit de cierre:** `feat(ui): rediseño de cabecera superior glassmorphism dark emerald y cluster de controles v219`  
+> **Version Cache-Busting:** `?v=219`
 
 ---
 
@@ -11,20 +11,31 @@
 - **Estado del Catalogo:** **877 cepas botanicas 100% unicas y originales, 0 duplicados visuales, plenamente renderizadas.**
 - **75 Bancos Oficiales Incorporados (ampliación de 65 a 75 bancos de élite mundial).**
 - **100 Nuevas Variedades Fotoperiódicas/Feminizadas/Regulares (estrictamente 0 autoflorecientes).**
+- **Rediseño UI/UX Cabecera Superior Glassmorphism Dark Emerald (v219):**
+  - **Fondo & Acabado:** `rgba(11, 15, 14, 0.85)` con `backdrop-filter: blur(20px) saturate(160%)` y sutil línea perimetral esmeralda.
+  - **Identidad de Marca:** Micro-badge relojero sobrio para `2.0 MAX` en tono esmeralda/grafito translúcido.
+  - **Cápsula de Usuario Unificada (`.user-profile-capsule`):** Fusión de avatar, nombre de socio y botón sutil de desconexión en una sola tarjeta de perfil compacta sin contrastes rojos agresivos.
+  - **Estandarización Ergonómica (32px):** Altura uniforme de 32px para todo el cluster de controles secundarios con micro-interacciones suaves.
+  - **Iconos Vectoriales SVG Monocromáticos:** Integración de SVG limpios en el selector de temas, modo calma zen y botón de instalación PWA (ghost pill).
+  - **Colapso Responsive Fluido (<640px):** Uso de `.header-btn-text` para mantener la barra superior en una única línea horizontal continua sin saltos desordenados.
 - **Dispensario CSC Privado & Muro de Autenticación (v218):**
   - **Cero Rastro Público:** Retirado definitivamente el botón "Dispensario" de la cabecera en `index.html` y de la navegación en `guia-cultivo.html`.
   - **Aislamiento de Indexación:** Añadida la directiva `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">` y `<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">` en `admin-dispensario.html`.
   - **Muro de Acceso Privado (`#dispensary-auth-gate`):** Pantalla de bloqueo inicial Dark Emerald AMOLED (`#0B0F0E`) con tarjeta Glassmorphism que exige Club ID y Clave Maestra / PIN de turno.
   - **Bloqueo en Profundidad del DOM:** La carta activa, terminal mostrador POS, pesaje y lista de socios se mantienen completamente ocultos y no se inyectan ni renderizan hasta validar con éxito las credenciales autorizadas.
   - **Validación Criptográfica SHA-256 & Rate Limiting:** Verificación criptográfica con Web Crypto API, prevención de fuerza bruta (bloqueo por 30s tras 3 fallos) y persistencia de turno de 12 horas en `sessionStorage` (`cannaculture_dispensary_session`).
-  - **Botón "Cerrar Turno":** En la barra superior para re-bloquear inmediatamente el terminal.
 - **Age Verification Gate (+18) en Memoria Volátil Estricta (v218):**
   - **Cero Persistencia en Almacenamiento:** Eliminado por completo `sessionStorage` y `localStorage` para el estado de verificación +18.
   - **Salto Obligatorio en F5 / Recarga:** El consentimiento reside exclusivamente en memoria volátil JS (`window._cannacultureAgeVerified = true`). Al recargar (F5) o abrir nueva pestaña, la memoria se vacía y el modal de +18 salta obligatoriamente sin excepción.
-- **Service Worker & Cache-Busting (`v218`):**
-  - Cachés actualizadas a `cannaculture-core-v218`, `cannaculture-images-v218` y `cannaculture-pages-v218`.
-  - Cache-busting sincronizado a `?v=218` en `index.html`, `guia-cultivo.html`, `admin-dispensario.html` y `sw.js`.
+- **Service Worker & Cache-Busting (`v219`):**
+  - Cachés actualizadas a `cannaculture-core-v219`, `cannaculture-images-v219` y `cannaculture-pages-v219`.
+  - Cache-busting sincronizado a `?v=219` en `index.html`, `guia-cultivo.html`, `admin-dispensario.html` y `sw.js`.
   - Recompilados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`.
+
+### v219 — Rediseño Premium de Cabecera Superior Glassmorphism Dark Emerald
+- **Cluster de Controles Unificado:** Eliminación de pastillas multicolores discordantes en favor de una paleta botánica AMOLED armonizada.
+- **Cápsula de Socio Integrada:** Experiencia fluida para usuarios autenticados sin elementos aislados.
+- **Responsive Adaptativo:** Colapso de etiquetas de texto secundarias para garantizar una línea limpia en smartphones.
 
 ### v218 — Muro de Autenticación Privado del Dispensario CSC y Age Gate Estrictamente en Memoria Volátil
 - **Privacidad Total del Módulo Dispensario:**

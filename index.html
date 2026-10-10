@@ -109,11 +109,11 @@
   </script>
 
   <!-- Hojas de Estilo del Sistema y Age-Gate (+18) -->
-  <link rel="stylesheet" href="css/age-gate.css?v=218">
-  <link rel="stylesheet" href="css/styles.css?v=218">
+  <link rel="stylesheet" href="css/age-gate.css?v=219">
+  <link rel="stylesheet" href="css/styles.css?v=219">
 
   <!-- Controlador Inmediato de Age Gate (+18) -->
-  <script src="js/age-gate.js?v=218"></script>
+  <script src="js/age-gate.js?v=219"></script>
 </head>
 
 <body>
@@ -200,33 +200,40 @@
         <!-- Controles Secundarios agrupados y ordenados -->
         <div class="header-extra-controls">
           <!-- Micro-Badge Discreto Estatus Legal +18 -->
-          <button id="age-status-badge" class="age-status-badge" type="button" title="Acceso verificado para mayores de 18 años (sesión activa). Clic para consultar o revocar consentimiento." aria-label="Mayoría de edad +18 verificada en sesión activa">
+          <button id="age-status-badge" class="age-status-badge" type="button" title="Acceso verificado para mayores de 18 años. Clic para consultar o revocar." aria-label="Mayoría de edad +18 verificada">
             <span class="badge-icon">🛡️</span>
             <span>18+</span>
           </button>
 
           <!-- Contenedor Sesión / Google Auth -->
-          <div id="auth-container" class="auth-header-controls" style="display: inline-flex; align-items: center;">
-            <button id="btn-user-auth" class="btn btn-auth-pill" title="Iniciar con Google" aria-label="Iniciar sesión con Google" onclick="window.communityManager && window.communityManager.loginWithGoogle()">
-              <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align: middle; flex-shrink: 0;"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
-              <span id="auth-btn-text">Google</span>
+          <div id="auth-container" class="auth-header-controls">
+            <button id="btn-user-auth" class="btn btn-auth-pill" title="Acceso de Socio con Google" aria-label="Iniciar sesión de socio con Google" onclick="window.communityManager && window.communityManager.loginWithGoogle()">
+              <svg width="14" height="14" viewBox="0 0 24 24" style="vertical-align: middle; flex-shrink: 0;"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+              <span id="auth-btn-text" class="header-btn-text">Acceso Socio</span>
             </button>
           </div>
 
-          <select id="theme-selector" class="custom-select-sm" aria-label="Seleccionar tema visual de interfaz">
-            <option value="emerald">🟢 Esmeralda</option>
-            <option value="cyberpurple">🟣 Purple</option>
-            <option value="sunsetgold">🟠 Gold</option>
-            <option value="obsidian">🔵 Obsidian</option>
-          </select>
+          <!-- Selector de Tema Minimalista con SVG -->
+          <div class="theme-select-wrapper" title="Seleccionar tema visual">
+            <svg class="theme-select-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+            <select id="theme-selector" class="custom-select-sm header-select" aria-label="Seleccionar tema visual de interfaz">
+              <option value="emerald">Esmeralda</option>
+              <option value="cyberpurple">Purple</option>
+              <option value="sunsetgold">Gold</option>
+              <option value="obsidian">Obsidian</option>
+            </select>
+          </div>
 
-          <button id="btn-sobrio-mode" class="btn btn-sobrio-pulse" aria-label="Activar Modo Sobrio y Calma S.O.S." title="Modo Sobrio & Calma">
-            🛡️ <span class="header-btn-text">Modo Sobrio</span>
+          <!-- Botón Modo Calma / Sobrio con SVG -->
+          <button id="btn-sobrio-mode" class="btn btn-sobrio-pulse" aria-label="Activar Modo Calma S.O.S." title="Modo Calma & Respiración S.O.S.">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+            <span class="header-btn-text">Modo Calma</span>
           </button>
 
-          <!-- Botón PWA Instalable -->
+          <!-- Botón PWA Instalable Refinado (Ghost Button) con SVG -->
           <button id="btn-pwa-install" class="btn btn-pwa-install-pill" style="display: none;" title="Instalar aplicación CannaCulture" aria-label="Instalar aplicación CannaCulture">
-            📲 <span class="header-btn-text">Instalar App</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span class="header-btn-text">Instalar</span>
           </button>
         </div>
       </div>
@@ -1259,10 +1266,10 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- Cargador Bundled Blindado para compatibilidad total HTTP y archivo local file:// -->
-  <script src="js/bundle.js?v=218"></script>
+  <script src="js/bundle.js?v=219"></script>
 
   <!-- Gestor de Ciclo de Vida PWA & Registro de Service Worker -->
-  <script src="js/pwa-manager.js?v=218"></script>
+  <script src="js/pwa-manager.js?v=219"></script>
 </body>
 
 </html>
