@@ -63,12 +63,12 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="css/age-gate.css?v=227">
+  <link rel="stylesheet" href="css/age-gate.css?v=228">
   <!-- Hoja de Estilos del Dispensario CSC -->
-  <link rel="stylesheet" href="css/admin-dispensario.css?v=227">
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=228">
 
   <!-- Controlador Inmediato de Age Gate (+18) -->
-  <script src="js/age-gate.js?v=227"></script>
+  <script src="js/age-gate.js?v=228"></script>
 </head>
 
 <body>
@@ -770,14 +770,14 @@
       </div>
 
       <!-- Formulario de Consulta -->
-      <form id="form-ask-maria" class="maria-form-box" onsubmit="return false;">
+      <form id="form-ask-maria" class="maria-form-box">
         <div class="maria-input-wrapper">
           <input type="text" 
                  id="maria-query-input" 
                  class="maria-query-input" 
                  placeholder="¿Qué busca el socio hoy? (ej. algo suave para ver una peli, o que huela dulce y no dé sueño)..." 
                  autocomplete="off" />
-          <button type="submit" id="btn-submit-maria" class="btn-maria-send">
+          <button type="submit" id="btn-submit-maria" class="btn-maria-send" title="Pedir recomendación a María">
             <span>Pedir recomendación</span>
             <span class="send-icon">✨</span>
           </button>
@@ -792,7 +792,7 @@
        Carga de Scripts: Datos Maestros (877 Cepas) y Lógica Modular
        ====================================================================== -->
   <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
-  <script src="js/strains-data.js?v=227"></script>
+  <script src="js/strains-data.js?v=228"></script>
 
   <!-- 2. Firebase SDK & Configuración (Modo CDN Compatibilidad) -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -801,7 +801,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- 3. Lógica del Panel de Dispensario CSC -->
-  <script src="js/admin-dispensario.js?v=227"></script>
+  <script src="js/admin-dispensario.js?v=228"></script>
 </body>
 
 </html>

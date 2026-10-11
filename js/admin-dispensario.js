@@ -2859,7 +2859,7 @@
 
     const stock = getStockActivoParaMaria();
     if (!stock || stock.length === 0) {
-      return "Oye, ahora mismo tenemos los botes a cero o el stock está agotado en mostrador. ¡Toca reponer antes de recomendar al socio!";
+      return "No veo variedades con stock activo en el mostrador ahora mismo. Añade algo de stock a los botes para que pueda recomendarte.";
     }
 
     const stockText = stock.map((s, idx) => {
@@ -3006,13 +3006,141 @@ ${stockText}
   window.openMariaModal = openMariaModal;
   window.closeMariaModal = closeMariaModal;
 
+  async function handleMariaSubmit(overrideText) {
+    const queryInput = document.getElementById('maria-query-input');
+    const sendBtn = document.getElementById('btn-submit-maria') || document.getElementById('btn-send-maria') || document.querySelector('.btn-maria-send');
+    const responseContainer = document.getElementById('maria-response-container');
+
+    const rawQuery = (overrideText !== undefined ? overrideText : (queryInput ? queryInput.value : ''));
+    const queryText = (rawQuery || '').trim();
+
+    // 1. Validación de input vacío (cero bloqueos silenciosos)
+    if (!queryText) {
+      if (queryInput) {
+        queryInput.classList.remove('input-shake');
+        void queryInput.offsetWidth; // Forzar reflow para reiniciar la animación
+        queryInput.classList.add('input-shake');
+        queryInput.focus();
+      }
+      showToast("Escribe tu consulta primero", "💬");
+      return;
+    }
+
+    // 2. Registro de depuración
+    console.log("[María] Enviando consulta:", queryText);
+
+    // Limpiar input y preparar chat
+    if (queryInput) queryInput.value = '';
+
+    // Añadir burbuja del usuario
+    if (responseContainer) {
+      const userBubble = document.createElement('div');
+      userBubble.className = 'maria-bubble-user';
+      userBubble.textContent = queryText;
+      responseContainer.appendChild(userBubble);
+      responseContainer.scrollTop = responseContainer.scrollHeight;
+    }
+
+    // 3. Comprobación de API Key configurada
+    const apiKey = getGeminiApiKey();
+    if (!apiKey) {
+      if (responseContainer) {
+        const warnBubble = document.createElement('div');
+        warnBubble.className = 'maria-bubble-assistant';
+        warnBubble.style.borderColor = 'rgba(245, 158, 11, 0.45)';
+        warnBubble.style.background = 'rgba(32, 24, 14, 0.92)';
+        warnBubble.innerHTML = `
+          <p style="color: #FCD34D;">⚠️ <strong>¡Oye!</strong> Aún no tienes configurada la Google Gemini API Key en los Ajustes del dispensario. Añádela en la pestaña de Ajustes para que pueda ver los botes y darte consejos.</p>
+        `;
+        responseContainer.appendChild(warnBubble);
+        responseContainer.scrollTop = responseContainer.scrollHeight;
+      }
+      const noKeyAlert = document.getElementById('maria-no-key-alert');
+      if (noKeyAlert) noKeyAlert.style.display = 'flex';
+      return;
+    }
+
+    // 4. Comprobación de stock activo (> 0g)
+    const stockActivo = getStockActivoParaMaria();
+    console.log("[María] Stock activo enviado a la IA:", stockActivo.length, "variedades");
+
+    if (!stockActivo || stockActivo.length === 0) {
+      if (responseContainer) {
+        const noStockBubble = document.createElement('div');
+        noStockBubble.className = 'maria-bubble-assistant';
+        noStockBubble.innerHTML = `
+          <p>No veo variedades con stock activo en el mostrador ahora mismo. Añade algo de stock a los botes para que pueda recomendarte.</p>
+        `;
+        responseContainer.appendChild(noStockBubble);
+        responseContainer.scrollTop = responseContainer.scrollHeight;
+      }
+      return;
+    }
+
+    // 5. Deshabilitar botón e input para evitar doble envío
+    if (sendBtn) sendBtn.disabled = true;
+    if (queryInput) queryInput.disabled = true;
+
+    // Mostrar estado de carga visual
+    let loadingBox = null;
+    if (responseContainer) {
+      loadingBox = document.createElement('div');
+      loadingBox.className = 'maria-loading-box';
+      loadingBox.innerHTML = `
+        <div class="maria-loading-pulse"></div>
+        <span style="font-size: 0.88rem; color: #34D399;">María está mirando los botes...</span>
+      `;
+      responseContainer.appendChild(loadingBox);
+      responseContainer.scrollTop = responseContainer.scrollHeight;
+    }
+
+    // 6. Ciclo de llamada y respuesta con gestión de errores
+    try {
+      const answer = await callGeminiSommelier(queryText);
+      if (loadingBox) loadingBox.remove();
+
+      if (responseContainer) {
+        const assistantBubble = document.createElement('div');
+        assistantBubble.className = 'maria-bubble-assistant';
+        assistantBubble.innerHTML = formatMariaResponse(answer);
+        responseContainer.appendChild(assistantBubble);
+        responseContainer.scrollTop = responseContainer.scrollHeight;
+      }
+    } catch (err) {
+      if (loadingBox) loadingBox.remove();
+      console.error("[María] Error al contactar con Gemini:", err);
+
+      if (responseContainer) {
+        const errBubble = document.createElement('div');
+        errBubble.className = 'maria-bubble-assistant';
+        errBubble.style.borderColor = 'rgba(239, 68, 68, 0.45)';
+        errBubble.style.background = 'rgba(32, 18, 18, 0.94)';
+        errBubble.innerHTML = `
+          <p style="color: #FCA5A5;">⚠️ Hubo un problema al conectar con el asistente. Revisa que tu API Key sea correcta.</p>
+          <p style="font-size: 0.78rem; color: var(--text-dim); margin-top: 4px;">Detalle: ${err.message || 'Error de conexión'}</p>
+        `;
+        responseContainer.appendChild(errBubble);
+        responseContainer.scrollTop = responseContainer.scrollHeight;
+      }
+    } finally {
+      if (sendBtn) sendBtn.disabled = false;
+      if (queryInput) {
+        queryInput.disabled = false;
+        setTimeout(() => queryInput.focus(), 80);
+      }
+      if (responseContainer) responseContainer.scrollTop = responseContainer.scrollHeight;
+    }
+  }
+
+  window.handleMariaSubmit = handleMariaSubmit;
+
   function setupMariaSommelier() {
     if (isMariaSommelierSetup) return;
     isMariaSommelierSetup = true;
 
     // Delegación global de clic en el documento
     document.addEventListener('click', (e) => {
-      // 1. Abrir modal (cualquier botón con id o clase asignada o hijo)
+      // 1. Abrir modal
       const openBtn = e.target.closest('#btn-open-maria, #btn-ask-maria, #btn-pos-open-maria, .btn-ask-maria');
       if (openBtn) {
         e.preventDefault();
@@ -3036,30 +3164,63 @@ ${stockText}
         return;
       }
 
-      // 4. Delegación de clics en píldoras de sugerencias rápidas
+      // 4. Clic en botón de enviar consulta
+      const sendBtn = e.target.closest('#btn-submit-maria, #btn-send-maria, .btn-maria-send');
+      if (sendBtn) {
+        e.preventDefault();
+        handleMariaSubmit();
+        return;
+      }
+
+      // 5. Clic en píldoras de sugerencias rápidas: rellenar y enviar de inmediato
       const quickBtn = e.target.closest('.quick-prompt-btn');
       if (quickBtn) {
         e.preventDefault();
         const promptText = quickBtn.getAttribute('data-prompt');
-        const queryInput = document.getElementById('maria-query-input');
-        const form = document.getElementById('form-ask-maria');
-        if (promptText && queryInput) {
-          queryInput.value = promptText;
-          if (form) form.requestSubmit();
+        if (promptText) {
+          const queryInput = document.getElementById('maria-query-input');
+          if (queryInput) queryInput.value = promptText;
+          handleMariaSubmit(promptText);
         }
         return;
       }
     });
 
-    // Cierre accesible con tecla Escape
+    // Delegación de teclado en el documento: Escape para cerrar, Enter para enviar en el input
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         const modalElement = document.getElementById('modal-maria');
         if (modalElement && modalElement.open) {
           closeMariaModal();
         }
+      } else if (e.key === 'Enter') {
+        const queryInput = document.getElementById('maria-query-input');
+        if (document.activeElement === queryInput || e.target === queryInput) {
+          e.preventDefault();
+          handleMariaSubmit();
+        }
       }
     });
+
+    // Enlace directo en el formulario
+    const form = document.getElementById('form-ask-maria');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleMariaSubmit();
+      });
+    }
+
+    // Enlace directo en el input de texto
+    const queryInput = document.getElementById('maria-query-input');
+    if (queryInput) {
+      queryInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          handleMariaSubmit();
+        }
+      });
+    }
 
     // Controles de API Key en Ajustes del Club
     const settingsKeyInput = document.getElementById('gemini-api-key-input');
@@ -3091,62 +3252,6 @@ ${stockText}
       btnSaveModalKey.addEventListener('click', () => {
         saveGeminiApiKey(modalKeyInput.value);
         showToast("Clave de Gemini vinculada.", "✅");
-      });
-    }
-
-    // Envío de consulta a María
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const query = (queryInput ? queryInput.value.trim() : '');
-        if (!query) return;
-
-        // Limpiar input
-        queryInput.value = '';
-
-        // Añadir burbuja de usuario
-        const userBubble = document.createElement('div');
-        userBubble.className = 'maria-bubble-user';
-        userBubble.textContent = query;
-        responseContainer.appendChild(userBubble);
-
-        // Añadir caja de carga
-        const loadingBox = document.createElement('div');
-        loadingBox.className = 'maria-loading-box';
-        loadingBox.innerHTML = `
-          <div class="maria-loading-pulse"></div>
-          <span>María está revisando los botes...</span>
-        `;
-        responseContainer.appendChild(loadingBox);
-        responseContainer.scrollTop = responseContainer.scrollHeight;
-
-        const sendBtn = document.getElementById('btn-submit-maria');
-        if (sendBtn) sendBtn.disabled = true;
-
-        try {
-          const answer = await callGeminiSommelier(query);
-          loadingBox.remove();
-
-          const assistantBubble = document.createElement('div');
-          assistantBubble.className = 'maria-bubble-assistant';
-          assistantBubble.innerHTML = formatMariaResponse(answer);
-          responseContainer.appendChild(assistantBubble);
-        } catch (err) {
-          loadingBox.remove();
-
-          const errBubble = document.createElement('div');
-          errBubble.className = 'maria-bubble-assistant';
-          errBubble.style.borderColor = 'rgba(239, 68, 68, 0.4)';
-          errBubble.style.background = 'rgba(30, 20, 20, 0.9)';
-          errBubble.innerHTML = `
-            <p style="color: #FCA5A5;">⚠️ <strong>Ups, no pude conectar:</strong> ${err.message}</p>
-            <p style="font-size: 0.8rem; color: var(--text-dim);">Comprueba que tu API Key sea correcta o configúrala en los ajustes del club.</p>
-          `;
-          responseContainer.appendChild(errBubble);
-        } finally {
-          if (sendBtn) sendBtn.disabled = false;
-          responseContainer.scrollTop = responseContainer.scrollHeight;
-        }
       });
     }
   }

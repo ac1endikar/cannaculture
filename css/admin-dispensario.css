@@ -3234,6 +3234,18 @@ body.kiosk-mode .dispensary-main-tabs {
   box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
 }
 
+@keyframes inputShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.input-shake {
+  animation: inputShake 0.4s ease-in-out;
+  border-color: rgba(239, 68, 68, 0.7) !important;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.3) !important;
+}
+
 .btn-maria-send {
   background: linear-gradient(135deg, #10B981, #059669);
   border: none;

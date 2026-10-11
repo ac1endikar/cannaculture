@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-11 01:52  
+> **Ultima actualizacion:** 2026-10-11 02:05  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `fix(dispensario): reparar event listener y apertura de modal de Maria v227`  
-> **Version Cache-Busting:** `?v=227`
+> **Commit de cierre:** `fix(dispensario): reparar envio de mensajes y feedback visual en modal de Maria v228`  
+> **Version Cache-Busting:** `?v=228`
 
 ---
 
@@ -14,11 +14,20 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v227):**
-  - **Apertura y Cierre Impecables:** Subsanado anidamiento de `<dialog>` en `admin-dispensario.html` (cierre correcto de `kiosk-lightbox-dialog`), aislamiento visual en `z-index: 99999` y display controlado con reglas `:not([open])` y `&[open]`.
-  - **Delegación Global de Eventos:** Listener en `document` para disparadores `#btn-open-maria`, `#btn-ask-maria`, `#btn-pos-open-maria` y clase `.btn-ask-maria`, funcionando en cualquier pestaña o contenido dinámico.
-  - **Manejo Accesible de Cierre:** Cierre por botón "✕", clic en backdrop y tecla `Escape`.
-  - **Logs de Depuración:** Registro en consola (`[María] Botón pulsado` y `[María] Modal encontrado`).
+- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v228):**
+  - **Envío y Respuestas Impecables:** Retirado `onsubmit="return false;"` del formulario en `admin-dispensario.html`, habilitando envíos tanto por clic en botón como por pulsación de tecla Enter en el input.
+  - **Feedback Visual Completo (Cero Bloqueos Silenciosos):**
+    * Input vacío: animación de vibración `.input-shake` y toast de aviso.
+    * Sin API Key: respuesta inmediata de María indicando los pasos para configurarla en Ajustes.
+    * Sin Stock Activo: respuesta empática de María informando de la ausencia de existencias en el mostrador.
+  - **Prevención de Doble Envío & Estado de Carga:** Deshabilitación temporal de botón e input con mensaje pulsante *"María está mirando los botes..."*.
+  - **Soporte de Chips Rápidos:** Relleno de consulta y envío automático en un solo clic.
+  - **Depuración en Consola:** Logs detallados de consulta y conteo de variedades enviadas a Gemini 1.5 Flash.
+
+### v228 — Reparación de Envío de Mensajes y Feedback Visual en Modal de María
+- **Eliminación de Bloqueos en Formulario:** Retirada directiva inline que anulaba eventos de envío.
+- **Validación Asistida:** Detección de API Key, input vacío y existencias en mostrador con avisos interactivos.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=228` en Service Worker (`cannaculture-core-v228`) y todas las plantillas HTML.
 
 ### v227 — Reparación Integral del Modal de María Sommelier
 - **Corrección Estructural HTML:** Cierre estricto de etiquetas en el modal macro para evitar anidamiento accidental de diálogos.
