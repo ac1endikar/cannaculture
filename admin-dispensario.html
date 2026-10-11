@@ -63,12 +63,12 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="css/age-gate.css?v=224">
+  <link rel="stylesheet" href="css/age-gate.css?v=225">
   <!-- Hoja de Estilos del Dispensario CSC -->
-  <link rel="stylesheet" href="css/admin-dispensario.css?v=224">
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=225">
 
   <!-- Controlador Inmediato de Age Gate (+18) -->
-  <script src="js/age-gate.js?v=224"></script>
+  <script src="js/age-gate.js?v=225"></script>
 </head>
 
 <body>
@@ -312,14 +312,19 @@
         <!-- COLUMNA IZQUIERDA: Buscador y Carta Activa -->
         <section class="menu-master-column">
           
-          <!-- Tarjeta de Búsqueda del Catálogo Maestro (877 Cepas & 75 Bancos) -->
+          <!-- Tarjeta de Búsqueda del Catálogo Maestro (900 Cepas & 80 Bancos) -->
           <div class="catalog-search-card">
             <div class="search-card-header">
               <div class="search-title-group">
                 <span>🔎</span>
                 <h2>Incorporar Variedades del Catálogo Maestro</h2>
-                <span class="badge-count">877 Cepas HD · 75 Bancos</span>
+                <span class="badge-count">900 Cepas HD · 80 Bancos</span>
               </div>
+              <button type="button" id="btn-open-maria" class="btn-ask-maria" title="Consultar a María según el stock activo en mostrador">
+                <span class="maria-btn-icon">🌿</span>
+                <span class="maria-btn-text">Preguntar a María</span>
+                <span class="maria-btn-sparkle">✨</span>
+              </button>
             </div>
             
             <div class="search-input-wrapper">
@@ -396,6 +401,46 @@
               🔄 Demo
             </button>
           </div>
+
+          <!-- Ajustes del Club: API Key de Google Gemini (Sommelier de Mostrador) -->
+          <div class="club-settings-ai-box" id="club-settings-ai-box">
+            <div class="settings-ai-title-row">
+              <div class="settings-ai-title-wrap">
+                <span class="settings-ai-ico">👩‍🌾</span>
+                <div>
+                  <h4 class="settings-ai-heading">María · IA de Mostrador</h4>
+                  <span class="settings-ai-subtext">Google Gemini 1.5 Flash (Free Tier)</span>
+                </div>
+              </div>
+              <span id="gemini-key-status-pill" class="key-status-pill unconfigured">Sin Clave</span>
+            </div>
+
+            <div class="form-group" style="margin-top: 12px; margin-bottom: 8px;">
+              <label for="gemini-api-key-input" class="form-label" style="font-size: 0.76rem; font-weight: 600;">
+                Google AI Studio API Key (Free Tier)
+              </label>
+              <div class="api-key-input-wrapper">
+                <input type="password" 
+                       id="gemini-api-key-input" 
+                       class="form-control form-control-sm" 
+                       placeholder="••••••••••••••••••••••••" 
+                       autocomplete="off" 
+                       spellcheck="false" />
+                <button type="button" 
+                        id="btn-toggle-gemini-key-visibility" 
+                        class="btn-toggle-eye" 
+                        title="Mostrar/Ocultar API Key"
+                        aria-label="Mostrar u ocultar clave">👁️</button>
+              </div>
+              <p class="form-hint" style="font-size: 0.7rem; color: var(--text-dim); margin-top: 4px; line-height: 1.4;">
+                🔒 Guardada localmente para este club. Sin coste en el Free Tier de Google AI Studio.
+              </p>
+            </div>
+            
+            <button type="button" id="btn-save-gemini-key" class="btn-touch btn-secondary btn-sm" style="width: 100%; min-height: 34px; font-size: 0.75rem;">
+              💾 Guardar Clave de IA
+            </button>
+          </div>
         </aside>
       </div>
     </div>
@@ -427,7 +472,12 @@
 
           <div class="pos-panel-header" style="margin-top: 26px;">
             <h3><span>🌿</span> <span>2. Variedad de la Carta Activa</span></h3>
-            <span class="badge-count" id="pos-avail-strains-count">0 disponibles</span>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <span class="badge-count" id="pos-avail-strains-count">0 disponibles</span>
+              <button type="button" id="btn-pos-open-maria" class="btn-ask-maria btn-ask-maria-sm" title="Consultar a María según stock">
+                <span>🌿</span> <span>Preguntar a María</span>
+              </button>
+            </div>
           </div>
 
           <div class="pos-strain-select-wrapper">
@@ -659,6 +709,77 @@
       <div class="kiosk-lightbox-view">
         <img id="kiosk-lightbox-img" src="" alt="Macro HD" class="kiosk-lightbox-img" draggable="false" />
       </div>
+  <!-- ======================================================================
+       MODAL DE ASESORAMIENTO BOTÁNICO INTELIGENTE: MARÍA SOMMELIER CSC
+       ====================================================================== -->
+  <dialog id="modal-maria" class="maria-modal-dialog" aria-labelledby="maria-modal-title">
+    <div class="maria-modal-container">
+      <button id="btn-close-maria" class="maria-modal-close-btn" title="Cerrar (Esc)" aria-label="Cerrar">✕</button>
+      
+      <!-- Cabecera de María -->
+      <div class="maria-modal-header">
+        <div class="maria-avatar-box">
+          <span class="maria-avatar-emoji">👩‍🌾</span>
+          <span class="maria-avatar-dot" title="En línea"></span>
+        </div>
+        <div class="maria-header-info">
+          <div class="maria-title-row">
+            <h3 id="maria-modal-title" class="maria-modal-title">María · Tu Colega de Mostrador</h3>
+            <span class="maria-badge-ai">GEMINI 1.5 FLASH</span>
+          </div>
+          <p class="maria-modal-subtitle">Asesoramiento según lo que tenemos en el bote</p>
+        </div>
+      </div>
+
+      <!-- Barra de Estado de Stock Activo -->
+      <div class="maria-stock-pill-bar">
+        <span class="stock-pill-icon">📦</span>
+        <span id="maria-stock-count-text">Revisando stock activo en mostrador...</span>
+      </div>
+
+      <!-- Alerta si falta API Key -->
+      <div id="maria-no-key-alert" class="maria-no-key-box" style="display: none;">
+        <span class="no-key-icon">⚙️</span>
+        <div class="no-key-content">
+          <strong>API Key de Google Gemini no configurada</strong>
+          <p>Para activar a María, introduce tu clave gratuita de Google AI Studio (Free Tier) a continuación:</p>
+          <div class="modal-inline-key-wrap">
+            <input type="password" id="maria-modal-key-input" class="form-control form-control-sm" placeholder="AIzaSy..." />
+            <button type="button" id="btn-save-modal-key" class="btn-touch btn-primary btn-sm">Guardar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenedor de Conversación / Respuesta -->
+      <div id="maria-response-container" class="maria-response-container">
+        <!-- Mensaje de bienvenida de María -->
+        <div class="maria-bubble-welcome">
+          <p>¡Buenas! 👋 Dime qué busca el socio hoy: algo suave para ver una peli, risas con colegas, una que huela dulce y no dé sueño, o algo medicinal potente. Te digo exactamente qué bote abrir.</p>
+        </div>
+      </div>
+
+      <!-- Sugerencias de Consulta Rápida -->
+      <div class="maria-quick-prompts">
+        <button type="button" class="quick-prompt-btn" data-prompt="Busco algo suave y relajante para ver una película sin apalanque pesado.">🎬 Peli y relax suave</button>
+        <button type="button" class="quick-prompt-btn" data-prompt="Quiero algo activo y creativo para charlar o trabajar sin ansiedad.">🎨 Creativo y social</button>
+        <button type="button" class="quick-prompt-btn" data-prompt="Una variedad con sabor muy dulce o afrutado que no dé sueño.">🍬 Sabor dulce / frutal</button>
+        <button type="button" class="quick-prompt-btn" data-prompt="Algo potente para dolor físico, desconectar el cuerpo y dormir bien.">😴 Descanso profundo</button>
+      </div>
+
+      <!-- Formulario de Consulta -->
+      <form id="form-ask-maria" class="maria-form-box" onsubmit="return false;">
+        <div class="maria-input-wrapper">
+          <input type="text" 
+                 id="maria-query-input" 
+                 class="maria-query-input" 
+                 placeholder="¿Qué busca el socio hoy? (ej. algo suave para ver una peli, o que huela dulce y no dé sueño)..." 
+                 autocomplete="off" />
+          <button type="submit" id="btn-submit-maria" class="btn-maria-send">
+            <span>Pedir recomendación</span>
+            <span class="send-icon">✨</span>
+          </button>
+        </div>
+      </form>
     </div>
   </dialog>
 
@@ -668,7 +789,7 @@
        Carga de Scripts: Datos Maestros (877 Cepas) y Lógica Modular
        ====================================================================== -->
   <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
-  <script src="js/strains-data.js?v=224"></script>
+  <script src="js/strains-data.js?v=225"></script>
 
   <!-- 2. Firebase SDK & Configuración (Modo CDN Compatibilidad) -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -677,7 +798,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- 3. Lógica del Panel de Dispensario CSC -->
-  <script src="js/admin-dispensario.js?v=224"></script>
+  <script src="js/admin-dispensario.js?v=225"></script>
 </body>
 
 </html>

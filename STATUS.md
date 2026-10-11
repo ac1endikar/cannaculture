@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-11 01:05  
+> **Ultima actualizacion:** 2026-10-11 01:25  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `fix(catalog): asignar imagen exclusiva para Gypsy Widow v224`  
-> **Version Cache-Busting:** `?v=224`
+> **Commit de cierre:** `feat(dispensario): asesor botánico inteligente María Sommelier de mostrador con Google Gemini 1.5 Flash v225`  
+> **Version Cache-Busting:** `?v=225`
 
 ---
 
@@ -14,11 +14,18 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **ACTUALIZACIÓN VISUAL EXCLUSIVA (v224):**
-  - **Gypsy Widow (`exotic-gypsy-widow`, Exotic Seed):** Incorporada fotografía botánica macro de alta resolución exclusiva en `img/exotic-gypsy-widow.webp` (plano detalle de cogollo densamente escarchado en manto de tricomas plateado, sostenido con guante de nitrilo sobre fondo de sala de floración interior), eliminando toda redundancia visual con White Widow.
-  - **Compilación de Bundles:** Sincronizados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`.
-  - **Auditoría e Inventarios:** Validados con `scripts/audit_database_inventory.py`.
-  - **Cache-Busting Sincronizado:** Subida general a `?v=224` en `sw.js` (`cannaculture-core-v224`) y plantillas HTML para actualización forzada en navegadores.
+- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v225):**
+  - **Grounding Estricto por Club:** Conexión directa a Google Gemini 1.5 Flash (Free Tier) filtrando exclusivamente variedades con stock activo en mostrador (`gramos > 0`). Cero alucinaciones ni recomendaciones de cepas agotadas.
+  - **Personalidad Empática de Barra:** Respuestas relajadas, de colega experta, sin tecnicismos densos, traduciendo perfiles de terpenos a sensaciones vivas y aromáticas.
+  - **Configuración Segura de API Key:** Campo protegido con alternancia de visibilidad en los ajustes del club, almacenado de forma aislada en `localStorage` bajo `cc_dispensario_[clubId]_gemini_key`.
+  - **Acceso Rápido & Modal Glassmorphism:** Botón Dark Emerald "🌿 Preguntar a María" en el buscador del dispensario y en el terminal POS, con feedback de carga ("María está revisando los botes...") y sugerencias rápidas.
+  - **Compilación & Sincronización:** Recompilados bundles con `scripts/build_bundle.py` y subido cache-busting a `?v=225` (`cannaculture-core-v225`).
+
+### v225 — Asesor Botánico Inteligente: María Sommelier de Mostrador CSC
+- **Integración Google Gemini 1.5 Flash:** Llamadas directas y gratuitas desde el navegador a Google AI Studio REST API.
+- **Grounding Dinámico:** Inyección en tiempo real del inventario disponible en mostrador.
+- **UI/UX Dark Emerald Glassmorphism:** Modal interactivo accesible desde catálogo y báscula POS.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=225` en Service Worker (`cannaculture-core-v225`) y plantillas HTML.
 
 ### v224 — Fotografía Macro Exclusiva para Gypsy Widow (Exotic Seed)
 - **Activo Visual Independiente:** Creación y despliegue de `img/exotic-gypsy-widow.webp` de alta fidelidad botánica, mostrando cálices resinosos y tricomas plateados.

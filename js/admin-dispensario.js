@@ -2739,6 +2739,341 @@
     } catch (_) {}
   }
 
+  // ==========================================================================
+  // MÓDULO: MARÍA · SOMMELIER DE MOSTRADOR (Google Gemini 1.5 Flash Grounding)
+  // ==========================================================================
+  function getCurrentClubId() {
+    const session = getDispensarySession();
+    if (session && session.clubId) {
+      return session.clubId;
+    }
+    return localStorage.getItem('cannaculture_csc_active_club') || 'CSC-VERDE-01';
+  }
+
+  function getGeminiApiKey() {
+    const clubId = getCurrentClubId();
+    return (localStorage.getItem('cc_dispensario_' + clubId + '_gemini_key') || '').trim();
+  }
+
+  function saveGeminiApiKey(key) {
+    const clubId = getCurrentClubId();
+    const cleanKey = (key || '').trim();
+    if (cleanKey) {
+      localStorage.setItem('cc_dispensario_' + clubId + '_gemini_key', cleanKey);
+    } else {
+      localStorage.removeItem('cc_dispensario_' + clubId + '_gemini_key');
+    }
+    updateGeminiKeyUI();
+  }
+
+  function updateGeminiKeyUI() {
+    const key = getGeminiApiKey();
+    const pill = document.getElementById('gemini-key-status-pill');
+    const input = document.getElementById('gemini-api-key-input');
+    const modalKeyInput = document.getElementById('maria-modal-key-input');
+    const noKeyAlert = document.getElementById('maria-no-key-alert');
+
+    if (pill) {
+      if (key) {
+        pill.textContent = "Clave Activa";
+        pill.className = "key-status-pill configured";
+      } else {
+        pill.textContent = "Sin Clave";
+        pill.className = "key-status-pill unconfigured";
+      }
+    }
+
+    if (input && document.activeElement !== input) {
+      input.value = key;
+    }
+    if (modalKeyInput && document.activeElement !== modalKeyInput) {
+      modalKeyInput.value = key;
+    }
+
+    if (noKeyAlert) {
+      noKeyAlert.style.display = key ? 'none' : 'flex';
+    }
+  }
+
+  function getStockActivoParaMaria() {
+    const clubId = getCurrentClubId();
+    // 1. Comprobar si existe estructura específica del club
+    const rawStock = localStorage.getItem('cc_dispensario_' + clubId + '_stock');
+    if (rawStock) {
+      try {
+        const parsed = JSON.parse(rawStock);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          const filtered = parsed
+            .filter(item => Number(item.gramos || item.stockGrams || 0) > 0)
+            .map(item => ({
+              nombre: item.nombre || item.name || item.id,
+              tipo: item.tipo || item.species || "Híbrida",
+              terpenos: item.terpenos || [],
+              thc: item.thc ? (String(item.thc).includes('%') ? item.thc : `${item.thc}%`) : "N/D",
+              gramos_disponibles: Number(item.gramos || item.stockGrams || 0),
+              precio_g: Number(item.aportacionGramos || item.precio || item.tierStd || 0),
+              aroma: item.aroma || item.lotNotes || ""
+            }));
+          if (filtered.length > 0) return filtered;
+        }
+      } catch (_) {}
+    }
+
+    // 2. Fallback al estado del menú activo en mostrador
+    return (state.menu || [])
+      .filter(item => item.available && Number(item.stockGrams) > 0)
+      .map(item => {
+        const details = getStrainData(item.id) || {};
+        const terpNames = details.terpenes ? Object.keys(details.terpenes) : (details.dominantTerpene ? [details.dominantTerpene] : []);
+        return {
+          nombre: details.name || item.id.replace(/-/g, ' ').toUpperCase(),
+          tipo: details.species || "Híbrida",
+          terpenos: terpNames,
+          thc: details.thc ? `${details.thc}%` : "N/D",
+          gramos_disponibles: Number(item.stockGrams),
+          precio_g: Number(item.tierStd || 0),
+          aroma: details.aroma || item.lotNotes || ""
+        };
+      });
+  }
+
+  async function callGeminiSommelier(userQuery) {
+    const apiKey = getGeminiApiKey();
+    if (!apiKey) {
+      throw new Error("Falta la API Key de Google Gemini. Configúrala para continuar.");
+    }
+
+    const stock = getStockActivoParaMaria();
+    if (!stock || stock.length === 0) {
+      return "Oye, ahora mismo tenemos los botes a cero o el stock está agotado en mostrador. ¡Toca reponer antes de recomendar al socio!";
+    }
+
+    const stockText = stock.map((s, idx) => {
+      const terps = s.terpenos && s.terpenos.length ? s.terpenos.join(', ') : 'terpenos variados';
+      return `${idx + 1}. **${s.nombre}** (${s.tipo}) | THC: ${s.thc} | Gramos en bote: ${s.gramos_disponibles}g | Aportación: ${s.precio_g} €/g | Perfil: ${terps} ${s.aroma ? '| Notas: ' + s.aroma : ''}`;
+    }).join('\n');
+
+    const systemPrompt = `Eres María, sommelier de mostrador y colega experta de este Club Social de Cannabis (CSC).
+Tu objetivo es recomendarle al socio la mejor variedad para lo que busca hoy.
+
+REGLA DE ORO / GROUNDING ESTRICTO:
+- ÚNICAMENTE puedes recomendar variedades que estén en la siguiente lista de STOCK ACTIVO EN BARRA.
+- Todas tienen gramos disponibles > 0.
+- NUNCA inventes variedades, ni nombres cepas que no estén en esta lista exacta.
+- Si el socio pide algo que no tenemos, dile con total confianza: "Oye, de eso ahora mismo no nos queda en barra, pero de lo que tenemos en el bote te recomiendo..." y dale la alternativa más cercana de la lista.
+
+PERSONALIDAD:
+- Habla como una colega de barra de confianza: relajada, cercana, natural, empática y conocedora.
+- Cero tecnicismos densos, lenguaje académico o formalismos fríos.
+- Explica de forma sensorial por qué se la recomiendas: sensación que da (si es para peli, risas, charlar, crear, dormir), a qué huele y sabe (notas de terpenos como cítrico, terroso, pino, diésel, dulce), cuántos gramos nos quedan y su cuota (€/g).
+- Sé concisa: recomienda 1 o máximo 2 variedades ideales, justificando la elección en 2 o 3 párrafos cortos.
+
+LISTA DE STOCK ACTIVO EN ESTE MOSTRADOR (${stock.length} variedades disponibles):
+${stockText}
+`;
+
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
+
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        contents: [
+          {
+            role: 'user',
+            parts: [
+              {
+                text: `${systemPrompt}\n\nPregunta / Petición del socio: "${userQuery}"\n\nRespuesta de María:`
+              }
+            ]
+          }
+        ],
+        generationConfig: {
+          temperature: 0.65,
+          maxOutputTokens: 600
+        }
+      })
+    });
+
+    if (!response.ok) {
+      let errDetail = "";
+      try {
+        const errJson = await response.json();
+        errDetail = errJson.error ? errJson.error.message : response.statusText;
+      } catch (_) {
+        errDetail = response.statusText;
+      }
+      throw new Error(`Error en API Gemini (${response.status}): ${errDetail}`);
+    }
+
+    const data = await response.json();
+    const candidate = data.candidates && data.candidates[0];
+    if (!candidate || !candidate.content || !candidate.content.parts || !candidate.content.parts[0]) {
+      throw new Error("Respuesta vacía del modelo.");
+    }
+
+    return candidate.content.parts[0].text;
+  }
+
+  function formatMariaResponse(rawText) {
+    if (!rawText) return "";
+    let clean = rawText
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+
+    // Negritas **texto**
+    clean = clean.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    // Cursivas *texto*
+    clean = clean.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    // Saltos de línea dobles a párrafos
+    const paras = clean.split(/\n\s*\n/).filter(Boolean);
+    return paras.map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+  }
+
+  function setupMariaSommelier() {
+    const openBtns = [
+      document.getElementById('btn-open-maria'),
+      document.getElementById('btn-pos-open-maria')
+    ].filter(Boolean);
+
+    const modal = document.getElementById('modal-maria');
+    const closeBtn = document.getElementById('btn-close-maria');
+    const form = document.getElementById('form-ask-maria');
+    const queryInput = document.getElementById('maria-query-input');
+    const responseContainer = document.getElementById('maria-response-container');
+    const stockCountText = document.getElementById('maria-stock-count-text');
+    const quickPrompts = document.querySelectorAll('.quick-prompt-btn');
+    
+    // Controles de API Key en Ajustes
+    const settingsKeyInput = document.getElementById('gemini-api-key-input');
+    const btnToggleSettingsEye = document.getElementById('btn-toggle-gemini-key-visibility');
+    const btnSaveSettingsKey = document.getElementById('btn-save-gemini-key');
+
+    // Controles de API Key inline en modal
+    const modalKeyInput = document.getElementById('maria-modal-key-input');
+    const btnSaveModalKey = document.getElementById('btn-save-modal-key');
+
+    updateGeminiKeyUI();
+
+    if (btnToggleSettingsEye && settingsKeyInput) {
+      btnToggleSettingsEye.addEventListener('click', () => {
+        const isPass = settingsKeyInput.type === 'password';
+        settingsKeyInput.type = isPass ? 'text' : 'password';
+        btnToggleSettingsEye.textContent = isPass ? '🙈' : '👁️';
+      });
+    }
+
+    if (btnSaveSettingsKey && settingsKeyInput) {
+      btnSaveSettingsKey.addEventListener('click', () => {
+        saveGeminiApiKey(settingsKeyInput.value);
+        showToast("Clave de Gemini guardada para este club.", "🔑");
+      });
+    }
+
+    if (btnSaveModalKey && modalKeyInput) {
+      btnSaveModalKey.addEventListener('click', () => {
+        saveGeminiApiKey(modalKeyInput.value);
+        showToast("Clave de Gemini vinculada.", "✅");
+      });
+    }
+
+    function openMariaModal() {
+      if (!modal) return;
+      const stock = getStockActivoParaMaria();
+      if (stockCountText) {
+        stockCountText.textContent = `${stock.length} variedades con stock activo en mostrador`;
+      }
+      updateGeminiKeyUI();
+      modal.showModal();
+      if (queryInput) {
+        setTimeout(() => queryInput.focus(), 150);
+      }
+    }
+
+    function closeMariaModal() {
+      if (modal) modal.close();
+    }
+
+    openBtns.forEach(btn => btn.addEventListener('click', openMariaModal));
+    if (closeBtn) closeBtn.addEventListener('click', closeMariaModal);
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeMariaModal();
+      });
+    }
+
+    // Píldoras de consulta rápida
+    quickPrompts.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const promptText = btn.getAttribute('data-prompt');
+        if (promptText && queryInput) {
+          queryInput.value = promptText;
+          if (form) form.requestSubmit();
+        }
+      });
+    });
+
+    // Envío de consulta a María
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const query = (queryInput ? queryInput.value.trim() : '');
+        if (!query) return;
+
+        // Limpiar input
+        queryInput.value = '';
+
+        // Añadir burbuja de usuario
+        const userBubble = document.createElement('div');
+        userBubble.className = 'maria-bubble-user';
+        userBubble.textContent = query;
+        responseContainer.appendChild(userBubble);
+
+        // Añadir caja de carga
+        const loadingBox = document.createElement('div');
+        loadingBox.className = 'maria-loading-box';
+        loadingBox.innerHTML = `
+          <div class="maria-loading-pulse"></div>
+          <span>María está revisando los botes...</span>
+        `;
+        responseContainer.appendChild(loadingBox);
+        responseContainer.scrollTop = responseContainer.scrollHeight;
+
+        const sendBtn = document.getElementById('btn-submit-maria');
+        if (sendBtn) sendBtn.disabled = true;
+
+        try {
+          const answer = await callGeminiSommelier(query);
+          loadingBox.remove();
+
+          const assistantBubble = document.createElement('div');
+          assistantBubble.className = 'maria-bubble-assistant';
+          assistantBubble.innerHTML = formatMariaResponse(answer);
+          responseContainer.appendChild(assistantBubble);
+        } catch (err) {
+          loadingBox.remove();
+
+          const errBubble = document.createElement('div');
+          errBubble.className = 'maria-bubble-assistant';
+          errBubble.style.borderColor = 'rgba(239, 68, 68, 0.4)';
+          errBubble.style.background = 'rgba(30, 20, 20, 0.9)';
+          errBubble.innerHTML = `
+            <p style="color: #FCA5A5;">⚠️ <strong>Ups, no pude conectar:</strong> ${err.message}</p>
+            <p style="font-size: 0.8rem; color: var(--text-dim);">Comprueba que tu API Key sea correcta o configúrala en los ajustes del club.</p>
+          `;
+          responseContainer.appendChild(errBubble);
+        } finally {
+          if (sendBtn) sendBtn.disabled = false;
+          responseContainer.scrollTop = responseContainer.scrollHeight;
+        }
+      });
+    }
+  }
+
   let isAppInitialized = false;
 
   function initDispensaryApp() {
@@ -2753,6 +3088,7 @@
     setupKioskMode();
     setupKioskModalListeners();
     setupClubSettings();
+    setupMariaSommelier();
     setupI18n();
     setupMainTabs();
     setupPosTerminal();
