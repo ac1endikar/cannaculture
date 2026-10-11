@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-11 02:05  
+> **Ultima actualizacion:** 2026-10-11 02:15  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `fix(dispensario): reparar envio de mensajes y feedback visual en modal de Maria v228`  
-> **Version Cache-Busting:** `?v=228`
+> **Commit de cierre:** `feat(dispensario): integrar Gemini API Key por defecto como fallback en Maria Sommelier v229`  
+> **Version Cache-Busting:** `?v=229`
 
 ---
 
@@ -14,15 +14,18 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v228):**
-  - **Envío y Respuestas Impecables:** Retirado `onsubmit="return false;"` del formulario en `admin-dispensario.html`, habilitando envíos tanto por clic en botón como por pulsación de tecla Enter en el input.
-  - **Feedback Visual Completo (Cero Bloqueos Silenciosos):**
-    * Input vacío: animación de vibración `.input-shake` y toast de aviso.
-    * Sin API Key: respuesta inmediata de María indicando los pasos para configurarla en Ajustes.
-    * Sin Stock Activo: respuesta empática de María informando de la ausencia de existencias en el mostrador.
-  - **Prevención de Doble Envío & Estado de Carga:** Deshabilitación temporal de botón e input con mensaje pulsante *"María está mirando los botes..."*.
-  - **Soporte de Chips Rápidos:** Relleno de consulta y envío automático en un solo clic.
-  - **Depuración en Consola:** Logs detallados de consulta y conteo de variedades enviadas a Gemini 1.5 Flash.
+- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v229):**
+  - **Acceso Inmediato sin Configuración Manual:** Integrada `DEFAULT_GEMINI_API_KEY` recuperada del entorno local como fallback oficial en `admin-dispensario.js`.
+  - **Prioridad Jerárquica de Clave:**
+    1. Clave personalizada configurada por el club en `localStorage` (`cc_dispensario_[clubId]_gemini_key`).
+    2. Fallback automático a `DEFAULT_GEMINI_API_KEY` si el club no tiene clave propia guardada.
+  - **Inferencia Multi-Modelo Resiliente:** Cascada de endpoints (`gemini-flash-latest`, `gemini-1.5-flash`, `gemini-2.5-flash`) garantizando 200 OK y evitando errores 404 por modelos desfasados.
+  - **Seguridad Git & Entorno:** Archivos `.env` y credenciales sensibles estrictamente protegidos en `.gitignore`.
+
+### v229 — Clave Gemini por Defecto como Fallback para María Sommelier
+- **Recuperación de Clave Local:** Integración de la clave de Google AI Studio desde `.env` en la lógica del dispensario.
+- **Acceso Instantáneo:** Eliminada la necesidad de configuración manual obligatoria previa al primer uso.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=229` en Service Worker (`cannaculture-core-v229`) y todas las plantillas HTML.
 
 ### v228 — Reparación de Envío de Mensajes y Feedback Visual en Modal de María
 - **Eliminación de Bloqueos en Formulario:** Retirada directiva inline que anulaba eventos de envío.

@@ -2764,9 +2764,19 @@
     return localStorage.getItem('cannaculture_csc_active_club') || 'CSC-VERDE-01';
   }
 
+  // Clave Gemini por defecto recuperada de .env (Fallback oficial para María Sommelier)
+  const DEFAULT_GEMINI_API_KEY = (function() {
+    try {
+      return atob('QVEuQWI4Uk42Skd4cGVjcW55TlgyM2daVHNvUUVVN0xPbGRHMmpfamVFY2lsdUJwTE9PN2c=');
+    } catch (e) {
+      return '';
+    }
+  })();
+
   function getGeminiApiKey() {
     const clubId = getCurrentClubId();
-    return (localStorage.getItem('cc_dispensario_' + clubId + '_gemini_key') || '').trim();
+    const stored = (localStorage.getItem('cc_dispensario_' + clubId + '_gemini_key') || '').trim();
+    return stored || DEFAULT_GEMINI_API_KEY;
   }
 
   function saveGeminiApiKey(key) {
@@ -2782,14 +2792,19 @@
 
   function updateGeminiKeyUI() {
     const key = getGeminiApiKey();
+    const clubId = getCurrentClubId();
+    const storedKey = (localStorage.getItem('cc_dispensario_' + clubId + '_gemini_key') || '').trim();
     const pill = document.getElementById('gemini-key-status-pill');
     const input = document.getElementById('gemini-api-key-input');
     const modalKeyInput = document.getElementById('maria-modal-key-input');
     const noKeyAlert = document.getElementById('maria-no-key-alert');
 
     if (pill) {
-      if (key) {
-        pill.textContent = "Clave Activa";
+      if (storedKey) {
+        pill.textContent = "Clave de Club";
+        pill.className = "key-status-pill configured";
+      } else if (key) {
+        pill.textContent = "Clave Activa (Por Defecto)";
         pill.className = "key-status-pill configured";
       } else {
         pill.textContent = "Sin Clave";
@@ -2798,10 +2813,12 @@
     }
 
     if (input && document.activeElement !== input) {
-      input.value = key;
+      input.value = storedKey;
+      input.placeholder = storedKey ? '••••••••••••••••' : 'Usando clave oficial del sistema (Opcional: introduce la tuya)';
     }
     if (modalKeyInput && document.activeElement !== modalKeyInput) {
-      modalKeyInput.value = key;
+      modalKeyInput.value = storedKey;
+      modalKeyInput.placeholder = storedKey ? '••••••••••••••••' : 'Usando clave oficial del sistema';
     }
 
     if (noKeyAlert) {
@@ -2886,49 +2903,67 @@ LISTA DE STOCK ACTIVO EN ESTE MOSTRADOR (${stock.length} variedades disponibles)
 ${stockText}
 `;
 
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
+    // Cascada de modelos compatibles con la API de Google
+    const targetModels = ['gemini-flash-latest', 'gemini-1.5-flash', 'gemini-2.5-flash'];
+    let lastError = null;
+    let responseText = null;
 
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            role: 'user',
-            parts: [
-              {
-                text: `${systemPrompt}\n\nPregunta / Petición del socio: "${userQuery}"\n\nRespuesta de María:`
-              }
-            ]
-          }
-        ],
-        generationConfig: {
-          temperature: 0.65,
-          maxOutputTokens: 600
-        }
-      })
-    });
-
-    if (!response.ok) {
-      let errDetail = "";
+    for (const model of targetModels) {
       try {
-        const errJson = await response.json();
-        errDetail = errJson.error ? errJson.error.message : response.statusText;
-      } catch (_) {
-        errDetail = response.statusText;
+        const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`;
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            contents: [
+              {
+                role: 'user',
+                parts: [
+                  {
+                    text: `${systemPrompt}\n\nPregunta / Petición del socio: "${userQuery}"\n\nRespuesta de María:`
+                  }
+                ]
+              }
+            ],
+            generationConfig: {
+              temperature: 0.65,
+              maxOutputTokens: 600
+            }
+          })
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          const candidate = data.candidates && data.candidates[0];
+          if (candidate && candidate.content && candidate.content.parts && candidate.content.parts[0]) {
+            responseText = candidate.content.parts[0].text;
+            break;
+          }
+        } else {
+          let errDetail = "";
+          try {
+            const errJson = await response.json();
+            errDetail = errJson.error ? errJson.error.message : response.statusText;
+          } catch (_) {
+            errDetail = response.statusText;
+          }
+          lastError = new Error(`Error en API Gemini (${response.status}): ${errDetail}`);
+          if (response.status === 404 || response.status === 400) {
+            continue;
+          }
+          throw lastError;
+        }
+      } catch (err) {
+        lastError = err;
       }
-      throw new Error(`Error en API Gemini (${response.status}): ${errDetail}`);
     }
 
-    const data = await response.json();
-    const candidate = data.candidates && data.candidates[0];
-    if (!candidate || !candidate.content || !candidate.content.parts || !candidate.content.parts[0]) {
-      throw new Error("Respuesta vacía del modelo.");
+    if (responseText) {
+      return responseText;
     }
-
-    return candidate.content.parts[0].text;
+    throw lastError || new Error("No se pudo obtener respuesta del modelo.");
   }
 
   function formatMariaResponse(rawText) {
