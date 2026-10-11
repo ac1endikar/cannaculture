@@ -2828,44 +2828,153 @@
 
   function getStockActivoParaMaria() {
     const clubId = getCurrentClubId();
-    // 1. Comprobar si existe estructura específica del club
-    const rawStock = localStorage.getItem('cc_dispensario_' + clubId + '_stock');
-    if (rawStock) {
+    let rawItems = [];
+
+    // 1. Prioridad: state.menu activo en la sesión actual
+    if (state && Array.isArray(state.menu) && state.menu.length > 0) {
+      rawItems = state.menu;
+    }
+
+    // 2. Fallback: LocalStorage general del menú CSC (cannaculture_csc_menu)
+    if (!rawItems || rawItems.length === 0) {
       try {
-        const parsed = JSON.parse(rawStock);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          const filtered = parsed
-            .filter(item => Number(item.gramos || item.stockGrams || 0) > 0)
-            .map(item => ({
-              nombre: item.nombre || item.name || item.id,
-              tipo: item.tipo || item.species || "Híbrida",
-              terpenos: item.terpenos || [],
-              thc: item.thc ? (String(item.thc).includes('%') ? item.thc : `${item.thc}%`) : "N/D",
-              gramos_disponibles: Number(item.gramos || item.stockGrams || 0),
-              precio_g: Number(item.aportacionGramos || item.precio || item.tierStd || 0),
-              aroma: item.aroma || item.lotNotes || ""
-            }));
-          if (filtered.length > 0) return filtered;
+        const storedMenu = localStorage.getItem(STORAGE_KEY);
+        if (storedMenu) {
+          const parsed = JSON.parse(storedMenu);
+          if (Array.isArray(parsed) && parsed.length > 0) rawItems = parsed;
         }
       } catch (_) {}
     }
 
-    // 2. Fallback al estado del menú activo en mostrador
-    return (state.menu || [])
-      .filter(item => item.available && Number(item.stockGrams) > 0)
-      .map(item => {
-        const details = getStrainData(item.id) || {};
-        const terpNames = details.terpenes ? Object.keys(details.terpenes) : (details.dominantTerpene ? [details.dominantTerpene] : []);
-        return {
-          nombre: details.name || item.id.replace(/-/g, ' ').toUpperCase(),
-          tipo: details.species || "Híbrida",
-          terpenos: terpNames,
-          thc: details.thc ? `${details.thc}%` : "N/D",
-          gramos_disponibles: Number(item.stockGrams),
-          precio_g: Number(item.tierStd || 0),
-          aroma: details.aroma || item.lotNotes || ""
-        };
-      });
+    // 3. Fallback: Almacenamiento específico del club
+    if (!rawItems || rawItems.length === 0) {
+      try {
+        const clubStock = localStorage.getItem('cc_dispensario_' + clubId + '_stock');
+        if (clubStock) {
+          const parsed = JSON.parse(clubStock);
+          if (Array.isArray(parsed) && parsed.length > 0) rawItems = parsed;
+        }
+      } catch (_) {}
+    }
+
+    // 4. Fallback: state.stock si existiese
+    if ((!rawItems || rawItems.length === 0) && state && Array.isArray(state.stock) && state.stock.length > 0) {
+      rawItems = state.stock;
+    }
+
+    // Helper interno para cruzar datos maestros de la cepa
+    const resolveDetails = (item) => {
+      const id = item.id || item.strainId || '';
+      let s = (typeof getStrainData === 'function' ? getStrainData(id) : null);
+      if (!s && state && Array.isArray(state.strainsDb) && state.strainsDb.length > 0) {
+        s = state.strainsDb.find(x => x.id === id);
+      }
+      if (!s && window.STRAINS_DATABASE && Array.isArray(window.STRAINS_DATABASE)) {
+        s = window.STRAINS_DATABASE.find(x => x.id === id);
+      }
+      return s || {};
+    };
+
+    let stockActivo = [];
+
+    // Procesar elementos encontrados
+    if (Array.isArray(rawItems) && rawItems.length > 0) {
+      stockActivo = rawItems
+        .filter(item => {
+          const isAvail = (item.available !== false);
+          const grams = Number(item.stockGrams ?? item.gramos ?? item.stock ?? 0);
+          return isAvail && grams > 0;
+        })
+        .map(item => {
+          const details = resolveDetails(item);
+          const grams = Number(item.stockGrams ?? item.gramos ?? item.stock ?? 0);
+          const price = Number(item.tierStd ?? item.precio ?? item.aportacionGramos ?? 0);
+
+          let terps = [];
+          if (Array.isArray(details.terpenes)) {
+            terps = details.terpenes;
+          } else if (details.terpenes && typeof details.terpenes === 'object') {
+            terps = Object.keys(details.terpenes).map(k => {
+              const info = (window.TERPENES_INFO && window.TERPENES_INFO[k]) ? window.TERPENES_INFO[k].name : k;
+              return info || k;
+            });
+          } else if (details.dominantTerpene) {
+            terps = [details.dominantTerpene];
+          } else if (Array.isArray(item.terpenos)) {
+            terps = item.terpenos;
+          }
+
+          const effectsList = Array.isArray(details.effects) 
+            ? details.effects.join(', ') 
+            : (details.effects || item.efectos || 'Equilibrado');
+
+          const aromaProfile = details.aroma || 
+            (Array.isArray(details.flavors) ? details.flavors.join(', ') : '') || 
+            item.lotNotes || item.aroma || 'Aroma característico de la variedad';
+
+          return {
+            id: item.id || details.id || 'cepa',
+            nombre: details.name || item.nombre || item.name || (item.id ? item.id.replace(/-/g, ' ').toUpperCase() : 'Variedad Especial'),
+            banco: details.bank || item.bank || item.banco || "CannaCulture",
+            tipo: details.species || item.tipo || item.species || "Híbrida",
+            thc: details.thc ? (String(details.thc).includes('%') ? details.thc : `${details.thc}%`) : (item.thc || "N/D"),
+            gramos_en_bote: grams,
+            cuota_socio: price > 0 ? `${price.toFixed(2)} €/g` : "A consultar",
+            terpenos_principales: terps.length > 0 ? terps.join(', ') : 'Perfil completo de terpenos',
+            aroma_y_sabor: aromaProfile,
+            efectos: effectsList,
+            notas_lote: item.lotNotes || item.notas || ""
+          };
+        });
+    }
+
+    // 5. Fallback inmediato al DOM si el array resultante está vacío
+    if (!stockActivo || stockActivo.length === 0) {
+      try {
+        const domCards = document.querySelectorAll('#strains-menu-grid .strain-menu-card:not(.out-of-stock)');
+        if (domCards && domCards.length > 0) {
+          stockActivo = Array.from(domCards).map(card => {
+            const sid = card.getAttribute('data-strain-id') || card.dataset.strainId || '';
+            const details = resolveDetails({ id: sid });
+            const titleEl = card.querySelector('.card-headline h3') || card.querySelector('h3');
+            const bankEl = card.querySelector('.card-bank');
+            const speciesEl = card.querySelector('.species-chip');
+            const tierEl = card.querySelector('.tier-std .tier-mini-val');
+            const noteEl = card.querySelector('.card-lot-note');
+
+            const matchedItem = (state && Array.isArray(state.menu)) ? state.menu.find(m => m.id === sid) : null;
+            const grams = matchedItem ? Number(matchedItem.stockGrams || 0) : 50;
+
+            let terps = [];
+            if (Array.isArray(details.terpenes)) {
+              terps = details.terpenes;
+            } else if (details.terpenes && typeof details.terpenes === 'object') {
+              terps = Object.keys(details.terpenes);
+            } else if (details.dominantTerpene) {
+              terps = [details.dominantTerpene];
+            }
+
+            return {
+              id: sid,
+              nombre: (titleEl ? titleEl.textContent.trim() : '') || details.name || sid,
+              banco: (bankEl ? bankEl.textContent.replace('🏛️', '').trim() : '') || details.bank || "CannaCulture",
+              tipo: (speciesEl ? speciesEl.textContent.trim() : '') || details.species || "Híbrida",
+              thc: details.thc ? `${details.thc}%` : "N/D",
+              gramos_en_bote: grams > 0 ? grams : 50,
+              cuota_socio: (tierEl ? tierEl.textContent.trim() : '') || "8.50 €/g",
+              terpenos_principales: terps.length > 0 ? terps.join(', ') : 'Terpenos naturales',
+              aroma_y_sabor: details.aroma || (noteEl ? noteEl.textContent.replace('📋', '').trim() : '') || 'Aroma agradable',
+              efectos: Array.isArray(details.effects) ? details.effects.join(', ') : 'Equilibrado',
+              notas_lote: (noteEl ? noteEl.textContent.replace('📋', '').trim() : '') || ''
+            };
+          }).filter(item => item.gramos_en_bote > 0);
+        }
+      } catch (errDom) {
+        console.warn("[María] Fallback DOM:", errDom);
+      }
+    }
+
+    return stockActivo;
   }
 
   async function callGeminiSommelier(userQuery) {
@@ -2874,34 +2983,30 @@
       throw new Error("Falta la API Key de Google Gemini. Configúrala para continuar.");
     }
 
-    const stock = getStockActivoParaMaria();
-    if (!stock || stock.length === 0) {
-      return "No veo variedades con stock activo en el mostrador ahora mismo. Añade algo de stock a los botes para que pueda recomendarte.";
+    const stockActivo = getStockActivoParaMaria();
+    console.log("🔥 [MARÍA CONTEXTO] Variedades reales pasadas a la IA:", stockActivo);
+
+    if (!stockActivo || stockActivo.length === 0) {
+      return "Oye, he mirado los botes y ahora mismo tenemos el mostrador vacío sin stock registrado. ¡Dile al encargado que añada gramos a la carta para que pueda recomendarte algo rico!";
     }
 
-    const stockText = stock.map((s, idx) => {
-      const terps = s.terpenos && s.terpenos.length ? s.terpenos.join(', ') : 'terpenos variados';
-      return `${idx + 1}. **${s.nombre}** (${s.tipo}) | THC: ${s.thc} | Gramos en bote: ${s.gramos_disponibles}g | Aportación: ${s.precio_g} €/g | Perfil: ${terps} ${s.aroma ? '| Notas: ' + s.aroma : ''}`;
-    }).join('\n');
+    const systemPrompt = `Eres María, la dependienta y colega del mostrador de CannaCulture. Estás físicamente en el dispensario atendiendo a un socio del club.
 
-    const systemPrompt = `Eres María, sommelier de mostrador y colega experta de este Club Social de Cannabis (CSC).
-Tu objetivo es recomendarle al socio la mejor variedad para lo que busca hoy.
+TU REALIDAD EN EL MOSTRADOR:
+- Tienes delante de ti ÚNICAMENTE las variedades listadas en "BOTES_EN_MOSTRADOR". No tienes acceso a ninguna otra hierba en el mundo.
+- Si una variedad no está en esa lista exacta, PARA TI NO EXISTE. No la menciones jamás.
+- Si el socio te pide algo que no tienes (ej. "quiero Amnesia" y solo tienes Mimosa y Cream 47), dile con total naturalidad: "De esa no nos queda nada en los botes ahora mismo, pero si buscas ese rollo te recomiendo..."
 
-REGLA DE ORO / GROUNDING ESTRICTO:
-- ÚNICAMENTE puedes recomendar variedades que estén en la siguiente lista de STOCK ACTIVO EN BARRA.
-- Todas tienen gramos disponibles > 0.
-- NUNCA inventes variedades, ni nombres cepas que no estén en esta lista exacta.
-- Si el socio pide algo que no tenemos, dile con total confianza: "Oye, de eso ahora mismo no nos queda en barra, pero de lo que tenemos en el bote te recomiendo..." y dale la alternativa más cercana de la lista.
+CÓMO HABLAS:
+- Hablas como una chica joven, maja y enrollada que trabaja en un club social: cercana, con chispa, empática ("¡Buenas!", "Mira, para lo que me pides vete directo a...", "Esa entra finísima", "Huele que flipas").
+- NUNCA des parrafadas teóricas ni hables como una enciclopedia. Sé directa.
+- Recomienda 1 o máximo 2 opciones de los botes disponibles, explicando en palabras de calle por qué le va a gustar y cuántos gramos te quedan en el bote para que se decida.`;
 
-PERSONALIDAD:
-- Habla como una colega de barra de confianza: relajada, cercana, natural, empática y conocedora.
-- Cero tecnicismos densos, lenguaje académico o formalismos fríos.
-- Explica de forma sensorial por qué se la recomiendas: sensación que da (si es para peli, risas, charlar, crear, dormir), a qué huele y sabe (notas de terpenos como cítrico, terroso, pino, diésel, dulce), cuántos gramos nos quedan y su cuota (€/g).
-- Sé concisa: recomienda 1 o máximo 2 variedades ideales, justificando la elección en 2 o 3 párrafos cortos.
+    const userPayloadText = `BOTES_EN_MOSTRADOR (Stock real disponible ahora mismo):
+${JSON.stringify(stockActivo, null, 2)}
 
-LISTA DE STOCK ACTIVO EN ESTE MOSTRADOR (${stock.length} variedades disponibles):
-${stockText}
-`;
+SOCIO EN MOSTRADOR TE DICE:
+"${userQuery}"`;
 
     // Cascada de modelos compatibles con la API de Google
     const targetModels = ['gemini-flash-latest', 'gemini-1.5-flash', 'gemini-2.5-flash'];
@@ -2911,27 +3016,30 @@ ${stockText}
     for (const model of targetModels) {
       try {
         const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`;
+        
+        // Formato estructurado con systemInstruction nativo
+        const requestBody = {
+          systemInstruction: {
+            parts: [{ text: systemPrompt }]
+          },
+          contents: [
+            {
+              role: 'user',
+              parts: [{ text: userPayloadText }]
+            }
+          ],
+          generationConfig: {
+            temperature: 0.7,
+            maxOutputTokens: 600
+          }
+        };
+
         const response = await fetch(endpoint, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({
-            contents: [
-              {
-                role: 'user',
-                parts: [
-                  {
-                    text: `${systemPrompt}\n\nPregunta / Petición del socio: "${userQuery}"\n\nRespuesta de María:`
-                  }
-                ]
-              }
-            ],
-            generationConfig: {
-              temperature: 0.65,
-              maxOutputTokens: 600
-            }
-          })
+          body: JSON.stringify(requestBody)
         });
 
         if (response.ok) {
@@ -2950,7 +3058,36 @@ ${stockText}
             errDetail = response.statusText;
           }
           lastError = new Error(`Error en API Gemini (${response.status}): ${errDetail}`);
+
+          // En caso de fallo o modelo legacy que no acepte systemInstruction, probar combinado en contents
           if (response.status === 404 || response.status === 400) {
+            try {
+              const combinedBody = {
+                contents: [
+                  {
+                    role: 'user',
+                    parts: [{ text: `${systemPrompt}\n\n${userPayloadText}` }]
+                  }
+                ],
+                generationConfig: {
+                  temperature: 0.7,
+                  maxOutputTokens: 600
+                }
+              };
+              const resFb = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(combinedBody)
+              });
+              if (resFb.ok) {
+                const dataFb = await resFb.json();
+                const candFb = dataFb.candidates && dataFb.candidates[0];
+                if (candFb && candFb.content && candFb.content.parts && candFb.content.parts[0]) {
+                  responseText = candFb.content.parts[0].text;
+                  break;
+                }
+              }
+            } catch (_) {}
             continue;
           }
           throw lastError;
@@ -3097,14 +3234,14 @@ ${stockText}
 
     // 4. Comprobación de stock activo (> 0g)
     const stockActivo = getStockActivoParaMaria();
-    console.log("[María] Stock activo enviado a la IA:", stockActivo.length, "variedades");
+    console.log("🔥 [MARÍA CONTEXTO] Variedades reales pasadas a la IA:", stockActivo);
 
     if (!stockActivo || stockActivo.length === 0) {
       if (responseContainer) {
         const noStockBubble = document.createElement('div');
         noStockBubble.className = 'maria-bubble-assistant';
         noStockBubble.innerHTML = `
-          <p>No veo variedades con stock activo en el mostrador ahora mismo. Añade algo de stock a los botes para que pueda recomendarte.</p>
+          <p>Oye, he mirado los botes y ahora mismo tenemos el mostrador vacío sin stock registrado. ¡Dile al encargado que añada gramos a la carta para que pueda recomendarte algo rico!</p>
         `;
         responseContainer.appendChild(noStockBubble);
         responseContainer.scrollTop = responseContainer.scrollHeight;

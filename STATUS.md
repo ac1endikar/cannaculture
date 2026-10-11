@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-11 02:15  
+> **Ultima actualizacion:** 2026-10-11 02:30  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(dispensario): integrar Gemini API Key por defecto como fallback en Maria Sommelier v229`  
-> **Version Cache-Busting:** `?v=229`
+> **Commit de cierre:** `fix(dispensario): grounding estricto de stock real y personalidad realista para Maria v230`  
+> **Version Cache-Busting:** `?v=230`
 
 ---
 
@@ -14,13 +14,17 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v229):**
-  - **Acceso Inmediato sin Configuración Manual:** Integrada `DEFAULT_GEMINI_API_KEY` recuperada del entorno local como fallback oficial en `admin-dispensario.js`.
-  - **Prioridad Jerárquica de Clave:**
-    1. Clave personalizada configurada por el club en `localStorage` (`cc_dispensario_[clubId]_gemini_key`).
-    2. Fallback automático a `DEFAULT_GEMINI_API_KEY` si el club no tiene clave propia guardada.
-  - **Inferencia Multi-Modelo Resiliente:** Cascada de endpoints (`gemini-flash-latest`, `gemini-1.5-flash`, `gemini-2.5-flash`) garantizando 200 OK y evitando errores 404 por modelos desfasados.
-  - **Seguridad Git & Entorno:** Archivos `.env` y credenciales sensibles estrictamente protegidos en `.gitignore`.
+- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v230):**
+  - **Extracción de Stock Real en Tiempo Real:** Fuente de datos auditada para leer `state.menu`, `cannaculture_csc_menu` en `localStorage`, stock por club, y fallback directo a tarjetas activas renderizadas en el DOM.
+  - **Grounding Estricto:** Inyección de `BOTES_EN_MOSTRADOR` en el payload; María solo conoce y recomienda las variedades físicas presentes en el mostrador con gramos > 0.
+  - **Personalidad Hiperrealista de Dependienta CSC:** Lenguaje cercano, de calle, con chispa y empatía ("¡Buenas!", "Esa entra finísima", "Huele que flipas", "De esa no nos queda en los botes ahora mismo...").
+  - **Logging y Manejo de Stock Vacío:** `console.log("🔥 [MARÍA CONTEXTO] Variedades reales pasadas a la IA:", stockActivo)` y respuesta humana inmediata si los botes están vacíos.
+
+### v230 — Grounding Estricto de Stock Real y Personalidad Realista para María Sommelier
+- **Auditoría del Extractor de Stock:** Lectura reactiva de `state.menu`, almacenamiento local y scraping asistido del DOM en mostrador.
+- **Prompt del Sistema Reescrito:** Definición hiperrealista de dependienta física tras el mostrador del dispensario CSC.
+- **Inyección Estructurada de Botes:** Formateo JSON de `BOTES_EN_MOSTRADOR` en la llamada a Gemini (con soporte tanto nativo de `systemInstruction` como payload directo).
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=230` en Service Worker (`cannaculture-core-v230`) y todas las plantillas HTML.
 
 ### v229 — Clave Gemini por Defecto como Fallback para María Sommelier
 - **Recuperación de Clave Local:** Integración de la clave de Google AI Studio desde `.env` en la lógica del dispensario.
