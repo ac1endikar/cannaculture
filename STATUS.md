@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-11 00:50  
+> **Ultima actualizacion:** 2026-10-11 01:05  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(catalog): 5 nuevos bancos criadores icónicos y 12 variedades legendarias - 900 cepas v223`  
-> **Version Cache-Busting:** `?v=223`
+> **Commit de cierre:** `fix(catalog): asignar imagen exclusiva para Gypsy Widow v224`  
+> **Version Cache-Busting:** `?v=224`
 
 ---
 
@@ -14,15 +14,15 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **INCORPORACIÓN DE 5 NUEVOS BANCOS CRIADORES Y 12 VARIEDADES (v223):**
-  - **TGA Subcool Seeds (USA):** *Jack the Ripper* (`tga-jack-the-ripper`), *Vortex* (`tga-vortex`).
-  - **Sagarmatha Seeds (Holanda):** *Yumboldt* (`sagarmatha-yumboldt`), *Slyder* (`sagarmatha-slyder`).
-  - **Chimera Seeds (Canadá):** *Fighting Buddha* (`chimera-fighting-buddha`), *Frost Bite* (`chimera-frost-bite`).
-  - **Aficionado French Connection (USA/Francia):** *Pianono* (`afc-pianono`), *Rosso Corsa* (`afc-rosso-corsa`).
-  - **Exotic Seed (España/Holanda):** *Spicy Bitch* (`exotic-spicy-bitch`), *Malasaña Gelato* (`exotic-malasana-gelato`), *Gypsy Widow* (`exotic-gypsy-widow`), *Herz OG* (`exotic-herz-og`).
-  - **Imágenes Asignadas:** 12 imágenes WebP de flores de cannabis auténticas y optimizadas en `img/` vinculadas a cada ficha botánica.
-  - **Compilación de Bundles:** Regenerados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`.
-  - **Inventarios y Reportes:** Actualizados `docs/inventory_banks_strains.json` y `docs/strains_inventory.txt`.
+- **ACTUALIZACIÓN VISUAL EXCLUSIVA (v224):**
+  - **Gypsy Widow (`exotic-gypsy-widow`, Exotic Seed):** Incorporada fotografía botánica macro de alta resolución exclusiva en `img/exotic-gypsy-widow.webp` (plano detalle de cogollo densamente escarchado en manto de tricomas plateado, sostenido con guante de nitrilo sobre fondo de sala de floración interior), eliminando toda redundancia visual con White Widow.
+  - **Compilación de Bundles:** Sincronizados `js/bundle.js`, `js/bundle-v151.js` y `js/strains-data.js`.
+  - **Auditoría e Inventarios:** Validados con `scripts/audit_database_inventory.py`.
+  - **Cache-Busting Sincronizado:** Subida general a `?v=224` en `sw.js` (`cannaculture-core-v224`) y plantillas HTML para actualización forzada en navegadores.
+
+### v224 — Fotografía Macro Exclusiva para Gypsy Widow (Exotic Seed)
+- **Activo Visual Independiente:** Creación y despliegue de `img/exotic-gypsy-widow.webp` de alta fidelidad botánica, mostrando cálices resinosos y tricomas plateados.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=224` en Service Worker (`cannaculture-core-v224`) y plantillas HTML.
 
 ### v223 — Hito Histórico: 900 Cepas Botánicas y 80 Bancos Criadores Oficiales
 - **Cifra Redonda de Élite:** El catálogo alcanza las 900 genéticas botánicas estrictamente fotoperiódicas con rigor taxonómico y 0 autoflorecientes comerciales.

@@ -1,29 +1,29 @@
 /**
- * CannaCulture Service Worker (v223)
+ * CannaCulture Service Worker (v224)
  * Progressive Web App con soporte offline multinivel, estrategia LRU para imágenes
  * y bypass defensivo para Firebase & Firestore.
  */
 
-const CACHE_CORE = 'cannaculture-core-v223';
-const CACHE_IMAGES = 'cannaculture-images-v223';
-const CACHE_PAGES = 'cannaculture-pages-v223';
+const CACHE_CORE = 'cannaculture-core-v224';
+const CACHE_IMAGES = 'cannaculture-images-v224';
+const CACHE_PAGES = 'cannaculture-pages-v224';
 const MAX_CACHED_IMAGES = 120;
 
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/offline.html',
-  '/css/age-gate.css?v=223',
-  '/js/age-gate.js?v=223',
-  '/css/styles.css?v=223',
-  '/js/bundle.js?v=223',
+  '/css/age-gate.css?v=224',
+  '/js/age-gate.js?v=224',
+  '/css/styles.css?v=224',
+  '/js/bundle.js?v=224',
   '/guia-cultivo.html',
-  '/css/guia-cultivo.css?v=223',
-  '/js/guia-cultivo.js?v=223',
+  '/css/guia-cultivo.css?v=224',
+  '/js/guia-cultivo.js?v=224',
   '/admin-dispensario.html',
-  '/css/admin-dispensario.css?v=223',
-  '/js/admin-dispensario.js?v=223',
-  '/js/strains-data.js?v=223',
+  '/css/admin-dispensario.css?v=224',
+  '/js/admin-dispensario.js?v=224',
+  '/js/strains-data.js?v=224',
   '/manifest.webmanifest',
   '/assets/icons/icon-192x192.png',
   '/assets/icons/icon-512x512.png',
