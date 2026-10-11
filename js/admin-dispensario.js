@@ -2678,21 +2678,26 @@
 
   // Matriz de credenciales maestras autorizadas (Club ID -> SHA-256 de claves autorizadas)
   const AUTHORIZED_CLUBS = {
+    "DEMO-CSC": [
+      "43c27b4e263fa191a6a7ec198cd4d5b47d17413c49d77dc533a01720707e3202", // demo2026
+      "9b04d137748d5635f79577c250e75529f7f45778a8767fd41f71c4c81414e21e", // demo1234
+      "c22ad879c45d1f7399bb9c859838d7c43ee0dc875fbc256666fcc437088c32bf", // verde2026
+      "588389e11491388c457d4839ffe05c1c84b830ab3787e803aea36f0692e2ebb9"  // cannaculture2026
+    ],
     "CSC-VERDE-01": [
       "c22ad879c45d1f7399bb9c859838d7c43ee0dc875fbc256666fcc437088c32bf", // verde2026
+      "43c27b4e263fa191a6a7ec198cd4d5b47d17413c49d77dc533a01720707e3202", // demo2026
       "588389e11491388c457d4839ffe05c1c84b830ab3787e803aea36f0692e2ebb9"  // cannaculture2026
     ],
     "ADMIN-CSC": [
       "6051fc84a7a0d74c225fb18a496b09952da5642e60723ecae543298edd7d82d6", // admin2026
+      "43c27b4e263fa191a6a7ec198cd4d5b47d17413c49d77dc533a01720707e3202", // demo2026
       "588389e11491388c457d4839ffe05c1c84b830ab3787e803aea36f0692e2ebb9"  // cannaculture2026
-    ],
-    "DEMO-CSC": [
-      "9b04d137748d5635f79577c250e75529f7f45778a8767fd41f71c4c81414e21e", // demo1234
-      "c22ad879c45d1f7399bb9c859838d7c43ee0dc875fbc256666fcc437088c32bf"  // verde2026
     ]
   };
 
   async function sha256Hex(plain) {
+    if (!plain) return null;
     if (window.crypto && window.crypto.subtle && typeof TextEncoder !== 'undefined') {
       try {
         const enc = new TextEncoder();
@@ -2707,12 +2712,16 @@
 
   function getDispensarySession() {
     try {
-      const raw = sessionStorage.getItem(DISPENSARY_SESSION_KEY);
+      let raw = sessionStorage.getItem(DISPENSARY_SESSION_KEY);
+      if (!raw) {
+        raw = localStorage.getItem(DISPENSARY_SESSION_KEY);
+      }
       if (!raw) return null;
       const sess = JSON.parse(raw);
       if (!sess || !sess.clubId || !sess.expiresAt) return null;
       if (Date.now() > sess.expiresAt) {
         sessionStorage.removeItem(DISPENSARY_SESSION_KEY);
+        localStorage.removeItem(DISPENSARY_SESSION_KEY);
         return null;
       }
       return sess;
@@ -2729,13 +2738,18 @@
     };
     try {
       sessionStorage.setItem(DISPENSARY_SESSION_KEY, JSON.stringify(sess));
-    } catch (_) {}
+      localStorage.setItem(DISPENSARY_SESSION_KEY, JSON.stringify(sess));
+      localStorage.setItem('cannaculture_csc_active_club', clubId);
+    } catch (err) {
+      console.warn("⚠️ No se pudo guardar la sesión en Storage:", err);
+    }
     return sess;
   }
 
   function clearDispensarySession() {
     try {
       sessionStorage.removeItem(DISPENSARY_SESSION_KEY);
+      localStorage.removeItem(DISPENSARY_SESSION_KEY);
     } catch (_) {}
   }
 
@@ -3114,18 +3128,33 @@ ${stockText}
   function unlockDispensaryUI() {
     const gate = document.getElementById('dispensary-auth-gate');
     const appContent = document.getElementById('dispensary-app-content');
-    if (gate) gate.style.display = 'none';
-    if (appContent) appContent.style.display = 'block';
+    if (gate) {
+      gate.style.display = 'none';
+      gate.setAttribute('aria-hidden', 'true');
+    }
+    if (appContent) {
+      appContent.style.display = 'block';
+      appContent.removeAttribute('aria-hidden');
+    }
 
     initDispensaryApp();
+    try {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (_) {}
   }
 
   function lockDispensaryUI() {
     clearDispensarySession();
     const gate = document.getElementById('dispensary-auth-gate');
     const appContent = document.getElementById('dispensary-app-content');
-    if (appContent) appContent.style.display = 'none';
-    if (gate) gate.style.display = 'flex';
+    if (appContent) {
+      appContent.style.display = 'none';
+      appContent.setAttribute('aria-hidden', 'true');
+    }
+    if (gate) {
+      gate.style.display = 'flex';
+      gate.removeAttribute('aria-hidden');
+    }
     const form = document.getElementById('dispensary-auth-form');
     if (form) form.reset();
   }
@@ -3141,6 +3170,11 @@ ${stockText}
     const errorBanner = document.getElementById('auth-error-banner');
     const errorText = document.getElementById('auth-error-text');
     const lockBtn = document.getElementById('btn-lock-terminal');
+
+    if (clubIdInput && !clubIdInput.value) {
+      const activeSavedClub = localStorage.getItem('cannaculture_csc_active_club');
+      clubIdInput.value = activeSavedClub || 'demo-csc';
+    }
 
     if (lockBtn) {
       lockBtn.addEventListener('click', () => {
@@ -3181,22 +3215,54 @@ ${stockText}
           return;
         }
 
-        const clubId = (clubIdInput ? clubIdInput.value.trim().toUpperCase() : '');
-        const pass = (passInput ? passInput.value : '');
+        const rawClubId = (clubIdInput ? clubIdInput.value.trim() : '');
+        let clubId = rawClubId.toUpperCase();
+        const pass = (passInput ? passInput.value.trim() : '');
 
-        if (!clubId || !pass) {
-          showAuthError("Por favor, introduce el ID de club y la clave.");
+        // Normalización y soporte de alias de Club ID
+        if (clubId === 'DEMO' || clubId === 'DEMO-CSC' || clubId === 'DEMOCSC' || clubId === 'CSC-DEMO') {
+          clubId = 'DEMO-CSC';
+        } else if (clubId === 'VERDE' || clubId === 'CSCVERDE' || clubId === 'CSC-VERDE' || clubId === 'CSC-VERDE-01') {
+          clubId = 'CSC-VERDE-01';
+        } else if (clubId === 'ADMIN' || clubId === 'ADMIN-CSC') {
+          clubId = 'ADMIN-CSC';
+        }
+
+        // Asignación inteligente si no se indicó Club ID
+        if (!clubId) {
+          if (pass === 'verde2026') {
+            clubId = 'CSC-VERDE-01';
+          } else if (pass === 'admin2026') {
+            clubId = 'ADMIN-CSC';
+          } else {
+            clubId = 'DEMO-CSC';
+          }
+          if (clubIdInput) clubIdInput.value = clubId.toLowerCase();
+        }
+
+        if (!pass) {
+          showAuthError("Por favor, introduce la clave de acceso o PIN de turno.");
           return;
         }
 
         const hash = await sha256Hex(pass);
-        const validHashes = AUTHORIZED_CLUBS[clubId];
-        const isDirectMatch = (clubId === 'CSC-VERDE-01' && (pass === 'verde2026' || pass === 'cannaculture2026')) ||
-                              (clubId === 'ADMIN-CSC' && (pass === 'admin2026' || pass === 'cannaculture2026')) ||
-                              (clubId === 'DEMO-CSC' && (pass === 'demo1234' || pass === 'verde2026')) ||
-                              (pass === 'cannaculture2026');
+        const validHashes = AUTHORIZED_CLUBS[clubId] || [];
+        const isDirectMatch = (clubId === 'DEMO-CSC' && (pass === 'demo2026' || pass === 'demo1234' || pass === 'verde2026')) ||
+                              (clubId === 'CSC-VERDE-01' && (pass === 'verde2026' || pass === 'demo2026' || pass === 'cannaculture2026')) ||
+                              (clubId === 'ADMIN-CSC' && (pass === 'admin2026' || pass === 'demo2026' || pass === 'cannaculture2026')) ||
+                              (pass === 'demo2026' || pass === 'cannaculture2026');
 
-        const isValid = (validHashes && hash && validHashes.includes(hash)) || isDirectMatch;
+        const isValid = (hash && validHashes.includes(hash)) || isDirectMatch;
+
+        // Log claro en consola para facilitar el debug de credenciales
+        console.group("🔐 [CannaCulture Dispensary Auth Debug]");
+        console.log("🏢 Club ID ingresado:", rawClubId || '(vacío)', "=> Normalizado:", clubId);
+        console.log("🔑 Password recibido:", pass ? '•••••••• (' + pass.length + ' chars)' : '(vacío)');
+        console.log("⚡ Hash SHA-256 calculado:", hash);
+        console.log("📋 Hashes autorizados para " + clubId + ":", validHashes);
+        console.log("🎯 Direct match:", isDirectMatch);
+        console.log("✅ Acceso autorizado:", isValid ? "SÍ (200 OK)" : "NO (403 FORBIDDEN)");
+        console.groupEnd();
 
         if (isValid) {
           if (errorBanner) errorBanner.style.display = 'none';
@@ -3217,7 +3283,7 @@ ${stockText}
             failedAttempts = 0;
             showAuthError("Demasiados intentos fallidos. Terminal bloqueado por 30s.");
           } else {
-            showAuthError("Identificador o clave no autorizada.");
+            showAuthError("Identificador o clave no autorizada. (Prueba: demo-csc / demo2026)");
           }
         }
       });

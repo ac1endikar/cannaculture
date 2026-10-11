@@ -63,12 +63,12 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="css/age-gate.css?v=225">
+  <link rel="stylesheet" href="css/age-gate.css?v=226">
   <!-- Hoja de Estilos del Dispensario CSC -->
-  <link rel="stylesheet" href="css/admin-dispensario.css?v=225">
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=226">
 
   <!-- Controlador Inmediato de Age Gate (+18) -->
-  <script src="js/age-gate.js?v=225"></script>
+  <script src="js/age-gate.js?v=226"></script>
 </head>
 
 <body>
@@ -159,7 +159,7 @@
           <label for="auth-club-id" class="auth-label">Identificador del Club (Club ID / Licencia)</label>
           <div class="auth-input-wrapper">
             <span class="auth-input-icon">🏢</span>
-            <input type="text" id="auth-club-id" class="auth-input" placeholder="Ej: CSC-VERDE-01" required autofocus spellcheck="false" autocomplete="username">
+            <input type="text" id="auth-club-id" class="auth-input" placeholder="Ej: demo-csc (o CSC-VERDE-01)" value="demo-csc" required autofocus spellcheck="false" autocomplete="username">
           </div>
         </div>
 
@@ -167,7 +167,7 @@
           <label for="auth-club-pass" class="auth-label">Clave Maestra o PIN de Turno</label>
           <div class="auth-input-wrapper">
             <span class="auth-input-icon">🔑</span>
-            <input type="password" id="auth-club-pass" class="auth-input" placeholder="••••••••" required autocomplete="current-password">
+            <input type="password" id="auth-club-pass" class="auth-input" placeholder="Ej: demo2026" required autocomplete="current-password">
             <button type="button" id="btn-toggle-pass-visibility" class="btn-toggle-eye" title="Mostrar/Ocultar contraseña" aria-label="Mostrar/Ocultar contraseña">👁️</button>
           </div>
         </div>
@@ -789,7 +789,7 @@
        Carga de Scripts: Datos Maestros (877 Cepas) y Lógica Modular
        ====================================================================== -->
   <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
-  <script src="js/strains-data.js?v=225"></script>
+  <script src="js/strains-data.js?v=226"></script>
 
   <!-- 2. Firebase SDK & Configuración (Modo CDN Compatibilidad) -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -798,7 +798,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- 3. Lógica del Panel de Dispensario CSC -->
-  <script src="js/admin-dispensario.js?v=225"></script>
+  <script src="js/admin-dispensario.js?v=226"></script>
 </body>
 
 </html>

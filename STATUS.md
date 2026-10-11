@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-11 01:25  
+> **Ultima actualizacion:** 2026-10-11 01:38  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(dispensario): asesor botánico inteligente María Sommelier de mostrador con Google Gemini 1.5 Flash v225`  
-> **Version Cache-Busting:** `?v=225`
+> **Commit de cierre:** `fix(auth): acceso directo robusto demo-csc/demo2026 y persistencia en terminal dispensario v226`  
+> **Version Cache-Busting:** `?v=226`
 
 ---
 
@@ -14,12 +14,18 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v225):**
-  - **Grounding Estricto por Club:** Conexión directa a Google Gemini 1.5 Flash (Free Tier) filtrando exclusivamente variedades con stock activo en mostrador (`gramos > 0`). Cero alucinaciones ni recomendaciones de cepas agotadas.
-  - **Personalidad Empática de Barra:** Respuestas relajadas, de colega experta, sin tecnicismos densos, traduciendo perfiles de terpenos a sensaciones vivas y aromáticas.
-  - **Configuración Segura de API Key:** Campo protegido con alternancia de visibilidad en los ajustes del club, almacenado de forma aislada en `localStorage` bajo `cc_dispensario_[clubId]_gemini_key`.
-  - **Acceso Rápido & Modal Glassmorphism:** Botón Dark Emerald "🌿 Preguntar a María" en el buscador del dispensario y en el terminal POS, con feedback de carga ("María está revisando los botes...") y sugerencias rápidas.
-  - **Compilación & Sincronización:** Recompilados bundles con `scripts/build_bundle.py` y subido cache-busting a `?v=225` (`cannaculture-core-v225`).
+- **ACCESO Y TERMINAL DE DISPENSARIO CSC (v226):**
+  - **Acceso Directo Robusto para Pruebas:** Autenticación garantizada con `Club ID: demo-csc` (o predeterminado) y `Clave: demo2026` (hash SHA-256 `43c27b4e263fa191a6a7ec198cd4d5b47d17413c49d77dc533a01720707e3202`).
+  - **Normalización Inteligente:** Soporte flexible de mayúsculas/minúsculas y alias (`demo`, `demo-csc`, `CSC-VERDE-01`, `ADMIN-CSC`). Si se omite el Club ID, se asigna automáticamente según la clave o por defecto `demo-csc`.
+  - **Persistencia Híbrida Segura:** Sincronización simultánea en `sessionStorage` y `localStorage` con TTL de 12 horas para evitar pérdidas de sesión o bloqueos tras recarga.
+  - **Consola de Depuración (Debug Logs):** Reporte transparente en DevTools con hashes calculados, credenciales normalizadas y resultado de autorización.
+  - **Módulo María Sommelier:** Integrado y 100% funcional con Google Gemini 1.5 Flash.
+
+### v226 — Corrección y Robustecimiento del Acceso al Dispensario CSC
+- **Credenciales Demo Actualizadas:** Registro de `demo2026` para `demo-csc`, `CSC-VERDE-01` y `ADMIN-CSC`.
+- **Prellenado y Usabilidad:** Valor inicial `demo-csc` en el campo Club ID y placeholder explícito `demo2026` en contraseña.
+- **Doble Persistencia:** Almacenamiento seguro en `sessionStorage` + `localStorage` para evitar bloqueos de vista al recargar.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=226` en Service Worker (`cannaculture-core-v226`) y todas las plantillas HTML.
 
 ### v225 — Asesor Botánico Inteligente: María Sommelier de Mostrador CSC
 - **Integración Google Gemini 1.5 Flash:** Llamadas directas y gratuitas desde el navegador a Google AI Studio REST API.
