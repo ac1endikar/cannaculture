@@ -2947,21 +2947,121 @@ ${stockText}
     return paras.map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
   }
 
-  function setupMariaSommelier() {
-    const openBtns = [
-      document.getElementById('btn-open-maria'),
-      document.getElementById('btn-pos-open-maria')
-    ].filter(Boolean);
+  let isMariaSommelierSetup = false;
 
-    const modal = document.getElementById('modal-maria');
-    const closeBtn = document.getElementById('btn-close-maria');
-    const form = document.getElementById('form-ask-maria');
-    const queryInput = document.getElementById('maria-query-input');
-    const responseContainer = document.getElementById('maria-response-container');
+  function openMariaModal() {
+    const modalElement = document.getElementById('modal-maria');
+    console.log("[María] Modal encontrado:", modalElement);
+    if (!modalElement) {
+      console.error("[María] Error: no se encontró #modal-maria en el DOM.");
+      return;
+    }
+
+    const stock = getStockActivoParaMaria();
     const stockCountText = document.getElementById('maria-stock-count-text');
-    const quickPrompts = document.querySelectorAll('.quick-prompt-btn');
-    
-    // Controles de API Key en Ajustes
+    if (stockCountText) {
+      stockCountText.textContent = `${stock.length} variedades con stock activo en mostrador`;
+    }
+
+    updateGeminiKeyUI();
+
+    if (typeof modalElement.showModal === 'function') {
+      try {
+        if (!modalElement.open) {
+          modalElement.showModal();
+        }
+      } catch (err) {
+        console.warn("[María] modal.showModal falló, aplicando fallback:", err);
+        modalElement.setAttribute('open', '');
+      }
+    } else {
+      modalElement.setAttribute('open', '');
+    }
+    modalElement.classList.add('active');
+
+    const queryInput = document.getElementById('maria-query-input');
+    if (queryInput) {
+      setTimeout(() => queryInput.focus(), 150);
+    }
+  }
+
+  function closeMariaModal() {
+    const modalElement = document.getElementById('modal-maria');
+    if (!modalElement) return;
+
+    if (typeof modalElement.close === 'function') {
+      try {
+        if (modalElement.open) {
+          modalElement.close();
+        }
+      } catch (_) {
+        modalElement.removeAttribute('open');
+      }
+    } else {
+      modalElement.removeAttribute('open');
+    }
+    modalElement.classList.remove('active');
+  }
+
+  window.openMariaModal = openMariaModal;
+  window.closeMariaModal = closeMariaModal;
+
+  function setupMariaSommelier() {
+    if (isMariaSommelierSetup) return;
+    isMariaSommelierSetup = true;
+
+    // Delegación global de clic en el documento
+    document.addEventListener('click', (e) => {
+      // 1. Abrir modal (cualquier botón con id o clase asignada o hijo)
+      const openBtn = e.target.closest('#btn-open-maria, #btn-ask-maria, #btn-pos-open-maria, .btn-ask-maria');
+      if (openBtn) {
+        e.preventDefault();
+        console.log("[María] Botón pulsado");
+        openMariaModal();
+        return;
+      }
+
+      // 2. Cerrar modal (botón X o botones de cancelar)
+      const closeBtn = e.target.closest('#btn-close-maria, .maria-modal-close-btn');
+      if (closeBtn) {
+        e.preventDefault();
+        closeMariaModal();
+        return;
+      }
+
+      // 3. Cerrar al hacer clic en el backdrop fuera del contenedor modal
+      const modalElement = document.getElementById('modal-maria');
+      if (modalElement && modalElement.open && e.target === modalElement) {
+        closeMariaModal();
+        return;
+      }
+
+      // 4. Delegación de clics en píldoras de sugerencias rápidas
+      const quickBtn = e.target.closest('.quick-prompt-btn');
+      if (quickBtn) {
+        e.preventDefault();
+        const promptText = quickBtn.getAttribute('data-prompt');
+        const queryInput = document.getElementById('maria-query-input');
+        const form = document.getElementById('form-ask-maria');
+        if (promptText && queryInput) {
+          queryInput.value = promptText;
+          if (form) form.requestSubmit();
+        }
+        return;
+      }
+    });
+
+    // Cierre accesible con tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const modalElement = document.getElementById('modal-maria');
+        if (modalElement && modalElement.open) {
+          closeMariaModal();
+        }
+      }
+    });
+
+    // Controles de API Key en Ajustes del Club
     const settingsKeyInput = document.getElementById('gemini-api-key-input');
     const btnToggleSettingsEye = document.getElementById('btn-toggle-gemini-key-visibility');
     const btnSaveSettingsKey = document.getElementById('btn-save-gemini-key');
@@ -2993,43 +3093,6 @@ ${stockText}
         showToast("Clave de Gemini vinculada.", "✅");
       });
     }
-
-    function openMariaModal() {
-      if (!modal) return;
-      const stock = getStockActivoParaMaria();
-      if (stockCountText) {
-        stockCountText.textContent = `${stock.length} variedades con stock activo en mostrador`;
-      }
-      updateGeminiKeyUI();
-      modal.showModal();
-      if (queryInput) {
-        setTimeout(() => queryInput.focus(), 150);
-      }
-    }
-
-    function closeMariaModal() {
-      if (modal) modal.close();
-    }
-
-    openBtns.forEach(btn => btn.addEventListener('click', openMariaModal));
-    if (closeBtn) closeBtn.addEventListener('click', closeMariaModal);
-
-    if (modal) {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeMariaModal();
-      });
-    }
-
-    // Píldoras de consulta rápida
-    quickPrompts.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const promptText = btn.getAttribute('data-prompt');
-        if (promptText && queryInput) {
-          queryInput.value = promptText;
-          if (form) form.requestSubmit();
-        }
-      });
-    });
 
     // Envío de consulta a María
     if (form) {
@@ -3304,6 +3367,7 @@ ${stockText}
   // ==========================================================================
   document.addEventListener('DOMContentLoaded', () => {
     setupDispensaryAuthGate();
+    setupMariaSommelier();
   });
 
 })();

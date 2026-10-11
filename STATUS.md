@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-11 01:38  
+> **Ultima actualizacion:** 2026-10-11 01:52  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `fix(auth): acceso directo robusto demo-csc/demo2026 y persistencia en terminal dispensario v226`  
-> **Version Cache-Busting:** `?v=226`
+> **Commit de cierre:** `fix(dispensario): reparar event listener y apertura de modal de Maria v227`  
+> **Version Cache-Busting:** `?v=227`
 
 ---
 
@@ -14,12 +14,17 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **ACCESO Y TERMINAL DE DISPENSARIO CSC (v226):**
-  - **Acceso Directo Robusto para Pruebas:** Autenticación garantizada con `Club ID: demo-csc` (o predeterminado) y `Clave: demo2026` (hash SHA-256 `43c27b4e263fa191a6a7ec198cd4d5b47d17413c49d77dc533a01720707e3202`).
-  - **Normalización Inteligente:** Soporte flexible de mayúsculas/minúsculas y alias (`demo`, `demo-csc`, `CSC-VERDE-01`, `ADMIN-CSC`). Si se omite el Club ID, se asigna automáticamente según la clave o por defecto `demo-csc`.
-  - **Persistencia Híbrida Segura:** Sincronización simultánea en `sessionStorage` y `localStorage` con TTL de 12 horas para evitar pérdidas de sesión o bloqueos tras recarga.
-  - **Consola de Depuración (Debug Logs):** Reporte transparente en DevTools con hashes calculados, credenciales normalizadas y resultado de autorización.
-  - **Módulo María Sommelier:** Integrado y 100% funcional con Google Gemini 1.5 Flash.
+- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v227):**
+  - **Apertura y Cierre Impecables:** Subsanado anidamiento de `<dialog>` en `admin-dispensario.html` (cierre correcto de `kiosk-lightbox-dialog`), aislamiento visual en `z-index: 99999` y display controlado con reglas `:not([open])` y `&[open]`.
+  - **Delegación Global de Eventos:** Listener en `document` para disparadores `#btn-open-maria`, `#btn-ask-maria`, `#btn-pos-open-maria` y clase `.btn-ask-maria`, funcionando en cualquier pestaña o contenido dinámico.
+  - **Manejo Accesible de Cierre:** Cierre por botón "✕", clic en backdrop y tecla `Escape`.
+  - **Logs de Depuración:** Registro en consola (`[María] Botón pulsado` y `[María] Modal encontrado`).
+
+### v227 — Reparación Integral del Modal de María Sommelier
+- **Corrección Estructural HTML:** Cierre estricto de etiquetas en el modal macro para evitar anidamiento accidental de diálogos.
+- **Delegación de Eventos en Document:** Apertura y cierre confiables para elementos estáticos y dinámicos.
+- **Elevación de Capa (z-index 99999):** Garantía visual sobre cualquier elemento Glassmorphism.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=227` en Service Worker (`cannaculture-core-v227`) y todas las plantillas HTML.
 
 ### v226 — Corrección y Robustecimiento del Acceso al Dispensario CSC
 - **Credenciales Demo Actualizadas:** Registro de `demo2026` para `demo-csc`, `CSC-VERDE-01` y `ADMIN-CSC`.
