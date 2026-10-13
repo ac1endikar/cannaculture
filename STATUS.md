@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-13 12:48  
+> **Ultima actualizacion:** 2026-10-13 15:18  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(dispensario): integrar nueva API Key AQ y soporte nativo gemini-3.8-flash v233`  
-> **Version Cache-Busting:** `?v=233`
+> **Commit de cierre:** `fix(dispensario): ampliar timeout abort a 20s y optimizar headers CORS para Maria v234`  
+> **Version Cache-Busting:** `?v=234`
 
 ---
 
@@ -14,12 +14,20 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v233):**
-  - **Nueva Google Gemini API Key Oficial:** Clave de producción activa con prefijo `AQ.` integrada de forma segura (Base64 ofuscada contra bloqueos git push protection) y migración automática de almacenamiento local previo.
-  - **Cabeceras Estándar Google:** Incorporada cabecera HTTP `x-goog-api-key: apiKey.trim()` junto al parámetro `?key=` en la URL para autenticación robusta de tokens `AQ.`.
-  - **Prioridad Nativa a `gemini-3.8-flash`:** Cascada optimizada arrancando en `gemini-3.8-flash` con fallback inmediato a `gemini-flash-latest`.
-  - **Timeout con AbortController (8s):** Interrupción ágil ante latencias elevadas para evitar congelamiento de UI.
+- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v234):**
+  - **Timeout Ampliado a 20s en AbortController:** Eliminado el aborto prematuro ("signal is aborted without reason") al dar margen holgado para el handshake TLS, generación del modelo y streaming.
+  - **Headers CORS Optimizados:** Eliminada la cabecera personalizada `x-goog-api-key` para evitar preflight `OPTIONS` y latencia innecesaria en PWA móvil; la autenticación se realiza de manera canónica en el parámetro URL `?key=`.
+  - **Modelos Candidatos Estables:** Cascada configurada en `gemini-2.0-flash` y `gemini-flash-latest`.
+  - **Actualización Visual de Badge:** Etiqueta en modal de María y ajustes actualizada a "GEMINI FLASH".
   - **Desbloqueo Garantizado de UI (bloque finally):** Retirada exhaustiva de elementos `.maria-loading-box`, reactivación del botón de envío y foco reactivo en el input.
+
+### v234 — Timeout 20s en AbortController y Optimización CORS en María
+- **Ampliación de Límite Temporal:** Timeout ajustado a 20.000 ms con mensaje explícito de razón ante fallo (`Timeout: La IA tardó más de 20s en responder`).
+- **Limpieza de Headers HTTP:** Solo `'Content-Type': 'application/json'`, evitando peticiones preflight CORS innecesarias.
+- **Modelos Oficiales:** `gemini-2.0-flash` como primario y `gemini-flash-latest` como fallback.
+- **Sincronización de Badges:** Modificado el indicador visual en `admin-dispensario.html` a "GEMINI FLASH".
+- **Recompilación de Bundle:** Generados `bundle.js`, `bundle-v151.js` y `strains-data.js` actualizados con `scripts/build_bundle.py`.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=234` en Service Worker (`cannaculture-core-v234`) y todas las plantillas HTML.
 
 ### v233 — Nueva API Key AQ y Soporte Nativo Gemini-3.8-Flash
 - **Actualización de Clave Oficial:** Integrada nueva API Key en Base64 en `DEFAULT_GEMINI_API_KEY` y `.env`.

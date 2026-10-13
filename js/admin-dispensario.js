@@ -2754,7 +2754,7 @@
   }
 
   // ==========================================================================
-  // MÓDULO: MARÍA · SOMMELIER DE MOSTRADOR (Google Gemini 1.5 Flash Grounding)
+  // MÓDULO: MARÍA · SOMMELIER DE MOSTRADOR (Google Gemini Flash Grounding)
   // ==========================================================================
   function getCurrentClubId() {
     const session = getDispensarySession();
@@ -3010,7 +3010,7 @@ SOCIO EN MOSTRADOR TE DICE:
 
     // Cascada de modelos compatibles con la API de Google
     const CANDIDATE_MODELS = [
-      'gemini-3.8-flash',
+      'gemini-2.0-flash',
       'gemini-flash-latest'
     ];
     let lastError = null;
@@ -3020,8 +3020,8 @@ SOCIO EN MOSTRADOR TE DICE:
       console.log(`[María] Probando modelo: ${model}...`);
       const controller = new AbortController();
       const timeoutId = setTimeout(() => {
-        controller.abort();
-      }, 8000);
+        controller.abort(new Error("Timeout: La IA tardó más de 20s en responder"));
+      }, 20000);
 
       try {
         const cleanApiKey = apiKey.trim();
@@ -3044,17 +3044,19 @@ SOCIO EN MOSTRADOR TE DICE:
           }
         };
 
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-goog-api-key': cleanApiKey
-          },
-          body: JSON.stringify(requestBody),
-          signal: controller.signal
-        });
-
-        clearTimeout(timeoutId);
+        let response;
+        try {
+          response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody),
+            signal: controller.signal
+          });
+        } finally {
+          clearTimeout(timeoutId);
+        }
 
         if (response.ok) {
           const data = await response.json();
@@ -3078,7 +3080,9 @@ SOCIO EN MOSTRADOR TE DICE:
           // En caso de fallo o modelo legacy que no acepte systemInstruction, probar combinado en contents
           if (response.status === 404 || response.status === 400) {
             const fbController = new AbortController();
-            const fbTimeoutId = setTimeout(() => fbController.abort(), 6000);
+            const fbTimeoutId = setTimeout(() => {
+              fbController.abort(new Error("Timeout: La IA tardó más de 20s en responder"));
+            }, 20000);
             try {
               const combinedBody = {
                 contents: [
@@ -3092,16 +3096,20 @@ SOCIO EN MOSTRADOR TE DICE:
                   maxOutputTokens: 600
                 }
               };
-              const resFb = await fetch(endpoint, {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                  'x-goog-api-key': cleanApiKey
-                },
-                body: JSON.stringify(combinedBody),
-                signal: fbController.signal
-              });
-              clearTimeout(fbTimeoutId);
+              let resFb;
+              try {
+                resFb = await fetch(endpoint, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(combinedBody),
+                  signal: fbController.signal
+                });
+              } finally {
+                clearTimeout(fbTimeoutId);
+              }
+
               if (resFb.ok) {
                 const dataFb = await resFb.json();
                 const candFb = dataFb.candidates && dataFb.candidates[0];
@@ -3111,9 +3119,7 @@ SOCIO EN MOSTRADOR TE DICE:
                   break;
                 }
               }
-            } catch (_) {
-              clearTimeout(fbTimeoutId);
-            }
+            } catch (_) {}
             continue;
           }
           throw lastError;
@@ -3121,7 +3127,7 @@ SOCIO EN MOSTRADOR TE DICE:
       } catch (err) {
         clearTimeout(timeoutId);
         lastError = err;
-        console.warn(`[María] Falló ${model}, probando siguiente...`);
+        console.warn(`[María] Falló ${model}, probando siguiente...`, err.message || err);
       }
     }
 
