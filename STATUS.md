@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-13 12:15  
+> **Ultima actualizacion:** 2026-10-13 12:40  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `fix(dispensario): actualizar endpoints Gemini a gemini-3.8-flash y gemini-2.0-flash v231`  
-> **Version Cache-Busting:** `?v=231`
+> **Commit de cierre:** `fix(dispensario): timeout 8s AbortController y modelos ligeros gemini-2.0-flash para Maria v232`  
+> **Version Cache-Busting:** `?v=232`
 
 ---
 
@@ -14,13 +14,18 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v231):**
-  - **Actualización de Endpoints Google Gemini:** Migración inmediata tras el sunset de `gemini-2.5-flash` (HTTP 404). Configurada cascada prioritaria de modelos oficiales activos: `gemini-3.8-flash` -> `gemini-2.0-flash` -> `gemini-flash-latest`.
-  - **Resiliencia de Fallback:** Intento prioritario con `gemini-3.8-flash` y degradación elegante ante cuotas o disponibilidad.
-  - **Saneamiento del Repositorio Git:** Resuelta la referencia huérfana `bed30211` con injerto limpio, eliminando errores de sincronización y log.
-  - **Extracción de Stock Real en Tiempo Real:** Fuente de datos auditada para leer `state.menu`, `cannaculture_csc_menu` en `localStorage`, stock por club, y fallback directo a tarjetas activas renderizadas en el DOM.
-  - **Grounding Estricto:** Inyección de `BOTES_EN_MOSTRADOR` en el payload; María solo conoce y recomienda las variedades físicas presentes en el mostrador con gramos > 0.
-  - **Personalidad Hiperrealista de Dependienta CSC:** Lenguaje cercano, de calle, con chispa y empatía ("¡Buenas!", "Esa entra finísima", "Huele que flipas", "De esa no nos queda en los botes ahora mismo...").
+- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v232):**
+  - **Priorización de Modelos Ultra-Rápidos:** Configurada cascada ágil arrancando en `gemini-2.0-flash`, pasando a `gemini-flash-latest` y `gemini-1.5-flash`, asegurando respuestas estables e inmediatas en mostrador.
+  - **Timeout Robusto con AbortController (8s):** Si cualquier llamada se congela o supera los 8 segundos, se aborta inmediatamente liberando la conexión y saltando al siguiente modelo sin bloquear la interfaz.
+  - **Trazabilidad en Consola:** Logs claros en tiempo real (`[María] Probando modelo...`, `[María] Respuesta recibida...`, `[María] Falló X, probando siguiente...`).
+  - **Desbloqueo Garantizado de UI (bloque finally):** Retirada exhaustiva de elementos `.maria-loading-box`, reactivación del botón de envío y foco reactivo en el input ante cualquier resultado o excepción.
+
+### v232 — Timeout 8s con AbortController y Cascada Ligera en María Sommelier
+- **Prioridad Invertida a Modelos Estables:** Configurada cascada `gemini-2.0-flash` -> `gemini-flash-latest` -> `gemini-1.5-flash`.
+- **AbortController en Fetch:** Límite estricto de 8 segundos por solicitud para evitar bloqueos indefinidos ("pensando").
+- **Garantía de Desbloqueo de UI:** Bloque `finally` blindado en `handleMariaSubmit` que purga indicadores de carga y reactiva controles.
+- **Recompilación de Bundle:** Generados `bundle.js`, `bundle-v151.js` y `strains-data.js` actualizados con `scripts/build_bundle.py`.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=232` en Service Worker (`cannaculture-core-v232`) y plantillas HTML.
 
 ### v231 — Actualización Endpoints Gemini (3.8-flash / 2.0-flash) y Reparación Git
 - **Migración de Modelos IA:** Retirada la referencia deprecada a `gemini-2.5-flash` causante del error 404 de Google AI Studio. Implementado array `CANDIDATE_MODELS` con `gemini-3.8-flash`, `gemini-2.0-flash` y `gemini-flash-latest`.

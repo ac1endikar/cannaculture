@@ -3010,14 +3010,20 @@ SOCIO EN MOSTRADOR TE DICE:
 
     // Cascada de modelos compatibles con la API de Google
     const CANDIDATE_MODELS = [
-      'gemini-3.8-flash',
       'gemini-2.0-flash',
-      'gemini-flash-latest'
+      'gemini-flash-latest',
+      'gemini-1.5-flash'
     ];
     let lastError = null;
     let responseText = null;
 
     for (const model of CANDIDATE_MODELS) {
+      console.log(`[María] Probando modelo: ${model}...`);
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => {
+        controller.abort();
+      }, 8000);
+
       try {
         const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`;
         
@@ -3043,14 +3049,18 @@ SOCIO EN MOSTRADOR TE DICE:
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(requestBody)
+          body: JSON.stringify(requestBody),
+          signal: controller.signal
         });
+
+        clearTimeout(timeoutId);
 
         if (response.ok) {
           const data = await response.json();
           const candidate = data.candidates && data.candidates[0];
           if (candidate && candidate.content && candidate.content.parts && candidate.content.parts[0]) {
             responseText = candidate.content.parts[0].text;
+            console.log(`[María] Respuesta recibida de: ${model}`);
             break;
           }
         } else {
@@ -3062,9 +3072,12 @@ SOCIO EN MOSTRADOR TE DICE:
             errDetail = response.statusText;
           }
           lastError = new Error(`Error en API Gemini (${response.status}): ${errDetail}`);
+          console.warn(`[María] Falló ${model}, probando siguiente...`);
 
           // En caso de fallo o modelo legacy que no acepte systemInstruction, probar combinado en contents
           if (response.status === 404 || response.status === 400) {
+            const fbController = new AbortController();
+            const fbTimeoutId = setTimeout(() => fbController.abort(), 6000);
             try {
               const combinedBody = {
                 contents: [
@@ -3081,23 +3094,30 @@ SOCIO EN MOSTRADOR TE DICE:
               const resFb = await fetch(endpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(combinedBody)
+                body: JSON.stringify(combinedBody),
+                signal: fbController.signal
               });
+              clearTimeout(fbTimeoutId);
               if (resFb.ok) {
                 const dataFb = await resFb.json();
                 const candFb = dataFb.candidates && dataFb.candidates[0];
                 if (candFb && candFb.content && candFb.content.parts && candFb.content.parts[0]) {
                   responseText = candFb.content.parts[0].text;
+                  console.log(`[María] Respuesta recibida de: ${model}`);
                   break;
                 }
               }
-            } catch (_) {}
+            } catch (_) {
+              clearTimeout(fbTimeoutId);
+            }
             continue;
           }
           throw lastError;
         }
       } catch (err) {
+        clearTimeout(timeoutId);
         lastError = err;
+        console.warn(`[María] Falló ${model}, probando siguiente...`);
       }
     }
 
@@ -3254,8 +3274,13 @@ SOCIO EN MOSTRADOR TE DICE:
     }
 
     // 5. Deshabilitar botón e input para evitar doble envío
-    if (sendBtn) sendBtn.disabled = true;
-    if (queryInput) queryInput.disabled = true;
+    if (sendBtn) {
+      sendBtn.disabled = true;
+      sendBtn.classList.add('loading');
+    }
+    if (queryInput) {
+      queryInput.disabled = true;
+    }
 
     // Mostrar estado de carga visual
     let loadingBox = null;
@@ -3273,7 +3298,6 @@ SOCIO EN MOSTRADOR TE DICE:
     // 6. Ciclo de llamada y respuesta con gestión de errores
     try {
       const answer = await callGeminiSommelier(queryText);
-      if (loadingBox) loadingBox.remove();
 
       if (responseContainer) {
         const assistantBubble = document.createElement('div');
@@ -3283,7 +3307,6 @@ SOCIO EN MOSTRADOR TE DICE:
         responseContainer.scrollTop = responseContainer.scrollHeight;
       }
     } catch (err) {
-      if (loadingBox) loadingBox.remove();
       console.error("[María] Error al contactar con Gemini:", err);
 
       if (responseContainer) {
@@ -3299,9 +3322,22 @@ SOCIO EN MOSTRADOR TE DICE:
         responseContainer.scrollTop = responseContainer.scrollHeight;
       }
     } finally {
-      if (sendBtn) sendBtn.disabled = false;
+      // Retirar siempre cualquier indicador de carga activo
+      if (loadingBox && loadingBox.parentNode) {
+        loadingBox.remove();
+      }
+      if (responseContainer) {
+        const allLoadingBoxes = responseContainer.querySelectorAll('.maria-loading-box');
+        allLoadingBoxes.forEach(box => box.remove());
+      }
+      // Reactivar controles y quitar clases de carga
+      if (sendBtn) {
+        sendBtn.disabled = false;
+        sendBtn.classList.remove('loading', 'disabled');
+      }
       if (queryInput) {
         queryInput.disabled = false;
+        queryInput.classList.remove('loading', 'disabled');
         setTimeout(() => queryInput.focus(), 80);
       }
       if (responseContainer) responseContainer.scrollTop = responseContainer.scrollHeight;
