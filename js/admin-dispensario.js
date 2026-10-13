@@ -3010,11 +3010,9 @@ SOCIO EN MOSTRADOR TE DICE:
 
     // Cascada de modelos compatibles con la API de Google
     const CANDIDATE_MODELS = [
-      'gemini-2.5-flash',
-      'gemini-flash-latest',
-      'gemini-2.0-flash',
-      'gemini-2.5-flash-lite',
-      'gemini-2.0-flash-lite'
+      'gemini-3.5-flash-lite',
+      'gemini-3.8-flash',
+      'gemini-flash-latest'
     ];
     let lastError = null;
     let responseText = null;
@@ -3078,61 +3076,7 @@ SOCIO EN MOSTRADOR TE DICE:
             errDetail = response.statusText;
           }
           lastError = new Error(`Error en API Gemini (${response.status}): ${errDetail}`);
-
-          // Manejo prioritario ante saturación / alta demanda / cuota (503, 429, 5xx)
-          if (response.status === 503 || response.status === 429 || response.status >= 500) {
-            console.warn(`[María] El modelo ${model} devolvió ${response.status} (saturado/demanda alta). Pasando al siguiente modelo alternativo...`);
-            continue;
-          }
-
-          // En caso de modelo que no acepte systemInstruction (400), probar combinado en contents
-          if (response.status === 400) {
-            const fbController = new AbortController();
-            const fbTimeoutId = setTimeout(() => {
-              fbController.abort(new Error("Timeout: La IA tardó más de 20s en responder"));
-            }, 20000);
-            try {
-              const combinedBody = {
-                contents: [
-                  {
-                    role: 'user',
-                    parts: [{ text: `${systemPrompt}\n\n${userPayloadText}` }]
-                  }
-                ],
-                generationConfig: {
-                  temperature: 0.7,
-                  maxOutputTokens: 600
-                }
-              };
-              let resFb;
-              try {
-                resFb = await fetch(endpoint, {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify(combinedBody),
-                  signal: fbController.signal
-                });
-              } finally {
-                clearTimeout(fbTimeoutId);
-              }
-
-              if (resFb.ok) {
-                const dataFb = await resFb.json();
-                const candFb = dataFb.candidates && dataFb.candidates[0];
-                if (candFb && candFb.content && candFb.content.parts && candFb.content.parts[0]) {
-                  responseText = candFb.content.parts[0].text;
-                  console.log(`[María] Respuesta recibida de: ${model} (formato combinado)`);
-                  break;
-                }
-              }
-            } catch (_) {}
-            continue;
-          }
-
-          // Para 404 u otros errores de endpoint, registrar aviso y continuar con el siguiente
-          console.warn(`[María] Falló ${model} (${response.status}: ${errDetail}), probando siguiente...`);
+          console.warn(`[María] Modelo ${model} devolvió HTTP ${response.status}. Probando siguiente candidato...`);
           continue;
         }
       } catch (err) {
@@ -3145,7 +3089,7 @@ SOCIO EN MOSTRADOR TE DICE:
     if (responseText) {
       return responseText;
     }
-    throw lastError || new Error("No se pudo obtener respuesta del modelo.");
+    throw lastError || new Error("No se pudo obtener respuesta de ningún modelo de IA.");
   }
 
   function formatMariaResponse(rawText) {

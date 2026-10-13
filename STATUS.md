@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-13 15:28  
+> **Ultima actualizacion:** 2026-10-13 15:36  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `fix(dispensario): robustez fallback multinivel ante errores 503 alta demanda v235`  
-> **Version Cache-Busting:** `?v=235`
+> **Commit de cierre:** `fix(dispensario): actualizar modelos a gemini-3.5-flash-lite y gemini-3.8-flash v236`  
+> **Version Cache-Busting:** `?v=236`
 
 ---
 
@@ -14,11 +14,17 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v235):**
-  - **Cascada Multinivel Resiliente (5 Modelos):** Definida lista diversificada con `gemini-2.5-flash`, `gemini-flash-latest`, `gemini-2.0-flash`, `gemini-2.5-flash-lite` y `gemini-2.0-flash-lite`.
-  - **Recuperación Automática ante 503 / 429 / 5xx:** En picos de saturación de un endpoint, se emite aviso en consola y se salta inmediatamente al siguiente modelo alternativo sin interrumpir el flujo ni arrojar error prematuro al usuario.
-  - **Timeout Ampliado a 20s en AbortController:** Margen holgado sin cancelaciones prematuras.
+- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v236):**
+  - **Modelos Oficiales Activos de Google:** Cascada actualizada con `gemini-3.5-flash-lite` (prioritario por bajísima latencia y disponibilidad inmediata), `gemini-3.8-flash` y `gemini-flash-latest`.
+  - **Resiliencia Automática ante Errores HTTP:** Salto inmediato (`continue`) ante cualquier código no exitoso (404, 503, 429) sin interrumpir el flujo ni arrojar error prematuro al usuario.
+  - **Timeout de 20s con AbortController:** Margen holgado sin cancelaciones prematuras.
   - **Desbloqueo Garantizado de UI (bloque finally):** Retirada exhaustiva de elementos `.maria-loading-box`, reactivación del botón de envío y foco reactivo en el input.
+
+### v236 — Modelos Activos Gemini-3.5-Flash-Lite / 3.8-Flash y Salto Inmediato
+- **Modelos Oficiales de Producción:** Configurada cascada `gemini-3.5-flash-lite` -> `gemini-3.8-flash` -> `gemini-flash-latest`, alineada con los endpoints recomendados por Google AI Studio.
+- **Salto Automático ante Fallos:** Si un modelo devuelve HTTP no exitoso (!response.ok), emite log en consola y pasa de inmediato al siguiente sin romper el flujo.
+- **Recompilación de Bundle:** Generados `bundle.js`, `bundle-v151.js` y `strains-data.js` actualizados con `scripts/build_bundle.py`.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=236` en Service Worker (`cannaculture-core-v236`) y todas las plantillas HTML.
 
 ### v235 — Robustez Fallback Multinivel ante Errores 503 Alta Demanda
 - **Ampliación de Modelos Candidatos:** Configurada lista de 5 modelos de las familias Flash y Flash-Lite (`gemini-2.5-flash`, `gemini-flash-latest`, `gemini-2.0-flash`, `gemini-2.5-flash-lite`, `gemini-2.0-flash-lite`).
