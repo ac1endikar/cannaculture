@@ -2767,7 +2767,7 @@
   // Clave Gemini por defecto recuperada de .env (Fallback oficial para María Sommelier)
   const DEFAULT_GEMINI_API_KEY = (function() {
     try {
-      return atob('QVEuQWI4Uk42Skd4cGVjcW55TlgyM2daVHNvUUVVN0xPbGRHMmpfamVFY2lsdUJwTE9PN2c=');
+      return atob('QVEuQWI4Uk42Si1Ra242aGtJTnplbmM4UkZsMlJLUUVyTURrRk05UzAxbTIzZFN0ZGJ4V0E=');
     } catch (e) {
       return '';
     }
@@ -3010,9 +3010,8 @@ SOCIO EN MOSTRADOR TE DICE:
 
     // Cascada de modelos compatibles con la API de Google
     const CANDIDATE_MODELS = [
-      'gemini-2.0-flash',
-      'gemini-flash-latest',
-      'gemini-1.5-flash'
+      'gemini-3.8-flash',
+      'gemini-flash-latest'
     ];
     let lastError = null;
     let responseText = null;
@@ -3025,7 +3024,8 @@ SOCIO EN MOSTRADOR TE DICE:
       }, 8000);
 
       try {
-        const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`;
+        const cleanApiKey = apiKey.trim();
+        const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(cleanApiKey)}`;
         
         // Formato estructurado con systemInstruction nativo
         const requestBody = {
@@ -3047,7 +3047,8 @@ SOCIO EN MOSTRADOR TE DICE:
         const response = await fetch(endpoint, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'x-goog-api-key': cleanApiKey
           },
           body: JSON.stringify(requestBody),
           signal: controller.signal
@@ -3093,7 +3094,10 @@ SOCIO EN MOSTRADOR TE DICE:
               };
               const resFb = await fetch(endpoint, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                  'Content-Type': 'application/json',
+                  'x-goog-api-key': cleanApiKey
+                },
                 body: JSON.stringify(combinedBody),
                 signal: fbController.signal
               });

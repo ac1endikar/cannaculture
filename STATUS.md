@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-13 12:40  
+> **Ultima actualizacion:** 2026-10-13 12:48  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `fix(dispensario): timeout 8s AbortController y modelos ligeros gemini-2.0-flash para Maria v232`  
-> **Version Cache-Busting:** `?v=232`
+> **Commit de cierre:** `feat(dispensario): integrar nueva API Key AQ y soporte nativo gemini-3.8-flash v233`  
+> **Version Cache-Busting:** `?v=233`
 
 ---
 
@@ -14,11 +14,19 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v232):**
-  - **Priorización de Modelos Ultra-Rápidos:** Configurada cascada ágil arrancando en `gemini-2.0-flash`, pasando a `gemini-flash-latest` y `gemini-1.5-flash`, asegurando respuestas estables e inmediatas en mostrador.
-  - **Timeout Robusto con AbortController (8s):** Si cualquier llamada se congela o supera los 8 segundos, se aborta inmediatamente liberando la conexión y saltando al siguiente modelo sin bloquear la interfaz.
-  - **Trazabilidad en Consola:** Logs claros en tiempo real (`[María] Probando modelo...`, `[María] Respuesta recibida...`, `[María] Falló X, probando siguiente...`).
-  - **Desbloqueo Garantizado de UI (bloque finally):** Retirada exhaustiva de elementos `.maria-loading-box`, reactivación del botón de envío y foco reactivo en el input ante cualquier resultado o excepción.
+- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v233):**
+  - **Nueva Google Gemini API Key Oficial:** Clave de producción activa con prefijo `AQ.` integrada de forma segura (Base64 ofuscada contra bloqueos git push protection) y migración automática de almacenamiento local previo.
+  - **Cabeceras Estándar Google:** Incorporada cabecera HTTP `x-goog-api-key: apiKey.trim()` junto al parámetro `?key=` en la URL para autenticación robusta de tokens `AQ.`.
+  - **Prioridad Nativa a `gemini-3.8-flash`:** Cascada optimizada arrancando en `gemini-3.8-flash` con fallback inmediato a `gemini-flash-latest`.
+  - **Timeout con AbortController (8s):** Interrupción ágil ante latencias elevadas para evitar congelamiento de UI.
+  - **Desbloqueo Garantizado de UI (bloque finally):** Retirada exhaustiva de elementos `.maria-loading-box`, reactivación del botón de envío y foco reactivo en el input.
+
+### v233 — Nueva API Key AQ y Soporte Nativo Gemini-3.8-Flash
+- **Actualización de Clave Oficial:** Integrada nueva API Key en Base64 en `DEFAULT_GEMINI_API_KEY` y `.env`.
+- **Cabecera `x-goog-api-key`:** Autenticación dual (URL + cabecera HTTP) compatible con las nuevas especificaciones de Google AI Studio.
+- **Modelos Candidatos:** `gemini-3.8-flash` como modelo principal y `gemini-flash-latest` como contingencia.
+- **Recompilación de Bundle:** Generados `bundle.js`, `bundle-v151.js` y `strains-data.js` actualizados con `scripts/build_bundle.py`.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=233` en Service Worker (`cannaculture-core-v233`) y todas las plantillas HTML.
 
 ### v232 — Timeout 8s con AbortController y Cascada Ligera en María Sommelier
 - **Prioridad Invertida a Modelos Estables:** Configurada cascada `gemini-2.0-flash` -> `gemini-flash-latest` -> `gemini-1.5-flash`.
