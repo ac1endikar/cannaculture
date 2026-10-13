@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-13 15:18  
+> **Ultima actualizacion:** 2026-10-13 15:28  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `fix(dispensario): ampliar timeout abort a 20s y optimizar headers CORS para Maria v234`  
-> **Version Cache-Busting:** `?v=234`
+> **Commit de cierre:** `fix(dispensario): robustez fallback multinivel ante errores 503 alta demanda v235`  
+> **Version Cache-Busting:** `?v=235`
 
 ---
 
@@ -14,12 +14,17 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v234):**
-  - **Timeout Ampliado a 20s en AbortController:** Eliminado el aborto prematuro ("signal is aborted without reason") al dar margen holgado para el handshake TLS, generación del modelo y streaming.
-  - **Headers CORS Optimizados:** Eliminada la cabecera personalizada `x-goog-api-key` para evitar preflight `OPTIONS` y latencia innecesaria en PWA móvil; la autenticación se realiza de manera canónica en el parámetro URL `?key=`.
-  - **Modelos Candidatos Estables:** Cascada configurada en `gemini-2.0-flash` y `gemini-flash-latest`.
-  - **Actualización Visual de Badge:** Etiqueta en modal de María y ajustes actualizada a "GEMINI FLASH".
+- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v235):**
+  - **Cascada Multinivel Resiliente (5 Modelos):** Definida lista diversificada con `gemini-2.5-flash`, `gemini-flash-latest`, `gemini-2.0-flash`, `gemini-2.5-flash-lite` y `gemini-2.0-flash-lite`.
+  - **Recuperación Automática ante 503 / 429 / 5xx:** En picos de saturación de un endpoint, se emite aviso en consola y se salta inmediatamente al siguiente modelo alternativo sin interrumpir el flujo ni arrojar error prematuro al usuario.
+  - **Timeout Ampliado a 20s en AbortController:** Margen holgado sin cancelaciones prematuras.
   - **Desbloqueo Garantizado de UI (bloque finally):** Retirada exhaustiva de elementos `.maria-loading-box`, reactivación del botón de envío y foco reactivo en el input.
+
+### v235 — Robustez Fallback Multinivel ante Errores 503 Alta Demanda
+- **Ampliación de Modelos Candidatos:** Configurada lista de 5 modelos de las familias Flash y Flash-Lite (`gemini-2.5-flash`, `gemini-flash-latest`, `gemini-2.0-flash`, `gemini-2.5-flash-lite`, `gemini-2.0-flash-lite`).
+- **Manejo de Errores 503/429/5xx:** Salto inmediato al siguiente modelo disponible con logging claro en consola sin arrojar error al socio.
+- **Recompilación de Bundle:** Generados `bundle.js`, `bundle-v151.js` y `strains-data.js` actualizados con `scripts/build_bundle.py`.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=235` en Service Worker (`cannaculture-core-v235`) y todas las plantillas HTML.
 
 ### v234 — Timeout 20s en AbortController y Optimización CORS en María
 - **Ampliación de Límite Temporal:** Timeout ajustado a 20.000 ms con mensaje explícito de razón ante fallo (`Timeout: La IA tardó más de 20s en responder`).

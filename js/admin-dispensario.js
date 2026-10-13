@@ -3010,8 +3010,11 @@ SOCIO EN MOSTRADOR TE DICE:
 
     // Cascada de modelos compatibles con la API de Google
     const CANDIDATE_MODELS = [
+      'gemini-2.5-flash',
+      'gemini-flash-latest',
       'gemini-2.0-flash',
-      'gemini-flash-latest'
+      'gemini-2.5-flash-lite',
+      'gemini-2.0-flash-lite'
     ];
     let lastError = null;
     let responseText = null;
@@ -3075,10 +3078,15 @@ SOCIO EN MOSTRADOR TE DICE:
             errDetail = response.statusText;
           }
           lastError = new Error(`Error en API Gemini (${response.status}): ${errDetail}`);
-          console.warn(`[María] Falló ${model}, probando siguiente...`);
 
-          // En caso de fallo o modelo legacy que no acepte systemInstruction, probar combinado en contents
-          if (response.status === 404 || response.status === 400) {
+          // Manejo prioritario ante saturación / alta demanda / cuota (503, 429, 5xx)
+          if (response.status === 503 || response.status === 429 || response.status >= 500) {
+            console.warn(`[María] El modelo ${model} devolvió ${response.status} (saturado/demanda alta). Pasando al siguiente modelo alternativo...`);
+            continue;
+          }
+
+          // En caso de modelo que no acepte systemInstruction (400), probar combinado en contents
+          if (response.status === 400) {
             const fbController = new AbortController();
             const fbTimeoutId = setTimeout(() => {
               fbController.abort(new Error("Timeout: La IA tardó más de 20s en responder"));
@@ -3115,14 +3123,17 @@ SOCIO EN MOSTRADOR TE DICE:
                 const candFb = dataFb.candidates && dataFb.candidates[0];
                 if (candFb && candFb.content && candFb.content.parts && candFb.content.parts[0]) {
                   responseText = candFb.content.parts[0].text;
-                  console.log(`[María] Respuesta recibida de: ${model}`);
+                  console.log(`[María] Respuesta recibida de: ${model} (formato combinado)`);
                   break;
                 }
               }
             } catch (_) {}
             continue;
           }
-          throw lastError;
+
+          // Para 404 u otros errores de endpoint, registrar aviso y continuar con el siguiente
+          console.warn(`[María] Falló ${model} (${response.status}: ${errDetail}), probando siguiente...`);
+          continue;
         }
       } catch (err) {
         clearTimeout(timeoutId);
