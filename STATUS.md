@@ -1,8 +1,8 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-13 15:36  
+> **Ultima actualizacion:** 2026-10-13 15:44  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `fix(dispensario): actualizar modelos a gemini-3.5-flash-lite y gemini-3.8-flash v236`  
+> **Commit de cierre:** `fix(dispensario): bucle resiliente estricto continue ante 503/404 y modelos 3.5/3.8 v236`  
 > **Version Cache-Busting:** `?v=236`
 
 ---

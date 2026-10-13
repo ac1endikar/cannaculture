@@ -3008,88 +3008,78 @@ ${JSON.stringify(stockActivo, null, 2)}
 SOCIO EN MOSTRADOR TE DICE:
 "${userQuery}"`;
 
+    const cleanApiKey = (apiKey || '').trim();
+
     // Cascada de modelos compatibles con la API de Google
     const CANDIDATE_MODELS = [
       'gemini-3.5-flash-lite',
       'gemini-3.8-flash',
       'gemini-flash-latest'
     ];
+
+    const payload = {
+      systemInstruction: {
+        parts: [{ text: systemPrompt }]
+      },
+      contents: [
+        {
+          role: 'user',
+          parts: [{ text: userPayloadText }]
+        }
+      ],
+      generationConfig: {
+        temperature: 0.7,
+        maxOutputTokens: 600
+      }
+    };
+
     let lastError = null;
-    let responseText = null;
-
     for (const model of CANDIDATE_MODELS) {
-      console.log(`[María] Probando modelo: ${model}...`);
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => {
-        controller.abort(new Error("Timeout: La IA tardó más de 20s en responder"));
-      }, 20000);
-
       try {
-        const cleanApiKey = apiKey.trim();
-        const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(cleanApiKey)}`;
-        
-        // Formato estructurado con systemInstruction nativo
-        const requestBody = {
-          systemInstruction: {
-            parts: [{ text: systemPrompt }]
-          },
-          contents: [
-            {
-              role: 'user',
-              parts: [{ text: userPayloadText }]
-            }
-          ],
-          generationConfig: {
-            temperature: 0.7,
-            maxOutputTokens: 600
-          }
-        };
+        console.log(`[María] Intentando conectar con: ${model}...`);
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(new Error("Timeout")), 20000);
+
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(cleanApiKey)}`;
 
         let response;
         try {
-          response = await fetch(endpoint, {
+          response = await fetch(url, {
             method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestBody),
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
             signal: controller.signal
           });
         } finally {
           clearTimeout(timeoutId);
         }
 
-        if (response.ok) {
-          const data = await response.json();
-          const candidate = data.candidates && data.candidates[0];
-          if (candidate && candidate.content && candidate.content.parts && candidate.content.parts[0]) {
-            responseText = candidate.content.parts[0].text;
-            console.log(`[María] Respuesta recibida de: ${model}`);
-            break;
-          }
+        if (!response.ok) {
+          const errBody = await response.text();
+          console.warn(`[María] Modelo ${model} respondió con status ${response.status}: ${errBody}`);
+          lastError = new Error(`HTTP ${response.status}: ${errBody}`);
+          // SALTO INMEDIATO AL SIGUIENTE CANDIDATO ANTE CUALQUIER ERROR HTTP (503, 404, 429, etc.)
+          continue;
+        }
+
+        const data = await response.json();
+        const candidateText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (candidateText && candidateText.trim().length > 0) {
+          console.log(`[María] Éxito con el modelo: ${model}`);
+          return candidateText.trim();
         } else {
-          let errDetail = "";
-          try {
-            const errJson = await response.json();
-            errDetail = errJson.error ? errJson.error.message : response.statusText;
-          } catch (_) {
-            errDetail = response.statusText;
-          }
-          lastError = new Error(`Error en API Gemini (${response.status}): ${errDetail}`);
-          console.warn(`[María] Modelo ${model} devolvió HTTP ${response.status}. Probando siguiente candidato...`);
+          console.warn(`[María] Modelo ${model} devolvió payload vacío, probando siguiente...`);
           continue;
         }
       } catch (err) {
-        clearTimeout(timeoutId);
+        console.warn(`[María] Excepción de red con ${model}:`, err.message);
         lastError = err;
-        console.warn(`[María] Falló ${model}, probando siguiente...`, err.message || err);
+        continue;
       }
     }
 
-    if (responseText) {
-      return responseText;
-    }
-    throw lastError || new Error("No se pudo obtener respuesta de ningún modelo de IA.");
+    // Solo si ningún modelo de la lista pudo responder:
+    throw (lastError || new Error("No se pudo obtener respuesta de ningún modelo disponible"));
   }
 
   function formatMariaResponse(rawText) {
