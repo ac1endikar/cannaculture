@@ -3009,11 +3009,15 @@ SOCIO EN MOSTRADOR TE DICE:
 "${userQuery}"`;
 
     // Cascada de modelos compatibles con la API de Google
-    const targetModels = ['gemini-flash-latest', 'gemini-1.5-flash', 'gemini-2.5-flash'];
+    const CANDIDATE_MODELS = [
+      'gemini-3.8-flash',
+      'gemini-2.0-flash',
+      'gemini-flash-latest'
+    ];
     let lastError = null;
     let responseText = null;
 
-    for (const model of targetModels) {
+    for (const model of CANDIDATE_MODELS) {
       try {
         const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`;
         

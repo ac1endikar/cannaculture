@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-11 02:30  
+> **Ultima actualizacion:** 2026-10-13 12:15  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `fix(dispensario): grounding estricto de stock real y personalidad realista para Maria v230`  
-> **Version Cache-Busting:** `?v=230`
+> **Commit de cierre:** `fix(dispensario): actualizar endpoints Gemini a gemini-3.8-flash y gemini-2.0-flash v231`  
+> **Version Cache-Busting:** `?v=231`
 
 ---
 
@@ -14,11 +14,19 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v230):**
+- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v231):**
+  - **Actualización de Endpoints Google Gemini:** Migración inmediata tras el sunset de `gemini-2.5-flash` (HTTP 404). Configurada cascada prioritaria de modelos oficiales activos: `gemini-3.8-flash` -> `gemini-2.0-flash` -> `gemini-flash-latest`.
+  - **Resiliencia de Fallback:** Intento prioritario con `gemini-3.8-flash` y degradación elegante ante cuotas o disponibilidad.
+  - **Saneamiento del Repositorio Git:** Resuelta la referencia huérfana `bed30211` con injerto limpio, eliminando errores de sincronización y log.
   - **Extracción de Stock Real en Tiempo Real:** Fuente de datos auditada para leer `state.menu`, `cannaculture_csc_menu` en `localStorage`, stock por club, y fallback directo a tarjetas activas renderizadas en el DOM.
   - **Grounding Estricto:** Inyección de `BOTES_EN_MOSTRADOR` en el payload; María solo conoce y recomienda las variedades físicas presentes en el mostrador con gramos > 0.
   - **Personalidad Hiperrealista de Dependienta CSC:** Lenguaje cercano, de calle, con chispa y empatía ("¡Buenas!", "Esa entra finísima", "Huele que flipas", "De esa no nos queda en los botes ahora mismo...").
-  - **Logging y Manejo de Stock Vacío:** `console.log("🔥 [MARÍA CONTEXTO] Variedades reales pasadas a la IA:", stockActivo)` y respuesta humana inmediata si los botes están vacíos.
+
+### v231 — Actualización Endpoints Gemini (3.8-flash / 2.0-flash) y Reparación Git
+- **Migración de Modelos IA:** Retirada la referencia deprecada a `gemini-2.5-flash` causante del error 404 de Google AI Studio. Implementado array `CANDIDATE_MODELS` con `gemini-3.8-flash`, `gemini-2.0-flash` y `gemini-flash-latest`.
+- **Saneamiento Git:** Reparada la referencia huérfana `bed30211` mediante `git replace --graft`, limpiando warnings de `git pull` y `git log`.
+- **Recompilación de Bundle:** Generados `bundle.js`, `bundle-v151.js` y `strains-data.js` actualizados con `scripts/build_bundle.py`.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=231` en Service Worker (`cannaculture-core-v231`) y todas las plantillas HTML (`admin-dispensario.html`, `index.html`, `guia-cultivo.html`).
 
 ### v230 — Grounding Estricto de Stock Real y Personalidad Realista para María Sommelier
 - **Auditoría del Extractor de Stock:** Lectura reactiva de `state.menu`, almacenamiento local y scraping asistido del DOM en mostrador.
