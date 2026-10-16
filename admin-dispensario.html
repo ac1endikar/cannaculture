@@ -63,12 +63,12 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="css/age-gate.css?v=236">
+  <link rel="stylesheet" href="css/age-gate.css?v=237">
   <!-- Hoja de Estilos del Dispensario CSC -->
-  <link rel="stylesheet" href="css/admin-dispensario.css?v=236">
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=237">
 
   <!-- Controlador Inmediato de Age Gate (+18) -->
-  <script src="js/age-gate.js?v=236"></script>
+  <script src="js/age-gate.js?v=237"></script>
 </head>
 
 <body>
@@ -449,6 +449,8 @@
          PESTAÑA 2: TERMINAL MOSTRADOR DE DISPENSACIÓN (POS CSC)
          ====================================================================== -->
     <div id="view-tab-pos" class="dispensary-tab-view">
+     <div class="pos-terminal-shell">
+      <div class="pos-main-column">
       <div class="pos-layout">
         <!-- Columna Izquierda: Identificación de Socio & Variedad en Barra -->
         <section class="pos-panel-card pos-selection-panel">
@@ -546,13 +548,91 @@
           <!-- Mensaje de Validación / Alerta -->
           <div id="pos-validation-alert" class="pos-validation-alert" style="display: none;"></div>
 
-          <!-- Botón de Confirmación -->
-          <button type="button" id="btn-pos-dispense" class="pos-dispense-btn" disabled>
-            <span>✅</span>
-            <span>Dispensar & Registrar Ticket</span>
-          </button>
+          <!-- Acciones: Añadir al pedido multigenética o dispensación rápida de 1 variedad -->
+          <div class="pos-action-row">
+            <button type="button" id="btn-pos-add-to-order" class="pos-add-order-btn" disabled>
+              <span>➕</span>
+              <span>Añadir al pedido</span>
+            </button>
+            <button type="button" id="btn-pos-dispense" class="pos-dispense-btn" disabled>
+              <span>⚡</span>
+              <span>Dispensar solo esta</span>
+            </button>
+          </div>
         </section>
       </div>
+
+      <!-- Carta rápida: añadir variedades al pedido desde tarjetas -->
+      <section class="pos-panel-card pos-quick-panel" aria-labelledby="pos-quick-title">
+        <div class="pos-panel-header">
+          <h3 id="pos-quick-title"><span>🛒</span> <span>4. Carta Rápida · Pedido Multigenética</span></h3>
+          <span class="badge-count" id="pos-quick-count">0 variedades</span>
+        </div>
+        <div id="pos-quick-cards" class="pos-quick-grid">
+          <!-- Tarjetas de variedades activas con selector rápido de cantidad -->
+        </div>
+      </section>
+      </div>
+
+      <!-- Ticket del Socio / Pedido Actual -->
+      <aside id="pos-order-ticket" class="pos-order-ticket" aria-label="Ticket del socio, pedido actual">
+        <button type="button" id="btn-ticket-drawer-toggle" class="ticket-drawer-toggle" aria-expanded="false" aria-controls="ticket-body">
+          <span class="ticket-drawer-title">🧾 Pedido · <strong id="ticket-drawer-count">0</strong> líneas</span>
+          <span class="ticket-drawer-total"><strong id="ticket-drawer-total">0.00</strong> €</span>
+          <span class="ticket-drawer-chevron" aria-hidden="true">▴</span>
+        </button>
+
+        <div id="ticket-body" class="ticket-body">
+          <div class="ticket-header">
+            <h3><span>🧾</span> <span>Ticket del Socio</span></h3>
+            <span id="ticket-member-label" class="ticket-member-label">—</span>
+          </div>
+
+          <ul id="ticket-lines" class="ticket-lines" aria-live="polite">
+            <!-- Líneas del pedido -->
+          </ul>
+
+          <div id="ticket-alert" class="pos-validation-alert error" style="display: none;"></div>
+
+          <div class="ticket-totals">
+            <div class="ticket-total-row">
+              <span>Peso Total</span>
+              <strong><span id="ticket-total-grams">0.00</span> g</strong>
+            </div>
+            <div class="ticket-total-row ticket-grand-total">
+              <span>TOTAL A COBRAR</span>
+              <strong><span id="ticket-total-euros">0.00</span> €</strong>
+            </div>
+          </div>
+
+          <div class="ticket-cash">
+            <label for="ticket-cash-input" class="form-label">Efectivo entregado (€)</label>
+            <div class="form-input-currency">
+              <input type="number" step="0.01" min="0" id="ticket-cash-input" class="form-control" placeholder="0.00" inputmode="decimal" />
+              <span class="unit-symbol">€</span>
+            </div>
+            <div class="ticket-cash-quick">
+              <button type="button" class="btn-cash-quick" data-cash="exact">Exacto</button>
+              <button type="button" class="btn-cash-quick" data-cash="10">10 €</button>
+              <button type="button" class="btn-cash-quick" data-cash="20">20 €</button>
+              <button type="button" class="btn-cash-quick" data-cash="50">50 €</button>
+            </div>
+            <div id="ticket-change-row" class="ticket-change-row">
+              <span>Cambio a devolver</span>
+              <strong><span id="ticket-change-amount">0.00</span> €</strong>
+            </div>
+          </div>
+
+          <div class="ticket-actions">
+            <button type="button" id="btn-ticket-clear" class="btn-touch btn-secondary ticket-clear-btn" disabled>🗑️ Vaciar ticket</button>
+            <button type="button" id="btn-ticket-confirm" class="pos-dispense-btn ticket-confirm-btn" disabled>
+              <span>✅</span>
+              <span>Confirmar y Cobrar Pedido</span>
+            </button>
+          </div>
+        </div>
+      </aside>
+     </div>
     </div>
 
     <!-- ======================================================================
@@ -792,7 +872,7 @@
        Carga de Scripts: Datos Maestros (877 Cepas) y Lógica Modular
        ====================================================================== -->
   <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
-  <script src="js/strains-data.js?v=236"></script>
+  <script src="js/strains-data.js?v=237"></script>
 
   <!-- 2. Firebase SDK & Configuración (Modo CDN Compatibilidad) -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -801,7 +881,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- 3. Lógica del Panel de Dispensario CSC -->
-  <script src="js/admin-dispensario.js?v=236"></script>
+  <script src="js/admin-dispensario.js?v=237"></script>
 </body>
 
 </html>

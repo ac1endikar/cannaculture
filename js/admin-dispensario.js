@@ -591,6 +591,10 @@
     dispenseLog: []
   };
 
+  // Ticket activo del socio (Carrito TPV Multigenética v237)
+  // Ítems: { id, strainId, strainName, grams, pricePerGram, subtotal, availableStock }
+  let currentOrderTicket = [];
+
   let currentUser = null;
   let unsubscribeFirestore = null;
 
@@ -889,7 +893,7 @@
   }
 
   // Notificación Toast
-  function showToast(message, icon = '✅') {
+  function showToast(message, icon = '✅', durationMs = 2800) {
     let toast = document.getElementById('admin-toast');
     if (!toast) {
       toast = document.createElement('div');
@@ -902,7 +906,7 @@
     clearTimeout(toast._timer);
     toast._timer = setTimeout(() => {
       toast.classList.remove('show');
-    }, 2800);
+    }, durationMs);
   }
 
   // ==========================================================================
@@ -2244,6 +2248,7 @@
     }
 
     setupNewMemberModal();
+    setupOrderTicket();
   }
 
   function syncWeightInputs() {
@@ -2354,6 +2359,9 @@
 
     syncWeightInputs();
     validateAndCalculatePos();
+    repriceOrderTicket();
+    renderQuickCards();
+    renderOrderTicket();
   }
 
   function validateAndCalculatePos() {
@@ -2368,6 +2376,8 @@
 
     if (!member || !menuItem) {
       if (dispenseBtn) dispenseBtn.disabled = true;
+      const addBtnNone = document.getElementById('btn-pos-add-to-order');
+      if (addBtnNone) addBtnNone.disabled = true;
       return;
     }
 
@@ -2400,6 +2410,8 @@
     if (weight <= 0) {
       if (alertBox) alertBox.style.display = 'none';
       if (dispenseBtn) dispenseBtn.disabled = true;
+      const addBtnZero = document.getElementById('btn-pos-add-to-order');
+      if (addBtnZero) addBtnZero.disabled = true;
       return;
     }
 
@@ -2423,6 +2435,11 @@
 
     if (dispenseBtn) {
       dispenseBtn.disabled = hasError || weight <= 0;
+    }
+
+    const addOrderBtn = document.getElementById('btn-pos-add-to-order');
+    if (addOrderBtn) {
+      addOrderBtn.disabled = weight <= 0 || weight > currentStock;
     }
   }
 
@@ -2479,6 +2496,614 @@
     showToast(`✅ Dispensados ${weight.toFixed(2)}g de ${strainName} a socio #${member.id} (${totalEuros.toFixed(2)} €)`);
 
     // Actualizar interfaces
+    renderPosUI();
+    renderMenuGrid();
+    updateTabBadges();
+  }
+
+  // ==========================================================================
+  // CARRITO TPV MULTIGENÉTICA · TICKET DEL SOCIO (v237)
+  // ==========================================================================
+  const ORDER_TICKET_SESSION_KEY = 'cc_pos_open_ticket';
+  const round2 = (n) => Math.round((Number(n) || 0) * 100) / 100;
+
+  function escapeHtml(str) {
+    return String(str == null ? '' : str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function getPosMember() {
+    return state.members.find(m => m.id === state.selectedMemberId) || state.members[0] || null;
+  }
+
+  function getMemberRate(menuItem, member) {
+    const std = menuItem.tierStd || 8.50;
+    if (member && member.tier === 'colab') return menuItem.tierColab || std * 0.90;
+    if (member && member.tier === 'terap') return menuItem.tierTerap || std * 0.75;
+    return std;
+  }
+
+  function getStrainDisplayName(strainId) {
+    const s = getStrainData(strainId);
+    return s ? s.name : strainId;
+  }
+
+  function getTicketGramsForStrain(strainId) {
+    return round2(currentOrderTicket
+      .filter(i => i.strainId === strainId)
+      .reduce((acc, i) => acc + i.grams, 0));
+  }
+
+  function getTicketTotals() {
+    const grams = round2(currentOrderTicket.reduce((acc, i) => acc + i.grams, 0));
+    const euros = round2(currentOrderTicket.reduce((acc, i) => acc + i.subtotal, 0));
+    return { grams, euros };
+  }
+
+  function persistOrderTicket() {
+    try {
+      sessionStorage.setItem(ORDER_TICKET_SESSION_KEY, JSON.stringify(currentOrderTicket));
+    } catch (e) { /* almacenamiento no disponible */ }
+  }
+
+  function restoreOrderTicket() {
+    try {
+      const raw = sessionStorage.getItem(ORDER_TICKET_SESSION_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      currentOrderTicket = Array.isArray(parsed)
+        ? parsed.filter(i => i && i.strainId && i.grams > 0 && state.menu.some(m => m.id === i.strainId))
+        : [];
+    } catch (e) {
+      currentOrderTicket = [];
+    }
+  }
+
+  /**
+   * Añade gramos de una variedad al ticket. Si la variedad ya está en el pedido
+   * se acumula en la misma línea. Valida stock del bote y cupo mensual del socio.
+   * @param {string} strainId
+   * @param {number} grams
+   * @param {number|null} fixedSubtotal Importe exacto en € (modo "importe"), o null.
+   * @returns {boolean} true si se añadió.
+   */
+  function addToOrderTicket(strainId, grams, fixedSubtotal = null) {
+    const member = getPosMember();
+    const menuItem = state.menu.find(m => m.id === strainId);
+    grams = round2(grams);
+
+    if (!member) {
+      showToast('Selecciona un socio antes de añadir al pedido.', '⚠️');
+      return false;
+    }
+    if (!menuItem || !menuItem.available) {
+      showToast('Esta variedad no está disponible en mostrador.', '⚠️');
+      return false;
+    }
+    if (!(grams > 0)) {
+      showToast('Indica una cantidad mayor que 0.', '⚠️');
+      return false;
+    }
+
+    const stock = round2(menuItem.stockGrams || 0);
+    const alreadyInTicket = getTicketGramsForStrain(strainId);
+    if (round2(alreadyInTicket + grams) > stock) {
+      const left = Math.max(0, round2(stock - alreadyInTicket));
+      showToast(`Stock insuficiente de ${escapeHtml(getStrainDisplayName(strainId))}: quedan ${left.toFixed(2)} g libres en el bote.`, '⚠️', 4000);
+      return false;
+    }
+
+    const remainingQuota = Math.max(0, round2(member.limitGrams - (member.consumedGrams || 0)));
+    const { grams: ticketGrams } = getTicketTotals();
+    if (round2(ticketGrams + grams) > remainingQuota) {
+      showToast(`Supera el cupo mensual del socio: le quedan ${remainingQuota.toFixed(2)} g (en ticket: ${ticketGrams.toFixed(2)} g).`, '⚠️', 4000);
+      return false;
+    }
+
+    const rate = round2(getMemberRate(menuItem, member));
+    const addSubtotal = fixedSubtotal != null ? round2(fixedSubtotal) : round2(grams * rate);
+    const existing = currentOrderTicket.find(i => i.strainId === strainId);
+
+    if (existing) {
+      existing.grams = round2(existing.grams + grams);
+      existing.subtotal = round2(existing.subtotal + addSubtotal);
+      existing.pricePerGram = rate;
+      existing.availableStock = stock;
+    } else {
+      currentOrderTicket.push({
+        id: `line-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+        strainId,
+        strainName: getStrainDisplayName(strainId),
+        grams,
+        pricePerGram: rate,
+        subtotal: addSubtotal,
+        availableStock: stock
+      });
+    }
+
+    persistOrderTicket();
+    renderOrderTicket(strainId);
+    updateQuickCardStocks();
+    showToast(`Añadido: ${grams.toFixed(2)} g de ${escapeHtml(getStrainDisplayName(strainId))} (${addSubtotal.toFixed(2)} €)`, '🛒');
+    return true;
+  }
+
+  function removeOrderLine(lineId) {
+    currentOrderTicket = currentOrderTicket.filter(i => i.id !== lineId);
+    persistOrderTicket();
+    renderOrderTicket();
+    updateQuickCardStocks();
+  }
+
+  function adjustOrderLine(lineId, delta) {
+    const line = currentOrderTicket.find(i => i.id === lineId);
+    if (!line) return;
+    const newGrams = round2(line.grams + delta);
+    if (newGrams <= 0) {
+      removeOrderLine(lineId);
+      return;
+    }
+    if (delta > 0) {
+      const menuItem = state.menu.find(m => m.id === line.strainId);
+      const stock = round2(menuItem ? menuItem.stockGrams || 0 : 0);
+      if (newGrams > stock) {
+        showToast(`No hay más stock de ${escapeHtml(line.strainName)} (bote: ${stock.toFixed(2)} g).`, '⚠️');
+        return;
+      }
+      const member = getPosMember();
+      const remainingQuota = member ? Math.max(0, round2(member.limitGrams - (member.consumedGrams || 0))) : 0;
+      if (round2(getTicketTotals().grams + delta) > remainingQuota) {
+        showToast(`Supera el cupo mensual del socio (${remainingQuota.toFixed(2)} g disponibles).`, '⚠️');
+        return;
+      }
+    }
+    line.grams = newGrams;
+    line.subtotal = round2(newGrams * line.pricePerGram);
+    persistOrderTicket();
+    renderOrderTicket(line.strainId);
+    updateQuickCardStocks();
+  }
+
+  function clearOrderTicket(silent = false) {
+    currentOrderTicket = [];
+    persistOrderTicket();
+    const cashInput = document.getElementById('ticket-cash-input');
+    if (cashInput) cashInput.value = '';
+    renderOrderTicket();
+    updateQuickCardStocks();
+    if (!silent) showToast('Ticket vaciado.', '🗑️');
+  }
+
+  /** Recalcula precios del ticket si cambia el socio (otra tarifa estatutaria). */
+  function repriceOrderTicket() {
+    const member = getPosMember();
+    let changed = false;
+    currentOrderTicket.forEach(line => {
+      const menuItem = state.menu.find(m => m.id === line.strainId);
+      if (!menuItem) return;
+      const rate = round2(getMemberRate(menuItem, member));
+      line.availableStock = round2(menuItem.stockGrams || 0);
+      if (rate !== line.pricePerGram) {
+        line.pricePerGram = rate;
+        line.subtotal = round2(line.grams * rate);
+        changed = true;
+      }
+    });
+    if (changed) persistOrderTicket();
+  }
+
+  /** Devuelve un mensaje de error si el ticket no se puede cobrar, o null si es válido. */
+  function validateOrderTicket(member) {
+    if (!member) return 'Selecciona un socio para cobrar el pedido.';
+    if (currentOrderTicket.length === 0) return null;
+
+    for (const line of currentOrderTicket) {
+      const menuItem = state.menu.find(m => m.id === line.strainId);
+      const stock = round2(menuItem ? menuItem.stockGrams || 0 : 0);
+      const reserved = getTicketGramsForStrain(line.strainId);
+      if (!menuItem) return `⚠️ <strong>${escapeHtml(line.strainName)}</strong> ya no existe en la carta.`;
+      if (reserved > stock) {
+        return `⚠️ <strong>Stock insuficiente:</strong> ${escapeHtml(line.strainName)} tiene ${stock.toFixed(2)} g en bote (pedido: ${reserved.toFixed(2)} g).`;
+      }
+    }
+
+    const remainingQuota = Math.max(0, round2(member.limitGrams - (member.consumedGrams || 0)));
+    const { grams } = getTicketTotals();
+    if (grams > remainingQuota) {
+      return `⚠️ <strong>Exceso de Límite Estatutario:</strong> el socio dispone de ${remainingQuota.toFixed(2)} g este mes (pedido: ${grams.toFixed(2)} g).`;
+    }
+    return null;
+  }
+
+  function updateChangeDisplay() {
+    const cashInput = document.getElementById('ticket-cash-input');
+    const changeRow = document.getElementById('ticket-change-row');
+    const changeEl = document.getElementById('ticket-change-amount');
+    if (!cashInput || !changeRow || !changeEl) return;
+
+    const { euros } = getTicketTotals();
+    const cash = parseFloat(cashInput.value);
+    const label = changeRow.querySelector('span');
+
+    changeRow.classList.remove('is-short', 'is-ok');
+    if (isNaN(cash) || cash <= 0) {
+      changeEl.textContent = '0.00';
+      if (label) label.textContent = 'Cambio a devolver';
+      return;
+    }
+    const diff = round2(cash - euros);
+    if (diff < 0) {
+      changeRow.classList.add('is-short');
+      if (label) label.textContent = 'Falta por entregar';
+      changeEl.textContent = Math.abs(diff).toFixed(2);
+    } else {
+      changeRow.classList.add('is-ok');
+      if (label) label.textContent = 'Cambio a devolver';
+      changeEl.textContent = diff.toFixed(2);
+    }
+  }
+
+  function renderOrderTicket(highlightStrainId = null) {
+    const listEl = document.getElementById('ticket-lines');
+    if (!listEl) return;
+
+    const member = getPosMember();
+    const memberLabel = document.getElementById('ticket-member-label');
+    if (memberLabel) memberLabel.textContent = member ? `${member.alias} · #${member.id}` : 'Sin socio';
+
+    if (currentOrderTicket.length === 0) {
+      listEl.innerHTML = `
+        <li class="ticket-empty">
+          <span class="ticket-empty-icon">🛒</span>
+          <span>El pedido está vacío.</span>
+          <small>Añade variedades desde la Carta Rápida o la báscula.</small>
+        </li>`;
+    } else {
+      listEl.innerHTML = currentOrderTicket.map(line => `
+        <li class="ticket-line ${line.strainId === highlightStrainId ? 'is-new' : ''}" data-line-id="${line.id}">
+          <div class="ticket-line-main">
+            <span class="ticket-line-name">${escapeHtml(line.strainName)}</span>
+            <span class="ticket-line-meta">${line.pricePerGram.toFixed(2)} €/g</span>
+          </div>
+          <div class="ticket-line-controls">
+            <button type="button" class="ticket-step-btn" data-action="dec" aria-label="Restar 0.5 g de ${escapeHtml(line.strainName)}">−</button>
+            <span class="ticket-line-grams">${line.grams.toFixed(2)} g</span>
+            <button type="button" class="ticket-step-btn" data-action="inc" aria-label="Sumar 0.5 g de ${escapeHtml(line.strainName)}">+</button>
+          </div>
+          <span class="ticket-line-subtotal">${line.subtotal.toFixed(2)} €</span>
+          <button type="button" class="ticket-remove-btn" data-action="remove" aria-label="Eliminar ${escapeHtml(line.strainName)} del pedido">✕</button>
+        </li>`).join('');
+    }
+
+    const { grams, euros } = getTicketTotals();
+    const setText = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
+    setText('ticket-total-grams', grams.toFixed(2));
+    setText('ticket-total-euros', euros.toFixed(2));
+    setText('ticket-drawer-count', String(currentOrderTicket.length));
+    setText('ticket-drawer-total', euros.toFixed(2));
+
+    const ticketPanel = document.getElementById('pos-order-ticket');
+    if (ticketPanel) {
+      ticketPanel.classList.toggle('has-items', currentOrderTicket.length > 0);
+      if (highlightStrainId) {
+        ticketPanel.classList.remove('pulse');
+        void ticketPanel.offsetWidth;
+        ticketPanel.classList.add('pulse');
+      }
+    }
+
+    const errorMsg = currentOrderTicket.length ? validateOrderTicket(member) : null;
+    const alertEl = document.getElementById('ticket-alert');
+    if (alertEl) {
+      alertEl.innerHTML = errorMsg || '';
+      alertEl.style.display = errorMsg ? 'flex' : 'none';
+    }
+
+    const confirmBtn = document.getElementById('btn-ticket-confirm');
+    if (confirmBtn) confirmBtn.disabled = currentOrderTicket.length === 0 || !!errorMsg;
+    const clearBtn = document.getElementById('btn-ticket-clear');
+    if (clearBtn) clearBtn.disabled = currentOrderTicket.length === 0;
+
+    updateChangeDisplay();
+  }
+
+  function renderQuickCards() {
+    const container = document.getElementById('pos-quick-cards');
+    if (!container) return;
+
+    const member = getPosMember();
+    const availStrains = state.menu.filter(m => m.available);
+    const countEl = document.getElementById('pos-quick-count');
+    if (countEl) countEl.textContent = `${availStrains.length} variedades`;
+
+    if (availStrains.length === 0) {
+      container.innerHTML = `<div class="quick-empty">No hay variedades marcadas como disponibles en la carta.</div>`;
+      return;
+    }
+
+    container.innerHTML = availStrains.map(m => {
+      const s = getStrainData(m.id) || { name: m.id, image: `img/${m.id}.webp`, species: 'Híbrida' };
+      const rate = getMemberRate(m, member);
+      const safeName = escapeHtml(s.name);
+      return `
+        <article class="quick-card" data-strain-id="${escapeHtml(m.id)}" data-mode="g" data-rate="${rate.toFixed(4)}">
+          <div class="quick-card-head">
+            <img src="${escapeHtml(s.image || 'img/' + m.id + '.webp')}" alt="${safeName}" class="quick-card-thumb" loading="lazy"
+                 onerror="this.src='img/ths-darkstar-official.webp';" />
+            <div class="quick-card-info">
+              <h4 class="quick-card-name">${safeName}</h4>
+              <div class="quick-card-meta">
+                <span class="quick-rate">${rate.toFixed(2)} €/g</span>
+                <span class="quick-stock">📦 <span class="quick-stock-left">—</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="quick-presets" role="group" aria-label="Cantidad rápida ${safeName}">
+            <button type="button" class="quick-preset-btn" data-qty="0.5">0.5g</button>
+            <button type="button" class="quick-preset-btn" data-qty="1">1g</button>
+            <button type="button" class="quick-preset-btn" data-qty="2">2g</button>
+            <button type="button" class="quick-preset-btn" data-qty="5">5g</button>
+          </div>
+          <div class="quick-input-row">
+            <div class="quick-mode-toggle" role="group" aria-label="Unidad">
+              <button type="button" class="quick-mode-btn active" data-mode="g">g</button>
+              <button type="button" class="quick-mode-btn" data-mode="eur">€</button>
+            </div>
+            <input type="number" class="form-control quick-amount-input" id="quick-amount-${escapeHtml(m.id)}"
+                   min="0" step="0.05" inputmode="decimal" placeholder="Gramos" aria-label="Cantidad de ${safeName}" />
+          </div>
+          <div class="quick-preview">= <strong class="quick-preview-value">0.00 €</strong></div>
+          <button type="button" class="quick-add-btn" id="quick-add-${escapeHtml(m.id)}">➕ Añadir al pedido</button>
+        </article>`;
+    }).join('');
+
+    updateQuickCardStocks();
+  }
+
+  /** Actualiza solo el stock libre (bote − reservado en ticket) sin perder lo que el vendedor teclea. */
+  function updateQuickCardStocks() {
+    document.querySelectorAll('#pos-quick-cards .quick-card').forEach(card => {
+      const strainId = card.getAttribute('data-strain-id');
+      const menuItem = state.menu.find(m => m.id === strainId);
+      const stock = round2(menuItem ? menuItem.stockGrams || 0 : 0);
+      const reserved = getTicketGramsForStrain(strainId);
+      const free = Math.max(0, round2(stock - reserved));
+      const leftEl = card.querySelector('.quick-stock-left');
+      if (leftEl) {
+        leftEl.textContent = reserved > 0
+          ? `${free.toFixed(2)} g libres (${reserved.toFixed(2)} g en ticket)`
+          : `${stock.toFixed(2)} g`;
+      }
+      card.classList.toggle('is-low', free < 10);
+      card.classList.toggle('is-out', free <= 0);
+      card.classList.toggle('in-ticket', reserved > 0);
+      const addBtn = card.querySelector('.quick-add-btn');
+      if (addBtn) addBtn.disabled = free <= 0;
+    });
+  }
+
+  function getQuickCardAmount(card) {
+    const input = card.querySelector('.quick-amount-input');
+    const mode = card.getAttribute('data-mode') || 'g';
+    const rate = parseFloat(card.getAttribute('data-rate')) || 0;
+    const value = parseFloat(input ? input.value : '');
+    if (isNaN(value) || value <= 0 || rate <= 0) return { grams: 0, euros: 0, mode };
+    if (mode === 'eur') return { grams: round2(value / rate), euros: round2(value), mode };
+    return { grams: round2(value), euros: round2(value * rate), mode };
+  }
+
+  function updateQuickPreview(card) {
+    const previewEl = card.querySelector('.quick-preview-value');
+    if (!previewEl) return;
+    const { grams, euros, mode } = getQuickCardAmount(card);
+    previewEl.textContent = mode === 'eur' ? `${grams.toFixed(2)} g` : `${euros.toFixed(2)} €`;
+  }
+
+  function setupOrderTicket() {
+    restoreOrderTicket();
+
+    // Añadir desde la báscula (variedad seleccionada + peso actual)
+    const addFromScaleBtn = document.getElementById('btn-pos-add-to-order');
+    if (addFromScaleBtn) {
+      addFromScaleBtn.addEventListener('click', () => {
+        const ok = addToOrderTicket(state.posSelectedStrainId, state.posCurrentWeight || 0);
+        if (ok) {
+          state.posCurrentWeight = 0.00;
+          syncWeightInputs();
+          validateAndCalculatePos();
+        }
+      });
+    }
+
+    // Carta rápida: delegación de eventos
+    const quickContainer = document.getElementById('pos-quick-cards');
+    if (quickContainer) {
+      quickContainer.addEventListener('click', (e) => {
+        const card = e.target.closest('.quick-card');
+        if (!card) return;
+        const input = card.querySelector('.quick-amount-input');
+
+        const preset = e.target.closest('.quick-preset-btn');
+        if (preset) {
+          card.setAttribute('data-mode', 'g');
+          card.querySelectorAll('.quick-mode-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-mode') === 'g'));
+          card.querySelectorAll('.quick-preset-btn').forEach(b => b.classList.toggle('active', b === preset));
+          if (input) {
+            input.placeholder = 'Gramos';
+            input.step = '0.05';
+            input.value = parseFloat(preset.getAttribute('data-qty')).toFixed(2);
+          }
+          updateQuickPreview(card);
+          return;
+        }
+
+        const modeBtn = e.target.closest('.quick-mode-btn');
+        if (modeBtn) {
+          const mode = modeBtn.getAttribute('data-mode');
+          card.setAttribute('data-mode', mode);
+          card.querySelectorAll('.quick-mode-btn').forEach(b => b.classList.toggle('active', b === modeBtn));
+          card.querySelectorAll('.quick-preset-btn').forEach(b => b.classList.remove('active'));
+          if (input) {
+            input.placeholder = mode === 'eur' ? 'Importe €' : 'Gramos';
+            input.step = mode === 'eur' ? '0.50' : '0.05';
+            input.value = '';
+            input.focus();
+          }
+          updateQuickPreview(card);
+          return;
+        }
+
+        if (e.target.closest('.quick-add-btn')) {
+          const { grams, euros, mode } = getQuickCardAmount(card);
+          const ok = addToOrderTicket(card.getAttribute('data-strain-id'), grams, mode === 'eur' ? euros : null);
+          if (ok) {
+            if (input) input.value = '';
+            card.querySelectorAll('.quick-preset-btn').forEach(b => b.classList.remove('active'));
+            updateQuickPreview(card);
+            card.classList.remove('added');
+            void card.offsetWidth;
+            card.classList.add('added');
+          }
+        }
+      });
+
+      quickContainer.addEventListener('input', (e) => {
+        if (!e.target.classList.contains('quick-amount-input')) return;
+        const card = e.target.closest('.quick-card');
+        if (!card) return;
+        card.querySelectorAll('.quick-preset-btn').forEach(b => b.classList.remove('active'));
+        updateQuickPreview(card);
+      });
+
+      quickContainer.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter' || !e.target.classList.contains('quick-amount-input')) return;
+        const card = e.target.closest('.quick-card');
+        const addBtn = card && card.querySelector('.quick-add-btn');
+        if (addBtn && !addBtn.disabled) addBtn.click();
+      });
+    }
+
+    // Líneas del ticket: ajustar / eliminar
+    const linesEl = document.getElementById('ticket-lines');
+    if (linesEl) {
+      linesEl.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-action]');
+        const lineEl = e.target.closest('.ticket-line');
+        if (!btn || !lineEl) return;
+        const lineId = lineEl.getAttribute('data-line-id');
+        const action = btn.getAttribute('data-action');
+        if (action === 'remove') removeOrderLine(lineId);
+        else if (action === 'inc') adjustOrderLine(lineId, 0.5);
+        else if (action === 'dec') adjustOrderLine(lineId, -0.5);
+      });
+    }
+
+    // Efectivo entregado / cambio
+    const cashInput = document.getElementById('ticket-cash-input');
+    if (cashInput) cashInput.addEventListener('input', updateChangeDisplay);
+    document.querySelectorAll('.btn-cash-quick[data-cash]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!cashInput) return;
+        const val = btn.getAttribute('data-cash');
+        cashInput.value = val === 'exact' ? getTicketTotals().euros.toFixed(2) : Number(val).toFixed(2);
+        updateChangeDisplay();
+      });
+    });
+
+    const clearBtn = document.getElementById('btn-ticket-clear');
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        if (currentOrderTicket.length === 0) return;
+        if (confirm('¿Vaciar el ticket actual del socio?')) clearOrderTicket();
+      });
+    }
+
+    const confirmBtn = document.getElementById('btn-ticket-confirm');
+    if (confirmBtn) confirmBtn.addEventListener('click', confirmOrderTicket);
+
+    // Barra desplegable inferior (tablet / móvil)
+    const drawerToggle = document.getElementById('btn-ticket-drawer-toggle');
+    const ticketPanel = document.getElementById('pos-order-ticket');
+    if (drawerToggle && ticketPanel) {
+      drawerToggle.addEventListener('click', () => {
+        const open = ticketPanel.classList.toggle('drawer-open');
+        drawerToggle.setAttribute('aria-expanded', String(open));
+      });
+    }
+
+    renderOrderTicket();
+  }
+
+  function confirmOrderTicket() {
+    const member = getPosMember();
+    if (!member || currentOrderTicket.length === 0) return;
+
+    repriceOrderTicket();
+    const errorMsg = validateOrderTicket(member);
+    if (errorMsg) {
+      renderOrderTicket();
+      showToast('No se puede cobrar: revisa las alertas del ticket.', '⚠️');
+      return;
+    }
+
+    const now = new Date();
+    const pad = (n) => String(n).padStart(2, '0');
+    const ticketId = `TKT-${now.getFullYear().toString().slice(-2)}${pad(now.getMonth() + 1)}${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
+    const { grams: totalGrams, euros: totalEuros } = getTicketTotals();
+
+    const cashInput = document.getElementById('ticket-cash-input');
+    const cashGiven = cashInput ? parseFloat(cashInput.value) : NaN;
+    const hasCash = !isNaN(cashGiven) && cashGiven > 0;
+    const changeGiven = hasCash ? Math.max(0, round2(cashGiven - totalEuros)) : null;
+
+    const entries = currentOrderTicket.map((line, idx) => {
+      const menuItem = state.menu.find(m => m.id === line.strainId);
+      menuItem.stockGrams = Math.max(0, round2((menuItem.stockGrams || 0) - line.grams));
+      menuItem.lastUpdated = now.toISOString();
+      return {
+        id: `disp-${now.getTime()}-${idx}`,
+        ticketId,
+        ticketLine: idx + 1,
+        ticketLines: currentOrderTicket.length,
+        ticketTotalEuros: totalEuros,
+        ticketTotalGrams: totalGrams,
+        cashGiven: hasCash ? round2(cashGiven) : null,
+        changeGiven,
+        timestamp: now.toISOString(),
+        timeStr: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        dateStr: now.toLocaleDateString(),
+        memberId: member.id,
+        memberAlias: member.alias,
+        memberTier: member.tier,
+        strainId: line.strainId,
+        strainName: line.strainName,
+        category: menuItem.category,
+        weight: line.grams,
+        rate: line.pricePerGram,
+        totalEuros: line.subtotal
+      };
+    });
+
+    // El libro es cronológico inverso: insertar manteniendo el orden de líneas del ticket
+    state.dispenseLog.unshift(...entries);
+    member.consumedGrams = round2((member.consumedGrams || 0) + totalGrams);
+
+    persistMenu();
+    persistMembers();
+    persistDispenseLog();
+
+    const linesCount = entries.length;
+    clearOrderTicket(true);
+
+    const changeTxt = changeGiven != null ? ` · Cambio: ${changeGiven.toFixed(2)} €` : '';
+    showToast(`<strong>${ticketId}</strong> cobrado · ${linesCount} variedad${linesCount > 1 ? 'es' : ''} · ${totalGrams.toFixed(2)} g · <strong>${totalEuros.toFixed(2)} €</strong>${changeTxt}`, '✅', 5500);
+
+    const ticketPanel = document.getElementById('pos-order-ticket');
+    if (ticketPanel) ticketPanel.classList.remove('drawer-open');
+
     renderPosUI();
     renderMenuGrid();
     updateTabBadges();
@@ -2562,7 +3187,10 @@
 
     if (elGrams) elGrams.textContent = `${totalGrams.toFixed(2)} g`;
     if (elEuros) elEuros.textContent = `${totalEuros.toFixed(2)} €`;
-    if (elTickets) elTickets.textContent = `${todayTickets.length} tickets`;
+    if (elTickets) {
+      const uniqueTickets = new Set(todayTickets.map(t => t.ticketId || t.id)).size;
+      elTickets.textContent = `${uniqueTickets} tickets`;
+    }
 
     // Alertas de Stock Bajo (< 10g)
     const lowStockItems = state.menu.filter(m => m.available && (m.stockGrams || 0) < 10);
@@ -2594,7 +3222,7 @@
           const tierLabel = t.memberTier === 'colab' ? 'Colab' : (t.memberTier === 'terap' ? 'Médico' : 'Estándar');
           return `
             <tr>
-              <td><strong>${t.timeStr || '--:--'}</strong></td>
+              <td><strong>${t.timeStr || '--:--'}</strong>${t.ticketId ? `<div class="movement-ticket-ref" title="Ticket multigenética">🧾 ${t.ticketId} · ${t.ticketLine}/${t.ticketLines}</div>` : ''}</td>
               <td>${t.memberAlias} <span style="font-size:0.75rem; color:var(--text-dim);">(#${t.memberId})</span></td>
               <td><span class="member-tier-pill ${tierClass}">${tierLabel}</span></td>
               <td><strong>${t.strainName}</strong></td>
@@ -2619,7 +3247,7 @@
           return;
         }
 
-        const headers = ["Fecha", "Hora", "ID Socio", "Alias", "Nivel", "Variedad", "Categoria", "Gramos", "Cuota €/g", "Aportacion Total €"];
+        const headers = ["Fecha", "Hora", "ID Socio", "Alias", "Nivel", "Variedad", "Categoria", "Gramos", "Cuota €/g", "Aportacion Total €", "Ticket", "Total Ticket €"];
         const rows = state.dispenseLog.map(t => [
           t.dateStr || '',
           t.timeStr || '',
@@ -2630,7 +3258,9 @@
           t.category || '',
           (t.weight || 0).toFixed(2),
           (t.rate || 0).toFixed(2),
-          (t.totalEuros || 0).toFixed(2)
+          (t.totalEuros || 0).toFixed(2),
+          t.ticketId || t.id || '',
+          (t.ticketTotalEuros != null ? t.ticketTotalEuros : (t.totalEuros || 0)).toFixed(2)
         ]);
 
         const csvContent = "\uFEFF" + [headers.join(","), ...rows.map(r => r.join(","))].join("\r\n");

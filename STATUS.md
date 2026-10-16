@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-13 15:44  
+> **Ultima actualizacion:** 2026-10-16 17:05  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `fix(dispensario): bucle resiliente estricto continue ante 503/404 y modelos 3.5/3.8 v236`  
-> **Version Cache-Busting:** `?v=236`
+> **Commit de cierre:** `feat(dispensario): carrito TPV multigenetica y ticket total a cobrar en mostrador v237`  
+> **Version Cache-Busting:** `?v=237`
 
 ---
 
@@ -14,11 +14,23 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
+- **CARRITO TPV MULTIGENÉTICA EN MOSTRADOR (v237):**
+  - **Ticket Multivariedad Activo:** Estado reactivo `currentOrderTicket` para combinar múltiples variedades en un mismo pedido de socio.
+  - **Control de Stock y Cupo:** Validación en vivo de botes de mostrador y límite mensual estatutario del socio seleccionado.
+  - **Terminal Mostrador Responsivo:** Panel sticky en escritorio y cajón desplegable inferior en tablet/móvil con calculadora de efectivo y cambio a devolver.
+  - **Registro Unificado en Libro y Arqueo:** Trazabilidad agrupada por `ticketId`, exportable a CSV y reflejada en el conteo diario.
 - **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v236):**
-  - **Modelos Oficiales Activos de Google:** Cascada actualizada con `gemini-3.5-flash-lite` (prioritario por bajísima latencia y disponibilidad inmediata), `gemini-3.8-flash` y `gemini-flash-latest`.
-  - **Resiliencia Automática ante Errores HTTP:** Salto inmediato (`continue`) ante cualquier código no exitoso (404, 503, 429) sin interrumpir el flujo ni arrojar error prematuro al usuario.
-  - **Timeout de 20s con AbortController:** Margen holgado sin cancelaciones prematuras.
-  - **Desbloqueo Garantizado de UI (bloque finally):** Retirada exhaustiva de elementos `.maria-loading-box`, reactivación del botón de envío y foco reactivo en el input.
+  - **Modelos Oficiales Activos de Google:** Cascada actualizada con `gemini-3.5-flash-lite`, `gemini-3.8-flash` y `gemini-flash-latest`.
+  - **Resiliencia Automática ante Errores HTTP:** Salto inmediato (`continue`) ante cualquier código no exitoso (404, 503, 429) sin interrumpir el flujo.
+
+### v237 — Carrito TPV Multigenética y Ticket Total a Cobrar en Mostrador
+- **Sistema de Ticket Multivariedad (TPV):** Implementado estado `currentOrderTicket = []` en `js/admin-dispensario.js` con soporte para múltiples líneas de genéticas en un mismo pedido de socio.
+- **Validación Estricta de Stock y Cupo:** Control por variedad para evitar que los gramos acumulados en el ticket superen el bote físico en mostrador o el límite estatutario mensual del socio.
+- **Carta Rápida con Selectores de Cantidad:** Añadidas tarjetas dinámicas de stock con selectores 0.5g, 1g, 2g, 5g, modo de entrada numérica en gramos o importe exacto en €, y botón de adición directa al pedido.
+- **Panel de Ticket y Caja Registradora:** Panel flotante/sticky en escritorio y cajón desplegable inferior optimizado para tablet y móvil (`#pos-order-ticket`), con desglose por cepa, ajuste y borrado de líneas, totales de peso y euros, y calculadora automática de cambio según efectivo entregado.
+- **Cobro Unificado y Trazabilidad:** Al confirmar, se descuenta el stock en tiempo real de cada variedad, se actualiza el consumo acumulado del socio y se emiten los registros en el libro del club agrupados bajo un identificador único de ticket (`ticketId`), exportable a CSV e imprimible en el acta.
+- **Recompilación de Bundle:** Generados `bundle.js`, `bundle-v151.js` y `strains-data.js` actualizados con `scripts/build_bundle.py`.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=237` en Service Worker (`cannaculture-core-v237`) y plantillas HTML (`admin-dispensario.html`, `index.html`, `guia-cultivo.html`).
 
 ### v236 — Modelos Activos Gemini-3.5-Flash-Lite / 3.8-Flash y Salto Inmediato
 - **Modelos Oficiales de Producción:** Configurada cascada `gemini-3.5-flash-lite` -> `gemini-3.8-flash` -> `gemini-flash-latest`, alineada con los endpoints recomendados por Google AI Studio.
