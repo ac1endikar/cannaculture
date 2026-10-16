@@ -12,6 +12,8 @@
   const CLUB_CONFIG_KEY = 'cannaculture_csc_club_config';
   const MEMBERS_STORAGE_KEY = 'cannaculture_csc_members';
   const DISPENSE_LOG_KEY = 'cannaculture_csc_dispense_log';
+  const TICKETS_STORAGE_KEY = 'cannaculture_csc_tickets_log';
+  const CASH_CLOSURES_STORAGE_KEY = 'cannaculture_csc_cash_closures';
 
   // Configuración por defecto del club
   const DEFAULT_CLUB_CONFIG = {
@@ -588,7 +590,10 @@
     selectedMemberId: null,
     posSelectedStrainId: null,
     posCurrentWeight: 0.00,
-    dispenseLog: []
+    dispenseLog: [],
+    ticketsLog: [],
+    cashClosures: [],
+    arqueoActiveView: 'tickets'
   };
 
   // Ticket activo del socio (Carrito TPV Multigenética v237)
@@ -707,13 +712,32 @@
     // 4. Cargar Libro de Dispensación
     try {
       const storedLog = localStorage.getItem(DISPENSE_LOG_KEY);
-      if (storedLog) {
-        state.dispenseLog = JSON.parse(storedLog);
-      } else {
-        state.dispenseLog = [];
-      }
+      state.dispenseLog = storedLog ? JSON.parse(storedLog) : [];
     } catch (e) {
       state.dispenseLog = [];
+    }
+
+    // 5. Cargar Histórico de Tickets del Mostrador (TPV)
+    try {
+      const storedTickets = localStorage.getItem(TICKETS_STORAGE_KEY);
+      if (storedTickets) {
+        state.ticketsLog = JSON.parse(storedTickets);
+      } else if (state.dispenseLog.length > 0) {
+        state.ticketsLog = rebuildTicketsFromDispenseLog(state.dispenseLog);
+        persistTicketsLog();
+      } else {
+        state.ticketsLog = [];
+      }
+    } catch (e) {
+      state.ticketsLog = [];
+    }
+
+    // 6. Cargar Cierres de Turno de Caja Guardados
+    try {
+      const storedClosures = localStorage.getItem(CASH_CLOSURES_STORAGE_KEY);
+      state.cashClosures = storedClosures ? JSON.parse(storedClosures) : [];
+    } catch (e) {
+      state.cashClosures = [];
     }
 
     // Comprobar parámetro URL para modo kiosco automático (?kiosk=1)
@@ -730,6 +754,44 @@
     }
   }
 
+  function rebuildTicketsFromDispenseLog(log) {
+    if (!Array.isArray(log) || log.length === 0) return [];
+    const map = new Map();
+    log.forEach(item => {
+      const tId = item.ticketId || item.id || `TKT-${new Date(item.timestamp || Date.now()).getTime()}`;
+      if (!map.has(tId)) {
+        map.set(tId, {
+          ticketId: tId,
+          timestamp: item.timestamp || new Date().toISOString(),
+          timeStr: item.timeStr || '--:--',
+          dateStr: item.dateStr || new Date().toLocaleDateString(),
+          memberId: item.memberId,
+          memberAlias: item.memberAlias || 'Socio General',
+          memberTier: item.memberTier || 'std',
+          lines: [],
+          totalGrams: 0,
+          totalEuros: item.ticketTotalEuros != null ? item.ticketTotalEuros : 0,
+          cashGiven: item.cashGiven || null,
+          changeGiven: item.changeGiven != null ? item.changeGiven : null
+        });
+      }
+      const tkt = map.get(tId);
+      tkt.lines.push({
+        strainId: item.strainId,
+        strainName: item.strainName || item.strainId,
+        category: item.category || 'flor',
+        grams: item.weight || 0,
+        pricePerGram: item.rate || 0,
+        subtotal: item.totalEuros || 0
+      });
+      tkt.totalGrams = Number((tkt.totalGrams + (item.weight || 0)).toFixed(2));
+      if (tkt.totalEuros === 0 || item.ticketTotalEuros == null) {
+        tkt.totalEuros = Number((tkt.totalEuros + (item.totalEuros || 0)).toFixed(2));
+      }
+    });
+    return Array.from(map.values()).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+  }
+
   function persistMembers() {
     try {
       localStorage.setItem(MEMBERS_STORAGE_KEY, JSON.stringify(state.members));
@@ -743,6 +805,22 @@
       localStorage.setItem(DISPENSE_LOG_KEY, JSON.stringify(state.dispenseLog));
     } catch (e) {
       console.error("Error persistiendo libro de dispensación:", e);
+    }
+  }
+
+  function persistTicketsLog() {
+    try {
+      localStorage.setItem(TICKETS_STORAGE_KEY, JSON.stringify(state.ticketsLog));
+    } catch (e) {
+      console.error("Error persistiendo histórico de tickets:", e);
+    }
+  }
+
+  function persistCashClosures() {
+    try {
+      localStorage.setItem(CASH_CLOSURES_STORAGE_KEY, JSON.stringify(state.cashClosures));
+    } catch (e) {
+      console.error("Error persistiendo cierres de turno:", e);
     }
   }
 
@@ -2464,10 +2542,45 @@
 
     member.consumedGrams = Number(((member.consumedGrams || 0) + weight).toFixed(2));
 
-    // Registrar ticket en el libro cronológico
+    // Registrar ticket maestro en state.ticketsLog y línea en dispenseLog
     const now = new Date();
-    const ticket = {
-      id: `disp-${Date.now()}`,
+    const pad = (n) => String(n).padStart(2, '0');
+    const ticketId = `TKT-${now.getFullYear().toString().slice(-2)}${pad(now.getMonth() + 1)}${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
+
+    const masterTicket = {
+      ticketId: ticketId,
+      timestamp: now.toISOString(),
+      timeStr: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      dateStr: now.toLocaleDateString(),
+      memberId: member.id,
+      memberAlias: member.alias || 'Socio General',
+      memberTier: member.tier || 'std',
+      lines: [
+        {
+          strainId: menuItem.id,
+          strainName: strainName,
+          category: menuItem.category,
+          grams: weight,
+          pricePerGram: Number(rate.toFixed(2)),
+          subtotal: totalEuros
+        }
+      ],
+      totalGrams: weight,
+      totalEuros: totalEuros,
+      cashGiven: null,
+      changeGiven: null
+    };
+    state.ticketsLog.unshift(masterTicket);
+
+    const logEntry = {
+      id: `disp-${now.getTime()}-0`,
+      ticketId: ticketId,
+      ticketLine: 1,
+      ticketLines: 1,
+      ticketTotalEuros: totalEuros,
+      ticketTotalGrams: weight,
+      cashGiven: null,
+      changeGiven: null,
       timestamp: now.toISOString(),
       timeStr: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       dateStr: now.toLocaleDateString(),
@@ -2481,19 +2594,19 @@
       rate: Number(rate.toFixed(2)),
       totalEuros: totalEuros
     };
-
-    state.dispenseLog.unshift(ticket);
+    state.dispenseLog.unshift(logEntry);
 
     // Persistir todo
     persistMenu();
     persistMembers();
     persistDispenseLog();
+    persistTicketsLog();
 
     // Resetear peso
     state.posCurrentWeight = 0.00;
 
     // Feedback al usuario
-    showToast(`✅ Dispensados ${weight.toFixed(2)}g de ${strainName} a socio #${member.id} (${totalEuros.toFixed(2)} €)`);
+    showToast(`✅ [${ticketId}] Dispensados ${weight.toFixed(2)}g de ${strainName} a socio #${member.id} (${totalEuros.toFixed(2)} €)`);
 
     // Actualizar interfaces
     renderPosUI();
@@ -3059,10 +3172,22 @@
     const hasCash = !isNaN(cashGiven) && cashGiven > 0;
     const changeGiven = hasCash ? Math.max(0, round2(cashGiven - totalEuros)) : null;
 
+    const ticketLinesBreakdown = [];
+
     const entries = currentOrderTicket.map((line, idx) => {
       const menuItem = state.menu.find(m => m.id === line.strainId);
       menuItem.stockGrams = Math.max(0, round2((menuItem.stockGrams || 0) - line.grams));
       menuItem.lastUpdated = now.toISOString();
+
+      ticketLinesBreakdown.push({
+        strainId: line.strainId,
+        strainName: line.strainName,
+        category: menuItem.category,
+        grams: line.grams,
+        pricePerGram: line.pricePerGram,
+        subtotal: line.subtotal
+      });
+
       return {
         id: `disp-${now.getTime()}-${idx}`,
         ticketId,
@@ -3076,7 +3201,7 @@
         timeStr: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         dateStr: now.toLocaleDateString(),
         memberId: member.id,
-        memberAlias: member.alias,
+        memberAlias: member.alias || 'Socio General',
         memberTier: member.tier,
         strainId: line.strainId,
         strainName: line.strainName,
@@ -3087,6 +3212,23 @@
       };
     });
 
+    // Guardar el ticket maestro en el histórico de tickets
+    const masterTicket = {
+      ticketId,
+      timestamp: now.toISOString(),
+      timeStr: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      dateStr: now.toLocaleDateString(),
+      memberId: member.id,
+      memberAlias: member.alias || 'Socio General',
+      memberTier: member.tier || 'std',
+      lines: ticketLinesBreakdown,
+      totalGrams,
+      totalEuros,
+      cashGiven: hasCash ? round2(cashGiven) : null,
+      changeGiven
+    };
+    state.ticketsLog.unshift(masterTicket);
+
     // El libro es cronológico inverso: insertar manteniendo el orden de líneas del ticket
     state.dispenseLog.unshift(...entries);
     member.consumedGrams = round2((member.consumedGrams || 0) + totalGrams);
@@ -3094,6 +3236,7 @@
     persistMenu();
     persistMembers();
     persistDispenseLog();
+    persistTicketsLog();
 
     const linesCount = entries.length;
     clearOrderTicket(true);
@@ -3173,12 +3316,17 @@
   // ==========================================================================
   // ARQUEO DE CAJA, LIBRO DE MOVIMIENTOS Y EXPORTACIÓN
   // ==========================================================================
+  // ==========================================================================
+  // ARQUEO DE CAJA DIARIO, HISTÓRICO DE TICKETS Y CIERRES DE TURNO (v238)
+  // ==========================================================================
   function renderArqueoUI() {
     const today = new Date().toDateString();
-    const todayTickets = state.dispenseLog.filter(t => new Date(t.timestamp).toDateString() === today);
+    const todayTickets = (state.ticketsLog || []).filter(t => new Date(t.timestamp).toDateString() === today);
+    const todayMoves = (state.dispenseLog || []).filter(t => new Date(t.timestamp).toDateString() === today);
 
-    const totalGrams = todayTickets.reduce((acc, t) => acc + (t.weight || 0), 0);
-    const totalEuros = todayTickets.reduce((acc, t) => acc + (t.totalEuros || 0), 0);
+    const totalGrams = todayMoves.reduce((acc, t) => acc + (t.weight || 0), 0);
+    const totalEuros = todayMoves.reduce((acc, t) => acc + (t.totalEuros || 0), 0);
+    const uniqueTicketsCount = todayTickets.length || new Set(todayMoves.map(t => t.ticketId || t.id)).size;
 
     const elGrams = document.getElementById('arqueo-total-grams');
     const elEuros = document.getElementById('arqueo-total-euros');
@@ -3187,10 +3335,15 @@
 
     if (elGrams) elGrams.textContent = `${totalGrams.toFixed(2)} g`;
     if (elEuros) elEuros.textContent = `${totalEuros.toFixed(2)} €`;
-    if (elTickets) {
-      const uniqueTickets = new Set(todayTickets.map(t => t.ticketId || t.id)).size;
-      elTickets.textContent = `${uniqueTickets} tickets`;
-    }
+    if (elTickets) elTickets.textContent = `${uniqueTicketsCount} tickets`;
+
+    // Badges de las subpestañas
+    const badgeTickets = document.getElementById('badge-count-tickets');
+    const badgeMoves = document.getElementById('badge-count-moves');
+    const badgeClosures = document.getElementById('badge-count-closures');
+    if (badgeTickets) badgeTickets.textContent = String(todayTickets.length);
+    if (badgeMoves) badgeMoves.textContent = String(todayMoves.length);
+    if (badgeClosures) badgeClosures.textContent = String((state.cashClosures || []).length);
 
     // Alertas de Stock Bajo (< 10g)
     const lowStockItems = state.menu.filter(m => m.available && (m.stockGrams || 0) < 10);
@@ -3211,21 +3364,99 @@
       }
     }
 
-    // Tabla de Movimientos
+    // Actualizar botones de selector de vista
+    document.querySelectorAll('.btn-arqueo-view').forEach(btn => {
+      const isAct = btn.getAttribute('data-view') === state.arqueoActiveView;
+      btn.classList.toggle('active', isAct);
+      btn.setAttribute('aria-selected', String(isAct));
+    });
+
+    const panelTickets = document.getElementById('panel-view-tickets');
+    const panelMoves = document.getElementById('panel-view-moves');
+    const panelClosures = document.getElementById('panel-view-closures');
+
+    if (panelTickets) panelTickets.style.display = state.arqueoActiveView === 'tickets' ? 'block' : 'none';
+    if (panelMoves) panelMoves.style.display = state.arqueoActiveView === 'moves' ? 'block' : 'none';
+    if (panelClosures) panelClosures.style.display = state.arqueoActiveView === 'closures' ? 'block' : 'none';
+
+    // 1. Renderizar VISTA DE TICKETS
+    const ticketsContainer = document.getElementById('tickets-history-container');
+    if (ticketsContainer) {
+      if (!state.ticketsLog || state.ticketsLog.length === 0) {
+        ticketsContainer.innerHTML = `
+          <div class="ticket-history-empty">
+            <div style="font-size: 2.2rem; margin-bottom: 8px;">🧾</div>
+            <p style="margin: 0; font-size: 1rem; font-weight: 700; color: #fff;">No hay tickets de mostrador registrados en la jornada.</p>
+            <small style="color: var(--text-dim); display: block; margin-top: 4px;">Los pedidos cobrados desde la Terminal Mostrador (POS) se registrarán aquí con su desglose completo.</small>
+          </div>`;
+      } else {
+        ticketsContainer.innerHTML = state.ticketsLog.slice(0, 50).map(t => {
+          const tierClass = t.memberTier === 'colab' ? 'tier-colab' : (t.memberTier === 'terap' ? 'tier-terap' : 'tier-std');
+          const tierLabel = t.memberTier === 'colab' ? 'Colab' : (t.memberTier === 'terap' ? 'Médico' : 'Estándar');
+          const lines = Array.isArray(t.lines) ? t.lines : [];
+
+          return `
+            <article class="ticket-card" data-ticket-id="${escapeHtml(t.ticketId)}">
+              <div class="ticket-card-header">
+                <div class="ticket-card-id-group">
+                  <span class="ticket-id-chip">🧾 ${escapeHtml(t.ticketId)}</span>
+                  <span class="ticket-time-chip">🕒 ${escapeHtml(t.timeStr || '--:--')} · ${escapeHtml(t.dateStr || '')}</span>
+                </div>
+                <div class="ticket-member-info-mini">
+                  <div class="ticket-member-avatar">${escapeHtml((t.memberAlias || '#').charAt(0).toUpperCase())}</div>
+                  <span class="ticket-member-name">${escapeHtml(t.memberAlias || 'Socio')}</span>
+                  <span style="font-size:0.75rem; color:var(--text-dim);">(#${escapeHtml(t.memberId || '')})</span>
+                  <span class="member-tier-pill ${tierClass}">${tierLabel}</span>
+                </div>
+              </div>
+
+              <div class="ticket-strains-breakdown">
+                ${lines.length > 0 ? lines.map(line => `
+                  <div class="ticket-strain-item">
+                    <div>
+                      <span class="ticket-strain-name">🌿 ${escapeHtml(line.strainName || line.strainId)}</span>
+                      <span class="ticket-strain-math"> (${(line.grams || 0).toFixed(2)}g × ${(line.pricePerGram || 0).toFixed(2)}€/g)</span>
+                    </div>
+                    <strong class="ticket-strain-subtotal">${(line.subtotal || 0).toFixed(2)} €</strong>
+                  </div>
+                `).join('') : `
+                  <div class="ticket-strain-item">
+                    <div><span class="ticket-strain-name">Dispensación Directa</span></div>
+                    <strong class="ticket-strain-subtotal">${(t.totalEuros || 0).toFixed(2)} €</strong>
+                  </div>
+                `}
+              </div>
+
+              <div class="ticket-card-footer">
+                <div class="ticket-totals-pill-group">
+                  <span class="ticket-total-chip total-grams">Peso Total: <strong>${(t.totalGrams || 0).toFixed(2)} g</strong></span>
+                  <span class="ticket-total-chip total-euros">Total Cobrado: <strong>${(t.totalEuros || 0).toFixed(2)} €</strong></span>
+                  ${t.cashGiven != null ? `<span class="ticket-cash-pill">💵 Entregado: ${t.cashGiven.toFixed(2)}€ ${t.changeGiven != null ? `· Cambio: ${t.changeGiven.toFixed(2)}€` : ''}</span>` : ''}
+                </div>
+                <button type="button" class="btn-touch btn-secondary btn-sm btn-ticket-reprint" data-ticket-id="${escapeHtml(t.ticketId)}" title="Ver detalle o imprimir ticket">
+                  🖨️ Ver Ticket
+                </button>
+              </div>
+            </article>`;
+        }).join('');
+      }
+    }
+
+    // 2. Renderizar VISTA DE MOVIMIENTOS DETALLADOS
     const tableBody = document.getElementById('movements-table-body');
     if (tableBody) {
       if (state.dispenseLog.length === 0) {
         tableBody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:30px; color:var(--text-muted);">No hay dispensaciones registradas en la jornada.</td></tr>`;
       } else {
-        tableBody.innerHTML = state.dispenseLog.slice(0, 50).map(t => {
+        tableBody.innerHTML = state.dispenseLog.slice(0, 60).map(t => {
           const tierClass = t.memberTier === 'colab' ? 'tier-colab' : (t.memberTier === 'terap' ? 'tier-terap' : 'tier-std');
           const tierLabel = t.memberTier === 'colab' ? 'Colab' : (t.memberTier === 'terap' ? 'Médico' : 'Estándar');
           return `
             <tr>
-              <td><strong>${t.timeStr || '--:--'}</strong>${t.ticketId ? `<div class="movement-ticket-ref" title="Ticket multigenética">🧾 ${t.ticketId} · ${t.ticketLine}/${t.ticketLines}</div>` : ''}</td>
-              <td>${t.memberAlias} <span style="font-size:0.75rem; color:var(--text-dim);">(#${t.memberId})</span></td>
+              <td><strong>${t.timeStr || '--:--'}</strong>${t.ticketId ? `<div class="movement-ticket-ref" title="Ticket multigenética">🧾 ${t.ticketId} · ${t.ticketLine || 1}/${t.ticketLines || 1}</div>` : ''}</td>
+              <td>${escapeHtml(t.memberAlias || 'Socio')} <span style="font-size:0.75rem; color:var(--text-dim);">(#${escapeHtml(t.memberId)})</span></td>
               <td><span class="member-tier-pill ${tierClass}">${tierLabel}</span></td>
-              <td><strong>${t.strainName}</strong></td>
+              <td><strong>${escapeHtml(t.strainName)}</strong></td>
               <td><span style="font-size:0.78rem; text-transform:capitalize;">${t.category}</span></td>
               <td><strong style="color:#6EE7B7;">${(t.weight || 0).toFixed(2)} g</strong></td>
               <td>${(t.rate || 0).toFixed(2)} €/g</td>
@@ -3235,10 +3466,241 @@
         }).join('');
       }
     }
+
+    // 3. Renderizar VISTA DE CIERRES DE TURNO
+    const closuresContainer = document.getElementById('closures-history-container');
+    if (closuresContainer) {
+      if (!state.cashClosures || state.cashClosures.length === 0) {
+        closuresContainer.innerHTML = `
+          <div class="ticket-history-empty">
+            <div style="font-size: 2.2rem; margin-bottom: 8px;">🔒</div>
+            <p style="margin: 0; font-size: 1rem; font-weight: 700; color: #fff;">No hay actas de cierre de turno guardadas aún.</p>
+            <small style="color: var(--text-dim); display: block; margin-top: 4px;">Al finalizar el turno, pulsa en "🔒 Cierre de Caja del Turno" para balancear y archivar el arqueo del dispensario.</small>
+          </div>`;
+      } else {
+        closuresContainer.innerHTML = state.cashClosures.map(c => `
+          <article class="ticket-card closure-card" data-closure-id="${escapeHtml(c.id)}">
+            <div class="ticket-card-header">
+              <div class="ticket-card-id-group">
+                <span class="ticket-id-chip" style="background: rgba(16,185,129,0.15); color: #34D399; border-color: rgba(16,185,129,0.35);">🔒 ${escapeHtml(c.id)}</span>
+                <span class="ticket-time-chip">🕒 ${escapeHtml(c.timeStr)} · ${escapeHtml(c.dateStr)}</span>
+              </div>
+              <div>
+                <span style="font-size:0.8rem; color:var(--text-muted);">Responsable: <strong style="color:#fff;">${escapeHtml(c.responsible || 'Encargado')}</strong></span>
+              </div>
+            </div>
+            <div class="ticket-card-footer">
+              <div class="ticket-totals-pill-group">
+                <span class="ticket-total-chip total-euros">Recaudación: <strong>${(c.totalEuros || 0).toFixed(2)} €</strong></span>
+                <span class="ticket-total-chip total-grams">Dispensado: <strong>${(c.totalGrams || 0).toFixed(2)} g</strong></span>
+                <span class="ticket-total-chip">Tickets: <strong>${c.ticketsCount || 0}</strong></span>
+              </div>
+              <button type="button" class="btn-touch btn-secondary btn-sm btn-print-single-closure" data-closure-id="${escapeHtml(c.id)}">
+                🖨️ Imprimir Acta
+              </button>
+            </div>
+            ${c.notes ? `<div style="font-size:0.8rem; color:var(--text-secondary); background:rgba(255,255,255,0.03); padding:8px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">📝 Observaciones: ${escapeHtml(c.notes)}</div>` : ''}
+          </article>
+        `).join('');
+      }
+    }
   }
 
   function setupArqueoEvents() {
-    // Exportar CSV
+    // 1. Conmutador de Vistas (Tickets / Movimientos / Cierres)
+    document.querySelectorAll('.btn-arqueo-view').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const view = btn.getAttribute('data-view');
+        if (view) {
+          state.arqueoActiveView = view;
+          renderArqueoUI();
+        }
+      });
+    });
+
+    // 2. Modal de Cierre de Caja del Turno
+    const openCierreBtn = document.getElementById('btn-open-cierre-caja');
+    const closeCierreBtn = document.getElementById('btn-close-cierre-caja');
+    const modalCierre = document.getElementById('modal-cierre-caja');
+    const saveCierreBtn = document.getElementById('btn-confirm-save-cierre');
+    const printCierreBtn = document.getElementById('btn-print-cierre');
+    const exportCierreJsonBtn = document.getElementById('btn-export-cierre-json');
+
+    if (openCierreBtn && modalCierre) {
+      openCierreBtn.addEventListener('click', () => {
+        const today = new Date().toDateString();
+        const todayTickets = (state.ticketsLog || []).filter(t => new Date(t.timestamp).toDateString() === today);
+        const todayMoves = (state.dispenseLog || []).filter(t => new Date(t.timestamp).toDateString() === today);
+
+        const totalGrams = todayMoves.reduce((acc, t) => acc + (t.weight || 0), 0);
+        const totalEuros = todayMoves.reduce((acc, t) => acc + (t.totalEuros || 0), 0);
+        const uniqueMembers = new Set(todayMoves.map(t => t.memberId)).size;
+
+        const dateSub = document.getElementById('cierre-subtitle-fecha');
+        if (dateSub) dateSub.textContent = `Jornada del ${new Date().toLocaleDateString()} a las ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+
+        const elTotEuros = document.getElementById('cierre-total-euros');
+        const elTotGrams = document.getElementById('cierre-total-grams');
+        const elTotTickets = document.getElementById('cierre-tickets-count');
+        const elMembersCount = document.getElementById('cierre-members-count');
+
+        if (elTotEuros) elTotEuros.textContent = `${totalEuros.toFixed(2)} €`;
+        if (elTotGrams) elTotGrams.textContent = `${totalGrams.toFixed(2)} g`;
+        if (elTotTickets) elTotTickets.textContent = `${todayTickets.length} tickets`;
+        if (elMembersCount) elMembersCount.textContent = `${uniqueMembers} socios atendidos`;
+
+        // Desglose de cepas
+        const strainsMap = {};
+        todayMoves.forEach(m => {
+          const sName = m.strainName || m.strainId;
+          if (!strainsMap[sName]) strainsMap[sName] = { grams: 0, euros: 0, category: m.category || 'flor' };
+          strainsMap[sName].grams += (m.weight || 0);
+          strainsMap[sName].euros += (m.totalEuros || 0);
+        });
+
+        const tbodyStrains = document.getElementById('cierre-strains-breakdown');
+        const varietiesCountEl = document.getElementById('cierre-varieties-count');
+        const strainKeys = Object.keys(strainsMap);
+        if (varietiesCountEl) varietiesCountEl.textContent = `${strainKeys.length} variedades`;
+
+        if (tbodyStrains) {
+          if (strainKeys.length === 0) {
+            tbodyStrains.innerHTML = `<tr><td colspan="4" style="text-align:center; padding:16px; color:var(--text-muted);">Sin dispensaciones en el turno.</td></tr>`;
+          } else {
+            tbodyStrains.innerHTML = strainKeys.map(k => `
+              <tr>
+                <td><strong>${escapeHtml(k)}</strong></td>
+                <td><span style="text-transform: capitalize;">${escapeHtml(strainsMap[k].category)}</span></td>
+                <td style="text-align: right; color: #34D399; font-weight: 700;">${strainsMap[k].grams.toFixed(2)} g</td>
+                <td style="text-align: right; color: #FCD34D; font-weight: 700;">${strainsMap[k].euros.toFixed(2)} €</td>
+              </tr>
+            `).join('');
+          }
+        }
+
+        // Desglose por tiers
+        const tiersContainer = document.getElementById('cierre-tiers-breakdown');
+        if (tiersContainer) {
+          const tierCounts = { std: 0, colab: 0, terap: 0 };
+          const tierEuros = { std: 0, colab: 0, terap: 0 };
+          todayMoves.forEach(m => {
+            const tr = m.memberTier || 'std';
+            if (tierCounts[tr] !== undefined) {
+              tierCounts[tr] += (m.weight || 0);
+              tierEuros[tr] += (m.totalEuros || 0);
+            }
+          });
+          tiersContainer.innerHTML = `
+            <div class="cierre-tier-chip"><span>👤 Estándar:</span> <strong>${tierCounts.std.toFixed(2)}g (${tierEuros.std.toFixed(2)}€)</strong></div>
+            <div class="cierre-tier-chip"><span>🤝 Colaborador:</span> <strong>${tierCounts.colab.toFixed(2)}g (${tierEuros.colab.toFixed(2)}€)</strong></div>
+            <div class="cierre-tier-chip"><span>🩺 Terapéutico:</span> <strong>${tierCounts.terap.toFixed(2)}g (${tierEuros.terap.toFixed(2)}€)</strong></div>
+          `;
+        }
+
+        const notesInput = document.getElementById('cierre-notes-input');
+        if (notesInput) notesInput.value = '';
+
+        if (typeof modalCierre.showModal === 'function') modalCierre.showModal();
+        else modalCierre.setAttribute('open', '');
+      });
+    }
+
+    if (closeCierreBtn && modalCierre) {
+      closeCierreBtn.addEventListener('click', () => {
+        if (typeof modalCierre.close === 'function') modalCierre.close();
+        modalCierre.removeAttribute('open');
+      });
+    }
+
+    if (saveCierreBtn && modalCierre) {
+      saveCierreBtn.addEventListener('click', () => {
+        const today = new Date().toDateString();
+        const todayTickets = (state.ticketsLog || []).filter(t => new Date(t.timestamp).toDateString() === today);
+        const todayMoves = (state.dispenseLog || []).filter(t => new Date(t.timestamp).toDateString() === today);
+
+        const totalGrams = todayMoves.reduce((acc, t) => acc + (t.weight || 0), 0);
+        const totalEuros = todayMoves.reduce((acc, t) => acc + (t.totalEuros || 0), 0);
+        const notes = (document.getElementById('cierre-notes-input')?.value || '').trim();
+
+        const now = new Date();
+        const closureRecord = {
+          id: `CIE-${now.getFullYear().toString().slice(-2)}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}-${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}`,
+          timestamp: now.toISOString(),
+          dateStr: now.toLocaleDateString(),
+          timeStr: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          clubId: getCurrentClubId(),
+          totalEuros: Number(totalEuros.toFixed(2)),
+          totalGrams: Number(totalGrams.toFixed(2)),
+          ticketsCount: todayTickets.length,
+          responsible: "Encargado de Mostrador",
+          notes: notes
+        };
+
+        state.cashClosures.unshift(closureRecord);
+        persistCashClosures();
+
+        if (typeof modalCierre.close === 'function') modalCierre.close();
+        modalCierre.removeAttribute('open');
+
+        showToast(`🔒 Cierre de turno #${closureRecord.id} archivado correctamente (${totalEuros.toFixed(2)} € · ${totalGrams.toFixed(2)} g)`, '✅', 5000);
+        state.arqueoActiveView = 'closures';
+        renderArqueoUI();
+      });
+    }
+
+    if (printCierreBtn) {
+      printCierreBtn.addEventListener('click', () => {
+        window.print();
+      });
+    }
+
+    if (exportCierreJsonBtn) {
+      exportCierreJsonBtn.addEventListener('click', () => {
+        const today = new Date().toDateString();
+        const todayTickets = (state.ticketsLog || []).filter(t => new Date(t.timestamp).toDateString() === today);
+        const todayMoves = (state.dispenseLog || []).filter(t => new Date(t.timestamp).toDateString() === today);
+
+        const exportData = {
+          club: state.clubConfig,
+          fechaArqueo: new Date().toISOString(),
+          totales: {
+            euros: todayMoves.reduce((acc, t) => acc + (t.totalEuros || 0), 0),
+            gramos: todayMoves.reduce((acc, t) => acc + (t.weight || 0), 0),
+            tickets: todayTickets.length
+          },
+          tickets: todayTickets,
+          movimientos: todayMoves
+        };
+
+        const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `arqueo_cierre_csc_${new Date().toISOString().slice(0, 10)}.json`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+        showToast("Arqueo exportado a archivo JSON.", "📥");
+      });
+    }
+
+    // 3. Delegación para reimprimir / ver detalle de un ticket en la lista
+    const ticketsContainer = document.getElementById('tickets-history-container');
+    if (ticketsContainer) {
+      ticketsContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('.btn-ticket-reprint');
+        if (!btn) return;
+        const ticketId = btn.getAttribute('data-ticket-id');
+        const tkt = (state.ticketsLog || []).find(t => t.ticketId === ticketId);
+        if (!tkt) return;
+
+        const linesText = (tkt.lines || []).map(l => `• ${l.strainName}: ${l.grams}g (${l.subtotal}€)`).join('\n');
+        alert(`🧾 TICKET #${tkt.ticketId}\nFecha: ${tkt.dateStr} ${tkt.timeStr}\nSocio: ${tkt.memberAlias} (#${tkt.memberId})\n\nDesglose:\n${linesText}\n\nPeso Total: ${tkt.totalGrams}g\nTOTAL COBRADO: ${tkt.totalEuros}€${tkt.cashGiven != null ? `\nEfectivo: ${tkt.cashGiven}€ | Cambio: ${tkt.changeGiven}€` : ''}`);
+      });
+    }
+
+    // 4. Exportar CSV del Libro Diario
     const exportCsvBtn = document.getElementById('btn-export-csv');
     if (exportCsvBtn) {
       exportCsvBtn.addEventListener('click', () => {
@@ -3277,7 +3739,7 @@
       });
     }
 
-    // Imprimir Acta
+    // 5. Imprimir Acta del Libro
     const printBtn = document.getElementById('btn-print-arqueo');
     if (printBtn) {
       printBtn.addEventListener('click', () => {
@@ -3285,16 +3747,18 @@
       });
     }
 
-    // Limpiar Registro
+    // 6. Limpiar Registro
     const clearLogBtn = document.getElementById('btn-clear-log');
     if (clearLogBtn) {
       clearLogBtn.addEventListener('click', () => {
-        if (confirm("¿Deseas reiniciar el libro de movimientos? (Se recomienda exportar primero a CSV).")) {
+        if (confirm("¿Deseas reiniciar el libro de movimientos y el histórico de tickets? (Se recomienda exportar primero a CSV).")) {
           state.dispenseLog = [];
+          state.ticketsLog = [];
           persistDispenseLog();
+          persistTicketsLog();
           renderArqueoUI();
           updateTabBadges();
-          showToast("Registro de movimientos reiniciado.", "🧹");
+          showToast("Registro de movimientos y tickets reiniciado.", "🧹");
         }
       });
     }
@@ -3607,6 +4071,132 @@
     return stockActivo;
   }
 
+  // ==========================================================================
+  // MEMORIA DE PREFERENCIAS Y CONSUMO DEL SOCIO PARA MARÍA SOMMELIER (v238)
+  // ==========================================================================
+  function getMemberPreferencesSummary(memberId) {
+    if (!memberId) {
+      return {
+        hasMember: false,
+        member: null,
+        summaryText: "Atendiendo en mostrador sin socio específico seleccionado (Socio General). Recomienda según lo más fresco y equilibrado de los botes.",
+        chips: ["Socio General", "Recomendación Abierta"]
+      };
+    }
+
+    const member = (state.members || []).find(m => m.id === memberId);
+    if (!member) {
+      return {
+        hasMember: false,
+        member: null,
+        summaryText: "Atendiendo a socio no identificado. Recomienda con amabilidad según los botes disponibles.",
+        chips: ["Socio General"]
+      };
+    }
+
+    const memberMoves = (state.dispenseLog || []).filter(t => t.memberId === memberId);
+    const tierLabel = member.tier === 'colab' ? 'Socio Colaborador (-10%)' : (member.tier === 'terap' ? 'Socio Terapéutico (-25%)' : 'Socio Estándar');
+
+    if (memberMoves.length === 0) {
+      return {
+        hasMember: true,
+        member,
+        summaryText: `Socio actual en mostrador: #${member.id} ${member.alias} (${tierLabel}). Es un socio nuevo o sin historial previo de retiradas en este dispensario. Salúdalo por su nombre (${member.alias}) y pregúntale con cercanía qué tipo de efecto o notas de sabor busca hoy para orientarlo de entre los botes que tienes abiertos.`,
+        chips: [`#${member.id} ${member.alias}`, "Nuevo Socio (Sin historial)", tierLabel.split(' ')[1] || 'Estándar']
+      };
+    }
+
+    // Análisis de historial de retiradas
+    const strainCounts = {};
+    const speciesGrams = { indica: 0, sativa: 0, hibrida: 0 };
+    const flavorCounts = {};
+    const effectCounts = {};
+    let totalGrams = 0;
+
+    memberMoves.forEach(m => {
+      const g = m.weight || 0;
+      totalGrams += g;
+      const sName = m.strainName || m.strainId;
+      strainCounts[sName] = (strainCounts[sName] || 0) + g;
+
+      const sData = getStrainData(m.strainId);
+      if (sData) {
+        const sp = (sData.species || '').toLowerCase();
+        if (sp.includes('indica') || sp.includes('índica')) speciesGrams.indica += g;
+        else if (sp.includes('sativa')) speciesGrams.sativa += g;
+        else speciesGrams.hibrida += g;
+
+        if (Array.isArray(sData.flavors)) {
+          sData.flavors.forEach(f => {
+            const tr = translateFlavor(f);
+            if (tr) flavorCounts[tr] = (flavorCounts[tr] || 0) + 1;
+          });
+        }
+        if (Array.isArray(sData.effects)) {
+          sData.effects.forEach(e => {
+            const tr = translateEffect(e);
+            if (tr) effectCounts[tr] = (effectCounts[tr] || 0) + 1;
+          });
+        }
+      }
+    });
+
+    const topStrains = Object.entries(strainCounts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3)
+      .map(([name, g]) => `${name} (${g.toFixed(1)}g)`);
+
+    let favoriteSpecies = "Híbrida";
+    if (speciesGrams.indica > speciesGrams.sativa && speciesGrams.indica > speciesGrams.hibrida) {
+      favoriteSpecies = "Índica";
+    } else if (speciesGrams.sativa > speciesGrams.indica && speciesGrams.sativa > speciesGrams.hibrida) {
+      favoriteSpecies = "Sativa";
+    }
+
+    const topFlavors = Object.entries(flavorCounts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3)
+      .map(([f]) => f);
+
+    const topEffects = Object.entries(effectCounts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3)
+      .map(([e]) => e);
+
+    const flavorDesc = topFlavors.length > 0 ? topFlavors.join(', ') : 'dulce y afrutado';
+    const effectDesc = topEffects.length > 0 ? topEffects.join(', ') : 'relajante y agradable';
+
+    const summaryText = `Socio actual en mostrador: #${member.id} ${member.alias} (${tierLabel}).
+HISTORIAL DE COMPRAS Y PREFERENCIAS REALES:
+- Cepas que más retira: ${topStrains.join(', ')}.
+- Especie predominante en su consumo: ${favoriteSpecies}.
+- Sabores y terpenos que más le gustan: ${flavorDesc}.
+- Efectos buscados con frecuencia: ${effectDesc}.
+- Total retirado históricamente: ${totalGrams.toFixed(2)} g en ${memberMoves.length} pedidos.
+PAUTA DE ASESORAMIENTO:
+Saluda a ${member.alias} con confianza ("¡Buenas ${member.alias}!", "Oye, como sé que te tiran las ${favoriteSpecies}s dulces tipo ${topStrains[0] ? topStrains[0].split(' ')[0] : 'las que sueles llevarte'}..."). Recomiéndale de entre las variedades que SÍ tienes con stock en botes aquella que mejor encaje con su perfil y cuéntale por qué le va a molar.`;
+
+    const chips = [
+      `👤 #${member.id} ${member.alias}`,
+      `Predilección: ${favoriteSpecies}`,
+      topFlavors.length > 0 ? `Sabor: ${topFlavors.slice(0, 2).join(', ')}` : 'Perfil equilibrado'
+    ];
+    if (topStrains.length > 0) {
+      chips.push(`Top: ${topStrains[0].split(' ')[0]}`);
+    }
+
+    return {
+      hasMember: true,
+      member,
+      topStrains,
+      favoriteSpecies,
+      topFlavors,
+      topEffects,
+      summaryText,
+      chips
+    };
+  }
+
   async function callGeminiSommelier(userQuery) {
     const apiKey = getGeminiApiKey();
     if (!apiKey) {
@@ -3620,7 +4210,12 @@
       return "Oye, he mirado los botes y ahora mismo tenemos el mostrador vacío sin stock registrado. ¡Dile al encargado que añada gramos a la carta para que pueda recomendarte algo rico!";
     }
 
+    const memberPref = getMemberPreferencesSummary(state.selectedMemberId);
+
     const systemPrompt = `Eres María, la dependienta y colega del mostrador de CannaCulture. Estás físicamente en el dispensario atendiendo a un socio del club.
+
+CONTEXTO DEL SOCIO ATENDIDO EN ESTE MOMENTO:
+${memberPref.summaryText}
 
 TU REALIDAD EN EL MOSTRADOR:
 - Tienes delante de ti ÚNICAMENTE las variedades listadas en "BOTES_EN_MOSTRADOR". No tienes acceso a ninguna otra hierba en el mundo.
@@ -3629,6 +4224,7 @@ TU REALIDAD EN EL MOSTRADOR:
 
 CÓMO HABLAS:
 - Hablas como una chica joven, maja y enrollada que trabaja en un club social: cercana, con chispa, empática ("¡Buenas!", "Mira, para lo que me pides vete directo a...", "Esa entra finísima", "Huele que flipas").
+- Si el socio tiene historial o preferencias registradas, conecta con naturalidad con sus gustos habituales (ej: "¡Buenas! Como a ti te suelen molar las variedades dulces y relajantes como la Gelato, hoy en los botes te recomiendo...").
 - NUNCA des parrafadas teóricas ni hables como una enciclopedia. Sé directa.
 - Recomienda 1 o máximo 2 opciones de los botes disponibles, explicando en palabras de calle por qué le va a gustar y cuántos gramos te quedan en el bote para que se decida.`;
 
@@ -3742,6 +4338,34 @@ SOCIO EN MOSTRADOR TE DICE:
     const stockCountText = document.getElementById('maria-stock-count-text');
     if (stockCountText) {
       stockCountText.textContent = `${stock.length} variedades con stock activo en mostrador`;
+    }
+
+    // Actualizar badge y chips de Memoria del Socio Activo en Mostrador
+    const memberSummary = getMemberPreferencesSummary(state.selectedMemberId);
+    const memberNameEl = document.getElementById('maria-memory-member-name');
+    const memoryChipsEl = document.getElementById('maria-memory-chips');
+    if (memberNameEl) {
+      memberNameEl.textContent = memberSummary.hasMember
+        ? `${memberSummary.member.alias} (#${memberSummary.member.id})`
+        : 'Atención General en Mostrador';
+    }
+    if (memoryChipsEl) {
+      memoryChipsEl.innerHTML = memberSummary.chips.map((chip, idx) => {
+        const cls = idx === 1 ? 'species-tag' : (idx === 0 ? '' : 'strain-tag');
+        return `<span class="memory-tag-chip ${cls}">${escapeHtml(chip)}</span>`;
+      }).join('');
+    }
+
+    // Adaptar mensaje de bienvenida de María si hay un socio con historial
+    const welcomeBubble = modalElement.querySelector('.maria-bubble-welcome p');
+    if (welcomeBubble) {
+      if (memberSummary.hasMember && memberSummary.topStrains && memberSummary.topStrains.length > 0) {
+        welcomeBubble.innerHTML = `¡Buenas! 👋 Veo que tenemos a <strong>${escapeHtml(memberSummary.member.alias)}</strong> (#${escapeHtml(memberSummary.member.id)}) en mostrador. Sé que le suelen tirar las variedades <em>${escapeHtml(memberSummary.favoriteSpecies)}</em> con notas de <em>${escapeHtml(memberSummary.topFlavors[0] || 'sabor intenso')}</em> (como ${escapeHtml(memberSummary.topStrains[0].split(' ')[0])}). Dime qué busca hoy o si prefiere cambiar de rollo, ¡y te digo qué bote abrir!`;
+      } else if (memberSummary.hasMember) {
+        welcomeBubble.innerHTML = `¡Buenas! 👋 Atendiendo a <strong>${escapeHtml(memberSummary.member.alias)}</strong> (#${escapeHtml(memberSummary.member.id)}). Dime qué efecto o sabor busca hoy para orientarlo según lo que tenemos fresco en los botes.`;
+      } else {
+        welcomeBubble.innerHTML = `¡Buenas! 👋 Dime qué busca el socio hoy: algo suave para ver una peli, risas con colegas, una que huela dulce y no dé sueño, o algo medicinal potente. Te digo exactamente qué bote abrir.`;
+      }
     }
 
     updateGeminiKeyUI();

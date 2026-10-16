@@ -63,12 +63,12 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="css/age-gate.css?v=237">
+  <link rel="stylesheet" href="css/age-gate.css?v=238">
   <!-- Hoja de Estilos del Dispensario CSC -->
-  <link rel="stylesheet" href="css/admin-dispensario.css?v=237">
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=238">
 
   <!-- Controlador Inmediato de Age Gate (+18) -->
-  <script src="js/age-gate.js?v=237"></script>
+  <script src="js/age-gate.js?v=238"></script>
 </head>
 
 <body>
@@ -681,14 +681,17 @@
           <div id="arqueo-low-stock-list" class="low-stock-items-row"></div>
         </div>
 
-        <!-- Tabla del Libro Diario de Dispensación -->
+        <!-- Panel de Histórico de Tickets y Movimientos -->
         <div class="arqueo-table-panel">
           <div class="table-panel-header">
             <div class="table-title-group">
-              <h3><span>📋</span> <span>Libro Cronológico de Movimientos de Dispensario</span></h3>
-              <span class="table-subtitle">Registro legal de previsiones y aportaciones estatutarias</span>
+              <h3><span>🧾</span> <span>Histórico de Caja & Arqueo Diario</span></h3>
+              <span class="table-subtitle">Tickets del mostrador, arqueo de turno y libro cronológico del dispensario</span>
             </div>
             <div class="table-actions-group">
+              <button type="button" class="btn-touch btn-primary" id="btn-open-cierre-caja" title="Realizar el cierre y arqueo de caja del turno actual">
+                🔒 Cierre de Caja del Turno
+              </button>
               <button type="button" class="btn-touch btn-secondary" id="btn-export-csv" title="Descargar registro en CSV">
                 📥 Exportar CSV
               </button>
@@ -701,24 +704,54 @@
             </div>
           </div>
 
-          <div class="movements-table-wrapper">
-            <table class="movements-table" id="movements-table">
-              <thead>
-                <tr>
-                  <th>Hora</th>
-                  <th>Socio</th>
-                  <th>Nivel</th>
-                  <th>Variedad</th>
-                  <th>Categoría</th>
-                  <th>Pesaje</th>
-                  <th>Cuota €/g</th>
-                  <th>Aportación €</th>
-                </tr>
-              </thead>
-              <tbody id="movements-table-body">
-                <!-- Filas dinámicas -->
-              </tbody>
-            </table>
+          <!-- Selector de Vista del Arqueo: Tickets / Movimientos / Cierres -->
+          <div class="arqueo-view-switch" role="tablist" aria-label="Modo de visualización de caja">
+            <button type="button" class="btn-arqueo-view active" data-view="tickets" id="btn-view-tickets" role="tab" aria-selected="true">
+              <span>🧾</span> <span>Tickets del Día</span> <span class="badge-count-sm" id="badge-count-tickets">0</span>
+            </button>
+            <button type="button" class="btn-arqueo-view" data-view="moves" id="btn-view-moves" role="tab" aria-selected="false">
+              <span>📋</span> <span>Libro de Movimientos</span> <span class="badge-count-sm" id="badge-count-moves">0</span>
+            </button>
+            <button type="button" class="btn-arqueo-view" data-view="closures" id="btn-view-closures" role="tab" aria-selected="false">
+              <span>🔒</span> <span>Cierres de Turno</span> <span class="badge-count-sm" id="badge-count-closures">0</span>
+            </button>
+          </div>
+
+          <!-- VISTA 1: Histórico Cronológico de Tickets del Día -->
+          <div id="panel-view-tickets" class="arqueo-view-panel active">
+            <div id="tickets-history-container" class="tickets-history-grid">
+              <!-- Renderizado dinámico de tarjetas de tickets desde admin-dispensario.js -->
+            </div>
+          </div>
+
+          <!-- VISTA 2: Tabla del Libro Diario de Dispensación (Línea por Línea) -->
+          <div id="panel-view-moves" class="arqueo-view-panel" style="display: none;">
+            <div class="movements-table-wrapper">
+              <table class="movements-table" id="movements-table">
+                <thead>
+                  <tr>
+                    <th>Hora</th>
+                    <th>Socio</th>
+                    <th>Nivel</th>
+                    <th>Variedad</th>
+                    <th>Categoría</th>
+                    <th>Pesaje</th>
+                    <th>Cuota €/g</th>
+                    <th>Aportación €</th>
+                  </tr>
+                </thead>
+                <tbody id="movements-table-body">
+                  <!-- Filas dinámicas -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- VISTA 3: Historial de Cierres de Turno Guardados -->
+          <div id="panel-view-closures" class="arqueo-view-panel" style="display: none;">
+            <div id="closures-history-container" class="closures-history-list">
+              <!-- Renderizado dinámico de actas de cierre registradas -->
+            </div>
           </div>
         </div>
       </div>
@@ -793,6 +826,94 @@
   </dialog>
 
   <!-- ======================================================================
+       MODAL DE CIERRE DE CAJA DEL TURNO / ARQUEO OFICIAL CSC
+       ====================================================================== -->
+  <dialog id="modal-cierre-caja" class="kiosk-modal-dialog" aria-labelledby="cierre-modal-title">
+    <div class="kiosk-modal-container cierre-modal-container" style="max-width: 680px;">
+      <button id="btn-close-cierre-caja" class="kiosk-modal-close-btn" title="Cerrar (Esc)" aria-label="Cerrar">✕</button>
+      <div class="cierre-modal-body">
+        <div class="cierre-header">
+          <div class="cierre-icon-badge">🔒</div>
+          <div>
+            <h3 id="cierre-modal-title" class="cierre-modal-title">Acta Oficial de Cierre de Caja del Turno</h3>
+            <p class="cierre-modal-subtitle" id="cierre-subtitle-fecha">Arqueo y balance de dispensaciones en mostrador</p>
+          </div>
+        </div>
+
+        <!-- Tarjetas de Resumen Financiero del Cierre -->
+        <div class="cierre-summary-grid">
+          <div class="cierre-summary-card">
+            <span class="cierre-card-label">RECAUDACIÓN TOTAL</span>
+            <strong class="cierre-card-value text-gold" id="cierre-total-euros">0.00 €</strong>
+            <small class="cierre-card-sub" id="cierre-cash-breakdown">Efectivo registrado</small>
+          </div>
+          <div class="cierre-summary-card">
+            <span class="cierre-card-label">PESO TOTAL DISPENSADO</span>
+            <strong class="cierre-card-value text-emerald" id="cierre-total-grams">0.00 g</strong>
+            <small class="cierre-card-sub" id="cierre-varieties-count">0 variedades</small>
+          </div>
+          <div class="cierre-summary-card">
+            <span class="cierre-card-label">TICKETS EMITIDOS</span>
+            <strong class="cierre-card-value text-cyan" id="cierre-tickets-count">0 tickets</strong>
+            <small class="cierre-card-sub" id="cierre-members-count">0 socios atendidos</small>
+          </div>
+        </div>
+
+        <!-- Desglose por Variedades Dispensadas en el Turno -->
+        <div class="cierre-section">
+          <div class="cierre-section-header">
+            <h4>🌿 Desglose Agronómico por Variedad (Turno Actual)</h4>
+          </div>
+          <div class="cierre-table-wrapper">
+            <table class="cierre-table">
+              <thead>
+                <tr>
+                  <th>Variedad</th>
+                  <th>Categoría</th>
+                  <th style="text-align: right;">Gramos</th>
+                  <th style="text-align: right;">Aportación</th>
+                </tr>
+              </thead>
+              <tbody id="cierre-strains-breakdown">
+                <!-- Filas dinámicas -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Desglose por Nivel Estatutario de Socio -->
+        <div class="cierre-section">
+          <div class="cierre-section-header">
+            <h4>👥 Desglose por Nivel de Socios</h4>
+          </div>
+          <div id="cierre-tiers-breakdown" class="cierre-tiers-grid">
+            <!-- Chips de nivel: Estándar, Colaborador, Terapéutico -->
+          </div>
+        </div>
+
+        <!-- Observaciones del Encargado / Responsable de Turno -->
+        <div class="form-group" style="margin-top: 14px;">
+          <label for="cierre-notes-input" class="form-label" style="font-size: 0.8rem;">Observaciones del Turno / Incidencias de Caja</label>
+          <textarea id="cierre-notes-input" class="form-control" rows="2" placeholder="Opcional: arqueo conforme, fondo de caja verificado, billetes comprobados..."></textarea>
+        </div>
+
+        <!-- Botones de Acción del Cierre -->
+        <div class="cierre-actions-bar">
+          <button type="button" class="btn-touch btn-secondary" id="btn-print-cierre" title="Imprimir Acta Oficial">
+            🖨️ Imprimir Acta
+          </button>
+          <button type="button" class="btn-touch btn-secondary" id="btn-export-cierre-json" title="Descargar Arqueo en JSON">
+            📥 Exportar JSON
+          </button>
+          <button type="button" class="btn-touch btn-primary" id="btn-confirm-save-cierre">
+            <span>💾</span> <span>Registrar y Guardar Cierre de Turno</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ======================================================================
        MODAL DE ASESORAMIENTO BOTÁNICO INTELIGENTE: MARÍA SOMMELIER CSC
        ====================================================================== -->
   <dialog id="modal-maria" class="maria-modal-dialog" aria-labelledby="maria-modal-title">
@@ -818,6 +939,18 @@
       <div class="maria-stock-pill-bar">
         <span class="stock-pill-icon">📦</span>
         <span id="maria-stock-count-text">Revisando stock activo en mostrador...</span>
+      </div>
+
+      <!-- Memoria de Preferencias del Socio Activo en Mostrador -->
+      <div id="maria-member-memory-box" class="maria-member-memory-box">
+        <div class="maria-memory-badge-row">
+          <span class="memory-badge-icon">🧠</span>
+          <span class="memory-badge-title">Memoria de Socio en Mostrador:</span>
+          <strong id="maria-memory-member-name">Sin socio seleccionado</strong>
+        </div>
+        <div id="maria-memory-chips" class="maria-memory-chips">
+          <!-- Chips dinámicos de preferencias de consumo -->
+        </div>
       </div>
 
       <!-- Alerta si falta API Key -->
@@ -872,7 +1005,7 @@
        Carga de Scripts: Datos Maestros (877 Cepas) y Lógica Modular
        ====================================================================== -->
   <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
-  <script src="js/strains-data.js?v=237"></script>
+  <script src="js/strains-data.js?v=238"></script>
 
   <!-- 2. Firebase SDK & Configuración (Modo CDN Compatibilidad) -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -881,7 +1014,7 @@
   <script src="js/firebase-config.js"></script>
 
   <!-- 3. Lógica del Panel de Dispensario CSC -->
-  <script src="js/admin-dispensario.js?v=237"></script>
+  <script src="js/admin-dispensario.js?v=238"></script>
 </body>
 
 </html>

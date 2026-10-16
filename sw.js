@@ -4,7 +4,7 @@
  * y bypass defensivo para Firebase & Firestore.
  */
 
-const CACHE_CORE = 'cannaculture-core-v237';
+const CACHE_CORE = 'cannaculture-core-v238';
 const CACHE_IMAGES = 'cannaculture-images-v229';
 const CACHE_PAGES = 'cannaculture-pages-v229';
 const MAX_CACHED_IMAGES = 120;
@@ -13,17 +13,17 @@ const CORE_ASSETS = [
   '/',
   '/index.html',
   '/offline.html',
-  '/css/age-gate.css?v=237',
-  '/js/age-gate.js?v=237',
-  '/css/styles.css?v=237',
-  '/js/bundle.js?v=237',
+  '/css/age-gate.css?v=238',
+  '/js/age-gate.js?v=238',
+  '/css/styles.css?v=238',
+  '/js/bundle.js?v=238',
   '/guia-cultivo.html',
-  '/css/guia-cultivo.css?v=237',
-  '/js/guia-cultivo.js?v=237',
+  '/css/guia-cultivo.css?v=238',
+  '/js/guia-cultivo.js?v=238',
   '/admin-dispensario.html',
-  '/css/admin-dispensario.css?v=237',
-  '/js/admin-dispensario.js?v=237',
-  '/js/strains-data.js?v=237',
+  '/css/admin-dispensario.css?v=238',
+  '/js/admin-dispensario.js?v=238',
+  '/js/strains-data.js?v=238',
   '/manifest.webmanifest',
   '/assets/icons/icon-192x192.png',
   '/assets/icons/icon-512x512.png',

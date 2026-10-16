@@ -3977,8 +3977,456 @@ body.kiosk-mode .dispensary-main-tabs {
   }
 }
 
+/* ==========================================================================
+   HISTÓRICO DE TICKETS, ARQUEO DE CAJA DIARIO & CIERRES (v238)
+   ========================================================================== */
+.arqueo-view-switch {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0 20px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-arqueo-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-arqueo-view:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: var(--border-primary);
+}
+
+.btn-arqueo-view.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(6, 182, 212, 0.15));
+  border-color: var(--primary);
+  color: var(--primary-light);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+}
+
+.badge-count-sm {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 1px 7px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.btn-arqueo-view.active .badge-count-sm {
+  background: var(--primary);
+  color: #064E3B;
+}
+
+/* Contenedor de Tarjetas de Tickets */
+.tickets-history-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ticket-history-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  border: 1px dashed var(--border-light);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.ticket-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ticket-card:hover {
+  border-color: var(--border-primary);
+  background: var(--bg-card-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.ticket-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px dashed var(--border-subtle);
+  padding-bottom: 12px;
+}
+
+.ticket-card-id-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ticket-id-chip {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #FCD34D;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.ticket-time-chip {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.ticket-member-info-mini {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ticket-member-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--primary-dark);
+  color: var(--primary-light);
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--primary);
+}
+
+.ticket-member-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Desglose de cepas del ticket */
+.ticket-strains-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 8px;
+}
+
+.ticket-strain-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+}
+
+.ticket-strain-name {
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.ticket-strain-math {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+}
+
+.ticket-strain-subtotal {
+  font-weight: 800;
+  color: #6EE7B7;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Footer de Totales del ticket */
+.ticket-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 6px;
+}
+
+.ticket-totals-pill-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ticket-total-chip {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.ticket-total-chip strong {
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.ticket-total-chip.total-grams strong {
+  color: #34D399;
+}
+
+.ticket-total-chip.total-euros strong {
+  color: #FCD34D;
+}
+
+.ticket-cash-pill {
+  font-size: 0.74rem;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   MODAL DE CIERRE DE CAJA DEL TURNO
+   ========================================================================== */
+.cierre-modal-container {
+  background: linear-gradient(180deg, #141E1A, #0B100E) !important;
+  border: 1px solid var(--primary) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7), 0 0 30px rgba(16, 185, 129, 0.25) !important;
+}
+
+.cierre-modal-body {
+  padding: 24px;
+}
+
+.cierre-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px dashed var(--border-light);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.cierre-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cierre-modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cierre-modal-subtitle {
+  margin: 2px 0 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.cierre-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cierre-summary-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cierre-card-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.cierre-card-value {
+  font-size: 1.4rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.cierre-card-sub {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.text-gold { color: #FCD34D !important; }
+.text-emerald { color: #34D399 !important; }
+.text-cyan { color: #38BDF8 !important; }
+
+.cierre-section {
+  margin-bottom: 16px;
+}
+
+.cierre-section-header h4 {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.cierre-table-wrapper {
+  max-height: 160px;
+  overflow-y: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.cierre-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.cierre-table th {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 10px;
+  color: var(--text-muted);
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cierre-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+}
+
+.cierre-tiers-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cierre-tier-chip {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.cierre-tier-chip strong {
+  color: #fff;
+}
+
+.cierre-actions-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   MEMORIA DE PREFERENCIAS DE SOCIO EN MARÍA SOMMELIER
+   ========================================================================== */
+.maria-member-memory-box {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(16, 185, 129, 0.08));
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: fadeInMemory 0.4s ease;
+}
+
+@keyframes fadeInMemory {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.maria-memory-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.memory-badge-icon {
+  font-size: 1rem;
+}
+
+.memory-badge-title {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+#maria-memory-member-name {
+  color: #C4B5FD;
+  font-weight: 800;
+}
+
+.maria-memory-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.memory-tag-chip {
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  color: #DDD6FE;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.memory-tag-chip.species-tag {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #A7F3D0;
+}
+
+.memory-tag-chip.strain-tag {
+  background: rgba(245, 158, 11, 0.18);
+  border-color: rgba(245, 158, 11, 0.35);
+  color: #FDE68A;
+}
+
 @media print {
-  .pos-order-ticket {
+  .pos-order-ticket,
+  .admin-navbar,
+  .dispensary-main-tabs,
+  .table-actions-group,
+  .arqueo-view-switch {
     display: none !important;
   }
 }
+

@@ -1,9 +1,9 @@
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
-> **Ultima actualizacion:** 2026-10-16 17:05  
+> **Ultima actualizacion:** 2026-10-16 17:20  
 > **Servidor local:** Activo en `http://localhost:8080`  
-> **Commit de cierre:** `feat(dispensario): carrito TPV multigenetica y ticket total a cobrar en mostrador v237`  
-> **Version Cache-Busting:** `?v=237`
+> **Commit de cierre:** `feat(dispensario): historico de tickets, arqueo de caja y memoria de preferencias de socio en Maria v238`  
+> **Version Cache-Busting:** `?v=238`
 
 ---
 
@@ -14,14 +14,27 @@
   - **Índica:** 389 variedades (43.22%)
   - **Híbrida:** 280 variedades (31.11%)
   - **Sativa:** 231 variedades (25.67%)
-- **CARRITO TPV MULTIGENÉTICA EN MOSTRADOR (v237):**
-  - **Ticket Multivariedad Activo:** Estado reactivo `currentOrderTicket` para combinar múltiples variedades en un mismo pedido de socio.
-  - **Control de Stock y Cupo:** Validación en vivo de botes de mostrador y límite mensual estatutario del socio seleccionado.
-  - **Terminal Mostrador Responsivo:** Panel sticky en escritorio y cajón desplegable inferior en tablet/móvil con calculadora de efectivo y cambio a devolver.
-  - **Registro Unificado en Libro y Arqueo:** Trazabilidad agrupada por `ticketId`, exportable a CSV y reflejada en el conteo diario.
-- **MÓDULO IA SOMMELIER DE MOSTRADOR — MARÍA (v236):**
-  - **Modelos Oficiales Activos de Google:** Cascada actualizada con `gemini-3.5-flash-lite`, `gemini-3.8-flash` y `gemini-flash-latest`.
-  - **Resiliencia Automática ante Errores HTTP:** Salto inmediato (`continue`) ante cualquier código no exitoso (404, 503, 429) sin interrumpir el flujo.
+- **HISTÓRICO DE TICKETS Y ARQUEO DIARIO EN TERMINAL MOSTRADOR (v238):**
+  - **Persistencia Completa de Tickets:** Cada pedido multigenética se consolida con ID único, timestamp, socio, desglose de cepas, gramos totales y recaudación en euros.
+  - **Selector de Vista Tripartito en Arqueo:** Visualización instantánea entre *Tickets de Caja*, *Movimientos Detallados* e *Historial de Cierres de Turno*.
+  - **Cierre de Caja del Turno:** Modal de liquidación con desglose de caja por genéticas, distribución por tier estatutario, totales de efectivo y cambio, y exportación a JSON o acta imprimible.
+- **MEMORIA DE PREFERENCIAS DE SOCIO EN MARÍA SOMMELIER (v238):**
+  - **Inyección Contextual en Gemini:** Detección del socio activo y enriquecimiento del prompt del sistema con el histórico de genéticas, especies dominantes, notas organolépticas y efectos frecuentes.
+  - **Recomendación y Saludo Personalizado:** María adapta el diálogo de mostrador según las preferencias reales del socio (ej: variedades relajantes con terpenos dulces).
+  - **Indicador Visual en Interfaz:** Caja informativa de perfil de socio en la cabecera del chat con chips dinámicos de especies y terpenos favoritos.
+
+### v238 — Histórico de Tickets, Arqueo de Caja y Memoria de Preferencias de Socio en María
+- **Persistencia de Tickets de Dispensación:** Almacenamiento maestro en `state.ticketsLog` (localStorage `cannaculture_tickets_log_v1`) con trazabilidad completa (ID de ticket, hora, socio, desglose de ítems, totales de gramos, euros, efectivo entregado y cambio devuelto).
+- **Módulo de Arqueo y Cierre de Caja:**
+  - Pestaña de arqueo enriquecida con conmutador de tres vistas: *Tickets Cobrados*, *Movimientos Detallados* e *Historial de Cierres de Turno*.
+  - Renderizado cronológico con tarjetas de ticket visuales, desglose por genética, botones de reimpresión de comprobante y métricas actualizadas de la jornada (Total recaudado en € y Total dispensado en g).
+  - Modal interactivo de **Cierre de Caja de Turno** (`#modal-cierre-caja`): resumen financiero, tabla detallada de dispensación por variedad, desglose por cuota estatutaria/tier de socio, campo de observaciones de caja, e impresión y descarga de archivo de cierre.
+- **Memoria de Preferencias de Socio en el Chat de María:**
+  - Función analítica `getMemberPreferencesSummary(memberId)`: examina el histórico acumulado de compras, identifica las variedades favoritas, la subespecie predominante (índica/sativa/híbrida), los perfiles de sabor y los efectos buscados.
+  - Inyección dinámica en el `systemPrompt` (System Instructions) de la IA (`callGeminiSommelier`), permitiendo a María saludar de forma adaptada y recomendar botes afines a sus hábitos.
+  - Panel visual de memoria de socio (`#maria-member-memory-box`) integrado en el chat con tags inteligentes de preferencias.
+- **Recompilación de Bundle:** Generados `bundle.js`, `bundle-v151.js` y `strains-data.js` actualizados con `scripts/build_bundle.py`.
+- **Sincronización PWA & Cache-Busting:** Salto a `?v=238` en Service Worker (`cannaculture-core-v238`) y plantillas HTML (`admin-dispensario.html`, `index.html`, `guia-cultivo.html`).
 
 ### v237 — Carrito TPV Multigenética y Ticket Total a Cobrar en Mostrador
 - **Sistema de Ticket Multivariedad (TPV):** Implementado estado `currentOrderTicket = []` en `js/admin-dispensario.js` con soporte para múltiples líneas de genéticas en un mismo pedido de socio.
