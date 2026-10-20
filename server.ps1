@@ -1,0 +1,221 @@
+# CannaCulture Server - PowerShell HTTP Server
+# Equivalente a server.py - Puerto 8080
+
+$PORT = 8080
+$DIRECTORY = $PSScriptRoot
+
+# Mapa de tipos MIME
+$MimeTypes = @{
+    ".html"  = "text/html; charset=utf-8"
+    ".css"   = "text/css"
+    ".js"    = "text/javascript"
+    ".json"  = "application/json"
+    ".png"   = "image/png"
+    ".jpg"   = "image/jpeg"
+    ".jpeg"  = "image/jpeg"
+    ".webp"  = "image/webp"
+    ".avif"  = "image/avif"
+    ".gif"   = "image/gif"
+    ".svg"   = "image/svg+xml"
+    ".ico"   = "image/x-icon"
+    ".mp3"   = "audio/mpeg"
+    ".ogg"   = "audio/ogg"
+    ".wav"   = "audio/wav"
+    ".woff"  = "font/woff"
+    ".woff2" = "font/woff2"
+    ".xml"   = "application/xml"
+    ".txt"   = "text/plain"
+}
+
+function Get-LocalIP {
+    try {
+        $socket = [System.Net.Sockets.Socket]::new(
+            [System.Net.Sockets.AddressFamily]::InterNetwork,
+            [System.Net.Sockets.SocketType]::Dgram,
+            [System.Net.Sockets.ProtocolType]::Udp
+        )
+        $socket.Connect("8.8.8.8", 80)
+        $ip = ($socket.LocalEndPoint -as [System.Net.IPEndPoint]).Address.ToString()
+        $socket.Close()
+        return $ip
+    } catch {
+        return "127.0.0.1"
+    }
+}
+
+$listener = [System.Net.HttpListener]::new()
+$listener.Prefixes.Add("http://+:$PORT/")
+
+try {
+    $listener.Start()
+} catch {
+    Write-Host "  ERROR: No se pudo iniciar en http://+:$PORT/ - intentando solo localhost..." -ForegroundColor Yellow
+    $listener = [System.Net.HttpListener]::new()
+    $listener.Prefixes.Add("http://localhost:$PORT/")
+    $listener.Start()
+}
+
+$localIP = Get-LocalIP
+
+Write-Host ""
+Write-Host ("=" * 55) -ForegroundColor Green
+Write-Host "  CANNACULTURE - SERVIDOR LOCAL ACTIVO" -ForegroundColor Green
+Write-Host ("=" * 55) -ForegroundColor Green
+Write-Host ""
+Write-Host "  Local:   http://localhost:$PORT" -ForegroundColor Cyan
+Write-Host "  Movil:   http://${localIP}:$PORT" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "  Directorio: $DIRECTORY" -ForegroundColor Gray
+Write-Host ""
+Write-Host "  Presiona Ctrl+C para detener el servidor." -ForegroundColor Gray
+Write-Host ("=" * 55) -ForegroundColor Green
+Write-Host ""
+
+while ($listener.IsListening) {
+    try {
+        $context = $listener.GetContext()
+        $request = $context.Request
+        $response = $context.Response
+
+        # CORS headers
+        $response.Headers.Add("Access-Control-Allow-Origin", "*")
+        $response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        $response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization")
+        $response.Headers.Add("Cache-Control", "no-cache, no-store, must-revalidate")
+
+        if ($request.HttpMethod -eq "OPTIONS") {
+            $response.StatusCode = 200
+            $response.Close()
+            continue
+        }
+
+        # Endpoint API Proxy local para Gemini
+        if ($request.HttpMethod -eq "POST" -and ($request.Url.AbsolutePath -eq "/api/gemini" -or $request.Url.AbsolutePath.StartsWith("/api/gemini"))) {
+            try {
+                $reader = [System.IO.StreamReader]::new($request.InputStream, [System.Text.Encoding]::UTF8)
+                $body = $reader.ReadToEnd()
+                $reader.Close()
+
+                $apiKey = $env:GEMINI_API_KEY
+                if (-not $apiKey) { $apiKey = $env:GOOGLE_API_KEY }
+                if (-not $apiKey -and (Test-Path "$DIRECTORY\.env")) {
+                    Get-Content "$DIRECTORY\.env" | ForEach-Object {
+                        $line = $_.Trim()
+                        if ($line -and -not $line.StartsWith("#") -and $line.Contains("=")) {
+                            $parts = $line.Split("=", 2)
+                            if ($parts[0].Trim() -in @("GEMINI_API_KEY", "GOOGLE_API_KEY")) {
+                                $apiKey = $parts[1].Trim()
+                            }
+                        }
+                    }
+                }
+
+                if (-not $apiKey) {
+                    $errBytes = [System.Text.Encoding]::UTF8.GetBytes('{"error":"No GEMINI_API_KEY in .env"}')
+                    $response.StatusCode = 400
+                    $response.ContentType = "application/json; charset=utf-8"
+                    $response.ContentLength64 = $errBytes.Length
+                    $response.OutputStream.Write($errBytes, 0, $errBytes.Length)
+                    $response.Close()
+                    continue
+                }
+
+                $targetModel = "gemini-3.8-ultra"
+                try {
+                    $parsedBody = $body | ConvertFrom-Json
+                    if ($parsedBody.model) { $targetModel = $parsedBody.model }
+                } catch {}
+
+                if ($targetModel -eq "gemini-3.8-ultra") {
+                    $cascade = @("gemini-3.8-ultra", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-2.5-flash")
+                } elseif ($targetModel -in @("gemini-2.5-flash", "gemini-1.5-flash")) {
+                    $cascade = @("gemini-2.5-flash", "gemini-1.5-flash", "gemini-3.6-flash")
+                } else {
+                    $cascade = @($targetModel, "gemini-3.8-ultra", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-2.5-flash")
+                }
+
+                $resp = $null
+                $lastEx = $null
+                foreach ($m in $cascade) {
+                    $geminiUrl = "https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=$apiKey"
+                    try {
+                        $resp = Invoke-RestMethod -Uri $geminiUrl -Method POST -Body $body -ContentType "application/json" -TimeoutSec 35
+                        if ($resp) { break }
+                    } catch {
+                        $lastEx = $_
+                    }
+                }
+
+                if (-not $resp) {
+                    if ($lastEx) { throw $lastEx }
+                    throw "No se pudo obtener respuesta de ningún modelo en la cascada."
+                }
+                $jsonResp = $resp | ConvertTo-Json -Depth 10
+                $respBytes = [System.Text.Encoding]::UTF8.GetBytes($jsonResp)
+
+                $response.StatusCode = 200
+                $response.ContentType = "application/json; charset=utf-8"
+                $response.ContentLength64 = $respBytes.Length
+                $response.OutputStream.Write($respBytes, 0, $respBytes.Length)
+                $response.Close()
+                continue
+            } catch {
+                $errMsg = $_.Exception.Message -replace '"', '\"'
+                $errBytes = [System.Text.Encoding]::UTF8.GetBytes("{`"error`":`"$errMsg`"}")
+                $response.StatusCode = 500
+                $response.ContentType = "application/json; charset=utf-8"
+                $response.ContentLength64 = $errBytes.Length
+                $response.OutputStream.Write($errBytes, 0, $errBytes.Length)
+                $response.Close()
+                continue
+            }
+        }
+
+        # Resolver ruta del fichero
+        $urlPath = $request.Url.AbsolutePath
+        if ($urlPath -eq "/" -or $urlPath -eq "") { $urlPath = "/index.html" }
+
+        # Decodificar URL
+        $urlPath = [System.Uri]::UnescapeDataString($urlPath)
+        # Seguridad: no permitir path traversal
+        $urlPath = $urlPath -replace "\.\./", "" -replace "\.\.\\", ""
+
+        $filePath = Join-Path $DIRECTORY $urlPath.TrimStart("/").Replace("/", "\")
+
+        if (Test-Path $filePath -PathType Leaf) {
+            $ext = [System.IO.Path]::GetExtension($filePath).ToLower()
+            $mimeType = if ($MimeTypes.ContainsKey($ext)) { $MimeTypes[$ext] } else { "application/octet-stream" }
+
+            $bytes = [System.IO.File]::ReadAllBytes($filePath)
+            $response.ContentType = $mimeType
+            $response.ContentLength64 = $bytes.Length
+            $response.StatusCode = 200
+            $response.OutputStream.Write($bytes, 0, $bytes.Length)
+
+            # Log solo HTML
+            if ($ext -eq ".html" -or $ext -eq ".xml") {
+                Write-Host "  200 $urlPath" -ForegroundColor DarkGray
+            }
+        } else {
+            $notFound = [System.Text.Encoding]::UTF8.GetBytes("<h1>404 - Not Found</h1><p>$urlPath</p>")
+            $response.StatusCode = 404
+            $response.ContentType = "text/html"
+            $response.ContentLength64 = $notFound.Length
+            $response.OutputStream.Write($notFound, 0, $notFound.Length)
+            Write-Host "  404 $urlPath" -ForegroundColor DarkRed
+        }
+
+        $response.OutputStream.Close()
+        $response.Close()
+
+    } catch [System.Net.HttpListenerException] {
+        break
+    } catch {
+        Write-Host "  Error: $_" -ForegroundColor Red
+        try { $response.StatusCode = 500; $response.Close() } catch {}
+    }
+}
+
+$listener.Stop()
+Write-Host ""
+Write-Host "  Servidor detenido." -ForegroundColor Yellow

@@ -1,0 +1,103 @@
+name: "Gemini AI Release Notes & Changelog"
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release-notes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate AI Release Notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TAG_NAME: ${{ github.ref_name }}
+          REPO_NAME: ${{ github.repository }}
+        run: |
+          python - << 'EOF'
+          import os, sys, subprocess, json, urllib.request
+
+          tag = os.environ.get('TAG_NAME', 'latest')
+          repo = os.environ.get('REPO_NAME')
+          gh_token = os.environ.get('GITHUB_TOKEN')
+          gemini_key = os.environ.get('GEMINI_API_KEY')
+
+          if not gemini_key:
+              print("Skipping: Missing GEMINI_API_KEY secret.")
+              sys.exit(0)
+
+          # Get last 15 commits log
+          try:
+              log = subprocess.check_output(['git', 'log', '-n', '15', '--oneline'], text=True)
+          except Exception as e:
+              log = "No se pudo obtener el historial de git."
+
+          prompt = f"""Eres el release manager de CannaCulture.
+          Redacta unas Notas de Lanzamiento épicas y profesionales para la versión {tag} basadas en estos commits recientes:
+
+          {log}
+
+          Formato esperado en Markdown:
+          # 🌿 CannaCulture Release {tag}
+          ## 🚀 Novedades Principales
+          ## 🛠️ Mejoras Técnicas & Refactorizaciones
+          ## 📊 Estado Actual del Catálogo (418 cepas, 39 bancos)
+          """
+
+          gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key={gemini_key}"
+          payload = {"contents": [{"parts": [{"text": prompt}]}]}
+
+          try:
+              g_req = urllib.request.Request(
+                  gemini_url,
+                  data=json.dumps(payload).encode('utf-8'),
+                  headers={"Content-Type": "application/json"}
+              )
+              with urllib.request.urlopen(g_req, timeout=30) as resp:
+                  res = json.loads(resp.read().decode('utf-8'))
+                  notes = res['candidates'][0]['content']['parts'][0]['text']
+          except Exception as e:
+              print(f"Error calling Gemini: {e}")
+              notes = f"Release {tag} de CannaCulture."
+
+          # Create or update GitHub Release
+          rel_url = f"https://api.github.com/repos/{repo}/releases"
+          rel_payload = {
+              "tag_name": tag,
+              "name": f"CannaCulture {tag}",
+              "body": notes,
+              "draft": False,
+              "prerelease": False
+          }
+          try:
+              req = urllib.request.Request(
+                  rel_url,
+                  data=json.dumps(rel_payload).encode('utf-8'),
+                  headers={
+                      "Authorization": f"Bearer {gh_token}",
+                      "Accept": "application/vnd.github.v3+json",
+                      "User-Agent": "Gemini-Release-Bot",
+                      "Content-Type": "application/json"
+                  }
+              )
+              with urllib.request.urlopen(req) as resp:
+                  print(f"✅ Release {tag} publicado en GitHub con éxito.")
+          except Exception as e:
+              print(f"Nota: {e}")
+          EOF

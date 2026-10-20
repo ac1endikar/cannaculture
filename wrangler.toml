@@ -1,0 +1,11 @@
+name = "maria-proxy"
+main = "worker/maria-proxy.js"
+compatibility_date = "2024-09-23"
+
+# Ruta limpia en el dominio del club: https://cannacultureapp.com/api/maria
+routes = [
+  { pattern = "cannacultureapp.com/api/maria*", zone_name = "cannacultureapp.com" }
+]
+
+# Secreto requerido (no se guarda aqui):
+#   npx wrangler secret put GEMINI_API_KEY

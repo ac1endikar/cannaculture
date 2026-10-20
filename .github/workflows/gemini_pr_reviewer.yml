@@ -1,0 +1,127 @@
+name: "Gemini AI PR Reviewer"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run Gemini PR Code Review
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO_NAME: ${{ github.repository }}
+        run: |
+          python - << 'EOF'
+          import os, sys, json, urllib.request, urllib.error
+
+          pr_number = os.environ.get('PR_NUMBER')
+          repo_name = os.environ.get('REPO_NAME')
+          gh_token = os.environ.get('GITHUB_TOKEN')
+          gemini_key = os.environ.get('GEMINI_API_KEY')
+
+          if not pr_number or not gemini_key:
+              print("Skipping: Missing PR number or GEMINI_API_KEY secret.")
+              sys.exit(0)
+
+          # Fetch PR Diff
+          diff_url = f"https://api.github.com/repos/{repo_name}/pulls/{pr_number}"
+          req = urllib.request.Request(
+              diff_url,
+              headers={
+                  "Authorization": f"Bearer {gh_token}",
+                  "Accept": "application/vnd.github.v3.diff",
+                  "User-Agent": "Gemini-PR-Reviewer"
+              }
+          )
+          try:
+              with urllib.request.urlopen(req) as resp:
+                  diff_text = resp.read().decode('utf-8', errors='replace')
+          except Exception as e:
+              print(f"Error fetching diff: {e}")
+              sys.exit(0)
+
+          if not diff_text.strip():
+              print("Empty diff, skipping review.")
+              sys.exit(0)
+
+          # Truncate diff if extremely large
+          if len(diff_text) > 35000:
+              diff_text = diff_text[:35000] + "\n\n... [Diff truncado para análisis] ..."
+
+          prompt = f"""Eres un Ingeniero Principal de Software y Auditor de Calidad para el proyecto CannaCulture.
+          Revisa este Pull Request con atención a:
+          1. Integridad del catálogo botánico y sintaxis de JavaScript/CSS.
+          2. Sincronización obligatoria entre `js/data.js` y `js/bundle.js` (si se toca uno, debe verificarse el bundle).
+          3. Seguridad (no exponer tokens ni romper compatibilidad).
+          4. Rendimiento y UX responsive.
+
+          Diff del Pull Request:
+          ```diff
+          {diff_text}
+          ```
+
+          Responde con un formato estructurado en Markdown con emojis, destacando:
+          - 🔍 **Resumen de Cambios**
+          - ✅ **Puntos Fuertes**
+          - ⚠️ **Posibles Riesgos o Sugerencias**
+          - 🏆 **Veredicto Final (Aprobado / Requiere Cambios)**
+          """
+
+          gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key={gemini_key}"
+          payload = {
+              "contents": [{"parts": [{"text": prompt}]}]
+          }
+
+          try:
+              g_req = urllib.request.Request(
+                  gemini_url,
+                  data=json.dumps(payload).encode('utf-8'),
+                  headers={"Content-Type": "application/json"}
+              )
+              with urllib.request.urlopen(g_req, timeout=40) as resp:
+                  res = json.loads(resp.read().decode('utf-8'))
+                  review_body = res['candidates'][0]['content']['parts'][0]['text']
+          except Exception as e:
+              print(f"Error calling Gemini: {e}")
+              sys.exit(0)
+
+          # Post Review Comment on PR
+          comment_url = f"https://api.github.com/repos/{repo_name}/issues/{pr_number}/comments"
+          comment_payload = {
+              "body": f"### 🤖 Revisión Automatizada de Código — Gemini 3.6 Flash\n\n{review_body}\n\n---\n*Generado automáticamente por CannaCulture AI DevOps Agent.*"
+          }
+          c_req = urllib.request.Request(
+              comment_url,
+              data=json.dumps(comment_payload).encode('utf-8'),
+              headers={
+                  "Authorization": f"Bearer {gh_token}",
+                  "Accept": "application/vnd.github.v3+json",
+                  "User-Agent": "Gemini-PR-Reviewer",
+                  "Content-Type": "application/json"
+              }
+          )
+          try:
+              with urllib.request.urlopen(c_req) as resp:
+                  print("✅ Review comment posted successfully on PR #" + pr_number)
+          except Exception as e:
+              print(f"Error posting comment: {e}")
+          EOF

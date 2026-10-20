@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Gestión de Dispensario CSC • CannaCulture</title>
+  <meta name="description"
+    content="Portal privado de acceso restringido para personal autorizado de Clubes Sociales de Cannabis (CSC).">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="theme-color" content="#0B0F0E">
+
+  <!-- ======================= OPEN GRAPH (COMPARTICIÓN PRIVADA) ======================= -->
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CannaCulture">
+  <meta property="og:title" content="Panel de Dispensario CSC • CannaCulture">
+  <meta property="og:description"
+    content="Gestión de carta activa, mostrador y cuotas de aportación de socio (€/g).">
+  <meta property="og:url" content="https://cannacultureapp.com/admin-dispensario.html">
+  <meta property="og:image" content="https://cannacultureapp.com/assets/img/og-cannaculture-1200x630.jpg">
+  <meta property="og:image:secure_url" content="https://cannacultureapp.com/assets/img/og-cannaculture-1200x630.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- ======================= TWITTER CARDS ======================= -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Panel de Dispensario CSC • CannaCulture">
+  <meta name="twitter:description"
+    content="Gestión de carta activa botánica y mostrador para clubes registrados.">
+  <meta name="twitter:image" content="https://cannacultureapp.com/assets/img/og-cannaculture-1200x630.jpg">
+
+  <!-- Prevención de caché en panel de administración -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+
+  <!-- Regla de Bloqueo Inmediata Fail-Secure Anti-FOUC (+18 - Memoria Volátil Estricta) -->
+  <script>
+    (function () {
+      try {
+        localStorage.removeItem('cannaculture_age_consent');
+        localStorage.removeItem('cannacatalog_age_verified');
+        localStorage.removeItem('canna_age_verified');
+        sessionStorage.removeItem('cannaculture_age_session');
+      } catch (_) {}
+      if (!window._cannacultureAgeVerified) {
+        document.documentElement.classList.add('age-locked');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/age-gate.css?v=242">
+  <!-- Hoja de Estilos del Dispensario CSC -->
+  <link rel="stylesheet" href="css/admin-dispensario.css?v=242">
+
+  <!-- Controlador Inmediato de Age Gate (+18) -->
+  <script src="js/age-gate.js?v=242"></script>
+</head>
+
+<body>
+  <!-- DIRECTIVA NOSCRIPT FAIL-SECURE (BLOQUEO SIN JAVASCRIPT) -->
+  <noscript id="age-gate-noscript">
+    <div class="noscript-card-wrapper">
+      <div class="noscript-card">
+        <span style="font-size: 3rem;">🛡️</span>
+        <h2>Acceso Restringido (+18)</h2>
+        <p>JavaScript es estrictamente necesario para validar el cumplimiento legal de mayoría de edad (+18) y acceder a la plataforma CannaCulture.</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; color: #6B7280;">Por favor, habilita JavaScript en la configuración de tu navegador para continuar.</p>
+      </div>
+    </div>
+  </noscript>
+
+  <!-- ======================================================================
+       VERIFICACIÓN DE EDAD MODAL (+18 AGE GATE - FAIL-SECURE v217)
+       ====================================================================== -->
+  <dialog id="age-gate-modal" class="age-gate-dialog" aria-labelledby="age-gate-title" aria-describedby="age-gate-desc">
+    <div class="age-gate-card">
+      <div class="age-gate-badge">
+        <span class="badge-icon">🛡️</span>
+        <span class="badge-tag">+18 VERIFICACIÓN</span>
+      </div>
+
+      <h2 id="age-gate-title" class="age-gate-title">Control de Acceso (Mayoría de Edad)</h2>
+      <p id="age-gate-desc" class="age-gate-subtitle">Esta plataforma contiene información especializada sobre botánica y variedades cannábicas reservada exclusivamente a personas adultas (+18 años).</p>
+
+      <div class="age-gate-legal-box">
+        <div class="legal-box-row">
+          <span class="legal-box-icon">🌿</span>
+          <div class="legal-box-content">
+            <strong>Finalidad Botánica, Enciclopédica y Reducción de Daños</strong>
+            <p>Catálogo botánico de 877 variedades, perfiles de terpenos y guías informativas orientadas a la divulgación científica y la prevención de riesgos.</p>
+          </div>
+        </div>
+        <div class="legal-box-row">
+          <span class="legal-box-icon">⚖️</span>
+          <div class="legal-box-content">
+            <strong>Marco Legal, Ámbito Privado y Clubes Sociales (CSC)</strong>
+            <p>Acceso restringido conforme a la legislación de protección de menores. Uso estrictamente circunscrito al consumo privado no punible, autocultivo y socios registrados de asociaciones CSC.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="age-gate-actions-grid">
+        <button id="btn-age-permit" class="btn-age-permit" type="button" aria-label="Confirmar que soy mayor de 18 años y acceder">
+          <span class="btn-age-main">✅ Soy mayor de 18 años</span>
+          <span class="btn-age-sub">Entrar a la plataforma</span>
+        </button>
+        <button id="btn-age-deny" class="btn-age-deny" type="button" aria-label="Indicar que soy menor de 18 años y salir">
+          <span class="btn-age-main">🚪 Soy menor de edad</span>
+          <span class="btn-age-sub">Salir inmediatamente</span>
+        </button>
+      </div>
+
+      <p class="age-gate-footer-hint">🔒 Verificación obligatoria en cada visita. El consentimiento se mantiene exclusivamente en memoria volátil y expira al recargar la página (F5) o cerrar el navegador conforme al protocolo de protección de menores.</p>
+    </div>
+  </dialog>
+
+  <!-- DIÁLOGO DE REVOCACIÓN VOLUNTARIA DE CONSENTIMIENTO (+18) -->
+  <dialog id="age-revoke-dialog" class="age-revoke-dialog">
+    <div class="age-revoke-card">
+      <span style="font-size: 2rem;">🛡️</span>
+      <h3 class="age-revoke-title">Consentimiento +18 Activo</h3>
+      <p class="age-revoke-desc">Has verificado tu mayoría de edad en esta carga de página. ¿Deseas revocar tu consentimiento y bloquear el acceso inmediatamente?</p>
+      <div class="age-revoke-actions">
+        <button id="btn-revoke-cancel" class="btn-revoke-cancel" type="button">Mantener Acceso</button>
+        <button id="btn-revoke-confirm" class="btn-revoke-confirm" type="button">Revocar y Bloquear</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ======================================================================
+       MURO DE AUTENTICACIÓN PRIVADO DEL DISPENSARIO (ACCESS GATE v218)
+       ====================================================================== -->
+  <section id="dispensary-auth-gate" class="dispensary-auth-gate" aria-label="Control de Acceso al Dispensario CSC">
+    <div class="auth-gate-card">
+      <div class="auth-gate-header">
+        <div class="auth-shield-avatar">🛡️</div>
+        <span class="auth-gate-badge">PORTAL PRIVADO • ACCESO RESTRINGIDO</span>
+        <h2 class="auth-gate-title">Terminal Dispensario CSC</h2>
+        <p class="auth-gate-subtitle">Panel reservado a encargados y personal autorizado del club. Introduce las credenciales maestras o PIN de turno para operar.</p>
+      </div>
+
+      <form id="dispensary-auth-form" class="auth-gate-form" autocomplete="off">
+        <div class="auth-field-group">
+          <label for="auth-club-id" class="auth-label">Identificador del Club (Club ID / Licencia)</label>
+          <div class="auth-input-wrapper">
+            <span class="auth-input-icon">🏢</span>
+            <input type="text" id="auth-club-id" class="auth-input" placeholder="Ej: demo-csc (o CSC-VERDE-01)" value="demo-csc" required autofocus spellcheck="false" autocomplete="username">
+          </div>
+        </div>
+
+        <div class="auth-field-group">
+          <label for="auth-club-pass" class="auth-label">Clave Maestra o PIN de Turno</label>
+          <div class="auth-input-wrapper">
+            <span class="auth-input-icon">🔑</span>
+            <input type="password" id="auth-club-pass" class="auth-input" placeholder="Ej: demo2026" required autocomplete="current-password">
+            <button type="button" id="btn-toggle-pass-visibility" class="btn-toggle-eye" title="Mostrar/Ocultar contraseña" aria-label="Mostrar/Ocultar contraseña">👁️</button>
+          </div>
+        </div>
+
+        <div id="auth-error-banner" class="auth-error-banner" style="display: none;" role="alert">
+          <span class="error-icon">⚠️</span>
+          <span id="auth-error-text">Credenciales no autorizadas.</span>
+        </div>
+
+        <button type="submit" id="btn-submit-auth" class="btn-auth-submit">
+          <span>🔓</span>
+          <span>Desbloquear Terminal POS</span>
+        </button>
+      </form>
+
+      <div class="auth-gate-footer">
+        <div class="auth-security-notice">
+          <span>🔒 Cifrado de turno SHA-256 • Sesión expira al finalizar jornada</span>
+        </div>
+        <a href="index.html" class="auth-back-link">← Volver al Catálogo Público</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       CONTENIDO PROTEGIDO DEL DISPENSARIO (VISIBLE SOLO TRAS AUTENTICACIÓN)
+       ====================================================================== -->
+  <div id="dispensary-app-content" class="dispensary-app-content" style="display: none;">
+
+  <!-- ======================================================================
+       Barra Superior de Navegación & Control del Club
+       ====================================================================== -->
+  <header class="admin-navbar">
+    <div class="nav-container">
+      <div class="brand-section">
+        <div class="club-avatar-badge" title="Asociación Cannábica Registrada">
+          🌿
+        </div>
+        <div class="club-info">
+          <h1 id="club-display-name">
+            CSC Verde Esperanza
+            <span style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.2); color: #34D399; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.4);">CSC OFICIAL</span>
+          </h1>
+          <div class="club-tagline">Panel de Dispensario & Mostrador • Consumo Compartido</div>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <!-- Indicador de Sincronización en Tiempo Real -->
+        <div id="sync-status-badge" class="sync-status-badge" title="Estado de la base de datos">
+          <span class="pulse-dot"></span>
+          <span>En vivo / Sincronizado</span>
+        </div>
+
+        <!-- Selector Multi-idioma Rápido -->
+        <div class="kiosk-lang-selector nav-lang-selector" aria-label="Idioma">
+          <button type="button" class="lang-pill-btn active" data-lang="es" title="Español">🇪🇸 ES</button>
+          <button type="button" class="lang-pill-btn" data-lang="en" title="English">🇬🇧 EN</button>
+          <button type="button" class="lang-pill-btn" data-lang="de" title="Deutsch">🇩🇪 DE</button>
+          <button type="button" class="lang-pill-btn" data-lang="it" title="Italiano">🇮🇹 IT</button>
+        </div>
+
+        <!-- Botón Vista Kiosco Mostrador -->
+        <button id="btn-toggle-kiosk" class="btn-touch btn-kiosk" title="Modo pantalla completa para tablet de mostrador">
+          <span>🖥️</span>
+          <span>Vista Kiosco Mostrador</span>
+        </button>
+
+        <!-- Botón Bloquear Terminal / Cerrar Turno -->
+        <button id="btn-lock-terminal" class="btn-touch btn-secondary" title="Bloquear Terminal / Cerrar Turno de Trabajo">
+          <span>🔒</span>
+          <span>Cerrar Turno</span>
+        </button>
+
+        <!-- Botón Acceso Firebase Club / Modo Demo -->
+        <button id="btn-club-auth" class="btn-touch btn-secondary" title="Acceso Club Firebase">
+          <span>👤</span>
+          <span>Modo Demo (Acceso Club)</span>
+        </button>
+
+        <!-- Enlace a la Guía de Cultivo -->
+        <a href="guia-cultivo.html" class="btn-touch btn-secondary" id="nav-link-guia-cultivo" title="Guía de Cultivo">
+          <span>🌱 Guía de Cultivo</span>
+        </a>
+
+        <!-- Enlace al catálogo maestro -->
+        <a href="index.html" class="btn-touch btn-secondary" title="Volver al Catálogo Público">
+          <span>← Catálogo General</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       Aviso de Modo Kiosco (Visible solo cuando se activa dicho modo)
+       ====================================================================== -->
+  <main class="admin-container">
+    <div id="kiosk-top-notice" class="kiosk-top-notice">
+      <div class="kiosk-notice-text">
+        <h2 id="kiosk-banner-title">🌿 Carta del Dispensario • Menú de Variedades en Barra</h2>
+        <p id="kiosk-banner-subtitle">Previsiones botánicas disponibles para socios registrados de la asociación en mostrador.</p>
+      </div>
+
+      <!-- Selector de Idiomas Táctil Kiosco [ 🇪🇸 ES | 🇬🇧 EN | 🇩🇪 DE | 🇮🇹 IT ] -->
+      <div id="kiosk-lang-selector" class="kiosk-lang-selector" aria-label="Selector de idioma">
+        <button type="button" class="lang-pill-btn active" data-lang="es" title="Español">🇪🇸 ES</button>
+        <button type="button" class="lang-pill-btn" data-lang="en" title="English">🇬🇧 EN</button>
+        <button type="button" class="lang-pill-btn" data-lang="de" title="Deutsch">🇩🇪 DE</button>
+        <button type="button" class="lang-pill-btn" data-lang="it" title="Italiano">🇮🇹 IT</button>
+      </div>
+
+      <button id="btn-exit-kiosk" class="btn-exit-kiosk">
+        ⚙️ Salir de Vista Kiosco
+      </button>
+    </div>
+
+    <!-- ======================================================================
+         Navegación por Pestañas Principales del Dispensario CSC (v216)
+         ====================================================================== -->
+    <nav class="dispensary-main-tabs" aria-label="Secciones del Dispensario">
+      <button type="button" class="main-tab-btn active" data-tab="tab-menu" id="tab-btn-menu">
+        <span>🌿</span>
+        <span>Carta & Menú en Barra</span>
+      </button>
+      <button type="button" class="main-tab-btn" data-tab="tab-pos" id="tab-btn-pos">
+        <span>⚖️</span>
+        <span>Terminal Mostrador (POS)</span>
+        <span class="tab-badge-pulse" id="pos-active-badge">EN VIVO</span>
+      </button>
+      <button type="button" class="main-tab-btn" data-tab="tab-arqueo" id="tab-btn-arqueo">
+        <span>📊</span>
+        <span>Arqueo & Movimientos</span>
+        <span class="tab-badge-pill" id="badge-total-moves">0 hoy</span>
+      </button>
+    </nav>
+
+    <!-- ======================================================================
+         PESTAÑA 1: CARTA & MENÚ ACTIVO EN BARRA
+         ====================================================================== -->
+    <div id="view-tab-menu" class="dispensary-tab-view active">
+      <div class="dashboard-layout">
+        <!-- COLUMNA IZQUIERDA: Buscador y Carta Activa -->
+        <section class="menu-master-column">
+          
+          <!-- Tarjeta de Búsqueda del Catálogo Maestro (900 Cepas & 80 Bancos) -->
+          <div class="catalog-search-card">
+            <div class="search-card-header">
+              <div class="search-title-group">
+                <span>🔎</span>
+                <h2>Incorporar Variedades del Catálogo Maestro</h2>
+                <span class="badge-count">900 Cepas HD · 80 Bancos</span>
+              </div>
+              <button type="button" id="btn-open-maria" class="btn-ask-maria" title="Consultar a María según el stock activo en mostrador">
+                <span class="maria-btn-icon">🌿</span>
+                <span class="maria-btn-text">Preguntar a María</span>
+                <span class="maria-btn-sparkle">✨</span>
+              </button>
+            </div>
+            
+            <div class="search-input-wrapper">
+              <span class="search-icon-inside">🔍</span>
+              <input type="text" 
+                     id="catalog-search-input" 
+                     class="catalog-search-input" 
+                     placeholder="Buscar entre 877 cepas por nombre, linaje o terpeno (ej. Gelato, Amnesia, Kmintz)..." 
+                     autocomplete="off" />
+
+              <select id="catalog-bank-filter" class="catalog-bank-filter" title="Filtrar por Banco Criador">
+                <option value="all">🏛️ Todos los Bancos (75)</option>
+              </select>
+              
+              <!-- Resultados flotantes de autocompletado -->
+              <div id="search-results-dropdown" class="search-results-dropdown"></div>
+            </div>
+          </div>
+
+          <!-- Barra de Herramientas y Filtros del Menú Activo -->
+          <div class="menu-toolbar">
+            <div class="category-tabs">
+              <button class="cat-tab-btn active" data-filter="all">🌿 Todas</button>
+              <button class="cat-tab-btn" data-filter="flores">🌸 Flores / Cogollos</button>
+              <button class="cat-tab-btn" data-filter="extracciones">🍯 Extracciones & Rosin</button>
+              <button class="cat-tab-btn" data-filter="comestibles">🍪 Comestibles</button>
+            </div>
+
+            <div class="toolbar-stats">
+              <div class="stat-pill">
+                <span>En Carta:</span>
+                <strong id="stat-total-menu">0</strong>
+              </div>
+              <div class="stat-pill" style="color: var(--primary-light);">
+                <span>Disponibles:</span>
+                <strong id="stat-avail-menu">0</strong>
+              </div>
+              <div class="stat-pill" style="color: var(--text-dim);">
+                <span>Agotadas:</span>
+                <strong id="stat-out-menu">0</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid de Tarjetas del Menú en Mostrador -->
+          <div id="strains-menu-grid" class="strains-menu-grid">
+            <!-- Renderizado dinámico desde admin-dispensario.js -->
+          </div>
+
+        </section>
+
+        <!-- COLUMNA DERECHA: Editor de Aportaciones & Lotes -->
+        <aside id="editor-panel-card" class="editor-panel-card">
+          <div class="editor-header">
+            <h2>
+              <span>⚖️</span>
+              <span>Aportaciones & Lote</span>
+            </h2>
+            <span style="font-size: 0.72rem; color: var(--primary-light); font-weight: 700; background: rgba(16,185,129,0.1); padding: 4px 8px; border-radius: 6px;">
+              CONFIGURACIÓN CSC
+            </span>
+          </div>
+
+          <div id="editor-panel-body">
+            <!-- Formulario inyectado dinámicamente -->
+          </div>
+
+          <!-- Botones de Utilidad Rápida -->
+          <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; gap: 8px;">
+            <button id="btn-export-json" class="btn-touch btn-secondary" style="flex: 1; font-size: 0.78rem; min-height: 38px;">
+              📥 Exportar Carta (JSON)
+            </button>
+            <button id="btn-reset-demo" class="btn-touch btn-secondary" style="font-size: 0.78rem; min-height: 38px; color: var(--text-dim);" title="Restablecer variedades sugeridas">
+              🔄 Demo
+            </button>
+          </div>
+
+          <!-- Ajustes del Club: API Key de Google Gemini (Sommelier de Mostrador) -->
+          <div class="club-settings-ai-box" id="club-settings-ai-box">
+            <div class="settings-ai-title-row">
+              <div class="settings-ai-title-wrap">
+                <span class="settings-ai-ico">👩‍🌾</span>
+                <div>
+                  <h4 class="settings-ai-heading">María · IA de Mostrador</h4>
+                  <span class="settings-ai-subtext">Google Gemini Flash (Free Tier)</span>
+                </div>
+              </div>
+              <span id="gemini-key-status-pill" class="key-status-pill unconfigured">Sin Clave</span>
+            </div>
+
+            <div class="form-group" style="margin-top: 12px; margin-bottom: 8px;">
+              <label for="gemini-api-key-input" class="form-label" style="font-size: 0.76rem; font-weight: 600;">
+                Google AI Studio API Key (Free Tier)
+              </label>
+              <div class="api-key-input-wrapper">
+                <input type="password" 
+                       id="gemini-api-key-input" 
+                       class="form-control form-control-sm" 
+                       placeholder="••••••••••••••••••••••••" 
+                       autocomplete="off" 
+                       spellcheck="false" />
+                <button type="button" 
+                        id="btn-toggle-gemini-key-visibility" 
+                        class="btn-toggle-eye" 
+                        title="Mostrar/Ocultar API Key"
+                        aria-label="Mostrar u ocultar clave">👁️</button>
+              </div>
+              <p class="form-hint" style="font-size: 0.7rem; color: var(--text-dim); margin-top: 4px; line-height: 1.4;">
+                🔒 Guardada localmente para este club. Sin coste en el Free Tier de Google AI Studio.
+              </p>
+            </div>
+            
+            <button type="button" id="btn-save-gemini-key" class="btn-touch btn-secondary btn-sm" style="width: 100%; min-height: 34px; font-size: 0.75rem;">
+              💾 Guardar Clave de IA
+            </button>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         PESTAÑA 2: TERMINAL MOSTRADOR DE DISPENSACIÓN (POS CSC)
+         ====================================================================== -->
+    <div id="view-tab-pos" class="dispensary-tab-view">
+     <div class="pos-terminal-shell">
+      <div class="pos-main-column">
+      <div class="pos-layout">
+        <!-- Columna Izquierda: Identificación de Socio & Variedad en Barra -->
+        <section class="pos-panel-card pos-selection-panel">
+          <div class="pos-panel-header">
+            <h3><span>👤</span> <span>1. Identificación del Socio</span></h3>
+            <button type="button" class="btn-touch btn-secondary btn-sm" id="btn-quick-new-member" title="Registrar nuevo socio en el club">
+              ➕ Nuevo Socio
+            </button>
+          </div>
+          
+          <div class="pos-member-select-wrapper">
+            <label for="pos-member-select" class="form-label">Seleccionar Socio Registrado</label>
+            <select id="pos-member-select" class="form-control pos-select">
+              <!-- Opciones dinámicas de socios -->
+            </select>
+          </div>
+
+          <div id="pos-member-card" class="pos-member-info-card">
+            <!-- Ficha del socio: Número, Alias, Nivel estatutario, Límite mensual restante -->
+          </div>
+
+          <div class="pos-panel-header" style="margin-top: 26px;">
+            <h3><span>🌿</span> <span>2. Variedad de la Carta Activa</span></h3>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <span class="badge-count" id="pos-avail-strains-count">0 disponibles</span>
+              <button type="button" id="btn-pos-open-maria" class="btn-ask-maria btn-ask-maria-sm" title="Consultar a María según stock">
+                <span>🌿</span> <span>Preguntar a María</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="pos-strain-select-wrapper">
+            <label for="pos-strain-select" class="form-label">Variedad en Mostrador</label>
+            <select id="pos-strain-select" class="form-control pos-select">
+              <!-- Cepas activas en la carta -->
+            </select>
+          </div>
+
+          <div id="pos-strain-preview-card" class="pos-strain-preview-card">
+            <!-- Resumen de cepa seleccionada: Foto, THC, Terpeno, Stock en Bote -->
+          </div>
+        </section>
+
+        <!-- Columna Derecha: Báscula Digital & Ticket de Dispensación -->
+        <section class="pos-panel-card pos-weighing-panel">
+          <div class="pos-panel-header">
+            <h3><span>⚖️</span> <span>3. Pesaje & Cálculo de Aportación</span></h3>
+            <span class="pos-live-clock" id="pos-live-clock">--:--:--</span>
+          </div>
+
+          <!-- Pantalla Digital de Báscula -->
+          <div class="pos-scale-display">
+            <div class="scale-label">PESO REGISTRADO EN BÁSCULA</div>
+            <div class="scale-readout">
+              <span id="pos-scale-weight">0.00</span>
+              <span class="scale-unit">g</span>
+            </div>
+            <div class="scale-subline">
+              <span id="pos-applied-rate-text">Cuota aplicada: 0.00 €/g</span>
+              <span id="pos-tier-name-badge" class="pos-tier-badge">ESTÁNDAR</span>
+            </div>
+          </div>
+
+          <!-- Botonera de Pesaje Rápido -->
+          <div class="pos-weight-buttons-grid">
+            <button type="button" class="btn-weight-preset" data-weight="0.5">+0.5g</button>
+            <button type="button" class="btn-weight-preset" data-weight="1.0">+1.0g</button>
+            <button type="button" class="btn-weight-preset" data-weight="2.0">+2.0g</button>
+            <button type="button" class="btn-weight-preset" data-weight="5.0">+5.0g</button>
+            <button type="button" class="btn-weight-preset" data-weight="10.0">+10.0g</button>
+            <button type="button" class="btn-weight-preset btn-weight-clear" id="btn-pos-clear-weight">🧹 Borrar</button>
+          </div>
+
+          <!-- Entrada Numérica Manual / Báscula -->
+          <div class="form-group" style="margin-top: 16px;">
+            <label for="pos-manual-weight-input" class="form-label">Ajuste Decimal Exacto (g)</label>
+            <div class="form-input-currency">
+              <input type="number" step="0.05" min="0" max="100" id="pos-manual-weight-input" class="form-control" placeholder="0.00" value="0.00" />
+              <span class="unit-symbol">g</span>
+            </div>
+          </div>
+
+          <!-- Caja de Aportación Total -->
+          <div class="pos-total-box">
+            <div class="pos-total-label">APORTACIÓN TOTAL ESTIMADA</div>
+            <div class="pos-total-amount">
+              <span id="pos-total-euros">0.00</span>
+              <span class="currency-symbol">€</span>
+            </div>
+            <div class="pos-total-formula" id="pos-total-formula">
+              0.00 g × 0.00 €/g = 0.00 €
+            </div>
+          </div>
+
+          <!-- Mensaje de Validación / Alerta -->
+          <div id="pos-validation-alert" class="pos-validation-alert" style="display: none;"></div>
+
+          <!-- Acciones: Añadir al pedido multigenética o dispensación rápida de 1 variedad -->
+          <div class="pos-action-row">
+            <button type="button" id="btn-pos-add-to-order" class="pos-add-order-btn" disabled>
+              <span>➕</span>
+              <span>Añadir al pedido</span>
+            </button>
+            <button type="button" id="btn-pos-dispense" class="pos-dispense-btn" disabled>
+              <span>⚡</span>
+              <span>Dispensar solo esta</span>
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <!-- Carta rápida: añadir variedades al pedido desde tarjetas -->
+      <section class="pos-panel-card pos-quick-panel" aria-labelledby="pos-quick-title">
+        <div class="pos-panel-header">
+          <h3 id="pos-quick-title"><span>🛒</span> <span>4. Carta Rápida · Pedido Multigenética</span></h3>
+          <span class="badge-count" id="pos-quick-count">0 variedades</span>
+        </div>
+        <div id="pos-quick-cards" class="pos-quick-grid">
+          <!-- Tarjetas de variedades activas con selector rápido de cantidad -->
+        </div>
+      </section>
+      </div>
+
+      <!-- Ticket del Socio / Pedido Actual -->
+      <aside id="pos-order-ticket" class="pos-order-ticket" aria-label="Ticket del socio, pedido actual">
+        <button type="button" id="btn-ticket-drawer-toggle" class="ticket-drawer-toggle" aria-expanded="false" aria-controls="ticket-body">
+          <span class="ticket-drawer-title">🧾 Pedido · <strong id="ticket-drawer-count">0</strong> líneas</span>
+          <span class="ticket-drawer-total"><strong id="ticket-drawer-total">0.00</strong> €</span>
+          <span class="ticket-drawer-chevron" aria-hidden="true">▴</span>
+        </button>
+
+        <div id="ticket-body" class="ticket-body">
+          <div class="ticket-header">
+            <h3><span>🧾</span> <span>Ticket del Socio</span></h3>
+            <span id="ticket-member-label" class="ticket-member-label">—</span>
+          </div>
+
+          <ul id="ticket-lines" class="ticket-lines" aria-live="polite">
+            <!-- Líneas del pedido -->
+          </ul>
+
+          <div id="ticket-alert" class="pos-validation-alert error" style="display: none;"></div>
+
+          <div class="ticket-totals">
+            <div class="ticket-total-row">
+              <span>Peso Total</span>
+              <strong><span id="ticket-total-grams">0.00</span> g</strong>
+            </div>
+            <div class="ticket-total-row ticket-grand-total">
+              <span>TOTAL A COBRAR</span>
+              <strong><span id="ticket-total-euros">0.00</span> €</strong>
+            </div>
+          </div>
+
+          <div class="ticket-cash">
+            <label for="ticket-cash-input" class="form-label">Efectivo entregado (€)</label>
+            <div class="form-input-currency">
+              <input type="number" step="0.01" min="0" id="ticket-cash-input" class="form-control" placeholder="0.00" inputmode="decimal" />
+              <span class="unit-symbol">€</span>
+            </div>
+            <div class="ticket-cash-quick">
+              <button type="button" class="btn-cash-quick" data-cash="exact">Exacto</button>
+              <button type="button" class="btn-cash-quick" data-cash="10">10 €</button>
+              <button type="button" class="btn-cash-quick" data-cash="20">20 €</button>
+              <button type="button" class="btn-cash-quick" data-cash="50">50 €</button>
+            </div>
+            <div id="ticket-change-row" class="ticket-change-row">
+              <span>Cambio a devolver</span>
+              <strong><span id="ticket-change-amount">0.00</span> €</strong>
+            </div>
+          </div>
+
+          <div class="ticket-actions">
+            <button type="button" id="btn-ticket-clear" class="btn-touch btn-secondary ticket-clear-btn" disabled>🗑️ Vaciar ticket</button>
+            <button type="button" id="btn-ticket-confirm" class="pos-dispense-btn ticket-confirm-btn" disabled>
+              <span>✅</span>
+              <span>Confirmar y Cobrar Pedido</span>
+            </button>
+          </div>
+        </div>
+      </aside>
+     </div>
+    </div>
+
+    <!-- ======================================================================
+         PESTAÑA 3: ARQUEO DE CAJA & MOVIMIENTOS DEL DISPENSARIO
+         ====================================================================== -->
+    <div id="view-tab-arqueo" class="dispensary-tab-view">
+      <div class="arqueo-layout">
+        <!-- Fila Superior de Métricas de Jornada -->
+        <div class="arqueo-stats-grid">
+          <div class="stat-summary-card">
+            <div class="stat-summary-icon" style="background: rgba(16,185,129,0.15); color: #34D399;">⚖️</div>
+            <div class="stat-summary-info">
+              <div class="stat-summary-title">Gramos Dispensados Hoy</div>
+              <div class="stat-summary-value" id="arqueo-total-grams">0.00 g</div>
+            </div>
+          </div>
+          <div class="stat-summary-card">
+            <div class="stat-summary-icon" style="background: rgba(245,158,11,0.15); color: #FCD34D;">💶</div>
+            <div class="stat-summary-info">
+              <div class="stat-summary-title">Aportaciones en Caja Hoy</div>
+              <div class="stat-summary-value" id="arqueo-total-euros">0.00 €</div>
+            </div>
+          </div>
+          <div class="stat-summary-card">
+            <div class="stat-summary-icon" style="background: rgba(59,130,246,0.15); color: #93C5FD;">👥</div>
+            <div class="stat-summary-info">
+              <div class="stat-summary-title">Intervenciones Registradas</div>
+              <div class="stat-summary-value" id="arqueo-total-tickets">0 tickets</div>
+            </div>
+          </div>
+          <div class="stat-summary-card">
+            <div class="stat-summary-icon" style="background: rgba(239,68,68,0.15); color: #F87171;">⚠️</div>
+            <div class="stat-summary-info">
+              <div class="stat-summary-title">Alertas de Stock Bajo (&lt;10g)</div>
+              <div class="stat-summary-value" id="arqueo-low-stock-count">0 variedades</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel de Alertas de Stock Bajo -->
+        <div id="arqueo-low-stock-box" class="arqueo-low-stock-box" style="display: none;">
+          <div class="low-stock-header">
+            <h4>⚠️ Alerta de Reposición Urgente en Mostrador</h4>
+            <span>Variedades con menos de 10 gramos disponibles en barra:</span>
+          </div>
+          <div id="arqueo-low-stock-list" class="low-stock-items-row"></div>
+        </div>
+
+        <!-- Panel de Histórico de Tickets y Movimientos -->
+        <div class="arqueo-table-panel">
+          <div class="table-panel-header">
+            <div class="table-title-group">
+              <h3><span>🧾</span> <span>Histórico de Caja & Arqueo Diario</span></h3>
+              <span class="table-subtitle">Tickets del mostrador, arqueo de turno y libro cronológico del dispensario</span>
+            </div>
+            <div class="table-actions-group">
+              <button type="button" class="btn-touch btn-primary" id="btn-open-cierre-caja" title="Realizar el cierre y arqueo de caja del turno actual">
+                🔒 Cierre de Caja del Turno
+              </button>
+              <button type="button" class="btn-touch btn-secondary" id="btn-export-csv" title="Descargar registro en CSV">
+                📥 Exportar CSV
+              </button>
+              <button type="button" class="btn-touch btn-secondary" id="btn-print-arqueo" title="Imprimir informe de arqueo">
+                🖨️ Imprimir Acta
+              </button>
+              <button type="button" class="btn-touch btn-danger-soft" id="btn-clear-log" title="Reiniciar libro de movimientos">
+                🧹 Limpiar
+              </button>
+            </div>
+          </div>
+
+          <!-- Selector de Vista del Arqueo: Tickets / Movimientos / Cierres -->
+          <div class="arqueo-view-switch" role="tablist" aria-label="Modo de visualización de caja">
+            <button type="button" class="btn-arqueo-view active" data-view="tickets" id="btn-view-tickets" role="tab" aria-selected="true">
+              <span>🧾</span> <span>Tickets del Día</span> <span class="badge-count-sm" id="badge-count-tickets">0</span>
+            </button>
+            <button type="button" class="btn-arqueo-view" data-view="moves" id="btn-view-moves" role="tab" aria-selected="false">
+              <span>📋</span> <span>Libro de Movimientos</span> <span class="badge-count-sm" id="badge-count-moves">0</span>
+            </button>
+            <button type="button" class="btn-arqueo-view" data-view="closures" id="btn-view-closures" role="tab" aria-selected="false">
+              <span>🔒</span> <span>Cierres de Turno</span> <span class="badge-count-sm" id="badge-count-closures">0</span>
+            </button>
+          </div>
+
+          <!-- VISTA 1: Histórico Cronológico de Tickets del Día -->
+          <div id="panel-view-tickets" class="arqueo-view-panel active">
+            <div id="tickets-history-container" class="tickets-history-grid">
+              <!-- Renderizado dinámico de tarjetas de tickets desde admin-dispensario.js -->
+            </div>
+          </div>
+
+          <!-- VISTA 2: Tabla del Libro Diario de Dispensación (Línea por Línea) -->
+          <div id="panel-view-moves" class="arqueo-view-panel" style="display: none;">
+            <div class="movements-table-wrapper">
+              <table class="movements-table" id="movements-table">
+                <thead>
+                  <tr>
+                    <th>Hora</th>
+                    <th>Socio</th>
+                    <th>Nivel</th>
+                    <th>Variedad</th>
+                    <th>Categoría</th>
+                    <th>Pesaje</th>
+                    <th>Cuota €/g</th>
+                    <th>Aportación €</th>
+                  </tr>
+                </thead>
+                <tbody id="movements-table-body">
+                  <!-- Filas dinámicas -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- VISTA 3: Historial de Cierres de Turno Guardados -->
+          <div id="panel-view-closures" class="arqueo-view-panel" style="display: none;">
+            <div id="closures-history-container" class="closures-history-list">
+              <!-- Renderizado dinámico de actas de cierre registradas -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Notificación Toast Flotante -->
+  <div id="admin-toast" class="admin-toast">
+    <span>✅</span>
+    <span>Cambios sincronizados en el dispensario.</span>
+  </div>
+
+  <!-- Modal Rápido de Alta de Socio CSC -->
+  <dialog id="modal-new-member" class="kiosk-modal-dialog">
+    <div class="kiosk-modal-container" style="max-width: 500px;">
+      <button id="btn-close-new-member" class="kiosk-modal-close-btn" title="Cerrar">✕</button>
+      <div class="modal-member-body" style="padding: 24px;">
+        <h3 style="font-family:'Outfit'; font-size:1.3rem; margin-bottom:16px; color:#fff;">👤 Alta Rápida de Socio</h3>
+        <form id="form-new-member" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="nm-id">Número de Socio</label>
+            <input type="text" id="nm-id" class="form-control" placeholder="Ej. 1450" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="nm-alias">Nombre / Alias</label>
+            <input type="text" id="nm-alias" class="form-control" placeholder="Ej. David R." required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="nm-tier">Nivel Estatutario</label>
+            <select id="nm-tier" class="form-control">
+              <option value="std">Estándar (Socio General)</option>
+              <option value="colab">Colaborador (Socio Activo -10%)</option>
+              <option value="terap">Terapéutico (Socio Médico -25%)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="nm-limit">Límite Mensual Estatutario (Gramos)</label>
+            <input type="number" step="5" min="10" max="150" id="nm-limit" class="form-control" value="60" required />
+          </div>
+          <button type="button" id="btn-save-new-member" class="editor-save-btn" style="margin-top:16px;">
+            💾 Registrar Socio en Club
+          </button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ======================================================================
+       Modal de Ficha Técnica Botánica & Aportaciones (Modo Kiosco / Mostrador)
+       ====================================================================== -->
+  <dialog id="kiosk-strain-modal" class="kiosk-modal-dialog">
+    <div class="kiosk-modal-container">
+      <button id="btn-close-kiosk-modal" class="kiosk-modal-close-btn" title="Cerrar Ficha Técnica (Esc)" aria-label="Cerrar Ficha">✕</button>
+      <div id="kiosk-modal-body" class="kiosk-modal-body">
+        <!-- Renderizado dinámico desde admin-dispensario.js -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Lightbox para Fotografía Macro HD en Máxima Resolución -->
+  <dialog id="kiosk-lightbox-dialog" class="kiosk-lightbox-dialog">
+    <div class="kiosk-lightbox-container">
+      <button id="btn-close-kiosk-lightbox" class="kiosk-lightbox-close-btn" title="Cerrar Fotografía (Esc)" aria-label="Cerrar Fotografía">✕</button>
+      <div class="kiosk-lightbox-header">
+        <h3 id="kiosk-lightbox-title">Fotografía Botánica HD</h3>
+        <span id="kiosk-lightbox-subtitle">ALTA RESOLUCIÓN • MACRO 800×800</span>
+      </div>
+      <div class="kiosk-lightbox-view">
+        <img id="kiosk-lightbox-img" src="" alt="Macro HD" class="kiosk-lightbox-img" draggable="false" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ======================================================================
+       MODAL DE CIERRE DE CAJA DEL TURNO / ARQUEO OFICIAL CSC
+       ====================================================================== -->
+  <dialog id="modal-cierre-caja" class="kiosk-modal-dialog" aria-labelledby="cierre-modal-title">
+    <div class="kiosk-modal-container cierre-modal-container" style="max-width: 680px;">
+      <button id="btn-close-cierre-caja" class="kiosk-modal-close-btn" title="Cerrar (Esc)" aria-label="Cerrar">✕</button>
+      <div class="cierre-modal-body">
+        <div class="cierre-header">
+          <div class="cierre-icon-badge">🔒</div>
+          <div>
+            <h3 id="cierre-modal-title" class="cierre-modal-title">Acta Oficial de Cierre de Caja del Turno</h3>
+            <p class="cierre-modal-subtitle" id="cierre-subtitle-fecha">Arqueo y balance de dispensaciones en mostrador</p>
+          </div>
+        </div>
+
+        <!-- Tarjetas de Resumen Financiero del Cierre -->
+        <div class="cierre-summary-grid">
+          <div class="cierre-summary-card">
+            <span class="cierre-card-label">RECAUDACIÓN TOTAL</span>
+            <strong class="cierre-card-value text-gold" id="cierre-total-euros">0.00 €</strong>
+            <small class="cierre-card-sub" id="cierre-cash-breakdown">Efectivo registrado</small>
+          </div>
+          <div class="cierre-summary-card">
+            <span class="cierre-card-label">PESO TOTAL DISPENSADO</span>
+            <strong class="cierre-card-value text-emerald" id="cierre-total-grams">0.00 g</strong>
+            <small class="cierre-card-sub" id="cierre-varieties-count">0 variedades</small>
+          </div>
+          <div class="cierre-summary-card">
+            <span class="cierre-card-label">TICKETS EMITIDOS</span>
+            <strong class="cierre-card-value text-cyan" id="cierre-tickets-count">0 tickets</strong>
+            <small class="cierre-card-sub" id="cierre-members-count">0 socios atendidos</small>
+          </div>
+        </div>
+
+        <!-- Desglose por Variedades Dispensadas en el Turno -->
+        <div class="cierre-section">
+          <div class="cierre-section-header">
+            <h4>🌿 Desglose Agronómico por Variedad (Turno Actual)</h4>
+          </div>
+          <div class="cierre-table-wrapper">
+            <table class="cierre-table">
+              <thead>
+                <tr>
+                  <th>Variedad</th>
+                  <th>Categoría</th>
+                  <th style="text-align: right;">Gramos</th>
+                  <th style="text-align: right;">Aportación</th>
+                </tr>
+              </thead>
+              <tbody id="cierre-strains-breakdown">
+                <!-- Filas dinámicas -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Desglose por Nivel Estatutario de Socio -->
+        <div class="cierre-section">
+          <div class="cierre-section-header">
+            <h4>👥 Desglose por Nivel de Socios</h4>
+          </div>
+          <div id="cierre-tiers-breakdown" class="cierre-tiers-grid">
+            <!-- Chips de nivel: Estándar, Colaborador, Terapéutico -->
+          </div>
+        </div>
+
+        <!-- Observaciones del Encargado / Responsable de Turno -->
+        <div class="form-group" style="margin-top: 14px;">
+          <label for="cierre-notes-input" class="form-label" style="font-size: 0.8rem;">Observaciones del Turno / Incidencias de Caja</label>
+          <textarea id="cierre-notes-input" class="form-control" rows="2" placeholder="Opcional: arqueo conforme, fondo de caja verificado, billetes comprobados..."></textarea>
+        </div>
+
+        <!-- Botones de Acción del Cierre -->
+        <div class="cierre-actions-bar">
+          <button type="button" class="btn-touch btn-secondary" id="btn-print-cierre" title="Imprimir Acta Oficial">
+            🖨️ Imprimir Acta
+          </button>
+          <button type="button" class="btn-touch btn-secondary" id="btn-export-cierre-json" title="Descargar Arqueo en JSON">
+            📥 Exportar JSON
+          </button>
+          <button type="button" class="btn-touch btn-primary" id="btn-confirm-save-cierre">
+            <span>💾</span> <span>Registrar y Guardar Cierre de Turno</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ======================================================================
+       MODAL DE ASESORAMIENTO BOTÁNICO INTELIGENTE: MARÍA SOMMELIER CSC
+       ====================================================================== -->
+  <dialog id="modal-maria" class="maria-modal-dialog" aria-labelledby="maria-modal-title">
+    <div class="maria-modal-container">
+      <button id="btn-close-maria" class="maria-modal-close-btn" title="Cerrar (Esc)" aria-label="Cerrar">✕</button>
+      
+      <!-- Cabecera de María -->
+      <div class="maria-modal-header">
+        <div class="maria-avatar-box">
+          <span class="maria-avatar-emoji">👩‍🌾</span>
+          <span class="maria-avatar-dot" title="En línea"></span>
+        </div>
+        <div class="maria-header-info">
+          <div class="maria-title-row">
+            <h3 id="maria-modal-title" class="maria-modal-title">María · Tu Colega de Mostrador</h3>
+            <span class="maria-badge-ai">GEMINI FLASH</span>
+          </div>
+          <p class="maria-modal-subtitle">Asesoramiento según lo que tenemos en el bote</p>
+        </div>
+      </div>
+
+      <!-- Barra de Estado de Stock Activo -->
+      <div class="maria-stock-pill-bar">
+        <span class="stock-pill-icon">📦</span>
+        <span id="maria-stock-count-text">Revisando stock activo en mostrador...</span>
+      </div>
+
+      <!-- Memoria de Preferencias del Socio Activo en Mostrador -->
+      <div id="maria-member-memory-box" class="maria-member-memory-box">
+        <div class="maria-memory-badge-row">
+          <span class="memory-badge-icon">🧠</span>
+          <span class="memory-badge-title">Memoria de Socio en Mostrador:</span>
+          <strong id="maria-memory-member-name">Sin socio seleccionado</strong>
+        </div>
+        <div id="maria-memory-chips" class="maria-memory-chips">
+          <!-- Chips dinámicos de preferencias de consumo -->
+        </div>
+      </div>
+
+      <!-- Alerta si falta API Key -->
+      <div id="maria-no-key-alert" class="maria-no-key-box" style="display: none;">
+        <span class="no-key-icon">⚙️</span>
+        <div class="no-key-content">
+          <strong>API Key de Google Gemini no configurada</strong>
+          <p>Para activar a María, introduce tu clave gratuita de Google AI Studio (Free Tier) a continuación:</p>
+          <div class="modal-inline-key-wrap">
+            <input type="password" id="maria-modal-key-input" class="form-control form-control-sm" placeholder="AIzaSy..." />
+            <button type="button" id="btn-save-modal-key" class="btn-touch btn-primary btn-sm">Guardar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenedor de Conversación / Respuesta -->
+      <div id="maria-response-container" class="maria-response-container">
+        <!-- Mensaje de bienvenida de María -->
+        <div class="maria-bubble-welcome">
+          <p>¡Buenas! 👋 Dime qué busca el socio hoy: algo suave para ver una peli, risas con colegas, una que huela dulce y no dé sueño, o algo medicinal potente. Te digo exactamente qué bote abrir.</p>
+        </div>
+      </div>
+
+      <!-- Sugerencias de Consulta Rápida -->
+      <div class="maria-quick-prompts">
+        <button type="button" class="quick-prompt-btn" data-prompt="Busco algo suave y relajante para ver una película sin apalanque pesado.">🎬 Peli y relax suave</button>
+        <button type="button" class="quick-prompt-btn" data-prompt="Quiero algo activo y creativo para charlar o trabajar sin ansiedad.">🎨 Creativo y social</button>
+        <button type="button" class="quick-prompt-btn" data-prompt="Una variedad con sabor muy dulce o afrutado que no dé sueño.">🍬 Sabor dulce / frutal</button>
+        <button type="button" class="quick-prompt-btn" data-prompt="Algo potente para dolor físico, desconectar el cuerpo y dormir bien.">😴 Descanso profundo</button>
+      </div>
+
+      <!-- Formulario de Consulta -->
+      <form id="form-ask-maria" class="maria-form-box">
+        <div class="maria-input-wrapper">
+          <input type="text" 
+                 id="maria-query-input" 
+                 class="maria-query-input" 
+                 placeholder="¿Qué busca el socio hoy? (ej. algo suave para ver una peli, o que huela dulce y no dé sueño)..." 
+                 autocomplete="off" />
+          <button type="submit" id="btn-submit-maria" class="btn-maria-send" title="Pedir recomendación a María">
+            <span>Pedir recomendación</span>
+            <span class="send-icon">✨</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  </div><!-- /dispensary-app-content -->
+
+  <!-- ======================================================================
+       Carga de Scripts: Datos Maestros (877 Cepas) y Lógica Modular
+       ====================================================================== -->
+  <!-- 1. Catálogo Maestro de Cepas para compatibilidad total HTTP y local file:// -->
+  <script src="js/strains-data.js?v=242"></script>
+
+  <!-- 2. Firebase SDK & Configuración (Modo CDN Compatibilidad) -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+
+  <!-- 3. Lógica del Panel de Dispensario CSC -->
+  <script src="js/admin-dispensario.js?v=242"></script>
+</body>
+
+</html>

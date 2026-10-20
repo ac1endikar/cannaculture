@@ -1,0 +1,11 @@
+import os
+
+for root, dirs, files in os.walk("."):
+    if ".git" in root or "node_modules" in root: continue
+    for f in files:
+        if f.endswith(('.js', '.html')):
+            p = os.path.join(root, f)
+            with open(p, 'r', encoding='utf-8', errors='ignore') as fh:
+                c = fh.read()
+                if 'serviceworker' in c.lower() or 'cachestorage' in c.lower() or 'caches.open' in c.lower():
+                    print(f"ServiceWorker/CacheStorage in: {p}")

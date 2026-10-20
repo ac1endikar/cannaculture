@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Cultivo de Cannabis en 5 Etapas • CannaCulture</title>
+  <meta name="description"
+    content="Manual práctico interactivo de cultivo en 5 fases: germinación, vegetativo, floración, lectura macro de tricomas, secado y curado. Disponible en ES, EN, DE e IT.">
+  <link rel="canonical" href="https://cannacultureapp.com/guia-cultivo.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0B0F0E">
+  <meta name="rating" content="adult">
+
+  <!-- ======================= OPEN GRAPH ======================= -->
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CannaCulture">
+  <meta property="og:title" content="Guía de Cultivo Cannábico en 5 Etapas • CannaCulture">
+  <meta property="og:description"
+    content="Aprende a cultivar paso a paso: parámetros de humedad/temp, fotoperiodos, identificación del punto óptimo de cosecha por tricomas y curado.">
+  <meta property="og:url" content="https://cannacultureapp.com/guia-cultivo.html">
+  <meta property="og:image" content="https://cannacultureapp.com/assets/img/og-cannaculture-1200x630.jpg">
+  <meta property="og:image:secure_url" content="https://cannacultureapp.com/assets/img/og-cannaculture-1200x630.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Guía de Cultivo de Cannabis en 5 Etapas - CannaCulture">
+
+  <!-- ======================= TWITTER CARDS ======================= -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Guía de Cultivo de Cannabis en 5 Etapas • CannaCulture">
+  <meta name="twitter:description"
+    content="Paso a paso botánico: germinación, vegetativo, floración, análisis de tricomas y curado perfecto.">
+  <meta name="twitter:image" content="https://cannacultureapp.com/assets/img/og-cannaculture-1200x630.jpg">
+  <meta name="twitter:image:alt" content="Guía de Cultivo - CannaCulture">
+
+  <!-- ======================= DATOS ESTRUCTURADOS JSON-LD (HOWTO) ======================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Guía de Cultivo de Cannabis en 5 Etapas",
+    "description": "Metodología secuencial para el autocultivo de variedades fotoperiódicas.",
+    "image": "https://cannacultureapp.com/assets/img/og-cannaculture-1200x630.jpg",
+    "step": [
+      {"@type": "HowToStep", "name": "Germinación & Plántula", "position": 1},
+      {"@type": "HowToStep", "name": "Crecimiento Vegetativo", "position": 2},
+      {"@type": "HowToStep", "name": "Floración", "position": 3},
+      {"@type": "HowToStep", "name": "Punto Óptimo de Cosecha (Tricomas)", "position": 4},
+      {"@type": "HowToStep", "name": "Secado & Curado", "position": 5}
+    ]
+  }
+  </script>
+
+  <!-- ======================= PWA & MOBILE WEB APP META ======================= -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CannaCulture">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans (tipografía CannaCulture) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Regla de Bloqueo Inmediata Fail-Secure Anti-FOUC (+18 - Memoria Volátil Estricta) -->
+  <script>
+    (function () {
+      try {
+        localStorage.removeItem('cannaculture_age_consent');
+        localStorage.removeItem('cannacatalog_age_verified');
+        localStorage.removeItem('canna_age_verified');
+        sessionStorage.removeItem('cannaculture_age_session');
+      } catch (_) {}
+      if (!window._cannacultureAgeVerified) {
+        document.documentElement.classList.add('age-locked');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/age-gate.css?v=242">
+  <link rel="stylesheet" href="css/guia-cultivo.css?v=242">
+
+  <!-- Controlador Inmediato de Age Gate (+18) -->
+  <script src="js/age-gate.js?v=242"></script>
+</head>
+
+<body>
+  <!-- DIRECTIVA NOSCRIPT FAIL-SECURE (BLOQUEO SIN JAVASCRIPT) -->
+  <noscript id="age-gate-noscript">
+    <div class="noscript-card-wrapper">
+      <div class="noscript-card">
+        <span style="font-size: 3rem;">🛡️</span>
+        <h2>Acceso Restringido (+18)</h2>
+        <p>JavaScript es estrictamente necesario para validar el cumplimiento legal de mayoría de edad (+18) y acceder a la plataforma CannaCulture.</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; color: #6B7280;">Por favor, habilita JavaScript en la configuración de tu navegador para continuar.</p>
+      </div>
+    </div>
+  </noscript>
+
+  <!-- ======================================================================
+       VERIFICACIÓN DE EDAD MODAL (+18 AGE GATE - FAIL-SECURE v217)
+       ====================================================================== -->
+  <dialog id="age-gate-modal" class="age-gate-dialog" aria-labelledby="age-gate-title" aria-describedby="age-gate-desc">
+    <div class="age-gate-card">
+      <div class="age-gate-badge">
+        <span class="badge-icon">🛡️</span>
+        <span class="badge-tag">+18 VERIFICACIÓN</span>
+      </div>
+
+      <h2 id="age-gate-title" class="age-gate-title">Control de Acceso (Mayoría de Edad)</h2>
+      <p id="age-gate-desc" class="age-gate-subtitle">Esta plataforma contiene información especializada sobre botánica y variedades cannábicas reservada exclusivamente a personas adultas (+18 años).</p>
+
+      <div class="age-gate-legal-box">
+        <div class="legal-box-row">
+          <span class="legal-box-icon">🌿</span>
+          <div class="legal-box-content">
+            <strong>Finalidad Botánica, Enciclopédica y Reducción de Daños</strong>
+            <p>Catálogo botánico de 877 variedades, perfiles de terpenos y guías informativas orientadas a la divulgación científica y la prevención de riesgos.</p>
+          </div>
+        </div>
+        <div class="legal-box-row">
+          <span class="legal-box-icon">⚖️</span>
+          <div class="legal-box-content">
+            <strong>Marco Legal, Ámbito Privado y Clubes Sociales (CSC)</strong>
+            <p>Acceso restringido conforme a la legislación de protección de menores. Uso estrictamente circunscrito al consumo privado no punible, autocultivo y socios registrados de asociaciones CSC.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="age-gate-actions-grid">
+        <button id="btn-age-permit" class="btn-age-permit" type="button" aria-label="Confirmar que soy mayor de 18 años y acceder">
+          <span class="btn-age-main">✅ Soy mayor de 18 años</span>
+          <span class="btn-age-sub">Entrar a la plataforma</span>
+        </button>
+        <button id="btn-age-deny" class="btn-age-deny" type="button" aria-label="Indicar que soy menor de 18 años y salir">
+          <span class="btn-age-main">🚪 Soy menor de edad</span>
+          <span class="btn-age-sub">Salir inmediatamente</span>
+        </button>
+      </div>
+
+      <p class="age-gate-footer-hint">🔒 Verificación obligatoria en cada visita. El consentimiento se mantiene exclusivamente en memoria volátil y expira al recargar la página (F5) o cerrar el navegador conforme al protocolo de protección de menores.</p>
+    </div>
+  </dialog>
+
+  <!-- DIÁLOGO DE REVOCACIÓN VOLUNTARIA DE CONSENTIMIENTO (+18) -->
+  <dialog id="age-revoke-dialog" class="age-revoke-dialog">
+    <div class="age-revoke-card">
+      <span style="font-size: 2rem;">🛡️</span>
+      <h3 class="age-revoke-title">Consentimiento +18 Activo</h3>
+      <p class="age-revoke-desc">Has verificado tu mayoría de edad en esta carga de página. ¿Deseas revocar tu consentimiento y bloquear el acceso inmediatamente?</p>
+      <div class="age-revoke-actions">
+        <button id="btn-revoke-cancel" class="btn-revoke-cancel" type="button">Mantener Acceso</button>
+        <button id="btn-revoke-confirm" class="btn-revoke-confirm" type="button">Revocar y Bloquear</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  <!-- ======================= NAVEGACIÓN ======================= -->
+  <header class="gc-header" role="banner">
+    <div class="gc-container gc-header-inner">
+      <a href="index.html" class="gc-brand" aria-label="CannaCulture - Inicio">
+        <span class="gc-brand-icon">🌿</span>
+        <span class="gc-brand-text">CANNA<span class="highlight">CULTURE</span></span>
+      </a>
+
+      <nav class="gc-nav" aria-label="Navegación principal">
+        <a href="index.html" class="gc-nav-link" id="nav-link-catalog">
+          <span aria-hidden="true">📚</span> <span data-i18n="nav.catalog">Catálogo</span>
+        </a>
+        <a href="guia-cultivo.html" class="gc-nav-link active" id="nav-link-guide" aria-current="page">
+          <span aria-hidden="true">🌱</span> <span data-i18n="nav.guide">Guía de Cultivo</span>
+        </a>
+      </nav>
+
+      <div class="gc-lang-selector" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-pill-btn active" data-lang="es" id="lang-btn-es" title="Español">🇪🇸 ES</button>
+        <button type="button" class="lang-pill-btn" data-lang="en" id="lang-btn-en" title="English">🇬🇧 EN</button>
+        <button type="button" class="lang-pill-btn" data-lang="de" id="lang-btn-de" title="Deutsch">🇩🇪 DE</button>
+        <button type="button" class="lang-pill-btn" data-lang="it" id="lang-btn-it" title="Italiano">🇮🇹 IT</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ======================= HERO ======================= -->
+    <section class="gc-hero gc-container" aria-labelledby="gc-title">
+      <span class="gc-eyebrow" data-i18n="hero.eyebrow">Guía práctica · 5 etapas</span>
+      <h1 id="gc-title" class="gc-title">
+        <span aria-hidden="true">🌱</span> <span class="gradient-text" data-i18n="hero.title">Guía de Cultivo</span>
+      </h1>
+      <p class="gc-subtitle" data-i18n="hero.subtitle">De la semilla al bote: todo el ciclo explicado paso a paso, con los parámetros que de verdad importan.</p>
+    </section>
+
+    <!-- ======================= ETAPAS ======================= -->
+    <section class="gc-container gc-stages" aria-label="Etapas del cultivo">
+      <div class="gc-stepper-wrap">
+        <div class="gc-stepper-track" aria-hidden="true"><div class="gc-stepper-fill" id="stepper-fill"></div></div>
+        <div class="gc-stepper" role="tablist" id="stage-tabs" aria-label="Etapas">
+          <!-- Renderizado por js/guia-cultivo.js -->
+        </div>
+      </div>
+
+      <article class="gc-panel" id="stage-panel" role="tabpanel" aria-live="polite">
+        <!-- Renderizado por js/guia-cultivo.js -->
+        <noscript><p>Activa JavaScript para ver la guía interactiva.</p></noscript>
+      </article>
+
+      <div class="gc-pager">
+        <button type="button" class="gc-pager-btn" id="btn-stage-prev">← <span data-i18n="ui.prev">Anterior</span></button>
+        <span class="gc-pager-count" id="stage-counter"></span>
+        <button type="button" class="gc-pager-btn gc-pager-btn-primary" id="btn-stage-next"><span data-i18n="ui.next">Siguiente</span> →</button>
+      </div>
+    </section>
+
+    <!-- ======================= ERRORES CLÁSICOS ======================= -->
+    <section class="gc-container gc-errors" aria-labelledby="errors-title">
+      <div class="gc-errors-box">
+        <h2 id="errors-title" class="gc-errors-title" data-i18n="errors.title">⚠️ 3 Errores Clásicos de Principiante a Evitar</h2>
+        <div class="gc-errors-grid" id="errors-grid">
+          <!-- Renderizado por js/guia-cultivo.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gc-footer">
+    <div class="gc-container">
+      <p class="gc-disclaimer" data-i18n="footer.disclaimer">Contenido divulgativo para personas adultas (18+). Infórmate y cumple la legislación vigente en tu país sobre el autocultivo.</p>
+      <a href="index.html" class="gc-footer-link" id="footer-link-catalog">← <span data-i18n="footer.back">Volver al Catálogo</span></a>
+    </div>
+  </footer>
+
+  <script src="js/guia-cultivo.js?v=242"></script>
+  <script src="js/pwa-manager.js?v=242"></script>
+</body>
+
+</html>
