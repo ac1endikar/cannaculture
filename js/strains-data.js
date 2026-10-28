@@ -168,7 +168,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "ripper-radical-juice",
-        image: "img/ripper-radical-juice.webp",
+        image: "img/ripper-radical-juice-curated.webp",
         name: "Radical Juice",
         aka: "Tropicana Cookies x Runtz",
         bank: "Ripper Seeds",
@@ -1432,7 +1432,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "dinafem-cheese",
-        image: "img/dinafem-cheese.webp",
+        image: "img/dinafem-cheese-curated.webp",
         name: "Cheese",
         aka: "Old School UK Cheese",
         bank: "Dinafem Seeds",
@@ -1453,7 +1453,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "dinafem-industrial-plant",
-        image: "img/dinafem-industrial-plant.webp",
+        image: "img/dinafem-industrial-plant-curated.webp",
         name: "Industrial Plant",
         aka: "Northern Lights x Skunk",
         bank: "Dinafem Seeds",
@@ -1579,7 +1579,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "dinafem-diesel",
-        image: "img/dinafem-diesel.webp",
+        image: "img/dinafem-diesel-curated.webp",
         name: "Diesel",
         aka: "Mexican Sativa x Afghani",
         bank: "Dinafem Seeds",
@@ -2083,7 +2083,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "positronics-claustrum",
-        image: "img/positronics-claustrum-real.webp",
+        image: "img/positronics-claustrum-curated.webp",
         name: "Claustrum",
         aka: "(SSH x Jack Herer) x Kali Mist",
         bank: "Positronics Seeds",
@@ -2398,7 +2398,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "aceseeds-congo",
-        image: "img/aceseeds-congo-bud.webp",
+        image: "img/aceseeds-congo-curated.webp",
         name: "Congo",
         aka: "Congo #3 x (Bangi Haze x Chitral)",
         bank: "ACE Seeds",
@@ -2419,7 +2419,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "aceseeds-guawi",
-        image: "img/aceseeds-guawi-real.webp",
+        image: "img/aceseeds-guawi-curated.webp",
         name: "Guawi",
         aka: "Old Malawi Killer x Guatemala Landrace",
         bank: "ACE Seeds",
@@ -3637,7 +3637,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "sensi-hash-plant",
-        image: "img/sensi-hash-plant.webp",
+        image: "img/sensi-hash-plant-curated.webp",
         name: "Hash Plant",
         aka: "Original Hash Plant x Northern Lights #1",
         bank: "Sensi Seeds",
@@ -3805,7 +3805,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "ghs-francos-lemon-cheese",
-        image: "img/ghs-francos-lemon-cheese.webp",
+        image: "img/ghs-francos-lemon-cheese-curated.webp",
         name: "Franco's Lemon Cheese",
         aka: "Super Lemon Haze x Exodus Cheese",
         bank: "Green House Seed Co.",
@@ -4733,7 +4733,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "ths-sage-n-sour",
-        image: "img/ths-sage-n-sour.webp",
+        image: "img/ths-sage-n-sour-curated.webp",
         name: "S.A.G.E.",
         aka: "Sativa Afghani Genetic Equilibrium",
         bank: "TH Seeds",
@@ -4838,7 +4838,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "ths-mendocino-madness",
-        image: "img/ths-mendocino-madness-real.webp",
+        image: "img/ths-mendocino-madness-curated.webp",
         name: "Mendocino Madness",
         aka: "Mendocino Purps x S.A.G.E.",
         bank: "TH Seeds",
@@ -5764,7 +5764,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "dna-24k-gold",
-        image: "img/dna-24k-gold.webp",
+        image: "img/dna-24k-gold-curated.webp",
         name: "24K Gold",
         aka: "Kosher Kush x Tangie",
         bank: "DNA Genetics",
@@ -6448,7 +6448,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "wls-pure-power-plant",
-          image: "img/wls-pure-power-plant.webp",
+          image: "img/wls-pure-power-plant-curated.webp",
           name: "Pure Power Plant (PPP)",
           aka: "PPP White Label",
           bank: "White Label Seed Co.",
@@ -7498,7 +7498,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "tfd-g-force",
-          image: "img/tfd-g-force.webp",
+          image: "img/tfd-g-force-curated.webp",
           name: "G-Force",
           aka: "G13 x Skunk #1",
           bank: "The Flying Dutchmen",
@@ -7578,7 +7578,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "tfd-the-real-mccoy",
-          image: "img/tfd-the-real-mccoy.webp",
+          image: "img/tfd-the-real-mccoy-curated.webp",
           name: "The Real McCoy",
           aka: "Hawaiian Sativa x Skunk #1",
           bank: "The Flying Dutchmen",
@@ -7779,7 +7779,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "tfd-swazi-safari",
-          image: "img/tfd-swazi-safari-real.webp",
+          image: "img/tfd-swazi-safari-curated.webp",
           name: "Swazi Safari",
           aka: "Swazi Landrace x Skunk #1",
           bank: "The Flying Dutchmen",
@@ -8267,7 +8267,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "exg-grease-monkey",
-          image: "img/exg-grease-monkey.webp",
+          image: "img/exg-grease-monkey-curated.webp",
           name: "Grease Monkey",
           aka: "Gorilla Glue #4 x Cookies and Cream",
           bank: "Exotic Genetix",
@@ -8512,7 +8512,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "exg-runtz-buttonz",
-          image: "img/exg-runtz-buttonz.webp",
+          image: "img/exg-runtz-buttonz-curated.webp",
           name: "Runtz Buttonz",
           aka: "Runtz x Rainbow Chip",
           bank: "Exotic Genetix",
@@ -8714,7 +8714,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "cpg-pave",
-          image: "img/cpg-pave.webp",
+          image: "img/cpg-pave-curated.webp",
           name: "Pavé",
           aka: "Paris OG x Menthol",
           bank: "Compound Genetics",
@@ -8755,7 +8755,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "cpg-la-bomba",
-          image: "img/cpg-la-bomba.webp",
+          image: "img/cpg-la-bomba-curated.webp",
           name: "La Bomba",
           aka: "Wedding Cake x Jet Fuel Gelato",
           bank: "Compound Genetics",
@@ -8796,7 +8796,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "cpg-jokerz",
-          image: "img/cpg-jokerz.webp",
+          image: "img/cpg-jokerz-curated.webp",
           name: "Jokerz",
           aka: "White Runtz x Jet Fuel Gelato",
           bank: "Compound Genetics",
@@ -9080,7 +9080,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "ihg-slurricane",
-          image: "img/ihg-slurricane.webp",
+          image: "img/ihg-slurricane-curated.webp",
           name: "Slurricane",
           aka: "Do-Si-Dos x Purple Punch",
           bank: "In-House Genetics",
@@ -9161,7 +9161,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "ihg-platinum-kush-breath",
-          image: "img/ihg-platinum-kush-breath.webp",
+          image: "img/ihg-platinum-kush-breath-curated.webp",
           name: "Platinum Kush Breath",
           aka: "OG Kush Breath x Platinum",
           bank: "In-House Genetics",
@@ -9283,7 +9283,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "ihg-terple",
-          image: "img/ihg-terple.webp",
+          image: "img/ihg-terple-curated.webp",
           name: "Terple",
           aka: "Tropicana Cookies x Slurricane",
           bank: "In-House Genetics",
@@ -10175,7 +10175,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "arc-double-cross",
-          image: "img/arc-double-cross.webp",
+          image: "img/arc-double-cross-curated.webp",
           name: "Double Cross",
           aka: "Moonbow #73 x Face Off OG",
           bank: "Archive Seed Bank",
@@ -11305,7 +11305,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "lemon-king",
-    image: "img/lemon-king.webp",
+    image: "img/lemon-king-curated.webp",
     name: "Lemon King",
     aka: "Space Bomb x Critical Swiss",
     bank: "Eva Seeds",
@@ -11443,7 +11443,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "san-fernando-lemon-kush",
-    image: "images/strains/san-fernando-lemon-kush.jpg",
+    image: "img/san-fernando-lemon-kush-curated.webp",
     name: "San Fernando Lemon Kush",
     aka: "SFV OG Kush x Kosher Kush",
     bank: "Sweet Seeds",
@@ -12352,7 +12352,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "canuk-tropicana-cookies",
-    image: "img/canuk-tropicana-cookies-real.webp",
+    image: "img/canuk-tropicana-cookies-curated.webp",
     name: "Tropicana Cookies",
     aka: "GSC x Tangie",
     bank: "Canuk Seeds",
@@ -13612,7 +13612,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "buddha-medikit",
-    image: "img/buddha-medikit.webp",
+    image: "img/buddha-medikit-curated.webp",
     name: "Medikit",
     aka: "CBD Kush x Northern Lights",
     bank: "Buddha Seeds",
@@ -13654,7 +13654,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "buddha-tokay-haze",
-    image: "img/buddha-tokay-haze.webp",
+    image: "img/buddha-tokay-haze-curated.webp",
     name: "Tokay Haze",
     aka: "Super Silver Haze x Tokay Grape",
     bank: "Buddha Seeds",
@@ -13969,7 +13969,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "00seeds-00-cheese",
-    image: "img/00seeds-00-cheese.webp",
+    image: "img/00seeds-00-cheese-curated.webp",
     name: "00 Cheese",
     aka: "Original UK Cheese IBL x Afghan",
     bank: "00 Seeds Bank",
@@ -13990,7 +13990,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "00seeds-critical-neville-haze",
-    image: "img/00seeds-critical-neville-haze.webp",
+    image: "img/00seeds-critical-neville-haze-curated.webp",
     name: "Critical Neville Haze",
     aka: "Critical x Neville's Haze",
     bank: "00 Seeds Bank",
@@ -14449,7 +14449,7 @@ const STRAINS_DATABASE = [
     effects: ["Euforia Alegre", "Socialización Expansiva", "Uplifting"],
     activities: ["social", "creativity", "outdoor"],
     description: "Strawberry Cough Kera es la versión del clásico de Kyle Kushman para el mercado europeo. Sativa de aroma inconfundible a fresas maduras que produce un efecto ascendente, expansivo y perfectamente social. Sus cogollos alargados se cubren de pistilos rosados.",
-    image: "img/kera-strawberry-cough-kera.webp",
+    image: "img/kera-strawberry-cough-kera-curated.webp",
     visualColor: "linear-gradient(135deg, #BE123C 0%, #FB7185 100%)",
     bgPattern: "radial-gradient(circle, rgba(251,113,133,0.2) 0%, transparent 70%)"
   },
@@ -14497,7 +14497,7 @@ const STRAINS_DATABASE = [
     effects: ["Cuerpo Fundido", "Paz Mental", "Sueño Profundo"],
     activities: ["sleep", "relaxation", "meditation"],
     description: "Critical Kush de Kera Seeds fusiona Critical Mass con OG Kush para crear una Indica de producción masiva con efectos profundamente sedantes. Floración ultra-rápida de 56 días, cogollos enormes y densos, y perfil de terpenos que combina tierra, hash y dulzura.",
-    image: "img/kera-critical-kush-kera.webp",
+    image: "img/kera-critical-kush-kera-curated.webp",
     visualColor: "linear-gradient(135deg, #14532D 0%, #22C55E 100%)",
     bgPattern: "radial-gradient(circle, rgba(34,197,94,0.2) 0%, transparent 70%)"
   },
@@ -14689,7 +14689,7 @@ const STRAINS_DATABASE = [
     effects: ["Psicoactividad Cerebral Pura", "Introspección", "Creatividad Elevada"],
     activities: ["meditation", "creativity", "social"],
     description: "Morocco Beldia Kif de ACE Seeds es una selección de landrace marroquí puro de las montañas del Rif y el Atlas. Sativa de floración larga con efecto cerebral limpio y psicoactivo, herencia directa de las plantas que durante siglos han producido el kif y el haschis del Magreb.",
-    image: "img/aceseeds-morocco-beldia.webp",
+    image: "img/aceseeds-morocco-beldia-curated.webp",
     visualColor: "linear-gradient(135deg, #92400E 0%, #D97706 100%)",
     bgPattern: "radial-gradient(circle, rgba(217,119,6,0.2) 0%, transparent 70%)"
   },
@@ -14858,7 +14858,7 @@ const STRAINS_DATABASE = [
     effects: ["Potencia Polar", "Euforia Cerebral", "Paz Corporal"],
     activities: ["relax_sleep", "creativity", "cinema"],
     description: "Obra maestra de la colección exclusiva con Mario Guzman (Sherbinskis). Cruce auténtico de Bacio Gelato x Sunset Sherbert que alcanza hasta un astronómico 30% de THC. Su perfil aromático fusiona notas de postre helado italiano con matices florales dulces y un fondo kushy de alta intensidad.",
-    image: "img/silent-polar-gelato.webp",
+    image: "img/silent-polar-gelato-curated.webp",
     visualColor: "linear-gradient(135deg, #0284C7 0%, #38BDF8 100%)",
     bgPattern: "radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%)"
   },
@@ -14954,7 +14954,7 @@ const STRAINS_DATABASE = [
     effects: ["Delicia Sonriente", "Relax Muscular", "Calma Serena"],
     activities: ["relax_sleep", "gaming", "social"],
     description: "Fusión dulce por excelencia que une Watermelon Zkittlez y la célebre Runtz. Espectáculo visual con racimos florales teñidos de violeta y un perfil de terpenos que evoca rodajas de sandía jugosa combinadas con caramelos masticables.",
-    image: "img/silent-watermelon-runtz.webp",
+    image: "img/silent-watermelon-runtz-curated.webp",
     visualColor: "linear-gradient(135deg, #10B981 0%, #F43F5E 100%)",
     bgPattern: "radial-gradient(circle, rgba(244,63,94,0.2) 0%, transparent 70%)"
   },
@@ -15147,7 +15147,7 @@ const STRAINS_DATABASE = [
     effects: ["Relajación Glacial", "Dicha Flotante", "Desconexión Mental"],
     activities: ["cinema", "relax_sleep", "reading"],
     description: "Supervariedad con niveles descomunales de THC de hasta el 35%. Espectacular cruce entre Blackberry Moonrocks y Pacific Frost que entrega flores cubiertas por una capa de resina blanca escarchada semejante a la nieve sobre cálices oscuros, aromatizados con dulces cerezas negras maduras y toques de bayas silvestres.",
-    image: "img/anesia-frozen-black-cherry.webp",
+    image: "img/anesia-frozen-black-cherry-curated.webp",
     visualColor: "linear-gradient(135deg, #991B1B 0%, #450A0A 100%)",
     bgPattern: "radial-gradient(circle, rgba(153,27,27,0.2) 0%, transparent 70%)"
   },
@@ -15778,7 +15778,7 @@ const STRAINS_DATABASE = [
     effects: ["Euforia Cerebral Abrumadora", "Relajación Corporal Pesada", "Sedación Serena", "Paz Mental"],
     activities: ["relax_sleep", "couch_lock", "gaming", "night_smoke"],
     description: "Una de las creaciones modernas más aclamadas de Brothers Grimm. Cruza el demoledor clon Cap Junky (Alien Cookies x Kush Mints #11) de Capulator y Seed Junky con la clásica Rosetta Stone. Ocifer produce cogollos colosales escarchados en cristales de resina blanca con un perfil de terpenos gas cremoso y niveles de THC que rozan el 30%.",
-    image: "img/bg-ocifer.webp",
+    image: "img/bg-ocifer-curated.webp",
     visualColor: "linear-gradient(135deg, #6366F1 0%, #10B981 100%)",
     bgPattern: "radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%)"
   },
@@ -16800,7 +16800,7 @@ const STRAINS_DATABASE = [
     effects: ["Energía Eléctrica", "Euforia Inspiradora", "Claridad Mental", "Motivación Pura"],
     activities: ["creativity", "outdoor", "social"],
     description: "Una de las creaciones más aclamadas a nivel global en la historia moderna del cannabis. Fusiona el combustible penetrante de la East Coast Sour Diesel con el néctar de mandarina fresca de Tangie. Proporciona un subidón motivador, expansivo y lleno de inspiración.",
-    image: "img/cff-sour-tangie.webp",
+    image: "img/cff-sour-tangie-curated.webp",
     visualColor: "linear-gradient(135deg, #F97316 0%, #C2410C 100%)",
     bgPattern: "radial-gradient(circle, rgba(249,115,22,0.25) 0%, transparent 70%)"
   },
@@ -17534,7 +17534,7 @@ const STRAINS_DATABASE = [
     effects: ["Potencia OG Máxima", "Euforia Pesada", "Sedación Corporal", "Bienestar Total"],
     activities: ["relax", "movies", "sleep"],
     description: "El fenotipo más codiciado de toda la línea OG Kush, ganador del 1.er puesto en Spannabis Champions Cup 2011 (Mejor Hidro). Reserva Privada lo estabilizó en semilla para el mundo. Cogollos de cristal puro con aroma a gasolina, pino y limón ácido que define el estándar OG californiano.",
-    image: "img/rp-og-18.webp",
+    image: "img/rp-og-18-curated.webp",
     visualColor: "linear-gradient(135deg, #047857 0%, #022C22 100%)",
     bgPattern: "radial-gradient(circle, rgba(4,120,87,0.25) 0%, transparent 70%)"
   },
@@ -17582,7 +17582,7 @@ const STRAINS_DATABASE = [
     effects: ["Euforia Alegre", "Relajación Progresiva", "Buen Ánimo", "Ligereza"],
     activities: ["social", "creative", "movies"],
     description: "Uno de los clásicos más vendidos del catálogo Reserva Privada. La combinación de OG Kush y Trainwreck produce cogollos ultra resinados con un perfume a caramelo dulce y combustible OG. Su rendimiento es sobresaliente y su efecto equilibrado la hace perfecta para cualquier momento del día.",
-    image: "img/rp-kandy-kush.webp",
+    image: "img/rp-kandy-kush-curated.webp",
     visualColor: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
     bgPattern: "radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)"
   },
@@ -17630,7 +17630,7 @@ const STRAINS_DATABASE = [
     effects: ["Energía Psicodélica", "Euforia Sativa Vigorosa", "Creatividad Desbordante", "Motivación"],
     activities: ["creative", "nature", "social"],
     description: "La fusión perfecta entre los colores del norte y la electricidad sativa de Trainwreck. Las flores de Purple Wreck exhiben esplendorosas tonalidades púrpuras y violetas con un efecto sativa poderoso que activa la mente de forma inmediata. Una cepa de uso diurno por excelencia con un aspecto visual espectacular.",
-    image: "img/rp-purple-wreck.webp",
+    image: "img/rp-purple-wreck-curated.webp",
     visualColor: "linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%)",
     bgPattern: "radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 70%)"
   },
@@ -17726,7 +17726,7 @@ const STRAINS_DATABASE = [
     effects: ["Potencia OG Consistente", "Relajación Homogénea", "Buen Sabor en Boca", "Placer Tranquilo"],
     activities: ["relax", "sleep", "movies"],
     description: "La versión IBL del SFV OG Kush: una línea criada de forma pura que ofrece expresión genética consistente y predecible del fenotipo OG californiano. Los 'tres osos' hacen referencia a la trilogía de sabores: tierra, pino y cítrico. Cogollos compactos con una capa de tricomas uniforme perfecta para extractores.",
-    image: "img/rp-3-bears-og.webp",
+    image: "img/rp-3-bears-og-curated.webp",
     visualColor: "linear-gradient(135deg, rgba(5,150,105,1) 0%, rgba(4,120,87,1) 100%)",
     bgPattern: "radial-gradient(circle, rgba(5,150,105,0.25) 0%, transparent 70%)"
   },
@@ -18122,7 +18122,7 @@ const STRAINS_DATABASE = [
     effects: ["Knockout Físico", "Paz Mental Inmediata", "Sedación Plácida", "Alivio Tensional"],
     activities: ["sleep", "movies", "relax"],
     description: "Un golpe contundente de dulzura y potencia índica. La unión de Slurricane y Banana Punch crea cogollos violetas empapados de glaseado de tricomas con aromas densos a plátano caramelizado y mosto de uva madura. Su efecto es profundo, duradero y decididamente nocturno.",
-    image: "img/bfg-banana-slammer.webp",
+    image: "img/bfg-banana-slammer-curated.webp",
     visualColor: "linear-gradient(135deg, #CA8A04 0%, #713F12 100%)",
     bgPattern: "radial-gradient(circle, rgba(202,138,4,0.25) 0%, transparent 70%)"
   },
@@ -19400,7 +19400,7 @@ const STRAINS_DATABASE = [
     effects: ["Subidón Psicoactivo Limpio", "Creatividad Iluminada", "Euforia Alegre", "Enfoque"],
     activities: ["creativity", "nature_walk", "social"],
     description: "Una sinfonía de incienso y skunk para amantes de las sativas clásicas. Silver Buddha Haze aporta el empuje psicoactivo y aromático de Super Silver Haze templado por la rapidez y carnosidad de Cheese. Una fumada luminosa, creativa y de gran claridad mental.",
-    image: "img/bbs-silver-buddha-haze.webp",
+    image: "img/bbs-silver-buddha-haze-curated.webp",
     visualColor: "linear-gradient(135deg, #CA8A04 0%, #713F12 100%)",
     bgPattern: "radial-gradient(circle, rgba(202,138,4,0.25) 0%, transparent 70%)"
   },
@@ -19537,7 +19537,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "jb-florida-wedding",
-    image: "img/jb-florida-wedding.webp",
+    image: "img/jb-florida-wedding-curated.webp",
     name: "Florida Wedding",
     aka: "Wedding Cake x TK Bx1",
     bank: "Jungle Boys",
@@ -19682,7 +19682,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "jb-sunset-sherbet",
-    image: "img/jb-sunset-sherbet.webp",
+    image: "img/jb-sunset-sherbet-curated.webp",
     name: "Sunset Sherbet",
     aka: "Girl Scout Cookies x Pink Panties",
     bank: "Jungle Boys",
@@ -19856,7 +19856,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "sssc-pineapple-poison",
-    image: "img/sssc-pineapple-poison.webp",
+    image: "img/sssc-pineapple-poison-curated.webp",
     name: "Pineapple Poison",
     aka: "Durban Poison x Old School Pineapple",
     bank: "Super Sativa Seed Club",
@@ -19914,7 +19914,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "sssc-fat-petes-cookies",
-    image: "img/sssc-fat-petes-cookies.webp",
+    image: "img/sssc-fat-petes-cookies-curated.webp",
     name: "Fat Pete's Cookies",
     aka: "Girl Scout Cookies x Kandy Kush",
     bank: "Super Sativa Seed Club",
@@ -20784,7 +20784,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "lit-road-tripper",
-    image: "img/lit-road-tripper.webp",
+    image: "img/lit-road-tripper-curated.webp",
     name: "Road Tripper",
     aka: "Motorbreath x Runtz",
     bank: "LIT Farms",
@@ -21132,7 +21132,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "csi-fallen-angel",
-    image: "img/csi-fallen-angel.webp",
+    image: "img/csi-fallen-angel-curated.webp",
     name: "Fallen Angel",
     aka: "Khufu x Triangle Kush",
     bank: "CSI Humboldt",
@@ -21335,7 +21335,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "tiki-pirate-milk",
-    image: "img/tiki-pirate-milk.webp",
+    image: "img/tiki-pirate-milk-curated.webp",
     name: "Pirate Milk",
     aka: "Cereal Milk x Gelato 41",
     bank: "Tiki Madman",
@@ -22379,7 +22379,7 @@ const STRAINS_DATABASE = [
   },
   {
         id: "sensi-nl5-haze",
-        image: "img/sensi-nl5-haze.webp",
+        image: "img/sensi-nl5-haze-curated.webp",
         name: "Northern Lights #5 x Haze",
         aka: "NL#5 x Haze / Sensi Classic",
         bank: "Sensi Seeds",
@@ -22524,7 +22524,7 @@ const STRAINS_DATABASE = [
       },
   {
         id: "serious-seriosa",
-        image: "img/serious-seriosa.webp",
+        image: "img/serious-seriosa-curated.webp",
         name: "Seriosa",
         aka: "Mimosa x AK-47 Serious",
         bank: "Serious Seeds",
@@ -22553,7 +22553,7 @@ const STRAINS_DATABASE = [
       },
   {
         id: "serious-motavation",
-        image: "img/serious-motavation.webp",
+        image: "img/serious-motavation-curated.webp",
         name: "Motavation",
         aka: "Sensi Star x Warlock",
         bank: "Serious Seeds",
@@ -22640,7 +22640,7 @@ const STRAINS_DATABASE = [
       },
   {
         id: "ghs-chemical-bride",
-        image: "img/ghs-chemical-bride.webp",
+        image: "img/ghs-chemical-bride-curated.webp",
         name: "Chemical Bride",
         aka: "Wedding Cake x Chemdawg",
         bank: "Green House Seed Co.",
@@ -22785,7 +22785,7 @@ const STRAINS_DATABASE = [
       },
   {
         id: "cg-jet-fuel-gelato",
-        image: "img/cg-jet-fuel-gelato.webp",
+        image: "img/cg-jet-fuel-gelato-curated.webp",
         name: "Jet Fuel Gelato",
         aka: "Gelato 45 x High Octane / Jet Fuel G6",
         bank: "Compound Genetics",
@@ -23220,7 +23220,7 @@ const STRAINS_DATABASE = [
       },
   {
         id: "exotic-malasana-gelato",
-        image: "img/exotic-malasana-gelato.webp",
+        image: "img/exotic-malasana-gelato-curated.webp",
         name: "Malasaña Gelato",
         aka: "Gelato #33 x Exotic Selection",
         bank: "Exotic Seed",
@@ -23249,7 +23249,7 @@ const STRAINS_DATABASE = [
       },
   {
         id: "exotic-gypsy-widow",
-        image: "img/exotic-gypsy-widow-real.webp",
+        image: "img/exotic-gypsy-widow-curated.webp",
         name: "Gypsy Widow",
         aka: "White Widow Selection A x B",
         bank: "Exotic Seed",

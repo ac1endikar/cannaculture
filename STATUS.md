@@ -1,4 +1,13 @@
 
+## Versión v244 - Curaduría Botánica de Élite y Erradicación de Incongruencias Visuales
+- **Fecha:** 2026-10-28
+- **Curaduría Botánica Estricta:** 59 genéticas sometidas a filtro cualitativo y reemplazadas por macros reales de floración madura/avanzada en primer plano (erradicadas fotos en vegetativo, planos generales lejanos, plantones, archivos corruptos y fotos de baja resolución).
+- **Casos Clave Certificados:** Gypsy Widow (White Widow macro maduro), Mendocino Madness (Mendocino Skunk floración avanzada), Cheese (Bad Azz / UK Cheese macro real), Claustrum (macro maduro resinoso), Terple (macro HD auténtico de flor madura).
+- **Sintonía Visual CannaCulture:** Relación 1:1 (800x800), fondo oscuro neutro/limpio con viñeteado botánico y saturación calibrada en rango clorofila natural (Sat 72-85).
+- **Cero Duplicados Criptográficos:** 792/792 hashes SHA256 únicos e independientes certificados.
+- **Compilación de Producción:** Recompilados `bundle.js`, `bundle-v151.js` y `strains-data.js`.
+
+
 ## Versión v244 - Auditoría Forense de Hashes SHA256 y Armonización Visual CannaCulture
 - **Fecha:** 2026-10-28
 - **Auditoría Forense SHA256:** Erradicados los 8 grupos de colisiones de contenido. Las 792 cepas cuentan ahora con 792 hashes SHA256 únicos e independientes (0 duplicados binarios, ratio 1:1 estricto certificado).

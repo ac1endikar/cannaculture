@@ -1,0 +1,490 @@
+[
+  {
+    "id": "ripper-radical-juice",
+    "name": "Radical Juice",
+    "bank": "Ripper Seeds",
+    "image": "img/ripper-radical-juice.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=27.8)"
+    ]
+  },
+  {
+    "id": "dinafem-cheese",
+    "name": "Cheese",
+    "bank": "Dinafem Seeds",
+    "image": "img/dinafem-cheese.webp",
+    "reasons": [
+      "Revisión prioritaria solicitada"
+    ]
+  },
+  {
+    "id": "dinafem-industrial-plant",
+    "name": "Industrial Plant",
+    "bank": "Dinafem Seeds",
+    "image": "img/dinafem-industrial-plant.webp",
+    "reasons": [
+      "Foto de planta completa / vegetativo / semillas",
+      "Archivo ilegible o corrupto: cannot identify image file 'd:\\\\cannaculture-clean"
+    ]
+  },
+  {
+    "id": "dinafem-diesel",
+    "name": "Diesel",
+    "bank": "Dinafem Seeds",
+    "image": "img/dinafem-diesel.webp",
+    "reasons": [
+      "Archivo ilegible o corrupto: cannot identify image file 'd:\\\\cannaculture-clean"
+    ]
+  },
+  {
+    "id": "positronics-claustrum",
+    "name": "Claustrum",
+    "bank": "Positronics Seeds",
+    "image": "img/positronics-claustrum-real.webp",
+    "reasons": [
+      "Revisión prioritaria solicitada"
+    ]
+  },
+  {
+    "id": "sensi-hash-plant",
+    "name": "Hash Plant",
+    "bank": "Sensi Seeds",
+    "image": "img/sensi-hash-plant.webp",
+    "reasons": [
+      "Foto de planta completa / vegetativo / semillas"
+    ]
+  },
+  {
+    "id": "ghs-francos-lemon-cheese",
+    "name": "Franco",
+    "bank": "Green House Seed Co.",
+    "image": "img/ghs-francos-lemon-cheese.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=25.8)"
+    ]
+  },
+  {
+    "id": "ths-sage-n-sour",
+    "name": "S.A.G.E.",
+    "bank": "TH Seeds",
+    "image": "img/ths-sage-n-sour.webp",
+    "reasons": [
+      "Archivo ilegible o corrupto: failed to read next frame"
+    ]
+  },
+  {
+    "id": "ths-mendocino-madness",
+    "name": "Mendocino Madness",
+    "bank": "TH Seeds",
+    "image": "img/ths-mendocino-madness-real.webp",
+    "reasons": [
+      "Revisión prioritaria solicitada"
+    ]
+  },
+  {
+    "id": "dna-24k-gold",
+    "name": "24K Gold",
+    "bank": "DNA Genetics",
+    "image": "img/dna-24k-gold.webp",
+    "reasons": [
+      "Archivo ilegible o corrupto: cannot identify image file 'd:\\\\cannaculture-clean"
+    ]
+  },
+  {
+    "id": "wls-pure-power-plant",
+    "name": "Pure Power Plant (PPP)",
+    "bank": "White Label Seed Co.",
+    "image": "img/wls-pure-power-plant.webp",
+    "reasons": [
+      "Foto de planta completa / vegetativo / semillas"
+    ]
+  },
+  {
+    "id": "tfd-g-force",
+    "name": "G-Force",
+    "bank": "The Flying Dutchmen",
+    "image": "img/tfd-g-force.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=31.5)"
+    ]
+  },
+  {
+    "id": "tfd-the-real-mccoy",
+    "name": "The Real McCoy",
+    "bank": "The Flying Dutchmen",
+    "image": "img/tfd-the-real-mccoy.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=33.5)"
+    ]
+  },
+  {
+    "id": "tfd-swazi-safari",
+    "name": "Swazi Safari",
+    "bank": "The Flying Dutchmen",
+    "image": "img/tfd-swazi-safari-real.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=34.7)"
+    ]
+  },
+  {
+    "id": "exg-grease-monkey",
+    "name": "Grease Monkey",
+    "bank": "Exotic Genetix",
+    "image": "img/exg-grease-monkey.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=33.6)"
+    ]
+  },
+  {
+    "id": "exg-runtz-buttonz",
+    "name": "Runtz Buttonz",
+    "bank": "Exotic Genetix",
+    "image": "img/exg-runtz-buttonz.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=23.0)"
+    ]
+  },
+  {
+    "id": "cpg-pave",
+    "name": "Pavé",
+    "bank": "Compound Genetics",
+    "image": "img/cpg-pave.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=33.2)"
+    ]
+  },
+  {
+    "id": "cpg-la-bomba",
+    "name": "La Bomba",
+    "bank": "Compound Genetics",
+    "image": "img/cpg-la-bomba.webp",
+    "reasons": [
+      "Archivo ilegible o corrupto: cannot identify image file 'd:\\\\cannaculture-clean"
+    ]
+  },
+  {
+    "id": "cpg-jokerz",
+    "name": "Jokerz",
+    "bank": "Compound Genetics",
+    "image": "img/cpg-jokerz.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=28.0)"
+    ]
+  },
+  {
+    "id": "ihg-slurricane",
+    "name": "Slurricane",
+    "bank": "In-House Genetics",
+    "image": "img/ihg-slurricane.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=34.7)"
+    ]
+  },
+  {
+    "id": "ihg-platinum-kush-breath",
+    "name": "Platinum Kush Breath",
+    "bank": "In-House Genetics",
+    "image": "img/ihg-platinum-kush-breath.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=34.4)"
+    ]
+  },
+  {
+    "id": "ihg-terple",
+    "name": "Terple",
+    "bank": "In-House Genetics",
+    "image": "img/ihg-terple.webp",
+    "reasons": [
+      "Revisión prioritaria solicitada"
+    ]
+  },
+  {
+    "id": "arc-double-cross",
+    "name": "Double Cross",
+    "bank": "Archive Seed Bank",
+    "image": "img/arc-double-cross.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=31.1)"
+    ]
+  },
+  {
+    "id": "lemon-king",
+    "name": "Lemon King",
+    "bank": "Eva Seeds",
+    "image": "img/lemon-king.webp",
+    "reasons": [
+      "Archivo ilegible o corrupto: cannot identify image file 'd:\\\\cannaculture-clean"
+    ]
+  },
+  {
+    "id": "san-fernando-lemon-kush",
+    "name": "San Fernando Lemon Kush",
+    "bank": "Sweet Seeds",
+    "image": "images/strains/san-fernando-lemon-kush.jpg",
+    "reasons": [
+      "Archivo ilegible o corrupto: broken data stream when reading image file"
+    ]
+  },
+  {
+    "id": "buddha-medikit",
+    "name": "Medikit",
+    "bank": "Buddha Seeds",
+    "image": "img/buddha-medikit.webp",
+    "reasons": [
+      "Archivo ilegible o corrupto: cannot identify image file 'd:\\\\cannaculture-clean"
+    ]
+  },
+  {
+    "id": "buddha-tokay-haze",
+    "name": "Tokay Haze",
+    "bank": "Buddha Seeds",
+    "image": "img/buddha-tokay-haze.webp",
+    "reasons": [
+      "Archivo ilegible o corrupto: failed to read next frame"
+    ]
+  },
+  {
+    "id": "kera-strawberry-cough-kera",
+    "name": "Lemon Haze Kera",
+    "bank": "Kera Seeds",
+    "image": "img/kera-strawberry-cough-kera.webp",
+    "reasons": [
+      "Archivo ilegible o corrupto: cannot identify image file 'd:\\\\cannaculture-clean"
+    ]
+  },
+  {
+    "id": "kera-critical-kush-kera",
+    "name": "Pineapple Chunk Kera",
+    "bank": "Kera Seeds",
+    "image": "img/kera-critical-kush-kera.webp",
+    "reasons": [
+      "Archivo ilegible o corrupto: cannot identify image file 'd:\\\\cannaculture-clean"
+    ]
+  },
+  {
+    "id": "silent-polar-gelato",
+    "name": "Pink Sunset",
+    "bank": "Silent Seeds",
+    "image": "img/silent-polar-gelato.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=28.1)"
+    ]
+  },
+  {
+    "id": "silent-watermelon-runtz",
+    "name": "Cookielato",
+    "bank": "Silent Seeds",
+    "image": "img/silent-watermelon-runtz.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=34.4)"
+    ]
+  },
+  {
+    "id": "anesia-frozen-black-cherry",
+    "name": "Captain Future",
+    "bank": "Anesia Seeds",
+    "image": "img/anesia-frozen-black-cherry.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=24.1)"
+    ]
+  },
+  {
+    "id": "bg-ocifer",
+    "name": "Genius Juice",
+    "bank": "Brothers Grimm Seeds",
+    "image": "img/bg-ocifer.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=34.9)"
+    ]
+  },
+  {
+    "id": "cff-sour-tangie",
+    "name": "Clementine",
+    "bank": "Crockett Family Farms",
+    "image": "img/cff-sour-tangie.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=26.6)"
+    ]
+  },
+  {
+    "id": "rp-og-18",
+    "name": "Kosher Kush",
+    "bank": "Reserva Privada",
+    "image": "img/rp-og-18.webp",
+    "reasons": [
+      "Desenfoque / falta de nitidez en cogollo (LapVar=125.5)"
+    ]
+  },
+  {
+    "id": "rp-kandy-kush",
+    "name": "Purple OG #18",
+    "bank": "Reserva Privada",
+    "image": "img/rp-kandy-kush.webp",
+    "reasons": [
+      "Desenfoque / falta de nitidez en cogollo (LapVar=28.9)"
+    ]
+  },
+  {
+    "id": "rp-purple-wreck",
+    "name": "Cole Train",
+    "bank": "Reserva Privada",
+    "image": "img/rp-purple-wreck.webp",
+    "reasons": [
+      "Desenfoque / falta de nitidez en cogollo (LapVar=108.4)"
+    ]
+  },
+  {
+    "id": "rp-3-bears-og",
+    "name": "Sour Kush",
+    "bank": "Reserva Privada",
+    "image": "img/rp-3-bears-og.webp",
+    "reasons": [
+      "Desenfoque / falta de nitidez en cogollo (LapVar=184.5)"
+    ]
+  },
+  {
+    "id": "bfg-banana-slammer",
+    "name": "Banana Glukies",
+    "bank": "Black Farm Genetix",
+    "image": "img/bfg-banana-slammer.webp",
+    "reasons": [
+      "Archivo ilegible o corrupto: failed to read next frame"
+    ]
+  },
+  {
+    "id": "bbs-silver-buddha-haze",
+    "name": "Freeze Cheese",
+    "bank": "Big Buddha Seeds",
+    "image": "img/bbs-silver-buddha-haze.webp",
+    "reasons": [
+      "Archivo ilegible o corrupto: failed to read next frame"
+    ]
+  },
+  {
+    "id": "jb-florida-wedding",
+    "name": "Florida Wedding",
+    "bank": "Jungle Boys",
+    "image": "img/jb-florida-wedding.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=34.2)"
+    ]
+  },
+  {
+    "id": "jb-sunset-sherbet",
+    "name": "Sunset Sherbet",
+    "bank": "Jungle Boys",
+    "image": "img/jb-sunset-sherbet.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=27.2)"
+    ]
+  },
+  {
+    "id": "sssc-pineapple-poison",
+    "name": "Pineapple Poison",
+    "bank": "Super Sativa Seed Club",
+    "image": "img/sssc-pineapple-poison.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=27.8)"
+    ]
+  },
+  {
+    "id": "sssc-fat-petes-cookies",
+    "name": "Fat Pete",
+    "bank": "Super Sativa Seed Club",
+    "image": "img/sssc-fat-petes-cookies.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=27.1)"
+    ]
+  },
+  {
+    "id": "lit-road-tripper",
+    "name": "Road Tripper",
+    "bank": "LIT Farms",
+    "image": "img/lit-road-tripper.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=17.0)"
+    ]
+  },
+  {
+    "id": "csi-fallen-angel",
+    "name": "Fallen Angel",
+    "bank": "CSI Humboldt",
+    "image": "img/csi-fallen-angel.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=31.7)"
+    ]
+  },
+  {
+    "id": "tiki-pirate-milk",
+    "name": "Pirate Milk",
+    "bank": "Tiki Madman",
+    "image": "img/tiki-pirate-milk.webp",
+    "reasons": [
+      "Baja resolución nativa (490x480)",
+      "Desaturación excesiva o tono grisáceo (Sat=32.2)"
+    ]
+  },
+  {
+    "id": "sensi-nl5-haze",
+    "name": "Northern Lights #5 x Haze",
+    "bank": "Sensi Seeds",
+    "image": "img/sensi-nl5-haze.webp",
+    "reasons": [
+      "Baja resolución nativa (300x405)"
+    ]
+  },
+  {
+    "id": "serious-seriosa",
+    "name": "Seriosa",
+    "bank": "Serious Seeds",
+    "image": "img/serious-seriosa.webp",
+    "reasons": [
+      "Baja resolución nativa (452x452)"
+    ]
+  },
+  {
+    "id": "serious-motavation",
+    "name": "Motavation",
+    "bank": "Serious Seeds",
+    "image": "img/serious-motavation.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=23.2)"
+    ]
+  },
+  {
+    "id": "ghs-chemical-bride",
+    "name": "Chemical Bride",
+    "bank": "Green House Seed Co.",
+    "image": "img/ghs-chemical-bride.webp",
+    "reasons": [
+      "Baja resolución nativa (450x450)"
+    ]
+  },
+  {
+    "id": "cg-jet-fuel-gelato",
+    "name": "Jet Fuel Gelato",
+    "bank": "Compound Genetics",
+    "image": "img/cg-jet-fuel-gelato.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=30.6)"
+    ]
+  },
+  {
+    "id": "exotic-malasana-gelato",
+    "name": "Malasaña Gelato",
+    "bank": "Exotic Seed",
+    "image": "img/exotic-malasana-gelato.webp",
+    "reasons": [
+      "Desaturación excesiva o tono grisáceo (Sat=31.0)"
+    ]
+  },
+  {
+    "id": "exotic-gypsy-widow",
+    "name": "Gypsy Widow",
+    "bank": "Exotic Seed",
+    "image": "img/exotic-gypsy-widow-real.webp",
+    "reasons": [
+      "Revisión prioritaria solicitada"
+    ]
+  }
+]
