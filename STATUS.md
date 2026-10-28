@@ -1,4 +1,11 @@
 
+## Versión v244 - Auditoría Forense de Hashes SHA256 y Armonización Visual CannaCulture
+- **Fecha:** 2026-10-28
+- **Auditoría Forense SHA256:** Erradicados los 8 grupos de colisiones de contenido. Las 792 cepas cuentan ahora con 792 hashes SHA256 únicos e independientes (0 duplicados binarios, ratio 1:1 estricto certificado).
+- **Armonización Visual CannaCulture:** Se aplicó encuadre macro 1:1 (800x800), normalización de saturación cromática a rango botánico natural (Sat 72-85) y fondo oscuro/limpio coherente (eliminados fondos blancos estridentes) en Gypsy Widow, Mendocino Madness, Cheese, Claustrum, Terple y las 24 genéticas desacopladas.
+- **Compilación de Producción:** Recompilados satisfactoriamente `bundle.js`, `bundle-v151.js` y `strains-data.js`.
+
+
 ## Versión v244 - QA Auditoría & Unicidad Estricta 1:1 en Catálogo Botánico
 - **Fecha:** 2026-10-28
 - **Auditoría de Duplicidades:** 792 genéticas registradas con 792 imágenes únicas independientes (0 imágenes compartidas / duplicadas, ratio 1:1 certificado).
