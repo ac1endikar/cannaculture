@@ -527,7 +527,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "bf-laughing-buddha",
-        image: "img/bf-laughing-buddha.webp",
+        image: "img/bf-laughing-buddha-real.webp",
         name: "Laughing Buddha",
         aka: "Thai x Jamaican Sativa",
         bank: "Barney's Farm",
@@ -569,7 +569,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "sweet-green-poison",
-        image: "img/sweet-green-poison.webp",
+        image: "img/sweet-green-poison-real.webp",
         name: "Green Poison",
         aka: "Selección Índica Rápida",
         bank: "Sweet Seeds",
@@ -2083,7 +2083,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "positronics-claustrum",
-        image: "img/positronics-claustrum.webp",
+        image: "img/positronics-claustrum-real.webp",
         name: "Claustrum",
         aka: "(SSH x Jack Herer) x Kali Mist",
         bank: "Positronics Seeds",
@@ -2419,7 +2419,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "aceseeds-guawi",
-        image: "img/aceseeds-guawi.webp",
+        image: "img/aceseeds-guawi-real.webp",
         name: "Guawi",
         aka: "Old Malawi Killer x Guatemala Landrace",
         bank: "ACE Seeds",
@@ -2755,7 +2755,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "blimburn-green-crack",
-        image: "img/blimburn-green-crack-bud.webp",
+        image: "img/blimburn-green-crack-real.webp",
         name: "Green Crack",
         aka: "Skunk #1 x Afghani Landrace",
         bank: "Blimburn Seeds",
@@ -3595,7 +3595,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "sensi-skunk-1",
-        image: "img/sensi-skunk-1.webp",
+        image: "img/sensi-skunk-1-real.webp",
         name: "Skunk #1",
         aka: "Sativa Landrace x Afghani",
         bank: "Sensi Seeds",
@@ -4647,7 +4647,7 @@ const STRAINS_DATABASE = [
       },
   {
         id: "00s-00-skunk",
-        image: "img/00s-cheese-xl.webp",
+        image: "img/00s-00-skunk-real.webp",
         name: "00 Skunk",
         aka: "Skunk #1 Selection",
         bank: "00 Seeds Bank",
@@ -4838,7 +4838,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "ths-mendocino-madness",
-        image: "img/ths-mendocino-madness.webp",
+        image: "img/ths-mendocino-madness-real.webp",
         name: "Mendocino Madness",
         aka: "Mendocino Purps x S.A.G.E.",
         bank: "TH Seeds",
@@ -5911,7 +5911,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "dna-sleestack",
-        image: "img/dna-sleestack.webp",
+        image: "img/dna-sleestack-real.webp",
         name: "Sleestack",
         aka: "SSH x Martian Mean Green",
         bank: "DNA Genetics",
@@ -7779,7 +7779,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "tfd-swazi-safari",
-          image: "img/tfd-swazi-safari.webp",
+          image: "img/tfd-swazi-safari-real.webp",
           name: "Swazi Safari",
           aka: "Swazi Landrace x Skunk #1",
           bank: "The Flying Dutchmen",
@@ -9242,7 +9242,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "ihg-tart-pops",
-          image: "img/ihg-tart-pops.webp",
+          image: "img/ihg-tart-pops-real.webp",
           name: "Tart Pops",
           aka: "Sour Apple x Purple Punch",
           bank: "In-House Genetics",
@@ -9567,7 +9567,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "eth-lilac-diesel",
-          image: "img/eth-lilac-diesel.webp",
+          image: "img/eth-lilac-diesel-real.webp",
           name: "Lilac Diesel",
           aka: "SLH x Forbidden Fruit x NYC Diesel x Cherry Pie",
           bank: "Ethos Genetics",
@@ -10461,7 +10461,7 @@ const STRAINS_DATABASE = [
       },
   {
       id: "raw-marshmallow",
-          image: "img/raw-marshmallow.webp",
+          image: "img/raw-marshmallow-real.webp",
           name: "Raw Marshmallow",
           aka: "Marshmallow OG x Stuffed French Toast",
           bank: "Raw Genetics",
@@ -10750,7 +10750,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "2046",
-    image: "img/2046.webp",
+    image: "img/2046-real.webp",
     name: "2046",
     aka: "Neville's Haze x Neville's Haze",
     bank: "Medical Seeds",
@@ -10983,7 +10983,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "canadian-kush-2",
-    image: "img/canadian-kush-2.webp",
+    image: "img/canadian-kush-2-real.webp",
     name: "Canadian Kush 2.0",
     aka: "Canadian Kush x Casey Jones",
     bank: "Medical Seeds",
@@ -11075,7 +11075,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "jamaican-dream",
-    image: "img/jamaican-dream.webp",
+    image: "img/jamaican-dream-real.webp",
     name: "Jamaican Dream",
     aka: "Landrace Jamaica pura",
     bank: "Eva Seeds",
@@ -11098,7 +11098,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "monster",
-    image: "img/monster.webp",
+    image: "img/monster-real.webp",
     name: "Monster",
     aka: "G13 Hash Plant x Híbrido Sudamericano",
     bank: "Eva Seeds",
@@ -11190,7 +11190,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "black-dream",
-    image: "img/black-dream.webp",
+    image: "img/black-dream-real.webp",
     name: "Black Dream",
     aka: "Jamaican Dream x Black Domina",
     bank: "Eva Seeds",
@@ -11259,7 +11259,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "tnt-kush",
-    image: "img/tnt-kush.webp",
+    image: "img/tnt-kush-real.webp",
     name: "TNT Kush",
     aka: "Pakistan Chitral Kush",
     bank: "Eva Seeds",
@@ -12184,7 +12184,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "canuk-runtz",
-    image: "img/canuk-runtz.webp",
+    image: "img/canuk-runtz-real.webp",
     name: "Runtz",
     aka: "Zkittlez x Gelato",
     bank: "Canuk Seeds",
@@ -12352,7 +12352,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "canuk-tropicana-cookies",
-    image: "img/canuk-tropicana-cookies.webp",
+    image: "img/canuk-tropicana-cookies-real.webp",
     name: "Tropicana Cookies",
     aka: "GSC x Tangie",
     bank: "Canuk Seeds",
@@ -12940,7 +12940,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "delicious-lemon-haze",
-    image: "img/delicious-lemon-haze.webp",
+    image: "img/delicious-lemon-haze-real.webp",
     name: "Lemon Haze",
     aka: "Silver Haze x Lemon Skunk",
     bank: "Delicious Seeds",
@@ -13213,7 +13213,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "philo-cobalt-blue",
-    image: "img/philo-cobalt-blue.webp",
+    image: "img/philo-cobalt-blue-real.webp",
     name: "Cobalt Blue",
     aka: "Blue Cheese x OG Kush",
     bank: "Philosopher Seeds",
@@ -13255,7 +13255,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "philo-kali-snapple",
-    image: "img/philo-kali-snapple.webp",
+    image: "img/philo-kali-snapple-real.webp",
     name: "Kali Snapple",
     aka: "Kali Mist x Snapple",
     bank: "Philosopher Seeds",
@@ -13276,7 +13276,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "hso-pineapple-fields",
-    image: "img/hso-pineapple-fields.webp",
+    image: "img/hso-pineapple-fields-real.webp",
     name: "Pineapple Fields",
     aka: "Pineapple Trainwreck x Haze",
     bank: "Humboldt Seed",
@@ -16409,7 +16409,7 @@ const STRAINS_DATABASE = [
     effects: ["Subidón Cerebral Explosivo", "Euforia Psicodélica", "Motivación Activa", "Claridad Luminosa"],
     activities: ["nature_walk", "creativity", "active_day"],
     description: "Pura sativa del sudeste asiático recolectada en las islas de Ko Chang. Una de las variedades más potentes de Tailandia, con cogollos repletos de resina cítrica y fresca. Produce un efecto cerebral rápido, expansivo y altamente estimulante sin pesadez física.",
-    image: "img/wos-wild-thailand.webp",
+    image: "img/wos-wild-thailand-real.webp",
     visualColor: "linear-gradient(135deg, #84CC16 0%, #4D7C0F 100%)",
     bgPattern: "radial-gradient(circle, rgba(132,204,22,0.2) 0%, transparent 70%)"
   },
@@ -16556,7 +16556,7 @@ const STRAINS_DATABASE = [
     effects: ["Efecto Contundente", "Relajación Corporal", "Paz Mental", "Bienestar Prolongado"],
     activities: ["relax", "sleep", "movies"],
     description: "Auténtica bestia productiva de Dr. Underground. Combina cosechas colosales con una floración asombrosamente corta. Desprende un aroma complejo a maderas nobles y frutas skunk, proporcionando una relajación demoledora ideal para el descanso nocturno.",
-    image: "img/drug-king-kong.webp",
+    image: "img/drug-king-kong-real.webp",
     visualColor: "linear-gradient(135deg, #059669 0%, #064E3B 100%)",
     bgPattern: "radial-gradient(circle, rgba(5,150,105,0.25) 0%, transparent 70%)"
   },
@@ -16944,7 +16944,7 @@ const STRAINS_DATABASE = [
     effects: ["Felicidad Acentuada", "Paz Mental", "Relajación Muscular", "Placer Gourmet"],
     activities: ["relax", "art", "music"],
     description: "Trilogía frutal extraordinaria donde confluyen fresas, limones frescos y plátano dulce en una textura resinosa brillante. Desarrolla cogollos prietos con aromas de repostería cannábica y un efecto que abraza mente y cuerpo con suavidad.",
-    image: "img/cff-strawberry-lemon-banana.webp",
+    image: "img/cff-strawberry-lemon-banana-real.webp",
     visualColor: "linear-gradient(135deg, #FB7185 0%, #F43F5E 100%)",
     bgPattern: "radial-gradient(circle, rgba(251,113,133,0.25) 0%, transparent 70%)"
   },
@@ -17092,7 +17092,7 @@ const STRAINS_DATABASE = [
     effects: ["Euforia Cerebral Lúcida", "Foco Creativo", "Vigor Mental", "Bienestar Físico"],
     activities: ["creative", "music", "social"],
     description: "Homenaje de Swerve a la cultura Grateful Dead. Combina la electricidad mental penetrante de Chemdawg 91 con la estructura resinosa de SFV OG. Cosecha cogollos aromáticos con una firma terpénica a combustible y almizcle penetrante.",
-    image: "img/cali-deadhead-og.webp",
+    image: "img/cali-deadhead-og-real.webp",
     visualColor: "linear-gradient(135deg, #10B981 0%, #047857 100%)",
     bgPattern: "radial-gradient(circle, rgba(16,185,129,0.25) 0%, transparent 70%)"
   },
@@ -17236,7 +17236,7 @@ const STRAINS_DATABASE = [
     effects: ["Alegría Cálida", "Relajación Suave", "Inspiración Agradable", "Bienestar"],
     activities: ["creative", "music", "movies"],
     description: "Deliciosa simbiosis entre la uva dulce especiada de Romulan y el combustible cítrico de Tahoe OG. Sus tricomas desprenden un aroma a mosto fermentado y bosque lluvioso, dejando una sensación de ligereza sumamente placentera.",
-    image: "img/cali-grape-og.webp",
+    image: "img/cali-grape-og-real.webp",
     visualColor: "linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%)",
     bgPattern: "radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 70%)"
   },
@@ -17876,7 +17876,7 @@ const STRAINS_DATABASE = [
     effects: ["Felicidad Equilibrada", "Relajación Floral", "Paz Sensorial", "Confort Agradable"],
     activities: ["relax", "social", "movies"],
     description: "La combinación entre la tropical Papaya y el dulce floral de Purple Punch crea uno de los perfiles más únicos del banco. Flores que adquieren tonalidades púrpuras al final de la floración con un perfume a papaya madura y frutas del bosque. Efecto equilibrado entre la calma indica y el buen humor sativa.",
-    image: "img/oni-papaya-punch.webp",
+    image: "img/oni-papaya-punch-real.webp",
     visualColor: "linear-gradient(135deg, #EC4899 0%, #BE185D 100%)",
     bgPattern: "radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%)"
   },
@@ -18662,7 +18662,7 @@ const STRAINS_DATABASE = [
     effects: ["Potencia Extrema", "Euforia Cerebral", "Relajación Profunda", "Risa Fácil"],
     activities: ["social", "relax_sleep", "gaming"],
     description: "Un perfil aromático tan singular que da nombre a la cepa: tinta de rotulador, jabón floral y caramelo ácido sobre un fondo de gasolina dulce. Permanent Marker produce cogollos violáceos de densidad extrema que rozan el 30% de THC. Euforia inmediata que se funde en una calma corporal duradera.",
-    image: "img/sj-permanent-marker.webp",
+    image: "img/sj-permanent-marker-real.webp",
     visualColor: "linear-gradient(135deg, #818CF8 0%, #312E81 100%)",
     bgPattern: "radial-gradient(circle, rgba(129,140,248,0.25) 0%, transparent 70%)"
   },
@@ -18908,7 +18908,7 @@ const STRAINS_DATABASE = [
     effects: ["Paz Interior", "Relajación Corporal", "Euforia Serena", "Sueño Reparador"],
     activities: ["meditation", "relax_sleep", "creativity"],
     description: "Bautizada en honor a la deidad protectora del budismo tibetano, Blue Tara envuelve los sentidos con arándano, uva morada e incienso floral. Sus flores toman tonos azulados en noches frías y su efecto sereno invita a la meditación antes de un sueño reparador.",
-    image: "img/bodhi-blue-tara.webp",
+    image: "img/bodhi-blue-tara-real.webp",
     visualColor: "linear-gradient(135deg, #93C5FD 0%, #3730A3 100%)",
     bgPattern: "radial-gradient(circle, rgba(147,197,253,0.25) 0%, transparent 70%)"
   },
@@ -20088,7 +20088,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "reggae-dancehall",
-    image: "img/reggae-dancehall.webp",
+    image: "img/reggae-dancehall-real.webp",
     name: "Dancehall",
     aka: "Juanita la Lagrimosa x Kalijah",
     bank: "Reggae Seeds",
@@ -20117,7 +20117,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "reggae-guayaka",
-    image: "img/reggae-guayaka.webp",
+    image: "img/reggae-guayaka-real.webp",
     name: "Guayaka",
     aka: "Guayaba x Kalijah",
     bank: "Reggae Seeds",
@@ -20146,7 +20146,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "reggae-session",
-    image: "img/reggae-session.webp",
+    image: "img/reggae-session-real.webp",
     name: "Session",
     aka: "NYC Diesel x Kalijah",
     bank: "Reggae Seeds",
@@ -20204,7 +20204,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "reggae-respect",
-    image: "img/reggae-respect.webp",
+    image: "img/reggae-respect-real.webp",
     name: "Respect",
     aka: "Juanita la Lagrimosa x Cannalope Haze",
     bank: "Reggae Seeds",
@@ -20291,7 +20291,7 @@ const STRAINS_DATABASE = [
   },
   {
     id: "reggae-blackdance",
-    image: "img/reggae-blackdance.webp",
+    image: "img/reggae-blackdance-real.webp",
     name: "Blackdance",
     aka: "Black Domina x Dancehall",
     bank: "Reggae Seeds",
@@ -23162,7 +23162,7 @@ const STRAINS_DATABASE = [
       },
   {
         id: "afc-rosso-corsa",
-        image: "img/afc-rosso-corsa.webp",
+        image: "img/afc-rosso-corsa-real.webp",
         name: "Rosso Corsa",
         aka: "SFV OG x French Gelato #33",
         bank: "Aficionado French Connection",
@@ -23249,7 +23249,7 @@ const STRAINS_DATABASE = [
       },
   {
         id: "exotic-gypsy-widow",
-        image: "img/exotic-gypsy-widow.webp",
+        image: "img/exotic-gypsy-widow-real.webp",
         name: "Gypsy Widow",
         aka: "White Widow Selection A x B",
         bank: "Exotic Seed",

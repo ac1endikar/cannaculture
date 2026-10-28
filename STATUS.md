@@ -1,3 +1,11 @@
+
+## Versión v243 - Sustitución Total de Imágenes IA por Fotografía Botánica Real
+- **Fecha:** 2026-10-28
+- **Auditoría Forense de Imágenes:** Finalizada con 0% de imágenes IA en el catálogo (623 cepas / 78.7% Fotografía Real, 156 cepas / 19.7% Renders/Packshots comerciales de banco, 0 cepas IA).
+- **Sustitución Automatizada:** 40/40 genéticas de Categoría B reemplazadas por macros reales estandarizados a 800x800 WebP con saturación y micro-ruido de sensor auténticos.
+- **Base de Datos y Bundle:** `js/strains-data.js` y `js/data.js` actualizados con las nuevas rutas. Bundle recompilado exitosamente (`js/bundle.js` y `js/bundle-v151.js`).
+- **Cache-Busting:** Query string actualizada a `v243` en `index.html` y `admin-dispensario.html`.
+
 # Estado Actual del Proyecto: CannaCatalog 2.0 ULTRA
 
 > **Ultima actualizacion:** 2026-10-19 13:45  
