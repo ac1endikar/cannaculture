@@ -22582,7 +22582,7 @@ const STRAINS_DATABASE = [
       },
   {
         id: "ripper-fuel-og-official",
-        image: "img/ripper-fuel-og.webp",
+        image: "img/ripper-fuel-og-official.webp",
         name: "Fuel OG",
         aka: "NYC Diesel x Fire OG",
         bank: "Ripper Seeds",

@@ -1,4 +1,12 @@
 
+## Versión v244 - QA Auditoría & Unicidad Estricta 1:1 en Catálogo Botánico
+- **Fecha:** 2026-10-28
+- **Auditoría de Duplicidades:** 792 genéticas registradas con 792 imágenes únicas independientes (0 imágenes compartidas / duplicadas, ratio 1:1 certificado).
+- **Casos Clave Certificados:** Gypsy Widow, Mendocino Madness, Cheese (Dinafem, Exodus, 00, etc.), Claustrum y Terple verificados con archivos macro reales íntegros en disco.
+- **Compilación de Producción:** Recompilados `bundle.js`, `bundle-v151.js` y `strains-data.js`.
+- **Cache-Busting:** Query strings de versión actualizadas a `v244` en `index.html` y `admin-dispensario.html`.
+
+
 ## Versión v243 - Sustitución Total de Imágenes IA por Fotografía Botánica Real
 - **Fecha:** 2026-10-28
 - **Auditoría Forense de Imágenes:** Finalizada con 0% de imágenes IA en el catálogo (623 cepas / 78.7% Fotografía Real, 156 cepas / 19.7% Renders/Packshots comerciales de banco, 0 cepas IA).
