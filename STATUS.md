@@ -1,3 +1,10 @@
+## Versión v245 - Purga Agresiva de Caché PWA y Forzado de Fotos Reales en Disco
+- **Fecha:** 2026-11-02
+- **Purga Total de Caché Service Worker:** Registro de `CACHE_NAME = 'cannaculture-v245-force-flush'` con limpieza agresiva e incondicional en el evento `activate` para invalidar cachés previas.
+- **Cache-Busting Global en Aplicación Web:** Todos los enlaces y scripts actualizados a query string `?v=245` (`index.html`, `guia-cultivo.html`, `admin-dispensario.html`, `pwa-manager.js`).
+- **Reemplazo Físico en Disco:** Los archivos canónicos (`img/*.webp` y `images/strains/*.webp`) de las variedades clave (Gypsy Widow, Mendocino Madness, Cheese, Claustrum, Terple) y del lote curado fueron sobrescritos físicamente en disco por sus macros reales HD en floración madura (800x800).
+- **Compilación de Producción:** Recompilados `bundle.js`, `bundle-v151.js` y `strains-data.js`. Sincronizado en commit `012ab77`.
+
 
 ## Versión v244 - Curaduría Botánica de Élite y Erradicación de Incongruencias Visuales
 - **Fecha:** 2026-10-28
