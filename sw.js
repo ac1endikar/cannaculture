@@ -4,26 +4,28 @@
  * y bypass defensivo para Firebase & Firestore.
  */
 
-const CACHE_CORE = 'cannaculture-core-v242';
-const CACHE_IMAGES = 'cannaculture-images-v229';
-const CACHE_PAGES = 'cannaculture-pages-v229';
+const CACHE_NAME = 'cannaculture-v245-force-flush';
+const CACHE_CORE = 'cannaculture-core-v245-force-flush';
+const CACHE_IMAGES = 'cannaculture-images-v245-force-flush';
+const CACHE_PAGES = 'cannaculture-pages-v245-force-flush';
 const MAX_CACHED_IMAGES = 120;
 
 const CORE_ASSETS = [
   '/',
+  '/index.html?v=245',
   '/index.html',
   '/offline.html',
-  '/css/age-gate.css?v=242',
-  '/js/age-gate.js?v=242',
-  '/css/styles.css?v=242',
-  '/js/bundle.js?v=242',
+  '/css/age-gate.css?v=245',
+  '/js/age-gate.js?v=245',
+  '/css/styles.css?v=245',
+  '/js/bundle.js?v=245',
   '/guia-cultivo.html',
-  '/css/guia-cultivo.css?v=242',
-  '/js/guia-cultivo.js?v=242',
+  '/css/guia-cultivo.css?v=245',
+  '/js/guia-cultivo.js?v=245',
   '/admin-dispensario.html',
-  '/css/admin-dispensario.css?v=242',
-  '/js/admin-dispensario.js?v=242',
-  '/js/strains-data.js?v=242',
+  '/css/admin-dispensario.css?v=245',
+  '/js/admin-dispensario.js?v=245',
+  '/js/strains-data.js?v=245',
   '/manifest.webmanifest',
   '/assets/icons/icon-192x192.png',
   '/assets/icons/icon-512x512.png',
@@ -66,14 +68,17 @@ self.addEventListener('install', event => {
 });
 
 // 2. EVENTO ACTIVATE: Limpieza automática de cachés antiguas
+// 2. EVENTO ACTIVATE: Purga agresiva e incondicional de cualquier caché previa
 self.addEventListener('activate', event => {
-  const currentCaches = [CACHE_CORE, CACHE_IMAGES, CACHE_PAGES];
+  const currentCaches = [CACHE_NAME, CACHE_CORE, CACHE_IMAGES, CACHE_PAGES];
   event.waitUntil(
     caches.keys().then(keys => {
       return Promise.all(
-        keys.filter(k => !currentCaches.includes(k)).map(oldKey => {
-          console.log('[SW v217] Purgando caché obsoleta:', oldKey);
-          return caches.delete(oldKey);
+        keys.map(key => {
+          if (!currentCaches.includes(key)) {
+            console.log('[SW v245-force-flush] Purgando agresivamente caché previa:', key);
+            return caches.delete(key);
+          }
         })
       );
     }).then(() => self.clients.claim())

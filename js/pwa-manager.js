@@ -1,5 +1,5 @@
 /**
- * CannaCulture PWA Manager (v213)
+ * CannaCulture PWA Manager (v245)
  * Registro seguro de Service Worker, captura de beforeinstallprompt,
  * detección de modo standalone e interfaz reactiva para instalación.
  */
@@ -20,9 +20,9 @@
   function initServiceWorker() {
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/sw.js?v=213')
+        navigator.serviceWorker.register('/sw.js?v=245')
           .then(function (reg) {
-            console.log('🌿 CannaCulture PWA Service Worker registrado con éxito (v213):', reg.scope);
+            console.log('🌿 CannaCulture PWA Service Worker registrado con éxito (v245):', reg.scope);
             reg.addEventListener('updatefound', function () {
               const newWorker = reg.installing;
               if (newWorker) {
